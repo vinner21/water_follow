@@ -354,15 +354,17 @@ main{max-width:780px;margin:0 auto;padding:.75rem}
 .next-teams{font-size:1.2rem;font-weight:700}
 .next-teams .vs{margin:0 .4rem;opacity:.6;font-weight:400;font-size:.9rem}
 .next-round{font-size:.75rem;opacity:.65;margin-top:.2rem}
-.our-team{color:var(--blue-light)}.next-match-card .our-team{color:#ffd166}
-.match-row{display:grid;grid-template-columns:64px 68px 1fr;align-items:center;gap:.4rem;padding:.5rem .6rem;border-radius:6px;margin-bottom:.25rem;border-left:4px solid transparent;background:var(--bg);transition:box-shadow .15s}
+.our-team{color:var(--blue)}.next-match-card .our-team{color:#ffd166}
+.match-row{padding:.5rem .6rem;border-radius:6px;margin-bottom:.3rem;border-left:4px solid transparent;background:var(--bg);transition:box-shadow .15s}
 .match-row:hover{box-shadow:0 1px 6px rgba(0,0,0,.06)}
 .match-row.win{border-left-color:var(--green)}.match-row.loss{border-left-color:var(--red)}
 .match-row.draw{border-left-color:var(--orange)}.match-row.upcoming{border-left-color:var(--blue-light);background:var(--blue-pale)}
-.match-date{font-size:.72rem;color:var(--text-muted)}.match-round{font-size:.68rem;color:var(--text-muted)}
-.match-teams{font-size:.8rem;display:flex;align-items:center;gap:.25rem;flex-wrap:wrap}
-.score{font-weight:700;min-width:1.1rem;text-align:center}.score-sep{color:var(--text-muted)}
-.vs-small{color:var(--text-muted);font-size:.72rem;margin:0 .2rem}
+.match-meta{display:flex;gap:.5rem;font-size:.7rem;color:var(--text-muted);margin-bottom:.2rem}
+.match-teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.3rem;font-size:.82rem}
+.team-home{text-align:right;font-weight:500}.team-away{text-align:left;font-weight:500}
+.match-score{display:flex;align-items:center;gap:.15rem;font-weight:700;font-size:.9rem;justify-content:center}
+.score-sep{color:var(--text-muted);font-size:.8rem}
+.vs-small{color:var(--text-muted);font-size:.78rem}
 .standings-block{margin-bottom:.6rem}
 .standings-block h3{font-size:.82rem;color:var(--blue);margin-bottom:.3rem;border:none;padding:0}
 .table-wrap{overflow-x:auto}
@@ -609,15 +611,15 @@ def generate_html(categories_data, config):
             is_home = m["home_team"] in team_ids
             results_items.append(
                 f'<div class="match-row {rcls}">'
-                f'<span class="match-date">{ds}</span>'
-                f'<span class="match-round">{escape(m.get("round_name", ""))}</span>'
-                f'<span class="match-teams">'
-                f'<span class="{"our-team" if is_home else ""}">{hn}</span>'
-                f'<span class="score">{hs if hs is not None else "-"}</span>'
+                f'<div class="match-meta"><span>{ds}</span>'
+                f'<span>{escape(m.get("round_name", ""))}</span></div>'
+                f'<div class="match-teams">'
+                f'<span class="team-home{" our-team" if is_home else ""}">{hn}</span>'
+                f'<span class="match-score"><span>{hs if hs is not None else "-"}</span>'
                 f'<span class="score-sep">-</span>'
-                f'<span class="score">{aws if aws is not None else "-"}</span>'
-                f'<span class="{"our-team" if not is_home else ""}">{an}</span>'
-                f'</span></div>'
+                f'<span>{aws if aws is not None else "-"}</span></span>'
+                f'<span class="team-away{" our-team" if not is_home else ""}">{an}</span>'
+                f'</div></div>'
             )
 
         # Upcoming
@@ -629,13 +631,13 @@ def generate_html(categories_data, config):
             is_home = m["home_team"] in team_ids
             upcoming_items.append(
                 f'<div class="match-row upcoming">'
-                f'<span class="match-date">{ds}</span>'
-                f'<span class="match-round">{escape(m.get("round_name", ""))}</span>'
-                f'<span class="match-teams">'
-                f'<span class="{"our-team" if is_home else ""}">{hn}</span>'
+                f'<div class="match-meta"><span>{ds}</span>'
+                f'<span>{escape(m.get("round_name", ""))}</span></div>'
+                f'<div class="match-teams">'
+                f'<span class="team-home{" our-team" if is_home else ""}">{hn}</span>'
                 f'<span class="vs-small">vs</span>'
-                f'<span class="{"our-team" if not is_home else ""}">{an}</span>'
-                f'</span></div>'
+                f'<span class="team-away{" our-team" if not is_home else ""}">{an}</span>'
+                f'</div></div>'
             )
 
         # Standings
