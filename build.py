@@ -292,16 +292,17 @@ def short_category(name):
     return name.strip()
 
 
-# Age categories for Catalan water polo (sort order + display label)
+# Age categories for Catalan water polo – season 2025-2026
+# Source: FCN Normativa 01 – Disposicions Generals (edats de competició)
 # Order: lower = younger. Used for sorting and age labels on cards.
 CATEGORY_AGE = {
-    "BENJAMI":  (1, "10-11 anys"),
-    "ALEVI":    (2, "12-13 anys"),
-    "INFANTIL": (3, "14-15 anys"),
-    "CADET":    (4, "16-17 anys"),
-    "JUVENIL":  (5, "18-19 anys"),
-    "ABSOLUTA": (6, "20+ anys"),
-    "MASTER":   (7, "30+ anys"),
+    "BENJAMI":  (1, "9-10 anys (2016-17)"),
+    "ALEVI":    (2, "11-12 anys (2014-15)"),
+    "INFANTIL": (3, "13-14 anys (2012-13)"),
+    "CADET":    (4, "15-16 anys (2010-11)"),
+    "JUVENIL":  (5, "17-18 anys (2008-09)"),
+    "ABSOLUTA": (6, "+18 anys"),
+    "MASTER":   (7, "+30 anys"),
 }
 
 def category_age_info(tournament_name):
