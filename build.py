@@ -461,6 +461,21 @@ tr.highlight{background:var(--blue-pale)}tr.highlight td{font-weight:600}
 .roster-staff-title{font-size:.8rem;color:var(--blue);font-weight:600;margin:.6rem 0 .3rem;padding-top:.4rem;border-top:1px solid #e9ecef}
 footer{text-align:center;padding:1.2rem 1rem;font-size:.72rem;color:var(--text-muted)}
 footer a{color:var(--blue)}
+.search-wrap{margin:0 auto .8rem;max-width:500px;position:relative}
+.search-input{width:100%;padding:.5rem .8rem .5rem 2rem;border:1px solid var(--blue-light);border-radius:8px;font-size:.85rem;background:var(--card);color:var(--text);outline:none;box-sizing:border-box}
+.search-input:focus{border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,119,182,.15)}
+.search-icon{position:absolute;left:.6rem;top:50%;transform:translateY(-50%);font-size:.85rem;color:var(--text-muted);pointer-events:none}
+.search-clear{position:absolute;right:.5rem;top:50%;transform:translateY(-50%);background:none;border:none;font-size:1rem;color:var(--text-muted);cursor:pointer;display:none;padding:0 .2rem}
+.search-results{background:var(--card);border-radius:var(--radius);margin-top:.4rem;max-height:70vh;overflow-y:auto}
+.search-result-item{padding:.6rem .8rem;border-bottom:1px solid #e9ecef;cursor:default}
+.search-result-item:last-child{border-bottom:none}
+.search-result-name{font-weight:600;font-size:.85rem;color:var(--blue-dark)}
+.search-result-role{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-left:.3rem}
+.search-result-teams{margin-top:.2rem}
+.search-result-tag{display:inline-block;font-size:.7rem;background:var(--blue-pale);color:var(--blue-dark);padding:.1rem .4rem;border-radius:4px;margin:.1rem .2rem .1rem 0;cursor:pointer}
+.search-result-tag:hover{background:var(--blue);color:#fff}
+.search-result-by{font-size:.72rem;color:var(--text-muted);margin-left:.3rem}
+.search-empty{padding:.8rem;text-align:center;color:var(--text-muted);font-size:.82rem}
 @media(max-width:480px){.cat-grid{grid-template-columns:1fr}.match-row{grid-template-columns:52px 56px 1fr;padding:.4rem}.match-teams{font-size:.74rem}header h1{font-size:1.1rem}}
 """
 
@@ -469,6 +484,75 @@ JS = """
 function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 function titleCase(s){return s.split(' ').map(function(w){return w.charAt(0).toUpperCase()+w.slice(1).toLowerCase();}).join(' ');}
 function toggleSection(h3){h3.parentElement.classList.toggle('collapsed');}
+
+/* --- Player Search --- */
+var _searchIdx=null;
+function buildSearchIndex(){
+  if(_searchIdx)return _searchIdx;
+  /* Build team→tournament map from WP */
+  var teamTournMap={};
+  Object.keys(window.WP).forEach(function(eid){
+    var d=window.WP[eid];
+    Object.keys(d.teams).forEach(function(tid){
+      if(!teamTournMap[tid])teamTournMap[tid]=[];
+      teamTournMap[tid].push({eid:eid,tname:d.tname,teamName:d.teams[tid]});
+    });
+  });
+  /* Build person index from ROST */
+  var persons={};/* key: fn|ln|bd */
+  var rost=window.ROST||{};
+  Object.keys(rost).forEach(function(tid){
+    rost[tid].forEach(function(p){
+      var k=p.fn+'|'+p.ln+'|'+(p.bd||'');
+      if(!persons[k])persons[k]={fn:p.fn,ln:p.ln,bd:p.bd,ro:p.ro,teams:[]};
+      /* merge role (player > staff) */
+      if(p.ro==='player')persons[k].ro='player';
+      var tours=teamTournMap[tid]||[];
+      tours.forEach(function(t){
+        var already=persons[k].teams.some(function(x){return x.eid===t.eid&&x.teamName===t.teamName;});
+        if(!already)persons[k].teams.push({eid:t.eid,tname:t.tname,teamName:t.teamName});
+      });
+    });
+  });
+  _searchIdx=Object.values(persons);
+  /* Pre-compute search text */
+  _searchIdx.forEach(function(p){
+    p._s=(p.fn+' '+p.ln).toLowerCase();
+  });
+  return _searchIdx;
+}
+function doSearch(q){
+  var res=document.getElementById('search-results');
+  var clear=document.getElementById('search-clear');
+  if(!q||q.length<2){res.innerHTML='';res.style.display='none';clear.style.display='none';return;}
+  clear.style.display='block';
+  var idx=buildSearchIndex();
+  var ql=q.toLowerCase().trim();
+  var words=ql.split(/\s+/);
+  var hits=idx.filter(function(p){
+    return words.every(function(w){return p._s.indexOf(w)>=0;});
+  });
+  if(hits.length===0){res.innerHTML='<div class="search-empty">Cap resultat per \"'+esc(q)+'\"</div>';res.style.display='block';return;}
+  if(hits.length>50)hits=hits.slice(0,50);
+  var html='';
+  hits.forEach(function(p){
+    var name=esc(titleCase(p.fn)+' '+titleCase(p.ln));
+    var role=p.ro==='player'?'Jugador':'Staff';
+    var by=p.bd?p.bd.substring(0,4):'';
+    var byH=by?' <span class="search-result-by">('+by+')</span>':'';
+    var tags='';
+    p.teams.forEach(function(t){
+      tags+='<span class="search-result-tag" onclick="clearSearch();showDetail(\''+t.eid+'\')" title="'+esc(t.teamName)+'">'+esc(t.tname)+'</span>';
+    });
+    html+='<div class="search-result-item"><div><span class="search-result-name">'+name+'</span>'+byH+'<span class="search-result-role">'+role+'</span></div><div class="search-result-teams">'+tags+'</div></div>';
+  });
+  if(hits.length>=50)html+='<div class="search-empty">Mostrant 50 de mes resultats...</div>';
+  res.innerHTML=html;res.style.display='block';
+}
+function clearSearch(){
+  var inp=document.getElementById('search-input');
+  inp.value='';doSearch('');
+}
 function fmtShort(ds){
   if(!ds)return'TBD';
   var p=ds.split(/[- :]/);return p[2]+'/'+p[1]+' '+p[3]+':'+p[4];
@@ -924,6 +1008,12 @@ def generate_html(categories_data, config):
         # Screen 1: Categories
         f'<div id="selection-screen">'
         f'<div class="sel-title">Selecciona una categoria</div>'
+        f'<div class="search-wrap">'
+        f'<span class="search-icon">&#128269;</span>'
+        f'<input type="text" id="search-input" class="search-input" placeholder="Buscar jugador o staff..." oninput="doSearch(this.value)" autocomplete="off">'
+        f'<button id="search-clear" class="search-clear" onclick="clearSearch()">&times;</button>'
+        f'<div id="search-results" class="search-results" style="display:none"></div>'
+        f'</div>'
         f'<div class="cat-grid">{"".join(cat_card_items)}</div>'
         f'</div>'
         # Screen 2: Team selection
