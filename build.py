@@ -181,17 +181,13 @@ def collect_tournament_data(tournament, club_id):
 
     for g in groups:
         gid = g["id"]
-        print(f"    Checking standings for {g['name']} ...", end=" ")
+        print(f"    Fetching group {g['name']} ...", end=" ")
         standings = get_standings(gid)
         standing_team_ids = set()
         for row in standings:
             team_names[str(row["id"])] = row["name"]
             standing_team_ids.add(str(row["id"]))
         our_in_group = our_team_ids & standing_team_ids
-        if not our_in_group:
-            print("-")
-            continue
-        print(f"OK ({len(our_in_group)} team(s))")
 
         group_detail = get_group_with_rounds(gid)
         group_matches = []
@@ -204,13 +200,12 @@ def collect_tournament_data(tournament, club_id):
                 m["group_name"] = g["name"]
             group_matches.extend(matches)
 
-        our_matches = [m for m in group_matches
-                       if m["home_team"] in our_team_ids or m["away_team"] in our_team_ids]
         collected_groups.append({
             "id": gid, "name": g["name"],
             "standings": standings, "our_team_ids": our_in_group,
         })
-        all_matches.extend(group_matches)  # keep ALL matches for team-perspective switcher
+        all_matches.extend(group_matches)
+        print(f"{len(group_matches)} matches" + (f" (our team)" if our_in_group else ""))
 
     missing_ids = set()
     for m in all_matches:
@@ -514,9 +509,11 @@ function renderForTeam(entryId,teamId){
   }
   document.getElementById('next-'+entryId).innerHTML=nextH;
 
-  /* Standings */
+  /* Standings – only show groups where selected team appears */
   var stH='';
   data.groups.forEach(function(g){
+    var inGroup=g.s.some(function(s){return s.id===teamId;});
+    if(!inGroup)return;
     var rows='';
     g.s.forEach(function(s){
       var hl=s.id===teamId?' class="highlight"':'';
@@ -605,17 +602,15 @@ def generate_html(categories_data, config):
             team_matches = [m for m in cat["matches"]
                            if m["home_team"] in team_ids or m["away_team"] in team_ids]
             team_groups = [g for g in cat["groups"] if team_id in g["our_team_ids"]]
-            # All matches in relevant groups (for team-perspective switcher)
-            group_ids = {g["id"] for g in team_groups}
-            all_group_matches = [m for m in cat["matches"] if m.get("group_id") in group_ids]
             entries.append({
                 "tournament_id": cat["tournament_id"],
                 "tournament_name": cat["tournament_name"],
                 "team": team,
                 "team_ids": team_ids,
                 "matches": team_matches,
-                "all_group_matches": all_group_matches,
-                "groups": team_groups,
+                "all_groups": cat["groups"],         # ALL groups in tournament
+                "all_matches": cat["matches"],        # ALL matches in tournament
+                "our_groups": team_groups,             # groups where our team plays
                 "team_names": cat["team_names"],
             })
 
@@ -722,10 +717,10 @@ def generate_html(categories_data, config):
         entry_id = slug(entry["tournament_name"] + "-" + team["name"])
         num_teams = len(tournaments_map[tid]["entries"])
 
-        # Build JSON for this entry
+        # Build JSON for this entry – include ALL matches from ALL groups
         matches_json = []
         seen_match_ids = set()
-        for m in entry["all_group_matches"]:
+        for m in entry["all_matches"]:
             if m["id"] in seen_match_ids:
                 continue
             seen_match_ids.add(m["id"])
@@ -737,9 +732,10 @@ def generate_html(categories_data, config):
                 "rn": m.get("round_name", ""),
             })
 
+        # Include ALL groups with standings
         groups_json = []
         all_team_ids_set = set()
-        for g in entry["groups"]:
+        for g in entry["all_groups"]:
             standings_json = []
             for s in g["standings"]:
                 all_team_ids_set.add(str(s["id"]))
@@ -758,9 +754,9 @@ def generate_html(categories_data, config):
             "groups": groups_json, "matches": matches_json,
         }
 
-        # Build team selector options (sorted by standings position)
+        # Build team selector options from ALL groups (sorted by standings position)
         team_options = []
-        for g in entry["groups"]:
+        for g in entry["all_groups"]:
             for s in g["standings"]:
                 sid = str(s["id"])
                 if sid not in [t[0] for t in team_options]:
