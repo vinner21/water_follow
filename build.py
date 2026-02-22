@@ -913,6 +913,7 @@ def generate_html(categories_data, config):
     html = (
         '<!DOCTYPE html><html lang="ca"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width,initial-scale=1">'
+        '<meta name="robots" content="noindex, nofollow">'
         f'<title>Waterpolo Tracker</title>'
         f'<style>{CSS}</style></head><body>'
         f'<header><div class="header-inner">'
@@ -985,6 +986,40 @@ def main():
     out_path = os.path.join(out_dir, "index.html")
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(html)
+
+    # Write robots.txt to block crawlers
+    robots_path = os.path.join(out_dir, "robots.txt")
+    with open(robots_path, "w") as f:
+        f.write("User-agent: *\nDisallow: /\n")
+    print(f"robots.txt generated")
+
+    # Encrypt with StatiCrypt
+    import subprocess
+    import shutil
+    staticrypt_bin = shutil.which("staticrypt")
+    if staticrypt_bin:
+        print("Encrypting with StatiCrypt ...")
+        result = subprocess.run([
+            staticrypt_bin, out_path,
+            "-p", os.environ.get("STATICRYPT_PASSWORD", "vidalperez"),
+            "--short",
+            "--remember", "30",
+            "--template-title", "Water Polo Tracker - Login",
+            "--template-instructions", "Introdueix la contrasenya per accedir.",
+            "--template-button", "Entrar",
+            "--template-placeholder", "Contrasenya",
+            "--template-remember", "Recorda'm 30 dies",
+            "--template-error", "Contrasenya incorrecta!",
+            "--template-color-primary", "#0077B6",
+            "--template-color-secondary", "#023E8A",
+            "-d", out_dir,
+        ], capture_output=True, text=True)
+        if result.returncode == 0:
+            print("  Encrypted successfully")
+        else:
+            print(f"  StatiCrypt error: {result.stderr}")
+    else:
+        print("WARNING: staticrypt not found, HTML NOT encrypted")
 
     print(f"\n{'='*60}")
     print(f"Site generated: {out_path}")
