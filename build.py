@@ -437,6 +437,8 @@ main{max-width:780px;margin:0 auto;padding:.75rem}
 .vs-small{color:var(--text-muted);font-size:.78rem}
 .standings-block{margin-bottom:.6rem}
 .standings-block h3{font-size:.82rem;color:var(--blue);margin-bottom:.3rem;border:none;padding:0}
+.phase-header{font-size:.82rem;color:var(--blue);font-weight:600;margin:.7rem 0 .3rem;padding-bottom:.2rem;border-bottom:1px solid var(--blue)}
+.phase-header:first-child{margin-top:0}
 .table-wrap{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:.75rem}
 th,td{padding:.35rem .3rem;text-align:center}
@@ -582,23 +584,35 @@ function renderForTeam(entryId,teamId){
   });
   document.getElementById('standings-'+entryId).innerHTML=stH||'<p class="empty">Classificacio no disponible.</p>';
 
-  /* Results */
+  /* Results – grouped by phase/group */
   var rH='';
   if(past.length===0){rH='<p class="empty">Encara no hi ha resultats.</p>';}
-  else{past.forEach(function(m){
-    var isH=tids.has(m.h),os=isH?m.hs:m.as,ts=isH?m.as:m.hs;
-    var cls='';if(os!=null&&ts!=null){cls=os>ts?'win':os<ts?'loss':'draw';}
-    var hN=esc(data.teams[m.h]||'?'),aN=esc(data.teams[m.a]||'Descansa');
-    rH+='<div class="match-row '+cls+'">'+
-      '<div class="match-meta"><span>'+fmtShort(m.d)+'</span><span>'+esc(m.rn)+'</span></div>'+
-      '<div class="match-teams">'+
-      '<span class="team-home'+(isH?' our-team':'')+'">'+hN+'</span>'+
-      '<span class="match-score"><span>'+(m.hs!=null?m.hs:'-')+'</span>'+
-      '<span class="score-sep">-</span>'+
-      '<span>'+(m.as!=null?m.as:'-')+'</span></span>'+
-      '<span class="team-away'+(!isH?' our-team':'')+'">'+aN+'</span>'+
-      '</div></div>';
-  });}
+  else{
+    var phaseOrder=[];var phaseMap={};
+    past.forEach(function(m){
+      var ph=m.gn||'Resultats';
+      if(!phaseMap[ph]){phaseMap[ph]=[];phaseOrder.push(ph);}
+      phaseMap[ph].push(m);
+    });
+    var multiPhase=phaseOrder.length>1;
+    phaseOrder.forEach(function(ph){
+      if(multiPhase)rH+='<div class="phase-header">'+esc(ph)+'</div>';
+      phaseMap[ph].forEach(function(m){
+        var isH=tids.has(m.h),os=isH?m.hs:m.as,ts=isH?m.as:m.hs;
+        var cls='';if(os!=null&&ts!=null){cls=os>ts?'win':os<ts?'loss':'draw';}
+        var hN=esc(data.teams[m.h]||'?'),aN=esc(data.teams[m.a]||'Descansa');
+        rH+='<div class="match-row '+cls+'">'+
+          '<div class="match-meta"><span>'+fmtShort(m.d)+'</span><span>'+esc(m.rn)+'</span></div>'+
+          '<div class="match-teams">'+
+          '<span class="team-home'+(isH?' our-team':'')+'">'+ hN+'</span>'+
+          '<span class="match-score"><span>'+(m.hs!=null?m.hs:'-')+'</span>'+
+          '<span class="score-sep">-</span>'+
+          '<span>'+(m.as!=null?m.as:'-')+'</span></span>'+
+          '<span class="team-away'+(!isH?' our-team':'')+'">'+ aN+'</span>'+
+          '</div></div>';
+      });
+    });
+  }
   document.getElementById('results-'+entryId).innerHTML=rH;
 
   /* Upcoming */
@@ -812,6 +826,7 @@ def generate_html(categories_data, config):
                 "h": m["home_team"], "a": m["away_team"],
                 "hs": hs_val, "as": as_val,
                 "rn": m.get("round_name", ""),
+                "gn": m.get("group_name", ""),
             })
 
         # Include ALL groups with standings
