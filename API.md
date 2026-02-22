@@ -339,4 +339,3 @@ Per a 1 grup amb 13 jornades: **~17 peticions** (1 torneig + 1 equip + 1 grup + 
 - Web pública: https://clupik.pro/es/tournament/1317476/summary
 - Federació: https://actawp.natacio.cat/
 - Equip: https://clupik.pro/es/team/15618241
-- Jugador: https://clupik.pro/es/players/53766703

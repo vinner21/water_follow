@@ -311,16 +311,31 @@ header{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:#ff
 .header-inner{display:flex;align-items:center;justify-content:center;gap:.75rem}
 .club-logo{width:52px;height:52px;border-radius:50%;border:2px solid rgba(255,255,255,.6);flex-shrink:0}
 header h1{font-size:1.3rem;font-weight:700}.subtitle{font-size:.8rem;opacity:.8}
-.player-banner{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.6rem;font-size:.85rem;opacity:.9}
-.player-icon{font-size:1rem}.player-name{font-weight:600}
-.btn-player{padding:.2rem .6rem;background:rgba(255,255,255,.2);color:#fff;text-decoration:none;border-radius:4px;font-size:.75rem;border:1px solid rgba(255,255,255,.3)}
-.btn-player:hover{background:rgba(255,255,255,.35)}
-.tab-bar{display:flex;overflow-x:auto;background:var(--card);border-bottom:2px solid #e0e0e0;padding:0 .5rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.tab-bar::-webkit-scrollbar{display:none}
-.tab{flex-shrink:0;padding:.55rem .8rem;border:none;background:none;font-size:.78rem;font-weight:500;color:var(--text-muted);cursor:pointer;border-bottom:3px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
-.tab:hover{color:var(--blue)}.tab.active{color:var(--blue-dark);border-bottom-color:var(--blue);font-weight:700}
-.tab-content{display:none}.tab-content.active{display:block}
 main{max-width:780px;margin:0 auto;padding:.75rem}
+
+/* Selection screen */
+#selection-screen{display:block}
+#detail-screen{display:none}
+.sel-title{text-align:center;font-size:1rem;color:var(--blue-dark);margin:.8rem 0 .6rem;font-weight:600}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.6rem;padding:0 .2rem}
+.cat-card{background:var(--card);border-radius:var(--radius);padding:.8rem;cursor:pointer;border:2px solid transparent;transition:border-color .2s,box-shadow .2s,transform .15s;position:relative;overflow:hidden}
+.cat-card:hover{border-color:var(--blue-light);box-shadow:0 4px 12px rgba(0,119,182,.15);transform:translateY(-2px)}
+.cat-card-name{font-size:.85rem;font-weight:700;color:var(--blue-dark);margin-bottom:.3rem}
+.cat-card-teams{font-size:.75rem;color:var(--text-muted);margin-bottom:.35rem}
+.cat-card-record{display:inline-flex;gap:.3rem;font-size:.7rem}
+.cat-card-record span{padding:.1rem .35rem;border-radius:3px;font-weight:600}
+.cat-card-record .w{background:#d4edda;color:var(--green)}.cat-card-record .d{background:#fff3cd;color:#856404}
+.cat-card-record .l{background:#f8d7da;color:var(--red)}
+.cat-card-next{font-size:.72rem;color:var(--text-muted);margin-top:.3rem;border-top:1px solid #eee;padding-top:.3rem}
+.cat-card-next strong{color:var(--blue)}
+.cat-card-arrow{position:absolute;right:.6rem;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--blue-light);opacity:.5}
+
+/* Detail screen */
+.back-bar{background:var(--card);border-bottom:1px solid #e0e0e0;padding:.5rem .8rem;display:flex;align-items:center;gap:.5rem}
+.btn-back{background:none;border:1px solid var(--blue);color:var(--blue);padding:.3rem .7rem;border-radius:6px;font-size:.8rem;cursor:pointer;display:flex;align-items:center;gap:.3rem;transition:background .2s,color .2s}
+.btn-back:hover{background:var(--blue);color:#fff}
+.back-label{font-size:.82rem;color:var(--text-muted)}
+
 .category-header{background:var(--card);border-radius:var(--radius);padding:1rem;margin-bottom:.6rem;text-align:center}
 .category-header h2{font-size:1rem;color:var(--blue-dark);margin-bottom:.2rem}
 .teams-label{font-size:.8rem;color:var(--text-muted);margin-bottom:.4rem}
@@ -361,12 +376,29 @@ tr.highlight{background:var(--blue-pale)}tr.highlight td{font-weight:600}
 .btn-link:hover{background:var(--blue-dark)}
 footer{text-align:center;padding:1.2rem 1rem;font-size:.72rem;color:var(--text-muted)}
 footer a{color:var(--blue)}
-@media(max-width:480px){.match-row{grid-template-columns:52px 56px 1fr;padding:.4rem}.match-teams{font-size:.74rem}header h1{font-size:1.1rem}.tab{padding:.5rem .6rem;font-size:.72rem}}
+@media(max-width:480px){.cat-grid{grid-template-columns:1fr}.match-row{grid-template-columns:52px 56px 1fr;padding:.4rem}.match-teams{font-size:.74rem}header h1{font-size:1.1rem}}
 """
 
 JS = """
-document.querySelectorAll('.tab').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));btn.classList.add('active');const t=document.getElementById(btn.dataset.tab);if(t)t.classList.add('active');btn.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});history.replaceState(null,'','#'+btn.dataset.tab)})});
-const h=location.hash.slice(1);if(h){const b=document.querySelector('.tab[data-tab="'+h+'"]');if(b)b.click()}
+function showDetail(id){
+  document.getElementById('selection-screen').style.display='none';
+  document.getElementById('detail-screen').style.display='block';
+  document.querySelectorAll('.detail-category').forEach(c=>c.style.display='none');
+  const el=document.getElementById(id);
+  if(el)el.style.display='block';
+  window.scrollTo(0,0);
+  history.replaceState(null,'','#'+id);
+}
+function showSelection(){
+  document.getElementById('detail-screen').style.display='none';
+  document.getElementById('selection-screen').style.display='block';
+  window.scrollTo(0,0);
+  history.replaceState(null,'','#');
+}
+window.addEventListener('DOMContentLoaded',()=>{
+  const h=location.hash.slice(1);
+  if(h){const el=document.getElementById(h);if(el&&el.classList.contains('detail-category'))showDetail(h);}
+});
 """
 
 
@@ -377,9 +409,6 @@ const h=location.hash.slice(1);if(h){const b=document.querySelector('.tab[data-t
 def generate_html(categories_data, config):
     club_name = escape(config["club_name"])
     clupik = config.get("clupik_base_url", CLUPIK_BASE)
-    player = config.get("highlight_player", {})
-    player_name = escape(player.get("name", ""))
-    player_id = player.get("id", "")
 
     club_avatar = ""
     for cat in categories_data:
@@ -391,17 +420,16 @@ def generate_html(categories_data, config):
             break
 
     build_time = datetime.utcnow().strftime("%d/%m/%Y %H:%M UTC")
-    tab_items = []
-    sections = []
+
+    # --- Build selection cards ---
+    card_items = []
+    detail_sections = []
 
     for idx, cat in enumerate(categories_data):
         tid = cat["tournament_id"]
-        tab_id = slug(cat["tournament_name"])
+        cat_id = slug(cat["tournament_name"])
         label = short_category(cat["tournament_name"])
-        active = "active" if idx == 0 else ""
         our_ids = cat["our_team_ids"]
-
-        tab_items.append(f'<button class="tab {active}" data-tab="{tab_id}">{escape(label)}</button>')
 
         past = [m for m in cat["matches"] if m["finished"]]
         future = [m for m in cat["matches"] if not m["finished"] and m["date"]]
@@ -422,6 +450,30 @@ def generate_html(categories_data, config):
 
         our_teams_str = " / ".join(escape(t["name"]) for t in cat["our_teams"])
 
+        # Card: next match preview
+        card_next = ""
+        if future:
+            nm = future[0]
+            hn = escape(cat["team_names"].get(nm["home_team"], "?"))
+            an = escape(cat["team_names"].get(nm["away_team"] or "", "Descansa"))
+            card_next = (
+                f'<div class="cat-card-next">Proper: <strong>{format_date_short(nm["date"])}</strong> '
+                f'{hn} vs {an}</div>'
+            )
+
+        card_items.append(
+            f'<div class="cat-card" onclick="showDetail(\'{cat_id}\')">'
+            f'<div class="cat-card-name">{escape(label)}</div>'
+            f'<div class="cat-card-teams">{our_teams_str}</div>'
+            f'<div class="cat-card-record">'
+            f'<span class="w">{wins}V</span><span class="d">{draws}E</span>'
+            f'<span class="l">{losses}D</span></div>'
+            f'{card_next}'
+            f'<span class="cat-card-arrow">&#8250;</span>'
+            f'</div>'
+        )
+
+        # --- Build detail section for this category ---
         # Next match
         next_match_html = ""
         if future:
@@ -517,8 +569,8 @@ def generate_html(categories_data, config):
         upcoming_block = f'<div class="section-block"><h3>Propers Partits</h3>{"".join(upcoming_items)}</div>' if upcoming_items else ""
         standings_block = standings_html if standings_html else '<p class="empty">Classificacio no disponible.</p>'
 
-        section = (
-            f'<div class="tab-content {active}" id="{tab_id}">'
+        detail_section = (
+            f'<div class="detail-category" id="{cat_id}" style="display:none">'
             f'<div class="category-header"><h2>{escape(cat["tournament_name"])}</h2>'
             f'<div class="teams-label">{our_teams_str}</div>'
             f'<div class="record-bar">'
@@ -532,17 +584,7 @@ def generate_html(categories_data, config):
             f'<div class="section-block links-block">{tournament_link}{team_links}</div>'
             '</div>'
         )
-        sections.append(section)
-
-    player_html = ""
-    if player_id:
-        player_html = (
-            '<div class="player-banner">'
-            '<span class="player-icon">&#11088;</span>'
-            f'<span class="player-name">{player_name}</span>'
-            f'<a href="{clupik}/es/players/{player_id}" target="_blank" rel="noopener" class="btn-player">Fitxa Jugador</a>'
-            '</div>'
-        )
+        detail_sections.append(detail_section)
 
     total_cats = len(categories_data)
     total_teams = sum(len(c["our_teams"]) for c in categories_data)
@@ -556,10 +598,19 @@ def generate_html(categories_data, config):
         f'<style>{CSS}</style></head><body>'
         f'<header><div class="header-inner">{avatar_tag}'
         f'<div><h1>{club_name}</h1>'
-        f'<div class="subtitle">Seguiment Waterpolo - {total_cats} categories - {total_teams} equips</div>'
-        f'</div></div>{player_html}</header>'
-        f'<nav class="tab-bar" role="tablist">{"".join(tab_items)}</nav>'
-        f'<main>{"".join(sections)}</main>'
+        f'<div class="subtitle">Seguiment Waterpolo &middot; {total_cats} categories &middot; {total_teams} equips</div>'
+        f'</div></div></header>'
+        f'<main>'
+        f'<div id="selection-screen">'
+        f'<div class="sel-title">Selecciona una categoria</div>'
+        f'<div class="cat-grid">{"".join(card_items)}</div>'
+        f'</div>'
+        f'<div id="detail-screen">'
+        f'<div class="back-bar"><button class="btn-back" onclick="showSelection()">&#8249; Tornar</button>'
+        f'<span class="back-label">Totes les categories</span></div>'
+        f'{"".join(detail_sections)}'
+        f'</div>'
+        f'</main>'
         f'<footer>Actualitzat: {build_time}<br>'
         'Dades de <a href="https://actawp.natacio.cat/">Federacio Catalana de Natacio</a> '
         'via <a href="https://clupik.pro">Clupik</a> (API Leverade)<br>'

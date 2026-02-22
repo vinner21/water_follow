@@ -16,7 +16,7 @@ Web estàtica multi-categoria per fer seguiment de **totes** les categories de w
 - **Proper Partit** amb data, hora i rival destacat
 - **Resultats** amb indicadors visuals (victòria/derrota/empat) i resum d'estadístiques
 - **Classificació** actualitzada de cada grup amb l'equip destacat
-- **Enllaços directes** a Clupik per veure estadístiques detallades, fitxa del jugador i de l'equip
+- **Enllaços directes** a Clupik per veure estadístiques detallades de cada equip
 - **Disseny responsive** adaptat a mòbil
 
 ## Configuració
@@ -28,10 +28,6 @@ Edita `config.json` per personalitzar:
   "club_id": "4979831",
   "club_name": "C.N. SANT ANDREU",
   "manager_id": "314965",
-  "highlight_player": {
-    "id": "53766703",
-    "name": "MARTI VIDAL PEREZ"
-  },
   "clupik_base_url": "https://clupik.pro",
   "lang": "ca"
 }
@@ -39,7 +35,6 @@ Edita `config.json` per personalitzar:
 
 - `club_id` – ID del club a Leverade (el script busca automàticament tots els seus equips)
 - `manager_id` – ID de la federació/manager que organitza els torneigs
-- `highlight_player` – jugador a destacar a la capçalera (opcional)
 
 El script descobreix automàticament tots els torneigs actius on el club participa, sense necessitat d'indicar IDs de torneigs, equips o grups.
 
