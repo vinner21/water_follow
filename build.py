@@ -680,9 +680,9 @@ def generate_html(categories_data, config):
             f'<span class="l">{losses}D</span><span class="gf">{gf}GF</span>'
             f'<span class="ga">{ga}GC</span></div></div>'
             f'{next_block}'
+            f'<div class="section-block"><h3>Classificacio</h3>{standings_block}</div>'
             f'<div class="section-block"><h3>Resultats</h3>{results_block}</div>'
             f'{upcoming_block}'
-            f'<div class="section-block"><h3>Classificacio</h3>{standings_block}</div>'
             f'<div class="section-block links-block">{tournament_link}{team_link}</div>'
             '</div>'
         )
