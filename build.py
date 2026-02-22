@@ -417,7 +417,10 @@ main{max-width:780px;margin:0 auto;padding:.75rem}
 .record-bar .l{background:#f8d7da;color:var(--red)}.record-bar .gf{background:var(--blue-pale);color:var(--blue-dark)}
 .record-bar .ga{background:#e9ecef;color:var(--text-muted)}
 .section-block{background:var(--card);border-radius:var(--radius);padding:.8rem;margin-bottom:.6rem}
-.section-block h3{font-size:.9rem;color:var(--blue-dark);border-bottom:2px solid var(--blue-pale);padding-bottom:.25rem;margin-bottom:.5rem}
+.section-block h3{font-size:.9rem;color:var(--blue-dark);border-bottom:2px solid var(--blue-pale);padding-bottom:.25rem;margin-bottom:.5rem;cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:space-between}
+.section-block h3::after{content:'\25B2';font-size:.6rem;color:var(--blue-light);transition:transform .2s}
+.section-block.collapsed h3::after{transform:rotate(180deg)}
+.section-block.collapsed .section-content{display:none}
 .empty{color:var(--text-muted);font-size:.85rem}
 .next-match-card{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;border-radius:8px;padding:1rem;text-align:center}
 .next-date{font-size:.85rem;opacity:.85;margin-bottom:.35rem}
@@ -464,6 +467,8 @@ footer a{color:var(--blue)}
 JS = """
 /* --- Helpers --- */
 function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+function titleCase(s){return s.split(' ').map(function(w){return w.charAt(0).toUpperCase()+w.slice(1).toLowerCase();}).join(' ');}
+function toggleSection(h3){h3.parentElement.classList.toggle('collapsed');}
 function fmtShort(ds){
   if(!ds)return'TBD';
   var p=ds.split(/[- :]/);return p[2]+'/'+p[1]+' '+p[3]+':'+p[4];
@@ -552,14 +557,14 @@ function renderForTeam(entryId,teamId){
   if(future.length>0){
     var nm=future[0],hN=esc(data.teams[nm.h]||'?'),aN=esc(data.teams[nm.a]||'Descansa');
     var isH=tids.has(nm.h);
-    nextH='<div class="section-block"><h3>Proper Partit</h3>'+
-      '<div class="next-match-card">'+
+    nextH='<div class=\"section-block collapsed\"><h3 onclick=\"toggleSection(this)\">Proper Partit</h3>'+
+      '<div class="section-content"><div class="next-match-card">'+
       '<div class="next-date">'+fmtLong(nm.d)+'</div>'+
       '<div class="next-teams">'+
-      '<span class="'+(isH?'our-team':'')+'">'+hN+'</span>'+
+      '<span class="'+(isH?'our-team':'')+'">'+ hN+'</span>'+
       '<span class="vs">vs</span>'+
-      '<span class="'+(!isH?'our-team':'')+'">'+aN+'</span>'+
-      '</div><div class="next-round">'+esc(nm.rn)+'</div></div></div>';
+      '<span class="'+(!isH?'our-team':'')+'">'+ aN+'</span>'+
+      '</div><div class="next-round">'+esc(nm.rn)+'</div></div></div></div>';
   }
   document.getElementById('next-'+entryId).innerHTML=nextH;
 
@@ -631,7 +636,8 @@ function renderForTeam(entryId,teamId){
         '<span class="team-away'+(!isH?' our-team':'')+'">'+aN+'</span>'+
         '</div></div>';
     });
-    uH='<div class="section-block"><h3>Propers Partits</h3>'+items+'</div>';
+    uH='<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Propers Partits</h3>'+
+      '<div class="section-content">'+items+'</div></div>';
   }
   document.getElementById('upcoming-'+entryId).innerHTML=uH;
 
@@ -639,27 +645,30 @@ function renderForTeam(entryId,teamId){
   var rosH='';
   var roster=window.ROST&&window.ROST[teamId];
   if(roster&&roster.length>0){
-    var players=roster.filter(function(p){return p.ro==='player';});
-    var staff=roster.filter(function(p){return p.ro!=='player';});
+    /* Deduplicate by fn+ln+bd */
+    var seen={};var uRoster=[];
+    roster.forEach(function(p){var k=p.fn+'|'+p.ln+'|'+(p.bd||'');if(!seen[k]){seen[k]=1;uRoster.push(p);}});
+    var players=uRoster.filter(function(p){return p.ro==='player';});
+    var staff=uRoster.filter(function(p){return p.ro!=='player';});
     var rows='';
     players.forEach(function(p){
-      var age='';
-      if(p.bd){var by=parseInt(p.bd.substring(0,4));var now=new Date().getFullYear();age=''+(now-by);}
-      var name=esc(p.fn.charAt(0).toUpperCase()+p.fn.slice(1).toLowerCase()+' '+p.ln.charAt(0).toUpperCase()+p.ln.slice(1).toLowerCase());
-      rows+='<tr><td class="roster-name">'+name+'</td><td>'+age+'</td></tr>';
+      var by='';
+      if(p.bd){by=p.bd.substring(0,4);}
+      var name=esc(titleCase(p.fn)+' '+titleCase(p.ln));
+      rows+='<tr><td class="roster-name">'+name+'</td><td>'+by+'</td></tr>';
     });
     var srows='';
     staff.forEach(function(p){
-      var name=esc(p.fn.charAt(0).toUpperCase()+p.fn.slice(1).toLowerCase()+' '+p.ln.charAt(0).toUpperCase()+p.ln.slice(1).toLowerCase());
+      var name=esc(titleCase(p.fn)+' '+titleCase(p.ln));
       srows+='<tr><td class="roster-name">'+name+'</td><td class="roster-role">Staff</td></tr>';
     });
-    rosH='<div class="section-block"><h3>Plantilla ('+players.length+' jugadors)</h3>'+
-      '<div class="table-wrap"><table class="roster-table"><thead><tr><th>Nom</th><th>Edat</th></tr></thead>'+
+    rosH='<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Plantilla ('+players.length+' jugadors)</h3>'+
+      '<div class="section-content"><div class="table-wrap"><table class="roster-table"><thead><tr><th>Nom</th><th>Any</th></tr></thead>'+
       '<tbody>'+rows+'</tbody></table></div>';
     if(srows)rosH+='<div class="roster-staff-title">Cos tecnic ('+staff.length+')</div>'+
       '<div class="table-wrap"><table class="roster-table"><thead><tr><th>Nom</th><th></th></tr></thead>'+
       '<tbody>'+srows+'</tbody></table></div>';
-    rosH+='</div>';
+    rosH+='</div></div>';
   }
   document.getElementById('roster-'+entryId).innerHTML=rosH;
 
@@ -884,8 +893,8 @@ def generate_html(categories_data, config):
             f'<div class="record-bar" id="record-{entry_id}"></div>'
             f'</div>'
             f'<div id="next-{entry_id}"></div>'
-            f'<div class="section-block"><h3>Classificacio</h3><div id="standings-{entry_id}"></div></div>'
-            f'<div class="section-block"><h3>Resultats</h3><div id="results-{entry_id}"></div></div>'
+            f'<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Classificacio</h3><div class="section-content" id="standings-{entry_id}"></div></div>'
+            f'<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Resultats</h3><div class="section-content" id="results-{entry_id}"></div></div>'
             f'<div id="upcoming-{entry_id}"></div>'
             f'<div id="roster-{entry_id}"></div>'
             f'<div class="section-block links-block" id="links-{entry_id}"></div>'
