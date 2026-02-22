@@ -542,7 +542,7 @@ function doSearch(q){
     var byH=by?' <span class="search-result-by">('+by+')</span>':'';
     var tags='';
     p.teams.forEach(function(t){
-      tags+='<span class="search-result-tag" onclick="clearSearch();showDetail(\''+t.eid+'\')" title="'+esc(t.teamName)+'">'+esc(t.tname)+'</span>';
+      tags+='<span class="search-result-tag" onclick="clearSearch();showDetail(\\''+t.eid+'\\')" title="'+esc(t.teamName)+'">'+esc(t.tname)+'</span>';
     });
     html+='<div class="search-result-item"><div><span class="search-result-name">'+name+'</span>'+byH+'<span class="search-result-role">'+role+'</span></div><div class="search-result-teams">'+tags+'</div></div>';
   });
