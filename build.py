@@ -168,6 +168,35 @@ def get_standings(gid):
     return standings
 
 
+def get_team_roster(team_id):
+    """Fetch player/staff roster for a team via participants.license.profile."""
+    data = api_get(f"teams/{team_id}", params={"include": "participants.license.profile"})
+    included = data.get("included", [])
+    profiles = {i["id"]: i["attributes"] for i in included if i["type"] == "profile"}
+    licenses = {i["id"]: i for i in included if i["type"] == "license"}
+    participants = [i for i in included if i["type"] == "participant"]
+    roster = []
+    for p in participants:
+        lic_ref = p.get("relationships", {}).get("license", {}).get("data")
+        if not lic_ref:
+            continue
+        lic = licenses.get(lic_ref["id"], {})
+        lic_type = lic.get("attributes", {}).get("type", "unknown")
+        profile_ref = lic.get("relationships", {}).get("profile", {}).get("data")
+        profile = profiles.get(profile_ref["id"], {}) if profile_ref else {}
+        if not profile.get("first_name"):
+            continue
+        roster.append({
+            "first_name": profile.get("first_name", ""),
+            "last_name": profile.get("last_name", ""),
+            "birthdate": profile.get("birthdate"),
+            "role": lic_type,
+        })
+    # Sort: players first (sorted by last_name), then staff
+    roster.sort(key=lambda r: (0 if r["role"] == "player" else 1, r["last_name"], r["first_name"]))
+    return roster
+
+
 def collect_tournament_data(tournament, club_id):
     tid = tournament["id"]
     our_team_ids = {t["id"] for t in tournament["our_teams"]}
@@ -223,10 +252,27 @@ def collect_tournament_data(tournament, club_id):
         team_names[t["id"]] = t["name"]
 
     all_matches.sort(key=lambda m: m["date"] or "9999")
+
+    # Fetch rosters for ALL teams across all groups
+    all_team_ids_in_groups = set()
+    for g in collected_groups:
+        for row in g["standings"]:
+            all_team_ids_in_groups.add(str(row["id"]))
+    rosters = {}
+    print(f"    Fetching rosters for {len(all_team_ids_in_groups)} teams ...")
+    for t_id in sorted(all_team_ids_in_groups):
+        try:
+            rosters[t_id] = get_team_roster(t_id)
+        except Exception as e:
+            print(f"      Warning: could not fetch roster for {t_id}: {e}")
+            rosters[t_id] = []
+    print(f"    Rosters: {sum(len(r) for r in rosters.values())} total participants")
+
     return {
         "tournament_id": tid, "tournament_name": tournament["name"],
         "our_teams": tournament["our_teams"], "our_team_ids": our_team_ids,
         "groups": collected_groups, "matches": all_matches, "team_names": team_names,
+        "rosters": rosters,
     }
 
 
@@ -402,6 +448,12 @@ tr.highlight{background:var(--blue-pale)}tr.highlight td{font-weight:600}
 .links-block{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
 .btn-link{padding:.35rem .7rem;background:var(--blue);color:#fff;text-decoration:none;border-radius:6px;font-size:.78rem}
 .btn-link:hover{background:var(--blue-dark)}
+.roster-table{width:100%;border-collapse:collapse;font-size:.78rem}
+.roster-table th{background:var(--blue-dark);color:#fff;font-weight:600;font-size:.72rem;padding:.35rem .4rem;text-align:left}
+.roster-table td{padding:.3rem .4rem;border-bottom:1px solid #e9ecef}
+.roster-name{font-weight:500}
+.roster-role{color:var(--text-muted);font-size:.72rem;font-style:italic}
+.roster-staff-title{font-size:.8rem;color:var(--blue);font-weight:600;margin:.6rem 0 .3rem;padding-top:.4rem;border-top:1px solid #e9ecef}
 footer{text-align:center;padding:1.2rem 1rem;font-size:.72rem;color:var(--text-muted)}
 footer a{color:var(--blue)}
 @media(max-width:480px){.cat-grid{grid-template-columns:1fr}.match-row{grid-template-columns:52px 56px 1fr;padding:.4rem}.match-teams{font-size:.74rem}header h1{font-size:1.1rem}}
@@ -569,6 +621,34 @@ function renderForTeam(entryId,teamId){
   }
   document.getElementById('upcoming-'+entryId).innerHTML=uH;
 
+  /* Roster */
+  var rosH='';
+  var roster=window.ROST&&window.ROST[teamId];
+  if(roster&&roster.length>0){
+    var players=roster.filter(function(p){return p.ro==='player';});
+    var staff=roster.filter(function(p){return p.ro!=='player';});
+    var rows='';
+    players.forEach(function(p){
+      var age='';
+      if(p.bd){var by=parseInt(p.bd.substring(0,4));var now=new Date().getFullYear();age=''+(now-by);}
+      var name=esc(p.fn.charAt(0).toUpperCase()+p.fn.slice(1).toLowerCase()+' '+p.ln.charAt(0).toUpperCase()+p.ln.slice(1).toLowerCase());
+      rows+='<tr><td class="roster-name">'+name+'</td><td>'+age+'</td></tr>';
+    });
+    var srows='';
+    staff.forEach(function(p){
+      var name=esc(p.fn.charAt(0).toUpperCase()+p.fn.slice(1).toLowerCase()+' '+p.ln.charAt(0).toUpperCase()+p.ln.slice(1).toLowerCase());
+      srows+='<tr><td class="roster-name">'+name+'</td><td class="roster-role">Staff</td></tr>';
+    });
+    rosH='<div class="section-block"><h3>Plantilla ('+players.length+' jugadors)</h3>'+
+      '<div class="table-wrap"><table class="roster-table"><thead><tr><th>Nom</th><th>Edat</th></tr></thead>'+
+      '<tbody>'+rows+'</tbody></table></div>';
+    if(srows)rosH+='<div class="roster-staff-title">Cos tecnic ('+staff.length+')</div>'+
+      '<div class="table-wrap"><table class="roster-table"><thead><tr><th>Nom</th><th></th></tr></thead>'+
+      '<tbody>'+srows+'</tbody></table></div>';
+    rosH+='</div>';
+  }
+  document.getElementById('roster-'+entryId).innerHTML=rosH;
+
   /* Links */
   document.getElementById('links-'+entryId).innerHTML=
     '<a href="'+clupik+'/es/tournament/'+data.tid+'/summary" target="_blank" rel="noopener" class="btn-link">Veure competicio completa</a>'+
@@ -612,6 +692,7 @@ def generate_html(categories_data, config):
                 "all_matches": cat["matches"],        # ALL matches in tournament
                 "our_groups": team_groups,             # groups where our team plays
                 "team_names": cat["team_names"],
+                "rosters": cat.get("rosters", {}),
             })
 
     # --- Group entries by tournament for 2-level nav ---
@@ -708,6 +789,7 @@ def generate_html(categories_data, config):
     # --- Screen 3: Build JSON data + detail shells ---
     import json as json_mod
     wp_data = {}
+    global_rosters = {}  # team_id -> roster (deduplicated across entries)
     detail_sections = []
     for entry in entries:
         tid = entry["tournament_id"]
@@ -747,6 +829,15 @@ def generate_html(categories_data, config):
                 })
             groups_json.append({"id": g["id"], "n": g["name"], "s": standings_json})
 
+        # Collect rosters into global dict (avoids duplication across entries)
+        for t_id in all_team_ids_set | team_ids:
+            if t_id not in global_rosters:
+                roster = entry["rosters"].get(t_id, [])
+                if roster:
+                    global_rosters[t_id] = [{"fn": p["first_name"], "ln": p["last_name"],
+                                              "bd": p.get("birthdate", ""), "ro": p["role"]}
+                                             for p in roster]
+
         wp_data[entry_id] = {
             "tid": tid, "tname": entry["tournament_name"],
             "dt": team["id"],
@@ -781,6 +872,7 @@ def generate_html(categories_data, config):
             f'<div class="section-block"><h3>Classificacio</h3><div id="standings-{entry_id}"></div></div>'
             f'<div class="section-block"><h3>Resultats</h3><div id="results-{entry_id}"></div></div>'
             f'<div id="upcoming-{entry_id}"></div>'
+            f'<div id="roster-{entry_id}"></div>'
             f'<div class="section-block links-block" id="links-{entry_id}"></div>'
             f'</div>'
         )
@@ -788,6 +880,7 @@ def generate_html(categories_data, config):
 
     # Serialize data for embedding
     wp_data_json = json_mod.dumps(wp_data, ensure_ascii=False, separators=(',', ':'))
+    rosters_json = json_mod.dumps(global_rosters, ensure_ascii=False, separators=(',', ':'))
 
     total_cats = len(tournaments_map)
 
@@ -823,7 +916,7 @@ def generate_html(categories_data, config):
         'Dades de <a href="https://actawp.natacio.cat/">Federacio Catalana de Natacio</a> '
         'via <a href="https://clupik.pro">Clupik</a> (API Leverade)<br>'
         'Generat automaticament - <a href="https://github.com/vinner21/water_follow">GitHub</a></footer>'
-        f'<script>window.WP={wp_data_json};window.CLUPIK="{clupik}";</script>'
+        f'<script>window.WP={wp_data_json};window.ROST={rosters_json};window.CLUPIK="{clupik}";</script>'
         f'<script>{JS}</script></body></html>'
     )
     return html
