@@ -407,64 +407,74 @@ window.addEventListener('DOMContentLoaded',()=>{
 # ---------------------------------------------------------------------------
 
 def generate_html(categories_data, config):
-    club_name = escape(config["club_name"])
     clupik = config.get("clupik_base_url", CLUPIK_BASE)
-
-    club_avatar = ""
-    for cat in categories_data:
-        for t in cat["our_teams"]:
-            if t.get("avatar"):
-                club_avatar = t["avatar"]
-                break
-        if club_avatar:
-            break
-
     build_time = datetime.utcnow().strftime("%d/%m/%Y %H:%M UTC")
 
-    # --- Build selection cards ---
+    # --- Explode categories into per-team entries ---
+    entries = []
+    for cat in categories_data:
+        for team in cat["our_teams"]:
+            team_id = team["id"]
+            team_ids = {team_id}
+            # Filter matches for this specific team
+            team_matches = [m for m in cat["matches"]
+                           if m["home_team"] in team_ids or m["away_team"] in team_ids]
+            # Filter groups that contain this specific team
+            team_groups = [g for g in cat["groups"] if team_id in g["our_team_ids"]]
+            entries.append({
+                "tournament_id": cat["tournament_id"],
+                "tournament_name": cat["tournament_name"],
+                "team": team,
+                "team_ids": team_ids,
+                "matches": team_matches,
+                "groups": team_groups,
+                "team_names": cat["team_names"],
+            })
+
+    # --- Build selection cards and detail sections ---
     card_items = []
     detail_sections = []
 
-    for idx, cat in enumerate(categories_data):
-        tid = cat["tournament_id"]
-        cat_id = slug(cat["tournament_name"])
-        label = short_category(cat["tournament_name"])
-        our_ids = cat["our_team_ids"]
+    for entry in entries:
+        tid = entry["tournament_id"]
+        team = entry["team"]
+        team_ids = entry["team_ids"]
+        entry_id = slug(entry["tournament_name"] + "-" + team["name"])
+        label = short_category(entry["tournament_name"])
+        team_name = escape(team["name"])
 
-        past = [m for m in cat["matches"] if m["finished"]]
-        future = [m for m in cat["matches"] if not m["finished"] and m["date"]]
+        past = [m for m in entry["matches"] if m["finished"]]
+        future = [m for m in entry["matches"] if not m["finished"] and m["date"]]
         past.sort(key=lambda m: m["date"] or "", reverse=True)
         future.sort(key=lambda m: m["date"] or "")
 
-        wins = sum(1 for m in past if match_result_class(m, our_ids) == "win")
-        losses = sum(1 for m in past if match_result_class(m, our_ids) == "loss")
+        wins = sum(1 for m in past if match_result_class(m, team_ids) == "win")
+        losses = sum(1 for m in past if match_result_class(m, team_ids) == "loss")
         draws = len(past) - wins - losses
         gf = ga = 0
         for m in past:
             hs, aws = match_score(m)
             if hs is not None and aws is not None:
-                if m["home_team"] in our_ids:
+                if m["home_team"] in team_ids:
                     gf += hs; ga += aws
                 else:
                     gf += aws; ga += hs
-
-        our_teams_str = " / ".join(escape(t["name"]) for t in cat["our_teams"])
 
         # Card: next match preview
         card_next = ""
         if future:
             nm = future[0]
-            hn = escape(cat["team_names"].get(nm["home_team"], "?"))
-            an = escape(cat["team_names"].get(nm["away_team"] or "", "Descansa"))
+            hn = escape(entry["team_names"].get(nm["home_team"], "?"))
+            an = escape(entry["team_names"].get(nm["away_team"] or "", "Descansa"))
             card_next = (
                 f'<div class="cat-card-next">Proper: <strong>{format_date_short(nm["date"])}</strong> '
                 f'{hn} vs {an}</div>'
             )
 
         card_items.append(
-            f'<div class="cat-card" onclick="showDetail(\'{cat_id}\')">'
+            f'<div class="cat-card" onclick="showDetail(\'{entry_id}\')">'
             f'<div class="cat-card-name">{escape(label)}</div>'
-            f'<div class="cat-card-teams">{our_teams_str}</div>'
+            f'<div class="cat-card-teams">{team_name}</div>'
             f'<div class="cat-card-record">'
             f'<span class="w">{wins}V</span><span class="d">{draws}E</span>'
             f'<span class="l">{losses}D</span></div>'
@@ -473,14 +483,14 @@ def generate_html(categories_data, config):
             f'</div>'
         )
 
-        # --- Build detail section for this category ---
+        # --- Build detail section ---
         # Next match
         next_match_html = ""
         if future:
             nm = future[0]
-            hn = escape(cat["team_names"].get(nm["home_team"], "?"))
-            an = escape(cat["team_names"].get(nm["away_team"] or "", "Descansa"))
-            is_home = nm["home_team"] in our_ids
+            hn = escape(entry["team_names"].get(nm["home_team"], "?"))
+            an = escape(entry["team_names"].get(nm["away_team"] or "", "Descansa"))
+            is_home = nm["home_team"] in team_ids
             next_match_html = (
                 '<div class="next-match-card">'
                 f'<div class="next-date">{format_date(nm["date"])}</div>'
@@ -496,12 +506,12 @@ def generate_html(categories_data, config):
         # Results
         results_items = []
         for m in past:
-            hn = escape(cat["team_names"].get(m["home_team"], "?"))
-            an = escape(cat["team_names"].get(m["away_team"] or "", "Descansa"))
+            hn = escape(entry["team_names"].get(m["home_team"], "?"))
+            an = escape(entry["team_names"].get(m["away_team"] or "", "Descansa"))
             hs, aws = match_score(m)
-            rcls = match_result_class(m, our_ids)
+            rcls = match_result_class(m, team_ids)
             ds = format_date_short(m["date"])
-            is_home = m["home_team"] in our_ids
+            is_home = m["home_team"] in team_ids
             results_items.append(
                 f'<div class="match-row {rcls}">'
                 f'<span class="match-date">{ds}</span>'
@@ -518,10 +528,10 @@ def generate_html(categories_data, config):
         # Upcoming
         upcoming_items = []
         for m in future[1:]:
-            hn = escape(cat["team_names"].get(m["home_team"], "?"))
-            an = escape(cat["team_names"].get(m["away_team"] or "", "Descansa"))
+            hn = escape(entry["team_names"].get(m["home_team"], "?"))
+            an = escape(entry["team_names"].get(m["away_team"] or "", "Descansa"))
             ds = format_date_short(m["date"])
-            is_home = m["home_team"] in our_ids
+            is_home = m["home_team"] in team_ids
             upcoming_items.append(
                 f'<div class="match-row upcoming">'
                 f'<span class="match-date">{ds}</span>'
@@ -533,12 +543,12 @@ def generate_html(categories_data, config):
                 f'</span></div>'
             )
 
-        # Standings
+        # Standings (only groups where this specific team plays)
         standings_html = ""
-        for grp in cat["groups"]:
+        for grp in entry["groups"]:
             rows = ""
             for s in grp["standings"]:
-                is_ours = str(s["id"]) in our_ids
+                is_ours = str(s["id"]) in team_ids
                 cls = ' class="highlight"' if is_ours else ""
                 rows += (
                     f'<tr{cls}>'
@@ -558,10 +568,7 @@ def generate_html(categories_data, config):
                 f'</tr></thead><tbody>{rows}</tbody></table></div></div>'
             )
 
-        team_links = "".join(
-            f'<a href="{clupik}/es/team/{t["id"]}" target="_blank" rel="noopener" class="btn-link">{escape(t["name"])}</a>'
-            for t in cat["our_teams"]
-        )
+        team_link = f'<a href="{clupik}/es/team/{team["id"]}" target="_blank" rel="noopener" class="btn-link">{team_name}</a>'
         tournament_link = f'<a href="{clupik}/es/tournament/{tid}/summary" target="_blank" rel="noopener" class="btn-link">Veure competicio completa</a>'
 
         results_block = "\n".join(results_items) if results_items else '<p class="empty">Encara no hi ha resultats.</p>'
@@ -570,9 +577,9 @@ def generate_html(categories_data, config):
         standings_block = standings_html if standings_html else '<p class="empty">Classificacio no disponible.</p>'
 
         detail_section = (
-            f'<div class="detail-category" id="{cat_id}" style="display:none">'
-            f'<div class="category-header"><h2>{escape(cat["tournament_name"])}</h2>'
-            f'<div class="teams-label">{our_teams_str}</div>'
+            f'<div class="detail-category" id="{entry_id}" style="display:none">'
+            f'<div class="category-header"><h2>{escape(entry["tournament_name"])}</h2>'
+            f'<div class="teams-label">{team_name}</div>'
             f'<div class="record-bar">'
             f'<span class="w">{wins}V</span><span class="d">{draws}E</span>'
             f'<span class="l">{losses}D</span><span class="gf">{gf}GF</span>'
@@ -581,15 +588,12 @@ def generate_html(categories_data, config):
             f'<div class="section-block"><h3>Resultats</h3>{results_block}</div>'
             f'{upcoming_block}'
             f'<div class="section-block"><h3>Classificacio</h3>{standings_block}</div>'
-            f'<div class="section-block links-block">{tournament_link}{team_links}</div>'
+            f'<div class="section-block links-block">{tournament_link}{team_link}</div>'
             '</div>'
         )
         detail_sections.append(detail_section)
 
-    total_cats = len(categories_data)
-    total_teams = sum(len(c["our_teams"]) for c in categories_data)
-
-    avatar_tag = f'<img src="{escape(club_avatar)}" alt="" class="club-logo">' if club_avatar else ""
+    total_entries = len(entries)
 
     html = (
         '<!DOCTYPE html><html lang="ca"><head><meta charset="utf-8">'
@@ -598,11 +602,11 @@ def generate_html(categories_data, config):
         f'<style>{CSS}</style></head><body>'
         f'<header><div class="header-inner">'
         f'<div><h1>&#127937; Waterpolo Tracker</h1>'
-        f'<div class="subtitle">{total_cats} categories &middot; {total_teams} equips</div>'
+        f'<div class="subtitle">{total_entries} equips</div>'
         f'</div></div></header>'
         f'<main>'
         f'<div id="selection-screen">'
-        f'<div class="sel-title">Selecciona una categoria</div>'
+        f'<div class="sel-title">Selecciona categoria i equip</div>'
         f'<div class="cat-grid">{"".join(card_items)}</div>'
         f'</div>'
         f'<div id="detail-screen">'
