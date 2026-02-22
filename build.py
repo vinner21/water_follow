@@ -281,13 +281,36 @@ def match_result_class(match, our_team_ids):
 
 
 def short_category(name):
-    name = name.replace("LLIGA CATALANA ", "").replace("COMPETICIO CATALANA ", "")
-    for old, new in [("MASCULINA DE PROMOCIO", "Promo Masc."), ("MASCULI", "Masc."),
-                     ("MASCULINA", "Masc."), ("FEMENI", "Fem."), ("FEMENINA", "Fem."),
-                     ("MIXTE", "Mixt"), ("MIXTA", "Mixt"), ("BENJAMINA", "Benjami"),
-                     ("MASTER", "Master")]:
+    name = name.replace("LLIGA CATALANA ", "").replace("COMPETICIO CATALANA ", "").replace("COMPETICIÓ CATALANA ", "")
+    # Order matters: longer patterns first to avoid partial replacements
+    for old, new in [("MASCULINA DE PROMOCIO", "Promo Masc."), ("MASCULINA DE PROMOCIÓ", "Promo Masc."),
+                     ("MASCULINA", "Masc."), ("MASCULI", "Masc."), ("MASCULÍ", "Masc."),
+                     ("FEMENINA", "Fem."), ("FEMENI", "Fem."), ("FEMENÍ", "Fem."),
+                     ("MIXTE", "Mixt"), ("MIXTA", "Mixt"), ("BENJAMINA", "Benjamí"),
+                     ("MASTER", "Màster")]:
         name = name.replace(old, new)
     return name.strip()
+
+
+# Age categories for Catalan water polo (sort order + display label)
+# Order: lower = younger. Used for sorting and age labels on cards.
+CATEGORY_AGE = {
+    "BENJAMI":  (1, "10-11 anys"),
+    "ALEVI":    (2, "12-13 anys"),
+    "INFANTIL": (3, "14-15 anys"),
+    "CADET":    (4, "16-17 anys"),
+    "JUVENIL":  (5, "18-19 anys"),
+    "ABSOLUTA": (6, "20+ anys"),
+    "MASTER":   (7, "30+ anys"),
+}
+
+def category_age_info(tournament_name):
+    """Return (sort_order, age_label) for a tournament name."""
+    upper = tournament_name.upper()
+    for key, (order, label) in CATEGORY_AGE.items():
+        if key in upper:
+            return order, label
+    return 99, ""
 
 
 def slug(text):
@@ -322,7 +345,8 @@ main{max-width:780px;margin:0 auto;padding:.75rem}
 .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.6rem;padding:0 .2rem}
 .cat-card{background:var(--card);border-radius:var(--radius);padding:.8rem;cursor:pointer;border:2px solid transparent;transition:border-color .2s,box-shadow .2s,transform .15s;position:relative;overflow:hidden}
 .cat-card:hover{border-color:var(--blue-light);box-shadow:0 4px 12px rgba(0,119,182,.15);transform:translateY(-2px)}
-.cat-card-name{font-size:.85rem;font-weight:700;color:var(--blue-dark);margin-bottom:.3rem}
+.cat-card-name{font-size:.85rem;font-weight:700;color:var(--blue-dark);margin-bottom:.15rem}
+.cat-card-age{font-size:.7rem;color:var(--text-muted);margin-bottom:.25rem;font-style:italic}
 .cat-card-teams{font-size:.75rem;color:var(--text-muted);margin-bottom:.35rem}
 .cat-card-record{display:inline-flex;gap:.3rem;font-size:.7rem}
 .cat-card-record span{padding:.1rem .35rem;border-radius:3px;font-weight:600}
@@ -480,20 +504,29 @@ def generate_html(categories_data, config):
             }
         tournaments_map[tid]["entries"].append(entry)
 
+    # Sort tournaments by age (youngest first)
+    sorted_tids = sorted(tournaments_map.keys(),
+                         key=lambda tid: category_age_info(tournaments_map[tid]["tournament_name"])[0])
+    sorted_map = OrderedDict((tid, tournaments_map[tid]) for tid in sorted_tids)
+    tournaments_map = sorted_map
+
     # --- Screen 1: Category cards ---
     cat_card_items = []
     for tid, tinfo in tournaments_map.items():
         cat_id = slug(tinfo["tournament_name"])
         label = short_category(tinfo["tournament_name"])
         num_teams = len(tinfo["entries"])
+        _, age_label = category_age_info(tinfo["tournament_name"])
         teams_str = " / ".join(escape(e["team"]["name"]) for e in tinfo["entries"])
 
         # Aggregate stats across all teams in this category
         total_past = sum(1 for e in tinfo["entries"] for m in e["matches"] if m["finished"])
 
+        age_html = f'<div class="cat-card-age">{escape(age_label)}</div>' if age_label else ''
         cat_card_items.append(
             f'<div class="cat-card" onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
             f'<div class="cat-card-name">{escape(label)}</div>'
+            f'{age_html}'
             f'<div class="cat-card-teams">{num_teams} equip{"s" if num_teams > 1 else ""}</div>'
             f'<div class="cat-card-record"><span class="gf">{total_past} partits jugats</span></div>'
             f'<span class="cat-card-arrow">&#8250;</span>'
