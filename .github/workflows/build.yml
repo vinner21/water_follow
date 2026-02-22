@@ -32,7 +32,17 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install StatiCrypt
+        run: npm install -g staticrypt
+
       - name: Build site
+        env:
+          STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
         run: python build.py
 
       - name: Upload artifact
