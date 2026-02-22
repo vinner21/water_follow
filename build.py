@@ -117,8 +117,9 @@ def get_group_with_rounds(gid):
 
 
 def get_round_matches(rid):
-    data = api_get(f"rounds/{rid}", params={"include": "matches.results"})
+    data = api_get(f"rounds/{rid}", params={"include": "matches.results,matches.facility"})
     results_map = {}
+    facilities_map = {}
     matches = []
     for inc in data.get("included", []):
         if inc["type"] == "result":
@@ -128,8 +129,11 @@ def get_round_matches(rid):
                 "team_id": inc["relationships"]["team"]["data"]["id"],
                 "match_id": inc["relationships"]["match"]["data"]["id"],
             }
+        elif inc["type"] == "facility":
+            facilities_map[inc["id"]] = inc["attributes"].get("name", "")
         elif inc["type"] == "match":
             meta = inc.get("meta", {})
+            fac_ref = inc.get("relationships", {}).get("facility", {}).get("data")
             match = {
                 "id": inc["id"], "date": inc["attributes"]["date"],
                 "finished": inc["attributes"]["finished"],
@@ -138,6 +142,7 @@ def get_round_matches(rid):
                 "rest": inc["attributes"].get("rest", False),
                 "home_team": meta.get("home_team"),
                 "away_team": meta.get("away_team"),
+                "facility_id": fac_ref["id"] if fac_ref else None,
                 "results": [],
             }
             for res_ref in inc.get("relationships", {}).get("results", {}).get("data", []):
@@ -145,6 +150,10 @@ def get_round_matches(rid):
                 if r:
                     match["results"].append(r)
             matches.append(match)
+    # Resolve facility names
+    for m in matches:
+        fid = m.pop("facility_id", None)
+        m["venue"] = facilities_map.get(fid, "") if fid else ""
     return matches
 
 
@@ -432,7 +441,8 @@ main{max-width:780px;margin:0 auto;padding:.75rem}
 .match-row:hover{box-shadow:0 1px 6px rgba(0,0,0,.06)}
 .match-row.win{border-left-color:var(--green)}.match-row.loss{border-left-color:var(--red)}
 .match-row.draw{border-left-color:var(--orange)}.match-row.upcoming{border-left-color:var(--blue-light);background:var(--blue-pale)}
-.match-meta{display:flex;gap:.5rem;font-size:.7rem;color:var(--text-muted);margin-bottom:.2rem}
+.match-meta{display:flex;gap:.5rem;font-size:.7rem;color:var(--text-muted);margin-bottom:.2rem;flex-wrap:wrap}
+.match-venue{font-size:.68rem;color:var(--text-muted);font-style:italic;margin-top:.1rem}
 .match-teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.3rem;font-size:.82rem}
 .team-home{text-align:right;font-weight:500}.team-away{text-align:left;font-weight:500}
 .match-score{display:flex;align-items:center;gap:.15rem;font-weight:700;font-size:.9rem;justify-content:center}
@@ -495,7 +505,7 @@ function buildSearchIndex(){
     var d=window.WP[eid];
     Object.keys(d.teams).forEach(function(tid){
       if(!teamTournMap[tid])teamTournMap[tid]=[];
-      teamTournMap[tid].push({eid:eid,tname:d.tname,teamName:d.teams[tid]});
+      teamTournMap[tid].push({eid:eid,tname:d.tname,label:d.label||d.tname,teamName:d.teams[tid]});
     });
   });
   /* Build person index from ROST */
@@ -510,7 +520,7 @@ function buildSearchIndex(){
       var tours=teamTournMap[tid]||[];
       tours.forEach(function(t){
         var already=persons[k].teams.some(function(x){return x.eid===t.eid&&x.teamName===t.teamName;});
-        if(!already)persons[k].teams.push({eid:t.eid,tname:t.tname,teamName:t.teamName});
+        if(!already)persons[k].teams.push({eid:t.eid,tname:t.tname,label:t.label,teamName:t.teamName});
       });
     });
   });
@@ -540,9 +550,11 @@ function doSearch(q){
     var role=p.ro==='player'?'Jugador':'Staff';
     var by=p.bd?p.bd.substring(0,4):'';
     var byH=by?' <span class="search-result-by">('+by+')</span>':'';
-    var tags='';
+    var tags='';var seenT={};
     p.teams.forEach(function(t){
-      tags+='<span class="search-result-tag" onclick="clearSearch();showDetail(\\''+t.eid+'\\')" title="'+esc(t.teamName)+'">'+esc(t.tname)+'</span>';
+      var lbl=t.label||t.tname;
+      if(seenT[lbl])return;seenT[lbl]=true;
+      tags+='<span class="search-result-tag" onclick="clearSearch();showDetail(\\''+t.eid+'\\')" title="'+esc(t.teamName)+'">'+esc(lbl)+'</span>';
     });
     html+='<div class="search-result-item"><div><span class="search-result-name">'+name+'</span>'+byH+'<span class="search-result-role">'+role+'</span></div><div class="search-result-teams">'+tags+'</div></div>';
   });
@@ -641,6 +653,7 @@ function renderForTeam(entryId,teamId){
   if(future.length>0){
     var nm=future[0],hN=esc(data.teams[nm.h]||'?'),aN=esc(data.teams[nm.a]||'Descansa');
     var isH=tids.has(nm.h);
+    var venueNext=nm.v?'<div class="next-round" style="font-style:italic">'+esc(nm.v)+'</div>':'';
     nextH='<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Proper Partit<span class="toggle-arrow">\u25B2</span></h3>'+
       '<div class="section-content"><div class="next-match-card">'+
       '<div class="next-date">'+fmtLong(nm.d)+'</div>'+
@@ -648,7 +661,7 @@ function renderForTeam(entryId,teamId){
       '<span class="'+(isH?'our-team':'')+'">'+ hN+'</span>'+
       '<span class="vs">vs</span>'+
       '<span class="'+(!isH?'our-team':'')+'">'+ aN+'</span>'+
-      '</div><div class="next-round">'+esc(nm.rn)+'</div></div></div></div>';
+      '</div><div class="next-round">'+esc(nm.rn)+'</div>'+venueNext+'</div></div></div>';
   }
   document.getElementById('next-'+entryId).innerHTML=nextH;
 
@@ -690,6 +703,7 @@ function renderForTeam(entryId,teamId){
         var isH=tids.has(m.h),os=isH?m.hs:m.as,ts=isH?m.as:m.hs;
         var cls='';if(os!=null&&ts!=null){cls=os>ts?'win':os<ts?'loss':'draw';}
         var hN=esc(data.teams[m.h]||'?'),aN=esc(data.teams[m.a]||'Descansa');
+        var venueR=m.v?'<div class="match-venue">'+esc(m.v)+'</div>':'';
         rH+='<div class="match-row '+cls+'">'+
           '<div class="match-meta"><span>'+fmtShort(m.d)+'</span><span>'+esc(m.rn)+'</span></div>'+
           '<div class="match-teams">'+
@@ -698,7 +712,7 @@ function renderForTeam(entryId,teamId){
           '<span class="score-sep">-</span>'+
           '<span>'+(m.as!=null?m.as:'-')+'</span></span>'+
           '<span class="team-away'+(!isH?' our-team':'')+'">'+ aN+'</span>'+
-          '</div></div>';
+          '</div>'+venueR+'</div>';
       });
     });
   }
@@ -712,13 +726,14 @@ function renderForTeam(entryId,teamId){
     uList.forEach(function(m){
       var isH=tids.has(m.h);
       var hN=esc(data.teams[m.h]||'?'),aN=esc(data.teams[m.a]||'Descansa');
+      var venueU=m.v?'<div class="match-venue">'+esc(m.v)+'</div>':'';
       items+='<div class="match-row upcoming">'+
         '<div class="match-meta"><span>'+fmtShort(m.d)+'</span><span>'+esc(m.rn)+'</span></div>'+
         '<div class="match-teams">'+
         '<span class="team-home'+(isH?' our-team':'')+'">'+hN+'</span>'+
         '<span class="vs-small">vs</span>'+
         '<span class="team-away'+(!isH?' our-team':'')+'">'+aN+'</span>'+
-        '</div></div>';
+        '</div>'+venueU+'</div>';
     });
     uH='<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Propers Partits<span class="toggle-arrow">\u25B2</span></h3>'+
       '<div class="section-content">'+items+'</div></div>';
@@ -922,6 +937,7 @@ def generate_html(categories_data, config):
                 "hs": hs_val, "as": as_val,
                 "rn": m.get("round_name", ""),
                 "gn": m.get("group_name", ""),
+                "v": m.get("venue", ""),
             })
 
         # Include ALL groups with standings
@@ -950,6 +966,7 @@ def generate_html(categories_data, config):
 
         wp_data[entry_id] = {
             "tid": tid, "tname": entry["tournament_name"],
+            "label": short_category(entry["tournament_name"]),
             "dt": team["id"],
             "teams": {k: v for k, v in entry["team_names"].items() if k in all_team_ids_set or k in team_ids},
             "groups": groups_json, "matches": matches_json,
