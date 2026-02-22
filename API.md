@@ -30,167 +30,83 @@ https://api.leverade.com
 
 ## Endpoints Utilitzats
 
-### 1. Torneig
+### 1. Descobriment de Torneigs (Manager)
 
 ```
-GET /tournaments/{tournament_id}
+GET /managers/{manager_id}?include=tournaments
 ```
 
-Retorna informació bàsica del torneig (nom, gènere, modalitat, estat).
+**Per a què:** Descobrir tots els torneigs actius gestionats per la Federació Catalana de Natació (manager_id: 314965). Filtrem per `status: "in_progress"` per obtenir només les competicions en curs.
+
+**Dades obtingudes:** Llista de torneigs amb nom, gènere, ordre i temporada.
 
 **Exemple:**
 ```
-GET https://api.leverade.com/tournaments/1317476
-```
-
-**Resposta:**
-```json
-{
-  "data": {
-    "type": "tournament",
-    "id": "1317476",
-    "attributes": {
-      "name": "LLIGA CATALANA ALEVI MIXTE",
-      "gender": "mixed",
-      "modality": "teams",
-      "status": "in_progress"
-    },
-    "relationships": {
-      "category": { "data": { "type": "category", "id": "3747" } },
-      "discipline": { "data": { "type": "discipline", "id": "14" } },
-      "manager": { "data": { "type": "manager", "id": "314965" } },
-      "season": { "data": { "type": "season", "id": "8400" } }
-    }
-  }
-}
+GET https://api.leverade.com/managers/314965?include=tournaments
 ```
 
 ---
 
-### 2. Equip
+### 2. Torneig (amb equips)
 
 ```
-GET /teams/{team_id}
+GET /tournaments/{tournament_id}?include=teams
 ```
 
-Retorna nom, avatar i club associat.
+**Per a què:** Per cada torneig actiu, obtenim la llista d'equips inscrits. Filtrem pels equips que pertanyen al nostre club (club_id: 4979831) per determinar en quines competicions participa el C.N. Sant Andreu.
+
+**Dades obtingudes:** Noms, IDs i avatars dels equips, i la relació amb el club.
 
 **Exemple:**
 ```
-GET https://api.leverade.com/teams/15618241
-```
-
-**Resposta (simplificada):**
-```json
-{
-  "data": {
-    "type": "team",
-    "id": "15618241",
-    "attributes": {
-      "name": "C.N. SANT ANDREU B",
-      "status": "confirmed"
-    },
-    "meta": {
-      "avatar": {
-        "large": "https://cdn.leverade.com/thumbnails/AaTcV9fsgKzp.500x500.jpg"
-      }
-    },
-    "relationships": {
-      "club": { "data": { "type": "club", "id": "4979831" } },
-      "registrable": { "data": { "type": "tournament", "id": "1317476" } }
-    }
-  }
-}
+GET https://api.leverade.com/tournaments/1317476?include=teams
 ```
 
 ---
 
-### 3. Grup (amb rondes)
+### 3. Torneig (amb grups)
+
+```
+GET /tournaments/{tournament_id}?include=groups
+```
+
+**Per a què:** Obtenir tots els grups (fases) d'un torneig. Cada torneig pot tenir múltiples fases (1a Fase, 2a Fase, 3a Fase, etc.) amb diversos grups a dins.
+
+**Dades obtingudes:** ID, nom, ordre i tipus de cada grup.
+
+**Exemple:**
+```
+GET https://api.leverade.com/tournaments/1317476?include=groups
+```
+
+---
+
+### 4. Grup (amb rondes/jornades)
 
 ```
 GET /groups/{group_id}?include=rounds
 ```
 
-Retorna la informació del grup i totes les seves jornades (rondes).
+**Per a què:** Per cada grup, obtenim les seves jornades (rondes). Necessari per després demanar els partits de cada jornada.
+
+**Dades obtingudes:** Nom, ordre, data d'inici i data de fi de cada jornada.
 
 **Exemple:**
 ```
 GET https://api.leverade.com/groups/3648205?include=rounds
 ```
 
-**Resposta (simplificada):**
-```json
-{
-  "data": {
-    "type": "group",
-    "id": "3648205",
-    "attributes": {
-      "name": "Grup Equips B 1a Fase",
-      "type": "league"
-    },
-    "relationships": {
-      "rounds": {
-        "data": [
-          { "type": "round", "id": "19435326" },
-          { "type": "round", "id": "19435327" }
-        ]
-      }
-    }
-  },
-  "included": [
-    {
-      "type": "round",
-      "id": "19435326",
-      "attributes": {
-        "name": "Jornada 1",
-        "order": 1,
-        "start_date": "2025-10-03 22:00:00",
-        "end_date": "2025-10-04 21:59:00"
-      }
-    }
-  ]
-}
-```
-
 ---
 
-### 4. Classificació d'un grup
+### 5. Classificació d'un grup
 
 ```
 GET /groups/{group_id}/standings
 ```
 
-Retorna la classificació completa amb estadístiques per equip.
+**Per a què:** Obtenir la taula classificatòria de cada grup amb totes les estadístiques per equip (punts, partits jugats/guanyats/empatats/perduts, gols a favor/contra).
 
-**Exemple:**
-```
-GET https://api.leverade.com/groups/3648205/standings
-```
-
-**Resposta (simplificada):**
-```json
-{
-  "meta": {
-    "standingsrows": [
-      {
-        "id": 15624000,
-        "name": "C.N. POBLE NOU B",
-        "position": 1,
-        "standingsstats": [
-          { "type": "score", "value": 30 },
-          { "type": "played_matches", "value": 10 },
-          { "type": "won_matches", "value": 10 },
-          { "type": "drawn_matches", "value": 0 },
-          { "type": "lost_matches", "value": 0 },
-          { "type": "value", "value": 111 },
-          { "type": "value_against", "value": 32 },
-          { "type": "value_difference", "value": 79 }
-        ]
-      }
-    ]
-  }
-}
-```
+**Dades obtingudes:** Posició, nom, ID i estadístiques de cada equip al grup.
 
 **Estadístiques disponibles (`standingsstats`):**
 
@@ -204,93 +120,118 @@ GET https://api.leverade.com/groups/3648205/standings
 | `value` | Gols a favor |
 | `value_against` | Gols en contra |
 | `value_difference` | Diferència de gols |
-| `penalty_shootout_periods_won` | Períodes de penalti guanyats |
-| `penalty_shootout_periods_lost` | Períodes de penalti perduts |
+
+**Exemple:**
+```
+GET https://api.leverade.com/groups/3648205/standings
+```
 
 ---
 
-### 5. Partits d'una jornada (amb resultats)
+### 6. Partits d'una jornada (amb resultats)
 
 ```
 GET /rounds/{round_id}?include=matches.results
 ```
 
-Retorna tots els partits d'una jornada amb els seus resultats (gols per equip).
+**Per a què:** Per cada jornada, obtenim tots els partits amb els seus resultats (gols per equip). Això ens dóna el calendari complet, resultats passats i partits futurs.
+
+**Dades obtingudes:** Data, estat (acabat/cancel·lat/ajornat), equip local, equip visitant, gols de cada equip.
 
 **Exemple:**
 ```
 GET https://api.leverade.com/rounds/19435336?include=matches.results
 ```
 
+---
+
+### 7. Informació d'un equip
+
+```
+GET /teams/{team_id}
+```
+
+**Per a què:** Obtenir el nom d'equips que apareixen als partits però no estan a les classificacions (equips de grups que no són el nostre). S'utilitza com a fallback per resoldre noms d'equip desconeguts.
+
+**Dades obtingudes:** Nom, avatar, club associat.
+
+**Exemple:**
+```
+GET https://api.leverade.com/teams/15618241
+```
+
+---
+
+### 8. Plantilla d'un equip (jugadors i staff)
+
+```
+GET /teams/{team_id}?include=participants.license.profile
+```
+
+**Per a què:** Obtenir la llista de jugadors i cos tècnic de cada equip. Fa una cadena d'includes: equip → participants → llicències → perfils personals.
+
+**Dades obtingudes:**
+- **Participants:** relació entre una persona i un equip dins un torneig
+- **Llicències:** tipus (player/staff), número de llicència
+- **Perfils:** nom, cognom, data de naixement, gènere, nacionalitat
+
+**Exemple:**
+```
+GET https://api.leverade.com/teams/15618241?include=participants.license.profile
+```
+
 **Resposta (simplificada):**
 ```json
 {
-  "data": {
-    "type": "round",
-    "id": "19435336",
-    "attributes": {
-      "name": "Jornada 11",
-      "order": 11,
-      "start_date": "2026-02-20 23:00:00",
-      "end_date": "2026-02-21 22:59:00"
-    }
-  },
   "included": [
     {
-      "type": "result",
-      "id": "190941131",
+      "type": "profile",
+      "id": "2879201",
       "attributes": {
-        "value": 13,
-        "score": 3
-      },
-      "relationships": {
-        "match": { "data": { "id": "143260964", "type": "match" } },
-        "team": { "data": { "id": "15618241", "type": "team" } }
+        "birthdate": "2014-03-15",
+        "first_name": "MARC",
+        "gender": "male",
+        "last_name": "GARCIA LOPEZ",
+        "nationality": "es"
       }
     },
     {
-      "type": "match",
-      "id": "143260964",
+      "type": "license",
+      "id": "12345678",
       "attributes": {
-        "date": "2026-02-21 15:45:00",
-        "datetime": "2026-02-21 15:45:00",
-        "display_timezone": "Europe/Madrid",
-        "finished": true,
-        "canceled": false,
-        "postponed": false,
-        "rest": false
-      },
-      "meta": {
-        "home_team": "15618241",
-        "away_team": "15621795"
+        "type": "player",
+        "number": "1011634"
       },
       "relationships": {
-        "facility": { "data": { "type": "facility", "id": "74217" } },
-        "round": { "data": { "type": "round", "id": "19435336" } },
-        "results": {
-          "data": [
-            { "type": "result", "id": "190941131" },
-            { "type": "result", "id": "190941138" }
-          ]
-        }
+        "profile": { "data": { "type": "profile", "id": "2879201" } }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "98765432",
+      "relationships": {
+        "license": { "data": { "type": "license", "id": "12345678" } },
+        "participable": { "data": { "type": "tournament", "id": "1317476" } }
       }
     }
   ]
 }
 ```
 
-**Camp `result.attributes.value`** = gols totals de l'equip en el partit.
-**Camp `result.attributes.score`** = períodes guanyats (a waterpolo aleví es juga per períodes).
-
 ---
 
-### 6. Partits d'una jornada (amb períodes)
+## Endpoints NO disponibles (requereixen autenticació)
 
-```
-GET /rounds/{round_id}?include=matches.periods
-```
+Aquests endpoints retornen **HTTP 401** i no es poden utilitzar sense credencials:
 
-Similar a l'anterior però retorna els períodes individuals de cada partit.
+| Endpoint | Descripció |
+|---|---|
+| `GET /licenses/{id}` | Detalls de llicència |
+| `GET /profiles/{id}` | Perfil directe |
+| `GET /matches/{id}?include=lineups` | Alineacions dels partits |
+| `GET /matches/{id}?include=events` | Esdeveniments (gols, expulsions) |
+| `GET /matches/{id}?include=actions` | Accions del partit |
+| `GET /matches/{id}?include=scorers` | Golejadors |
 
 ---
 
@@ -306,33 +247,38 @@ L'API segueix parcialment l'especificació [JSON:API](https://jsonapi.org/):
 ## Cadena de Relacions
 
 ```
-Tournament → Groups → Rounds → Matches → Results
-                   → Standings
+Manager → Tournaments → Groups → Rounds → Matches → Results
+                     → Teams → Participants → Licenses → Profiles
+                             → Standings
 ```
 
-- Un **torneig** té diversos **grups** (fases)
-- Cada **grup** té diverses **rondes** (jornades)
-- Cada **ronda** té diversos **partits**
-- Cada **partit** té **resultats** (un per equip)
-- Cada **grup** té una **classificació**
+- Un **manager** descobreix tots els **torneigs** actius
+- Cada **torneig** té diversos **grups** (fases) i **equips**
+- Cada **grup** té diverses **rondes** (jornades) i una **classificació**
+- Cada **ronda** té diversos **partits** amb **resultats**
+- Cada **equip** té **participants** amb **llicències** i **perfils**
 
 ## Flux de Dades del Build
 
 ```
-1. GET /tournaments/{id}           → Nom del torneig
-2. GET /teams/{id}                 → Nom i avatar de l'equip
+1. GET /managers/{id}?include=tournaments    → Descobrir torneigs actius
+2. Per cada torneig:
+   a. GET /tournaments/{id}?include=teams    → Trobar equips del nostre club
+   b. GET /tournaments/{id}?include=groups   → Llistar grups/fases
 3. Per cada grup:
-   a. GET /groups/{id}?include=rounds  → Llista de jornades
-   b. GET /groups/{id}/standings       → Classificació
+   a. GET /groups/{id}?include=rounds        → Llistar jornades
+   b. GET /groups/{id}/standings             → Classificació
    c. Per cada jornada:
       GET /rounds/{id}?include=matches.results → Partits i resultats
-4. Filtrar partits del nostre equip
-5. Generar HTML estàtic
+4. Per cada equip (de tots els grups):
+   GET /teams/{id}?include=participants.license.profile → Plantilla
+5. Generar HTML estàtic amb totes les dades embedded
 ```
 
 ## Peticions Totals per Build
 
-Per a 1 grup amb 13 jornades: **~17 peticions** (1 torneig + 1 equip + 1 grup + 1 standings + 13 jornades).
+Amb 11 categories, ~40 grups i ~239 equips únics: **~450-500 peticions** totals
+(amb 0.3s de delay entre cada una = ~2-3 minuts de build).
 
 ## Enllaços de Referència
 

@@ -418,8 +418,8 @@ main{max-width:780px;margin:0 auto;padding:.75rem}
 .record-bar .ga{background:#e9ecef;color:var(--text-muted)}
 .section-block{background:var(--card);border-radius:var(--radius);padding:.8rem;margin-bottom:.6rem}
 .section-block h3{font-size:.9rem;color:var(--blue-dark);border-bottom:2px solid var(--blue-pale);padding-bottom:.25rem;margin-bottom:.5rem;cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:space-between}
-.section-block h3::after{content:'\25B2';font-size:.6rem;color:var(--blue-light);transition:transform .2s}
-.section-block.collapsed h3::after{transform:rotate(180deg)}
+.section-block h3 .toggle-arrow{font-size:.55rem;color:var(--blue-light);transition:transform .2s;display:inline-block}
+.section-block.collapsed h3 .toggle-arrow{transform:rotate(180deg)}
 .section-block.collapsed .section-content{display:none}
 .empty{color:var(--text-muted);font-size:.85rem}
 .next-match-card{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;border-radius:8px;padding:1rem;text-align:center}
@@ -557,7 +557,7 @@ function renderForTeam(entryId,teamId){
   if(future.length>0){
     var nm=future[0],hN=esc(data.teams[nm.h]||'?'),aN=esc(data.teams[nm.a]||'Descansa');
     var isH=tids.has(nm.h);
-    nextH='<div class=\"section-block collapsed\"><h3 onclick=\"toggleSection(this)\">Proper Partit</h3>'+
+    nextH='<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Proper Partit<span class="toggle-arrow">\u25B2</span></h3>'+
       '<div class="section-content"><div class="next-match-card">'+
       '<div class="next-date">'+fmtLong(nm.d)+'</div>'+
       '<div class="next-teams">'+
@@ -636,7 +636,7 @@ function renderForTeam(entryId,teamId){
         '<span class="team-away'+(!isH?' our-team':'')+'">'+aN+'</span>'+
         '</div></div>';
     });
-    uH='<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Propers Partits</h3>'+
+    uH='<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Propers Partits<span class="toggle-arrow">\u25B2</span></h3>'+
       '<div class="section-content">'+items+'</div></div>';
   }
   document.getElementById('upcoming-'+entryId).innerHTML=uH;
@@ -649,6 +649,8 @@ function renderForTeam(entryId,teamId){
     var seen={};var uRoster=[];
     roster.forEach(function(p){var k=p.fn+'|'+p.ln+'|'+(p.bd||'');if(!seen[k]){seen[k]=1;uRoster.push(p);}});
     var players=uRoster.filter(function(p){return p.ro==='player';});
+    /* Sort players oldest first (birthdate ascending = oldest first) */
+    players.sort(function(a,b){return(a.bd||'9999').localeCompare(b.bd||'9999');});
     var staff=uRoster.filter(function(p){return p.ro!=='player';});
     var rows='';
     players.forEach(function(p){
@@ -662,7 +664,7 @@ function renderForTeam(entryId,teamId){
       var name=esc(titleCase(p.fn)+' '+titleCase(p.ln));
       srows+='<tr><td class="roster-name">'+name+'</td><td class="roster-role">Staff</td></tr>';
     });
-    rosH='<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Plantilla ('+players.length+' jugadors)</h3>'+
+    rosH='<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Plantilla ('+players.length+' jugadors)<span class="toggle-arrow">\u25B2</span></h3>'+
       '<div class="section-content"><div class="table-wrap"><table class="roster-table"><thead><tr><th>Nom</th><th>Any</th></tr></thead>'+
       '<tbody>'+rows+'</tbody></table></div>';
     if(srows)rosH+='<div class="roster-staff-title">Cos tecnic ('+staff.length+')</div>'+
@@ -893,8 +895,8 @@ def generate_html(categories_data, config):
             f'<div class="record-bar" id="record-{entry_id}"></div>'
             f'</div>'
             f'<div id="next-{entry_id}"></div>'
-            f'<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Classificacio</h3><div class="section-content" id="standings-{entry_id}"></div></div>'
-            f'<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Resultats</h3><div class="section-content" id="results-{entry_id}"></div></div>'
+            f'<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Classificacio<span class="toggle-arrow">\u25B2</span></h3><div class="section-content" id="standings-{entry_id}"></div></div>'
+            f'<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Resultats<span class="toggle-arrow">\u25B2</span></h3><div class="section-content" id="results-{entry_id}"></div></div>'
             f'<div id="upcoming-{entry_id}"></div>'
             f'<div id="roster-{entry_id}"></div>'
             f'<div class="section-block links-block" id="links-{entry_id}"></div>'
