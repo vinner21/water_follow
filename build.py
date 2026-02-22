@@ -316,7 +316,9 @@ main{max-width:780px;margin:0 auto;padding:.75rem}
 /* Selection screen */
 #selection-screen{display:block}
 #detail-screen{display:none}
-.sel-title{text-align:center;font-size:1rem;color:var(--blue-dark);margin:.8rem 0 .6rem;font-weight:600}
+#team-screen{display:none}
+.sel-title{text-align:center;font-size:1rem;color:var(--blue-dark);margin:.8rem 0 .2rem;font-weight:600}
+.sel-subtitle{text-align:center;font-size:.82rem;color:var(--text-muted);margin-bottom:.6rem}
 .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.6rem;padding:0 .2rem}
 .cat-card{background:var(--card);border-radius:var(--radius);padding:.8rem;cursor:pointer;border:2px solid transparent;transition:border-color .2s,box-shadow .2s,transform .15s;position:relative;overflow:hidden}
 .cat-card:hover{border-color:var(--blue-light);box-shadow:0 4px 12px rgba(0,119,182,.15);transform:translateY(-2px)}
@@ -325,7 +327,7 @@ main{max-width:780px;margin:0 auto;padding:.75rem}
 .cat-card-record{display:inline-flex;gap:.3rem;font-size:.7rem}
 .cat-card-record span{padding:.1rem .35rem;border-radius:3px;font-weight:600}
 .cat-card-record .w{background:#d4edda;color:var(--green)}.cat-card-record .d{background:#fff3cd;color:#856404}
-.cat-card-record .l{background:#f8d7da;color:var(--red)}
+.cat-card-record .l{background:#f8d7da;color:var(--red)}.cat-card-record .gf{background:var(--blue-pale);color:var(--blue-dark)}
 .cat-card-next{font-size:.72rem;color:var(--text-muted);margin-top:.3rem;border-top:1px solid #eee;padding-top:.3rem}
 .cat-card-next strong{color:var(--blue)}
 .cat-card-arrow{position:absolute;right:.6rem;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--blue-light);opacity:.5}
@@ -380,24 +382,59 @@ footer a{color:var(--blue)}
 """
 
 JS = """
+function showScreen(name){
+  ['selection-screen','team-screen','detail-screen'].forEach(s=>{
+    document.getElementById(s).style.display=s===name?'block':'none';
+  });
+  window.scrollTo(0,0);
+}
+function showCategories(){
+  showScreen('selection-screen');
+  history.replaceState(null,'','#');
+}
+function showTeams(catId){
+  showScreen('team-screen');
+  document.querySelectorAll('.team-panel').forEach(p=>p.style.display='none');
+  const el=document.getElementById('teams-'+catId);
+  if(el)el.style.display='block';
+  history.replaceState(null,'','#cat-'+catId);
+}
 function showDetail(id){
-  document.getElementById('selection-screen').style.display='none';
-  document.getElementById('detail-screen').style.display='block';
+  showScreen('detail-screen');
   document.querySelectorAll('.detail-category').forEach(c=>c.style.display='none');
   const el=document.getElementById(id);
-  if(el)el.style.display='block';
-  window.scrollTo(0,0);
+  if(el){
+    el.style.display='block';
+    const catId=el.dataset.catId;
+    const numTeams=parseInt(el.dataset.numTeams)||1;
+    const catLabel=el.dataset.catLabel||'';
+    const btn=document.getElementById('detail-back-btn');
+    const lbl=document.getElementById('detail-back-label');
+    if(numTeams>1){
+      btn.onclick=function(){showTeams(catId);};
+      lbl.textContent=catLabel;
+    } else {
+      btn.onclick=function(){showCategories();};
+      lbl.textContent='Totes les categories';
+    }
+  }
   history.replaceState(null,'','#'+id);
 }
-function showSelection(){
-  document.getElementById('detail-screen').style.display='none';
-  document.getElementById('selection-screen').style.display='block';
-  window.scrollTo(0,0);
-  history.replaceState(null,'','#');
+function showDetailOrTeams(catId, teamCount){
+  if(teamCount===1){
+    const panel=document.getElementById('teams-'+catId);
+    if(panel){const btn=panel.querySelector('[data-detail]');if(btn)showDetail(btn.dataset.detail);}
+  } else { showTeams(catId); }
 }
 window.addEventListener('DOMContentLoaded',()=>{
   const h=location.hash.slice(1);
-  if(h){const el=document.getElementById(h);if(el&&el.classList.contains('detail-category'))showDetail(h);}
+  if(!h)return;
+  if(h.startsWith('cat-')){
+    const catId=h.slice(4);showTeams(catId);
+  } else {
+    const el=document.getElementById(h);
+    if(el&&el.classList.contains('detail-category'))showDetail(h);
+  }
 });
 """
 
@@ -416,10 +453,8 @@ def generate_html(categories_data, config):
         for team in cat["our_teams"]:
             team_id = team["id"]
             team_ids = {team_id}
-            # Filter matches for this specific team
             team_matches = [m for m in cat["matches"]
                            if m["home_team"] in team_ids or m["away_team"] in team_ids]
-            # Filter groups that contain this specific team
             team_groups = [g for g in cat["groups"] if team_id in g["our_team_ids"]]
             entries.append({
                 "tournament_id": cat["tournament_id"],
@@ -431,17 +466,101 @@ def generate_html(categories_data, config):
                 "team_names": cat["team_names"],
             })
 
-    # --- Build selection cards and detail sections ---
-    card_items = []
-    detail_sections = []
+    # --- Group entries by tournament for 2-level nav ---
+    from collections import OrderedDict
+    tournaments_map = OrderedDict()
+    for entry in entries:
+        tid = entry["tournament_id"]
+        if tid not in tournaments_map:
+            tournaments_map[tid] = {
+                "tournament_name": entry["tournament_name"],
+                "entries": [],
+            }
+        tournaments_map[tid]["entries"].append(entry)
 
+    # --- Screen 1: Category cards ---
+    cat_card_items = []
+    for tid, tinfo in tournaments_map.items():
+        cat_id = slug(tinfo["tournament_name"])
+        label = short_category(tinfo["tournament_name"])
+        num_teams = len(tinfo["entries"])
+        teams_str = " / ".join(escape(e["team"]["name"]) for e in tinfo["entries"])
+
+        # Aggregate stats across all teams in this category
+        total_past = sum(1 for e in tinfo["entries"] for m in e["matches"] if m["finished"])
+
+        cat_card_items.append(
+            f'<div class="cat-card" onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
+            f'<div class="cat-card-name">{escape(label)}</div>'
+            f'<div class="cat-card-teams">{num_teams} equip{"s" if num_teams > 1 else ""}</div>'
+            f'<div class="cat-card-record"><span class="gf">{total_past} partits jugats</span></div>'
+            f'<span class="cat-card-arrow">&#8250;</span>'
+            f'</div>'
+        )
+
+    # --- Screen 2: Team panels (one per category) ---
+    team_panels = []
+    for tid, tinfo in tournaments_map.items():
+        cat_id = slug(tinfo["tournament_name"])
+        label = short_category(tinfo["tournament_name"])
+        team_cards = []
+        for entry in tinfo["entries"]:
+            team = entry["team"]
+            team_ids = entry["team_ids"]
+            entry_id = slug(entry["tournament_name"] + "-" + team["name"])
+            team_name = escape(team["name"])
+
+            past = [m for m in entry["matches"] if m["finished"]]
+            future = [m for m in entry["matches"] if not m["finished"] and m["date"]]
+            past.sort(key=lambda m: m["date"] or "", reverse=True)
+            future.sort(key=lambda m: m["date"] or "")
+
+            wins = sum(1 for m in past if match_result_class(m, team_ids) == "win")
+            losses = sum(1 for m in past if match_result_class(m, team_ids) == "loss")
+            draws = len(past) - wins - losses
+
+            card_next = ""
+            if future:
+                nm = future[0]
+                hn = escape(entry["team_names"].get(nm["home_team"], "?"))
+                an = escape(entry["team_names"].get(nm["away_team"] or "", "Descansa"))
+                card_next = (
+                    f'<div class="cat-card-next">Proper: <strong>{format_date_short(nm["date"])}</strong> '
+                    f'{hn} vs {an}</div>'
+                )
+
+            team_cards.append(
+                f'<div class="cat-card" data-detail="{entry_id}" onclick="showDetail(\'{entry_id}\')">'
+                f'<div class="cat-card-name">{team_name}</div>'
+                f'<div class="cat-card-record">'
+                f'<span class="w">{wins}V</span><span class="d">{draws}E</span>'
+                f'<span class="l">{losses}D</span></div>'
+                f'{card_next}'
+                f'<span class="cat-card-arrow">&#8250;</span>'
+                f'</div>'
+            )
+
+        team_panels.append(
+            f'<div class="team-panel" id="teams-{cat_id}" style="display:none">'
+            f'<div class="sel-title">{escape(label)}</div>'
+            f'<div class="sel-subtitle">Selecciona equip</div>'
+            f'<div class="cat-grid">{"".join(team_cards)}</div>'
+            f'</div>'
+        )
+
+    # --- Screen 3: Detail sections (one per team-entry) ---
+    detail_sections = []
     for entry in entries:
         tid = entry["tournament_id"]
         team = entry["team"]
         team_ids = entry["team_ids"]
+        cat_id = slug(entry["tournament_name"])
         entry_id = slug(entry["tournament_name"] + "-" + team["name"])
-        label = short_category(entry["tournament_name"])
         team_name = escape(team["name"])
+        num_teams = len(tournaments_map[tid]["entries"])
+        # back_target: if only 1 team go back to categories, if >1 go back to team selection
+        back_onclick = f"showTeams('{cat_id}')" if num_teams > 1 else "showCategories()"
+        back_label = escape(short_category(entry["tournament_name"])) if num_teams > 1 else "Totes les categories"
 
         past = [m for m in entry["matches"] if m["finished"]]
         future = [m for m in entry["matches"] if not m["finished"] and m["date"]]
@@ -460,30 +579,6 @@ def generate_html(categories_data, config):
                 else:
                     gf += aws; ga += hs
 
-        # Card: next match preview
-        card_next = ""
-        if future:
-            nm = future[0]
-            hn = escape(entry["team_names"].get(nm["home_team"], "?"))
-            an = escape(entry["team_names"].get(nm["away_team"] or "", "Descansa"))
-            card_next = (
-                f'<div class="cat-card-next">Proper: <strong>{format_date_short(nm["date"])}</strong> '
-                f'{hn} vs {an}</div>'
-            )
-
-        card_items.append(
-            f'<div class="cat-card" onclick="showDetail(\'{entry_id}\')">'
-            f'<div class="cat-card-name">{escape(label)}</div>'
-            f'<div class="cat-card-teams">{team_name}</div>'
-            f'<div class="cat-card-record">'
-            f'<span class="w">{wins}V</span><span class="d">{draws}E</span>'
-            f'<span class="l">{losses}D</span></div>'
-            f'{card_next}'
-            f'<span class="cat-card-arrow">&#8250;</span>'
-            f'</div>'
-        )
-
-        # --- Build detail section ---
         # Next match
         next_match_html = ""
         if future:
@@ -543,7 +638,7 @@ def generate_html(categories_data, config):
                 f'</span></div>'
             )
 
-        # Standings (only groups where this specific team plays)
+        # Standings
         standings_html = ""
         for grp in entry["groups"]:
             rows = ""
@@ -577,7 +672,7 @@ def generate_html(categories_data, config):
         standings_block = standings_html if standings_html else '<p class="empty">Classificacio no disponible.</p>'
 
         detail_section = (
-            f'<div class="detail-category" id="{entry_id}" style="display:none">'
+            f'<div class="detail-category" id="{entry_id}" data-cat-id="{cat_id}" data-num-teams="{num_teams}" data-cat-label="{escape(short_category(entry["tournament_name"]))}" style="display:none">'
             f'<div class="category-header"><h2>{escape(entry["tournament_name"])}</h2>'
             f'<div class="teams-label">{team_name}</div>'
             f'<div class="record-bar">'
@@ -593,7 +688,7 @@ def generate_html(categories_data, config):
         )
         detail_sections.append(detail_section)
 
-    total_entries = len(entries)
+    total_cats = len(tournaments_map)
 
     html = (
         '<!DOCTYPE html><html lang="ca"><head><meta charset="utf-8">'
@@ -602,16 +697,24 @@ def generate_html(categories_data, config):
         f'<style>{CSS}</style></head><body>'
         f'<header><div class="header-inner">'
         f'<div><h1>&#127937; Waterpolo Tracker</h1>'
-        f'<div class="subtitle">{total_entries} equips</div>'
+        f'<div class="subtitle">{total_cats} categories</div>'
         f'</div></div></header>'
         f'<main>'
+        # Screen 1: Categories
         f'<div id="selection-screen">'
-        f'<div class="sel-title">Selecciona categoria i equip</div>'
-        f'<div class="cat-grid">{"".join(card_items)}</div>'
+        f'<div class="sel-title">Selecciona una categoria</div>'
+        f'<div class="cat-grid">{"".join(cat_card_items)}</div>'
         f'</div>'
-        f'<div id="detail-screen">'
-        f'<div class="back-bar"><button class="btn-back" onclick="showSelection()">&#8249; Tornar</button>'
+        # Screen 2: Team selection
+        f'<div id="team-screen" style="display:none">'
+        f'<div class="back-bar"><button class="btn-back" onclick="showCategories()">&#8249; Tornar</button>'
         f'<span class="back-label">Totes les categories</span></div>'
+        f'{"".join(team_panels)}'
+        f'</div>'
+        # Screen 3: Detail
+        f'<div id="detail-screen" style="display:none">'
+        f'<div class="back-bar" id="detail-back-bar"><button class="btn-back" id="detail-back-btn">&#8249; Tornar</button>'
+        f'<span class="back-label" id="detail-back-label"></span></div>'
         f'{"".join(detail_sections)}'
         f'</div>'
         f'</main>'
