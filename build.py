@@ -720,7 +720,7 @@ function renderForTeam(entryId,teamId){
 
   /* Upcoming */
   var uH='';
-  var uList=future.slice(1);
+  var uList=future;
   if(uList.length>0){
     var items='';
     uList.forEach(function(m){
