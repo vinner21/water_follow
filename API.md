@@ -36,9 +36,9 @@ https://api.leverade.com
 GET /managers/{manager_id}?include=tournaments
 ```
 
-**Per a què:** Descobrir tots els torneigs actius gestionats per la Federació Catalana de Natació (manager_id: 314965). Filtrem per `status: "in_progress"` per obtenir només les competicions en curs.
+**Per a què:** Descobrir tots els torneigs gestionats per la Federació Catalana de Natació (manager_id: 314965). L'endpoint retorna **tots** els torneigs (actius i finalitzats). Filtrem per `status: "in_progress"` o `status: "finished"` i els agrupem per `season_id` per gestionar múltiples temporades.
 
-**Dades obtingudes:** Llista de torneigs amb nom, gènere, ordre i temporada.
+**Dades obtingudes:** Llista de torneigs amb nom, gènere, ordre, temporada i estat (`in_progress` / `finished`).
 
 **Exemple:**
 ```
@@ -252,17 +252,21 @@ Manager → Tournaments → Groups → Rounds → Matches → Results
                              → Standings
 ```
 
-- Un **manager** descobreix tots els **torneigs** actius
+- Un **manager** descobreix tots els **torneigs** (actius i finalitzats)
+- Els torneigs s'agrupen per **temporada** (`season_id`)
 - Cada **torneig** té diversos **grups** (fases) i **equips**
 - Cada **grup** té diverses **rondes** (jornades) i una **classificació**
 - Cada **ronda** té diversos **partits** amb **resultats**
 - Cada **equip** té **participants** amb **llicències** i **perfils**
 
-## Flux de Dades del Build
+## Flux de Dades del Build (Multi-Temporada)
 
 ```
-1. GET /managers/{id}?include=tournaments    → Descobrir torneigs actius
-2. Per cada torneig:
+1. GET /managers/{id}?include=tournaments    → Descobrir TOTS els torneigs
+   ├── Agrupar per season_id
+   ├── Temporades finalitzades amb cache → Carregar de _data/seasons/{id}.json
+   └── Temporades sense cache o en curs → Seguir amb passos 2-4
+2. Per cada torneig (de temporades no cachejades):
    a. GET /tournaments/{id}?include=teams    → Trobar equips del nostre club
    b. GET /tournaments/{id}?include=groups   → Llistar grups/fases
 3. Per cada grup:
@@ -272,13 +276,26 @@ Manager → Tournaments → Groups → Rounds → Matches → Results
       GET /rounds/{id}?include=matches.results → Partits i resultats
 4. Per cada equip (de tots els grups):
    GET /teams/{id}?include=participants.license.profile → Plantilla
-5. Generar HTML estàtic amb totes les dades embedded
+5. Desar cache per temporades finalitzades → _data/seasons/{id}.json
+6. Generar HTML estàtic amb dades de TOTES les temporades embedded
 ```
+
+## Cache de Temporades Històriques
+
+Les temporades amb `status: "finished"` es guarden com a fitxers JSON a
+`_data/seasons/{season_id}.json`. En builds posteriors, si el fitxer existeix,
+**no es fan crides API** per aquella temporada (0 peticions).
+
+Per forçar un refresh d'una temporada cachejada, esborra manualment el fitxer JSON.
 
 ## Peticions Totals per Build
 
-Amb 11 categories, ~40 grups i ~239 equips únics: **~450-500 peticions** totals
-(amb 0.3s de delay entre cada una = ~2-3 minuts de build).
+- **Primera execució** (sense cache): ~450-500 peticions per temporada en curs
+  + ~450-500 per cada temporada històrica nova. Total possible: ~1000+ peticions.
+- **Execucions posteriors** (amb cache): ~450-500 peticions només per la temporada
+  en curs. Temporades històriques: **0 peticions** (carregades de cache).
+
+(amb 0.3s de delay entre cada petició)
 
 ## Enllaços de Referència
 
