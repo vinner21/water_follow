@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -44,6 +44,18 @@ jobs:
         env:
           STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
         run: python build.py
+
+      - name: Commit season cache
+        run: |
+          if git diff --quiet _data/seasons/ && [ -z "$(git ls-files --others --exclude-standard _data/seasons/)" ]; then
+            echo "No new season cache files"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add _data/seasons/*.json
+            git commit -m "chore: update season cache [skip ci]" || true
+            git push
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
