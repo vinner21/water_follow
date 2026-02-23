@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """
-Build script for Water Polo Tracker - Multi-Category.
+Build script for Water Polo Tracker - Multi-Category, Multi-Season.
 
 Fetches data from the Leverade API (used by clupik.pro / Federacio Catalana
 de Natacio) and generates a static HTML site with all water-polo categories
 where the configured club has teams.
+
+Supports historical seasons: finished seasons are cached as JSON files in
+_data/seasons/ so API calls are only made once per closed season.
 """
 
 import json
@@ -12,6 +15,7 @@ import os
 import re
 import sys
 import time
+from collections import OrderedDict
 from datetime import datetime
 from html import escape
 
@@ -20,6 +24,7 @@ import requests
 API_BASE = "https://api.leverade.com"
 CLUPIK_BASE = "https://clupik.pro"
 REQUEST_DELAY = 0.3
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_data", "seasons")
 
 
 # ---------------------------------------------------------------------------
@@ -35,10 +40,131 @@ def api_get(endpoint, params=None):
 
 
 # ---------------------------------------------------------------------------
+# Season cache
+# ---------------------------------------------------------------------------
+
+def load_season_cache(season_id):
+    """Load cached season data from _data/seasons/{season_id}.json.
+    Returns None if cache file does not exist."""
+    path = os.path.join(DATA_DIR, f"{season_id}.json")
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    # Convert lists back to sets where needed
+    for t in data.get("tournaments", []):
+        t["our_team_ids"] = set(t["our_team_ids"])
+        for g in t.get("groups", []):
+            g["our_team_ids"] = set(g["our_team_ids"])
+    print(f"  Loaded season {data.get('season_label', season_id)} from cache ({path})")
+    return data
+
+
+def save_season_cache(season_id, season_label, categories_data):
+    """Persist finished-season data as JSON so it never needs to be fetched again."""
+    os.makedirs(DATA_DIR, exist_ok=True)
+    serializable = []
+    for cat in categories_data:
+        c = {
+            "tournament_id": cat["tournament_id"],
+            "tournament_name": cat["tournament_name"],
+            "our_teams": cat["our_teams"],
+            "our_team_ids": list(cat["our_team_ids"]),
+            "matches": cat["matches"],
+            "team_names": cat["team_names"],
+            "rosters": cat.get("rosters", {}),
+            "groups": [],
+        }
+        for g in cat["groups"]:
+            c["groups"].append({
+                "id": g["id"],
+                "name": g["name"],
+                "standings": g["standings"],
+                "our_team_ids": list(g["our_team_ids"]),
+            })
+        serializable.append(c)
+    payload = {
+        "season_id": season_id,
+        "season_label": season_label,
+        "tournaments": serializable,
+    }
+    path = os.path.join(DATA_DIR, f"{season_id}.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=1)
+    print(f"  Cached season {season_label} -> {path}")
+
+
+# ---------------------------------------------------------------------------
+# Season helpers
+# ---------------------------------------------------------------------------
+
+def infer_season_info(categories_data):
+    """Infer (season_label, season_start_year) from tournament match dates.
+    Returns e.g. ('2024-25', 2024)."""
+    all_dates = []
+    for cat in categories_data:
+        for m in cat.get("matches", []):
+            d = m.get("date")
+            if d:
+                try:
+                    all_dates.append(datetime.strptime(d, "%Y-%m-%d %H:%M:%S"))
+                except (ValueError, TypeError):
+                    pass
+    if all_dates:
+        earliest = min(all_dates)
+        start_year = earliest.year if earliest.month >= 7 else earliest.year - 1
+        return f"{start_year}-{(start_year + 1) % 100:02d}", start_year
+    # Fallback: try to extract from tournament names
+    for cat in categories_data:
+        name = cat.get("tournament_name", "")
+        match = re.search(r"(\d{4})[/-](\d{2,4})", name)
+        if match:
+            year = int(match.group(1))
+            return f"{year}-{(year + 1) % 100:02d}", year
+    # Last resort: current year
+    year = datetime.now().year
+    return f"{year}-{(year + 1) % 100:02d}", year
+
+
+def build_category_age(season_start_year):
+    """Build age-category labels for a specific season.
+
+    Catalan water polo age categories are based on birth year.
+    season_start_year: e.g. 2025 for the 2025-26 season.
+    """
+    y = season_start_year
+    return {
+        "BENJAMI":  (1, f"9-10 anys ({y-10}-{(y-9) % 100:02d})"),
+        "ALEVI":    (2, f"11-12 anys ({y-12}-{(y-11) % 100:02d})"),
+        "INFANTIL": (3, f"13-14 anys ({y-14}-{(y-13) % 100:02d})"),
+        "CADET":    (4, f"15-16 anys ({y-16}-{(y-15) % 100:02d})"),
+        "JUVENIL":  (5, f"17-18 anys ({y-18}-{(y-17) % 100:02d})"),
+        "ABSOLUTA": (6, "+18 anys"),
+        "MASTER":   (7, "+30 anys"),
+    }
+
+
+# Default categories (season 2025-2026) – used as fallback
+CATEGORY_AGE = build_category_age(2025)
+
+
+def category_age_info(tournament_name, category_age=None):
+    """Return (sort_order, age_label) for a tournament name."""
+    if category_age is None:
+        category_age = CATEGORY_AGE
+    upper = tournament_name.upper()
+    for key, (order, label) in category_age.items():
+        if key in upper:
+            return order, label
+    return 99, ""
+
+
+# ---------------------------------------------------------------------------
 # Discovery
 # ---------------------------------------------------------------------------
 
 def discover_tournaments(manager_id, club_id):
+    """Original single-season discovery – kept for backwards compatibility."""
     print("Fetching manager tournaments ...")
     data = api_get(f"managers/{manager_id}", params={"include": "tournaments"})
     in_progress = []
@@ -82,6 +208,66 @@ def discover_tournaments(manager_id, club_id):
     tournaments_with_us.sort(key=lambda t: t.get("order") or 999)
     print(f"\n-> Club participates in {len(tournaments_with_us)} tournaments\n")
     return tournaments_with_us
+
+
+def discover_seasons(manager_id):
+    """Discover ALL seasons from the manager endpoint.
+
+    Returns dict of season_id -> {tournaments: [...], has_in_progress: bool}
+    where each tournament has {id, name, gender, order, season_id, api_status}.
+    """
+    print("Fetching manager tournaments (all seasons) ...")
+    data = api_get(f"managers/{manager_id}", params={"include": "tournaments"})
+    seasons = {}
+    for inc in data.get("included", []):
+        if inc["type"] != "tournament":
+            continue
+        attrs = inc["attributes"]
+        status = attrs["status"]
+        if status not in ("in_progress", "finished"):
+            continue
+        season_data = inc["relationships"].get("season", {}).get("data")
+        sid = season_data["id"] if season_data else "unknown"
+        if sid not in seasons:
+            seasons[sid] = {"tournaments": [], "has_in_progress": False}
+        seasons[sid]["tournaments"].append({
+            "id": inc["id"], "name": attrs["name"],
+            "gender": attrs.get("gender"), "order": attrs.get("order"),
+            "season_id": sid, "api_status": status,
+        })
+        if status == "in_progress":
+            seasons[sid]["has_in_progress"] = True
+    total = sum(len(s["tournaments"]) for s in seasons.values())
+    print(f"  Found {total} tournaments across {len(seasons)} seasons")
+    return seasons
+
+
+def discover_club_tournaments(tournaments, club_id):
+    """For a list of tournaments, find which ones have our club's teams."""
+    result = []
+    for t in tournaments:
+        print(f"    Checking {t['name']} ...", end=" ")
+        try:
+            tdata = api_get(f"tournaments/{t['id']}", params={"include": "teams"})
+        except Exception as e:
+            print(f"SKIP ({e})")
+            continue
+        our_teams = []
+        for inc in tdata.get("included", []):
+            if inc["type"] != "team":
+                continue
+            club_data = inc.get("relationships", {}).get("club", {}).get("data", {})
+            if club_data and club_data.get("id") == club_id:
+                avatar = inc.get("meta", {}).get("avatar", {}).get("large", "")
+                our_teams.append({"id": inc["id"], "name": inc["attributes"]["name"], "avatar": avatar})
+        if our_teams:
+            t["our_teams"] = our_teams
+            result.append(t)
+            print(f"OK ({', '.join(tm['name'] for tm in our_teams)})")
+        else:
+            print("-")
+    result.sort(key=lambda t: t.get("order") or 999)
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -342,28 +528,6 @@ def short_category(name):
     return name.strip()
 
 
-# Age categories for Catalan water polo – season 2025-2026
-# Source: FCN Normativa 01 – Disposicions Generals (edats de competició)
-# Order: lower = younger. Used for sorting and age labels on cards.
-CATEGORY_AGE = {
-    "BENJAMI":  (1, "9-10 anys (2016-17)"),
-    "ALEVI":    (2, "11-12 anys (2014-15)"),
-    "INFANTIL": (3, "13-14 anys (2012-13)"),
-    "CADET":    (4, "15-16 anys (2010-11)"),
-    "JUVENIL":  (5, "17-18 anys (2008-09)"),
-    "ABSOLUTA": (6, "+18 anys"),
-    "MASTER":   (7, "+30 anys"),
-}
-
-def category_age_info(tournament_name):
-    """Return (sort_order, age_label) for a tournament name."""
-    upper = tournament_name.upper()
-    for key, (order, label) in CATEGORY_AGE.items():
-        if key in upper:
-            return order, label
-    return 99, ""
-
-
 def slug(text):
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
@@ -486,6 +650,12 @@ footer a{color:var(--blue)}
 .search-result-tag:hover{background:var(--blue);color:#fff}
 .search-result-by{font-size:.72rem;color:var(--text-muted);margin-left:.3rem}
 .search-empty{padding:.8rem;text-align:center;color:var(--text-muted);font-size:.82rem}
+/* Season selector */
+.season-select-wrap{margin-top:.4rem;display:flex;align-items:center;justify-content:center;gap:.4rem}
+.season-select{font-size:.78rem;padding:.25rem .5rem;border:1px solid rgba(255,255,255,.4);border-radius:6px;color:#fff;background:rgba(255,255,255,.15);cursor:pointer;-webkit-appearance:none;appearance:none;text-align:center;min-width:120px}
+.season-select:focus{outline:none;border-color:rgba(255,255,255,.8)}
+.season-select option{color:var(--text);background:var(--card)}
+.season-cats,.season-teams{display:none}.season-cats.active,.season-teams.active{display:block}
 @media(max-width:480px){.cat-grid{grid-template-columns:1fr}.match-row{grid-template-columns:52px 56px 1fr;padding:.4rem}.match-teams{font-size:.74rem}header h1{font-size:1.1rem}}
 """
 
@@ -495,27 +665,49 @@ function esc(s){var d=document.createElement('div');d.textContent=s;return d.inn
 function titleCase(s){return s.split(' ').map(function(w){return w.charAt(0).toUpperCase()+w.slice(1).toLowerCase();}).join(' ');}
 function toggleSection(h3){h3.parentElement.classList.toggle('collapsed');}
 
+/* --- Season Switching --- */
+function switchSeason(seasonId){
+  window.CUR_SEASON=seasonId;
+  _searchIdx=null;
+  document.querySelectorAll('.season-cats,.season-teams').forEach(function(el){
+    if(el.dataset.season===seasonId)el.classList.add('active');
+    else el.classList.remove('active');
+  });
+  document.querySelectorAll('.detail-category').forEach(function(c){c.style.display='none';});
+  var sel=document.getElementById('season-select');
+  if(sel)sel.value=seasonId;
+  var sub=document.querySelector('.subtitle');
+  if(sub){
+    var cats=document.querySelector('.season-cats.active');
+    var count=cats?cats.querySelectorAll('.cat-card').length:0;
+    var si=(window.SEASONS||[]).find(function(s){return s.id===seasonId;});
+    sub.textContent=count+' categories'+(si&&!si.current?' (temporada tancada)':'');
+  }
+  showCategories();
+  clearSearch();
+}
+
 /* --- Player Search --- */
 var _searchIdx=null;
 function buildSearchIndex(){
   if(_searchIdx)return _searchIdx;
-  /* Build team→tournament map from WP */
+  var prefix='s'+(window.CUR_SEASON||'')+'-';
   var teamTournMap={};
   Object.keys(window.WP).forEach(function(eid){
+    if(eid.indexOf(prefix)!==0)return;
     var d=window.WP[eid];
     Object.keys(d.teams).forEach(function(tid){
       if(!teamTournMap[tid])teamTournMap[tid]=[];
       teamTournMap[tid].push({eid:eid,tname:d.tname,label:d.label||d.tname,teamName:d.teams[tid]});
     });
   });
-  /* Build person index from ROST */
-  var persons={};/* key: fn|ln|bd */
+  var persons={};
   var rost=window.ROST||{};
   Object.keys(rost).forEach(function(tid){
+    if(!teamTournMap[tid])return;
     rost[tid].forEach(function(p){
       var k=p.fn+'|'+p.ln+'|'+(p.bd||'');
       if(!persons[k])persons[k]={fn:p.fn,ln:p.ln,bd:p.bd,ro:p.ro,teams:[]};
-      /* merge role (player > staff) */
       if(p.ro==='player')persons[k].ro='player';
       var tours=teamTournMap[tid]||[];
       tours.forEach(function(t){
@@ -525,7 +717,6 @@ function buildSearchIndex(){
     });
   });
   _searchIdx=Object.values(persons);
-  /* Pre-compute search text */
   _searchIdx.forEach(function(p){
     p._s=(p.fn+' '+p.ln).toLowerCase();
   });
@@ -563,7 +754,7 @@ function doSearch(q){
 }
 function clearSearch(){
   var inp=document.getElementById('search-input');
-  inp.value='';doSearch('');
+  if(inp){inp.value='';doSearch('');}
 }
 function fmtShort(ds){
   if(!ds)return'TBD';
@@ -781,7 +972,16 @@ function renderForTeam(entryId,teamId){
 
 /* --- Init --- */
 window.addEventListener('DOMContentLoaded',function(){
+  var defaultSeason=window.CUR_SEASON||'';
   var h=location.hash.slice(1);
+  if(h){
+    var m=h.match(/^(?:cat-)?s(\\d+)-/);
+    if(m){
+      var hs=m[1];
+      if((window.SEASONS||[]).some(function(s){return s.id===hs;})){defaultSeason=hs;}
+    }
+  }
+  if(defaultSeason)switchSeason(defaultSeason);
   if(!h)return;
   if(h.startsWith('cat-')){showTeams(h.slice(4));}
   else{var el=document.getElementById(h);if(el&&el.classList.contains('detail-category'))showDetail(h);}
@@ -793,223 +993,280 @@ window.addEventListener('DOMContentLoaded',function(){
 # HTML generation
 # ---------------------------------------------------------------------------
 
-def generate_html(categories_data, config):
+def generate_html(all_season_data, config):
+    """Generate the complete HTML with multi-season support.
+
+    all_season_data: OrderedDict of season_id -> {label, status, categories_data, category_age}
+    """
     clupik = config.get("clupik_base_url", CLUPIK_BASE)
     build_time = datetime.utcnow().strftime("%d/%m/%Y %H:%M UTC")
 
-    # --- Explode categories into per-team entries ---
-    entries = []
-    for cat in categories_data:
-        for team in cat["our_teams"]:
-            team_id = team["id"]
-            team_ids = {team_id}
-            team_matches = [m for m in cat["matches"]
-                           if m["home_team"] in team_ids or m["away_team"] in team_ids]
-            team_groups = [g for g in cat["groups"] if team_id in g["our_team_ids"]]
-            entries.append({
-                "tournament_id": cat["tournament_id"],
-                "tournament_name": cat["tournament_name"],
-                "team": team,
-                "team_ids": team_ids,
-                "matches": team_matches,
-                "all_groups": cat["groups"],         # ALL groups in tournament
-                "all_matches": cat["matches"],        # ALL matches in tournament
-                "our_groups": team_groups,             # groups where our team plays
-                "team_names": cat["team_names"],
-                "rosters": cat.get("rosters", {}),
-            })
+    # Determine default season (first current, or first overall)
+    default_season = None
+    for sid, sdata in all_season_data.items():
+        if sdata["status"] == "current":
+            default_season = sid
+            break
+    if not default_season:
+        default_season = next(iter(all_season_data))
 
-    # --- Group entries by tournament for 2-level nav ---
-    from collections import OrderedDict
-    tournaments_map = OrderedDict()
-    for entry in entries:
-        tid = entry["tournament_id"]
-        if tid not in tournaments_map:
-            tournaments_map[tid] = {
-                "tournament_name": entry["tournament_name"],
-                "entries": [],
-            }
-        tournaments_map[tid]["entries"].append(entry)
+    # Build season selector options
+    season_options_html = ""
+    for sid, sdata in all_season_data.items():
+        tag = " (En curs)" if sdata["status"] == "current" else ""
+        sel = " selected" if sid == default_season else ""
+        season_options_html += f'<option value="{sid}"{sel}>{escape(sdata["label"])}{tag}</option>'
 
-    # Sort tournaments by age (youngest first)
-    sorted_tids = sorted(tournaments_map.keys(),
-                         key=lambda tid: category_age_info(tournaments_map[tid]["tournament_name"])[0])
-    sorted_map = OrderedDict((tid, tournaments_map[tid]) for tid in sorted_tids)
-    tournaments_map = sorted_map
+    # Process each season
+    all_wp = {}           # flat WP data across all seasons (season-prefixed keys)
+    all_rost = {}         # flat rosters (keyed by team_id, no prefix needed)
+    cat_blocks = []       # per-season category card HTML blocks
+    team_blocks = []      # per-season team panel HTML blocks
+    all_detail_sects = [] # all detail sections (across seasons)
+    seasons_json = []     # for window.SEASONS
+    total_cats_default = 0
 
-    # --- Screen 1: Category cards ---
-    cat_card_items = []
-    for tid, tinfo in tournaments_map.items():
-        cat_id = slug(tinfo["tournament_name"])
-        label = short_category(tinfo["tournament_name"])
-        num_teams = len(tinfo["entries"])
-        _, age_label = category_age_info(tinfo["tournament_name"])
-        teams_str = " / ".join(escape(e["team"]["name"]) for e in tinfo["entries"])
+    for sid, sdata in all_season_data.items():
+        categories_data = sdata["categories_data"]
+        cat_age = sdata.get("category_age", CATEGORY_AGE)
+        is_default = (sid == default_season)
 
-        # Aggregate stats across all teams in this category
-        total_past = sum(1 for e in tinfo["entries"] for m in e["matches"] if m["finished"])
+        # --- Explode categories into per-team entries ---
+        entries = []
+        for cat in categories_data:
+            for team in cat["our_teams"]:
+                team_id = team["id"]
+                team_ids = {team_id}
+                team_matches = [m for m in cat["matches"]
+                               if m["home_team"] in team_ids or m["away_team"] in team_ids]
+                team_groups = [g for g in cat["groups"] if team_id in g["our_team_ids"]]
+                entries.append({
+                    "tournament_id": cat["tournament_id"],
+                    "tournament_name": cat["tournament_name"],
+                    "team": team,
+                    "team_ids": team_ids,
+                    "matches": team_matches,
+                    "all_groups": cat["groups"],
+                    "all_matches": cat["matches"],
+                    "our_groups": team_groups,
+                    "team_names": cat["team_names"],
+                    "rosters": cat.get("rosters", {}),
+                })
 
-        age_html = f'<div class="cat-card-age">{escape(age_label)}</div>' if age_label else ''
-        cat_card_items.append(
-            f'<div class="cat-card" onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
-            f'<div class="cat-card-name">{escape(label)}</div>'
-            f'{age_html}'
-            f'<div class="cat-card-teams">{num_teams} equip{"s" if num_teams > 1 else ""}</div>'
-            f'<div class="cat-card-record"><span class="gf">{total_past} partits jugats</span></div>'
-            f'<span class="cat-card-arrow">&#8250;</span>'
-            f'</div>'
-        )
+        # --- Group entries by tournament for 2-level nav ---
+        tournaments_map = OrderedDict()
+        for entry in entries:
+            tid = entry["tournament_id"]
+            if tid not in tournaments_map:
+                tournaments_map[tid] = {
+                    "tournament_name": entry["tournament_name"],
+                    "entries": [],
+                }
+            tournaments_map[tid]["entries"].append(entry)
 
-    # --- Screen 2: Team panels (one per category) ---
-    team_panels = []
-    for tid, tinfo in tournaments_map.items():
-        cat_id = slug(tinfo["tournament_name"])
-        label = short_category(tinfo["tournament_name"])
-        team_cards = []
-        for entry in tinfo["entries"]:
-            team = entry["team"]
-            team_ids = entry["team_ids"]
-            entry_id = slug(entry["tournament_name"] + "-" + team["name"])
-            team_name = escape(team["name"])
+        # Sort tournaments by age (youngest first)
+        sorted_tids = sorted(tournaments_map.keys(),
+                             key=lambda tid: category_age_info(tournaments_map[tid]["tournament_name"], cat_age)[0])
+        tournaments_map = OrderedDict((tid, tournaments_map[tid]) for tid in sorted_tids)
 
-            past = [m for m in entry["matches"] if m["finished"]]
-            future = [m for m in entry["matches"] if not m["finished"] and m["date"]]
-            past.sort(key=lambda m: m["date"] or "", reverse=True)
-            future.sort(key=lambda m: m["date"] or "")
+        if is_default:
+            total_cats_default = len(tournaments_map)
 
-            wins = sum(1 for m in past if match_result_class(m, team_ids) == "win")
-            losses = sum(1 for m in past if match_result_class(m, team_ids) == "loss")
-            draws = len(past) - wins - losses
+        seasons_json.append({
+            "id": sid,
+            "label": sdata["label"],
+            "current": sdata["status"] == "current",
+        })
 
-            card_next = ""
-            if future:
-                nm = future[0]
-                hn = escape(entry["team_names"].get(nm["home_team"], "?"))
-                an = escape(entry["team_names"].get(nm["away_team"] or "", "Descansa"))
-                card_next = (
-                    f'<div class="cat-card-next">Proper: <strong>{format_date_short(nm["date"])}</strong> '
-                    f'{hn} vs {an}</div>'
-                )
+        # --- Screen 1: Category cards for this season ---
+        cat_cards_html = ""
+        for tid, tinfo in tournaments_map.items():
+            cat_id = f"s{sid}-{slug(tinfo['tournament_name'])}"
+            label = short_category(tinfo["tournament_name"])
+            num_teams = len(tinfo["entries"])
+            _, age_label = category_age_info(tinfo["tournament_name"], cat_age)
 
-            team_cards.append(
-                f'<div class="cat-card" data-detail="{entry_id}" onclick="showDetail(\'{entry_id}\')">'
-                f'<div class="cat-card-name">{team_name}</div>'
-                f'<div class="cat-card-record">'
-                f'<span class="w">{wins}V</span><span class="d">{draws}E</span>'
-                f'<span class="l">{losses}D</span></div>'
-                f'{card_next}'
+            total_past = sum(1 for e in tinfo["entries"] for m in e["matches"] if m["finished"])
+
+            age_html = f'<div class="cat-card-age">{escape(age_label)}</div>' if age_label else ''
+            cat_cards_html += (
+                f'<div class="cat-card" onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
+                f'<div class="cat-card-name">{escape(label)}</div>'
+                f'{age_html}'
+                f'<div class="cat-card-teams">{num_teams} equip{"s" if num_teams > 1 else ""}</div>'
+                f'<div class="cat-card-record"><span class="gf">{total_past} partits jugats</span></div>'
                 f'<span class="cat-card-arrow">&#8250;</span>'
                 f'</div>'
             )
 
-        team_panels.append(
-            f'<div class="team-panel" id="teams-{cat_id}" style="display:none">'
-            f'<div class="sel-title">{escape(label)}</div>'
-            f'<div class="sel-subtitle">Selecciona equip</div>'
-            f'<div class="cat-grid">{"".join(team_cards)}</div>'
+        active_cls = " active" if is_default else ""
+        cat_blocks.append(
+            f'<div class="season-cats{active_cls}" data-season="{sid}">'
+            f'<div class="cat-grid">{cat_cards_html}</div>'
             f'</div>'
         )
 
-    # --- Screen 3: Build JSON data + detail shells ---
-    import json as json_mod
-    wp_data = {}
-    global_rosters = {}  # team_id -> roster (deduplicated across entries)
-    detail_sections = []
-    for entry in entries:
-        tid = entry["tournament_id"]
-        team = entry["team"]
-        team_ids = entry["team_ids"]
-        cat_id = slug(entry["tournament_name"])
-        entry_id = slug(entry["tournament_name"] + "-" + team["name"])
-        num_teams = len(tournaments_map[tid]["entries"])
+        # --- Screen 2: Team panels for this season ---
+        team_panels_html = ""
+        for tid, tinfo in tournaments_map.items():
+            cat_id = f"s{sid}-{slug(tinfo['tournament_name'])}"
+            label = short_category(tinfo["tournament_name"])
+            team_cards = ""
+            for entry in tinfo["entries"]:
+                team = entry["team"]
+                team_ids = entry["team_ids"]
+                entry_id = f"s{sid}-{slug(entry['tournament_name'] + '-' + team['name'])}"
+                team_name = escape(team["name"])
 
-        # Build JSON for this entry – include ALL matches from ALL groups
-        matches_json = []
-        seen_match_ids = set()
-        for m in entry["all_matches"]:
-            if m["id"] in seen_match_ids:
-                continue
-            seen_match_ids.add(m["id"])
-            hs_val, as_val = match_score(m)
-            matches_json.append({
-                "d": m["date"], "f": m["finished"],
-                "h": m["home_team"], "a": m["away_team"],
-                "hs": hs_val, "as": as_val,
-                "rn": m.get("round_name", ""),
-                "gn": m.get("group_name", ""),
-                "v": m.get("venue", ""),
-            })
+                past = [m for m in entry["matches"] if m["finished"]]
+                future = [m for m in entry["matches"] if not m["finished"] and m["date"]]
+                past.sort(key=lambda m: m["date"] or "", reverse=True)
+                future.sort(key=lambda m: m["date"] or "")
 
-        # Include ALL groups with standings
-        groups_json = []
-        all_team_ids_set = set()
-        for g in entry["all_groups"]:
-            standings_json = []
-            for s in g["standings"]:
-                all_team_ids_set.add(str(s["id"]))
-                standings_json.append({
-                    "id": str(s["id"]), "n": s["name"], "pos": s["position"],
-                    "pts": s["points"], "pj": s["played"], "pg": s["won"],
-                    "pe": s["drawn"], "pp": s["lost"], "gf": s["goals_for"],
-                    "gc": s["goals_against"], "dg": s["goal_diff"],
+                wins = sum(1 for m in past if match_result_class(m, team_ids) == "win")
+                losses = sum(1 for m in past if match_result_class(m, team_ids) == "loss")
+                draws = len(past) - wins - losses
+
+                card_next = ""
+                if future:
+                    nm = future[0]
+                    hn = escape(entry["team_names"].get(nm["home_team"], "?"))
+                    an = escape(entry["team_names"].get(nm["away_team"] or "", "Descansa"))
+                    card_next = (
+                        f'<div class="cat-card-next">Proper: <strong>{format_date_short(nm["date"])}</strong> '
+                        f'{hn} vs {an}</div>'
+                    )
+
+                team_cards += (
+                    f'<div class="cat-card" data-detail="{entry_id}" onclick="showDetail(\'{entry_id}\')">'
+                    f'<div class="cat-card-name">{team_name}</div>'
+                    f'<div class="cat-card-record">'
+                    f'<span class="w">{wins}V</span><span class="d">{draws}E</span>'
+                    f'<span class="l">{losses}D</span></div>'
+                    f'{card_next}'
+                    f'<span class="cat-card-arrow">&#8250;</span>'
+                    f'</div>'
+                )
+
+            team_panels_html += (
+                f'<div class="team-panel" id="teams-{cat_id}" style="display:none">'
+                f'<div class="sel-title">{escape(label)}</div>'
+                f'<div class="sel-subtitle">Selecciona equip</div>'
+                f'<div class="cat-grid">{team_cards}</div>'
+                f'</div>'
+            )
+
+        active_cls = " active" if is_default else ""
+        team_blocks.append(
+            f'<div class="season-teams{active_cls}" data-season="{sid}">'
+            f'{team_panels_html}'
+            f'</div>'
+        )
+
+        # --- Screen 3: Build JSON data + detail shells for this season ---
+        for entry in entries:
+            tid = entry["tournament_id"]
+            team = entry["team"]
+            team_ids = entry["team_ids"]
+            cat_id = f"s{sid}-{slug(entry['tournament_name'])}"
+            entry_id = f"s{sid}-{slug(entry['tournament_name'] + '-' + team['name'])}"
+            num_teams = len(tournaments_map[tid]["entries"])
+
+            # Build JSON for this entry
+            matches_json = []
+            seen_match_ids = set()
+            for m in entry["all_matches"]:
+                if m["id"] in seen_match_ids:
+                    continue
+                seen_match_ids.add(m["id"])
+                hs_val, as_val = match_score(m)
+                matches_json.append({
+                    "d": m["date"], "f": m["finished"],
+                    "h": m["home_team"], "a": m["away_team"],
+                    "hs": hs_val, "as": as_val,
+                    "rn": m.get("round_name", ""),
+                    "gn": m.get("group_name", ""),
+                    "v": m.get("venue", ""),
                 })
-            groups_json.append({"id": g["id"], "n": g["name"], "s": standings_json})
 
-        # Collect rosters into global dict (avoids duplication across entries)
-        for t_id in all_team_ids_set | team_ids:
-            if t_id not in global_rosters:
-                roster = entry["rosters"].get(t_id, [])
-                if roster:
-                    global_rosters[t_id] = [{"fn": p["first_name"], "ln": p["last_name"],
-                                              "bd": p.get("birthdate", ""), "ro": p["role"]}
-                                             for p in roster]
+            groups_json = []
+            all_team_ids_set = set()
+            for g in entry["all_groups"]:
+                standings_json = []
+                for s in g["standings"]:
+                    all_team_ids_set.add(str(s["id"]))
+                    standings_json.append({
+                        "id": str(s["id"]), "n": s["name"], "pos": s["position"],
+                        "pts": s["points"], "pj": s["played"], "pg": s["won"],
+                        "pe": s["drawn"], "pp": s["lost"], "gf": s["goals_for"],
+                        "gc": s["goals_against"], "dg": s["goal_diff"],
+                    })
+                groups_json.append({"id": g["id"], "n": g["name"], "s": standings_json})
 
-        wp_data[entry_id] = {
-            "tid": tid, "tname": entry["tournament_name"],
-            "label": short_category(entry["tournament_name"]),
-            "dt": team["id"],
-            "teams": {k: v for k, v in entry["team_names"].items() if k in all_team_ids_set or k in team_ids},
-            "groups": groups_json, "matches": matches_json,
-        }
+            # Collect rosters into global flat dict
+            for t_id in all_team_ids_set | team_ids:
+                if t_id not in all_rost:
+                    roster = entry["rosters"].get(t_id, [])
+                    if roster:
+                        all_rost[t_id] = [{"fn": p["first_name"], "ln": p["last_name"],
+                                           "bd": p.get("birthdate", ""), "ro": p["role"]}
+                                          for p in roster]
 
-        # Build team selector options from ALL groups (sorted by standings position)
-        team_options = []
-        for g in entry["all_groups"]:
-            for s in g["standings"]:
-                sid = str(s["id"])
-                if sid not in [t[0] for t in team_options]:
-                    selected = " selected" if sid == team["id"] else ""
-                    team_options.append((sid, f'<option value="{sid}"{selected}>{escape(s["name"])}</option>'))
+            all_wp[entry_id] = {
+                "tid": tid, "tname": entry["tournament_name"],
+                "label": short_category(entry["tournament_name"]),
+                "dt": team["id"],
+                "teams": {k: v for k, v in entry["team_names"].items() if k in all_team_ids_set or k in team_ids},
+                "groups": groups_json, "matches": matches_json,
+            }
 
-        selector_html = "".join(t[1] for t in team_options)
+            # Build team selector options
+            team_options = []
+            for g in entry["all_groups"]:
+                for s in g["standings"]:
+                    s_id = str(s["id"])
+                    if s_id not in [t[0] for t in team_options]:
+                        selected = " selected" if s_id == team["id"] else ""
+                        team_options.append((s_id, f'<option value="{s_id}"{selected}>{escape(s["name"])}</option>'))
 
-        detail_section = (
-            f'<div class="detail-category" id="{entry_id}" data-entry-id="{entry_id}" '
-            f'data-cat-id="{cat_id}" data-num-teams="{num_teams}" '
-            f'data-cat-label="{escape(short_category(entry["tournament_name"]))}" style="display:none">'
-            f'<div class="category-header">'
-            f'<h2>{escape(entry["tournament_name"])}</h2>'
-            f'<div class="team-selector-wrap">'
-            f'<label class="team-selector-label">Perspectiva equip:</label>'
-            f'<select class="team-selector" onchange="renderForTeam(\'{entry_id}\',this.value)">'
-            f'{selector_html}</select></div>'
-            f'<div class="record-bar" id="record-{entry_id}"></div>'
-            f'</div>'
-            f'<div id="next-{entry_id}"></div>'
-            f'<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Classificacio<span class="toggle-arrow">\u25B2</span></h3><div class="section-content" id="standings-{entry_id}"></div></div>'
-            f'<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Resultats<span class="toggle-arrow">\u25B2</span></h3><div class="section-content" id="results-{entry_id}"></div></div>'
-            f'<div id="upcoming-{entry_id}"></div>'
-            f'<div id="roster-{entry_id}"></div>'
-            f'<div class="section-block links-block" id="links-{entry_id}"></div>'
-            f'</div>'
-        )
-        detail_sections.append(detail_section)
+            selector_html = "".join(t[1] for t in team_options)
+
+            detail_section = (
+                f'<div class="detail-category" id="{entry_id}" data-entry-id="{entry_id}" '
+                f'data-cat-id="{cat_id}" data-num-teams="{num_teams}" '
+                f'data-cat-label="{escape(short_category(entry["tournament_name"]))}" style="display:none">'
+                f'<div class="category-header">'
+                f'<h2>{escape(entry["tournament_name"])}</h2>'
+                f'<div class="team-selector-wrap">'
+                f'<label class="team-selector-label">Perspectiva equip:</label>'
+                f'<select class="team-selector" onchange="renderForTeam(\'{entry_id}\',this.value)">'
+                f'{selector_html}</select></div>'
+                f'<div class="record-bar" id="record-{entry_id}"></div>'
+                f'</div>'
+                f'<div id="next-{entry_id}"></div>'
+                f'<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Classificacio<span class="toggle-arrow">\u25B2</span></h3><div class="section-content" id="standings-{entry_id}"></div></div>'
+                f'<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Resultats<span class="toggle-arrow">\u25B2</span></h3><div class="section-content" id="results-{entry_id}"></div></div>'
+                f'<div id="upcoming-{entry_id}"></div>'
+                f'<div id="roster-{entry_id}"></div>'
+                f'<div class="section-block links-block" id="links-{entry_id}"></div>'
+                f'</div>'
+            )
+            all_detail_sects.append(detail_section)
 
     # Serialize data for embedding
-    wp_data_json = json_mod.dumps(wp_data, ensure_ascii=False, separators=(',', ':'))
-    rosters_json = json_mod.dumps(global_rosters, ensure_ascii=False, separators=(',', ':'))
+    wp_json = json.dumps(all_wp, ensure_ascii=False, separators=(',', ':'))
+    rost_json = json.dumps(all_rost, ensure_ascii=False, separators=(',', ':'))
+    seasons_json_str = json.dumps(seasons_json, ensure_ascii=False, separators=(',', ':'))
 
-    total_cats = len(tournaments_map)
+    # Season selector (only if multiple seasons)
+    season_selector_html = ""
+    if len(all_season_data) > 1:
+        season_selector_html = (
+            f'<div class="season-select-wrap">'
+            f'<select id="season-select" class="season-select" onchange="switchSeason(this.value)">'
+            f'{season_options_html}'
+            f'</select></div>'
+        )
 
     html = (
         '<!DOCTYPE html><html lang="ca"><head><meta charset="utf-8">'
@@ -1019,7 +1276,8 @@ def generate_html(categories_data, config):
         f'<style>{CSS}</style></head><body>'
         f'<header><div class="header-inner">'
         f'<div><h1>&#127937; Waterpolo Tracker</h1>'
-        f'<div class="subtitle">{total_cats} categories</div>'
+        f'<div class="subtitle">{total_cats_default} categories</div>'
+        f'{season_selector_html}'
         f'</div></div></header>'
         f'<main>'
         # Screen 1: Categories
@@ -1031,26 +1289,27 @@ def generate_html(categories_data, config):
         f'<button id="search-clear" class="search-clear" onclick="clearSearch()">&times;</button>'
         f'<div id="search-results" class="search-results" style="display:none"></div>'
         f'</div>'
-        f'<div class="cat-grid">{"".join(cat_card_items)}</div>'
+        f'{"".join(cat_blocks)}'
         f'</div>'
         # Screen 2: Team selection
         f'<div id="team-screen" style="display:none">'
         f'<div class="back-bar"><button class="btn-back" onclick="showCategories()">&#8249; Tornar</button>'
         f'<span class="back-label">Totes les categories</span></div>'
-        f'{"".join(team_panels)}'
+        f'{"".join(team_blocks)}'
         f'</div>'
         # Screen 3: Detail
         f'<div id="detail-screen" style="display:none">'
         f'<div class="back-bar" id="detail-back-bar"><button class="btn-back" id="detail-back-btn">&#8249; Tornar</button>'
         f'<span class="back-label" id="detail-back-label"></span></div>'
-        f'{"".join(detail_sections)}'
+        f'{"".join(all_detail_sects)}'
         f'</div>'
         f'</main>'
         f'<footer>Actualitzat: {build_time}<br>'
         'Dades de <a href="https://actawp.natacio.cat/">Federacio Catalana de Natacio</a> '
         'via <a href="https://clupik.pro">Clupik</a> (API Leverade)<br>'
         'Generat automaticament - <a href="https://github.com/vinner21/water_follow">GitHub</a></footer>'
-        f'<script>window.WP={wp_data_json};window.ROST={rosters_json};window.CLUPIK="{clupik}";</script>'
+        f'<script>window.WP={wp_json};window.ROST={rost_json};window.CLUPIK="{clupik}";'
+        f'window.SEASONS={seasons_json_str};window.CUR_SEASON="{default_season}";</script>'
         f'<script>{JS}</script></body></html>'
     )
     return html
@@ -1068,26 +1327,100 @@ def main():
     club_id = config["club_id"]
     manager_id = config["manager_id"]
 
-    tournaments = discover_tournaments(manager_id, club_id)
-    if not tournaments:
-        print("No tournaments found for this club.")
-        sys.exit(1)
+    # Step 1: Discover all seasons from manager endpoint
+    print("=" * 60)
+    print("STEP 1: Discovering seasons")
+    print("=" * 60)
+    seasons_raw = discover_seasons(manager_id)
 
-    categories_data = []
-    for t in tournaments:
-        print(f"\nCollecting data for: {t['name']}")
-        try:
-            cat_data = collect_tournament_data(t, club_id)
-            if cat_data["groups"]:
-                categories_data.append(cat_data)
-                print(f"  -> {len(cat_data['matches'])} matches, {len(cat_data['groups'])} group(s)")
-            else:
-                print(f"  -> No groups with our teams found, skipping")
-        except Exception as e:
-            print(f"  -> ERROR: {e}")
+    for sid, sinfo in seasons_raw.items():
+        status_str = "CURRENT" if sinfo["has_in_progress"] else "finished"
+        print(f"  Season {sid}: {len(sinfo['tournaments'])} tournaments ({status_str})")
+
+    # Step 2: For each season, load from cache or fetch from API
+    print(f"\n{'=' * 60}")
+    print("STEP 2: Loading/fetching season data")
+    print("=" * 60)
+
+    all_season_data = OrderedDict()
+
+    for sid, sinfo in seasons_raw.items():
+        is_current = sinfo["has_in_progress"]
+
+        # Try cache for finished seasons
+        if not is_current:
+            cached = load_season_cache(sid)
+            if cached:
+                season_label = cached["season_label"]
+                categories_data = cached["tournaments"]
+                start_year = int(season_label[:4]) if season_label[:4].isdigit() else datetime.now().year
+                cat_age = build_category_age(start_year)
+                all_season_data[sid] = {
+                    "label": season_label,
+                    "status": "finished",
+                    "categories_data": categories_data,
+                    "category_age": cat_age,
+                }
+                continue
+
+        # Need to discover teams and fetch data from API
+        print(f"\n  Fetching season {sid} from API...")
+        tournaments_with_us = discover_club_tournaments(sinfo["tournaments"], club_id)
+
+        if not tournaments_with_us:
+            print(f"  No tournaments with our club in season {sid}")
             continue
 
-    html = generate_html(categories_data, config)
+        # Collect data for each tournament
+        categories_data = []
+        for t in tournaments_with_us:
+            print(f"\n  Collecting data for: {t['name']}")
+            try:
+                cat_data = collect_tournament_data(t, club_id)
+                if cat_data["groups"]:
+                    categories_data.append(cat_data)
+                    print(f"    -> {len(cat_data['matches'])} matches, {len(cat_data['groups'])} group(s)")
+                else:
+                    print(f"    -> No groups found, skipping")
+            except Exception as e:
+                print(f"    -> ERROR: {e}")
+                continue
+
+        if not categories_data:
+            continue
+
+        # Infer season info
+        season_label, start_year = infer_season_info(categories_data)
+        cat_age = build_category_age(start_year)
+
+        all_season_data[sid] = {
+            "label": season_label,
+            "status": "current" if is_current else "finished",
+            "categories_data": categories_data,
+            "category_age": cat_age,
+        }
+
+        # Cache finished seasons for future builds
+        if not is_current:
+            save_season_cache(sid, season_label, categories_data)
+            print(f"\n  Cached season {season_label} for future builds")
+
+    if not all_season_data:
+        print("No season data found for this club.")
+        sys.exit(1)
+
+    # Sort seasons: current first, then by label descending
+    current = [(sid, sd) for sid, sd in all_season_data.items() if sd["status"] == "current"]
+    finished = [(sid, sd) for sid, sd in all_season_data.items() if sd["status"] != "current"]
+    finished.sort(key=lambda x: x[1]["label"], reverse=True)
+    all_season_data = OrderedDict(current + finished)
+
+    # Step 3: Generate HTML
+    print(f"\n{'=' * 60}")
+    print("STEP 3: Generating HTML")
+    print("=" * 60)
+
+    html = generate_html(all_season_data, config)
     out_dir = os.path.join(os.path.dirname(__file__), "_site")
     os.makedirs(out_dir, exist_ok=True)
     out_path = os.path.join(out_dir, "index.html")
@@ -1128,12 +1461,16 @@ def main():
     else:
         print("WARNING: staticrypt not found, HTML NOT encrypted")
 
-    print(f"\n{'='*60}")
+    # Summary
+    print(f"\n{'=' * 60}")
     print(f"Site generated: {out_path}")
-    print(f"Categories: {len(categories_data)}")
-    total_matches = sum(len(c['matches']) for c in categories_data)
-    print(f"Total matches: {total_matches}")
-    print(f"{'='*60}")
+    print(f"Seasons: {len(all_season_data)}")
+    for sid, sdata in all_season_data.items():
+        total_matches = sum(len(c['matches']) for c in sdata['categories_data'])
+        cats = len(set(c['tournament_name'] for c in sdata['categories_data']))
+        status = "EN CURS" if sdata['status'] == 'current' else "tancada"
+        print(f"  {sdata['label']} ({status}): {cats} categories, {total_matches} partits")
+    print(f"{'=' * 60}")
 
 
 if __name__ == "__main__":
