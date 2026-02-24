@@ -52,7 +52,7 @@ jobs:
           else
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add _data/seasons/*.json
+            git add _data/seasons/*.json _data/seasons/t_*.json
             git commit -m "chore: update season cache [skip ci]" || true
             git push
           fi

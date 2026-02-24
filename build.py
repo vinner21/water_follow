@@ -53,36 +53,45 @@ def load_season_cache(season_id):
         data = json.load(f)
     # Convert lists back to sets where needed
     for t in data.get("tournaments", []):
-        t["our_team_ids"] = set(t["our_team_ids"])
-        for g in t.get("groups", []):
-            g["our_team_ids"] = set(g["our_team_ids"])
+        _deserialize_category(t)
     print(f"  Loaded season {data.get('season_label', season_id)} from cache ({path})")
     return data
+
+
+def _serialize_category(cat):
+    """Convert a single category/tournament data dict to a JSON-serializable form."""
+    c = {
+        "tournament_id": cat["tournament_id"],
+        "tournament_name": cat["tournament_name"],
+        "our_teams": cat["our_teams"],
+        "our_team_ids": list(cat["our_team_ids"]),
+        "matches": cat["matches"],
+        "team_names": cat["team_names"],
+        "rosters": cat.get("rosters", {}),
+        "groups": [],
+    }
+    for g in cat["groups"]:
+        c["groups"].append({
+            "id": g["id"],
+            "name": g["name"],
+            "standings": g["standings"],
+            "our_team_ids": list(g["our_team_ids"]),
+        })
+    return c
+
+
+def _deserialize_category(cat):
+    """Restore sets from lists after loading from JSON."""
+    cat["our_team_ids"] = set(cat["our_team_ids"])
+    for g in cat.get("groups", []):
+        g["our_team_ids"] = set(g["our_team_ids"])
+    return cat
 
 
 def save_season_cache(season_id, season_label, categories_data):
     """Persist finished-season data as JSON so it never needs to be fetched again."""
     os.makedirs(DATA_DIR, exist_ok=True)
-    serializable = []
-    for cat in categories_data:
-        c = {
-            "tournament_id": cat["tournament_id"],
-            "tournament_name": cat["tournament_name"],
-            "our_teams": cat["our_teams"],
-            "our_team_ids": list(cat["our_team_ids"]),
-            "matches": cat["matches"],
-            "team_names": cat["team_names"],
-            "rosters": cat.get("rosters", {}),
-            "groups": [],
-        }
-        for g in cat["groups"]:
-            c["groups"].append({
-                "id": g["id"],
-                "name": g["name"],
-                "standings": g["standings"],
-                "our_team_ids": list(g["our_team_ids"]),
-            })
-        serializable.append(c)
+    serializable = [_serialize_category(cat) for cat in categories_data]
     payload = {
         "season_id": season_id,
         "season_label": season_label,
@@ -92,6 +101,40 @@ def save_season_cache(season_id, season_label, categories_data):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=1)
     print(f"  Cached season {season_label} -> {path}")
+
+
+# ---------------------------------------------------------------------------
+# Tournament-level cache (for finished tournaments within current season)
+# ---------------------------------------------------------------------------
+
+def load_tournament_cache(tournament_id):
+    """Load cached tournament data from _data/seasons/t_{tournament_id}.json.
+    Returns the deserialized category dict, or None."""
+    path = os.path.join(DATA_DIR, f"t_{tournament_id}.json")
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    return _deserialize_category(data)
+
+
+def save_tournament_cache(tournament_id, cat_data):
+    """Cache a single finished tournament's collected data."""
+    os.makedirs(DATA_DIR, exist_ok=True)
+    path = os.path.join(DATA_DIR, f"t_{tournament_id}.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(_serialize_category(cat_data), f, ensure_ascii=False, indent=1)
+    print(f"    Cached tournament {tournament_id} -> {path}")
+
+
+def cleanup_tournament_caches():
+    """Remove per-tournament cache files (used after a season is fully cached)."""
+    if not os.path.isdir(DATA_DIR):
+        return
+    for fname in os.listdir(DATA_DIR):
+        if fname.startswith("t_") and fname.endswith(".json"):
+            os.remove(os.path.join(DATA_DIR, fname))
+            print(f"  Cleaned up tournament cache: {fname}")
 
 
 # ---------------------------------------------------------------------------
@@ -1337,6 +1380,20 @@ def main():
         status_str = "CURRENT" if sinfo["has_in_progress"] else "finished"
         print(f"  Season {sid}: {len(sinfo['tournaments'])} tournaments ({status_str})")
 
+    # Merge multiple "current" season IDs into the one with the most tournaments.
+    # The API sometimes returns separate season_ids that belong to the same logical
+    # season (e.g. a test/placeholder season alongside the real one).  Merging them
+    # avoids duplicate entries in the season selector and reduces API calls.
+    current_sids = [sid for sid, sinfo in seasons_raw.items() if sinfo["has_in_progress"]]
+    if len(current_sids) > 1:
+        primary = max(current_sids, key=lambda s: len(seasons_raw[s]["tournaments"]))
+        for sid in current_sids:
+            if sid != primary:
+                print(f"  Merging current season {sid} ({len(seasons_raw[sid]['tournaments'])} tournaments) "
+                      f"into {primary} ({len(seasons_raw[primary]['tournaments'])} tournaments)")
+                seasons_raw[primary]["tournaments"].extend(seasons_raw[sid]["tournaments"])
+                del seasons_raw[sid]
+
     # Step 2: For each season, load from cache or fetch from API
     print(f"\n{'=' * 60}")
     print("STEP 2: Loading/fetching season data")
@@ -1365,14 +1422,31 @@ def main():
 
         # Need to discover teams and fetch data from API
         print(f"\n  Fetching season {sid} from API...")
-        tournaments_with_us = discover_club_tournaments(sinfo["tournaments"], club_id)
 
-        if not tournaments_with_us:
+        # Split tournaments: try tournament-level cache for finished ones
+        api_tournaments = []       # tournaments that need full API discovery + collection
+        cached_categories = []     # categories loaded from per-tournament cache
+        for t in sinfo["tournaments"]:
+            if t["api_status"] == "finished":
+                cached = load_tournament_cache(t["id"])
+                if cached:
+                    print(f"    Loaded finished tournament {t['name']} from cache")
+                    cached_categories.append(cached)
+                    continue
+            api_tournaments.append(t)
+
+        if cached_categories:
+            print(f"  {len(cached_categories)} finished tournaments loaded from cache")
+        print(f"  {len(api_tournaments)} tournaments need API calls")
+
+        tournaments_with_us = discover_club_tournaments(api_tournaments, club_id)
+
+        if not tournaments_with_us and not cached_categories:
             print(f"  No tournaments with our club in season {sid}")
             continue
 
-        # Collect data for each tournament
-        categories_data = []
+        # Collect data for each tournament (API-fetched only)
+        categories_data = list(cached_categories)
         for t in tournaments_with_us:
             print(f"\n  Collecting data for: {t['name']}")
             try:
@@ -1380,6 +1454,9 @@ def main():
                 if cat_data["groups"]:
                     categories_data.append(cat_data)
                     print(f"    -> {len(cat_data['matches'])} matches, {len(cat_data['groups'])} group(s)")
+                    # Cache finished tournaments for next build
+                    if t["api_status"] == "finished":
+                        save_tournament_cache(t["id"], cat_data)
                 else:
                     print(f"    -> No groups found, skipping")
             except Exception as e:
@@ -1403,11 +1480,42 @@ def main():
         # Cache finished seasons for future builds
         if not is_current:
             save_season_cache(sid, season_label, categories_data)
+            # Clean up per-tournament caches since the whole season is now cached
+            cleanup_tournament_caches()
             print(f"\n  Cached season {season_label} for future builds")
 
     if not all_season_data:
         print("No season data found for this club.")
         sys.exit(1)
+
+    # Deduplicate seasons that resolved to the same label (safety net).
+    # Keep the entry with more categories; merge their categories_data.
+    seen_labels = {}
+    duplicates_to_remove = []
+    for sid, sdata in all_season_data.items():
+        label = sdata["label"]
+        if label in seen_labels:
+            prev_sid = seen_labels[label]
+            prev = all_season_data[prev_sid]
+            # Merge into whichever has more data; prefer "current" status
+            if len(sdata["categories_data"]) > len(prev["categories_data"]):
+                # Current entry is bigger → merge prev into current
+                sdata["categories_data"].extend(prev["categories_data"])
+                if prev["status"] == "current":
+                    sdata["status"] = "current"
+                duplicates_to_remove.append(prev_sid)
+                seen_labels[label] = sid
+            else:
+                # Previous entry is bigger → merge current into previous
+                prev["categories_data"].extend(sdata["categories_data"])
+                if sdata["status"] == "current":
+                    prev["status"] = "current"
+                duplicates_to_remove.append(sid)
+        else:
+            seen_labels[label] = sid
+    for dup_sid in duplicates_to_remove:
+        print(f"  Merged duplicate season label '{all_season_data[dup_sid]['label']}' (season {dup_sid})")
+        del all_season_data[dup_sid]
 
     # Sort seasons: current first, then by label descending
     current = [(sid, sd) for sid, sd in all_season_data.items() if sd["status"] == "current"]
