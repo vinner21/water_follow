@@ -1,0 +1,4598 @@
+{
+ "tournament_id": "1325177",
+ "tournament_name": "OPEN TURBO CHRISTMAS CUP BENJAMI MIXT 2025/2026",
+ "our_teams": [
+  {
+   "id": "15711274",
+   "name": "C.N. SANT ANDREU A",
+   "avatar": "https://cdn.leverade.com/thumbnails/AaTcV9fsgKzp.500x500.jpg"
+  },
+  {
+   "id": "15711276",
+   "name": "C.N. SANT ANDREU FEMENÍ",
+   "avatar": "https://cdn.leverade.com/thumbnails/AaTcV9fsgKzp.500x500.jpg"
+  }
+ ],
+ "our_team_ids": [
+  "15711274",
+  "15711276"
+ ],
+ "matches": [
+  {
+   "id": "143845561",
+   "date": "2025-12-27 09:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711305",
+   "away_team": "15711224",
+   "results": [
+    {
+     "value": 7,
+     "score": 2,
+     "team_id": "15711305",
+     "match_id": "143845561"
+    },
+    {
+     "value": 1,
+     "score": 0,
+     "team_id": "15711224",
+     "match_id": "143845561"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 1",
+   "round_order": 1,
+   "group_id": "3664221",
+   "group_name": "Grup A 1a Fase"
+  },
+  {
+   "id": "143845573",
+   "date": "2025-12-27 09:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15712871",
+   "away_team": "15711331",
+   "results": [
+    {
+     "value": 8,
+     "score": 2,
+     "team_id": "15712871",
+     "match_id": "143845573"
+    },
+    {
+     "value": 1,
+     "score": 0,
+     "team_id": "15711331",
+     "match_id": "143845573"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 1",
+   "round_order": 1,
+   "group_id": "3664222",
+   "group_name": "Grup B 1aFase"
+  },
+  {
+   "id": "143845576",
+   "date": "2025-12-27 09:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711274",
+   "away_team": "15711306",
+   "results": [
+    {
+     "value": 7,
+     "score": 2,
+     "team_id": "15711274",
+     "match_id": "143845576"
+    },
+    {
+     "value": 0,
+     "score": 0,
+     "team_id": "15711306",
+     "match_id": "143845576"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 1",
+   "round_order": 1,
+   "group_id": "3664223",
+   "group_name": "Grup C 1a Fase"
+  },
+  {
+   "id": "143845579",
+   "date": "2025-12-27 09:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15720922",
+   "away_team": "15714367",
+   "results": [
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15720922",
+     "match_id": "143845579"
+    },
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15714367",
+     "match_id": "143845579"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 1",
+   "round_order": 1,
+   "group_id": "3664224",
+   "group_name": "Grup D 1a Fase"
+  },
+  {
+   "id": "143845589",
+   "date": "2025-12-27 09:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711223",
+   "away_team": "15724698",
+   "results": [
+    {
+     "value": 12,
+     "score": 2,
+     "team_id": "15711223",
+     "match_id": "143845589"
+    },
+    {
+     "value": 0,
+     "score": 0,
+     "team_id": "15724698",
+     "match_id": "143845589"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 1",
+   "round_order": 1,
+   "group_id": "3664225",
+   "group_name": "Grup E 1a Fase"
+  },
+  {
+   "id": "143845600",
+   "date": "2025-12-27 09:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15713279",
+   "away_team": "15711308",
+   "results": [
+    {
+     "value": 10,
+     "score": 2,
+     "team_id": "15713279",
+     "match_id": "143845600"
+    },
+    {
+     "value": 0,
+     "score": 0,
+     "team_id": "15711308",
+     "match_id": "143845600"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 1",
+   "round_order": 1,
+   "group_id": "3664226",
+   "group_name": "Grup F 1a Fase"
+  },
+  {
+   "id": "143845633",
+   "date": "2025-12-27 09:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15714366",
+   "away_team": "15711276",
+   "results": [
+    {
+     "value": 8,
+     "score": 2,
+     "team_id": "15714366",
+     "match_id": "143845633"
+    },
+    {
+     "value": 0,
+     "score": 0,
+     "team_id": "15711276",
+     "match_id": "143845633"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 1",
+   "round_order": 1,
+   "group_id": "3664227",
+   "group_name": "Grup G 1a Fase"
+  },
+  {
+   "id": "143845636",
+   "date": "2025-12-27 09:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15713218",
+   "away_team": "15711335",
+   "results": [
+    {
+     "value": 10,
+     "score": 2,
+     "team_id": "15713218",
+     "match_id": "143845636"
+    },
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15711335",
+     "match_id": "143845636"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 1",
+   "round_order": 1,
+   "group_id": "3664228",
+   "group_name": "Grup H 1a Fase"
+  },
+  {
+   "id": "143845562",
+   "date": "2025-12-27 10:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711224",
+   "away_team": "15727046",
+   "results": [
+    {
+     "value": 2,
+     "score": 2,
+     "team_id": "15711224",
+     "match_id": "143845562"
+    },
+    {
+     "value": 1,
+     "score": 0,
+     "team_id": "15727046",
+     "match_id": "143845562"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 2",
+   "round_order": 2,
+   "group_id": "3664221",
+   "group_name": "Grup A 1a Fase"
+  },
+  {
+   "id": "143845574",
+   "date": "2025-12-27 10:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711331",
+   "away_team": "15711312",
+   "results": [
+    {
+     "value": 1,
+     "score": 0,
+     "team_id": "15711331",
+     "match_id": "143845574"
+    },
+    {
+     "value": 7,
+     "score": 2,
+     "team_id": "15711312",
+     "match_id": "143845574"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 2",
+   "round_order": 2,
+   "group_id": "3664222",
+   "group_name": "Grup B 1aFase"
+  },
+  {
+   "id": "143845577",
+   "date": "2025-12-27 10:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711306",
+   "away_team": "15714214",
+   "results": [
+    {
+     "value": 5,
+     "score": 0,
+     "team_id": "15711306",
+     "match_id": "143845577"
+    },
+    {
+     "value": 6,
+     "score": 2,
+     "team_id": "15714214",
+     "match_id": "143845577"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 2",
+   "round_order": 2,
+   "group_id": "3664223",
+   "group_name": "Grup C 1a Fase"
+  },
+  {
+   "id": "143845580",
+   "date": "2025-12-27 10:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15714367",
+   "away_team": "15711334",
+   "results": [
+    {
+     "value": 4,
+     "score": 2,
+     "team_id": "15714367",
+     "match_id": "143845580"
+    },
+    {
+     "value": 1,
+     "score": 0,
+     "team_id": "15711334",
+     "match_id": "143845580"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 2",
+   "round_order": 2,
+   "group_id": "3664224",
+   "group_name": "Grup D 1a Fase"
+  },
+  {
+   "id": "143845590",
+   "date": "2025-12-27 10:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15724698",
+   "away_team": "15718519",
+   "results": [
+    {
+     "value": 4,
+     "score": 0,
+     "team_id": "15724698",
+     "match_id": "143845590"
+    },
+    {
+     "value": 7,
+     "score": 2,
+     "team_id": "15718519",
+     "match_id": "143845590"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 2",
+   "round_order": 2,
+   "group_id": "3664225",
+   "group_name": "Grup E 1a Fase"
+  },
+  {
+   "id": "143845601",
+   "date": "2025-12-27 10:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711308",
+   "away_team": "15712574",
+   "results": [
+    {
+     "value": 0,
+     "score": 0,
+     "team_id": "15711308",
+     "match_id": "143845601"
+    },
+    {
+     "value": 10,
+     "score": 2,
+     "team_id": "15712574",
+     "match_id": "143845601"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 2",
+   "round_order": 2,
+   "group_id": "3664226",
+   "group_name": "Grup F 1a Fase"
+  },
+  {
+   "id": "143845634",
+   "date": "2025-12-27 10:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711276",
+   "away_team": "15712723",
+   "results": [
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15711276",
+     "match_id": "143845634"
+    },
+    {
+     "value": 9,
+     "score": 2,
+     "team_id": "15712723",
+     "match_id": "143845634"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 2",
+   "round_order": 2,
+   "group_id": "3664227",
+   "group_name": "Grup G 1a Fase"
+  },
+  {
+   "id": "143845637",
+   "date": "2025-12-27 10:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711335",
+   "away_team": "15716119",
+   "results": [
+    {
+     "value": 0,
+     "score": 0,
+     "team_id": "15711335",
+     "match_id": "143845637"
+    },
+    {
+     "value": 9,
+     "score": 2,
+     "team_id": "15716119",
+     "match_id": "143845637"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 2",
+   "round_order": 2,
+   "group_id": "3664228",
+   "group_name": "Grup H 1a Fase"
+  },
+  {
+   "id": "143845563",
+   "date": "2025-12-27 11:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15727046",
+   "away_team": "15711305",
+   "results": [
+    {
+     "value": 0,
+     "score": 0,
+     "team_id": "15727046",
+     "match_id": "143845563"
+    },
+    {
+     "value": 14,
+     "score": 2,
+     "team_id": "15711305",
+     "match_id": "143845563"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 3",
+   "round_order": 3,
+   "group_id": "3664221",
+   "group_name": "Grup A 1a Fase"
+  },
+  {
+   "id": "143845575",
+   "date": "2025-12-27 11:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711312",
+   "away_team": "15712871",
+   "results": [
+    {
+     "value": 0,
+     "score": 0,
+     "team_id": "15711312",
+     "match_id": "143845575"
+    },
+    {
+     "value": 10,
+     "score": 2,
+     "team_id": "15712871",
+     "match_id": "143845575"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 3",
+   "round_order": 3,
+   "group_id": "3664222",
+   "group_name": "Grup B 1aFase"
+  },
+  {
+   "id": "143845578",
+   "date": "2025-12-27 11:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15714214",
+   "away_team": "15711274",
+   "results": [
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15714214",
+     "match_id": "143845578"
+    },
+    {
+     "value": 6,
+     "score": 2,
+     "team_id": "15711274",
+     "match_id": "143845578"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 3",
+   "round_order": 3,
+   "group_id": "3664223",
+   "group_name": "Grup C 1a Fase"
+  },
+  {
+   "id": "143845581",
+   "date": "2025-12-27 11:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711334",
+   "away_team": "15720922",
+   "results": [
+    {
+     "value": 0,
+     "score": 0,
+     "team_id": "15711334",
+     "match_id": "143845581"
+    },
+    {
+     "value": 6,
+     "score": 2,
+     "team_id": "15720922",
+     "match_id": "143845581"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 3",
+   "round_order": 3,
+   "group_id": "3664224",
+   "group_name": "Grup D 1a Fase"
+  },
+  {
+   "id": "143845591",
+   "date": "2025-12-27 11:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15718519",
+   "away_team": "15711223",
+   "results": [
+    {
+     "value": 0,
+     "score": 0,
+     "team_id": "15718519",
+     "match_id": "143845591"
+    },
+    {
+     "value": 9,
+     "score": 2,
+     "team_id": "15711223",
+     "match_id": "143845591"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 3",
+   "round_order": 3,
+   "group_id": "3664225",
+   "group_name": "Grup E 1a Fase"
+  },
+  {
+   "id": "143845602",
+   "date": "2025-12-27 11:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15712574",
+   "away_team": "15713279",
+   "results": [
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15712574",
+     "match_id": "143845602"
+    },
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15713279",
+     "match_id": "143845602"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 3",
+   "round_order": 3,
+   "group_id": "3664226",
+   "group_name": "Grup F 1a Fase"
+  },
+  {
+   "id": "143845635",
+   "date": "2025-12-27 11:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15712723",
+   "away_team": "15714366",
+   "results": [
+    {
+     "value": 6,
+     "score": 2,
+     "team_id": "15712723",
+     "match_id": "143845635"
+    },
+    {
+     "value": 5,
+     "score": 0,
+     "team_id": "15714366",
+     "match_id": "143845635"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 3",
+   "round_order": 3,
+   "group_id": "3664227",
+   "group_name": "Grup G 1a Fase"
+  },
+  {
+   "id": "143845638",
+   "date": "2025-12-27 11:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15716119",
+   "away_team": "15713218",
+   "results": [
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15716119",
+     "match_id": "143845638"
+    },
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15713218",
+     "match_id": "143845638"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Jornada 3",
+   "round_order": 3,
+   "group_id": "3664228",
+   "group_name": "Grup H 1a Fase"
+  },
+  {
+   "id": "143845977",
+   "date": "2025-12-27 14:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15727046",
+   "away_team": "15711335",
+   "results": [
+    {
+     "value": 3,
+     "score": 2,
+     "team_id": "15727046",
+     "match_id": "143845977"
+    },
+    {
+     "value": 0,
+     "score": 0,
+     "team_id": "15711335",
+     "match_id": "143845977"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Quartos de final 17-24",
+   "round_order": 1,
+   "group_id": "3664312",
+   "group_name": "QF/SE/FINAL 17-24"
+  },
+  {
+   "id": "143845978",
+   "date": "2025-12-27 14:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711334",
+   "away_team": "15724698",
+   "results": [
+    {
+     "value": 6,
+     "score": 2,
+     "team_id": "15711334",
+     "match_id": "143845978"
+    },
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15724698",
+     "match_id": "143845978"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Quartos de final 17-24",
+   "round_order": 1,
+   "group_id": "3664312",
+   "group_name": "QF/SE/FINAL 17-24"
+  },
+  {
+   "id": "143845979",
+   "date": "2025-12-27 14:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711331",
+   "away_team": "15711276",
+   "results": [
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15711331",
+     "match_id": "143845979"
+    },
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15711276",
+     "match_id": "143845979"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Quartos de final 17-24",
+   "round_order": 1,
+   "group_id": "3664312",
+   "group_name": "QF/SE/FINAL 17-24"
+  },
+  {
+   "id": "143845980",
+   "date": "2025-12-27 14:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711306",
+   "away_team": "15711308",
+   "results": [
+    {
+     "value": 8,
+     "score": 2,
+     "team_id": "15711306",
+     "match_id": "143845980"
+    },
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15711308",
+     "match_id": "143845980"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Quartos de final 17-24",
+   "round_order": 1,
+   "group_id": "3664312",
+   "group_name": "QF/SE/FINAL 17-24"
+  },
+  {
+   "id": "143845825",
+   "date": "2025-12-27 14:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711305",
+   "away_team": "15711312",
+   "results": [
+    {
+     "value": 7,
+     "score": 2,
+     "team_id": "15711305",
+     "match_id": "143845825"
+    },
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15711312",
+     "match_id": "143845825"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Vuitensde final 1-16",
+   "round_order": 1,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845826",
+   "date": "2025-12-27 14:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15713218",
+   "away_team": "15714366",
+   "results": [
+    {
+     "value": 3,
+     "score": 2,
+     "team_id": "15713218",
+     "match_id": "143845826"
+    },
+    {
+     "value": 1,
+     "score": 0,
+     "team_id": "15714366",
+     "match_id": "143845826"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Vuitensde final 1-16",
+   "round_order": 1,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845827",
+   "date": "2025-12-27 14:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15720922",
+   "away_team": "15714214",
+   "results": [
+    {
+     "value": 7,
+     "score": 2,
+     "team_id": "15720922",
+     "match_id": "143845827"
+    },
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15714214",
+     "match_id": "143845827"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Vuitensde final 1-16",
+   "round_order": 1,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845828",
+   "date": "2025-12-27 14:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711223",
+   "away_team": "15712574",
+   "results": [
+    {
+     "value": 7,
+     "score": 2,
+     "team_id": "15711223",
+     "match_id": "143845828"
+    },
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15712574",
+     "match_id": "143845828"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Vuitensde final 1-16",
+   "round_order": 1,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845829",
+   "date": "2025-12-27 15:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711274",
+   "away_team": "15714367",
+   "results": [
+    {
+     "value": 3,
+     "score": 2,
+     "team_id": "15711274",
+     "match_id": "143845829"
+    },
+    {
+     "value": 1,
+     "score": 0,
+     "team_id": "15714367",
+     "match_id": "143845829"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Vuitensde final 1-16",
+   "round_order": 1,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845830",
+   "date": "2025-12-27 15:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15713279",
+   "away_team": "15718519",
+   "results": [
+    {
+     "value": 7,
+     "score": 2,
+     "team_id": "15713279",
+     "match_id": "143845830"
+    },
+    {
+     "value": 1,
+     "score": 0,
+     "team_id": "15718519",
+     "match_id": "143845830"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Vuitensde final 1-16",
+   "round_order": 1,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845831",
+   "date": "2025-12-27 15:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15712723",
+   "away_team": "15716119",
+   "results": [
+    {
+     "value": 4,
+     "score": 0,
+     "team_id": "15712723",
+     "match_id": "143845831"
+    },
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15716119",
+     "match_id": "143845831"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Vuitensde final 1-16",
+   "round_order": 1,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845832",
+   "date": "2025-12-27 15:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15712871",
+   "away_team": "15711224",
+   "results": [
+    {
+     "value": 7,
+     "score": 2,
+     "team_id": "15712871",
+     "match_id": "143845832"
+    },
+    {
+     "value": 1,
+     "score": 0,
+     "team_id": "15711224",
+     "match_id": "143845832"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Vuitensde final 1-16",
+   "round_order": 1,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845875",
+   "date": "2025-12-28 08:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711312",
+   "away_team": "15714366",
+   "results": [
+    {
+     "value": 1,
+     "score": 0,
+     "team_id": "15711312",
+     "match_id": "143845875"
+    },
+    {
+     "value": 8,
+     "score": 2,
+     "team_id": "15714366",
+     "match_id": "143845875"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Quartos de final 9-16",
+   "round_order": 1,
+   "group_id": "3664306",
+   "group_name": "QF/SE/FINAL 9-16"
+  },
+  {
+   "id": "143845876",
+   "date": "2025-12-28 08:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15714214",
+   "away_team": "15712574",
+   "results": [
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15714214",
+     "match_id": "143845876"
+    },
+    {
+     "value": 7,
+     "score": 2,
+     "team_id": "15712574",
+     "match_id": "143845876"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Quartos de final 9-16",
+   "round_order": 1,
+   "group_id": "3664306",
+   "group_name": "QF/SE/FINAL 9-16"
+  },
+  {
+   "id": "143845877",
+   "date": "2025-12-28 08:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15714367",
+   "away_team": "15718519",
+   "results": [
+    {
+     "value": 4,
+     "score": 0,
+     "team_id": "15714367",
+     "match_id": "143845877"
+    },
+    {
+     "value": 6,
+     "score": 2,
+     "team_id": "15718519",
+     "match_id": "143845877"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Quartos de final 9-16",
+   "round_order": 1,
+   "group_id": "3664306",
+   "group_name": "QF/SE/FINAL 9-16"
+  },
+  {
+   "id": "143845878",
+   "date": "2025-12-28 08:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15712723",
+   "away_team": "15711224",
+   "results": [
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15712723",
+     "match_id": "143845878"
+    },
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15711224",
+     "match_id": "143845878"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Quartos de final 9-16",
+   "round_order": 1,
+   "group_id": "3664306",
+   "group_name": "QF/SE/FINAL 9-16"
+  },
+  {
+   "id": "143845833",
+   "date": "2025-12-28 08:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711305",
+   "away_team": "15713218",
+   "results": [
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15713218",
+     "match_id": "143845833"
+    },
+    {
+     "value": 4,
+     "score": 2,
+     "team_id": "15711305",
+     "match_id": "143845833"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Quartos de final 1-8",
+   "round_order": 2,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845834",
+   "date": "2025-12-28 08:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15720922",
+   "away_team": "15711223",
+   "results": [
+    {
+     "value": 2,
+     "score": 2,
+     "team_id": "15711223",
+     "match_id": "143845834"
+    },
+    {
+     "value": 1,
+     "score": 0,
+     "team_id": "15720922",
+     "match_id": "143845834"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Quartos de final 1-8",
+   "round_order": 2,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845835",
+   "date": "2025-12-28 08:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711274",
+   "away_team": "15713279",
+   "results": [
+    {
+     "value": 11,
+     "score": 2,
+     "team_id": "15711274",
+     "match_id": "143845835"
+    },
+    {
+     "value": 10,
+     "score": 0,
+     "team_id": "15713279",
+     "match_id": "143845835"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Quartos de final 1-8",
+   "round_order": 2,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845836",
+   "date": "2025-12-28 08:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15716119",
+   "away_team": "15712871",
+   "results": [
+    {
+     "value": 5,
+     "score": 0,
+     "team_id": "15716119",
+     "match_id": "143845836"
+    },
+    {
+     "value": 7,
+     "score": 2,
+     "team_id": "15712871",
+     "match_id": "143845836"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Quartos de final 1-8",
+   "round_order": 2,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845981",
+   "date": "2025-12-28 09:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15727046",
+   "away_team": "15711334",
+   "results": [
+    {
+     "value": 0,
+     "score": 0,
+     "team_id": "15727046",
+     "match_id": "143845981"
+    },
+    {
+     "value": 6,
+     "score": 2,
+     "team_id": "15711334",
+     "match_id": "143845981"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Semifinal 17-20",
+   "round_order": 2,
+   "group_id": "3664312",
+   "group_name": "QF/SE/FINAL 17-24"
+  },
+  {
+   "id": "143845982",
+   "date": "2025-12-28 09:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711331",
+   "away_team": "15711306",
+   "results": [
+    {
+     "value": 6,
+     "score": 2,
+     "team_id": "15711331",
+     "match_id": "143845982"
+    },
+    {
+     "value": 5,
+     "score": 0,
+     "team_id": "15711306",
+     "match_id": "143845982"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Semifinal 17-20",
+   "round_order": 2,
+   "group_id": "3664312",
+   "group_name": "QF/SE/FINAL 17-24"
+  },
+  {
+   "id": "143846032",
+   "date": "2025-12-28 09:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711335",
+   "away_team": "15724698",
+   "results": [
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15711335",
+     "match_id": "143846032"
+    },
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15724698",
+     "match_id": "143846032"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Semifinal 21-24",
+   "round_order": 1,
+   "group_id": "3664316",
+   "group_name": "SEM/FINAL 21-24"
+  },
+  {
+   "id": "143846033",
+   "date": "2025-12-28 09:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711276",
+   "away_team": "15711308",
+   "results": [
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15711276",
+     "match_id": "143846033"
+    },
+    {
+     "value": 0,
+     "score": 0,
+     "team_id": "15711308",
+     "match_id": "143846033"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Semifinal 21-24",
+   "round_order": 1,
+   "group_id": "3664316",
+   "group_name": "SEM/FINAL 21-24"
+  },
+  {
+   "id": "143845879",
+   "date": "2025-12-28 09:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15714366",
+   "away_team": "15712574",
+   "results": [
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15714366",
+     "match_id": "143845879"
+    },
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15712574",
+     "match_id": "143845879"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Semifinal 9-12",
+   "round_order": 2,
+   "group_id": "3664306",
+   "group_name": "QF/SE/FINAL 9-16"
+  },
+  {
+   "id": "143845880",
+   "date": "2025-12-28 09:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15718519",
+   "away_team": "15712723",
+   "results": [
+    {
+     "value": 6,
+     "score": 2,
+     "team_id": "15712723",
+     "match_id": "143845880"
+    },
+    {
+     "value": 5,
+     "score": 0,
+     "team_id": "15718519",
+     "match_id": "143845880"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Semifinal 9-12",
+   "round_order": 2,
+   "group_id": "3664306",
+   "group_name": "QF/SE/FINAL 9-16"
+  },
+  {
+   "id": "143845973",
+   "date": "2025-12-28 09:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711312",
+   "away_team": "15714214",
+   "results": [
+    {
+     "value": 5,
+     "score": 0,
+     "team_id": "15711312",
+     "match_id": "143845973"
+    },
+    {
+     "value": 6,
+     "score": 2,
+     "team_id": "15714214",
+     "match_id": "143845973"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Semifinal 13-16",
+   "round_order": 1,
+   "group_id": "3664310",
+   "group_name": "SFINAL 13-16"
+  },
+  {
+   "id": "143845974",
+   "date": "2025-12-28 09:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15714367",
+   "away_team": "15711224",
+   "results": [
+    {
+     "value": 4,
+     "score": 2,
+     "team_id": "15714367",
+     "match_id": "143845974"
+    },
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15711224",
+     "match_id": "143845974"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Semifinal 13-16",
+   "round_order": 1,
+   "group_id": "3664310",
+   "group_name": "SFINAL 13-16"
+  },
+  {
+   "id": "143845837",
+   "date": "2025-12-28 10:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711305",
+   "away_team": "15711223",
+   "results": [
+    {
+     "value": 4,
+     "score": 2,
+     "team_id": "15711305",
+     "match_id": "143845837"
+    },
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15711223",
+     "match_id": "143845837"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Semifinal 1-4",
+   "round_order": 3,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845838",
+   "date": "2025-12-28 10:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711274",
+   "away_team": "15712871",
+   "results": [
+    {
+     "value": 4,
+     "score": 2,
+     "team_id": "15712871",
+     "match_id": "143845838"
+    },
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15711274",
+     "match_id": "143845838"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Semifinal 1-4",
+   "round_order": 3,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845870",
+   "date": "2025-12-28 10:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15713218",
+   "away_team": "15720922",
+   "results": [
+    {
+     "value": 4,
+     "score": 2,
+     "team_id": "15713218",
+     "match_id": "143845870"
+    },
+    {
+     "value": 1,
+     "score": 0,
+     "team_id": "15720922",
+     "match_id": "143845870"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Semifinal 5-8",
+   "round_order": 1,
+   "group_id": "3664304",
+   "group_name": "SEM/FINAL 5-8"
+  },
+  {
+   "id": "143845871",
+   "date": "2025-12-28 10:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15713279",
+   "away_team": "15716119",
+   "results": [
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15713279",
+     "match_id": "143845871"
+    },
+    {
+     "value": 4,
+     "score": 0,
+     "team_id": "15716119",
+     "match_id": "143845871"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Semifinal 5-8",
+   "round_order": 1,
+   "group_id": "3664304",
+   "group_name": "SEM/FINAL 5-8"
+  },
+  {
+   "id": "143845984",
+   "date": "2025-12-28 10:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15727046",
+   "away_team": "15711306",
+   "results": [
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15727046",
+     "match_id": "143845984"
+    },
+    {
+     "value": 4,
+     "score": 2,
+     "team_id": "15711306",
+     "match_id": "143845984"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Final 19-20",
+   "round_order": 3,
+   "group_id": "3664312",
+   "group_name": "QF/SE/FINAL 17-24"
+  },
+  {
+   "id": "143845983",
+   "date": "2025-12-28 10:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711334",
+   "away_team": "15711331",
+   "results": [
+    {
+     "value": 4,
+     "score": 0,
+     "team_id": "15711334",
+     "match_id": "143845983"
+    },
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15711331",
+     "match_id": "143845983"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Final 17-18",
+   "round_order": 4,
+   "group_id": "3664312",
+   "group_name": "QF/SE/FINAL 17-24"
+  },
+  {
+   "id": "143846035",
+   "date": "2025-12-28 10:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711335",
+   "away_team": "15711308",
+   "results": [
+    {
+     "value": 0,
+     "score": 0,
+     "team_id": "15711308",
+     "match_id": "143846035"
+    },
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15711335",
+     "match_id": "143846035"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Final 23-24",
+   "round_order": 2,
+   "group_id": "3664316",
+   "group_name": "SEM/FINAL 21-24"
+  },
+  {
+   "id": "143846034",
+   "date": "2025-12-28 10:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15724698",
+   "away_team": "15711276",
+   "results": [
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15711276",
+     "match_id": "143846034"
+    },
+    {
+     "value": 6,
+     "score": 2,
+     "team_id": "15724698",
+     "match_id": "143846034"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Final 21-22",
+   "round_order": 3,
+   "group_id": "3664316",
+   "group_name": "SEM/FINAL 21-24"
+  },
+  {
+   "id": "143845882",
+   "date": "2025-12-28 11:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15714366",
+   "away_team": "15718519",
+   "results": [
+    {
+     "value": 6,
+     "score": 2,
+     "team_id": "15714366",
+     "match_id": "143845882"
+    },
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15718519",
+     "match_id": "143845882"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Final 11-12",
+   "round_order": 3,
+   "group_id": "3664306",
+   "group_name": "QF/SE/FINAL 9-16"
+  },
+  {
+   "id": "143845881",
+   "date": "2025-12-28 11:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15712574",
+   "away_team": "15712723",
+   "results": [
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15712574",
+     "match_id": "143845881"
+    },
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15712723",
+     "match_id": "143845881"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Final 9-10",
+   "round_order": 4,
+   "group_id": "3664306",
+   "group_name": "QF/SE/FINAL 9-16"
+  },
+  {
+   "id": "143845976",
+   "date": "2025-12-28 11:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711312",
+   "away_team": "15711224",
+   "results": [
+    {
+     "value": 4,
+     "score": 2,
+     "team_id": "15711312",
+     "match_id": "143845976"
+    },
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15711224",
+     "match_id": "143845976"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "15-16",
+   "round_order": 3,
+   "group_id": "3664310",
+   "group_name": "SFINAL 13-16"
+  },
+  {
+   "id": "143845975",
+   "date": "2025-12-28 11:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15714214",
+   "away_team": "15714367",
+   "results": [
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15714214",
+     "match_id": "143845975"
+    },
+    {
+     "value": 7,
+     "score": 2,
+     "team_id": "15714367",
+     "match_id": "143845975"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Final 13-14",
+   "round_order": 4,
+   "group_id": "3664310",
+   "group_name": "SFINAL 13-16"
+  },
+  {
+   "id": "143845873",
+   "date": "2025-12-28 11:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15720922",
+   "away_team": "15716119",
+   "results": [
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15720922",
+     "match_id": "143845873"
+    },
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15716119",
+     "match_id": "143845873"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Final 7-8",
+   "round_order": 2,
+   "group_id": "3664304",
+   "group_name": "SEM/FINAL 5-8"
+  },
+  {
+   "id": "143845872",
+   "date": "2025-12-28 11:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15713218",
+   "away_team": "15713279",
+   "results": [
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15713218",
+     "match_id": "143845872"
+    },
+    {
+     "value": 5,
+     "score": 2,
+     "team_id": "15713279",
+     "match_id": "143845872"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Final 5-6",
+   "round_order": 3,
+   "group_id": "3664304",
+   "group_name": "SEM/FINAL 5-8"
+  },
+  {
+   "id": "143845840",
+   "date": "2025-12-28 12:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711223",
+   "away_team": "15711274",
+   "results": [
+    {
+     "value": 4,
+     "score": 2,
+     "team_id": "15711223",
+     "match_id": "143845840"
+    },
+    {
+     "value": 2,
+     "score": 0,
+     "team_id": "15711274",
+     "match_id": "143845840"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Final 3-4",
+   "round_order": 4,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  },
+  {
+   "id": "143845839",
+   "date": "2025-12-28 12:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15711305",
+   "away_team": "15712871",
+   "results": [
+    {
+     "value": 3,
+     "score": 0,
+     "team_id": "15711305",
+     "match_id": "143845839"
+    },
+    {
+     "value": 4,
+     "score": 2,
+     "team_id": "15712871",
+     "match_id": "143845839"
+    }
+   ],
+   "venue": "375 - Sabadell, CN - Can Llong - 50m coberta",
+   "round_name": "Final 1-2",
+   "round_order": 5,
+   "group_id": "3664295",
+   "group_name": "VF/QF/SF/FINAL 1-8"
+  }
+ ],
+ "team_names": {
+  "15711305": "C.N. ATL BARCELONETA A",
+  "15711224": "U.E. D'HORTA FEMENÍ",
+  "15727046": "C.N. VALLIRANA",
+  "15712871": "C.N. BARCELONA",
+  "15711312": "C.N. POBLE NOU",
+  "15711331": "A.E. SANTA EULÀLIA",
+  "15711274": "C.N. SANT ANDREU A",
+  "15714214": "C.N. RUBÍ",
+  "15711306": "C.N. ATL BARCELONETA FEM",
+  "15720922": "C.E. MEDITERRANI",
+  "15714367": "C.N. SABADELL FEMENI",
+  "15711334": "C.N. CATALUNYA MASC A",
+  "15711223": "U.E. D'HORTA A",
+  "15718519": "CN GRANOLLERS",
+  "15724698": "C.N. MOLINS DE REI",
+  "15713279": "C.N. PREMIÀ",
+  "15712574": "CN TERRASSA",
+  "15711308": "C.W. SANT ADRIÀ",
+  "15712723": "C.N. MATARÓ",
+  "15714366": "C.N. SABADELL MASCULI A",
+  "15711276": "C.N. SANT ANDREU FEMENÍ",
+  "15713218": "C.N. MANRESA",
+  "15716119": "C.N. SANT FELIU",
+  "15711335": "C.N. CATALUNYA FEM"
+ },
+ "rosters": {
+  "15711223": [
+   {
+    "first_name": "PEP ",
+    "last_name": "ARAU CANUT",
+    "birthdate": "2017-07-25",
+    "role": "player"
+   },
+   {
+    "first_name": "JAVIER",
+    "last_name": "BOUAZIZI DIAZ",
+    "birthdate": "2016-07-22",
+    "role": "player"
+   },
+   {
+    "first_name": "GERARD",
+    "last_name": "CAMPO MAFLA",
+    "birthdate": "2016-10-07",
+    "role": "player"
+   },
+   {
+    "first_name": "ARNAU",
+    "last_name": "COCA",
+    "birthdate": "2017-07-10",
+    "role": "player"
+   },
+   {
+    "first_name": "GERARD",
+    "last_name": "ESTALELLA TORNE",
+    "birthdate": "2016-05-27",
+    "role": "player"
+   },
+   {
+    "first_name": "LUCAS",
+    "last_name": "GIL TORRES",
+    "birthdate": "2017-09-22",
+    "role": "player"
+   },
+   {
+    "first_name": "ADRIA",
+    "last_name": "LEON ILLERA",
+    "birthdate": "2016-04-26",
+    "role": "player"
+   },
+   {
+    "first_name": "BRUNO",
+    "last_name": "MIRON AIRA",
+    "birthdate": "2016-08-08",
+    "role": "player"
+   },
+   {
+    "first_name": "ALEJANDRO",
+    "last_name": "PRATDEPADUA ROMAN",
+    "birthdate": "2016-02-18",
+    "role": "player"
+   },
+   {
+    "first_name": "GAEL",
+    "last_name": "RUEDA TRUJILLO",
+    "birthdate": "2016-04-02",
+    "role": "player"
+   },
+   {
+    "first_name": "KILIAN",
+    "last_name": "ZAMPALO MENJIBAR",
+    "birthdate": "2016-11-21",
+    "role": "player"
+   },
+   {
+    "first_name": "GUILLEM",
+    "last_name": "CLARAMUNT VILLANUEVA",
+    "birthdate": "2004-03-25",
+    "role": "staff"
+   },
+   {
+    "first_name": "SERGIO",
+    "last_name": "PRATDEPADUA NOLLA",
+    "birthdate": "1986-08-30",
+    "role": "staff"
+   },
+   {
+    "first_name": "PAU",
+    "last_name": "RIBAS ALBELLA",
+    "birthdate": "2006-11-29",
+    "role": "staff"
+   }
+  ],
+  "15711224": [
+   {
+    "first_name": "NURIA",
+    "last_name": "AVILES SALLAN",
+    "birthdate": "2017-01-27",
+    "role": "player"
+   },
+   {
+    "first_name": "MARTINA",
+    "last_name": "FERNANDEZ GIMENEZ",
+    "birthdate": "2016-01-29",
+    "role": "player"
+   },
+   {
+    "first_name": "NUR",
+    "last_name": "GARCIA MARTINEZ",
+    "birthdate": "2017-07-15",
+    "role": "player"
+   },
+   {
+    "first_name": "SOFIA",
+    "last_name": "GOGOCHURI GUROVA",
+    "birthdate": "2016-06-11",
+    "role": "player"
+   },
+   {
+    "first_name": "AMAYA DASHA",
+    "last_name": "GOMEZ BUSTAMANTE",
+    "birthdate": "2017-01-11",
+    "role": "player"
+   },
+   {
+    "first_name": "CLARA",
+    "last_name": "HERRERO MENDOZA",
+    "birthdate": "2016-10-14",
+    "role": "player"
+   },
+   {
+    "first_name": "ALESSIA GAELA",
+    "last_name": "LLORCA AMARANTO",
+    "birthdate": "2016-04-10",
+    "role": "player"
+   },
+   {
+    "first_name": "ONA",
+    "last_name": "OLLE VINUESA",
+    "birthdate": "2016-02-05",
+    "role": "player"
+   },
+   {
+    "first_name": "EMMA",
+    "last_name": "PEREIRA DE OLIVEIRA",
+    "birthdate": "2016-02-23",
+    "role": "player"
+   },
+   {
+    "first_name": "HELENA",
+    "last_name": "ROMEU SHUBITIDZE",
+    "birthdate": "2016-12-14",
+    "role": "player"
+   },
+   {
+    "first_name": "ANTONELLA",
+    "last_name": "TORREALBA ANGULO",
+    "birthdate": "2016-03-24",
+    "role": "player"
+   },
+   {
+    "first_name": "SANDRINE",
+    "last_name": "DE OLIVEIRA",
+    "birthdate": "1977-02-18",
+    "role": "staff"
+   },
+   {
+    "first_name": "CARLA",
+    "last_name": "NOGUERA PALOMO",
+    "birthdate": "2006-06-23",
+    "role": "staff"
+   },
+   {
+    "first_name": "MARIA DEL MAR",
+    "last_name": "PARERA OLIVE",
+    "birthdate": "1978-09-18",
+    "role": "staff"
+   },
+   {
+    "first_name": "EMMA",
+    "last_name": "VINUESA VIU",
+    "birthdate": "1984-09-25",
+    "role": "staff"
+   }
+  ],
+  "15711274": [
+   {
+    "first_name": "MARCOS",
+    "last_name": "ANTIN BEAS",
+    "birthdate": "2016-10-12",
+    "role": "player"
+   },
+   {
+    "first_name": "ROC",
+    "last_name": "ARIAS MONTMANY",
+    "birthdate": "2017-06-07",
+    "role": "player"
+   },
+   {
+    "first_name": "DYLAN",
+    "last_name": "BRACAMONTE WALIAS ",
+    "birthdate": "2016-01-23",
+    "role": "player"
+   },
+   {
+    "first_name": "GABRIEL",
+    "last_name": "CATENA FRASQUET",
+    "birthdate": "2016-03-04",
+    "role": "player"
+   },
+   {
+    "first_name": "AIMAR",
+    "last_name": "ELVIRA AYUSO",
+    "birthdate": "2016-12-17",
+    "role": "player"
+   },
+   {
+    "first_name": "ARAN",
+    "last_name": "GAZQUEZ PUGA",
+    "birthdate": "2016-03-04",
+    "role": "player"
+   },
+   {
+    "first_name": "BIEL",
+    "last_name": "MARTIN CASTRO",
+    "birthdate": "2016-08-25",
+    "role": "player"
+   },
+   {
+    "first_name": "BRUNO",
+    "last_name": "MARTINEZ CESTERO",
+    "birthdate": "2016-11-30",
+    "role": "player"
+   },
+   {
+    "first_name": "GIOVANNI",
+    "last_name": "MIGLIORINO SANZ",
+    "birthdate": "2016-09-24",
+    "role": "player"
+   },
+   {
+    "first_name": "LLUC",
+    "last_name": "MIQUEL GUICH",
+    "birthdate": "2016-11-28",
+    "role": "player"
+   },
+   {
+    "first_name": "GABRIEL",
+    "last_name": "PONS TELLEZ",
+    "birthdate": "2016-02-06",
+    "role": "player"
+   },
+   {
+    "first_name": "GENIS",
+    "last_name": "SILVESTRE CHANG",
+    "birthdate": "2017-12-13",
+    "role": "player"
+   },
+   {
+    "first_name": "BIEL",
+    "last_name": "TIO PASTOR",
+    "birthdate": "2016-03-19",
+    "role": "player"
+   },
+   {
+    "first_name": "MARTI",
+    "last_name": "VIDAL PEREZ",
+    "birthdate": "2016-12-21",
+    "role": "player"
+   },
+   {
+    "first_name": "ALBERTO",
+    "last_name": "ANTIN CASTELLANOS",
+    "birthdate": "1982-01-28",
+    "role": "staff"
+   },
+   {
+    "first_name": "PAU",
+    "last_name": "CAMPOS PAREDES",
+    "birthdate": "2002-02-28",
+    "role": "staff"
+   },
+   {
+    "first_name": "LUCAS ",
+    "last_name": "PORTES SOUZA ",
+    "birthdate": "1996-07-30",
+    "role": "staff"
+   },
+   {
+    "first_name": "ELENA",
+    "last_name": "RUIZ BARRIL",
+    "birthdate": "2004-10-29",
+    "role": "staff"
+   },
+   {
+    "first_name": "ADRIA",
+    "last_name": "SERRANO PAMIES",
+    "birthdate": "2007-10-26",
+    "role": "staff"
+   },
+   {
+    "first_name": "ADRIA",
+    "last_name": "SERRANO PAMIES",
+    "birthdate": "2007-10-26",
+    "role": "staff"
+   }
+  ],
+  "15711276": [
+   {
+    "first_name": "JANA",
+    "last_name": "BOSCH RIERA",
+    "birthdate": "2017-01-25",
+    "role": "player"
+   },
+   {
+    "first_name": "BERTA ",
+    "last_name": "CANTO ASUMU",
+    "birthdate": "2016-03-15",
+    "role": "player"
+   },
+   {
+    "first_name": "ERIN ",
+    "last_name": "CORTES SOLER",
+    "birthdate": "2017-03-09",
+    "role": "player"
+   },
+   {
+    "first_name": "CANDELA",
+    "last_name": "GONZALEZ GONZALO",
+    "birthdate": "2017-01-28",
+    "role": "player"
+   },
+   {
+    "first_name": "AINA",
+    "last_name": "LLEDO COGOLLUDO",
+    "birthdate": "2017-11-04",
+    "role": "player"
+   },
+   {
+    "first_name": "EMMA",
+    "last_name": "LOPEZ ALBO",
+    "birthdate": "2016-08-04",
+    "role": "player"
+   },
+   {
+    "first_name": "MIA",
+    "last_name": "MARTINEZ LAMELA",
+    "birthdate": "2017-09-17",
+    "role": "player"
+   },
+   {
+    "first_name": "INDIA",
+    "last_name": "PEREIRA HIDALGO",
+    "birthdate": "2016-08-07",
+    "role": "player"
+   },
+   {
+    "first_name": "MINEKO",
+    "last_name": "PERIS SERRANO",
+    "birthdate": "2018-12-11",
+    "role": "player"
+   },
+   {
+    "first_name": "ONA",
+    "last_name": "PRADERAS COBACHO",
+    "birthdate": "2017-04-09",
+    "role": "player"
+   },
+   {
+    "first_name": "JULIA",
+    "last_name": "RODRIGUEZ GIL",
+    "birthdate": "2017-02-25",
+    "role": "player"
+   },
+   {
+    "first_name": "ILZE",
+    "last_name": "SANTAPAU MARTI",
+    "birthdate": "2016-09-06",
+    "role": "player"
+   },
+   {
+    "first_name": "ASTRID",
+    "last_name": "SOLAN PEÑA",
+    "birthdate": "2017-11-18",
+    "role": "player"
+   },
+   {
+    "first_name": "ALBERTO",
+    "last_name": "ANTIN CASTELLANOS",
+    "birthdate": "1982-01-28",
+    "role": "staff"
+   },
+   {
+    "first_name": "PAU",
+    "last_name": "CAMPOS PAREDES",
+    "birthdate": "2002-02-28",
+    "role": "staff"
+   },
+   {
+    "first_name": "GEMMA",
+    "last_name": "COBACHO MARTINEZ",
+    "birthdate": "1984-06-13",
+    "role": "staff"
+   },
+   {
+    "first_name": "DIANA",
+    "last_name": "COGOLLUDO ABIA",
+    "birthdate": "1984-06-24",
+    "role": "staff"
+   },
+   {
+    "first_name": "LUCAS ",
+    "last_name": "PORTES SOUZA ",
+    "birthdate": "1996-07-30",
+    "role": "staff"
+   },
+   {
+    "first_name": "ELENA",
+    "last_name": "RUIZ BARRIL",
+    "birthdate": "2004-10-29",
+    "role": "staff"
+   },
+   {
+    "first_name": "ADRIA",
+    "last_name": "SERRANO PAMIES",
+    "birthdate": "2007-10-26",
+    "role": "staff"
+   },
+   {
+    "first_name": "ADRIA",
+    "last_name": "SERRANO PAMIES",
+    "birthdate": "2007-10-26",
+    "role": "staff"
+   }
+  ],
+  "15711305": [
+   {
+    "first_name": "HECTOR",
+    "last_name": "CEPERO AMAT",
+    "birthdate": "2016-06-09",
+    "role": "player"
+   },
+   {
+    "first_name": "FINN MATEO",
+    "last_name": "HAMILTON DIXON",
+    "birthdate": "2016-12-29",
+    "role": "player"
+   },
+   {
+    "first_name": "POL",
+    "last_name": "LOPEZ LOIS",
+    "birthdate": "2016-02-10",
+    "role": "player"
+   },
+   {
+    "first_name": "ADRIA",
+    "last_name": "MARTINEZ GALLARDO",
+    "birthdate": "2018-09-17",
+    "role": "player"
+   },
+   {
+    "first_name": "BIEL ",
+    "last_name": "MARTINEZ LLORENTE",
+    "birthdate": "2016-06-03",
+    "role": "player"
+   },
+   {
+    "first_name": "MAXIM",
+    "last_name": "MEDINA NIETO",
+    "birthdate": "2017-04-21",
+    "role": "player"
+   },
+   {
+    "first_name": "BIEL",
+    "last_name": "MESEGUER ANDREU",
+    "birthdate": "2016-09-18",
+    "role": "player"
+   },
+   {
+    "first_name": "MATHIAS ",
+    "last_name": "SERRES TORO",
+    "birthdate": "2016-10-09",
+    "role": "player"
+   },
+   {
+    "first_name": "ARAN",
+    "last_name": "TELLERI MELERO",
+    "birthdate": "2016-04-15",
+    "role": "player"
+   },
+   {
+    "first_name": "FRANCESCO",
+    "last_name": "TESONE",
+    "birthdate": "2017-07-15",
+    "role": "player"
+   },
+   {
+    "first_name": "ERIC",
+    "last_name": "VIANA AURIN",
+    "birthdate": "2016-10-05",
+    "role": "player"
+   },
+   {
+    "first_name": "QUIM",
+    "last_name": "ALONSO GARCIA",
+    "birthdate": "1998-10-18",
+    "role": "staff"
+   },
+   {
+    "first_name": "AINARA",
+    "last_name": "FARRE COLOMINA",
+    "birthdate": "1999-03-21",
+    "role": "staff"
+   },
+   {
+    "first_name": "YOLANDA",
+    "last_name": "LLORENTE DEL CAMPO",
+    "birthdate": "1976-06-24",
+    "role": "staff"
+   },
+   {
+    "first_name": "LORENZO",
+    "last_name": "MARTINEZ EXPOSITO",
+    "birthdate": "1968-01-20",
+    "role": "staff"
+   }
+  ],
+  "15711306": [
+   {
+    "first_name": "AIALA",
+    "last_name": "ALONSO GARCIA",
+    "birthdate": "2018-02-10",
+    "role": "player"
+   },
+   {
+    "first_name": "HANNAH ",
+    "last_name": "BOU ARREAZA ",
+    "birthdate": "2017-03-22",
+    "role": "player"
+   },
+   {
+    "first_name": "JANIS MERCE ",
+    "last_name": "CEREÑO MALDONADO ",
+    "birthdate": "2017-03-25",
+    "role": "player"
+   },
+   {
+    "first_name": "ONA",
+    "last_name": "CHICOTE MOLERO",
+    "birthdate": "2016-12-27",
+    "role": "player"
+   },
+   {
+    "first_name": "OLIVIA",
+    "last_name": "DEL CERRO ABULI",
+    "birthdate": "2016-06-24",
+    "role": "player"
+   },
+   {
+    "first_name": "MARIA",
+    "last_name": "FERNANDEZ CARDENAL",
+    "birthdate": "2016-04-26",
+    "role": "player"
+   },
+   {
+    "first_name": "ARIADNA",
+    "last_name": "GARCIA CAMPDERRICH",
+    "birthdate": "2018-07-08",
+    "role": "player"
+   },
+   {
+    "first_name": "VERA",
+    "last_name": "GONZALEZ PEREZ ",
+    "birthdate": "2017-06-28",
+    "role": "player"
+   },
+   {
+    "first_name": "TAMARA",
+    "last_name": "KOBULASHVILI ARESHIDZE",
+    "birthdate": "2016-03-27",
+    "role": "player"
+   },
+   {
+    "first_name": "JANA",
+    "last_name": "LECHA DE DIEGO",
+    "birthdate": "2016-07-08",
+    "role": "player"
+   },
+   {
+    "first_name": "RITA",
+    "last_name": "RODILANA CABEZAS",
+    "birthdate": "2017-10-12",
+    "role": "player"
+   },
+   {
+    "first_name": "MARTINA",
+    "last_name": "SALDAÑA MEDINA",
+    "birthdate": "2016-03-07",
+    "role": "player"
+   },
+   {
+    "first_name": "ROBERTO",
+    "last_name": "ALONSO FERNANDEZ",
+    "birthdate": "1985-06-27",
+    "role": "staff"
+   },
+   {
+    "first_name": "QUIM",
+    "last_name": "ALONSO GARCIA",
+    "birthdate": "1998-10-18",
+    "role": "staff"
+   },
+   {
+    "first_name": "AINARA",
+    "last_name": "FARRE COLOMINA",
+    "birthdate": "1999-03-21",
+    "role": "staff"
+   },
+   {
+    "first_name": "ITZIAR",
+    "last_name": "GARCIA MATUTE",
+    "birthdate": "1985-10-05",
+    "role": "staff"
+   }
+  ],
+  "15711308": [],
+  "15711312": [
+   {
+    "first_name": "NIL",
+    "last_name": "AZLOR LLADO ",
+    "birthdate": "2016-06-24",
+    "role": "player"
+   },
+   {
+    "first_name": "EDUARDO",
+    "last_name": "BENEDUCE",
+    "birthdate": "2016-09-07",
+    "role": "player"
+   },
+   {
+    "first_name": "KAI",
+    "last_name": "FERNANDEZ LINSE",
+    "birthdate": "2016-01-23",
+    "role": "player"
+   },
+   {
+    "first_name": "JORDI",
+    "last_name": "GARRETA PETITBO",
+    "birthdate": "2016-07-26",
+    "role": "player"
+   },
+   {
+    "first_name": "MARTI",
+    "last_name": "LOIS SANCHEZ",
+    "birthdate": "2016-02-22",
+    "role": "player"
+   },
+   {
+    "first_name": "GABRIEL",
+    "last_name": "MARTI NASCIMENTO",
+    "birthdate": "2016-03-07",
+    "role": "player"
+   },
+   {
+    "first_name": "CLAUDI",
+    "last_name": "MORALEJO BUSQUETS ",
+    "birthdate": "2016-08-30",
+    "role": "player"
+   },
+   {
+    "first_name": "QUIM ",
+    "last_name": "MORALEJO BUSQUETS ",
+    "birthdate": "2018-12-20",
+    "role": "player"
+   },
+   {
+    "first_name": "MARIO",
+    "last_name": "PAZ PEREZ ",
+    "birthdate": "2016-08-02",
+    "role": "player"
+   },
+   {
+    "first_name": "ROC",
+    "last_name": "QUERO VINYES",
+    "birthdate": "2016-08-28",
+    "role": "player"
+   },
+   {
+    "first_name": "NICOLAS ANDREAS",
+    "last_name": "SAGADIN FERNANDEZ",
+    "birthdate": "2016-12-03",
+    "role": "player"
+   },
+   {
+    "first_name": "ALEIX",
+    "last_name": "SEBASTIA QUINTANO",
+    "birthdate": "2016-06-13",
+    "role": "player"
+   },
+   {
+    "first_name": "BRUNO",
+    "last_name": "SERRA MARTINEZ",
+    "birthdate": "2016-10-14",
+    "role": "player"
+   },
+   {
+    "first_name": "LEONARD",
+    "last_name": "VON ESTORFF",
+    "birthdate": "2016-10-30",
+    "role": "player"
+   },
+   {
+    "first_name": "ANNA",
+    "last_name": "BUSQUETS FACIABEN",
+    "birthdate": "1986-11-07",
+    "role": "staff"
+   },
+   {
+    "first_name": "DANIEL",
+    "last_name": "CEBRIANO GARCIA",
+    "birthdate": "2002-09-19",
+    "role": "staff"
+   },
+   {
+    "first_name": "JOAN",
+    "last_name": "COLOMER ARBOLI",
+    "birthdate": "1967-01-04",
+    "role": "staff"
+   },
+   {
+    "first_name": "TIZZIANO",
+    "last_name": "CONTI",
+    "birthdate": "2002-02-05",
+    "role": "staff"
+   }
+  ],
+  "15711331": [
+   {
+    "first_name": "JUNO",
+    "last_name": "ABELLA PEREZ ",
+    "birthdate": "2017-12-15",
+    "role": "player"
+   },
+   {
+    "first_name": "VALERIA",
+    "last_name": "BOTIA VALENZUELA",
+    "birthdate": "2016-03-10",
+    "role": "player"
+   },
+   {
+    "first_name": "BLANCA",
+    "last_name": "CABRERA PEREZ",
+    "birthdate": "2016-06-06",
+    "role": "player"
+   },
+   {
+    "first_name": "HUGO",
+    "last_name": "CARRASCO FERREIRO ",
+    "birthdate": "2016-03-23",
+    "role": "player"
+   },
+   {
+    "first_name": "CARLA",
+    "last_name": "FREIXANET GRAN",
+    "birthdate": "2016-02-29",
+    "role": "player"
+   },
+   {
+    "first_name": "QUIM ",
+    "last_name": "GRANDE FLORES",
+    "birthdate": "2016-11-30",
+    "role": "player"
+   },
+   {
+    "first_name": "CARLA",
+    "last_name": "GUILLEN PRIETO ",
+    "birthdate": "2016-11-06",
+    "role": "player"
+   },
+   {
+    "first_name": "SERGI",
+    "last_name": "LOPEZ JIMENEZ ",
+    "birthdate": "2016-05-04",
+    "role": "player"
+   },
+   {
+    "first_name": "ADRIANA",
+    "last_name": "PUIG MORENO",
+    "birthdate": "2016-09-30",
+    "role": "player"
+   },
+   {
+    "first_name": "RAUL",
+    "last_name": "VAZQUEZ FARENGA",
+    "birthdate": "2016-05-06",
+    "role": "player"
+   },
+   {
+    "first_name": "BRYCE ",
+    "last_name": "VILLARROEL ALBA",
+    "birthdate": "2016-05-22",
+    "role": "player"
+   },
+   {
+    "first_name": "EDUARD",
+    "last_name": "CABRERA DELGADO",
+    "birthdate": "1979-11-24",
+    "role": "staff"
+   },
+   {
+    "first_name": "EDGAR",
+    "last_name": "SANZ GIJON",
+    "birthdate": "2004-09-07",
+    "role": "staff"
+   },
+   {
+    "first_name": "JUDIT",
+    "last_name": "VALENZUELA CARRASCO",
+    "birthdate": "1981-06-06",
+    "role": "staff"
+   },
+   {
+    "first_name": "EDUARD",
+    "last_name": "VILLAR MARTINEZ",
+    "birthdate": "1997-12-24",
+    "role": "staff"
+   }
+  ],
+  "15711334": [
+   {
+    "first_name": "DENIS",
+    "last_name": "BRUDER",
+    "birthdate": "2016-10-18",
+    "role": "player"
+   },
+   {
+    "first_name": "BIEL",
+    "last_name": "CANO MORALES",
+    "birthdate": "2016-12-23",
+    "role": "player"
+   },
+   {
+    "first_name": "POL",
+    "last_name": "GASQUEZ HILARIO",
+    "birthdate": "2017-05-08",
+    "role": "player"
+   },
+   {
+    "first_name": "LUCAS",
+    "last_name": "GONZALEZ MARTINEZ",
+    "birthdate": "2017-01-06",
+    "role": "player"
+   },
+   {
+    "first_name": "TOMAS",
+    "last_name": "JIMENEZ ESCRICHE",
+    "birthdate": "2017-06-23",
+    "role": "player"
+   },
+   {
+    "first_name": "MAGI",
+    "last_name": "JOVER COMPTA ",
+    "birthdate": "2016-09-05",
+    "role": "player"
+   },
+   {
+    "first_name": "POL",
+    "last_name": "LLONGUERAS FAIGES",
+    "birthdate": "2017-05-11",
+    "role": "player"
+   },
+   {
+    "first_name": "LANDER",
+    "last_name": "LOPETEGUI LLUIS",
+    "birthdate": "2016-02-09",
+    "role": "player"
+   },
+   {
+    "first_name": "POL",
+    "last_name": "MANCILLA ALONSO",
+    "birthdate": "2017-12-14",
+    "role": "player"
+   },
+   {
+    "first_name": "DANILO FERNANDO ",
+    "last_name": "MARTINEZ DOMINGUEZ ",
+    "birthdate": "2016-04-01",
+    "role": "player"
+   },
+   {
+    "first_name": "NIL",
+    "last_name": "MAYOR CONDE",
+    "birthdate": "2016-11-28",
+    "role": "player"
+   },
+   {
+    "first_name": "ALEIX",
+    "last_name": "ROIG DOMENE",
+    "birthdate": "2016-07-14",
+    "role": "player"
+   },
+   {
+    "first_name": "BIEL",
+    "last_name": "ROIG DOMENE",
+    "birthdate": "2016-07-14",
+    "role": "player"
+   },
+   {
+    "first_name": "JOSEP",
+    "last_name": "CANO VIDAL",
+    "birthdate": "1988-04-04",
+    "role": "staff"
+   },
+   {
+    "first_name": "ADRIA",
+    "last_name": "GOMILA FAIGES",
+    "birthdate": "2004-04-11",
+    "role": "staff"
+   },
+   {
+    "first_name": "MARC",
+    "last_name": "HERNANDEZ BORRAS",
+    "birthdate": "1982-09-21",
+    "role": "staff"
+   },
+   {
+    "first_name": "ANNA ",
+    "last_name": "MIRACLE FANDOS",
+    "birthdate": "1979-12-23",
+    "role": "staff"
+   }
+  ],
+  "15711335": [
+   {
+    "first_name": "KIRA",
+    "last_name": "CHESSA",
+    "birthdate": "2016-01-24",
+    "role": "player"
+   },
+   {
+    "first_name": "PAULA",
+    "last_name": "CIURO VALLHONESTA",
+    "birthdate": "2017-06-15",
+    "role": "player"
+   },
+   {
+    "first_name": "ANE",
+    "last_name": "DE GAMINDE AZAGRA",
+    "birthdate": "2016-05-09",
+    "role": "player"
+   },
+   {
+    "first_name": "MARIA",
+    "last_name": "FEDCHAK",
+    "birthdate": "2016-01-13",
+    "role": "player"
+   },
+   {
+    "first_name": "BRUNA",
+    "last_name": "GARCIA FERRANDO",
+    "birthdate": "2016-10-29",
+    "role": "player"
+   },
+   {
+    "first_name": "JULIA",
+    "last_name": "LOPEZ GUINART ",
+    "birthdate": "2017-06-19",
+    "role": "player"
+   },
+   {
+    "first_name": "LAIA",
+    "last_name": "PERACAULA SESERAS",
+    "birthdate": "2017-01-30",
+    "role": "player"
+   },
+   {
+    "first_name": "ONA",
+    "last_name": "PERACAULA SESERAS",
+    "birthdate": "2017-01-30",
+    "role": "player"
+   },
+   {
+    "first_name": "AMAIA",
+    "last_name": "PINGEL CARRASCO",
+    "birthdate": "2016-07-12",
+    "role": "player"
+   },
+   {
+    "first_name": "GEORGIA",
+    "last_name": "TRAVERIA MORAGUES ",
+    "birthdate": "2017-06-15",
+    "role": "player"
+   },
+   {
+    "first_name": "CLAUDIA ",
+    "last_name": "VALERA POLAK",
+    "birthdate": "2017-05-11",
+    "role": "player"
+   },
+   {
+    "first_name": "ALANNA",
+    "last_name": "ZARAGOZA MORILLO",
+    "birthdate": "2017-01-05",
+    "role": "player"
+   },
+   {
+    "first_name": "FERNANDO",
+    "last_name": "LOPEZ PRAT",
+    "birthdate": "1979-07-29",
+    "role": "staff"
+   },
+   {
+    "first_name": "VICTOR",
+    "last_name": "MORELL FERNANDEZ",
+    "birthdate": "1997-03-17",
+    "role": "staff"
+   },
+   {
+    "first_name": "CAROLINA",
+    "last_name": "MORILLO SANCHEZ",
+    "birthdate": "1980-10-13",
+    "role": "staff"
+   },
+   {
+    "first_name": "ONA",
+    "last_name": "TARRIÑO GONZALEZ",
+    "birthdate": "2007-08-23",
+    "role": "staff"
+   }
+  ],
+  "15712574": [
+   {
+    "first_name": "TOMAS",
+    "last_name": "ALTABA FERRER",
+    "birthdate": "2016-10-26",
+    "role": "player"
+   },
+   {
+    "first_name": "NICO",
+    "last_name": "ASCANIO GORDILLO",
+    "birthdate": "2016-07-12",
+    "role": "player"
+   },
+   {
+    "first_name": "MIA",
+    "last_name": "BALLESTEROS GARCIA",
+    "birthdate": "2016-07-01",
+    "role": "player"
+   },
+   {
+    "first_name": "BERNAT",
+    "last_name": "CARDONA BLANCO",
+    "birthdate": "2016-06-04",
+    "role": "player"
+   },
+   {
+    "first_name": "BRU",
+    "last_name": "GARCIA AMADOR",
+    "birthdate": "2016-07-15",
+    "role": "player"
+   },
+   {
+    "first_name": "MARC",
+    "last_name": "GOMEZ FUENTES",
+    "birthdate": "2016-10-21",
+    "role": "player"
+   },
+   {
+    "first_name": "IVAN ",
+    "last_name": "GUERRERO BURGOS ",
+    "birthdate": "2016-12-13",
+    "role": "player"
+   },
+   {
+    "first_name": "ENRIQUE ",
+    "last_name": "HERNANDEZ OLVERA",
+    "birthdate": "2016-06-29",
+    "role": "player"
+   },
+   {
+    "first_name": "EZEQUIEL ",
+    "last_name": "MARTINEZ MIRALLES",
+    "birthdate": "2016-07-07",
+    "role": "player"
+   },
+   {
+    "first_name": "ADAN ",
+    "last_name": "MONTORO NIETO",
+    "birthdate": "2016-09-21",
+    "role": "player"
+   },
+   {
+    "first_name": "SOFIA ",
+    "last_name": "SALAZAR AVELLA",
+    "birthdate": "2016-07-21",
+    "role": "player"
+   },
+   {
+    "first_name": "OIHAN",
+    "last_name": "URDIALES FENOY",
+    "birthdate": "2016-11-07",
+    "role": "player"
+   },
+   {
+    "first_name": "IVAN",
+    "last_name": "SANCHEZ SANTOS",
+    "birthdate": "2001-11-17",
+    "role": "staff"
+   }
+  ],
+  "15712723": [
+   {
+    "first_name": "MARIO",
+    "last_name": "BONET BURAVLEV",
+    "birthdate": "2016-10-11",
+    "role": "player"
+   },
+   {
+    "first_name": "LOLA ",
+    "last_name": "CALERO PEREZ ",
+    "birthdate": "2016-04-10",
+    "role": "player"
+   },
+   {
+    "first_name": "LLUC",
+    "last_name": "CARRASCOS CAMILLO",
+    "birthdate": "2017-11-06",
+    "role": "player"
+   },
+   {
+    "first_name": "ARLET",
+    "last_name": "CASANOVAS EROLES",
+    "birthdate": "2016-02-03",
+    "role": "player"
+   },
+   {
+    "first_name": "BRUNO",
+    "last_name": "ESPITIA KOWALIK",
+    "birthdate": "2017-06-18",
+    "role": "player"
+   },
+   {
+    "first_name": "BERTA",
+    "last_name": "GALLIFA CABRE",
+    "birthdate": "2017-02-28",
+    "role": "player"
+   },
+   {
+    "first_name": "GINA",
+    "last_name": "GARCIA ABRIL",
+    "birthdate": "2016-08-12",
+    "role": "player"
+   },
+   {
+    "first_name": "GINA",
+    "last_name": "GONZALEZ PUIG",
+    "birthdate": "2017-04-18",
+    "role": "player"
+   },
+   {
+    "first_name": "ARNAU",
+    "last_name": "OLIVERAS PRADOS",
+    "birthdate": "2017-11-07",
+    "role": "player"
+   },
+   {
+    "first_name": "ROGER",
+    "last_name": "PERIANES CANTON",
+    "birthdate": "2017-09-27",
+    "role": "player"
+   },
+   {
+    "first_name": "MAX",
+    "last_name": "POCH PRUNA",
+    "birthdate": "2017-08-09",
+    "role": "player"
+   },
+   {
+    "first_name": "QUIM",
+    "last_name": "PONSA FOGUET",
+    "birthdate": "2017-03-17",
+    "role": "player"
+   },
+   {
+    "first_name": "LLEO",
+    "last_name": "UZCATEGUI VICENTE",
+    "birthdate": "2016-10-31",
+    "role": "player"
+   },
+   {
+    "first_name": "ENZO",
+    "last_name": "VALER MOLINA",
+    "birthdate": "2017-10-02",
+    "role": "player"
+   },
+   {
+    "first_name": "MIRIAM",
+    "last_name": "ABRIL HORTA",
+    "birthdate": "1984-05-17",
+    "role": "staff"
+   },
+   {
+    "first_name": "PABLO",
+    "last_name": "CARDENAL MARTINEZ",
+    "birthdate": "1981-01-23",
+    "role": "staff"
+   },
+   {
+    "first_name": "LAURA",
+    "last_name": "EROLES FERNANDEZ",
+    "birthdate": "1982-12-03",
+    "role": "staff"
+   },
+   {
+    "first_name": "POL",
+    "last_name": "GALLIFA MORAGAS",
+    "birthdate": "1974-01-24",
+    "role": "staff"
+   },
+   {
+    "first_name": "LAIA",
+    "last_name": "GIL  DORMUA",
+    "birthdate": "2006-08-10",
+    "role": "staff"
+   },
+   {
+    "first_name": "CLAUDIA",
+    "last_name": "VICENTE RIERA",
+    "birthdate": "1984-03-17",
+    "role": "staff"
+   }
+  ],
+  "15712871": [],
+  "15713218": [
+   {
+    "first_name": "AINA",
+    "last_name": "CAPARROS BLANCO",
+    "birthdate": "2016-10-03",
+    "role": "player"
+   },
+   {
+    "first_name": "GERARD",
+    "last_name": "ESTRADA CAELLAS",
+    "birthdate": "2016-06-01",
+    "role": "player"
+   },
+   {
+    "first_name": "ALEX",
+    "last_name": "GARRUCHO SANCHEZ",
+    "birthdate": "2016-08-23",
+    "role": "player"
+   },
+   {
+    "first_name": "MIQUEL LEVI",
+    "last_name": "HURTADO BARBACIL",
+    "birthdate": "2016-11-06",
+    "role": "player"
+   },
+   {
+    "first_name": "LAIA",
+    "last_name": "IZQUIERDO MERCADE",
+    "birthdate": "2016-03-19",
+    "role": "player"
+   },
+   {
+    "first_name": "URIEL",
+    "last_name": "LOPEZ GIL",
+    "birthdate": "2016-10-20",
+    "role": "player"
+   },
+   {
+    "first_name": "LENA",
+    "last_name": "MENDEZ GUILLAUMET",
+    "birthdate": "2016-02-16",
+    "role": "player"
+   },
+   {
+    "first_name": "PAU",
+    "last_name": "MUNTANER FORNELL",
+    "birthdate": "2017-12-15",
+    "role": "player"
+   },
+   {
+    "first_name": "POL",
+    "last_name": "RENALIAS BELTRAN",
+    "birthdate": "2017-04-25",
+    "role": "player"
+   },
+   {
+    "first_name": "JOEL",
+    "last_name": "TARRES HURTADO",
+    "birthdate": "2017-06-21",
+    "role": "player"
+   },
+   {
+    "first_name": "JORDI",
+    "last_name": "TOMAS CABUTTO",
+    "birthdate": "2016-11-20",
+    "role": "player"
+   },
+   {
+    "first_name": "XAVIER",
+    "last_name": "ESTRADA SUBIRADA",
+    "birthdate": "1977-10-15",
+    "role": "staff"
+   },
+   {
+    "first_name": "IVAN",
+    "last_name": "REY SANCHEZ",
+    "birthdate": "2005-07-22",
+    "role": "staff"
+   }
+  ],
+  "15713279": [],
+  "15714214": [
+   {
+    "first_name": "SOFIA",
+    "last_name": "ALLEGUE AGUILERA",
+    "birthdate": "2017-02-24",
+    "role": "player"
+   },
+   {
+    "first_name": "GERARD",
+    "last_name": "BARROSO DEL POZO",
+    "birthdate": "2016-04-01",
+    "role": "player"
+   },
+   {
+    "first_name": "IZARO",
+    "last_name": "GALAN VILLON ",
+    "birthdate": "2017-01-17",
+    "role": "player"
+   },
+   {
+    "first_name": "ANNA ",
+    "last_name": "GASTO AYALA ",
+    "birthdate": "2017-08-05",
+    "role": "player"
+   },
+   {
+    "first_name": "HUGO",
+    "last_name": "IBAÑEZ FENOY",
+    "birthdate": "2017-04-24",
+    "role": "player"
+   },
+   {
+    "first_name": "CANDELA",
+    "last_name": "JALDO LOPEZ ",
+    "birthdate": "2017-12-28",
+    "role": "player"
+   },
+   {
+    "first_name": "SARA",
+    "last_name": "JIMENEZ CAMPO",
+    "birthdate": "2016-04-27",
+    "role": "player"
+   },
+   {
+    "first_name": "JOEL ",
+    "last_name": "MARTINEZ DOMENECH ",
+    "birthdate": "2017-03-26",
+    "role": "player"
+   },
+   {
+    "first_name": "AINA",
+    "last_name": "MILIA DOMINGUEZ",
+    "birthdate": "2017-01-17",
+    "role": "player"
+   },
+   {
+    "first_name": "MARINA",
+    "last_name": "MORALES GARCIA",
+    "birthdate": "2017-11-19",
+    "role": "player"
+   },
+   {
+    "first_name": "HECTOR ",
+    "last_name": "PONS GARCIA ",
+    "birthdate": "2017-09-19",
+    "role": "player"
+   },
+   {
+    "first_name": "POL",
+    "last_name": "RUIZ YESTE",
+    "birthdate": "2017-03-29",
+    "role": "player"
+   },
+   {
+    "first_name": "MAVERICK",
+    "last_name": "VALVERDE CLEMENTE",
+    "birthdate": "2017-07-12",
+    "role": "player"
+   },
+   {
+    "first_name": "BRUNO ",
+    "last_name": "VIZCAYA FERNANDEZ",
+    "birthdate": "2016-05-07",
+    "role": "player"
+   },
+   {
+    "first_name": "JAVIER",
+    "last_name": "CARRASCO MADRIDANO",
+    "birthdate": "1999-07-02",
+    "role": "staff"
+   },
+   {
+    "first_name": "HUGO",
+    "last_name": "REDON JIMENEZ",
+    "birthdate": "2007-08-14",
+    "role": "staff"
+   }
+  ],
+  "15714366": [],
+  "15714367": [],
+  "15716119": [],
+  "15718519": [
+   {
+    "first_name": "ELOI",
+    "last_name": "ALMIRON LAFITA",
+    "birthdate": "2017-11-25",
+    "role": "player"
+   },
+   {
+    "first_name": "JAN",
+    "last_name": "ARILLA ESCUER",
+    "birthdate": "2018-07-13",
+    "role": "player"
+   },
+   {
+    "first_name": "POL",
+    "last_name": "ARILLA ESCUER",
+    "birthdate": "2016-07-12",
+    "role": "player"
+   },
+   {
+    "first_name": "DAVID",
+    "last_name": "BARRERA MORENO",
+    "birthdate": "2016-11-28",
+    "role": "player"
+   },
+   {
+    "first_name": "GERARD",
+    "last_name": "GARCIA GILI",
+    "birthdate": "2018-01-17",
+    "role": "player"
+   },
+   {
+    "first_name": "PEDRO AMADOR",
+    "last_name": "HINOJOSA CASTRO",
+    "birthdate": "2016-10-31",
+    "role": "player"
+   },
+   {
+    "first_name": "LEO",
+    "last_name": "LEYVA MORENO",
+    "birthdate": "2016-06-24",
+    "role": "player"
+   },
+   {
+    "first_name": "JAN",
+    "last_name": "ORTIGOSA CASQUETE",
+    "birthdate": "2018-07-03",
+    "role": "player"
+   },
+   {
+    "first_name": "GAEL",
+    "last_name": "TORRES MORALES",
+    "birthdate": "2016-05-10",
+    "role": "player"
+   },
+   {
+    "first_name": "XAVI",
+    "last_name": "TRIGAL RIUS",
+    "birthdate": "2017-04-02",
+    "role": "player"
+   },
+   {
+    "first_name": "BLAI ",
+    "last_name": "VILA CALERO",
+    "birthdate": "2016-02-11",
+    "role": "player"
+   },
+   {
+    "first_name": "JOSEP",
+    "last_name": "ARILLA MARCO",
+    "birthdate": "1980-09-13",
+    "role": "staff"
+   },
+   {
+    "first_name": "JOAN",
+    "last_name": "CALVO REQUENA",
+    "birthdate": "2008-01-08",
+    "role": "staff"
+   },
+   {
+    "first_name": "JORDI",
+    "last_name": "ORTIGOSA MARTI",
+    "birthdate": "1988-12-09",
+    "role": "staff"
+   }
+  ],
+  "15720922": [],
+  "15724698": [
+   {
+    "first_name": "DIEGO",
+    "last_name": "ALCALDE MARTINEZ",
+    "birthdate": "2017-02-08",
+    "role": "player"
+   },
+   {
+    "first_name": "ELIA ",
+    "last_name": "ALONSO PERRUCA",
+    "birthdate": "2017-04-11",
+    "role": "player"
+   },
+   {
+    "first_name": "PAULA",
+    "last_name": "BLANCO CORBACHO",
+    "birthdate": "2016-09-25",
+    "role": "player"
+   },
+   {
+    "first_name": "ALEXANDRA ",
+    "last_name": "ETCHEBARNE SANCHEZ",
+    "birthdate": "2017-07-23",
+    "role": "player"
+   },
+   {
+    "first_name": "BIEL",
+    "last_name": "MARQUEZ NAUDO",
+    "birthdate": "2016-03-28",
+    "role": "player"
+   },
+   {
+    "first_name": "MARTIN ",
+    "last_name": "MARQUEZ VICENTE",
+    "birthdate": "2017-07-22",
+    "role": "player"
+   },
+   {
+    "first_name": "ALEIX",
+    "last_name": "PLANAS",
+    "birthdate": "2018-07-25",
+    "role": "player"
+   },
+   {
+    "first_name": "LLUC",
+    "last_name": "SAULA BRAÑAS",
+    "birthdate": "2016-01-14",
+    "role": "player"
+   },
+   {
+    "first_name": "CANDELA",
+    "last_name": "VALERO PALOMINO",
+    "birthdate": "2016-05-27",
+    "role": "player"
+   },
+   {
+    "first_name": "MARIA",
+    "last_name": "VALERO PALOMINO",
+    "birthdate": "2016-05-27",
+    "role": "player"
+   },
+   {
+    "first_name": "GERARD",
+    "last_name": "VAZQUEZ GARCIA",
+    "birthdate": "2018-05-12",
+    "role": "player"
+   },
+   {
+    "first_name": "JAVIER",
+    "last_name": "BLANCO VEGA",
+    "birthdate": "1986-06-28",
+    "role": "staff"
+   },
+   {
+    "first_name": "NURIA",
+    "last_name": "CLARAMUNT VILLANUEVA",
+    "birthdate": "2007-04-20",
+    "role": "staff"
+   },
+   {
+    "first_name": "DANIEL",
+    "last_name": "SAULA MONTAÑA ",
+    "birthdate": "1980-07-15",
+    "role": "staff"
+   }
+  ],
+  "15727046": []
+ },
+ "groups": [
+  {
+   "id": "3664221",
+   "name": "Grup A 1a Fase",
+   "standings": [
+    {
+     "id": 15711305,
+     "name": "C.N. ATL BARCELONETA A",
+     "position": 1,
+     "points": 4,
+     "played": 2,
+     "won": 2,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 21,
+     "goals_against": 1,
+     "goal_diff": 20
+    },
+    {
+     "id": 15711224,
+     "name": "U.E. D'HORTA FEMENÍ",
+     "position": 2,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 3,
+     "goals_against": 8,
+     "goal_diff": -5
+    },
+    {
+     "id": 15727046,
+     "name": "C.N. VALLIRANA",
+     "position": 3,
+     "points": 0,
+     "played": 2,
+     "won": 0,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 1,
+     "goals_against": 16,
+     "goal_diff": -15
+    }
+   ],
+   "our_team_ids": []
+  },
+  {
+   "id": "3664222",
+   "name": "Grup B 1aFase",
+   "standings": [
+    {
+     "id": 15712871,
+     "name": "C.N. BARCELONA",
+     "position": 1,
+     "points": 4,
+     "played": 2,
+     "won": 2,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 18,
+     "goals_against": 1,
+     "goal_diff": 17
+    },
+    {
+     "id": 15711312,
+     "name": "C.N. POBLE NOU",
+     "position": 2,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 7,
+     "goals_against": 11,
+     "goal_diff": -4
+    },
+    {
+     "id": 15711331,
+     "name": "A.E. SANTA EULÀLIA",
+     "position": 3,
+     "points": 0,
+     "played": 2,
+     "won": 0,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 2,
+     "goals_against": 15,
+     "goal_diff": -13
+    }
+   ],
+   "our_team_ids": []
+  },
+  {
+   "id": "3664223",
+   "name": "Grup C 1a Fase",
+   "standings": [
+    {
+     "id": 15711274,
+     "name": "C.N. SANT ANDREU A",
+     "position": 1,
+     "points": 4,
+     "played": 2,
+     "won": 2,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 13,
+     "goals_against": 3,
+     "goal_diff": 10
+    },
+    {
+     "id": 15714214,
+     "name": "C.N. RUBÍ",
+     "position": 2,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 9,
+     "goals_against": 11,
+     "goal_diff": -2
+    },
+    {
+     "id": 15711306,
+     "name": "C.N. ATL BARCELONETA FEM",
+     "position": 3,
+     "points": 0,
+     "played": 2,
+     "won": 0,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 5,
+     "goals_against": 13,
+     "goal_diff": -8
+    }
+   ],
+   "our_team_ids": [
+    "15711274"
+   ]
+  },
+  {
+   "id": "3664224",
+   "name": "Grup D 1a Fase",
+   "standings": [
+    {
+     "id": 15720922,
+     "name": "C.E. MEDITERRANI",
+     "position": 1,
+     "points": 4,
+     "played": 2,
+     "won": 2,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 11,
+     "goals_against": 2,
+     "goal_diff": 9
+    },
+    {
+     "id": 15714367,
+     "name": "C.N. SABADELL FEMENI",
+     "position": 2,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 6,
+     "goals_against": 6,
+     "goal_diff": 0
+    },
+    {
+     "id": 15711334,
+     "name": "C.N. CATALUNYA MASC A",
+     "position": 3,
+     "points": 0,
+     "played": 2,
+     "won": 0,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 1,
+     "goals_against": 10,
+     "goal_diff": -9
+    }
+   ],
+   "our_team_ids": []
+  },
+  {
+   "id": "3664225",
+   "name": "Grup E 1a Fase",
+   "standings": [
+    {
+     "id": 15711223,
+     "name": "U.E. D'HORTA A",
+     "position": 1,
+     "points": 4,
+     "played": 2,
+     "won": 2,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 21,
+     "goals_against": 0,
+     "goal_diff": 21
+    },
+    {
+     "id": 15718519,
+     "name": "CN GRANOLLERS",
+     "position": 2,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 7,
+     "goals_against": 13,
+     "goal_diff": -6
+    },
+    {
+     "id": 15724698,
+     "name": "C.N. MOLINS DE REI",
+     "position": 3,
+     "points": 0,
+     "played": 2,
+     "won": 0,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 4,
+     "goals_against": 19,
+     "goal_diff": -15
+    }
+   ],
+   "our_team_ids": []
+  },
+  {
+   "id": "3664226",
+   "name": "Grup F 1a Fase",
+   "standings": [
+    {
+     "id": 15713279,
+     "name": "C.N. PREMIÀ",
+     "position": 1,
+     "points": 4,
+     "played": 2,
+     "won": 2,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 15,
+     "goals_against": 3,
+     "goal_diff": 12
+    },
+    {
+     "id": 15712574,
+     "name": "CN TERRASSA",
+     "position": 2,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 13,
+     "goals_against": 5,
+     "goal_diff": 8
+    },
+    {
+     "id": 15711308,
+     "name": "C.W. SANT ADRIÀ",
+     "position": 3,
+     "points": 0,
+     "played": 2,
+     "won": 0,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 0,
+     "goals_against": 20,
+     "goal_diff": -20
+    }
+   ],
+   "our_team_ids": []
+  },
+  {
+   "id": "3664227",
+   "name": "Grup G 1a Fase",
+   "standings": [
+    {
+     "id": 15712723,
+     "name": "C.N. MATARÓ",
+     "position": 1,
+     "points": 4,
+     "played": 2,
+     "won": 2,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 15,
+     "goals_against": 7,
+     "goal_diff": 8
+    },
+    {
+     "id": 15714366,
+     "name": "C.N. SABADELL MASCULI A",
+     "position": 2,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 13,
+     "goals_against": 6,
+     "goal_diff": 7
+    },
+    {
+     "id": 15711276,
+     "name": "C.N. SANT ANDREU FEMENÍ",
+     "position": 3,
+     "points": 0,
+     "played": 2,
+     "won": 0,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 2,
+     "goals_against": 17,
+     "goal_diff": -15
+    }
+   ],
+   "our_team_ids": [
+    "15711276"
+   ]
+  },
+  {
+   "id": "3664228",
+   "name": "Grup H 1a Fase",
+   "standings": [
+    {
+     "id": 15713218,
+     "name": "C.N. MANRESA",
+     "position": 1,
+     "points": 4,
+     "played": 2,
+     "won": 2,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 15,
+     "goals_against": 4,
+     "goal_diff": 11
+    },
+    {
+     "id": 15716119,
+     "name": "C.N. SANT FELIU",
+     "position": 2,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 11,
+     "goals_against": 5,
+     "goal_diff": 6
+    },
+    {
+     "id": 15711335,
+     "name": "C.N. CATALUNYA FEM",
+     "position": 3,
+     "points": 0,
+     "played": 2,
+     "won": 0,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 2,
+     "goals_against": 19,
+     "goal_diff": -17
+    }
+   ],
+   "our_team_ids": []
+  },
+  {
+   "id": "3664295",
+   "name": "VF/QF/SF/FINAL 1-8",
+   "standings": [
+    {
+     "id": 15712871,
+     "name": "C.N. BARCELONA",
+     "position": 1,
+     "points": 8,
+     "played": 4,
+     "won": 4,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 22,
+     "goals_against": 11,
+     "goal_diff": 11
+    },
+    {
+     "id": 15711305,
+     "name": "C.N. ATL BARCELONETA A",
+     "position": 2,
+     "points": 6,
+     "played": 4,
+     "won": 3,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 18,
+     "goals_against": 11,
+     "goal_diff": 7
+    },
+    {
+     "id": 15711223,
+     "name": "U.E. D'HORTA A",
+     "position": 3,
+     "points": 6,
+     "played": 4,
+     "won": 3,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 15,
+     "goals_against": 10,
+     "goal_diff": 5
+    },
+    {
+     "id": 15711274,
+     "name": "C.N. SANT ANDREU A",
+     "position": 4,
+     "points": 4,
+     "played": 4,
+     "won": 2,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 18,
+     "goals_against": 19,
+     "goal_diff": -1
+    },
+    {
+     "id": 15713279,
+     "name": "C.N. PREMIÀ",
+     "position": 5,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 17,
+     "goals_against": 12,
+     "goal_diff": 5
+    },
+    {
+     "id": 15720922,
+     "name": "C.E. MEDITERRANI",
+     "position": 6,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 8,
+     "goals_against": 4,
+     "goal_diff": 4
+    },
+    {
+     "id": 15713218,
+     "name": "C.N. MANRESA",
+     "position": 7,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 6,
+     "goals_against": 5,
+     "goal_diff": 1
+    },
+    {
+     "id": 15716119,
+     "name": "C.N. SANT FELIU",
+     "position": 8,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 10,
+     "goals_against": 11,
+     "goal_diff": -1
+    },
+    {
+     "id": 15712723,
+     "name": "C.N. MATARÓ",
+     "position": 9,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 4,
+     "goals_against": 5,
+     "goal_diff": -1
+    },
+    {
+     "id": 15714366,
+     "name": "C.N. SABADELL MASCULI A",
+     "position": 10,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 1,
+     "goals_against": 3,
+     "goal_diff": -2
+    },
+    {
+     "id": 15714367,
+     "name": "C.N. SABADELL FEMENI",
+     "position": 11,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 1,
+     "goals_against": 3,
+     "goal_diff": -2
+    },
+    {
+     "id": 15712574,
+     "name": "CN TERRASSA",
+     "position": 12,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 3,
+     "goals_against": 7,
+     "goal_diff": -4
+    },
+    {
+     "id": 15711312,
+     "name": "C.N. POBLE NOU",
+     "position": 13,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 2,
+     "goals_against": 7,
+     "goal_diff": -5
+    },
+    {
+     "id": 15714214,
+     "name": "C.N. RUBÍ",
+     "position": 14,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 2,
+     "goals_against": 7,
+     "goal_diff": -5
+    },
+    {
+     "id": 15711224,
+     "name": "U.E. D'HORTA FEMENÍ",
+     "position": 15,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 1,
+     "goals_against": 7,
+     "goal_diff": -6
+    },
+    {
+     "id": 15718519,
+     "name": "CN GRANOLLERS",
+     "position": 16,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 1,
+     "goals_against": 7,
+     "goal_diff": -6
+    }
+   ],
+   "our_team_ids": [
+    "15711274"
+   ]
+  },
+  {
+   "id": "3664304",
+   "name": "SEM/FINAL 5-8",
+   "standings": [
+    {
+     "id": 15713279,
+     "name": "C.N. PREMIÀ",
+     "position": 1,
+     "points": 4,
+     "played": 2,
+     "won": 2,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 10,
+     "goals_against": 7,
+     "goal_diff": 3
+    },
+    {
+     "id": 15713218,
+     "name": "C.N. MANRESA",
+     "position": 2,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 7,
+     "goals_against": 6,
+     "goal_diff": 1
+    },
+    {
+     "id": 15720922,
+     "name": "C.E. MEDITERRANI",
+     "position": 3,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 6,
+     "goals_against": 7,
+     "goal_diff": -1
+    },
+    {
+     "id": 15716119,
+     "name": "C.N. SANT FELIU",
+     "position": 4,
+     "points": 0,
+     "played": 2,
+     "won": 0,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 7,
+     "goals_against": 10,
+     "goal_diff": -3
+    }
+   ],
+   "our_team_ids": []
+  },
+  {
+   "id": "3664306",
+   "name": "QF/SE/FINAL 9-16",
+   "standings": [
+    {
+     "id": 15712574,
+     "name": "CN TERRASSA",
+     "position": 1,
+     "points": 6,
+     "played": 3,
+     "won": 3,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 17,
+     "goals_against": 8,
+     "goal_diff": 9
+    },
+    {
+     "id": 15714366,
+     "name": "C.N. SABADELL MASCULI A",
+     "position": 2,
+     "points": 4,
+     "played": 3,
+     "won": 2,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 17,
+     "goals_against": 9,
+     "goal_diff": 8
+    },
+    {
+     "id": 15712723,
+     "name": "C.N. MATARÓ",
+     "position": 3,
+     "points": 4,
+     "played": 3,
+     "won": 2,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 14,
+     "goals_against": 12,
+     "goal_diff": 2
+    },
+    {
+     "id": 15718519,
+     "name": "CN GRANOLLERS",
+     "position": 4,
+     "points": 2,
+     "played": 3,
+     "won": 1,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 14,
+     "goals_against": 16,
+     "goal_diff": -2
+    },
+    {
+     "id": 15714367,
+     "name": "C.N. SABADELL FEMENI",
+     "position": 5,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 4,
+     "goals_against": 6,
+     "goal_diff": -2
+    },
+    {
+     "id": 15711224,
+     "name": "U.E. D'HORTA FEMENÍ",
+     "position": 6,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 2,
+     "goals_against": 5,
+     "goal_diff": -3
+    },
+    {
+     "id": 15714214,
+     "name": "C.N. RUBÍ",
+     "position": 7,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 2,
+     "goals_against": 7,
+     "goal_diff": -5
+    },
+    {
+     "id": 15711312,
+     "name": "C.N. POBLE NOU",
+     "position": 8,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 1,
+     "goals_against": 8,
+     "goal_diff": -7
+    }
+   ],
+   "our_team_ids": []
+  },
+  {
+   "id": "3664310",
+   "name": "SFINAL 13-16",
+   "standings": [
+    {
+     "id": 15714367,
+     "name": "C.N. SABADELL FEMENI",
+     "position": 1,
+     "points": 4,
+     "played": 2,
+     "won": 2,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 11,
+     "goals_against": 5,
+     "goal_diff": 6
+    },
+    {
+     "id": 15711312,
+     "name": "C.N. POBLE NOU",
+     "position": 2,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 9,
+     "goals_against": 8,
+     "goal_diff": 1
+    },
+    {
+     "id": 15714214,
+     "name": "C.N. RUBÍ",
+     "position": 3,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 8,
+     "goals_against": 12,
+     "goal_diff": -4
+    },
+    {
+     "id": 15711224,
+     "name": "U.E. D'HORTA FEMENÍ",
+     "position": 4,
+     "points": 0,
+     "played": 2,
+     "won": 0,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 5,
+     "goals_against": 8,
+     "goal_diff": -3
+    }
+   ],
+   "our_team_ids": []
+  },
+  {
+   "id": "3664312",
+   "name": "QF/SE/FINAL 17-24",
+   "standings": [
+    {
+     "id": 15711331,
+     "name": "A.E. SANTA EULÀLIA",
+     "position": 1,
+     "points": 6,
+     "played": 3,
+     "won": 3,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 16,
+     "goals_against": 12,
+     "goal_diff": 4
+    },
+    {
+     "id": 15711334,
+     "name": "C.N. CATALUNYA MASC A",
+     "position": 2,
+     "points": 4,
+     "played": 3,
+     "won": 2,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 16,
+     "goals_against": 8,
+     "goal_diff": 8
+    },
+    {
+     "id": 15711306,
+     "name": "C.N. ATL BARCELONETA FEM",
+     "position": 3,
+     "points": 4,
+     "played": 3,
+     "won": 2,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 17,
+     "goals_against": 11,
+     "goal_diff": 6
+    },
+    {
+     "id": 15727046,
+     "name": "C.N. VALLIRANA",
+     "position": 4,
+     "points": 2,
+     "played": 3,
+     "won": 1,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 6,
+     "goals_against": 10,
+     "goal_diff": -4
+    },
+    {
+     "id": 15711276,
+     "name": "C.N. SANT ANDREU FEMENÍ",
+     "position": 5,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 3,
+     "goals_against": 5,
+     "goal_diff": -2
+    },
+    {
+     "id": 15724698,
+     "name": "C.N. MOLINS DE REI",
+     "position": 6,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 3,
+     "goals_against": 6,
+     "goal_diff": -3
+    },
+    {
+     "id": 15711335,
+     "name": "C.N. CATALUNYA FEM",
+     "position": 7,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 0,
+     "goals_against": 3,
+     "goal_diff": -3
+    },
+    {
+     "id": 15711308,
+     "name": "C.W. SANT ADRIÀ",
+     "position": 8,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 2,
+     "goals_against": 8,
+     "goal_diff": -6
+    }
+   ],
+   "our_team_ids": [
+    "15711276"
+   ]
+  },
+  {
+   "id": "3664316",
+   "name": "SEM/FINAL 21-24",
+   "standings": [
+    {
+     "id": 15724698,
+     "name": "C.N. MOLINS DE REI",
+     "position": 1,
+     "points": 4,
+     "played": 2,
+     "won": 2,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 11,
+     "goals_against": 5,
+     "goal_diff": 6
+    },
+    {
+     "id": 15711335,
+     "name": "C.N. CATALUNYA FEM",
+     "position": 2,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 8,
+     "goals_against": 5,
+     "goal_diff": 3
+    },
+    {
+     "id": 15711276,
+     "name": "C.N. SANT ANDREU FEMENÍ",
+     "position": 3,
+     "points": 2,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 7,
+     "goals_against": 6,
+     "goal_diff": 1
+    },
+    {
+     "id": 15711308,
+     "name": "C.W. SANT ADRIÀ",
+     "position": 4,
+     "points": 0,
+     "played": 2,
+     "won": 0,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 0,
+     "goals_against": 10,
+     "goal_diff": -10
+    }
+   ],
+   "our_team_ids": [
+    "15711276"
+   ]
+  }
+ ]
+}
