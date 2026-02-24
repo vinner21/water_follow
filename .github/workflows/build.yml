@@ -2,8 +2,9 @@ name: Build & Deploy Water Polo Tracker
 
 on:
   schedule:
-    # Run every day at 07:00 and 20:00 UTC (match days usually on weekends)
-    - cron: '0 7,20 * * *'
+    # Every 4 hours → 6 slots/day.  The gate job picks exactly 1 per day
+    # using a date-based hash, so the build hour varies each day.
+    - cron: '17 */4 * * *'
   push:
     branches: [main]
   workflow_dispatch:
@@ -24,7 +25,36 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Lightweight gate: for scheduled runs, only proceed on the daily-selected
+  # 4-hour slot.  Manual / push triggers always proceed.
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      proceed: ${{ steps.decide.outputs.proceed }}
+    steps:
+      - name: Daily random build gate
+        id: decide
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+            echo "Non-schedule trigger → always build"
+          else
+            # 6 slots per day: 0(00h) 1(04h) 2(08h) 3(12h) 4(16h) 5(20h)
+            SLOT=$(( $(date -u +%H) / 4 ))
+            # Deterministic hash of today's date → pick one of the 6 slots
+            TARGET=$(( $(date -u +%Y%m%d | cksum | cut -d' ' -f1) % 6 ))
+            if [ "$SLOT" -eq "$TARGET" ]; then
+              echo "proceed=true" >> "$GITHUB_OUTPUT"
+              echo "✓ Build slot selected (slot $SLOT == target $TARGET)"
+            else
+              echo "proceed=false" >> "$GITHUB_OUTPUT"
+              echo "✗ Skipping (slot $SLOT ≠ target $TARGET)"
+            fi
+          fi
+
   build:
+    needs: gate
+    if: needs.gate.outputs.proceed == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -76,6 +106,7 @@ jobs:
 
   deploy:
     needs: build
+    if: needs.build.result == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
