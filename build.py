@@ -138,6 +138,44 @@ def cleanup_tournament_caches():
 
 
 # ---------------------------------------------------------------------------
+# Roster cache  (r_{team_id}.json)  – refreshed only with --refresh-rosters
+# ---------------------------------------------------------------------------
+
+ROSTER_DIR = os.path.join(DATA_DIR, "rosters")
+
+
+def load_roster_cache(team_id):
+    """Load a cached roster for a single team.  Returns list or None."""
+    path = os.path.join(ROSTER_DIR, f"r_{team_id}.json")
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_roster_cache(team_id, roster):
+    """Persist a single team's roster to disk."""
+    os.makedirs(ROSTER_DIR, exist_ok=True)
+    path = os.path.join(ROSTER_DIR, f"r_{team_id}.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(roster, f, ensure_ascii=False, indent=1)
+
+
+def load_all_roster_caches(team_ids):
+    """Load cached rosters for a set of team_ids.
+    Returns (dict of rosters found, set of missing ids)."""
+    rosters = {}
+    missing = set()
+    for t_id in team_ids:
+        cached = load_roster_cache(t_id)
+        if cached is not None:
+            rosters[t_id] = cached
+        else:
+            missing.add(t_id)
+    return rosters, missing
+
+
+# ---------------------------------------------------------------------------
 # Season helpers
 # ---------------------------------------------------------------------------
 
@@ -435,7 +473,7 @@ def get_team_roster(team_id):
     return roster
 
 
-def collect_tournament_data(tournament, club_id):
+def collect_tournament_data(tournament, club_id, refresh_rosters=False):
     tid = tournament["id"]
     our_team_ids = {t["id"] for t in tournament["our_teams"]}
     print(f"  Fetching groups for {tournament['name']} ...")
@@ -491,20 +529,31 @@ def collect_tournament_data(tournament, club_id):
 
     all_matches.sort(key=lambda m: m["date"] or "9999")
 
-    # Fetch rosters for ALL teams across all groups
+    # Roster handling: use cache unless --refresh-rosters was passed
     all_team_ids_in_groups = set()
     for g in collected_groups:
         for row in g["standings"]:
             all_team_ids_in_groups.add(str(row["id"]))
     rosters = {}
-    print(f"    Fetching rosters for {len(all_team_ids_in_groups)} teams ...")
-    for t_id in sorted(all_team_ids_in_groups):
-        try:
-            rosters[t_id] = get_team_roster(t_id)
-        except Exception as e:
-            print(f"      Warning: could not fetch roster for {t_id}: {e}")
-            rosters[t_id] = []
-    print(f"    Rosters: {sum(len(r) for r in rosters.values())} total participants")
+    if refresh_rosters:
+        print(f"    Fetching rosters for {len(all_team_ids_in_groups)} teams (refresh mode) ...")
+        for t_id in sorted(all_team_ids_in_groups):
+            try:
+                rosters[t_id] = get_team_roster(t_id)
+                save_roster_cache(t_id, rosters[t_id])
+            except Exception as e:
+                print(f"      Warning: could not fetch roster for {t_id}: {e}")
+                rosters[t_id] = []
+        print(f"    Rosters: {sum(len(r) for r in rosters.values())} total participants")
+    else:
+        cached, missing = load_all_roster_caches(all_team_ids_in_groups)
+        rosters = cached
+        for m_id in missing:
+            rosters[m_id] = []  # empty until next --refresh-rosters run
+        if cached:
+            print(f"    Rosters: loaded {len(cached)} from cache ({sum(len(r) for r in cached.values())} participants)")
+        if missing:
+            print(f"    Rosters: {len(missing)} teams without cache (run with --refresh-rosters)")
 
     return {
         "tournament_id": tid, "tournament_name": tournament["name"],
@@ -1362,10 +1411,15 @@ def generate_html(all_season_data, config):
 # Main
 # ---------------------------------------------------------------------------
 
-def main():
+def main(refresh_rosters=False):
     config_path = os.path.join(os.path.dirname(__file__), "config.json")
     with open(config_path) as f:
         config = json.load(f)
+
+    if refresh_rosters:
+        print("*** ROSTER REFRESH enabled – will re-fetch all team rosters from API ***")
+    else:
+        print("Rosters: using cache (pass --refresh-rosters to update)")
 
     club_id = config["club_id"]
     manager_id = config["manager_id"]
@@ -1450,7 +1504,7 @@ def main():
         for t in tournaments_with_us:
             print(f"\n  Collecting data for: {t['name']}")
             try:
-                cat_data = collect_tournament_data(t, club_id)
+                cat_data = collect_tournament_data(t, club_id, refresh_rosters=refresh_rosters)
                 if cat_data["groups"]:
                     categories_data.append(cat_data)
                     print(f"    -> {len(cat_data['matches'])} matches, {len(cat_data['groups'])} group(s)")
@@ -1582,4 +1636,10 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser(description="Build Water Polo Tracker")
+    parser.add_argument("--refresh-rosters", action="store_true",
+                        help="Re-fetch all team rosters from API (expensive, ~400 calls). "
+                             "Without this flag, cached rosters are used.")
+    args = parser.parse_args()
+    main(refresh_rosters=args.refresh_rosters)

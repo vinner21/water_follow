@@ -7,6 +7,12 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      refresh_rosters:
+        description: 'Re-fetch all team rosters from API'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -43,16 +49,22 @@ jobs:
       - name: Build site
         env:
           STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
-        run: python build.py
+        run: |
+          if [ "${{ github.event.inputs.refresh_rosters }}" = "true" ]; then
+            python build.py --refresh-rosters
+          else
+            python build.py
+          fi
 
       - name: Commit season cache
         run: |
           if git diff --quiet _data/seasons/ && [ -z "$(git ls-files --others --exclude-standard _data/seasons/)" ]; then
-            echo "No new season cache files"
+            echo "No new cache files"
           else
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add _data/seasons/*.json _data/seasons/t_*.json
+            git add _data/seasons/rosters/ 2>/dev/null || true
             git commit -m "chore: update season cache [skip ci]" || true
             git push
           fi
