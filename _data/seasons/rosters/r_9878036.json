@@ -1,0 +1,74 @@
+[
+ {
+  "first_name": "PAULA",
+  "last_name": "FRANCO HOYOS",
+  "birthdate": "2003-07-21",
+  "role": "player"
+ },
+ {
+  "first_name": "JANA",
+  "last_name": "IÑESTA SANCHEZ",
+  "birthdate": "2007-02-20",
+  "role": "player"
+ },
+ {
+  "first_name": "LARA",
+  "last_name": "LISBONA LABRADOR",
+  "birthdate": "2003-03-16",
+  "role": "player"
+ },
+ {
+  "first_name": "SAMANTA",
+  "last_name": "PASCUAL SOLER",
+  "birthdate": "2005-03-03",
+  "role": "player"
+ },
+ {
+  "first_name": "MAR",
+  "last_name": "PAVIA SAEZ",
+  "birthdate": "2003-04-23",
+  "role": "player"
+ },
+ {
+  "first_name": "HELENA",
+  "last_name": "REBOLL NOGUERAS",
+  "birthdate": "2006-05-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ARIADNA",
+  "last_name": "ROS REGO",
+  "birthdate": "2007-06-19",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIONA",
+  "last_name": "ROS REGO",
+  "birthdate": "2004-04-05",
+  "role": "player"
+ },
+ {
+  "first_name": "AINHOA",
+  "last_name": "VELEZ CAMACHO",
+  "birthdate": "2008-01-08",
+  "role": "player"
+ },
+ {
+  "first_name": "SUSANA",
+  "last_name": "VELEZ CAMACHO",
+  "birthdate": "2003-11-17",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "CASTELLA COLL",
+  "birthdate": "1995-06-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "SILVIA",
+  "last_name": "ORTIZ HEREDIA",
+  "birthdate": "1971-12-18",
+  "role": "staff"
+ }
+]

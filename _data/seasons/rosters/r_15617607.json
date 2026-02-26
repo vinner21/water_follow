@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "JOSE GINES",
+  "last_name": "ALONSO ANTUNEZ",
+  "birthdate": "1971-05-18",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEXANDRE",
+  "last_name": "ALVARO  RAPOSO",
+  "birthdate": "1998-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "BONAMUSA AMBOU",
+  "birthdate": "1978-11-23",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERT",
+  "last_name": "ENCABO CORRALES",
+  "birthdate": "1980-06-22",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "FERRANDIS VILARO",
+  "birthdate": "1994-12-10",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLOS",
+  "last_name": "GADEA GRACIA",
+  "birthdate": "1968-07-19",
+  "role": "player"
+ },
+ {
+  "first_name": "JUAN JOSE",
+  "last_name": "GARCIA GARCIA",
+  "birthdate": "1966-07-25",
+  "role": "player"
+ },
+ {
+  "first_name": "CRISTIAN",
+  "last_name": "GARCIA MARQUINA",
+  "birthdate": "1995-06-14",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "GARCIA MARQUINA",
+  "birthdate": "1992-05-07",
+  "role": "player"
+ },
+ {
+  "first_name": "RAMON ",
+  "last_name": "GUIRAL",
+  "birthdate": "1969-05-02",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCOS",
+  "last_name": "GUZMAN BARROSO",
+  "birthdate": "1978-10-18",
+  "role": "player"
+ },
+ {
+  "first_name": "OSCAR",
+  "last_name": "LLANO  CARRETERO",
+  "birthdate": "1972-10-02",
+  "role": "player"
+ },
+ {
+  "first_name": "SERGIO",
+  "last_name": "MARTINEZ  LOPEZ",
+  "birthdate": "1978-01-05",
+  "role": "player"
+ },
+ {
+  "first_name": "VICENS",
+  "last_name": "PASCUAL  RAMIS",
+  "birthdate": "1961-08-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ANDER",
+  "last_name": "PASTOR APAOLAZA",
+  "birthdate": "1992-01-04",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "PEÑA LLORACH",
+  "birthdate": "1983-09-20",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "RAMS VALLEZ",
+  "birthdate": "1999-09-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ANDREU",
+  "last_name": "SANCHO",
+  "birthdate": "1991-03-10",
+  "role": "player"
+ },
+ {
+  "first_name": "FRANCESC",
+  "last_name": "VALLCORBA GRIÑAN",
+  "birthdate": "1992-10-28",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI JOAN",
+  "last_name": "AYMERICH MIÑARRO",
+  "birthdate": "1972-03-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "CRISTOBAL",
+  "last_name": "CARRASCO ZUJAR",
+  "birthdate": "1965-04-02",
+  "role": "staff"
+ }
+]
