@@ -1,0 +1,194 @@
+[
+ {
+  "first_name": "LUCAS",
+  "last_name": "ANTIN BEAS",
+  "birthdate": "2013-01-31",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "CARNACEA MUROS",
+  "birthdate": "2013-06-25",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "CHIVA REGALADO",
+  "birthdate": "2012-07-17",
+  "role": "player"
+ },
+ {
+  "first_name": "ADAM",
+  "last_name": "CORTES SOLER",
+  "birthdate": "2013-01-19",
+  "role": "player"
+ },
+ {
+  "first_name": "ARAN",
+  "last_name": "DIAZ ALEGRE",
+  "birthdate": "2014-07-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "GABRIEL ROBLES",
+  "birthdate": "2014-06-17",
+  "role": "player"
+ },
+ {
+  "first_name": "GABRIEL",
+  "last_name": "GUTIERREZ GONZALES",
+  "birthdate": "2012-03-03",
+  "role": "player"
+ },
+ {
+  "first_name": "IZAN",
+  "last_name": "HIJARRUBIA PALACIN",
+  "birthdate": "2013-03-14",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "LEAL OSORIO",
+  "birthdate": "2012-07-27",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "MONTERROSO ETCHEBARNE",
+  "birthdate": "2013-11-19",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERT",
+  "last_name": "MONTEYS TORREBADELLA",
+  "birthdate": "2014-12-15",
+  "role": "player"
+ },
+ {
+  "first_name": "ELIOT",
+  "last_name": "PERIS SERRANO",
+  "birthdate": "2014-10-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ENZO",
+  "last_name": "RODRIGUEZ LOPEZ",
+  "birthdate": "2013-02-27",
+  "role": "player"
+ },
+ {
+  "first_name": "UNAI",
+  "last_name": "RODRIGUEZ LOPEZ",
+  "birthdate": "2014-05-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEIX",
+  "last_name": "RODRIGUEZ OLSINA",
+  "birthdate": "2012-03-15",
+  "role": "player"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "RUIZ BEL",
+  "birthdate": "2012-01-02",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "SANTACANA CONGOSTO",
+  "birthdate": "2012-03-07",
+  "role": "player"
+ },
+ {
+  "first_name": "ANTOLIN",
+  "last_name": "SERRANO BARCIA",
+  "birthdate": "2012-01-02",
+  "role": "player"
+ },
+ {
+  "first_name": "OWEN",
+  "last_name": "SILVESTRE CHANG",
+  "birthdate": "2014-10-01",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "VILLALBA VALLS",
+  "birthdate": "2012-06-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ANDER",
+  "last_name": "ZARAGOZA CANO",
+  "birthdate": "2013-07-02",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERTO",
+  "last_name": "ANTIN CASTELLANOS",
+  "birthdate": "1982-01-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "SERGI",
+  "last_name": "BARREDA COLOM",
+  "birthdate": "2003-02-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "SERGI",
+  "last_name": "BARREDA COLOM",
+  "birthdate": "2003-02-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "CRISTOBAL",
+  "last_name": "CARRASCO ZUJAR",
+  "birthdate": "1965-04-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "COMAS IGLESIAS",
+  "birthdate": "1978-12-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "COMAS IGLESIAS",
+  "birthdate": "1978-12-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALBERTO",
+  "last_name": "GABRIEL AMEZAGA",
+  "birthdate": "1980-04-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "GIL HERNANDEZ",
+  "birthdate": "2000-12-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "ELISABET",
+  "last_name": "ROBLES JIMENEZ",
+  "birthdate": "1979-09-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "ESTEBAN",
+  "last_name": "RODRIGUEZ ALONSO",
+  "birthdate": "1979-07-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANTOLIN",
+  "last_name": "SERRANO AGUADO",
+  "birthdate": "1977-03-02",
+  "role": "staff"
+ }
+]

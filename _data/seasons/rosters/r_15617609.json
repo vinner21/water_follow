@@ -1,0 +1,140 @@
+[
+ {
+  "first_name": "LUNA",
+  "last_name": "ALFONSO USARRALDE",
+  "birthdate": "2012-11-09",
+  "role": "player"
+ },
+ {
+  "first_name": "GRETA",
+  "last_name": "BURGALES GALVEZ",
+  "birthdate": "2013-07-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ESTHER",
+  "last_name": "CAMPOY EGEA",
+  "birthdate": "2013-05-02",
+  "role": "player"
+ },
+ {
+  "first_name": "BERTA",
+  "last_name": "GUERRERO  DOMINGUEZ",
+  "birthdate": "2013-10-07",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCIA",
+  "last_name": "GUTIERREZ GONZALES",
+  "birthdate": "2014-11-08",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBA",
+  "last_name": "LLOPART ARNAIZ",
+  "birthdate": "2013-01-02",
+  "role": "player"
+ },
+ {
+  "first_name": "MAR ",
+  "last_name": "MASACHS SANCHEZ",
+  "birthdate": "2013-07-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ROSANNA",
+  "last_name": "MONTEYS TORREBADELLA",
+  "birthdate": "2014-12-15",
+  "role": "player"
+ },
+ {
+  "first_name": "ARIADNA",
+  "last_name": "NAVARRO PICAZO",
+  "birthdate": "2012-12-10",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "NEGREDO CORTES",
+  "birthdate": "2012-12-08",
+  "role": "player"
+ },
+ {
+  "first_name": "OLIVIA",
+  "last_name": "PEDREÑO CASINO",
+  "birthdate": "2013-12-16",
+  "role": "player"
+ },
+ {
+  "first_name": "JULIA",
+  "last_name": "PONS ROVIROSA",
+  "birthdate": "2013-09-03",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "PONS ROVIROSA",
+  "birthdate": "2013-09-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ALAYA",
+  "last_name": "SALINAS VILLARREAL",
+  "birthdate": "2013-07-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ELIZAVETA",
+  "last_name": "VOLOSHCHUK BOGOMOLOVA",
+  "birthdate": "2014-10-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ELIZAVETA",
+  "last_name": "VOLOSHCHUK BOGOMOLOVA",
+  "birthdate": "2014-10-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "BRIAS CARTES",
+  "birthdate": "2000-01-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALBERT",
+  "last_name": "CANER CANELA",
+  "birthdate": "2005-01-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "CRISTOBAL",
+  "last_name": "CARRASCO ZUJAR",
+  "birthdate": "1965-04-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "COMAS IGLESIAS",
+  "birthdate": "1978-12-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "COMAS IGLESIAS",
+  "birthdate": "1978-12-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANDREA",
+  "last_name": "GALVEZ PRATS",
+  "birthdate": "1980-06-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "NURIA",
+  "last_name": "TORREBADELLA MESTRES",
+  "birthdate": "1973-01-30",
+  "role": "staff"
+ }
+]

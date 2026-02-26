@@ -1,0 +1,194 @@
+[
+ {
+  "first_name": "QUERALT",
+  "last_name": "ANTON BOIXADERA",
+  "birthdate": "2008-01-22",
+  "role": "player"
+ },
+ {
+  "first_name": "TXELL",
+  "last_name": "ANTONIJOAN SANCHEZ",
+  "birthdate": "2010-01-11",
+  "role": "player"
+ },
+ {
+  "first_name": "AINA",
+  "last_name": "BUIL PIQUE",
+  "birthdate": "2009-03-13",
+  "role": "player"
+ },
+ {
+  "first_name": "AINA",
+  "last_name": "BUIL PIQUE",
+  "birthdate": "2009-03-13",
+  "role": "player"
+ },
+ {
+  "first_name": "GRETA",
+  "last_name": "BURGALES GALVEZ",
+  "birthdate": "2013-07-01",
+  "role": "player"
+ },
+ {
+  "first_name": "SILVIA",
+  "last_name": "CANER CANELA",
+  "birthdate": "2008-07-25",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTINA",
+  "last_name": "CANTO ASUMU",
+  "birthdate": "2010-02-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ONA",
+  "last_name": "CAPDEVILA GARRIGA",
+  "birthdate": "2010-03-07",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCIA",
+  "last_name": "COCA CANO",
+  "birthdate": "2010-05-27",
+  "role": "player"
+ },
+ {
+  "first_name": "NORA",
+  "last_name": "DOMINGUEZ PEREZ",
+  "birthdate": "2008-03-15",
+  "role": "player"
+ },
+ {
+  "first_name": "ARIADNA",
+  "last_name": "FAR COROMINAS",
+  "birthdate": "2010-02-05",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLOTA",
+  "last_name": "GIL PEREZ",
+  "birthdate": "2009-11-10",
+  "role": "player"
+ },
+ {
+  "first_name": "SOFIA",
+  "last_name": "GOMEZ ESPINOSA",
+  "birthdate": "2008-01-16",
+  "role": "player"
+ },
+ {
+  "first_name": "NOEMI",
+  "last_name": "GOMEZ PEREZ",
+  "birthdate": "2008-02-27",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLOTA",
+  "last_name": "LASSERROT DEUMAL",
+  "birthdate": "2010-01-11",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCIA",
+  "last_name": "LATORRE LOPEZ",
+  "birthdate": "2008-05-30",
+  "role": "player"
+ },
+ {
+  "first_name": "NAIA",
+  "last_name": "LATORRE LOPEZ",
+  "birthdate": "2011-11-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ARIADNA",
+  "last_name": "NAVARRO PICAZO",
+  "birthdate": "2012-12-10",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "OLIVEROS SANTA TERESA",
+  "birthdate": "2009-07-15",
+  "role": "player"
+ },
+ {
+  "first_name": "OLIVIA",
+  "last_name": "PEDREÑO CASINO",
+  "birthdate": "2013-12-16",
+  "role": "player"
+ },
+ {
+  "first_name": "IVET",
+  "last_name": "VALERO COLLADO",
+  "birthdate": "2011-12-26",
+  "role": "player"
+ },
+ {
+  "first_name": "AINHOA",
+  "last_name": "VELEZ CAMACHO",
+  "birthdate": "2008-01-08",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "VENGUT SABORIT",
+  "birthdate": "2010-06-27",
+  "role": "player"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "AZNAR FERNANDEZ",
+  "birthdate": "1971-07-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "BRIAS CARTES",
+  "birthdate": "2000-01-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALBERT",
+  "last_name": "CANER CANELA",
+  "birthdate": "2005-01-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "CRISTOBAL",
+  "last_name": "CARRASCO ZUJAR",
+  "birthdate": "1965-04-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "COMAS IGLESIAS",
+  "birthdate": "1978-12-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "COMAS IGLESIAS",
+  "birthdate": "1978-12-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANNA",
+  "last_name": "COROMINAS RUIZ",
+  "birthdate": "1977-01-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "RUT",
+  "last_name": "GARRIGA SUST",
+  "birthdate": "1979-07-14",
+  "role": "staff"
+ },
+ {
+  "first_name": "OSCAR",
+  "last_name": "LASSERROT SOBRINO",
+  "birthdate": "1970-03-04",
+  "role": "staff"
+ }
+]
