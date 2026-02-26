@@ -96,6 +96,7 @@ def save_season_cache(season_id, season_label, categories_data):
         "season_id": season_id,
         "season_label": season_label,
         "tournaments": serializable,
+        "refreshed_at": datetime.now().strftime("%d/%m/%Y %H:%M"),
     }
     path = os.path.join(DATA_DIR, f"{season_id}.json")
     with open(path, "w", encoding="utf-8") as f:
@@ -173,6 +174,15 @@ def load_all_roster_caches(team_ids):
         else:
             missing.add(t_id)
     return rosters, missing
+
+
+def roster_cache_age_days(team_id):
+    """Return the age in days of the roster cache file, or None if it doesn't exist."""
+    path = os.path.join(ROSTER_DIR, f"r_{team_id}.json")
+    if not os.path.exists(path):
+        return None
+    mtime = os.path.getmtime(path)
+    return (time.time() - mtime) / 86400
 
 
 # ---------------------------------------------------------------------------
@@ -473,7 +483,7 @@ def get_team_roster(team_id):
     return roster
 
 
-def collect_tournament_data(tournament, club_id, refresh_rosters=False):
+def collect_tournament_data(tournament, club_id, refresh_rosters=False, is_current_season=False):
     tid = tournament["id"]
     our_team_ids = {t["id"] for t in tournament["our_teams"]}
     print(f"  Fetching groups for {tournament['name']} ...")
@@ -547,13 +557,38 @@ def collect_tournament_data(tournament, club_id, refresh_rosters=False):
         print(f"    Rosters: {sum(len(r) for r in rosters.values())} total participants")
     else:
         cached, missing = load_all_roster_caches(all_team_ids_in_groups)
-        rosters = cached
+        rosters = dict(cached)
+
+        if is_current_season:
+            # Auto-refresh OUR teams if cache is missing or older than 30 days
+            our_to_fetch = set()
+            for t_id in our_team_ids:
+                age = roster_cache_age_days(t_id)
+                if age is None or age > 30:
+                    our_to_fetch.add(t_id)
+            if our_to_fetch:
+                print(f"    Auto-refreshing rosters for {len(our_to_fetch)} of our teams "
+                      f"(missing or >30 days old) ...")
+                for t_id in sorted(our_to_fetch):
+                    try:
+                        roster = get_team_roster(t_id)
+                        rosters[t_id] = roster
+                        save_roster_cache(t_id, roster)
+                        print(f"      Fetched roster for team {t_id}: {len(roster)} participants")
+                    except Exception as e:
+                        print(f"      Warning: could not fetch roster for {t_id}: {e}")
+                        rosters[t_id] = cached.get(t_id, [])
+            else:
+                print(f"    Our team rosters are fresh (cached <30 days)")
+
         for m_id in missing:
-            rosters[m_id] = []  # empty until next --refresh-rosters run
+            if m_id not in rosters:
+                rosters[m_id] = []  # empty until next --refresh-rosters run
         if cached:
             print(f"    Rosters: loaded {len(cached)} from cache ({sum(len(r) for r in cached.values())} participants)")
-        if missing:
-            print(f"    Rosters: {len(missing)} teams without cache (run with --refresh-rosters)")
+        remaining_missing = [m_id for m_id in missing if not rosters.get(m_id)]
+        if remaining_missing:
+            print(f"    Rosters: {len(remaining_missing)} teams without cache (run with --refresh-rosters)")
 
     return {
         "tournament_id": tid, "tournament_name": tournament["name"],
@@ -723,6 +758,7 @@ tr.highlight{background:var(--blue-pale)}tr.highlight td{font-weight:600}
 .roster-table th{background:var(--blue-dark);color:#fff;font-weight:600;font-size:.72rem;padding:.35rem .4rem;text-align:left}
 .roster-table td{padding:.3rem .4rem;border-bottom:1px solid #e9ecef}
 .roster-name{font-weight:500}
+.roster-age{text-align:center;font-weight:600;color:var(--blue-dark);font-size:.75rem}
 .roster-role{color:var(--text-muted);font-size:.72rem;font-style:italic}
 .roster-staff-title{font-size:.8rem;color:var(--blue);font-weight:600;margin:.6rem 0 .3rem;padding-top:.4rem;border-top:1px solid #e9ecef}
 footer{text-align:center;padding:1.2rem 1rem;font-size:.72rem;color:var(--text-muted)}
@@ -756,6 +792,22 @@ JS = """
 function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 function titleCase(s){return s.split(' ').map(function(w){return w.charAt(0).toUpperCase()+w.slice(1).toLowerCase();}).join(' ');}
 function toggleSection(h3){h3.parentElement.classList.toggle('collapsed');}
+function calcAge(bd,refDate){
+  if(!bd||!refDate)return'';
+  var p=bd.split('-');if(p.length<3)return'';
+  var bY=parseInt(p[0]),bM=parseInt(p[1]),bD=parseInt(p[2]);
+  var r=new Date(refDate+'T00:00:00');
+  var age=r.getFullYear()-bY;
+  if(r.getMonth()+1<bM||(r.getMonth()+1===bM&&r.getDate()<bD))age--;
+  return age>=0?age:'';
+}
+function getAgeRef(entryId){
+  var m=entryId.match(/^s(\\d+)-/);
+  if(!m)return new Date().toISOString().slice(0,10);
+  var sid=m[1];
+  var s=(window.SEASONS||[]).find(function(x){return x.id===sid;});
+  return s&&s.ageRef?s.ageRef:new Date().toISOString().slice(0,10);
+}
 
 /* --- Season Switching --- */
 function switchSeason(seasonId){
@@ -773,7 +825,7 @@ function switchSeason(seasonId){
     var cats=document.querySelector('.season-cats.active');
     var count=cats?cats.querySelectorAll('.cat-card').length:0;
     var si=(window.SEASONS||[]).find(function(s){return s.id===seasonId;});
-    sub.textContent=count+' categories'+(si&&!si.current?' (temporada tancada)':'');
+    sub.textContent=count+' categories'+(si&&!si.current?' (temporada tancada)':'')+(si&&si.ra?' \\u00b7 Actualitzat: '+si.ra:'');
   }
   showCategories();
   clearSearch();
@@ -1027,6 +1079,7 @@ function renderForTeam(entryId,teamId){
   var rosH='';
   var roster=window.ROST&&window.ROST[teamId];
   if(roster&&roster.length>0){
+    var ageRef=getAgeRef(entryId);
     /* Deduplicate by fn+ln+bd */
     var seen={};var uRoster=[];
     roster.forEach(function(p){var k=p.fn+'|'+p.ln+'|'+(p.bd||'');if(!seen[k]){seen[k]=1;uRoster.push(p);}});
@@ -1036,21 +1089,23 @@ function renderForTeam(entryId,teamId){
     var staff=uRoster.filter(function(p){return p.ro!=='player';});
     var rows='';
     players.forEach(function(p){
-      var by='';
-      if(p.bd){by=p.bd.substring(0,4);}
+      var bd='',age='';
+      if(p.bd){var pts=p.bd.split('-');if(pts.length>=3)bd=pts[2]+'/'+pts[1]+'/'+pts[0];age=calcAge(p.bd,ageRef);}
       var name=esc(titleCase(p.fn)+' '+titleCase(p.ln));
-      rows+='<tr><td class="roster-name">'+name+'</td><td>'+by+'</td></tr>';
+      rows+='<tr><td class="roster-name">'+name+'</td><td>'+bd+'</td><td>'+age+'</td></tr>';
     });
     var srows='';
     staff.forEach(function(p){
+      var bd='',age='';
+      if(p.bd){var pts=p.bd.split('-');if(pts.length>=3)bd=pts[2]+'/'+pts[1]+'/'+pts[0];age=calcAge(p.bd,ageRef);}
       var name=esc(titleCase(p.fn)+' '+titleCase(p.ln));
-      srows+='<tr><td class="roster-name">'+name+'</td><td class="roster-role">Staff</td></tr>';
+      srows+='<tr><td class="roster-name">'+name+'</td><td>'+bd+'</td><td>'+age+'</td></tr>';
     });
     rosH='<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Plantilla ('+players.length+' jugadors)<span class="toggle-arrow">\u25B2</span></h3>'+
-      '<div class="section-content"><div class="table-wrap"><table class="roster-table"><thead><tr><th>Nom</th><th>Any</th></tr></thead>'+
+      '<div class="section-content"><div class="table-wrap"><table class="roster-table"><thead><tr><th>Nom</th><th>Naix.</th><th>Edat</th></tr></thead>'+
       '<tbody>'+rows+'</tbody></table></div>';
     if(srows)rosH+='<div class="roster-staff-title">Cos tecnic ('+staff.length+')</div>'+
-      '<div class="table-wrap"><table class="roster-table"><thead><tr><th>Nom</th><th></th></tr></thead>'+
+      '<div class="table-wrap"><table class="roster-table"><thead><tr><th>Nom</th><th>Naix.</th><th>Edat</th></tr></thead>'+
       '<tbody>'+srows+'</tbody></table></div>';
     rosH+='</div></div>';
   }
@@ -1168,6 +1223,8 @@ def generate_html(all_season_data, config):
             "id": sid,
             "label": sdata["label"],
             "current": sdata["status"] == "current",
+            "ageRef": sdata.get("age_ref_date", datetime.now().strftime("%Y-%m-%d")),
+            "ra": sdata.get("refreshed_at", ""),
         })
 
         # --- Screen 1: Category cards for this season ---
@@ -1471,7 +1528,15 @@ def main(refresh_rosters=False):
                     "status": "finished",
                     "categories_data": categories_data,
                     "category_age": cat_age,
+                    "refreshed_at": cached.get("refreshed_at", ""),
+                    "age_ref_date": f"{start_year + 1}-12-31",
                 }
+                if not all_season_data[sid]["refreshed_at"]:
+                    # Fallback to file mtime for old caches without refreshed_at
+                    cache_path = os.path.join(DATA_DIR, f"{sid}.json")
+                    if os.path.exists(cache_path):
+                        mtime = os.path.getmtime(cache_path)
+                        all_season_data[sid]["refreshed_at"] = datetime.fromtimestamp(mtime).strftime("%d/%m/%Y %H:%M")
                 continue
 
         # Need to discover teams and fetch data from API
@@ -1504,7 +1569,8 @@ def main(refresh_rosters=False):
         for t in tournaments_with_us:
             print(f"\n  Collecting data for: {t['name']}")
             try:
-                cat_data = collect_tournament_data(t, club_id, refresh_rosters=refresh_rosters)
+                cat_data = collect_tournament_data(t, club_id, refresh_rosters=refresh_rosters,
+                                                   is_current_season=is_current)
                 if cat_data["groups"]:
                     categories_data.append(cat_data)
                     print(f"    -> {len(cat_data['matches'])} matches, {len(cat_data['groups'])} group(s)")
@@ -1529,6 +1595,8 @@ def main(refresh_rosters=False):
             "status": "current" if is_current else "finished",
             "categories_data": categories_data,
             "category_age": cat_age,
+            "refreshed_at": datetime.now().strftime("%d/%m/%Y %H:%M"),
+            "age_ref_date": datetime.now().strftime("%Y-%m-%d") if is_current else f"{start_year + 1}-12-31",
         }
 
         # Cache finished seasons for future builds
