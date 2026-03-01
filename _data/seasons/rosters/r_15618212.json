@@ -1,0 +1,98 @@
+[
+ {
+  "first_name": "JOSE MANUEL",
+  "last_name": "CASTILLO JIMENEZ",
+  "birthdate": "1968-01-07",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "COBOS CONCHA",
+  "birthdate": "1996-08-13",
+  "role": "player"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "ESCALERA SOTOS",
+  "birthdate": "1979-04-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ELOY",
+  "last_name": "LAZARO GONZALEZ",
+  "birthdate": "1979-06-27",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEIX",
+  "last_name": "MAS MONRAS",
+  "birthdate": "1996-03-13",
+  "role": "player"
+ },
+ {
+  "first_name": "EDUARDO",
+  "last_name": "MIGUEL MANGAS",
+  "birthdate": "1979-11-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEIX",
+  "last_name": "MORALES TOSTADO",
+  "birthdate": "1996-03-04",
+  "role": "player"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "MUÑOZ TURRILLO",
+  "birthdate": "1986-12-02",
+  "role": "player"
+ },
+ {
+  "first_name": "FRANCISCO JAVIER",
+  "last_name": "RAMOS PALACIOS",
+  "birthdate": "1988-06-12",
+  "role": "player"
+ },
+ {
+  "first_name": "ANDRES",
+  "last_name": "RICO DE FRUTOS",
+  "birthdate": "1992-08-04",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "RODRIGUEZ SANCHEZ",
+  "birthdate": "1977-05-27",
+  "role": "player"
+ },
+ {
+  "first_name": "RUBEN",
+  "last_name": "RODRIGUEZ SANCHEZ",
+  "birthdate": "1978-11-19",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "SAIGNER CONCHA",
+  "birthdate": "2000-09-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "SELMA CODERCH",
+  "birthdate": "1968-12-10",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSE PEDRO",
+  "last_name": "SOUSA OLIVEIRA",
+  "birthdate": "1998-10-07",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLOS",
+  "last_name": "VALLE MENGUIANO",
+  "birthdate": "1975-06-10",
+  "role": "player"
+ }
+]

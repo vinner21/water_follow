@@ -1,0 +1,164 @@
+[
+ {
+  "first_name": "SARA",
+  "last_name": "ARIAS BES",
+  "birthdate": "2009-08-01",
+  "role": "player"
+ },
+ {
+  "first_name": "CLOE",
+  "last_name": "BAENA GARRIDO",
+  "birthdate": "2009-01-02",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIA",
+  "last_name": "BATLLE MARTINEZ",
+  "birthdate": "2008-06-02",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCIA",
+  "last_name": "DIAZ FERRER",
+  "birthdate": "2008-05-29",
+  "role": "player"
+ },
+ {
+  "first_name": "SUHAILA",
+  "last_name": "DOMINGO BOUSO",
+  "birthdate": "2011-01-04",
+  "role": "player"
+ },
+ {
+  "first_name": "JUDITH",
+  "last_name": "GONZALEZ ANILLO",
+  "birthdate": "2011-04-27",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "GONZALEZ CARMONA",
+  "birthdate": "2011-07-25",
+  "role": "player"
+ },
+ {
+  "first_name": "NORA",
+  "last_name": "GRANADOS MARTIN",
+  "birthdate": "2009-03-06",
+  "role": "player"
+ },
+ {
+  "first_name": "AINA",
+  "last_name": "MELERO DELGADO",
+  "birthdate": "2010-07-15",
+  "role": "player"
+ },
+ {
+  "first_name": "VALENTINA",
+  "last_name": "PIRETTI GONZALEZ",
+  "birthdate": "2009-06-22",
+  "role": "player"
+ },
+ {
+  "first_name": "SANDRA",
+  "last_name": "RODRIGUEZ CALAFELL",
+  "birthdate": "2009-06-07",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "RODRIGUEZ GARCIA",
+  "birthdate": "2008-10-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBA",
+  "last_name": "ROLDAN SADURNI",
+  "birthdate": "2010-11-30",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "ROLDAN SADURNI",
+  "birthdate": "2010-11-30",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "SERRANO PAMIES",
+  "birthdate": "2009-09-22",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "TOMAS SAMPER",
+  "birthdate": "2011-11-15",
+  "role": "player"
+ },
+ {
+  "first_name": "NEREA",
+  "last_name": "VERDUGO GARCIA",
+  "birthdate": "2009-06-29",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTINA",
+  "last_name": "VIDAL SADURNI",
+  "birthdate": "2011-10-26",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCIA",
+  "last_name": "VILAR ALVAREZ",
+  "birthdate": "2009-09-17",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "ALLED FUSTER",
+  "birthdate": "1979-05-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "OSCAR RUBEN",
+  "last_name": "ARIAS VILLARREAL",
+  "birthdate": "1976-09-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "MERITXELL",
+  "last_name": "DEL ARCO FERNANDEZ",
+  "birthdate": "1980-05-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "GARCIA PACHECO",
+  "birthdate": "2000-05-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "SUSANA",
+  "last_name": "MARTINEZ DIAZ",
+  "birthdate": "1975-11-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "SILVIA",
+  "last_name": "MIRAS MARROYO",
+  "birthdate": "1984-01-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "NEREA",
+  "last_name": "MORALES LLAMAS",
+  "birthdate": "2004-05-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANDRES",
+  "last_name": "PIRETTI POMBO",
+  "birthdate": "1978-05-23",
+  "role": "staff"
+ }
+]

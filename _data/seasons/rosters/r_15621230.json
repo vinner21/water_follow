@@ -1,0 +1,122 @@
+[
+ {
+  "first_name": "TOMAS",
+  "last_name": "ALTABA FERRER",
+  "birthdate": "2016-10-26",
+  "role": "player"
+ },
+ {
+  "first_name": "NICO",
+  "last_name": "ASCANIO GORDILLO",
+  "birthdate": "2016-07-12",
+  "role": "player"
+ },
+ {
+  "first_name": "AINA",
+  "last_name": "BALLBE DIANA",
+  "birthdate": "2016-01-28",
+  "role": "player"
+ },
+ {
+  "first_name": "MIA",
+  "last_name": "BALLESTEROS GARCIA",
+  "birthdate": "2016-07-01",
+  "role": "player"
+ },
+ {
+  "first_name": "BERNAT",
+  "last_name": "CARDONA BLANCO",
+  "birthdate": "2016-06-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "CASTRO PULGARIN",
+  "birthdate": "2016-10-26",
+  "role": "player"
+ },
+ {
+  "first_name": "BRU",
+  "last_name": "GARCIA AMADOR",
+  "birthdate": "2016-07-15",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "GOMEZ FUENTES",
+  "birthdate": "2016-10-21",
+  "role": "player"
+ },
+ {
+  "first_name": "IVAN ",
+  "last_name": "GUERRERO BURGOS ",
+  "birthdate": "2016-12-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ENRIQUE ",
+  "last_name": "HERNANDEZ OLVERA",
+  "birthdate": "2016-06-29",
+  "role": "player"
+ },
+ {
+  "first_name": "EZEQUIEL ",
+  "last_name": "MARTINEZ MIRALLES",
+  "birthdate": "2016-07-07",
+  "role": "player"
+ },
+ {
+  "first_name": "ADAN ",
+  "last_name": "MONTORO NIETO",
+  "birthdate": "2016-09-21",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "NAVARRO FONOLLA",
+  "birthdate": "2016-06-28",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEXIA",
+  "last_name": "PRIETO MARTINEZ",
+  "birthdate": "2016-04-09",
+  "role": "player"
+ },
+ {
+  "first_name": "SARA",
+  "last_name": "RODRIGUEZ MORENO",
+  "birthdate": "2016-02-16",
+  "role": "player"
+ },
+ {
+  "first_name": "SOFIA ",
+  "last_name": "SALAZAR AVELLA",
+  "birthdate": "2016-07-21",
+  "role": "player"
+ },
+ {
+  "first_name": "OIHAN",
+  "last_name": "URDIALES FENOY",
+  "birthdate": "2016-11-07",
+  "role": "player"
+ },
+ {
+  "first_name": "BERTA",
+  "last_name": "ALAVEDRA BETRAN",
+  "birthdate": "2007-09-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEJANDRA",
+  "last_name": "OLVERA CARDILA",
+  "birthdate": "1979-04-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "SANCHEZ SANTOS",
+  "birthdate": "2001-11-17",
+  "role": "staff"
+ }
+]

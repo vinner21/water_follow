@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "MARCEL",
+  "last_name": "ARAGONES LABERNIA",
+  "birthdate": "2016-02-15",
+  "role": "player"
+ },
+ {
+  "first_name": "AXEL",
+  "last_name": "BARRERO RODRIGUEZ",
+  "birthdate": "2014-05-23",
+  "role": "player"
+ },
+ {
+  "first_name": "CELESTIN",
+  "last_name": "BERNICKE",
+  "birthdate": "2014-05-17",
+  "role": "player"
+ },
+ {
+  "first_name": "TIMOTHEE",
+  "last_name": "BERNICKE",
+  "birthdate": "2015-07-03",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "CANO MORALES",
+  "birthdate": "2016-12-23",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "ESTAPA CARDELLACH",
+  "birthdate": "2014-07-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ENZO",
+  "last_name": "FRANCES VENTURA",
+  "birthdate": "2014-10-08",
+  "role": "player"
+ },
+ {
+  "first_name": "TOMAS",
+  "last_name": "FRANCO GONZALEZ",
+  "birthdate": "2015-06-19",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "GRAU ANGLARILL",
+  "birthdate": "2014-10-23",
+  "role": "player"
+ },
+ {
+  "first_name": "LANDER",
+  "last_name": "LOPETEGUI LLUIS",
+  "birthdate": "2016-02-09",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "LOPEZ MESTRES",
+  "birthdate": "2014-10-02",
+  "role": "player"
+ },
+ {
+  "first_name": "LAU",
+  "last_name": "MATAS COLLELL ",
+  "birthdate": "2014-06-02",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "SALA GOTOR",
+  "birthdate": "2015-12-28",
+  "role": "player"
+ },
+ {
+  "first_name": "HARVEY",
+  "last_name": "SIMPSON",
+  "birthdate": "2014-01-24",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "SOMOZA ANDREU",
+  "birthdate": "2015-07-20",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIO",
+  "last_name": "SOTO GARCIA",
+  "birthdate": "2014-12-30",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCO",
+  "last_name": "VILARO CUCCHIARATO",
+  "birthdate": "2015-03-10",
+  "role": "player"
+ },
+ {
+  "first_name": "MERITXELL",
+  "last_name": "ANDREU GINABREDA",
+  "birthdate": "1981-08-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "CASTAÑO BECERRA",
+  "birthdate": "2007-04-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "HERNANDEZ BORRAS",
+  "birthdate": "1982-09-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "INGLAVAGA TENA",
+  "birthdate": "2001-08-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "FRANCISCO ",
+  "last_name": "SOTO PERMUY",
+  "birthdate": "1972-07-12",
+  "role": "staff"
+ }
+]

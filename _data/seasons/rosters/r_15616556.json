@@ -1,0 +1,170 @@
+[
+ {
+  "first_name": "MARINA",
+  "last_name": "BERMEJO MUÑOZ",
+  "birthdate": "2014-08-27",
+  "role": "player"
+ },
+ {
+  "first_name": "ANNA",
+  "last_name": "FERNANDEZ HERNANDO",
+  "birthdate": "2014-01-13",
+  "role": "player"
+ },
+ {
+  "first_name": "SARA",
+  "last_name": "GARRIDO MARTINEZ",
+  "birthdate": "2013-05-10",
+  "role": "player"
+ },
+ {
+  "first_name": "FARNERS",
+  "last_name": "LLORENC SAPES",
+  "birthdate": "2014-07-04",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "LOPEZ SANZ",
+  "birthdate": "2014-02-05",
+  "role": "player"
+ },
+ {
+  "first_name": "MURIEL",
+  "last_name": "MANICH GALOFRE",
+  "birthdate": "2013-11-21",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCIA",
+  "last_name": "MATA ALVAREZ",
+  "birthdate": "2012-01-05",
+  "role": "player"
+ },
+ {
+  "first_name": "JOANA",
+  "last_name": "MIGUEL URTIAGA",
+  "birthdate": "2014-03-23",
+  "role": "player"
+ },
+ {
+  "first_name": "GEORGINA",
+  "last_name": "MONTOLIU EROLES",
+  "birthdate": "2013-03-27",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIA FERNANDA",
+  "last_name": "OCAMPO ZABALA",
+  "birthdate": "2012-12-12",
+  "role": "player"
+ },
+ {
+  "first_name": "JANA",
+  "last_name": "PASTOR FONTCUBERTA",
+  "birthdate": "2013-09-10",
+  "role": "player"
+ },
+ {
+  "first_name": "VALERIA",
+  "last_name": "PEREZ BOHORQUEZ",
+  "birthdate": "2013-11-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ARLET",
+  "last_name": "RODRIGUEZ BELTRAN",
+  "birthdate": "2012-07-12",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "ROS GARCIA",
+  "birthdate": "2012-02-10",
+  "role": "player"
+ },
+ {
+  "first_name": "LILOU",
+  "last_name": "RUBIO MATHIEU",
+  "birthdate": "2013-10-25",
+  "role": "player"
+ },
+ {
+  "first_name": "AINA",
+  "last_name": "RUIZ CALDITO",
+  "birthdate": "2013-08-30",
+  "role": "player"
+ },
+ {
+  "first_name": "DUNA",
+  "last_name": "RUIZ GARCIA",
+  "birthdate": "2014-05-07",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "RUIZ LANGE",
+  "birthdate": "2014-06-21",
+  "role": "player"
+ },
+ {
+  "first_name": "TARYN KRISTEL",
+  "last_name": "UTRILLA RODRIGUEZ",
+  "birthdate": "2013-01-17",
+  "role": "player"
+ },
+ {
+  "first_name": "ANNA",
+  "last_name": "VALLES LOPEZ",
+  "birthdate": "2012-10-18",
+  "role": "player"
+ },
+ {
+  "first_name": "ENRIC",
+  "last_name": "ARNELLA RUIZ",
+  "birthdate": "1992-06-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "MONTSERRAT",
+  "last_name": "FONTCUBERTA VIÑOLAS",
+  "birthdate": "1983-01-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "TAMARA",
+  "last_name": "LOPEZ COBACHO",
+  "birthdate": "1985-09-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "MORENO VAZ-ROMERO",
+  "birthdate": "1998-09-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "PAJUELO PALLARES",
+  "birthdate": "1982-06-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "FERRAN",
+  "last_name": "PLANA AGUSTI",
+  "birthdate": "1982-10-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "LLUIS",
+  "last_name": "ROS ARJONA",
+  "birthdate": "1976-10-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIGUEL",
+  "last_name": "RUIZ RODRIGUEZ",
+  "birthdate": "1980-08-10",
+  "role": "staff"
+ }
+]

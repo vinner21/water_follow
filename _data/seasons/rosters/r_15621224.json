@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "ADAY",
+  "last_name": "ACUÑA PRADAS",
+  "birthdate": "2010-08-11",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "CARDENAS SAMPIETRO",
+  "birthdate": "2010-04-06",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "CASADO FUENTES",
+  "birthdate": "2010-12-12",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "CEREZO CAVERO",
+  "birthdate": "2010-09-28",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "COBACHO BOLDU",
+  "birthdate": "2011-09-03",
+  "role": "player"
+ },
+ {
+  "first_name": "SAMUEL",
+  "last_name": "DIAZ MARROQUIN",
+  "birthdate": "2010-02-17",
+  "role": "player"
+ },
+ {
+  "first_name": "HECTOR",
+  "last_name": "DIOS ESTEBAN",
+  "birthdate": "2010-02-05",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "FARRE AMADOR",
+  "birthdate": "2010-04-07",
+  "role": "player"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "GALLEGO MARTOS",
+  "birthdate": "2010-06-08",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO ",
+  "last_name": "GARZON REYES",
+  "birthdate": "2013-07-12",
+  "role": "player"
+ },
+ {
+  "first_name": "OLIVER",
+  "last_name": "HERRERA MENDOZA",
+  "birthdate": "2011-04-02",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "LINARES MATARIN",
+  "birthdate": "2012-07-14",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSE MANUEL",
+  "last_name": "LLENIN SANTIAGO",
+  "birthdate": "2011-07-08",
+  "role": "player"
+ },
+ {
+  "first_name": "YAHEL",
+  "last_name": "MUÑOZ FUENTES",
+  "birthdate": "2012-11-16",
+  "role": "player"
+ },
+ {
+  "first_name": "LLATZER",
+  "last_name": "PEREZ BARADAD",
+  "birthdate": "2010-04-12",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "POLEY DIAZ",
+  "birthdate": "2010-03-28",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "RICO SANAHUJA",
+  "birthdate": "2010-02-01",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "VELASCO ALONSO",
+  "birthdate": "2012-01-13",
+  "role": "player"
+ },
+ {
+  "first_name": "DIDAC",
+  "last_name": "COBACHO TADEO",
+  "birthdate": "1978-02-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSEP LL.",
+  "last_name": "PEREZ GUTIERREZ",
+  "birthdate": "1975-03-24",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "RICO ESCOFET",
+  "birthdate": "1974-11-14",
+  "role": "staff"
+ }
+]

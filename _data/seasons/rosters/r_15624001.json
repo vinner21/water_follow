@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "NIL",
+  "last_name": "AZLOR LLADO ",
+  "birthdate": "2016-06-24",
+  "role": "player"
+ },
+ {
+  "first_name": "EDUARDO",
+  "last_name": "BENEDUCE",
+  "birthdate": "2016-09-07",
+  "role": "player"
+ },
+ {
+  "first_name": "KAI",
+  "last_name": "FERNANDEZ LINSE",
+  "birthdate": "2016-01-23",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "GARRETA PETITBO",
+  "birthdate": "2016-07-26",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "LOIS SANCHEZ",
+  "birthdate": "2016-02-22",
+  "role": "player"
+ },
+ {
+  "first_name": "GABRIEL",
+  "last_name": "MARTI NASCIMENTO",
+  "birthdate": "2016-03-07",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSEP",
+  "last_name": "MARTINEZ ALLUE",
+  "birthdate": "2016-11-21",
+  "role": "player"
+ },
+ {
+  "first_name": "CLAUDI",
+  "last_name": "MORALEJO BUSQUETS ",
+  "birthdate": "2016-08-30",
+  "role": "player"
+ },
+ {
+  "first_name": "QUIM ",
+  "last_name": "MORALEJO BUSQUETS ",
+  "birthdate": "2018-12-20",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIO",
+  "last_name": "PAZ PEREZ ",
+  "birthdate": "2016-08-02",
+  "role": "player"
+ },
+ {
+  "first_name": "ROC",
+  "last_name": "QUERO VINYES",
+  "birthdate": "2016-08-28",
+  "role": "player"
+ },
+ {
+  "first_name": "NICOLAS ANDREAS",
+  "last_name": "SAGADIN FERNANDEZ",
+  "birthdate": "2016-12-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEIX",
+  "last_name": "SEBASTIA QUINTANO",
+  "birthdate": "2016-06-13",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNO",
+  "last_name": "SERRA MARTINEZ",
+  "birthdate": "2016-10-14",
+  "role": "player"
+ },
+ {
+  "first_name": "LEONARD",
+  "last_name": "VON ESTORFF",
+  "birthdate": "2016-10-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ANNA",
+  "last_name": "BUSQUETS FACIABEN",
+  "birthdate": "1986-11-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "CEBRIANO GARCIA",
+  "birthdate": "2002-09-19",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "COLOMER ARBOLI",
+  "birthdate": "1967-01-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "TIZZIANO",
+  "last_name": "CONTI",
+  "birthdate": "2002-02-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "MATEO",
+  "last_name": "LEMA LLAPUR",
+  "birthdate": "2001-04-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSEP VICENT",
+  "last_name": "MARTINEZ RUBIO",
+  "birthdate": "1979-06-10",
+  "role": "staff"
+ }
+]

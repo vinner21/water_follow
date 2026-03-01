@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "MARC",
+  "last_name": "ARIAS RODRIGUEZ ",
+  "birthdate": "2017-07-31",
+  "role": "player"
+ },
+ {
+  "first_name": "HECTOR",
+  "last_name": "CEPERO AMAT",
+  "birthdate": "2016-06-09",
+  "role": "player"
+ },
+ {
+  "first_name": "FINN MATEO",
+  "last_name": "HAMILTON DIXON",
+  "birthdate": "2016-12-29",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "LOPEZ LOIS",
+  "birthdate": "2016-02-10",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "MARTINEZ GALLARDO",
+  "birthdate": "2018-09-17",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL ",
+  "last_name": "MARTINEZ LLORENTE",
+  "birthdate": "2016-06-03",
+  "role": "player"
+ },
+ {
+  "first_name": "MAXIM",
+  "last_name": "MEDINA NIETO",
+  "birthdate": "2017-04-21",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "MESEGUER ANDREU",
+  "birthdate": "2016-09-18",
+  "role": "player"
+ },
+ {
+  "first_name": "LIAM",
+  "last_name": "PEREZ ARIAS",
+  "birthdate": "2018-12-04",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "PINO SANCHEZ",
+  "birthdate": "2017-11-30",
+  "role": "player"
+ },
+ {
+  "first_name": "AMARU",
+  "last_name": "RIVERA CASALS",
+  "birthdate": "2016-04-06",
+  "role": "player"
+ },
+ {
+  "first_name": "MATHIAS ",
+  "last_name": "SERRES TORO",
+  "birthdate": "2016-10-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ARAN",
+  "last_name": "TELLERI MELERO",
+  "birthdate": "2016-04-15",
+  "role": "player"
+ },
+ {
+  "first_name": "IBAI",
+  "last_name": "TELLERI MELERO",
+  "birthdate": "2018-12-19",
+  "role": "player"
+ },
+ {
+  "first_name": "FRANCESCO",
+  "last_name": "TESONE",
+  "birthdate": "2017-07-15",
+  "role": "player"
+ },
+ {
+  "first_name": "DRAC",
+  "last_name": "VALIENTE PLANAS",
+  "birthdate": "2017-10-05",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "VIANA AURIN",
+  "birthdate": "2016-10-05",
+  "role": "player"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "CANILLAS ALBARRACIN",
+  "birthdate": "1951-02-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "AINARA",
+  "last_name": "FARRE COLOMINA",
+  "birthdate": "1999-03-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "YOLANDA",
+  "last_name": "LLORENTE DEL CAMPO",
+  "birthdate": "1976-06-24",
+  "role": "staff"
+ },
+ {
+  "first_name": "LORENZO",
+  "last_name": "MARTINEZ EXPOSITO",
+  "birthdate": "1968-01-20",
+  "role": "staff"
+ }
+]

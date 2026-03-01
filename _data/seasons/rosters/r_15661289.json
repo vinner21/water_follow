@@ -1,0 +1,164 @@
+[
+ {
+  "first_name": "ROGER",
+  "last_name": "ALVAREZ CASALA",
+  "birthdate": "2018-06-23",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEXIS",
+  "last_name": "ANDRES BESTEIRO",
+  "birthdate": "2017-05-19",
+  "role": "player"
+ },
+ {
+  "first_name": "PEP ",
+  "last_name": "ARAU CANUT",
+  "birthdate": "2017-07-25",
+  "role": "player"
+ },
+ {
+  "first_name": "NURIA",
+  "last_name": "AVILES SALLAN",
+  "birthdate": "2017-01-27",
+  "role": "player"
+ },
+ {
+  "first_name": "PIETRO",
+  "last_name": "BIANCHI BERROCAL",
+  "birthdate": "2017-03-31",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO",
+  "last_name": "CANEDA BELLO ",
+  "birthdate": "2018-03-28",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "COCA",
+  "birthdate": "2017-07-10",
+  "role": "player"
+ },
+ {
+  "first_name": "LIAM",
+  "last_name": "FELIX OROPEZA",
+  "birthdate": "2017-12-15",
+  "role": "player"
+ },
+ {
+  "first_name": "ALVARO ",
+  "last_name": "FERNANDEZ GIMENEZ ",
+  "birthdate": "2018-10-28",
+  "role": "player"
+ },
+ {
+  "first_name": "NIKA",
+  "last_name": "FILATOVA",
+  "birthdate": "2017-01-01",
+  "role": "player"
+ },
+ {
+  "first_name": "NUR",
+  "last_name": "GARCIA MARTINEZ",
+  "birthdate": "2017-07-15",
+  "role": "player"
+ },
+ {
+  "first_name": "OLATZ",
+  "last_name": "GARCIA SUILS",
+  "birthdate": "2017-09-09",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCAS",
+  "last_name": "GIL TORRES",
+  "birthdate": "2017-09-22",
+  "role": "player"
+ },
+ {
+  "first_name": "AMAYA DASHA",
+  "last_name": "GOMEZ BUSTAMANTE",
+  "birthdate": "2017-01-11",
+  "role": "player"
+ },
+ {
+  "first_name": "YEHOR",
+  "last_name": "KRAVCHENKO",
+  "birthdate": "2017-07-11",
+  "role": "player"
+ },
+ {
+  "first_name": "AXEL",
+  "last_name": "LOTINA MESALLES",
+  "birthdate": "2017-06-11",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "MARIMON CASTILLO",
+  "birthdate": "2018-08-18",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "MOLINA CHO",
+  "birthdate": "2017-04-08",
+  "role": "player"
+ },
+ {
+  "first_name": "RUBEN",
+  "last_name": "MOLINA GONZALEZ",
+  "birthdate": "2017-12-28",
+  "role": "player"
+ },
+ {
+  "first_name": "OLIVER",
+  "last_name": "RODRIGUEZ GRACIA ",
+  "birthdate": "2018-02-25",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNO",
+  "last_name": "ZAMORA DOMENE",
+  "birthdate": "2017-12-22",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "CLARAMUNT VILLANUEVA",
+  "birthdate": "2004-03-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSEP",
+  "last_name": "GASCH SENDRA",
+  "birthdate": "1958-05-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "RUBEN",
+  "last_name": "GIL NEBOT",
+  "birthdate": "1976-10-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "NOGUERA PALOMO",
+  "birthdate": "2006-06-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARIA DEL MAR",
+  "last_name": "PARERA OLIVE",
+  "birthdate": "1978-09-18",
+  "role": "staff"
+ },
+ {
+  "first_name": "SERGIO",
+  "last_name": "PRATDEPADUA NOLLA",
+  "birthdate": "1986-08-30",
+  "role": "staff"
+ }
+]

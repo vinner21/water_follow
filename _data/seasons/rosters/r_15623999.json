@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "DARIO",
+  "last_name": "AMOROS MILLAN",
+  "birthdate": "2015-06-08",
+  "role": "player"
+ },
+ {
+  "first_name": "OLAU",
+  "last_name": "AROCA GONZALEZ",
+  "birthdate": "2014-02-01",
+  "role": "player"
+ },
+ {
+  "first_name": "MASSIMO",
+  "last_name": "BETTAZZI LOBO",
+  "birthdate": "2014-02-18",
+  "role": "player"
+ },
+ {
+  "first_name": "FERRAN",
+  "last_name": "BUSTOS MORENO",
+  "birthdate": "2015-03-05",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "CASTERNADO PARERA",
+  "birthdate": "2015-03-25",
+  "role": "player"
+ },
+ {
+  "first_name": "THEO",
+  "last_name": "FIGUERAS FAZZONI",
+  "birthdate": "2015-03-08",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "GIL JIMENEZ",
+  "birthdate": "2014-04-20",
+  "role": "player"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "GORDO NATAL",
+  "birthdate": "2014-04-23",
+  "role": "player"
+ },
+ {
+  "first_name": "IZAN",
+  "last_name": "GUERRERO CUBAS",
+  "birthdate": "2014-05-20",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTIN",
+  "last_name": "MARENGO MIHOVILCEVICH",
+  "birthdate": "2015-10-08",
+  "role": "player"
+ },
+ {
+  "first_name": "PEDRO ",
+  "last_name": "ORTEGA MARTIN",
+  "birthdate": "2014-05-25",
+  "role": "player"
+ },
+ {
+  "first_name": "JUAN RAMON",
+  "last_name": "ROBLES ALEXANDRE",
+  "birthdate": "2014-09-01",
+  "role": "player"
+ },
+ {
+  "first_name": "PEP",
+  "last_name": "ROUCO CALZADA",
+  "birthdate": "2015-12-22",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "SANCHEZ LOPEZ",
+  "birthdate": "2015-12-18",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "VALLVÉ MUÑOZ",
+  "birthdate": "2014-11-18",
+  "role": "player"
+ },
+ {
+  "first_name": "MOTIC",
+  "last_name": "VICENTE WANG",
+  "birthdate": "2014-12-24",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "COLOMER ARBOLI",
+  "birthdate": "1967-01-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "TIZZIANO",
+  "last_name": "CONTI",
+  "birthdate": "2002-02-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "VICTORIA SOLEDAD",
+  "last_name": "MIHOVILCEVICH STACCIOTTI",
+  "birthdate": "1982-10-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "SERGIO",
+  "last_name": "ORTEGA DIAZ",
+  "birthdate": "1985-01-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "SERGI",
+  "last_name": "VICENTE MARTINEZ",
+  "birthdate": "1975-09-07",
+  "role": "staff"
+ }
+]

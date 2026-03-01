@@ -1,0 +1,140 @@
+[
+ {
+  "first_name": "POL",
+  "last_name": "BADIA RUBIO",
+  "birthdate": "1998-03-03",
+  "role": "player"
+ },
+ {
+  "first_name": "TOMAS",
+  "last_name": "CAÑIZARES SANCHEZ-BEATO",
+  "birthdate": "1984-03-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "FLOR ARIÑO",
+  "birthdate": "1988-02-07",
+  "role": "player"
+ },
+ {
+  "first_name": "LUIS",
+  "last_name": "GARCIA COSTOYA",
+  "birthdate": "1984-02-25",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTIN",
+  "last_name": "GARCIA GONZALO-BILBAO",
+  "birthdate": "2014-01-22",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLEM GRAU I ARTAL",
+  "last_name": "GRAU I ARTAL",
+  "birthdate": "1988-02-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "GUITART GARCIA",
+  "birthdate": "1988-07-28",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLERMO",
+  "last_name": "HERRERA BLANCO",
+  "birthdate": "1993-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAQUIM",
+  "last_name": "LLORET PUEYO",
+  "birthdate": "1994-08-06",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "LLORET PUEYO",
+  "birthdate": "1996-12-27",
+  "role": "player"
+ },
+ {
+  "first_name": "IGNACIO",
+  "last_name": "MALAGARRIGA PEREA",
+  "birthdate": "1995-04-26",
+  "role": "player"
+ },
+ {
+  "first_name": "RICARD",
+  "last_name": "MARMOL  SEVE",
+  "birthdate": "1985-08-11",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "MARMOL SEVE",
+  "birthdate": "1988-10-10",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "MASIP MONTSERRAT",
+  "birthdate": "1993-01-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "MIELGO VEGA",
+  "birthdate": "1998-07-15",
+  "role": "player"
+ },
+ {
+  "first_name": "AITOR",
+  "last_name": "PINHO GARCIA",
+  "birthdate": "1990-07-25",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERT",
+  "last_name": "POZA ANADON",
+  "birthdate": "1989-05-08",
+  "role": "player"
+ },
+ {
+  "first_name": "SERGI",
+  "last_name": "RODRIGUEZ LOPEZ",
+  "birthdate": "1993-07-23",
+  "role": "player"
+ },
+ {
+  "first_name": "RAMON",
+  "last_name": "SANTIVERI HERNANDEZ",
+  "birthdate": "1990-10-03",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "TAHULL COMPTE",
+  "birthdate": "1994-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "TEIXIDO MARTINEZ",
+  "birthdate": "1987-09-14",
+  "role": "player"
+ },
+ {
+  "first_name": "SERGI",
+  "last_name": "TRILLES CHILLIDA",
+  "birthdate": "1988-06-27",
+  "role": "player"
+ },
+ {
+  "first_name": "DIEGO-ALEXIS",
+  "last_name": "VIGO SOLES",
+  "birthdate": "1996-06-16",
+  "role": "player"
+ }
+]

@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "GERARD",
+  "last_name": "CATALAN ALMENA",
+  "birthdate": "2012-02-26",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "CLAROS BAGAN",
+  "birthdate": "2012-04-30",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "GARCIA ABRIL",
+  "birthdate": "2013-06-09",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "GELADA GIL",
+  "birthdate": "2013-03-07",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO ",
+  "last_name": "GONZALEZ JORGE",
+  "birthdate": "2013-07-29",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "GONZALEZ KRUKOWSKI",
+  "birthdate": "2012-08-06",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "LLISORGAS LOPEZ",
+  "birthdate": "2012-05-23",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "MIRALLES BACH",
+  "birthdate": "2013-06-26",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "MORENO DOMENECH",
+  "birthdate": "2013-06-17",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "MORENO GARCIA",
+  "birthdate": "2015-02-28",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERT",
+  "last_name": "NIETO COSTA",
+  "birthdate": "2012-04-10",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "PEREZ ALVAREZ",
+  "birthdate": "2012-02-20",
+  "role": "player"
+ },
+ {
+  "first_name": "BENJAMIN ",
+  "last_name": "RIVERA",
+  "birthdate": "2012-12-26",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "RODRIGUEZ SERRANO",
+  "birthdate": "2013-08-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ANDREU ",
+  "last_name": "RUSTULLET FERREIRO",
+  "birthdate": "2013-06-17",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "VIU CABIA",
+  "birthdate": "2013-05-06",
+  "role": "player"
+ },
+ {
+  "first_name": "MIRIAM",
+  "last_name": "ABRIL HORTA",
+  "birthdate": "1984-05-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANIOL",
+  "last_name": "BLANCH PASSOLS",
+  "birthdate": "2003-01-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANIOL",
+  "last_name": "BLANCH PASSOLS",
+  "birthdate": "2003-01-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "GONZALEZ ASCARIZ",
+  "birthdate": "1982-12-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "ELOI",
+  "last_name": "LLISORGAS PRUNA",
+  "birthdate": "1980-01-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "RUIZ VICO",
+  "birthdate": "2002-04-16",
+  "role": "staff"
+ }
+]

@@ -1,0 +1,170 @@
+[
+ {
+  "first_name": "ALEX",
+  "last_name": "ALVAREZ CASADEMONT",
+  "birthdate": "2011-04-18",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCELO",
+  "last_name": "BANS REIG",
+  "birthdate": "2011-04-07",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "BUIL MONTEVERDE",
+  "birthdate": "2011-08-23",
+  "role": "player"
+ },
+ {
+  "first_name": "IAGO",
+  "last_name": "CALVO RAMOS",
+  "birthdate": "2011-09-15",
+  "role": "player"
+ },
+ {
+  "first_name": "MIGUEL ",
+  "last_name": "CAMPANARIO LORENZO",
+  "birthdate": "2010-05-22",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIO",
+  "last_name": "CARRICART RAMIREZ",
+  "birthdate": "2011-08-23",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIO",
+  "last_name": "CARRICART RAMIREZ",
+  "birthdate": "2011-08-23",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "CASANOVA MUNNE",
+  "birthdate": "2011-01-06",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "CAVERO LOPEZ",
+  "birthdate": "2010-03-05",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "CRESPO POMS",
+  "birthdate": "2010-04-15",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "EBRA MARTINEZ",
+  "birthdate": "2011-04-19",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTIN",
+  "last_name": "GARCIA GONZALO-BILBAO",
+  "birthdate": "2014-01-22",
+  "role": "player"
+ },
+ {
+  "first_name": "OSCAR ROC",
+  "last_name": "GRINA PICOS",
+  "birthdate": "2011-02-26",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "MEGIAS TEJEDOR",
+  "birthdate": "2011-03-29",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCEL",
+  "last_name": "MOLINA GARCIA",
+  "birthdate": "2010-02-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "PADRELL CASAR",
+  "birthdate": "2010-06-11",
+  "role": "player"
+ },
+ {
+  "first_name": "YERAY",
+  "last_name": "PREMAT KATZ",
+  "birthdate": "2011-07-24",
+  "role": "player"
+ },
+ {
+  "first_name": "NICOLAS",
+  "last_name": "ROSSINES DEL MORAL",
+  "birthdate": "2011-08-18",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "RUEDA CAMINS",
+  "birthdate": "2010-11-26",
+  "role": "player"
+ },
+ {
+  "first_name": "ELOY",
+  "last_name": "SORIANO PEREZ",
+  "birthdate": "2011-05-29",
+  "role": "player"
+ },
+ {
+  "first_name": "Jorel",
+  "last_name": "Vasques Beltran",
+  "birthdate": "2011-10-06",
+  "role": "player"
+ },
+ {
+  "first_name": "NESTOR",
+  "last_name": "BUIL GINE",
+  "birthdate": "1977-06-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "FRANSESC",
+  "last_name": "CASANOVA DOMENECH",
+  "birthdate": "1978-07-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "GISPERT  GARCIA",
+  "birthdate": "1997-05-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "GISPERT  GARCIA",
+  "birthdate": "1997-05-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "SERGIO",
+  "last_name": "MOLLA MINUESA",
+  "birthdate": "2000-03-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "JUAN CARLOS",
+  "last_name": "RUEDA LUNA",
+  "birthdate": "1971-03-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "EDGAR",
+  "last_name": "TERRAZA RAMIREZ",
+  "birthdate": "2002-04-27",
+  "role": "staff"
+ }
+]

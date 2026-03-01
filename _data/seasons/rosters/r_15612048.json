@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "DAN ",
+  "last_name": "AGUILAR LATRE",
+  "birthdate": "2015-10-20",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTIN",
+  "last_name": "CABRERA GIMENEZ",
+  "birthdate": "2015-11-04",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLERMO",
+  "last_name": "CALAVIA BARRANCO",
+  "birthdate": "2016-05-19",
+  "role": "player"
+ },
+ {
+  "first_name": "ROC",
+  "last_name": "CASTELLA LOPEZ",
+  "birthdate": "2016-01-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ENEKO",
+  "last_name": "CATALAN TERREN",
+  "birthdate": "2015-02-25",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "DE L'HOTELLERIE DE FALLOIS ALIAS",
+  "birthdate": "2016-02-07",
+  "role": "player"
+ },
+ {
+  "first_name": "SELIM",
+  "last_name": "ELTURKEY",
+  "birthdate": "2016-03-06",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEIX ",
+  "last_name": "ESPINO HERNANDEZ",
+  "birthdate": "2015-10-01",
+  "role": "player"
+ },
+ {
+  "first_name": "OLIVIA",
+  "last_name": "FITE GILMORE",
+  "birthdate": "2016-03-08",
+  "role": "player"
+ },
+ {
+  "first_name": "RODRIGO",
+  "last_name": "IGLESIAS FERNANDEZ",
+  "birthdate": "2015-11-25",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "NAVALES CARRILLO",
+  "birthdate": "2017-01-17",
+  "role": "player"
+ },
+ {
+  "first_name": "ENRIQUE",
+  "last_name": "ORDOÑEZ FINESTRES",
+  "birthdate": "2015-10-08",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "PARRA MARTINEZ",
+  "birthdate": "2015-01-18",
+  "role": "player"
+ },
+ {
+  "first_name": "SIMON",
+  "last_name": "PARRA MARTINEZ",
+  "birthdate": "2015-01-18",
+  "role": "player"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "REICHARDT MARTIN",
+  "birthdate": "2015-08-03",
+  "role": "player"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "VARO GOMEZ",
+  "birthdate": "2015-05-15",
+  "role": "player"
+ },
+ {
+  "first_name": "RICCARDO GABRIELE",
+  "last_name": "VIRZI PEREZ",
+  "birthdate": "2016-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "INAKI",
+  "last_name": "AGUILAR VICENTE",
+  "birthdate": "1983-09-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "GUILLERMO",
+  "last_name": "DE L'HOTELLERIE DE FALLOIS",
+  "birthdate": "1985-04-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "ESPINO MUSOLAS",
+  "birthdate": "1980-07-19",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "GATIUS JIMENEZ",
+  "birthdate": "2002-05-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEJANDRO",
+  "last_name": "MIGUEL MANGAS",
+  "birthdate": "1988-09-30",
+  "role": "staff"
+ }
+]

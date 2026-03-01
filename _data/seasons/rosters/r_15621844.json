@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "BRUNO",
+  "last_name": "DEDES CALVO",
+  "birthdate": "2011-03-03",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "ESCOLAR FELIP",
+  "birthdate": "2011-03-21",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "GARCIA ALONSO",
+  "birthdate": "2012-09-25",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNO",
+  "last_name": "JALDO LOPEZ",
+  "birthdate": "2011-08-12",
+  "role": "player"
+ },
+ {
+  "first_name": "UNAI",
+  "last_name": "MARIN CASTRO",
+  "birthdate": "2011-06-10",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD ",
+  "last_name": "MARTINEZ ASCON",
+  "birthdate": "2011-07-15",
+  "role": "player"
+ },
+ {
+  "first_name": "JAVIER ",
+  "last_name": "MARTINEZ FAULIN",
+  "birthdate": "2012-08-18",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "MERCADO MARTI",
+  "birthdate": "2010-06-02",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "MONTES CORRAL",
+  "birthdate": "2010-10-22",
+  "role": "player"
+ },
+ {
+  "first_name": "PERE",
+  "last_name": "PINA MANZANARES",
+  "birthdate": "2010-12-13",
+  "role": "player"
+ },
+ {
+  "first_name": "HECTOR",
+  "last_name": "PROS FERNANDEZ",
+  "birthdate": "2011-01-17",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "ROLDAN CALVO",
+  "birthdate": "2011-02-19",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "RUIZ YESTE",
+  "birthdate": "2011-04-02",
+  "role": "player"
+ },
+ {
+  "first_name": "JOEL",
+  "last_name": "RUIZ YESTE",
+  "birthdate": "2011-04-02",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN ",
+  "last_name": "SOLE MANZANARES",
+  "birthdate": "2012-05-16",
+  "role": "player"
+ },
+ {
+  "first_name": "JAUME ",
+  "last_name": "CAMERINO ALONSO",
+  "birthdate": "2006-06-24",
+  "role": "staff"
+ },
+ {
+  "first_name": "EMMANOUIL",
+  "last_name": "DEDES NONELL",
+  "birthdate": "1975-11-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "GOMEZ ARIAS",
+  "birthdate": "1979-06-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "GOMEZ ARIAS",
+  "birthdate": "1979-06-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "KARLOS",
+  "last_name": "LIGERO ALVAREZ",
+  "birthdate": "1997-09-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "MOYANO RUIZ",
+  "birthdate": "1994-04-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "LUCAS",
+  "last_name": "VAN DOORN PARDO",
+  "birthdate": "2005-09-19",
+  "role": "staff"
+ }
+]

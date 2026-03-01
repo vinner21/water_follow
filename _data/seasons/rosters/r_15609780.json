@@ -1,0 +1,122 @@
+[
+ {
+  "first_name": "BRUNO",
+  "last_name": "ALMENDROS FUERO",
+  "birthdate": "2014-11-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "AVILES SALLAN",
+  "birthdate": "2014-02-08",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "BENITEZ ALDEA",
+  "birthdate": "2015-09-11",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "CIFUENTES BALAGUER",
+  "birthdate": "2014-07-31",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "DIEZ TARABOANTA",
+  "birthdate": "2015-11-27",
+  "role": "player"
+ },
+ {
+  "first_name": "ALAN",
+  "last_name": "GONZALEZ BLESA",
+  "birthdate": "2015-08-25",
+  "role": "player"
+ },
+ {
+  "first_name": "ASIER",
+  "last_name": "LINARES VALLADOLID",
+  "birthdate": "2014-07-25",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCO",
+  "last_name": "LOZA FERNANDEZ",
+  "birthdate": "2015-05-28",
+  "role": "player"
+ },
+ {
+  "first_name": "IGNACIO",
+  "last_name": "MOLINA AGUILERA",
+  "birthdate": "2014-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "GUIU",
+  "last_name": "MOLINA ANDREU",
+  "birthdate": "2015-12-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ROC",
+  "last_name": "NAVARRO MANEN",
+  "birthdate": "2015-09-17",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "OLLE VINUESA",
+  "birthdate": "2014-01-15",
+  "role": "player"
+ },
+ {
+  "first_name": "TOMAS ALBERTO",
+  "last_name": "REMON DIDUY",
+  "birthdate": "2015-01-20",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "RUBIO ANGUITA",
+  "birthdate": "2014-02-22",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "RUIZ CAPARROS",
+  "birthdate": "2015-03-28",
+  "role": "player"
+ },
+ {
+  "first_name": "AARON",
+  "last_name": "SIO LEBORAN",
+  "birthdate": "2015-09-30",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "BENITEZ RIBAS",
+  "birthdate": "1971-02-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "LUIS",
+  "last_name": "CIFUENTES FELIU",
+  "birthdate": "1972-03-15",
+  "role": "staff"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "CLARAMUNT VILLANUEVA",
+  "birthdate": "2004-03-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSEP",
+  "last_name": "GASCH SENDRA",
+  "birthdate": "1958-05-03",
+  "role": "staff"
+ }
+]

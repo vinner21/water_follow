@@ -1,0 +1,104 @@
+[
+ {
+  "first_name": "FRANCISCO",
+  "last_name": "ASENSIO MEJIAS",
+  "birthdate": "1967-09-09",
+  "role": "player"
+ },
+ {
+  "first_name": "HECTOR",
+  "last_name": "BALLESTEROS MOLINA",
+  "birthdate": "1985-05-01",
+  "role": "player"
+ },
+ {
+  "first_name": "CRISTIAN",
+  "last_name": "BENITEZ RIBAS",
+  "birthdate": "1975-03-28",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "BENITEZ RIBAS",
+  "birthdate": "1971-02-12",
+  "role": "player"
+ },
+ {
+  "first_name": "JIANU",
+  "last_name": "BOGDAN FLORIAN",
+  "birthdate": "1973-03-28",
+  "role": "player"
+ },
+ {
+  "first_name": "PEDRO",
+  "last_name": "CALOPA MORELL",
+  "birthdate": "1969-05-29",
+  "role": "player"
+ },
+ {
+  "first_name": "SERGI",
+  "last_name": "CASTELLA COLL",
+  "birthdate": "1984-12-02",
+  "role": "player"
+ },
+ {
+  "first_name": "ERNEST",
+  "last_name": "FORA MARTINEZ",
+  "birthdate": "1963-02-17",
+  "role": "player"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "GARRIDO CUESTA",
+  "birthdate": "1985-07-12",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "GRAU GARCIA",
+  "birthdate": "1972-01-05",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "MOLINER DOMINGUEZ",
+  "birthdate": "1963-07-07",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLES",
+  "last_name": "OLLE PIQUER",
+  "birthdate": "1977-01-06",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "OLLE PIQUER",
+  "birthdate": "1963-09-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ANTONIO",
+  "last_name": "PEÑA PULIDO",
+  "birthdate": "1968-11-29",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLOS",
+  "last_name": "PLA POVEDA",
+  "birthdate": "1964-02-11",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "SANCHEZ MENDEZ",
+  "birthdate": "1985-07-03",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSE MARIA",
+  "last_name": "VICO ALARCON",
+  "birthdate": "1976-04-22",
+  "role": "player"
+ }
+]

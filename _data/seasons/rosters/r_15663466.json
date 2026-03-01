@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "AIALA",
+  "last_name": "ALONSO GARCIA",
+  "birthdate": "2018-02-10",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "ARIAS RODRIGUEZ ",
+  "birthdate": "2017-07-31",
+  "role": "player"
+ },
+ {
+  "first_name": "HANNAH ",
+  "last_name": "BOU ARREAZA ",
+  "birthdate": "2017-03-22",
+  "role": "player"
+ },
+ {
+  "first_name": "JANIS MERCE ",
+  "last_name": "CEREÑO MALDONADO ",
+  "birthdate": "2017-03-25",
+  "role": "player"
+ },
+ {
+  "first_name": "ARIADNA",
+  "last_name": "GARCIA CAMPDERRICH",
+  "birthdate": "2018-07-08",
+  "role": "player"
+ },
+ {
+  "first_name": "VERA",
+  "last_name": "GONZALEZ PEREZ ",
+  "birthdate": "2017-06-28",
+  "role": "player"
+ },
+ {
+  "first_name": "NICOLAS",
+  "last_name": "KAFKA JARA",
+  "birthdate": "2018-01-15",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "LOPEZ LOIS",
+  "birthdate": "2018-10-08",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "MARTINEZ GALLARDO",
+  "birthdate": "2018-09-17",
+  "role": "player"
+ },
+ {
+  "first_name": "MAXIM",
+  "last_name": "MEDINA NIETO",
+  "birthdate": "2017-04-21",
+  "role": "player"
+ },
+ {
+  "first_name": "LIAM",
+  "last_name": "PEREZ ARIAS",
+  "birthdate": "2018-12-04",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "PINO SANCHEZ",
+  "birthdate": "2017-11-30",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "PORTA REQUENO",
+  "birthdate": "2018-01-21",
+  "role": "player"
+ },
+ {
+  "first_name": "RITA",
+  "last_name": "RODILANA CABEZAS",
+  "birthdate": "2017-10-12",
+  "role": "player"
+ },
+ {
+  "first_name": "IBAI",
+  "last_name": "TELLERI MELERO",
+  "birthdate": "2018-12-19",
+  "role": "player"
+ },
+ {
+  "first_name": "FRANCESCO",
+  "last_name": "TESONE",
+  "birthdate": "2017-07-15",
+  "role": "player"
+ },
+ {
+  "first_name": "DRAC",
+  "last_name": "VALIENTE PLANAS",
+  "birthdate": "2017-10-05",
+  "role": "player"
+ },
+ {
+  "first_name": "ROBERTO",
+  "last_name": "ALONSO FERNANDEZ",
+  "birthdate": "1985-06-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "QUIM",
+  "last_name": "ALONSO GARCIA",
+  "birthdate": "1998-10-18",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "CANILLAS ALBARRACIN",
+  "birthdate": "1951-02-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "ITZIAR",
+  "last_name": "GARCIA MATUTE",
+  "birthdate": "1985-10-05",
+  "role": "staff"
+ }
+]

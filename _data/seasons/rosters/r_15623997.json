@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "OLAU",
+  "last_name": "AROCA GONZALEZ",
+  "birthdate": "2014-02-01",
+  "role": "player"
+ },
+ {
+  "first_name": "AXEL",
+  "last_name": "AVIÑO SANCHEZ",
+  "birthdate": "2013-01-02",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "BELLOSO GARCIA ",
+  "birthdate": "2013-09-22",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "FATJO FERRER",
+  "birthdate": "2012-11-23",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "GARCIA SORIA",
+  "birthdate": "2012-10-05",
+  "role": "player"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "GONZALO HUAMAN",
+  "birthdate": "2012-12-03",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "GURI JAVALOY",
+  "birthdate": "2012-07-19",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIAN",
+  "last_name": "HOLGADO GONZALEZ",
+  "birthdate": "2012-02-02",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "JUANMARTI CLARI",
+  "birthdate": "2012-02-15",
+  "role": "player"
+ },
+ {
+  "first_name": "OSCAR",
+  "last_name": "LAWLESS",
+  "birthdate": "2013-04-15",
+  "role": "player"
+ },
+ {
+  "first_name": "ARON",
+  "last_name": "LUKACS",
+  "birthdate": "2012-08-18",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLERMO ",
+  "last_name": "MARENGO  MIHOVILCEVICH",
+  "birthdate": "2013-11-22",
+  "role": "player"
+ },
+ {
+  "first_name": "JAUME",
+  "last_name": "MONTAL MARTINEZ",
+  "birthdate": "2012-09-07",
+  "role": "player"
+ },
+ {
+  "first_name": "FLAVIO ",
+  "last_name": "PICARELLA",
+  "birthdate": "2013-10-16",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVI",
+  "last_name": "VALERO ARIAS",
+  "birthdate": "2012-07-19",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER ",
+  "last_name": "VILCHEZ MARTINEZ",
+  "birthdate": "2012-07-01",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "COLOMER ARBOLI",
+  "birthdate": "1967-01-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "TIZZIANO",
+  "last_name": "CONTI",
+  "birthdate": "2002-02-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "FATJO HURIOS",
+  "birthdate": "1977-04-18",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANDRES",
+  "last_name": "HOLGADO GUTIERREZ",
+  "birthdate": "1978-09-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "VANESSA",
+  "last_name": "MARTINEZ FERRER",
+  "birthdate": "1979-09-20",
+  "role": "staff"
+ }
+]

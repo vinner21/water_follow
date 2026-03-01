@@ -1,0 +1,146 @@
+[
+ {
+  "first_name": "JORDI",
+  "last_name": "AMAT MELGAR",
+  "birthdate": "2015-10-20",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "BATLLE MARTINEZ",
+  "birthdate": "2015-10-05",
+  "role": "player"
+ },
+ {
+  "first_name": "LIA",
+  "last_name": "CASAS MACIAS",
+  "birthdate": "2015-05-23",
+  "role": "player"
+ },
+ {
+  "first_name": "ONA",
+  "last_name": "DIAZ PEIRATO",
+  "birthdate": "2015-01-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "GILABERT ROSADO",
+  "birthdate": "2015-09-11",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "MORILLO GUIRADO",
+  "birthdate": "2015-10-01",
+  "role": "player"
+ },
+ {
+  "first_name": "MIA",
+  "last_name": "MORILLO GUIRADO",
+  "birthdate": "2015-10-01",
+  "role": "player"
+ },
+ {
+  "first_name": "BETH",
+  "last_name": "MURILLO YUBERO",
+  "birthdate": "2015-02-24",
+  "role": "player"
+ },
+ {
+  "first_name": "ANNA",
+  "last_name": "MUÑOZ REQUENA",
+  "birthdate": "2015-04-02",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "OLIVER RUZ",
+  "birthdate": "2015-07-10",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC ",
+  "last_name": "PARIENTE MARIN ",
+  "birthdate": "2015-03-15",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "PLANAS PAMIES",
+  "birthdate": "2015-03-03",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "SAULA BRAÑAS",
+  "birthdate": "2016-01-14",
+  "role": "player"
+ },
+ {
+  "first_name": "IKER",
+  "last_name": "SAÑUDO VELASCO",
+  "birthdate": "2015-05-02",
+  "role": "player"
+ },
+ {
+  "first_name": "YAGO",
+  "last_name": "TORIBIO SOTO",
+  "birthdate": "2015-11-15",
+  "role": "player"
+ },
+ {
+  "first_name": "ABRIL",
+  "last_name": "UBACH BOVER",
+  "birthdate": "2014-01-10",
+  "role": "player"
+ },
+ {
+  "first_name": "AXEL",
+  "last_name": "VERA VAZQUEZ ",
+  "birthdate": "2015-01-28",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "ALLED FUSTER",
+  "birthdate": "1979-05-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "CASAS JAUREGUI",
+  "birthdate": "1979-02-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "NURIA",
+  "last_name": "CLARAMUNT VILLANUEVA",
+  "birthdate": "2007-04-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "MERITXELL",
+  "last_name": "DEL ARCO FERNANDEZ",
+  "birthdate": "1980-05-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "GARCIA PACHECO",
+  "birthdate": "2000-05-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "SUSANA",
+  "last_name": "MARTINEZ DIAZ",
+  "birthdate": "1975-11-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "NEREA",
+  "last_name": "MORALES LLAMAS",
+  "birthdate": "2004-05-07",
+  "role": "staff"
+ }
+]

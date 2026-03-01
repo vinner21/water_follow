@@ -1,0 +1,116 @@
+[
+ {
+  "first_name": "ORIOL",
+  "last_name": "ACEVEDO MIRACLE",
+  "birthdate": "2016-02-26",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCEL",
+  "last_name": "ARAGONES LABERNIA",
+  "birthdate": "2016-02-15",
+  "role": "player"
+ },
+ {
+  "first_name": "DENIS",
+  "last_name": "BRUDER",
+  "birthdate": "2016-10-18",
+  "role": "player"
+ },
+ {
+  "first_name": "TEO",
+  "last_name": "CALOGERO LE BONNIEC",
+  "birthdate": "2016-08-25",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "CANO MORALES",
+  "birthdate": "2016-12-23",
+  "role": "player"
+ },
+ {
+  "first_name": "KIRA",
+  "last_name": "CHESSA",
+  "birthdate": "2016-01-24",
+  "role": "player"
+ },
+ {
+  "first_name": "ANE",
+  "last_name": "DE GAMINDE AZAGRA",
+  "birthdate": "2016-05-09",
+  "role": "player"
+ },
+ {
+  "first_name": "LANDER",
+  "last_name": "LOPETEGUI LLUIS",
+  "birthdate": "2016-02-09",
+  "role": "player"
+ },
+ {
+  "first_name": "DANILO FERNANDO ",
+  "last_name": "MARTINEZ DOMINGUEZ ",
+  "birthdate": "2016-04-01",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "PERACAULA SESERAS",
+  "birthdate": "2017-01-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ONA",
+  "last_name": "PERACAULA SESERAS",
+  "birthdate": "2017-01-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEIX",
+  "last_name": "ROIG DOMENE",
+  "birthdate": "2016-07-14",
+  "role": "player"
+ },
+ {
+  "first_name": "CLAUDIA ",
+  "last_name": "VALERA POLAK",
+  "birthdate": "2017-05-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ALANNA",
+  "last_name": "ZARAGOZA MORILLO",
+  "birthdate": "2017-01-05",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "ARAGONES SABATE",
+  "birthdate": "1978-05-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSEP",
+  "last_name": "CANO VIDAL",
+  "birthdate": "1988-04-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "HERNANDEZ BORRAS",
+  "birthdate": "1982-09-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANNA ",
+  "last_name": "MIRACLE FANDOS",
+  "birthdate": "1979-12-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "CAROLINA",
+  "last_name": "MORILLO SANCHEZ",
+  "birthdate": "1980-10-13",
+  "role": "staff"
+ }
+]

@@ -1,0 +1,116 @@
+[
+ {
+  "first_name": "MARTINA",
+  "last_name": "ABARCA PEREZ",
+  "birthdate": "2017-05-29",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTINA",
+  "last_name": "ABARCA PEREZ",
+  "birthdate": "2017-05-29",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "BOHIGAS FORNELLS",
+  "birthdate": "2017-01-18",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "BOSCH VARGAS",
+  "birthdate": "2017-03-22",
+  "role": "player"
+ },
+ {
+  "first_name": "SOFIA",
+  "last_name": "CIRMACIU CIRMACIU",
+  "birthdate": "2017-07-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ROC",
+  "last_name": "FIGUERAS CAUDELI",
+  "birthdate": "2016-12-23",
+  "role": "player"
+ },
+ {
+  "first_name": "RAMON",
+  "last_name": "FORTUÑO CORREA",
+  "birthdate": "2017-06-26",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "GIMENEZ ESCALER",
+  "birthdate": "2017-01-07",
+  "role": "player"
+ },
+ {
+  "first_name": "&#1040;NASTASIA",
+  "last_name": "HURSKA FOMENKO ",
+  "birthdate": "2017-03-09",
+  "role": "player"
+ },
+ {
+  "first_name": "SHAYA",
+  "last_name": "JARAMILLO MEZA",
+  "birthdate": "2017-05-07",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "MUNTANER FORNELL",
+  "birthdate": "2017-12-15",
+  "role": "player"
+ },
+ {
+  "first_name": "AXEL",
+  "last_name": "OLMEDO CHIRIAC ",
+  "birthdate": "2017-07-04",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "RENALIAS BELTRAN",
+  "birthdate": "2017-04-25",
+  "role": "player"
+ },
+ {
+  "first_name": "JOEL",
+  "last_name": "TARRES HURTADO",
+  "birthdate": "2017-06-21",
+  "role": "player"
+ },
+ {
+  "first_name": "LOLA",
+  "last_name": "VERGEZ HARO",
+  "birthdate": "2017-11-21",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "LOPEZ SAGRERA",
+  "birthdate": "1973-02-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE LUIS",
+  "last_name": "RENALIAS CANAL",
+  "birthdate": "1976-06-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAMON",
+  "last_name": "ROSELL SAEZ",
+  "birthdate": "1976-05-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "SONIA",
+  "last_name": "TARRES HURTADO",
+  "birthdate": "1976-10-03",
+  "role": "staff"
+ }
+]

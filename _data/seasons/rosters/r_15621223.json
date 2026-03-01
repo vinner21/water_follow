@@ -1,0 +1,164 @@
+[
+ {
+  "first_name": "ADAY",
+  "last_name": "ACUÑA PRADAS",
+  "birthdate": "2010-08-11",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "ARIMON HUMET",
+  "birthdate": "2008-04-01",
+  "role": "player"
+ },
+ {
+  "first_name": "IAN",
+  "last_name": "BARTOLOME COLLADO",
+  "birthdate": "2009-05-07",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "CAMPAÑA SALVADOR",
+  "birthdate": "2009-05-26",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "CASADO FUENTES",
+  "birthdate": "2010-12-12",
+  "role": "player"
+ },
+ {
+  "first_name": "YABSIRA",
+  "last_name": "CASADO FUENTES",
+  "birthdate": "2009-03-12",
+  "role": "player"
+ },
+ {
+  "first_name": "SAMUEL",
+  "last_name": "DIAZ MARROQUIN",
+  "birthdate": "2010-02-17",
+  "role": "player"
+ },
+ {
+  "first_name": "HECTOR",
+  "last_name": "DIOS ESTEBAN",
+  "birthdate": "2010-02-05",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "FARRE AMADOR",
+  "birthdate": "2008-04-08",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "GARCIA ARJONA",
+  "birthdate": "2008-08-02",
+  "role": "player"
+ },
+ {
+  "first_name": "ALAN",
+  "last_name": "GONZALEZ ARRIBAS",
+  "birthdate": "2009-09-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "MERCADE SEGURA",
+  "birthdate": "2008-11-05",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "MORA FERNANDEZ",
+  "birthdate": "2009-09-26",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "MORENO FOLCH",
+  "birthdate": "2008-05-27",
+  "role": "player"
+ },
+ {
+  "first_name": "LLATZER",
+  "last_name": "PEREZ BARADAD",
+  "birthdate": "2010-04-12",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "RICO SANAHUJA",
+  "birthdate": "2010-02-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "ROVIRA MARTINEZ",
+  "birthdate": "2009-07-27",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "SANCHEZ CARRILLO",
+  "birthdate": "2009-07-01",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "TARRADAS VARGAS",
+  "birthdate": "2008-02-09",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "VALLS FORNIELES",
+  "birthdate": "2008-05-17",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "VILLAREAL MURIEL",
+  "birthdate": "2009-01-20",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "BUSQUETS PUIG",
+  "birthdate": "1997-06-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "JUAN MANUEL",
+  "last_name": "CAMPAÑA RUIZ",
+  "birthdate": "1980-02-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "DIDAC",
+  "last_name": "COBACHO TADEO",
+  "birthdate": "1978-02-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "SERGI",
+  "last_name": "MORA BELMONTE",
+  "birthdate": "1982-07-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANDRES",
+  "last_name": "MORENO HERENCIA",
+  "birthdate": "1975-09-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "RICO ESCOFET",
+  "birthdate": "1974-11-14",
+  "role": "staff"
+ }
+]

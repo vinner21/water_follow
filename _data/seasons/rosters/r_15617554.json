@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "DANTE",
+  "last_name": "BOFARULL MERCADER",
+  "birthdate": "2011-12-20",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI JOSEP",
+  "last_name": "CORTES NOGUERA",
+  "birthdate": "2011-09-27",
+  "role": "player"
+ },
+ {
+  "first_name": "MAGI",
+  "last_name": "DEL ROSARIO PALLAS",
+  "birthdate": "2011-01-02",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIAN",
+  "last_name": "DURO MOLINA",
+  "birthdate": "2013-09-26",
+  "role": "player"
+ },
+ {
+  "first_name": "ALVARO",
+  "last_name": "DURO MOLINA",
+  "birthdate": "2010-03-05",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "GONZALEZ NOVES",
+  "birthdate": "2011-04-04",
+  "role": "player"
+ },
+ {
+  "first_name": "KILIAN",
+  "last_name": "HELLO ORTIGOSA",
+  "birthdate": "2011-06-29",
+  "role": "player"
+ },
+ {
+  "first_name": "DAMIA",
+  "last_name": "JOAN I PELLEJA",
+  "birthdate": "2010-11-04",
+  "role": "player"
+ },
+ {
+  "first_name": "LEUL",
+  "last_name": "LARA MAÑÁ",
+  "birthdate": "2011-09-23",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "LLORT ROIG",
+  "birthdate": "2011-05-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEJANDRO",
+  "last_name": "LOPEZ MACIAS",
+  "birthdate": "2010-06-17",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "PEREZ ROPERO",
+  "birthdate": "2011-09-01",
+  "role": "player"
+ },
+ {
+  "first_name": "MATEU",
+  "last_name": "SAENZ DE PABLO PRETO",
+  "birthdate": "2011-03-23",
+  "role": "player"
+ },
+ {
+  "first_name": "UNAI",
+  "last_name": "TORRES GASCA",
+  "birthdate": "2010-06-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ANGELO",
+  "last_name": "VICENCIO ACEITUNO",
+  "birthdate": "2010-09-06",
+  "role": "player"
+ },
+ {
+  "first_name": "JAUME",
+  "last_name": "DEL ROSARIO MASDEU",
+  "birthdate": "1978-05-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "LUIS HERMINIO",
+  "last_name": "GARCIA MARTINEZ",
+  "birthdate": "1970-11-15",
+  "role": "staff"
+ },
+ {
+  "first_name": "IVAN ERNESTO",
+  "last_name": "PEREZ VARGAS",
+  "birthdate": "1971-06-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSEP IGNASI",
+  "last_name": "PIÑOL FONT",
+  "birthdate": "2005-10-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "SANCHEZ SANZ",
+  "birthdate": "1986-09-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "IAGO MANUEL",
+  "last_name": "SPARANO CAPDEVILA",
+  "birthdate": "2003-06-08",
+  "role": "staff"
+ },
+ {
+  "first_name": "IAGO MANUEL",
+  "last_name": "SPARANO CAPDEVILA",
+  "birthdate": "2003-06-08",
+  "role": "staff"
+ }
+]

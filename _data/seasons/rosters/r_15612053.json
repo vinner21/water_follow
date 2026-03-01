@@ -1,0 +1,188 @@
+[
+ {
+  "first_name": "SANTIAGO ",
+  "last_name": "ARBOLEDA SUAREZ",
+  "birthdate": "2012-05-15",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIO",
+  "last_name": "AVILES WYSOCKI",
+  "birthdate": "2011-04-12",
+  "role": "player"
+ },
+ {
+  "first_name": "NICOLAS ",
+  "last_name": "CANTONI MILLAN",
+  "birthdate": "2012-06-07",
+  "role": "player"
+ },
+ {
+  "first_name": "MAXIMO",
+  "last_name": "DE LUCA FERNANDEZ",
+  "birthdate": "2011-10-25",
+  "role": "player"
+ },
+ {
+  "first_name": "SANTIAGO ",
+  "last_name": "FUSARO",
+  "birthdate": "2012-04-06",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "GIMENEZ MALDONADO",
+  "birthdate": "2013-07-03",
+  "role": "player"
+ },
+ {
+  "first_name": "NICOLAS ",
+  "last_name": "GOMEZ FERNANDEZ",
+  "birthdate": "2012-10-07",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUC",
+  "last_name": "GONZALEZ I MARTIN",
+  "birthdate": "2011-03-28",
+  "role": "player"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "IGLESIAS GONZALEZ",
+  "birthdate": "2013-10-14",
+  "role": "player"
+ },
+ {
+  "first_name": "SANTIAGO",
+  "last_name": "ISERTE TRINCADO",
+  "birthdate": "2013-04-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "MARTINEZ BOSCH",
+  "birthdate": "2012-04-12",
+  "role": "player"
+ },
+ {
+  "first_name": "ALVARO",
+  "last_name": "MERCEDES ECHEVERRIA",
+  "birthdate": "2011-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC ",
+  "last_name": "MORRALLA BUKHAROV",
+  "birthdate": "2012-12-03",
+  "role": "player"
+ },
+ {
+  "first_name": "HECTOR",
+  "last_name": "MOYANO MORAY",
+  "birthdate": "2011-01-26",
+  "role": "player"
+ },
+ {
+  "first_name": "RAMON FEDERICO",
+  "last_name": "OZZOLA",
+  "birthdate": "2011-06-15",
+  "role": "player"
+ },
+ {
+  "first_name": "JEAN PAUL",
+  "last_name": "PALLARES VINYES",
+  "birthdate": "2012-07-05",
+  "role": "player"
+ },
+ {
+  "first_name": "NICOLAS",
+  "last_name": "PONS LOPEZ-MIGOYA",
+  "birthdate": "2011-12-27",
+  "role": "player"
+ },
+ {
+  "first_name": "MIGUEL",
+  "last_name": "RODRIGUEZ ENCINAS",
+  "birthdate": "2012-10-14",
+  "role": "player"
+ },
+ {
+  "first_name": "ELOI",
+  "last_name": "ROVIRA MARTIINEZ",
+  "birthdate": "2011-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "NICOLAU",
+  "last_name": "SAVARIS CATAFAL",
+  "birthdate": "2011-02-25",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCA",
+  "last_name": "SOMMA",
+  "birthdate": "2011-04-04",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "TEJADA CHECAS",
+  "birthdate": "2012-11-19",
+  "role": "player"
+ },
+ {
+  "first_name": "INAKI",
+  "last_name": "AGUILAR VICENTE",
+  "birthdate": "1983-09-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "GABRIEL",
+  "last_name": "CARRASCO ALVAREZ",
+  "birthdate": "2001-05-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "GABRIEL",
+  "last_name": "CARRASCO ALVAREZ",
+  "birthdate": "2001-05-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "ECHEVARRIA RODRIGUEZ",
+  "birthdate": "2000-04-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "ECHEVARRIA RODRIGUEZ",
+  "birthdate": "2000-04-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "PAOLO",
+  "last_name": "FUSARO",
+  "birthdate": "1979-08-19",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "GATIUS JIMENEZ",
+  "birthdate": "2002-05-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEJANDRO",
+  "last_name": "MIGUEL MANGAS",
+  "birthdate": "1988-09-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "PRAT ESTEBA",
+  "birthdate": "1996-02-14",
+  "role": "staff"
+ }
+]

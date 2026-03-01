@@ -1,0 +1,116 @@
+[
+ {
+  "first_name": "ELOI",
+  "last_name": "ALMIRON LAFITA",
+  "birthdate": "2017-11-25",
+  "role": "player"
+ },
+ {
+  "first_name": "ILIA",
+  "last_name": "ANIES GUISAMANO",
+  "birthdate": "2016-05-02",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "ARILLA ESCUER",
+  "birthdate": "2018-07-13",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "ARILLA ESCUER",
+  "birthdate": "2016-07-12",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "BARRERA MORENO",
+  "birthdate": "2016-11-28",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO",
+  "last_name": "CACERES FERNANDEZ",
+  "birthdate": "2016-07-15",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "GARCIA GILI",
+  "birthdate": "2018-01-17",
+  "role": "player"
+ },
+ {
+  "first_name": "PEDRO AMADOR",
+  "last_name": "HINOJOSA CASTRO",
+  "birthdate": "2016-10-31",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCUS",
+  "last_name": "JACOME ALMEIDA",
+  "birthdate": "2016-09-02",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO",
+  "last_name": "LEYVA MORENO",
+  "birthdate": "2016-06-24",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "ORTIGOSA CASQUETE",
+  "birthdate": "2018-07-03",
+  "role": "player"
+ },
+ {
+  "first_name": "DAN",
+  "last_name": "PEREZ BERTRAN",
+  "birthdate": "2016-09-26",
+  "role": "player"
+ },
+ {
+  "first_name": "GAEL",
+  "last_name": "TORRES MORALES",
+  "birthdate": "2016-05-10",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVI",
+  "last_name": "TRIGAL RIUS",
+  "birthdate": "2017-04-02",
+  "role": "player"
+ },
+ {
+  "first_name": "BLAI ",
+  "last_name": "VILA CALERO",
+  "birthdate": "2016-02-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ISRAEL ",
+  "last_name": "ANIES TAULATS ",
+  "birthdate": "1977-09-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSEP",
+  "last_name": "ARILLA MARCO",
+  "birthdate": "1980-09-13",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "CALVO REQUENA",
+  "birthdate": "2008-01-08",
+  "role": "staff"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "JURADO TRIAS",
+  "birthdate": "2006-05-12",
+  "role": "staff"
+ }
+]

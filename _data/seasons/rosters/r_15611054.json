@@ -1,0 +1,116 @@
+[
+ {
+  "first_name": "RICARDO",
+  "last_name": "AGUIRAN ASENJO",
+  "birthdate": "1985-10-18",
+  "role": "player"
+ },
+ {
+  "first_name": "FRANCISCO JOSE",
+  "last_name": "ALCALA VICENTE",
+  "birthdate": "1980-01-30",
+  "role": "player"
+ },
+ {
+  "first_name": "KIRIAN",
+  "last_name": "ALEGRE POVEDANO",
+  "birthdate": "1981-05-07",
+  "role": "player"
+ },
+ {
+  "first_name": "ERNESTO",
+  "last_name": "BARRERA",
+  "birthdate": "1970-05-08",
+  "role": "player"
+ },
+ {
+  "first_name": "PANAGIOTIS",
+  "last_name": "BOUKOUVALAS",
+  "birthdate": "1982-01-13",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN CARLES",
+  "last_name": "CERCADILLO COLINO",
+  "birthdate": "1957-12-14",
+  "role": "player"
+ },
+ {
+  "first_name": "FRANCESCO",
+  "last_name": "CORBETTA",
+  "birthdate": "1991-08-16",
+  "role": "player"
+ },
+ {
+  "first_name": "DMITRII",
+  "last_name": "DEGTEV",
+  "birthdate": "1993-05-09",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "FORTUÑO PINO",
+  "birthdate": "1986-07-05",
+  "role": "player"
+ },
+ {
+  "first_name": "JESUS",
+  "last_name": "GARCIA CALAHORRA",
+  "birthdate": "1968-12-04",
+  "role": "player"
+ },
+ {
+  "first_name": "EDUARD",
+  "last_name": "GOULA BARRI",
+  "birthdate": "1979-03-31",
+  "role": "player"
+ },
+ {
+  "first_name": "CHRIS",
+  "last_name": "MEINTJES",
+  "birthdate": "1977-06-10",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "MINGUELL ALFEREZ",
+  "birthdate": "1985-01-14",
+  "role": "player"
+ },
+ {
+  "first_name": "FRANCISCO JOSE",
+  "last_name": "MIR VELASQUEZ",
+  "birthdate": "1981-05-29",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUIS",
+  "last_name": "PERI CUSI",
+  "birthdate": "1977-05-13",
+  "role": "player"
+ },
+ {
+  "first_name": "MANUEL DAVID",
+  "last_name": "RODRIGUEZ FUENTES",
+  "birthdate": "1975-06-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ANDREA",
+  "last_name": "RUBERTI",
+  "birthdate": "1987-08-29",
+  "role": "player"
+ },
+ {
+  "first_name": "SAMUEL JOHN",
+  "last_name": "SHEFFIELD",
+  "birthdate": "1986-08-18",
+  "role": "player"
+ },
+ {
+  "first_name": "ERICK",
+  "last_name": "VALDEZ VALDERRAMA",
+  "birthdate": "1973-07-11",
+  "role": "player"
+ }
+]

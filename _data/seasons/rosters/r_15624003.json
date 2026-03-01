@@ -1,0 +1,110 @@
+[
+ {
+  "first_name": "MARTI",
+  "last_name": "CALVO VIDAL",
+  "birthdate": "2017-06-25",
+  "role": "player"
+ },
+ {
+  "first_name": "LORENZO ANDRES ",
+  "last_name": "CASTILLO SALCEDO",
+  "birthdate": "2017-10-09",
+  "role": "player"
+ },
+ {
+  "first_name": "LUKAS",
+  "last_name": "EVCHENKO",
+  "birthdate": "2017-05-09",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO",
+  "last_name": "FERNANDEZ  CARRASCAL ",
+  "birthdate": "2017-08-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ELIAS",
+  "last_name": "KESSLER ASSILA",
+  "birthdate": "2017-10-28",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "LARA JORDANA",
+  "birthdate": "2018-02-28",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIK",
+  "last_name": "LUKACS",
+  "birthdate": "2018-04-22",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "MEDRANO BOSI",
+  "birthdate": "2017-01-05",
+  "role": "player"
+ },
+ {
+  "first_name": "QUIM ",
+  "last_name": "MORALEJO BUSQUETS ",
+  "birthdate": "2018-12-20",
+  "role": "player"
+ },
+ {
+  "first_name": "LUC",
+  "last_name": "OSORIO GARCIA",
+  "birthdate": "2018-01-25",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL ",
+  "last_name": "PEREZ BATLLE ",
+  "birthdate": "2018-03-14",
+  "role": "player"
+ },
+ {
+  "first_name": "MERIDA",
+  "last_name": "RODRIGUEZ DOMINGUEZ",
+  "birthdate": "2017-05-12",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNO",
+  "last_name": "RUZ HIDALGO",
+  "birthdate": "2017-08-03",
+  "role": "player"
+ },
+ {
+  "first_name": "KAI ",
+  "last_name": "SANCHEZ BRETONES",
+  "birthdate": "2017-09-23",
+  "role": "player"
+ },
+ {
+  "first_name": "UXIO",
+  "last_name": "SANTOS CATALAN",
+  "birthdate": "2017-07-28",
+  "role": "player"
+ },
+ {
+  "first_name": "ANNA",
+  "last_name": "BUSQUETS FACIABEN",
+  "birthdate": "1986-11-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "CEBRIANO GARCIA",
+  "birthdate": "2002-09-19",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "COLOMER ARBOLI",
+  "birthdate": "1967-01-04",
+  "role": "staff"
+ }
+]

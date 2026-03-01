@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "ARNAU",
+  "last_name": "AGUILERA BURGOS",
+  "birthdate": "2015-07-31",
+  "role": "player"
+ },
+ {
+  "first_name": "ARTURO",
+  "last_name": "CUESTA PATON",
+  "birthdate": "2014-02-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "GALVEZ PADILLA",
+  "birthdate": "2016-01-05",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "GARZA LOPEZ",
+  "birthdate": "2014-07-09",
+  "role": "player"
+ },
+ {
+  "first_name": "NEITHAN",
+  "last_name": "GONZALEZ ORTIZ",
+  "birthdate": "2015-08-04",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "GUAMIS SISO",
+  "birthdate": "2015-11-15",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIAN",
+  "last_name": "LOPEZ MONSERRATE",
+  "birthdate": "2015-01-29",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "MERCADO MARTI",
+  "birthdate": "2015-12-10",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "MORA ANDRES",
+  "birthdate": "2014-04-12",
+  "role": "player"
+ },
+ {
+  "first_name": "DIDAC",
+  "last_name": "PEREZ MOYA",
+  "birthdate": "2014-12-01",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "PERIZ GARRIDO",
+  "birthdate": "2014-06-06",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "RECASENS VALLES",
+  "birthdate": "2014-10-19",
+  "role": "player"
+ },
+ {
+  "first_name": "ABEL",
+  "last_name": "RODRIGUEZ QUIROGA",
+  "birthdate": "2014-05-21",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "RUIZ CALDITO",
+  "birthdate": "2015-09-08",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "VALLES LOPEZ",
+  "birthdate": "2014-10-19",
+  "role": "player"
+ },
+ {
+  "first_name": "ENRIC",
+  "last_name": "ARNELLA RUIZ",
+  "birthdate": "1992-06-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "LUIS",
+  "last_name": "GARZA BLAS",
+  "birthdate": "1974-06-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "GUAMIS ORTONEDA",
+  "birthdate": "1983-10-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "PAJUELO PALLARES",
+  "birthdate": "1982-06-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "FERRAN",
+  "last_name": "PLANA AGUSTI",
+  "birthdate": "1982-10-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIGUEL",
+  "last_name": "RUIZ RODRIGUEZ",
+  "birthdate": "1980-08-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "VALLES TRIAS",
+  "birthdate": "1979-09-04",
+  "role": "staff"
+ }
+]

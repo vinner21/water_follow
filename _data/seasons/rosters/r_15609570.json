@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "CARLOS",
+  "last_name": "BARQUERO LOPEZ",
+  "birthdate": "2008-07-10",
+  "role": "player"
+ },
+ {
+  "first_name": "ANDREU",
+  "last_name": "BRUSTENGA MORENO",
+  "birthdate": "2010-10-08",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "BURRUEZO BOHORQUEZ",
+  "birthdate": "2008-10-12",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNO",
+  "last_name": "BURRUEZO BOHORQUEZ",
+  "birthdate": "2012-06-11",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "CALVO REQUENA",
+  "birthdate": "2008-01-08",
+  "role": "player"
+ },
+ {
+  "first_name": "NICOLAS",
+  "last_name": "CARRILLO MARTINEZ",
+  "birthdate": "2011-03-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "CERVIGON GALLENT",
+  "birthdate": "2011-12-18",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "FRANCO FERNANDEZ",
+  "birthdate": "2010-03-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "LIRIO GARCIA",
+  "birthdate": "2008-06-14",
+  "role": "player"
+ },
+ {
+  "first_name": "ZACCARIA",
+  "last_name": "MAGGIONI",
+  "birthdate": "2011-11-22",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO",
+  "last_name": "MONROY LOSADA",
+  "birthdate": "2008-07-19",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "PONS PASARELL",
+  "birthdate": "2010-10-20",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "RODRIGUEZ MAIQUEZ",
+  "birthdate": "2012-04-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "RODRIGUEZ MAIQUEZ",
+  "birthdate": "2012-04-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "VALERO CASANOVAS",
+  "birthdate": "2011-09-28",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSE MANUEL",
+  "last_name": "ARIBAU JOVE",
+  "birthdate": "1971-01-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "OLEGUER",
+  "last_name": "BRUSTENGA SOL",
+  "birthdate": "1972-08-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "MANUEL",
+  "last_name": "CARRILLO MORALES",
+  "birthdate": "1983-01-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "JURADO TRIAS",
+  "birthdate": "2006-05-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE GREGORIO",
+  "last_name": "MATHUS GOZALEZ",
+  "birthdate": "1987-02-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "ORTIGOSA MARTI",
+  "birthdate": "1988-12-09",
+  "role": "staff"
+ }
+]

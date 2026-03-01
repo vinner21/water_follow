@@ -1,0 +1,110 @@
+[
+ {
+  "first_name": "ADAI",
+  "last_name": "DIAZ VILLALBA",
+  "birthdate": "2010-10-14",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "DORADO OLIETE",
+  "birthdate": "2009-04-08",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "FERNANDEZ MONTERO",
+  "birthdate": "2009-11-16",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "GIL MARTINEZ",
+  "birthdate": "2010-11-12",
+  "role": "player"
+ },
+ {
+  "first_name": "RUBEN",
+  "last_name": "GOMEZ ARIZA",
+  "birthdate": "2010-07-09",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "GRAU MONTAGUT",
+  "birthdate": "2008-02-11",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "MARTINEZ TRAVES",
+  "birthdate": "2010-03-12",
+  "role": "player"
+ },
+ {
+  "first_name": "IAN",
+  "last_name": "NIETO CUARTIELLAS",
+  "birthdate": "2010-05-20",
+  "role": "player"
+ },
+ {
+  "first_name": "DEREK",
+  "last_name": "OLIVARES MORENO",
+  "birthdate": "2008-04-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEJANDRO",
+  "last_name": "PEÑA TOMAS",
+  "birthdate": "2008-08-20",
+  "role": "player"
+ },
+ {
+  "first_name": "FRANCISCO ",
+  "last_name": "ROMERO ACERO",
+  "birthdate": "2009-11-27",
+  "role": "player"
+ },
+ {
+  "first_name": "INAKI",
+  "last_name": "SEBASTIA IGARTUA",
+  "birthdate": "2008-01-10",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNO",
+  "last_name": "SEGURA REVALIENTE",
+  "birthdate": "2008-11-30",
+  "role": "player"
+ },
+ {
+  "first_name": "SARA",
+  "last_name": "ARIZA PIÑAR",
+  "birthdate": "1979-06-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "OSCAR",
+  "last_name": "FERNANDEZ CATALAN",
+  "birthdate": "1977-04-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "GALAN ERRO",
+  "birthdate": "2004-10-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "CESAR ARIEL",
+  "last_name": "RAVIÑA",
+  "birthdate": "1979-10-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORGE ERNESTO",
+  "last_name": "SANGUINO SARMIENTO",
+  "birthdate": "1973-04-07",
+  "role": "staff"
+ }
+]

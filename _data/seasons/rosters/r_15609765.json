@@ -1,0 +1,182 @@
+[
+ {
+  "first_name": "IGNASI",
+  "last_name": "ALVAREZ DE EULATE BARBERA",
+  "birthdate": "2011-04-05",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "BLANCO RODRIGUEZ",
+  "birthdate": "2009-10-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ALVARO",
+  "last_name": "CAPILLA COBO",
+  "birthdate": "2009-08-08",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "CEREIJO GASSOL",
+  "birthdate": "2010-12-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ARES",
+  "last_name": "CEREZUELA CEREIJO",
+  "birthdate": "2010-02-13",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "DOMINGUEZ PEREZ",
+  "birthdate": "2011-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "FERNANDO FRADERA",
+  "birthdate": "2009-11-30",
+  "role": "player"
+ },
+ {
+  "first_name": "JEFFERSON",
+  "last_name": "FERRERAS SALDAÑA",
+  "birthdate": "2009-09-25",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "FONT SUAREZ",
+  "birthdate": "2009-01-03",
+  "role": "player"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "GARCIA DEL BOSQUE",
+  "birthdate": "2009-03-10",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLERMO",
+  "last_name": "GORDO NATAL",
+  "birthdate": "2008-02-08",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "HURTADO CLOPES",
+  "birthdate": "2008-02-20",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "LOBO BERTRAN",
+  "birthdate": "2009-07-23",
+  "role": "player"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "MORENO GOMEZ",
+  "birthdate": "2008-02-11",
+  "role": "player"
+ },
+ {
+  "first_name": "OSCAR",
+  "last_name": "MUDARRA SANCHEZ",
+  "birthdate": "2008-03-20",
+  "role": "player"
+ },
+ {
+  "first_name": "BERNAL",
+  "last_name": "PARIENTE LOPEZ",
+  "birthdate": "2009-04-03",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "PEREIRA DE OLIVEIRA",
+  "birthdate": "2011-09-22",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "PRADAS PEIRON",
+  "birthdate": "2010-11-02",
+  "role": "player"
+ },
+ {
+  "first_name": "NICOLAS",
+  "last_name": "SEOANE DORCA",
+  "birthdate": "2011-03-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ISAAC",
+  "last_name": "SORIANO SERRANO",
+  "birthdate": "2009-08-03",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "SUAREZ VAN DAM",
+  "birthdate": "2008-08-07",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "TIO CANO",
+  "birthdate": "2010-06-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC M.",
+  "last_name": "VAQUERO BAENA",
+  "birthdate": "2010-03-23",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "BRIAS CARTES",
+  "birthdate": "1992-08-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "JESUS",
+  "last_name": "CABRERA QUIFER",
+  "birthdate": "1968-11-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOAQUIM",
+  "last_name": "DE POMBO CIURANA",
+  "birthdate": "1982-02-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANA",
+  "last_name": "ESCRIBANO CANO",
+  "birthdate": "1975-01-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "FONT MAMPEL",
+  "birthdate": "1975-01-31",
+  "role": "staff"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "RIBAS MARQUEZ",
+  "birthdate": "1980-11-08",
+  "role": "staff"
+ },
+ {
+  "first_name": "SHEILA PILAR",
+  "last_name": "SANCHEZ SANCHEZ",
+  "birthdate": "1980-11-21",
+  "role": "staff"
+ }
+]

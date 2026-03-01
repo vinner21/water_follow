@@ -1,0 +1,146 @@
+[
+ {
+  "first_name": "EIRA",
+  "last_name": "CALERO GARCIA",
+  "birthdate": "2015-09-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ELIA",
+  "last_name": "CASANOVA BASSAS",
+  "birthdate": "2014-01-01",
+  "role": "player"
+ },
+ {
+  "first_name": "SOFIA",
+  "last_name": "DEDES CALVO",
+  "birthdate": "2013-08-08",
+  "role": "player"
+ },
+ {
+  "first_name": "MAIA",
+  "last_name": "FERNANDEZ GOMEZ",
+  "birthdate": "2012-07-09",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "LEAL ADAN",
+  "birthdate": "2013-01-07",
+  "role": "player"
+ },
+ {
+  "first_name": "AINHOA",
+  "last_name": "MARTINEZ FAULIN",
+  "birthdate": "2012-08-18",
+  "role": "player"
+ },
+ {
+  "first_name": "AINARA",
+  "last_name": "MOZO GIL",
+  "birthdate": "2014-08-19",
+  "role": "player"
+ },
+ {
+  "first_name": "AINA",
+  "last_name": "MUÑOZ ORIBE",
+  "birthdate": "2015-04-22",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "MUÑOZ ORIBE",
+  "birthdate": "2013-04-23",
+  "role": "player"
+ },
+ {
+  "first_name": "VALENTINA",
+  "last_name": "PONS GARCIA",
+  "birthdate": "2015-03-06",
+  "role": "player"
+ },
+ {
+  "first_name": "ONA",
+  "last_name": "SEGARRA PASTOR",
+  "birthdate": "2014-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIA ",
+  "last_name": "TOMAS SAMPER ",
+  "birthdate": "2014-11-20",
+  "role": "player"
+ },
+ {
+  "first_name": "ABRIL",
+  "last_name": "USERO ROMERO",
+  "birthdate": "2013-08-11",
+  "role": "player"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "CARRASCO MADRIDANO",
+  "birthdate": "1999-07-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "CARRASCO MADRIDANO",
+  "birthdate": "1999-07-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "EMMANOUIL",
+  "last_name": "DEDES NONELL",
+  "birthdate": "1975-11-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "FERNANDEZ GOMEZ",
+  "birthdate": "2006-04-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "GOMEZ ARIAS",
+  "birthdate": "1979-06-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "GOMEZ ARIAS",
+  "birthdate": "1979-06-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "GOMEZ REYES",
+  "birthdate": "2007-08-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "LAURA",
+  "last_name": "GRANDES GINER",
+  "birthdate": "2005-11-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "LAURA",
+  "last_name": "GRANDES GINER",
+  "birthdate": "2005-11-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "JUDITH",
+  "last_name": "ORIBE RODRIGUEZ",
+  "birthdate": "1983-09-14",
+  "role": "staff"
+ },
+ {
+  "first_name": "LUCAS",
+  "last_name": "VAN DOORN PARDO",
+  "birthdate": "2005-09-19",
+  "role": "staff"
+ }
+]

@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "MARINA",
+  "last_name": "BERMEJO MUÑOZ",
+  "birthdate": "2014-08-27",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "CLARENA SERRAT",
+  "birthdate": "2014-07-25",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTINA",
+  "last_name": "COMPANY CAMACHO",
+  "birthdate": "2016-06-16",
+  "role": "player"
+ },
+ {
+  "first_name": "VEGA",
+  "last_name": "DORADO GARCIA",
+  "birthdate": "2016-05-11",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "FACAL RENDON",
+  "birthdate": "2014-05-10",
+  "role": "player"
+ },
+ {
+  "first_name": "ANNA",
+  "last_name": "FERNANDEZ HERNANDO",
+  "birthdate": "2014-01-13",
+  "role": "player"
+ },
+ {
+  "first_name": "FARNERS",
+  "last_name": "LLORENC SAPES",
+  "birthdate": "2014-07-04",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIELLA",
+  "last_name": "LOPEZ BUENO",
+  "birthdate": "2016-01-20",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "LOPEZ SANZ",
+  "birthdate": "2014-02-05",
+  "role": "player"
+ },
+ {
+  "first_name": "ONA",
+  "last_name": "MARIANO ESCUDERO",
+  "birthdate": "2015-04-09",
+  "role": "player"
+ },
+ {
+  "first_name": "JOANA",
+  "last_name": "MIGUEL URTIAGA",
+  "birthdate": "2014-03-23",
+  "role": "player"
+ },
+ {
+  "first_name": "DUNA",
+  "last_name": "RUIZ GARCIA",
+  "birthdate": "2014-05-07",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "RUIZ LANGE",
+  "birthdate": "2014-06-21",
+  "role": "player"
+ },
+ {
+  "first_name": "ANDREA",
+  "last_name": "SANCHEZ BOLAÑOS",
+  "birthdate": "2015-06-17",
+  "role": "player"
+ },
+ {
+  "first_name": "ENRIC",
+  "last_name": "ARNELLA RUIZ",
+  "birthdate": "1992-06-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "SUSANA",
+  "last_name": "BUENO RUIZ",
+  "birthdate": "1986-01-31",
+  "role": "staff"
+ },
+ {
+  "first_name": "CARLOS",
+  "last_name": "COMPANY HINOJOSA",
+  "birthdate": "1976-04-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "SONIA",
+  "last_name": "ESCUDERO GARCIA",
+  "birthdate": "1984-01-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "MONTSERRAT",
+  "last_name": "FONTCUBERTA VIÑOLAS",
+  "birthdate": "1983-01-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "MORENO VAZ-ROMERO",
+  "birthdate": "1998-09-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "PAJUELO PALLARES",
+  "birthdate": "1982-06-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANA",
+  "last_name": "URTIAGA PARDAL",
+  "birthdate": "1976-12-15",
+  "role": "staff"
+ }
+]

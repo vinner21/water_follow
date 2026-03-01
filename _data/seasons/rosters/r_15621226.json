@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "MARC",
+  "last_name": "BALLESTER BURREL",
+  "birthdate": "2013-01-01",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO ",
+  "last_name": "CAMACHO GARCIA",
+  "birthdate": "2013-08-25",
+  "role": "player"
+ },
+ {
+  "first_name": "NICOLAU",
+  "last_name": "CARDONA BLANCO",
+  "birthdate": "2013-11-16",
+  "role": "player"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "DE HARO MONTES",
+  "birthdate": "2013-03-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC ",
+  "last_name": "GALLEGO MARTOS",
+  "birthdate": "2014-07-31",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO ",
+  "last_name": "GAMIZ FONTANET",
+  "birthdate": "2012-02-02",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO ",
+  "last_name": "GARZON REYES",
+  "birthdate": "2013-07-12",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "LINARES MATARIN",
+  "birthdate": "2012-07-14",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIK",
+  "last_name": "LOPEZ MARIN",
+  "birthdate": "2012-11-07",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "LOPEZ MILAN",
+  "birthdate": "2012-02-24",
+  "role": "player"
+ },
+ {
+  "first_name": "NACHO",
+  "last_name": "MADRIGAL ESCUTIA",
+  "birthdate": "2012-08-25",
+  "role": "player"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "MADRIGAL ESCUTIA",
+  "birthdate": "2014-02-13",
+  "role": "player"
+ },
+ {
+  "first_name": "VICTOR ",
+  "last_name": "MARISCAL NAVAS",
+  "birthdate": "2013-10-14",
+  "role": "player"
+ },
+ {
+  "first_name": "YAHEL",
+  "last_name": "MUÑOZ FUENTES",
+  "birthdate": "2012-11-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ENZO",
+  "last_name": "OLIVA GONZALEZ",
+  "birthdate": "2013-12-27",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC ",
+  "last_name": "RETAMERO CHECA",
+  "birthdate": "2013-08-22",
+  "role": "player"
+ },
+ {
+  "first_name": "JUAN ",
+  "last_name": "RIESTRA PEREZ",
+  "birthdate": "2013-06-14",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "VELASCO ALONSO",
+  "birthdate": "2012-01-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ANA CAROLINA",
+  "last_name": "ALONSO RODRIGUEZ",
+  "birthdate": "1981-11-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "CONSUELO",
+  "last_name": "FUENTES NARVONA",
+  "birthdate": "1975-08-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "SALVADOR MAGAÑA",
+  "birthdate": "1998-09-12",
+  "role": "staff"
+ }
+]

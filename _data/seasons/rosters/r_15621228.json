@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "AMIR ",
+  "last_name": "AGOSIN LIPSZYC",
+  "birthdate": "2014-05-13",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "APARICIO MORENO-TAPIA",
+  "birthdate": "2014-07-26",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "AUBANELL VALLES",
+  "birthdate": "2014-03-17",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEIX",
+  "last_name": "BLASCO BARRERA",
+  "birthdate": "2014-10-09",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "CANO RANGEL",
+  "birthdate": "2015-01-26",
+  "role": "player"
+ },
+ {
+  "first_name": "NATXO",
+  "last_name": "COBO GARCIA",
+  "birthdate": "2014-02-12",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "ESPINOSA CARNERO",
+  "birthdate": "2014-10-13",
+  "role": "player"
+ },
+ {
+  "first_name": "NIZAR",
+  "last_name": "FORNIELES AATER",
+  "birthdate": "2015-05-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC ",
+  "last_name": "GALLEGO MARTOS",
+  "birthdate": "2014-07-31",
+  "role": "player"
+ },
+ {
+  "first_name": "BRU",
+  "last_name": "GARCIA AMADOR",
+  "birthdate": "2016-07-15",
+  "role": "player"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "HIDALGO GODOY",
+  "birthdate": "2014-06-29",
+  "role": "player"
+ },
+ {
+  "first_name": "MATEO",
+  "last_name": "LUQUE MELUS",
+  "birthdate": "2015-08-17",
+  "role": "player"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "MADRIGAL ESCUTIA",
+  "birthdate": "2014-02-13",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVI",
+  "last_name": "MARTINEZ SANCHEZ",
+  "birthdate": "2015-07-01",
+  "role": "player"
+ },
+ {
+  "first_name": "PEP",
+  "last_name": "MESA CAZORLA",
+  "birthdate": "2015-01-13",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "MORATO MUÑOZ",
+  "birthdate": "2014-11-21",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "SALVADOR MONZON",
+  "birthdate": "2015-02-17",
+  "role": "player"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "MARTINEZ LOPEZ",
+  "birthdate": "1983-03-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "WALTER",
+  "last_name": "MARTINEZ SANCHEZ",
+  "birthdate": "1983-01-31",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "MESA CABRERA",
+  "birthdate": "1980-06-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "F.XAVIER",
+  "last_name": "REINA ROVIRA",
+  "birthdate": "1978-08-25",
+  "role": "staff"
+ }
+]

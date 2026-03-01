@@ -1,0 +1,182 @@
+[
+ {
+  "first_name": "NEL",
+  "last_name": "BALAGUE MORA",
+  "birthdate": "2015-05-08",
+  "role": "player"
+ },
+ {
+  "first_name": "NEL",
+  "last_name": "BALAGUE MORA",
+  "birthdate": "2015-05-08",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "BOADA SALVADOR",
+  "birthdate": "2015-04-09",
+  "role": "player"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "CAMPS KUZEV",
+  "birthdate": "2015-03-09",
+  "role": "player"
+ },
+ {
+  "first_name": "LOLA",
+  "last_name": "CANALS PARAROLS",
+  "birthdate": "2014-10-01",
+  "role": "player"
+ },
+ {
+  "first_name": "EMMA",
+  "last_name": "CIFUENTES MASACHS",
+  "birthdate": "2014-07-28",
+  "role": "player"
+ },
+ {
+  "first_name": "KAI ",
+  "last_name": "GALERA LLOPIS",
+  "birthdate": "2015-04-09",
+  "role": "player"
+ },
+ {
+  "first_name": "KAI ",
+  "last_name": "GALERA LLOPIS",
+  "birthdate": "2015-04-09",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO",
+  "last_name": "GARCIA GARCIA",
+  "birthdate": "2015-10-24",
+  "role": "player"
+ },
+ {
+  "first_name": "BALAZS",
+  "last_name": "GUARDIA I BARCZI",
+  "birthdate": "2014-12-15",
+  "role": "player"
+ },
+ {
+  "first_name": "SARA",
+  "last_name": "GUILERA ALBALADEJO ",
+  "birthdate": "2015-02-20",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIELLA",
+  "last_name": "HEREDIA COLL",
+  "birthdate": "2015-11-19",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "LLAUGER CAAMAÑO",
+  "birthdate": "2017-05-06",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "MARSAL PUEYO",
+  "birthdate": "2014-10-29",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC ",
+  "last_name": "MONT BOSCH",
+  "birthdate": "2014-11-17",
+  "role": "player"
+ },
+ {
+  "first_name": "SERGI",
+  "last_name": "MORENO BARRANCO",
+  "birthdate": "2014-01-13",
+  "role": "player"
+ },
+ {
+  "first_name": "GEORGINA",
+  "last_name": "MORESO AMADOR",
+  "birthdate": "2014-11-17",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "MORESO AMADOR",
+  "birthdate": "2018-01-14",
+  "role": "player"
+ },
+ {
+  "first_name": "ELOI",
+  "last_name": "SALA LIAO",
+  "birthdate": "2014-09-30",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "CIFUENTES LLOVERAS",
+  "birthdate": "1979-03-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAVIER ALEJANDRO",
+  "last_name": "GARCIA CABRERA",
+  "birthdate": "1977-10-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAQUEL",
+  "last_name": "GARCIA FUENTES",
+  "birthdate": "1982-01-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEJANDRO",
+  "last_name": "GARCIA GARCIA",
+  "birthdate": "2007-12-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "GASULLA CORAL",
+  "birthdate": "1961-08-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "GASULLA CORAL",
+  "birthdate": "1961-08-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "MARTINEZ CRUSET",
+  "birthdate": "2006-03-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "JUAN JOSE",
+  "last_name": "MARTINEZ YUSTE",
+  "birthdate": "1989-11-18",
+  "role": "staff"
+ },
+ {
+  "first_name": "JUAN JOSE",
+  "last_name": "MARTINEZ YUSTE",
+  "birthdate": "1989-11-18",
+  "role": "staff"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "OROS TARRAGO",
+  "birthdate": "1996-03-13",
+  "role": "staff"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "OROS TARRAGO",
+  "birthdate": "1996-03-13",
+  "role": "staff"
+ }
+]
