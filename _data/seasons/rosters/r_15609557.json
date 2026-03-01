@@ -1,0 +1,140 @@
+[
+ {
+  "first_name": "UNAI",
+  "last_name": "ARRATE PEREZ",
+  "birthdate": "2010-01-08",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "CALAFAT MIÑANA",
+  "birthdate": "2011-04-30",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "COPETE MARTINEZ",
+  "birthdate": "2013-02-23",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO",
+  "last_name": "DYRMYSHI INFANTAS",
+  "birthdate": "2011-08-26",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO",
+  "last_name": "FLORES NAVARRO",
+  "birthdate": "2012-10-25",
+  "role": "player"
+ },
+ {
+  "first_name": "NOEL",
+  "last_name": "FONTBONA NUÑEZ",
+  "birthdate": "2010-12-17",
+  "role": "player"
+ },
+ {
+  "first_name": "TIAGO",
+  "last_name": "GAMBOA PUY",
+  "birthdate": "2012-10-21",
+  "role": "player"
+ },
+ {
+  "first_name": "JOEL",
+  "last_name": "HERNANDEZ GIRALDO",
+  "birthdate": "2010-07-11",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNO",
+  "last_name": "LOPEZ RIOS",
+  "birthdate": "2011-10-07",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "MARTINEZ CASAS",
+  "birthdate": "2010-05-16",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "MATAS COLLELL",
+  "birthdate": "2011-11-21",
+  "role": "player"
+ },
+ {
+  "first_name": "LIAM",
+  "last_name": "MORALES FERNANDEZ",
+  "birthdate": "2011-03-25",
+  "role": "player"
+ },
+ {
+  "first_name": "MARKEL",
+  "last_name": "OLCINA BERISTAIN",
+  "birthdate": "2011-07-28",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "ORRIOLS JIMENEZ",
+  "birthdate": "2011-09-25",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "SOMOZA ANDREU",
+  "birthdate": "2012-07-19",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "TURON BALAGUER",
+  "birthdate": "2011-05-05",
+  "role": "player"
+ },
+ {
+  "first_name": "LORENZO",
+  "last_name": "VIGLIONE ESCUDERO",
+  "birthdate": "2011-12-27",
+  "role": "player"
+ },
+ {
+  "first_name": "TRISTAN AARON",
+  "last_name": "WEBSTER SULTANOV",
+  "birthdate": "2012-06-09",
+  "role": "player"
+ },
+ {
+  "first_name": "AIMAR",
+  "last_name": "ARRATE UGIDOS",
+  "birthdate": "1978-01-08",
+  "role": "staff"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "INGLAVAGA TENA",
+  "birthdate": "2001-08-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "GONZALO",
+  "last_name": "LOPEZ-ESCRIBANO JARA",
+  "birthdate": "1989-03-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "OSCAR",
+  "last_name": "ORRIOLS REIG",
+  "birthdate": "1972-11-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "NATALIA",
+  "last_name": "RIOS CASTILLA",
+  "birthdate": "1976-02-02",
+  "role": "staff"
+ }
+]

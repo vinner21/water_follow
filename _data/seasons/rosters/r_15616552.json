@@ -1,0 +1,182 @@
+[
+ {
+  "first_name": "ARNAU",
+  "last_name": "AGUILERA BURGOS",
+  "birthdate": "2015-07-31",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "ALBA FERNANDEZ",
+  "birthdate": "2015-03-15",
+  "role": "player"
+ },
+ {
+  "first_name": "PEDRO",
+  "last_name": "ALONSO CORDOBA",
+  "birthdate": "2015-01-14",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "BALASTEGUI HERNANDEZ",
+  "birthdate": "2015-02-04",
+  "role": "player"
+ },
+ {
+  "first_name": "AITOR",
+  "last_name": "FERNANDEZ QUERO",
+  "birthdate": "2015-01-03",
+  "role": "player"
+ },
+ {
+  "first_name": "NEITHAN",
+  "last_name": "GONZALEZ ORTIZ",
+  "birthdate": "2015-08-04",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "GUAMIS SISO",
+  "birthdate": "2015-11-15",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "GUTIERREZ GONZALEZ",
+  "birthdate": "2014-12-28",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "LEDESMA TORRES",
+  "birthdate": "2015-11-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIAN",
+  "last_name": "LOPEZ MONSERRATE",
+  "birthdate": "2015-01-29",
+  "role": "player"
+ },
+ {
+  "first_name": "ONA",
+  "last_name": "MARIANO ESCUDERO",
+  "birthdate": "2015-04-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ALGUER",
+  "last_name": "MARTÍ MAÑOSA",
+  "birthdate": "2014-06-20",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "MERCADO MARTI",
+  "birthdate": "2015-12-10",
+  "role": "player"
+ },
+ {
+  "first_name": "PLATON",
+  "last_name": "NIKOLAIENKO",
+  "birthdate": "2015-04-12",
+  "role": "player"
+ },
+ {
+  "first_name": "RAGNAR",
+  "last_name": "PRADOS RIOL",
+  "birthdate": "2015-06-04",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "RUIZ CALDITO",
+  "birthdate": "2015-09-08",
+  "role": "player"
+ },
+ {
+  "first_name": "ANDREA",
+  "last_name": "SANCHEZ BOLAÑOS",
+  "birthdate": "2015-06-17",
+  "role": "player"
+ },
+ {
+  "first_name": "TYRONE XABAT",
+  "last_name": "UTRILLA RODRIGUEZ",
+  "birthdate": "2015-12-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "VERDU LOPEZ",
+  "birthdate": "2015-03-01",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "VIVES ARJONA",
+  "birthdate": "2014-05-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ENRIC",
+  "last_name": "ARNELLA RUIZ",
+  "birthdate": "1992-06-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "SONIA",
+  "last_name": "ESCUDERO GARCIA",
+  "birthdate": "1984-01-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "MONTSERRAT",
+  "last_name": "FONTCUBERTA VIÑOLAS",
+  "birthdate": "1983-01-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "GUAMIS ORTONEDA",
+  "birthdate": "1983-10-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "LEDESMA DIEGO",
+  "birthdate": "1972-06-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "MORENO VAZ-ROMERO",
+  "birthdate": "1998-09-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "PAJUELO PALLARES",
+  "birthdate": "1982-06-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "ROURE",
+  "last_name": "PASTOR MOSELLA",
+  "birthdate": "1982-03-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "FERRAN",
+  "last_name": "PLANA AGUSTI",
+  "birthdate": "1982-10-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIGUEL",
+  "last_name": "RUIZ RODRIGUEZ",
+  "birthdate": "1980-08-10",
+  "role": "staff"
+ }
+]

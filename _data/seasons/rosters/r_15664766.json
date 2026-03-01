@@ -1,0 +1,104 @@
+[
+ {
+  "first_name": "DAVID",
+  "last_name": "DAZA GARCIA",
+  "birthdate": "1993-06-14",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "FERNANDEZ MORA",
+  "birthdate": "1980-05-25",
+  "role": "player"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "GARCIA CASTRO",
+  "birthdate": "1980-04-24",
+  "role": "player"
+ },
+ {
+  "first_name": "ESTEBAN",
+  "last_name": "GOMEZ SAAVEDRA",
+  "birthdate": "1994-05-21",
+  "role": "player"
+ },
+ {
+  "first_name": "ERMENGOL",
+  "last_name": "LLORENC FOZ",
+  "birthdate": "1969-08-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ERNESTO",
+  "last_name": "LOPEZ LLANUSA",
+  "birthdate": "1986-09-06",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "LORENZO CORDONET",
+  "birthdate": "1993-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "FERRAN",
+  "last_name": "MAURI LOPEZ",
+  "birthdate": "1978-05-01",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "MAURI LOPEZ",
+  "birthdate": "1981-04-05",
+  "role": "player"
+ },
+ {
+  "first_name": "MANUEL",
+  "last_name": "MERCADO GARCIA-BERMEJO",
+  "birthdate": "1977-04-14",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "MORALES MORENO",
+  "birthdate": "1995-03-04",
+  "role": "player"
+ },
+ {
+  "first_name": "RUBEN",
+  "last_name": "MUÑOZ ALVAREZ",
+  "birthdate": "1980-07-17",
+  "role": "player"
+ },
+ {
+  "first_name": "JULIO",
+  "last_name": "PALAZON CANO",
+  "birthdate": "1984-03-20",
+  "role": "player"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "RODRIGUEZ ARTIGAS",
+  "birthdate": "1978-06-27",
+  "role": "player"
+ },
+ {
+  "first_name": "SERGI",
+  "last_name": "SANCHEZ LOPEZ",
+  "birthdate": "1999-02-20",
+  "role": "player"
+ },
+ {
+  "first_name": "JORGE ERNESTO",
+  "last_name": "SANGUINO SARMIENTO",
+  "birthdate": "1973-04-07",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "TEVA SANCHEZ",
+  "birthdate": "1996-01-09",
+  "role": "player"
+ }
+]

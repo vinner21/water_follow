@@ -1,0 +1,122 @@
+[
+ {
+  "first_name": "DANIEL",
+  "last_name": "ARTAJONA PUJADAS",
+  "birthdate": "2015-03-16",
+  "role": "player"
+ },
+ {
+  "first_name": "IGNACIO",
+  "last_name": "CABALLERO GREBE",
+  "birthdate": "2012-08-17",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERTO",
+  "last_name": "CAMINA FERNANDEZ",
+  "birthdate": "2012-04-09",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "CASANOVA MUNNE",
+  "birthdate": "2014-06-12",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "CASANOVA MUNNE",
+  "birthdate": "2015-09-15",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC ROBERT",
+  "last_name": "DEMERA ROBLES",
+  "birthdate": "2013-05-05",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "EBRA MARTINEZ",
+  "birthdate": "2014-09-20",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "FERRER LABORDETA",
+  "birthdate": "2013-04-25",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTIN",
+  "last_name": "GARCIA GONZALO-BILBAO",
+  "birthdate": "2014-01-22",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "GARCIA ORTUÑO",
+  "birthdate": "2014-08-21",
+  "role": "player"
+ },
+ {
+  "first_name": "THIAGO ",
+  "last_name": "GUZMAN BRAVO ",
+  "birthdate": "2013-08-21",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "HERRERA SALVADO",
+  "birthdate": "2013-11-15",
+  "role": "player"
+ },
+ {
+  "first_name": "NADINE",
+  "last_name": "IGLESIAS MUÑOZ",
+  "birthdate": "2013-09-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "PEDRAZ ALEGRIA",
+  "birthdate": "2013-03-31",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO",
+  "last_name": "RODRIGUEZ GULIN",
+  "birthdate": "2012-09-10",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "VILLAFAINA RABASO",
+  "birthdate": "2012-08-27",
+  "role": "player"
+ },
+ {
+  "first_name": "FRANSESC",
+  "last_name": "CASANOVA DOMENECH",
+  "birthdate": "1978-07-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "GISPERT  GARCIA",
+  "birthdate": "1997-05-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANA",
+  "last_name": "SALVADO RAFALES",
+  "birthdate": "1974-12-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "EDGAR",
+  "last_name": "TERRAZA RAMIREZ",
+  "birthdate": "2002-04-27",
+  "role": "staff"
+ }
+]

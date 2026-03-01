@@ -1,0 +1,158 @@
+[
+ {
+  "first_name": "NICO",
+  "last_name": "ASCANIO GORDILLO",
+  "birthdate": "2016-07-12",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "AUBANELL VALLES",
+  "birthdate": "2015-12-29",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "CANO RANGEL",
+  "birthdate": "2015-01-26",
+  "role": "player"
+ },
+ {
+  "first_name": "KILIAN",
+  "last_name": "CASILLAS NIETO",
+  "birthdate": "2015-05-19",
+  "role": "player"
+ },
+ {
+  "first_name": "NIZAR",
+  "last_name": "FORNIELES AATER",
+  "birthdate": "2015-05-04",
+  "role": "player"
+ },
+ {
+  "first_name": "BRU",
+  "last_name": "GARCIA AMADOR",
+  "birthdate": "2016-07-15",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "GARCIA MARTINEZ",
+  "birthdate": "2015-01-02",
+  "role": "player"
+ },
+ {
+  "first_name": "GIAN",
+  "last_name": "GONZALEZ GONZALEZ",
+  "birthdate": "2014-09-22",
+  "role": "player"
+ },
+ {
+  "first_name": "MATEO",
+  "last_name": "LUQUE MELUS",
+  "birthdate": "2015-08-17",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "MADRID DE LA TORRE ",
+  "birthdate": "2015-09-30",
+  "role": "player"
+ },
+ {
+  "first_name": "EZEQUIEL ",
+  "last_name": "MARTINEZ MIRALLES",
+  "birthdate": "2016-07-07",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVI",
+  "last_name": "MARTINEZ SANCHEZ",
+  "birthdate": "2015-07-01",
+  "role": "player"
+ },
+ {
+  "first_name": "PEP",
+  "last_name": "MESA CAZORLA",
+  "birthdate": "2015-01-13",
+  "role": "player"
+ },
+ {
+  "first_name": "OWEN",
+  "last_name": "MUNTANER GUTIERREZ",
+  "birthdate": "2015-02-06",
+  "role": "player"
+ },
+ {
+  "first_name": "KARIM",
+  "last_name": "PUIGCERVER MANSOURI",
+  "birthdate": "2014-02-23",
+  "role": "player"
+ },
+ {
+  "first_name": "ALAN LUCAS",
+  "last_name": "RODRIGUEZ DRAGOMIR",
+  "birthdate": "2014-12-02",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "RUIZ DEL VAL",
+  "birthdate": "2015-01-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIAN",
+  "last_name": "SALAZAR AVELLA",
+  "birthdate": "2014-09-02",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "SALVADOR MONZON",
+  "birthdate": "2015-02-17",
+  "role": "player"
+ },
+ {
+  "first_name": "ENZO MATIAS",
+  "last_name": "SANCHEZ NEACSU",
+  "birthdate": "2015-09-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "XANDRI TORRENT",
+  "birthdate": "2015-04-14",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI ",
+  "last_name": "AUBANELL GURRERA",
+  "birthdate": "1986-05-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "FARO MOLINA",
+  "birthdate": "1985-01-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "MORENO FOLCH",
+  "birthdate": "2008-05-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "DIDAC",
+  "last_name": "VERA CRISPI",
+  "birthdate": "2003-01-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "ZAMORA PUJOLA",
+  "birthdate": "2007-03-27",
+  "role": "staff"
+ }
+]

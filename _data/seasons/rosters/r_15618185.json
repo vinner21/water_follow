@@ -1,0 +1,110 @@
+[
+ {
+  "first_name": "DIEGO",
+  "last_name": "ALCALDE MARTINEZ",
+  "birthdate": "2017-02-08",
+  "role": "player"
+ },
+ {
+  "first_name": "ELIA ",
+  "last_name": "ALONSO PERRUCA",
+  "birthdate": "2017-04-11",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "BLANCO CORBACHO",
+  "birthdate": "2016-09-25",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEXANDRA ",
+  "last_name": "ETCHEBARNE SANCHEZ",
+  "birthdate": "2017-07-23",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "MARQUEZ NAUDO",
+  "birthdate": "2016-03-28",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTIN ",
+  "last_name": "MARQUEZ VICENTE",
+  "birthdate": "2017-07-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEIX",
+  "last_name": "PLANAS",
+  "birthdate": "2018-07-25",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "SAULA BRAÑAS",
+  "birthdate": "2016-01-14",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "SIÑOL TORRES",
+  "birthdate": "2017-01-20",
+  "role": "player"
+ },
+ {
+  "first_name": "CANDELA",
+  "last_name": "VALERO PALOMINO",
+  "birthdate": "2016-05-27",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIA",
+  "last_name": "VALERO PALOMINO",
+  "birthdate": "2016-05-27",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "VAZQUEZ GARCIA",
+  "birthdate": "2018-05-12",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "ALLED FUSTER",
+  "birthdate": "1979-05-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "BLANCO VEGA",
+  "birthdate": "1986-06-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "NURIA",
+  "last_name": "CLARAMUNT VILLANUEVA",
+  "birthdate": "2007-04-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "MERITXELL",
+  "last_name": "DEL ARCO FERNANDEZ",
+  "birthdate": "1980-05-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "GARCIA PACHECO",
+  "birthdate": "2000-05-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "SAULA MONTAÑA ",
+  "birthdate": "1980-07-15",
+  "role": "staff"
+ }
+]

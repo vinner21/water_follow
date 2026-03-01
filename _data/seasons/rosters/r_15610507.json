@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "MARIO",
+  "last_name": "BONET BURAVLEV",
+  "birthdate": "2016-10-11",
+  "role": "player"
+ },
+ {
+  "first_name": "LOLA ",
+  "last_name": "CALERO PEREZ ",
+  "birthdate": "2016-04-10",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "CARRASCOS CAMILLO",
+  "birthdate": "2017-11-06",
+  "role": "player"
+ },
+ {
+  "first_name": "ARLET",
+  "last_name": "CASANOVAS EROLES",
+  "birthdate": "2016-02-03",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNO",
+  "last_name": "ESPITIA KOWALIK",
+  "birthdate": "2017-06-18",
+  "role": "player"
+ },
+ {
+  "first_name": "BLAI",
+  "last_name": "FAURIA MARTIN",
+  "birthdate": "2018-03-05",
+  "role": "player"
+ },
+ {
+  "first_name": "GINA",
+  "last_name": "GARCIA ABRIL",
+  "birthdate": "2016-08-12",
+  "role": "player"
+ },
+ {
+  "first_name": "GINA",
+  "last_name": "GONZALEZ PUIG",
+  "birthdate": "2017-04-18",
+  "role": "player"
+ },
+ {
+  "first_name": "IRAITZ",
+  "last_name": "MONTASELL NOGUERAS",
+  "birthdate": "2016-09-27",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "OLIVERAS PRADOS",
+  "birthdate": "2017-11-07",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "PERIANES CANTON",
+  "birthdate": "2017-09-27",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "POCH PRUNA",
+  "birthdate": "2017-08-09",
+  "role": "player"
+ },
+ {
+  "first_name": "QUIM",
+  "last_name": "PONSA FOGUET",
+  "birthdate": "2017-03-17",
+  "role": "player"
+ },
+ {
+  "first_name": "LLEO",
+  "last_name": "UZCATEGUI VICENTE",
+  "birthdate": "2016-10-31",
+  "role": "player"
+ },
+ {
+  "first_name": "ENZO",
+  "last_name": "VALER MOLINA",
+  "birthdate": "2017-10-02",
+  "role": "player"
+ },
+ {
+  "first_name": "MIRIAM",
+  "last_name": "ABRIL HORTA",
+  "birthdate": "1984-05-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "CARDENAL MARTINEZ",
+  "birthdate": "1981-01-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "CARDENAL MARTINEZ",
+  "birthdate": "1981-01-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "LAURA",
+  "last_name": "EROLES FERNANDEZ",
+  "birthdate": "1982-12-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "RUIZ VICO",
+  "birthdate": "2002-04-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAMIRO ANDRES",
+  "last_name": "VEICH LOALDI",
+  "birthdate": "1988-12-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "VICENTE RIERA",
+  "birthdate": "1984-03-17",
+  "role": "staff"
+ }
+]

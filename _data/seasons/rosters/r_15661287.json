@@ -1,0 +1,140 @@
+[
+ {
+  "first_name": "ALEXIS",
+  "last_name": "ANDRES BESTEIRO",
+  "birthdate": "2017-05-19",
+  "role": "player"
+ },
+ {
+  "first_name": "PEP ",
+  "last_name": "ARAU CANUT",
+  "birthdate": "2017-07-25",
+  "role": "player"
+ },
+ {
+  "first_name": "PIETRO",
+  "last_name": "BIANCHI BERROCAL",
+  "birthdate": "2017-03-31",
+  "role": "player"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "BOUAZIZI DIAZ",
+  "birthdate": "2016-07-22",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "CAMPO MAFLA",
+  "birthdate": "2016-10-07",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "COCA",
+  "birthdate": "2017-07-10",
+  "role": "player"
+ },
+ {
+  "first_name": "LEON",
+  "last_name": "DE BACKER LIMIÑANA",
+  "birthdate": "2016-07-26",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "ESTALELLA TORNE",
+  "birthdate": "2016-05-27",
+  "role": "player"
+ },
+ {
+  "first_name": "LIAM",
+  "last_name": "FELIX OROPEZA",
+  "birthdate": "2017-12-15",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCAS",
+  "last_name": "GIL TORRES",
+  "birthdate": "2017-09-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "LEON ILLERA",
+  "birthdate": "2016-04-26",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNO",
+  "last_name": "MIRON AIRA",
+  "birthdate": "2016-08-08",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "MOLINA CHO",
+  "birthdate": "2017-04-08",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEJANDRO",
+  "last_name": "PRATDEPADUA ROMAN",
+  "birthdate": "2016-02-18",
+  "role": "player"
+ },
+ {
+  "first_name": "GAEL",
+  "last_name": "RUEDA TRUJILLO",
+  "birthdate": "2016-04-02",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNO",
+  "last_name": "ZAMORA DOMENE",
+  "birthdate": "2017-12-22",
+  "role": "player"
+ },
+ {
+  "first_name": "KILIAN",
+  "last_name": "ZAMPALO MENJIBAR",
+  "birthdate": "2016-11-21",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "CLARAMUNT VILLANUEVA",
+  "birthdate": "2004-03-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSEP",
+  "last_name": "GASCH SENDRA",
+  "birthdate": "1958-05-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "RUBEN",
+  "last_name": "GIL NEBOT",
+  "birthdate": "1976-10-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "SERGIO",
+  "last_name": "PRATDEPADUA NOLLA",
+  "birthdate": "1986-08-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "RIBAS ALBELLA",
+  "birthdate": "2006-11-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "RIBAS MARQUEZ",
+  "birthdate": "1980-11-08",
+  "role": "staff"
+ }
+]

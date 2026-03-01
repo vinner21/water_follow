@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "CESC",
+  "last_name": "CALSINA AIZCORBE",
+  "birthdate": "2013-06-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ELOI",
+  "last_name": "CALVO GRADOS",
+  "birthdate": "2012-06-07",
+  "role": "player"
+ },
+ {
+  "first_name": "JAUME",
+  "last_name": "CARRILLO BERMEJO",
+  "birthdate": "2014-06-21",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "COLLADO ALUMA",
+  "birthdate": "2013-09-25",
+  "role": "player"
+ },
+ {
+  "first_name": "EDUARD",
+  "last_name": "LANCINA HERRERA",
+  "birthdate": "2012-07-02",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "MEDEL BORDES",
+  "birthdate": "2013-09-08",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "MITJANS COROMINAS ",
+  "birthdate": "2013-02-05",
+  "role": "player"
+ },
+ {
+  "first_name": "KILIAN",
+  "last_name": "OLIVA MARTI",
+  "birthdate": "2014-11-19",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "PAINO PRAT",
+  "birthdate": "2012-11-11",
+  "role": "player"
+ },
+ {
+  "first_name": "GORKA",
+  "last_name": "PARELLADA BONDIA",
+  "birthdate": "2013-04-12",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "PIÑOL FERRER",
+  "birthdate": "2012-01-05",
+  "role": "player"
+ },
+ {
+  "first_name": "IRENE",
+  "last_name": "PUIGRRODON SANCHEZ",
+  "birthdate": "2013-08-14",
+  "role": "player"
+ },
+ {
+  "first_name": "IU",
+  "last_name": "ROVIRA POVILL",
+  "birthdate": "2012-05-23",
+  "role": "player"
+ },
+ {
+  "first_name": "AITANA",
+  "last_name": "SAENZ CARRASCO",
+  "birthdate": "2012-01-09",
+  "role": "player"
+ },
+ {
+  "first_name": "TEO",
+  "last_name": "TICO SOLDADO",
+  "birthdate": "2012-08-24",
+  "role": "player"
+ },
+ {
+  "first_name": "SEBASTIA",
+  "last_name": "TRULLAS ROMERO",
+  "birthdate": "2012-11-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERT",
+  "last_name": "PONS MAS",
+  "birthdate": "1973-01-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "ENRIC ",
+  "last_name": "PUIGRRODON SERVITJE ",
+  "birthdate": "1972-08-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "SAENZ LOPEZ",
+  "birthdate": "1978-01-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "ROSA",
+  "last_name": "SOLERNOU LLADO",
+  "birthdate": "2004-03-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "TOLOSA SOTERAS",
+  "birthdate": "1972-09-30",
+  "role": "staff"
+ }
+]

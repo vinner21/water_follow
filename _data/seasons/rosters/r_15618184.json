@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "ADRIAN",
+  "last_name": "ALCALDE MARTINEZ",
+  "birthdate": "2012-10-28",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "ALLED DEL ARCO",
+  "birthdate": "2012-09-27",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTINA",
+  "last_name": "ALONSO PERRUCA",
+  "birthdate": "2013-07-19",
+  "role": "player"
+ },
+ {
+  "first_name": "SIMONA",
+  "last_name": "BENITO SOTOCA",
+  "birthdate": "2013-10-07",
+  "role": "player"
+ },
+ {
+  "first_name": "NICOLAS",
+  "last_name": "CARRO ABADIA",
+  "birthdate": "2012-06-07",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "CASAS MACIAS",
+  "birthdate": "2012-10-11",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "CAÑETE MONTES",
+  "birthdate": "2013-12-20",
+  "role": "player"
+ },
+ {
+  "first_name": "AITOR",
+  "last_name": "GILABERT ROSADO",
+  "birthdate": "2013-08-23",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "GONZALEZ FERRERES",
+  "birthdate": "2012-10-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "JOVE GOMEZ",
+  "birthdate": "2012-07-09",
+  "role": "player"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "LOPEZ AGUILERA",
+  "birthdate": "2012-02-25",
+  "role": "player"
+ },
+ {
+  "first_name": "BERTA",
+  "last_name": "MARQUEZ NAUDO",
+  "birthdate": "2013-01-13",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "MONLEON MARIN",
+  "birthdate": "2012-01-12",
+  "role": "player"
+ },
+ {
+  "first_name": "GUIM",
+  "last_name": "PASO CANALS",
+  "birthdate": "2012-03-21",
+  "role": "player"
+ },
+ {
+  "first_name": "CLARA",
+  "last_name": "PONT FLORES",
+  "birthdate": "2013-08-15",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "ALLED FUSTER",
+  "birthdate": "1979-05-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "ALLED FUSTER",
+  "birthdate": "1979-05-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "CASAS JAUREGUI",
+  "birthdate": "1979-02-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "MERITXELL",
+  "last_name": "DEL ARCO FERNANDEZ",
+  "birthdate": "1980-05-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "GARCIA PACHECO",
+  "birthdate": "2000-05-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "GILABERT BUERA",
+  "birthdate": "1980-08-18",
+  "role": "staff"
+ },
+ {
+  "first_name": "NEREA",
+  "last_name": "MORALES LLAMAS",
+  "birthdate": "2004-05-07",
+  "role": "staff"
+ }
+]

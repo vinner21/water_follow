@@ -1,0 +1,218 @@
+[
+ {
+  "first_name": "CARLOTA",
+  "last_name": "ALONSO CUENCA",
+  "birthdate": "2009-04-27",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSEFINA THAIS",
+  "last_name": "ARISPE CABRERA",
+  "birthdate": "2012-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "ISONA",
+  "last_name": "ARRUFAT SOLDEVILA",
+  "birthdate": "2009-03-31",
+  "role": "player"
+ },
+ {
+  "first_name": "AINA",
+  "last_name": "BEHRENS PADILLA",
+  "birthdate": "2009-08-19",
+  "role": "player"
+ },
+ {
+  "first_name": "MARINA COUMBICE",
+  "last_name": "CRESPO BIDIAR",
+  "birthdate": "2010-05-04",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTINA",
+  "last_name": "DIAZ ASENSIO",
+  "birthdate": "2010-06-18",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIONA",
+  "last_name": "FIGUERAS SALA",
+  "birthdate": "2011-10-19",
+  "role": "player"
+ },
+ {
+  "first_name": "JANA",
+  "last_name": "GELADA GIL",
+  "birthdate": "2010-05-21",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "GENOHER MONTALBAN",
+  "birthdate": "2008-07-14",
+  "role": "player"
+ },
+ {
+  "first_name": "ELIA",
+  "last_name": "GONZALEZ REIXACH",
+  "birthdate": "2010-06-17",
+  "role": "player"
+ },
+ {
+  "first_name": "SANDRA",
+  "last_name": "GUTIERREZ GARGALLO",
+  "birthdate": "2008-01-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ARLET",
+  "last_name": "HERRERA SALAZAR",
+  "birthdate": "2008-10-15",
+  "role": "player"
+ },
+ {
+  "first_name": "BERTA",
+  "last_name": "LATORRE FERNANDEZ",
+  "birthdate": "2010-09-16",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "LOPEZ ALVAREZ",
+  "birthdate": "2011-01-28",
+  "role": "player"
+ },
+ {
+  "first_name": "LAURA",
+  "last_name": "LOPEZ FERNANDEZ",
+  "birthdate": "2010-08-20",
+  "role": "player"
+ },
+ {
+  "first_name": "QUERALT",
+  "last_name": "LOPEZ FLORIACH",
+  "birthdate": "2010-09-20",
+  "role": "player"
+ },
+ {
+  "first_name": "NOA",
+  "last_name": "MARCH PENACHO",
+  "birthdate": "2010-04-01",
+  "role": "player"
+ },
+ {
+  "first_name": "IVET",
+  "last_name": "MARI LOPEZ",
+  "birthdate": "2011-01-11",
+  "role": "player"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "MARTIN DE HIJAS MAYORAL",
+  "birthdate": "2010-05-26",
+  "role": "player"
+ },
+ {
+  "first_name": "AURA",
+  "last_name": "MATARO MARTINEZ",
+  "birthdate": "2010-03-26",
+  "role": "player"
+ },
+ {
+  "first_name": "KLARA",
+  "last_name": "MATYAS SOLA",
+  "birthdate": "2011-03-15",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTINA",
+  "last_name": "MIR TOLEDO",
+  "birthdate": "2010-04-16",
+  "role": "player"
+ },
+ {
+  "first_name": "HELENA",
+  "last_name": "NEVADO GARCIA",
+  "birthdate": "2008-06-06",
+  "role": "player"
+ },
+ {
+  "first_name": "ANNA",
+  "last_name": "NUÑEZ DE ARENAS ROURA",
+  "birthdate": "2008-09-12",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCIA",
+  "last_name": "PAUSAS FERNANDEZ",
+  "birthdate": "2010-07-29",
+  "role": "player"
+ },
+ {
+  "first_name": "ANNA",
+  "last_name": "RUIZ MARTINEZ",
+  "birthdate": "2011-06-09",
+  "role": "player"
+ },
+ {
+  "first_name": "EMMA",
+  "last_name": "RUIZ PEREZ",
+  "birthdate": "2012-08-27",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "BALLART SANS",
+  "birthdate": "1973-03-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "CARDENAL MARTINEZ",
+  "birthdate": "1981-01-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "CARDENAL MARTINEZ",
+  "birthdate": "1981-01-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "FIGUERAS PERMANYER",
+  "birthdate": "1981-02-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "INGRID",
+  "last_name": "FLORIACH BIGORRA",
+  "birthdate": "1977-09-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "ELENA MARIA",
+  "last_name": "PADILLA MORALES",
+  "birthdate": "1980-03-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARIA REMEDIOS",
+  "last_name": "PADILLA MORALES",
+  "birthdate": "1978-06-24",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "RUIZ VICO",
+  "birthdate": "2002-04-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "EULALIA",
+  "last_name": "SALAZAR CIUDAD",
+  "birthdate": "1977-08-10",
+  "role": "staff"
+ }
+]

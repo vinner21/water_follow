@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "MARTINA",
+  "last_name": "ALONSO PERRUCA",
+  "birthdate": "2013-07-19",
+  "role": "player"
+ },
+ {
+  "first_name": "SIMONA",
+  "last_name": "BENITO SOTOCA",
+  "birthdate": "2013-10-07",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTIN",
+  "last_name": "CARRO ABADIA",
+  "birthdate": "2014-11-11",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "CAÑETE MONTES",
+  "birthdate": "2013-12-20",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIK",
+  "last_name": "CRESPO RODRIGUEZ",
+  "birthdate": "2014-05-22",
+  "role": "player"
+ },
+ {
+  "first_name": "LLIBERT",
+  "last_name": "FONT CARNE",
+  "birthdate": "2014-08-11",
+  "role": "player"
+ },
+ {
+  "first_name": "AITOR",
+  "last_name": "GILABERT ROSADO",
+  "birthdate": "2013-08-23",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "GILABERT ROSADO",
+  "birthdate": "2015-09-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "JOVE GOMEZ",
+  "birthdate": "2013-06-24",
+  "role": "player"
+ },
+ {
+  "first_name": "BERTA",
+  "last_name": "MARQUEZ NAUDO",
+  "birthdate": "2013-01-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ANDREA",
+  "last_name": "PEDREGOSA LOPEZ",
+  "birthdate": "2014-09-12",
+  "role": "player"
+ },
+ {
+  "first_name": "CLARA",
+  "last_name": "PONT FLORES",
+  "birthdate": "2013-08-15",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "PUIG RODRIGUEZ",
+  "birthdate": "2013-08-14",
+  "role": "player"
+ },
+ {
+  "first_name": "MIREIA ",
+  "last_name": "ROS ROMERO ",
+  "birthdate": "2012-02-03",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "ALLED FUSTER",
+  "birthdate": "1979-05-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "ALONSO HIGUERAS",
+  "birthdate": "1980-07-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "MERITXELL",
+  "last_name": "DEL ARCO FERNANDEZ",
+  "birthdate": "1980-05-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "GARCIA PACHECO",
+  "birthdate": "2000-05-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "GILABERT BUERA",
+  "birthdate": "1980-08-18",
+  "role": "staff"
+ },
+ {
+  "first_name": "NEREA",
+  "last_name": "MORALES LLAMAS",
+  "birthdate": "2004-05-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "ESTHER",
+  "last_name": "PERRUCA GARCIA",
+  "birthdate": "1983-12-31",
+  "role": "staff"
+ }
+]

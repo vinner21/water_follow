@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "ALBA",
+  "last_name": "BRUGADA MARTINEZ",
+  "birthdate": "2014-03-06",
+  "role": "player"
+ },
+ {
+  "first_name": "SEBASTIA",
+  "last_name": "CREUS TORTELLA",
+  "birthdate": "2012-06-05",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "DORADO OLIETE",
+  "birthdate": "2014-07-01",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "FERNANDEZ HERNANDEZ",
+  "birthdate": "2013-10-05",
+  "role": "player"
+ },
+ {
+  "first_name": "GABRIEL",
+  "last_name": "GARCIA FERNANDEZ",
+  "birthdate": "2013-12-06",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "GRACIA SERGEEV",
+  "birthdate": "2014-07-14",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDY ALEJANDRO",
+  "last_name": "LOPEZ CUBIDES",
+  "birthdate": "2015-01-15",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "MARTINEZ PITARCH",
+  "birthdate": "2012-03-20",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEIX ",
+  "last_name": "MARTINEZ TRAVES ",
+  "birthdate": "2013-05-14",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "MONTLLÓ ORTUÑO",
+  "birthdate": "2012-01-10",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "RODRIGUES-RAGAIN SALMERON",
+  "birthdate": "2014-12-06",
+  "role": "player"
+ },
+ {
+  "first_name": "OSCAR",
+  "last_name": "ROMERO GARCIA",
+  "birthdate": "2013-01-03",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "RUBIO GOMEZ",
+  "birthdate": "2012-02-02",
+  "role": "player"
+ },
+ {
+  "first_name": "TXELL",
+  "last_name": "RUBIO GOMEZ",
+  "birthdate": "2013-12-28",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "SANCHEZ MORENO",
+  "birthdate": "2013-10-12",
+  "role": "player"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "SEGURA CARRIQUE",
+  "birthdate": "2013-02-21",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "VIAPLANA BONAVIA",
+  "birthdate": "2012-12-30",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO",
+  "last_name": "VIDAL FERNANDEZ",
+  "birthdate": "2013-05-30",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "CORTES VILARDELL",
+  "birthdate": "2005-07-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "GALAN ERRO",
+  "birthdate": "2004-10-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "MARTINEZ VASCO",
+  "birthdate": "1975-07-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "JUAN MIGUEL ",
+  "last_name": "RUBIO MURILLO",
+  "birthdate": "1972-01-21",
+  "role": "staff"
+ }
+]

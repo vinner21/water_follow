@@ -1,0 +1,164 @@
+[
+ {
+  "first_name": "PAU",
+  "last_name": "ALENTORN LAZARO",
+  "birthdate": "2013-03-26",
+  "role": "player"
+ },
+ {
+  "first_name": "HARITZ",
+  "last_name": "ALONSO GARCIA",
+  "birthdate": "2013-12-17",
+  "role": "player"
+ },
+ {
+  "first_name": "AITOR",
+  "last_name": "BONET RASCO",
+  "birthdate": "2013-07-17",
+  "role": "player"
+ },
+ {
+  "first_name": "DARIO",
+  "last_name": "BURGADA RICCARDI",
+  "birthdate": "2013-11-06",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "CIRERA ESPAÑOL",
+  "birthdate": "2013-09-09",
+  "role": "player"
+ },
+ {
+  "first_name": "SERGI",
+  "last_name": "DIAZ ANDREU",
+  "birthdate": "2014-03-21",
+  "role": "player"
+ },
+ {
+  "first_name": "ADAM",
+  "last_name": "DUBOS GUICHARD",
+  "birthdate": "2014-11-11",
+  "role": "player"
+ },
+ {
+  "first_name": "AGUSTI",
+  "last_name": "GASQUE GIMENO",
+  "birthdate": "2013-05-24",
+  "role": "player"
+ },
+ {
+  "first_name": "KAI TIAGO",
+  "last_name": "HAMILTON DIXON",
+  "birthdate": "2013-01-28",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "MARTINEZ GALLARDO",
+  "birthdate": "2014-01-08",
+  "role": "player"
+ },
+ {
+  "first_name": "JOEL",
+  "last_name": "MARTINEZ LLORENTE",
+  "birthdate": "2013-04-05",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVIER ",
+  "last_name": "MEDINA NIETO ",
+  "birthdate": "2014-02-14",
+  "role": "player"
+ },
+ {
+  "first_name": "MAURO",
+  "last_name": "PEREZ CILLERO",
+  "birthdate": "2013-01-27",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIO",
+  "last_name": "QUINTANA LUJAN",
+  "birthdate": "2014-08-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ASIER",
+  "last_name": "RENEDO BARRANCO",
+  "birthdate": "2014-02-21",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "SAEZ TOBAJAS",
+  "birthdate": "2015-08-25",
+  "role": "player"
+ },
+ {
+  "first_name": "DOMINIK",
+  "last_name": "TATRAI",
+  "birthdate": "2013-09-09",
+  "role": "player"
+ },
+ {
+  "first_name": "KAI",
+  "last_name": "ZARDOYA RESINA",
+  "birthdate": "2013-09-21",
+  "role": "player"
+ },
+ {
+  "first_name": "NOAH",
+  "last_name": "ZARDOYA RESINA",
+  "birthdate": "2014-12-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ROBERTO",
+  "last_name": "ALONSO FERNANDEZ",
+  "birthdate": "1985-06-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "CANILLAS ALBARRACIN",
+  "birthdate": "1951-02-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "DOMENECH LOPEZ",
+  "birthdate": "1992-04-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "THOMAS",
+  "last_name": "DUBOS",
+  "birthdate": "1980-03-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "AGUSTIN",
+  "last_name": "MARTINEZ RUIZ",
+  "birthdate": "1991-02-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "AGUSTIN",
+  "last_name": "MARTINEZ RUIZ",
+  "birthdate": "1991-02-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "NICOLAS",
+  "last_name": "SANCHON  LUGO",
+  "birthdate": "2001-05-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "ZARDOYA LLADO",
+  "birthdate": "1983-04-03",
+  "role": "staff"
+ }
+]

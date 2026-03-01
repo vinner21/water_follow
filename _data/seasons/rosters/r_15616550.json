@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "MIA",
+  "last_name": "BECHERI MAYA",
+  "birthdate": "2017-04-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ELENA",
+  "last_name": "CALZADO SIERRA",
+  "birthdate": "2017-01-12",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTINA",
+  "last_name": "COMPANY CAMACHO",
+  "birthdate": "2016-06-16",
+  "role": "player"
+ },
+ {
+  "first_name": "VEGA",
+  "last_name": "DORADO GARCIA",
+  "birthdate": "2016-05-11",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "GALLARDO VILLAGRASA",
+  "birthdate": "2018-01-08",
+  "role": "player"
+ },
+ {
+  "first_name": "HELGA",
+  "last_name": "GARCIA MARTINEZ",
+  "birthdate": "2016-03-18",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "GONZALEZ MANCHON",
+  "birthdate": "2017-07-16",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIELLA",
+  "last_name": "LOPEZ BUENO",
+  "birthdate": "2016-01-20",
+  "role": "player"
+ },
+ {
+  "first_name": "AINA",
+  "last_name": "MARIANO ESCUDERO",
+  "birthdate": "2018-07-21",
+  "role": "player"
+ },
+ {
+  "first_name": "ARLET",
+  "last_name": "MORENO MAROTO",
+  "birthdate": "2017-01-11",
+  "role": "player"
+ },
+ {
+  "first_name": "OLIVIA",
+  "last_name": "ORTIZ COMELLAS",
+  "birthdate": "2017-07-28",
+  "role": "player"
+ },
+ {
+  "first_name": "ISONA",
+  "last_name": "PENDON LEIVA",
+  "birthdate": "2016-10-11",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNA",
+  "last_name": "TORRENT TINTO",
+  "birthdate": "2016-05-02",
+  "role": "player"
+ },
+ {
+  "first_name": "ENRIC",
+  "last_name": "ARNELLA RUIZ",
+  "birthdate": "1992-06-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "SUSANA",
+  "last_name": "BUENO RUIZ",
+  "birthdate": "1986-01-31",
+  "role": "staff"
+ },
+ {
+  "first_name": "CARLOS",
+  "last_name": "COMPANY HINOJOSA",
+  "birthdate": "1976-04-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "SONIA",
+  "last_name": "ESCUDERO GARCIA",
+  "birthdate": "1984-01-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "MORENO VAZ-ROMERO",
+  "birthdate": "1998-09-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "RUPERT",
+  "last_name": "NAVARRO VIVES",
+  "birthdate": "1974-01-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "FERRAN",
+  "last_name": "PLANA AGUSTI",
+  "birthdate": "1982-10-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "CARLOTA",
+  "last_name": "TRIAS SOLE",
+  "birthdate": "1979-09-17",
+  "role": "staff"
+ }
+]

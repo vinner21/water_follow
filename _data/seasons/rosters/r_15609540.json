@@ -1,0 +1,92 @@
+[
+ {
+  "first_name": "JOSE MARIA",
+  "last_name": "ABARCA PLATAS",
+  "birthdate": "1974-06-19",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSEP SALVADOR",
+  "last_name": "ALTIMIS TORRELLA",
+  "birthdate": "1991-02-05",
+  "role": "player"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "BELMONTE VIDAL",
+  "birthdate": "1989-11-07",
+  "role": "player"
+ },
+ {
+  "first_name": "TOMAS",
+  "last_name": "BRUDER",
+  "birthdate": "1979-09-07",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "GRANADA PASCUAL",
+  "birthdate": "1999-07-19",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "MAROTO ANTONIO",
+  "birthdate": "1978-04-24",
+  "role": "player"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "MORELL FERNANDEZ",
+  "birthdate": "1997-03-17",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "PRAT COBO",
+  "birthdate": "1977-09-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ANTONI",
+  "last_name": "RION GOMEZ",
+  "birthdate": "1964-01-21",
+  "role": "player"
+ },
+ {
+  "first_name": "IVAN ",
+  "last_name": "SANCHEZ DE LA FUENTE",
+  "birthdate": "1977-04-23",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERTO MARIO",
+  "last_name": "SIERRA REALES",
+  "birthdate": "1981-09-29",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLES",
+  "last_name": "SORIGUE BOIRA",
+  "birthdate": "1966-10-22",
+  "role": "player"
+ },
+ {
+  "first_name": "OSCAR",
+  "last_name": "TARRIÑO BUENO",
+  "birthdate": "1976-08-19",
+  "role": "player"
+ },
+ {
+  "first_name": "CESAR",
+  "last_name": "TORRAS VALERO",
+  "birthdate": "1970-07-02",
+  "role": "player"
+ },
+ {
+  "first_name": "ISMAEL",
+  "last_name": "VALLS FORTET",
+  "birthdate": "1975-10-07",
+  "role": "player"
+ }
+]

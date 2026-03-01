@@ -1,0 +1,116 @@
+[
+ {
+  "first_name": "OSCAR",
+  "last_name": "AGUILAR ILLANA",
+  "birthdate": "1987-07-06",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "BUSQUETS PUIG",
+  "birthdate": "1997-06-04",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "CARPIO PAGES",
+  "birthdate": "1980-06-24",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIA ISABEL",
+  "last_name": "CUESTA RUIZ",
+  "birthdate": "1985-03-23",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "DOMINGUEZ RIVERO",
+  "birthdate": "1987-03-16",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSE MARIA",
+  "last_name": "ESPEJO MOLINA",
+  "birthdate": "1985-03-23",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERTO",
+  "last_name": "EXPOSITO TAPIA",
+  "birthdate": "1980-11-28",
+  "role": "player"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "GALLEGO VELA",
+  "birthdate": "1984-02-13",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "GONZALEZ PICON",
+  "birthdate": "1989-03-10",
+  "role": "player"
+ },
+ {
+  "first_name": "MANEL",
+  "last_name": "LLOBREGAT GARCIA",
+  "birthdate": "1989-05-21",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "MARTINEZ CARRERAS",
+  "birthdate": "1984-06-09",
+  "role": "player"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "MARTINEZ LOPEZ",
+  "birthdate": "1983-03-30",
+  "role": "player"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "MESA CABRERA",
+  "birthdate": "1980-06-03",
+  "role": "player"
+ },
+ {
+  "first_name": "SERGI",
+  "last_name": "MORA BELMONTE",
+  "birthdate": "1982-07-05",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "PEREZ POLONIO",
+  "birthdate": "1984-03-10",
+  "role": "player"
+ },
+ {
+  "first_name": "F.XAVIER",
+  "last_name": "REINA ROVIRA",
+  "birthdate": "1978-08-25",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERTO",
+  "last_name": "ROBLES SORLI",
+  "birthdate": "1978-11-13",
+  "role": "player"
+ },
+ {
+  "first_name": "LOURDES",
+  "last_name": "RUBIO GARCIA",
+  "birthdate": "1989-05-05",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "SANZ FERNANDEZ",
+  "birthdate": "1985-11-16",
+  "role": "player"
+ }
+]

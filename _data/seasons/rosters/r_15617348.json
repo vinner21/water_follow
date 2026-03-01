@@ -1,0 +1,176 @@
+[
+ {
+  "first_name": "CESC",
+  "last_name": "AGUIRRE RUBIO",
+  "birthdate": "2010-09-14",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "BALAGUER GONZALEZ",
+  "birthdate": "2012-03-19",
+  "role": "player"
+ },
+ {
+  "first_name": "TON",
+  "last_name": "COLL POCH",
+  "birthdate": "2011-05-16",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAO LUIS",
+  "last_name": "DIETZSCH IMBROSI",
+  "birthdate": "2010-07-13",
+  "role": "player"
+ },
+ {
+  "first_name": "AITOR",
+  "last_name": "DUBOS GUICHARD",
+  "birthdate": "2012-06-14",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "FONT SUAREZ",
+  "birthdate": "2011-12-13",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "GINABREDA CABELLO",
+  "birthdate": "2010-01-02",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "GIRONELL RAMIREZ",
+  "birthdate": "2012-05-18",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "HAM-MAN ROMERO",
+  "birthdate": "2010-11-22",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCOS",
+  "last_name": "HIPPLE PEREZ",
+  "birthdate": "2010-03-03",
+  "role": "player"
+ },
+ {
+  "first_name": "TOMA",
+  "last_name": "KORNEL",
+  "birthdate": "2011-02-02",
+  "role": "player"
+ },
+ {
+  "first_name": "ENZO",
+  "last_name": "MARTIN LOPEZ",
+  "birthdate": "2011-10-06",
+  "role": "player"
+ },
+ {
+  "first_name": "YAGO",
+  "last_name": "MARTIN LOPEZ",
+  "birthdate": "2011-10-06",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "MITRANI DELGADO",
+  "birthdate": "2010-11-26",
+  "role": "player"
+ },
+ {
+  "first_name": "INAKI",
+  "last_name": "OLIVE HAM-MAN",
+  "birthdate": "2012-02-01",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "PEREZ CABALLERO",
+  "birthdate": "2011-09-13",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "PERIANES CANTON",
+  "birthdate": "2012-06-26",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIO",
+  "last_name": "RODRIGUEZ HIDALGO",
+  "birthdate": "2011-11-03",
+  "role": "player"
+ },
+ {
+  "first_name": "JOHN JOSEPH",
+  "last_name": "SHINSKE MARTIN",
+  "birthdate": "2010-05-29",
+  "role": "player"
+ },
+ {
+  "first_name": "GRAYSON THEODORE",
+  "last_name": "TAYLOR",
+  "birthdate": "2010-03-22",
+  "role": "player"
+ },
+ {
+  "first_name": "TOMAS",
+  "last_name": "VILLORIA RIVAS",
+  "birthdate": "2012-10-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ROBERTO",
+  "last_name": "ALONSO FERNANDEZ",
+  "birthdate": "1985-06-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "CANILLAS ALBARRACIN",
+  "birthdate": "1951-02-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "DOMENECH LOPEZ",
+  "birthdate": "1992-04-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "ISIDRE",
+  "last_name": "GINABREDA ESTEBE",
+  "birthdate": "1972-04-08",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "HAM-MAN ABELLA",
+  "birthdate": "1981-06-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE ANGEL",
+  "last_name": "MARTIN AGUIAR",
+  "birthdate": "1972-09-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "AGUSTIN",
+  "last_name": "MARTINEZ RUIZ",
+  "birthdate": "1991-02-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "PEREZ TARRES",
+  "birthdate": "1973-09-20",
+  "role": "staff"
+ }
+]

@@ -1,0 +1,122 @@
+[
+ {
+  "first_name": "NURIA",
+  "last_name": "AVILES SALLAN",
+  "birthdate": "2017-01-27",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTINA",
+  "last_name": "FERNANDEZ GIMENEZ",
+  "birthdate": "2016-01-29",
+  "role": "player"
+ },
+ {
+  "first_name": "NIKA",
+  "last_name": "FILATOVA",
+  "birthdate": "2017-01-01",
+  "role": "player"
+ },
+ {
+  "first_name": "NUR",
+  "last_name": "GARCIA MARTINEZ",
+  "birthdate": "2017-07-15",
+  "role": "player"
+ },
+ {
+  "first_name": "OLATZ",
+  "last_name": "GARCIA SUILS",
+  "birthdate": "2017-09-09",
+  "role": "player"
+ },
+ {
+  "first_name": "SOFIA",
+  "last_name": "GOGOCHURI GUROVA",
+  "birthdate": "2016-06-11",
+  "role": "player"
+ },
+ {
+  "first_name": "AMAYA DASHA",
+  "last_name": "GOMEZ BUSTAMANTE",
+  "birthdate": "2017-01-11",
+  "role": "player"
+ },
+ {
+  "first_name": "CLARA",
+  "last_name": "HERRERO MENDOZA",
+  "birthdate": "2016-10-14",
+  "role": "player"
+ },
+ {
+  "first_name": "ALESSIA GAELA",
+  "last_name": "LLORCA AMARANTO",
+  "birthdate": "2016-04-10",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA ",
+  "last_name": "MARTINEZ BARREIRA",
+  "birthdate": "2016-01-26",
+  "role": "player"
+ },
+ {
+  "first_name": "ONA",
+  "last_name": "OLLE VINUESA",
+  "birthdate": "2016-02-05",
+  "role": "player"
+ },
+ {
+  "first_name": "EMMA",
+  "last_name": "PEREIRA DE OLIVEIRA",
+  "birthdate": "2016-02-23",
+  "role": "player"
+ },
+ {
+  "first_name": "HELENA",
+  "last_name": "ROMEU SHUBITIDZE",
+  "birthdate": "2016-12-14",
+  "role": "player"
+ },
+ {
+  "first_name": "ANTONELLA",
+  "last_name": "TORREALBA ANGULO",
+  "birthdate": "2016-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "LUIS",
+  "last_name": "CIFUENTES FELIU",
+  "birthdate": "1972-03-15",
+  "role": "staff"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "CLARAMUNT VILLANUEVA",
+  "birthdate": "2004-03-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "SANDRINE",
+  "last_name": "DE OLIVEIRA",
+  "birthdate": "1977-02-18",
+  "role": "staff"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "NOGUERA PALOMO",
+  "birthdate": "2006-06-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARIA DEL MAR",
+  "last_name": "PARERA OLIVE",
+  "birthdate": "1978-09-18",
+  "role": "staff"
+ },
+ {
+  "first_name": "EMMA",
+  "last_name": "VINUESA VIU",
+  "birthdate": "1984-09-25",
+  "role": "staff"
+ }
+]

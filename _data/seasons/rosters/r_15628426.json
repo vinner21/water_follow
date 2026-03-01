@@ -1,0 +1,122 @@
+[
+ {
+  "first_name": "ALEJANDRO",
+  "last_name": "BARRO IZQUIERDO",
+  "birthdate": "2017-02-01",
+  "role": "player"
+ },
+ {
+  "first_name": "HERNAN ARTURO",
+  "last_name": "CASTAÑEDA VIVAS",
+  "birthdate": "2016-04-04",
+  "role": "player"
+ },
+ {
+  "first_name": "WALID MOHAMED",
+  "last_name": "CHALKHA MOKHTARI",
+  "birthdate": "2015-09-25",
+  "role": "player"
+ },
+ {
+  "first_name": "ABRIL ",
+  "last_name": "COBOS MONTOLIU ",
+  "birthdate": "2017-01-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEIX ",
+  "last_name": "CORONAS MONTEAGUDO ",
+  "birthdate": "2017-11-22",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNO ",
+  "last_name": "GALLEGO ORTEGA ",
+  "birthdate": "2017-12-08",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "GONZALEZ SANCHEZ",
+  "birthdate": "2017-08-21",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "LECEGUI VILCHEZ",
+  "birthdate": "2016-02-26",
+  "role": "player"
+ },
+ {
+  "first_name": "LOLA",
+  "last_name": "LECEGUI VILCHEZ",
+  "birthdate": "2018-10-10",
+  "role": "player"
+ },
+ {
+  "first_name": "MATEO",
+  "last_name": "LOPEZ PAREDES ",
+  "birthdate": "2016-03-31",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "MUÑOZ ALVAREZ",
+  "birthdate": "2019-11-10",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCAS",
+  "last_name": "MUÑOZ GONZALEZ",
+  "birthdate": "2018-08-14",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "MUÑOZ GONZALEZ",
+  "birthdate": "2016-03-09",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI ",
+  "last_name": "RUIZ MORENO",
+  "birthdate": "2017-04-14",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIO ",
+  "last_name": "SANCHEZ COLAZO ",
+  "birthdate": "2017-04-18",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "VALLE JIMENEZ",
+  "birthdate": "2017-05-13",
+  "role": "player"
+ },
+ {
+  "first_name": "LUIS",
+  "last_name": "GALLEGO SEMPERE",
+  "birthdate": "1980-07-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "FRANCISCO",
+  "last_name": "GONZALEZ CASAL",
+  "birthdate": "1989-11-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "OSCAR",
+  "last_name": "MOLINA ROJAS",
+  "birthdate": "1982-10-31",
+  "role": "staff"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "SANCHEZ MARTINEZ",
+  "birthdate": "1997-11-24",
+  "role": "staff"
+ }
+]

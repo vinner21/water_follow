@@ -1,0 +1,152 @@
+[
+ {
+  "first_name": "JULIA",
+  "last_name": "ABARCA BOVE",
+  "birthdate": "2009-02-24",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIA",
+  "last_name": "ABARCA BOVE",
+  "birthdate": "2011-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "CLARA",
+  "last_name": "ALBA RIPOLL",
+  "birthdate": "2011-10-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEXANDRA",
+  "last_name": "COCEAN BADIN",
+  "birthdate": "2009-11-05",
+  "role": "player"
+ },
+ {
+  "first_name": "LEIRE",
+  "last_name": "COMABELLA CIVES",
+  "birthdate": "2010-06-06",
+  "role": "player"
+ },
+ {
+  "first_name": "JANA",
+  "last_name": "CORTES AGUAYO",
+  "birthdate": "2011-12-19",
+  "role": "player"
+ },
+ {
+  "first_name": "JULIA",
+  "last_name": "FRIGOLA NAVARRO",
+  "birthdate": "2008-09-07",
+  "role": "player"
+ },
+ {
+  "first_name": "MAR",
+  "last_name": "GARCIA MASCHERPA",
+  "birthdate": "2009-09-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ANNA",
+  "last_name": "GIMENEZ GONZALO",
+  "birthdate": "2011-12-29",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNA",
+  "last_name": "GOMILA FAIGES",
+  "birthdate": "2010-03-19",
+  "role": "player"
+ },
+ {
+  "first_name": "LENI",
+  "last_name": "HARMS",
+  "birthdate": "2008-08-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBA",
+  "last_name": "INGLAVAGA TENA",
+  "birthdate": "2008-05-18",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "MASDEU RIERA",
+  "birthdate": "2011-08-19",
+  "role": "player"
+ },
+ {
+  "first_name": "HENAR",
+  "last_name": "MEDINA GONZALEZ",
+  "birthdate": "2011-08-25",
+  "role": "player"
+ },
+ {
+  "first_name": "AITANA",
+  "last_name": "OLIVARES MASANA",
+  "birthdate": "2009-09-22",
+  "role": "player"
+ },
+ {
+  "first_name": "HAJAR",
+  "last_name": "PEREZ AZZOUZ",
+  "birthdate": "2008-04-10",
+  "role": "player"
+ },
+ {
+  "first_name": "IVET",
+  "last_name": "SULLA PUIGDENGOLAS",
+  "birthdate": "2010-11-24",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "TARRIÑO GONZALEZ",
+  "birthdate": "2010-04-09",
+  "role": "player"
+ },
+ {
+  "first_name": "RITA",
+  "last_name": "VALLEJO BUIL",
+  "birthdate": "2011-06-04",
+  "role": "player"
+ },
+ {
+  "first_name": "OLGA",
+  "last_name": "BALAGUER BORRAS",
+  "birthdate": "1981-06-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "BELMONTE VIDAL",
+  "birthdate": "1989-11-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "THAIS",
+  "last_name": "BOVE FONTAL",
+  "birthdate": "1982-07-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "HERNANDEZ BORRAS",
+  "birthdate": "1982-09-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "MORELL FERNANDEZ",
+  "birthdate": "1997-03-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "OSCAR",
+  "last_name": "TARRIÑO BUENO",
+  "birthdate": "1976-08-19",
+  "role": "staff"
+ }
+]

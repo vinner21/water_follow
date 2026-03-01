@@ -1,0 +1,122 @@
+[
+ {
+  "first_name": "ADAI",
+  "last_name": "DIAZ VILLALBA",
+  "birthdate": "2010-10-14",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "GIL MARTINEZ",
+  "birthdate": "2010-11-12",
+  "role": "player"
+ },
+ {
+  "first_name": "RUBEN",
+  "last_name": "GOMEZ ARIZA",
+  "birthdate": "2010-07-09",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "INVERARDI GANELLA",
+  "birthdate": "2011-09-20",
+  "role": "player"
+ },
+ {
+  "first_name": "ELIAS",
+  "last_name": "LAHOZ AMAROCHAN",
+  "birthdate": "2011-08-19",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "MARTI TORRALBA",
+  "birthdate": "2010-09-02",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "MARTINEZ TRAVES",
+  "birthdate": "2010-03-12",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEIX ",
+  "last_name": "MARTINEZ TRAVES ",
+  "birthdate": "2013-05-14",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "MONTLLÓ ORTUÑO",
+  "birthdate": "2012-01-10",
+  "role": "player"
+ },
+ {
+  "first_name": "IAN",
+  "last_name": "NIETO CUARTIELLAS",
+  "birthdate": "2010-05-20",
+  "role": "player"
+ },
+ {
+  "first_name": "OCTAVI",
+  "last_name": "PALAU JIMENEZ",
+  "birthdate": "2010-12-17",
+  "role": "player"
+ },
+ {
+  "first_name": "AITOR",
+  "last_name": "ROMERO GARCIA",
+  "birthdate": "2011-09-15",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "RUBIO GOMEZ",
+  "birthdate": "2012-02-02",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "SANCHEZ MORENO",
+  "birthdate": "2013-10-12",
+  "role": "player"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "SEGURA CARRIQUE",
+  "birthdate": "2013-02-21",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "VIAPLANA BONAVIA",
+  "birthdate": "2012-12-30",
+  "role": "player"
+ },
+ {
+  "first_name": "SARA",
+  "last_name": "ARIZA PIÑAR",
+  "birthdate": "1979-06-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "GALAN ERRO",
+  "birthdate": "2004-10-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOAN ANTONI",
+  "last_name": "MARTI ALUMBREROS",
+  "birthdate": "1972-06-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORGE ERNESTO",
+  "last_name": "SANGUINO SARMIENTO",
+  "birthdate": "1973-04-07",
+  "role": "staff"
+ }
+]

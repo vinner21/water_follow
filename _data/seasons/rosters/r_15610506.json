@@ -1,0 +1,194 @@
+[
+ {
+  "first_name": "ROMEO",
+  "last_name": "ALONSO LOPEZ",
+  "birthdate": "2014-03-03",
+  "role": "player"
+ },
+ {
+  "first_name": "SANTIAGO ELIAS",
+  "last_name": "ALONZO GONZALEZ",
+  "birthdate": "2015-12-18",
+  "role": "player"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "BAREA PERA",
+  "birthdate": "2015-11-07",
+  "role": "player"
+ },
+ {
+  "first_name": "AIXA",
+  "last_name": "BERNAT GOMEZ",
+  "birthdate": "2014-04-15",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIO",
+  "last_name": "BONET BURAVLEV",
+  "birthdate": "2016-10-11",
+  "role": "player"
+ },
+ {
+  "first_name": "LOLA ",
+  "last_name": "CALERO PEREZ ",
+  "birthdate": "2016-04-10",
+  "role": "player"
+ },
+ {
+  "first_name": "ARLET",
+  "last_name": "CASANOVAS EROLES",
+  "birthdate": "2016-02-03",
+  "role": "player"
+ },
+ {
+  "first_name": "GINA",
+  "last_name": "GARCIA ABRIL",
+  "birthdate": "2016-08-12",
+  "role": "player"
+ },
+ {
+  "first_name": "GINA",
+  "last_name": "GONZALEZ PUIG",
+  "birthdate": "2017-04-18",
+  "role": "player"
+ },
+ {
+  "first_name": "ONA",
+  "last_name": "INOCENCIO COLOME",
+  "birthdate": "2014-12-09",
+  "role": "player"
+ },
+ {
+  "first_name": "KENAI",
+  "last_name": "LOPEZ BERGE",
+  "birthdate": "2015-09-25",
+  "role": "player"
+ },
+ {
+  "first_name": "DANI",
+  "last_name": "MARTIN JIMENEZ",
+  "birthdate": "2014-07-28",
+  "role": "player"
+ },
+ {
+  "first_name": "IRAITZ",
+  "last_name": "MONTASELL NOGUERAS",
+  "birthdate": "2016-09-27",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "MORENO GARCIA",
+  "birthdate": "2015-02-28",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCAL",
+  "last_name": "NEYRA ROVIRA",
+  "birthdate": "2015-05-14",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "NOGUERA TRIPIANA",
+  "birthdate": "2015-05-16",
+  "role": "player"
+ },
+ {
+  "first_name": "MASSIMO",
+  "last_name": "PARICIO REZZADORE",
+  "birthdate": "2015-01-05",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "PERIANES CANTON",
+  "birthdate": "2017-09-27",
+  "role": "player"
+ },
+ {
+  "first_name": "EDGAR",
+  "last_name": "SAFONT NAVARRO",
+  "birthdate": "2015-11-02",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "SERRA MARTINEZ",
+  "birthdate": "2015-02-26",
+  "role": "player"
+ },
+ {
+  "first_name": "LLEO",
+  "last_name": "UZCATEGUI VICENTE",
+  "birthdate": "2016-10-31",
+  "role": "player"
+ },
+ {
+  "first_name": "ENZO",
+  "last_name": "VALER MOLINA",
+  "birthdate": "2017-10-02",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIO",
+  "last_name": "VALLE GOMEZ",
+  "birthdate": "2015-10-08",
+  "role": "player"
+ },
+ {
+  "first_name": "MIRIAM",
+  "last_name": "ABRIL HORTA",
+  "birthdate": "1984-05-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "QUERALT",
+  "last_name": "BERTRAN VIDAL",
+  "birthdate": "2004-11-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANIOL",
+  "last_name": "BLANCH PASSOLS",
+  "birthdate": "2003-01-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "CARDENAL MARTINEZ",
+  "birthdate": "1981-01-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "LAURA",
+  "last_name": "EROLES FERNANDEZ",
+  "birthdate": "1982-12-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "SANDRA",
+  "last_name": "MARTINEZ PASCUAL",
+  "birthdate": "1978-07-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "NOGUERA SAU",
+  "birthdate": "1982-10-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "RUIZ VICO",
+  "birthdate": "2002-04-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "VICENTE RIERA",
+  "birthdate": "1984-03-17",
+  "role": "staff"
+ }
+]

@@ -1,0 +1,122 @@
+[
+ {
+  "first_name": "MARTINA",
+  "last_name": "ABARCA PEREZ",
+  "birthdate": "2017-05-29",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "BOSCH VARGAS",
+  "birthdate": "2017-03-22",
+  "role": "player"
+ },
+ {
+  "first_name": "AINA",
+  "last_name": "CAPARROS BLANCO",
+  "birthdate": "2016-10-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ARIADNA",
+  "last_name": "DOMINGO SOLDEVILA",
+  "birthdate": "2016-04-17",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "ESTRADA CAELLAS",
+  "birthdate": "2016-06-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ROC",
+  "last_name": "FIGUERAS CAUDELI",
+  "birthdate": "2016-12-23",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "GARRUCHO SANCHEZ",
+  "birthdate": "2016-08-23",
+  "role": "player"
+ },
+ {
+  "first_name": "CLOE",
+  "last_name": "GUTIERREZ MARIN",
+  "birthdate": "2016-10-09",
+  "role": "player"
+ },
+ {
+  "first_name": "MIQUEL LEVI",
+  "last_name": "HURTADO BARBACIL",
+  "birthdate": "2016-11-06",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "IZQUIERDO MERCADE",
+  "birthdate": "2016-03-19",
+  "role": "player"
+ },
+ {
+  "first_name": "URIEL",
+  "last_name": "LOPEZ GIL",
+  "birthdate": "2016-10-20",
+  "role": "player"
+ },
+ {
+  "first_name": "LENA",
+  "last_name": "MENDEZ GUILLAUMET",
+  "birthdate": "2016-02-16",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "RENALIAS BELTRAN",
+  "birthdate": "2017-04-25",
+  "role": "player"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "SIMON ARDEVOL",
+  "birthdate": "2016-10-15",
+  "role": "player"
+ },
+ {
+  "first_name": "JOEL",
+  "last_name": "TARRES HURTADO",
+  "birthdate": "2017-06-21",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "TOMAS CABUTTO",
+  "birthdate": "2016-11-20",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "ESTRADA SUBIRADA",
+  "birthdate": "1977-10-15",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "LOPEZ SAGRERA",
+  "birthdate": "1973-02-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIREIA",
+  "last_name": "MERCADE TORRAS",
+  "birthdate": "1983-03-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "REY SANCHEZ",
+  "birthdate": "2005-07-22",
+  "role": "staff"
+ }
+]

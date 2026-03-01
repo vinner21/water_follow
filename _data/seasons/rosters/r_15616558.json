@@ -1,0 +1,140 @@
+[
+ {
+  "first_name": "ARNAU",
+  "last_name": "ARREGUI GARRIDO",
+  "birthdate": "2011-08-22",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "CAAMAÑO LEÓN",
+  "birthdate": "2011-05-12",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEJANDRO",
+  "last_name": "CABERO  GALLARDO",
+  "birthdate": "2010-04-06",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "CONESA ALONSO",
+  "birthdate": "2011-04-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIAN",
+  "last_name": "DORADO GARCIA",
+  "birthdate": "2011-04-04",
+  "role": "player"
+ },
+ {
+  "first_name": "UNAI",
+  "last_name": "GALVEZ PADILLA",
+  "birthdate": "2012-10-19",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "MARTIN SASSELLI",
+  "birthdate": "2010-03-10",
+  "role": "player"
+ },
+ {
+  "first_name": "HUMBERTO",
+  "last_name": "MATA ALVAREZ",
+  "birthdate": "2010-01-28",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "NADAL MONTERROSO",
+  "birthdate": "2012-05-23",
+  "role": "player"
+ },
+ {
+  "first_name": "SANTIAGO ALEJANDRO",
+  "last_name": "OSSO ESCALANTE",
+  "birthdate": "2011-02-17",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "PALMA INVERS",
+  "birthdate": "2010-08-08",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "RODRIGUEZ BELTRAN",
+  "birthdate": "2010-02-26",
+  "role": "player"
+ },
+ {
+  "first_name": "ASIER",
+  "last_name": "RUIZ GARCIA",
+  "birthdate": "2011-05-09",
+  "role": "player"
+ },
+ {
+  "first_name": "MATIAS",
+  "last_name": "SANGUINO DE ABREU",
+  "birthdate": "2011-07-07",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "SEBASTIA IGARTUA",
+  "birthdate": "2011-10-28",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO",
+  "last_name": "SEGURA REVALIENTE",
+  "birthdate": "2011-02-11",
+  "role": "player"
+ },
+ {
+  "first_name": "BINE",
+  "last_name": "STROMAJER",
+  "birthdate": "2010-01-07",
+  "role": "player"
+ },
+ {
+  "first_name": "ENRIC",
+  "last_name": "ARNELLA RUIZ",
+  "birthdate": "1992-06-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "ARREGUI MAULINI",
+  "birthdate": "1976-05-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "GASULLA FLAVIA",
+  "birthdate": "1996-01-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "FERRAN",
+  "last_name": "PLANA AGUSTI",
+  "birthdate": "1982-10-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "RODRIGUEZ ARTIGAS",
+  "birthdate": "1978-06-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOAN MANEL",
+  "last_name": "SEBASTIA FERRER",
+  "birthdate": "1973-06-14",
+  "role": "staff"
+ }
+]

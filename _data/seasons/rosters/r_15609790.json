@@ -1,0 +1,194 @@
+[
+ {
+  "first_name": "AMELIE",
+  "last_name": "ALDANA CAMPO",
+  "birthdate": "2015-04-14",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "BENITEZ ALDEA",
+  "birthdate": "2015-09-11",
+  "role": "player"
+ },
+ {
+  "first_name": "CLOE",
+  "last_name": "CABRERA SERON",
+  "birthdate": "2015-07-09",
+  "role": "player"
+ },
+ {
+  "first_name": "LAVINIA",
+  "last_name": "COLONGI",
+  "birthdate": "2015-12-24",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "DIEZ TARABOANTA",
+  "birthdate": "2015-11-27",
+  "role": "player"
+ },
+ {
+  "first_name": "FRANCESCO ",
+  "last_name": "DIMARCO",
+  "birthdate": "2015-01-02",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA ",
+  "last_name": "DOMINGUEZ PEREZ",
+  "birthdate": "2015-08-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ANTIA",
+  "last_name": "FERNANDEZ CARBALLO",
+  "birthdate": "2015-07-03",
+  "role": "player"
+ },
+ {
+  "first_name": "BIANCA",
+  "last_name": "GIUFFRE CALVO",
+  "birthdate": "2015-01-20",
+  "role": "player"
+ },
+ {
+  "first_name": "ALAN",
+  "last_name": "GONZALEZ BLESA",
+  "birthdate": "2015-08-25",
+  "role": "player"
+ },
+ {
+  "first_name": "GIA",
+  "last_name": "LLUVA GARCIA",
+  "birthdate": "2015-08-04",
+  "role": "player"
+ },
+ {
+  "first_name": "MEGAN",
+  "last_name": "LOPEZ GARCIA",
+  "birthdate": "2015-04-12",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "LOPEZ VARGAS",
+  "birthdate": "2015-06-29",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCO",
+  "last_name": "LOZA FERNANDEZ",
+  "birthdate": "2015-05-28",
+  "role": "player"
+ },
+ {
+  "first_name": "GUIU",
+  "last_name": "MOLINA ANDREU",
+  "birthdate": "2015-12-30",
+  "role": "player"
+ },
+ {
+  "first_name": "VALENTINA",
+  "last_name": "MUÑOZ PEREZ",
+  "birthdate": "2015-04-18",
+  "role": "player"
+ },
+ {
+  "first_name": "ROC",
+  "last_name": "NAVARRO MANEN",
+  "birthdate": "2015-09-17",
+  "role": "player"
+ },
+ {
+  "first_name": "AYLEN YISSEL",
+  "last_name": "ORDOÑEZ PERALTA",
+  "birthdate": "2015-09-24",
+  "role": "player"
+ },
+ {
+  "first_name": "TOMAS ALBERTO",
+  "last_name": "REMON DIDUY",
+  "birthdate": "2015-01-20",
+  "role": "player"
+ },
+ {
+  "first_name": "TAIRA",
+  "last_name": "RISLER CASAS",
+  "birthdate": "2015-06-24",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "RUIZ CAPARROS",
+  "birthdate": "2015-03-28",
+  "role": "player"
+ },
+ {
+  "first_name": "AARON",
+  "last_name": "SIO LEBORAN",
+  "birthdate": "2015-09-30",
+  "role": "player"
+ },
+ {
+  "first_name": "EMMA",
+  "last_name": "SOLA DIAZ",
+  "birthdate": "2014-01-27",
+  "role": "player"
+ },
+ {
+  "first_name": "AINA",
+  "last_name": "VILLEGAS SECANELL",
+  "birthdate": "2015-11-28",
+  "role": "player"
+ },
+ {
+  "first_name": "LUIS GUILLERMO",
+  "last_name": "ALDANA YEPES",
+  "birthdate": "1983-08-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "BENITEZ RIBAS",
+  "birthdate": "1971-02-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "JESUS",
+  "last_name": "CABRERA QUIFER",
+  "birthdate": "1968-11-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "JESUS",
+  "last_name": "CABRERA QUIFER",
+  "birthdate": "1968-11-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "CLARAMUNT VILLANUEVA",
+  "birthdate": "2004-03-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSEP",
+  "last_name": "GASCH SENDRA",
+  "birthdate": "1958-05-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "NOGUERA PALOMO",
+  "birthdate": "2006-06-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARINA",
+  "last_name": "SERON LOPEZ",
+  "birthdate": "1983-01-27",
+  "role": "staff"
+ }
+]

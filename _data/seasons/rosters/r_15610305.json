@@ -1,0 +1,86 @@
+[
+ {
+  "first_name": "BRUNO",
+  "last_name": "CALERO RUIZ",
+  "birthdate": "2016-09-15",
+  "role": "player"
+ },
+ {
+  "first_name": "THOMAS",
+  "last_name": "CANNAN SANCHEZ",
+  "birthdate": "2016-12-15",
+  "role": "player"
+ },
+ {
+  "first_name": "PEDRO",
+  "last_name": "DIAZ GARCIA ",
+  "birthdate": "2016-05-14",
+  "role": "player"
+ },
+ {
+  "first_name": "IZAN ",
+  "last_name": "DIEZ GARCIA ",
+  "birthdate": "2017-05-26",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "ESTAPE AGUADO",
+  "birthdate": "2017-06-06",
+  "role": "player"
+ },
+ {
+  "first_name": "ANTON",
+  "last_name": "FLORES ENCABO",
+  "birthdate": "2016-03-16",
+  "role": "player"
+ },
+ {
+  "first_name": "MILO",
+  "last_name": "GARCIA PIZARRO",
+  "birthdate": "2016-05-11",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "IZA TRONCONE ",
+  "birthdate": "2017-06-12",
+  "role": "player"
+ },
+ {
+  "first_name": "IKER ",
+  "last_name": "JIMENEZ BAUTISTA ",
+  "birthdate": "2016-05-22",
+  "role": "player"
+ },
+ {
+  "first_name": "YAGO",
+  "last_name": "LOPEZ SANCHEZ",
+  "birthdate": "2017-02-08",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO ",
+  "last_name": "MAYOR VEGA",
+  "birthdate": "2016-04-03",
+  "role": "player"
+ },
+ {
+  "first_name": "SEBASTIAN RITCH ",
+  "last_name": "RODRIGUEZ MONTEZUMA ",
+  "birthdate": "2017-08-13",
+  "role": "player"
+ },
+ {
+  "first_name": "MAURO",
+  "last_name": "VEREDAS BATLLE",
+  "birthdate": "2017-05-04",
+  "role": "player"
+ },
+ {
+  "first_name": "JESSICA ",
+  "last_name": "BAUTISTA LOPEZ ",
+  "birthdate": "1987-09-28",
+  "role": "staff"
+ }
+]

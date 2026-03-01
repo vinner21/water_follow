@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "GERARD",
+  "last_name": "ARILLA ESCUER",
+  "birthdate": "2013-01-21",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "BARRERA DIAZ",
+  "birthdate": "2012-06-04",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNO",
+  "last_name": "BURRUEZO BOHORQUEZ",
+  "birthdate": "2012-06-11",
+  "role": "player"
+ },
+ {
+  "first_name": "DIEGO",
+  "last_name": "CEACERO PACHECO",
+  "birthdate": "2012-11-23",
+  "role": "player"
+ },
+ {
+  "first_name": "RENATO",
+  "last_name": "CERVERA UGARTE",
+  "birthdate": "2015-06-24",
+  "role": "player"
+ },
+ {
+  "first_name": "IVET",
+  "last_name": "FELIX HERNANDEZ",
+  "birthdate": "2014-03-06",
+  "role": "player"
+ },
+ {
+  "first_name": "JOEL",
+  "last_name": "FERNANDEZ GIBERT",
+  "birthdate": "2015-09-04",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCO",
+  "last_name": "LEYVA MORENO",
+  "birthdate": "2013-11-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "MONLEON RUIZ",
+  "birthdate": "2015-08-31",
+  "role": "player"
+ },
+ {
+  "first_name": "AXEL ",
+  "last_name": "MORALES MATEOS ",
+  "birthdate": "2014-05-26",
+  "role": "player"
+ },
+ {
+  "first_name": "ENZO",
+  "last_name": "NAVARRO MESA",
+  "birthdate": "2013-04-04",
+  "role": "player"
+ },
+ {
+  "first_name": "TIAN",
+  "last_name": "PELAEZ RODRIGUEZ",
+  "birthdate": "2015-08-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "RODRIGUEZ MAIQUEZ",
+  "birthdate": "2012-04-22",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "TABERO PASTOR",
+  "birthdate": "2014-12-12",
+  "role": "player"
+ },
+ {
+  "first_name": "LUANA",
+  "last_name": "VACCHINA SABATES",
+  "birthdate": "2013-02-02",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "VILLA RICO",
+  "birthdate": "2012-12-17",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "ARIBAU  GISBERT",
+  "birthdate": "2004-06-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSEP",
+  "last_name": "ARILLA MARCO",
+  "birthdate": "1980-09-13",
+  "role": "staff"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "JURADO TRIAS",
+  "birthdate": "2006-05-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "NICOLAS LOPEZ",
+  "birthdate": "2005-01-14",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "NICOLAS MACHADO",
+  "birthdate": "1971-03-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "RUBEN",
+  "last_name": "RODRIGUEZ OLIVARES",
+  "birthdate": "1976-10-08",
+  "role": "staff"
+ }
+]

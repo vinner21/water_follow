@@ -1,0 +1,116 @@
+[
+ {
+  "first_name": "ELOI",
+  "last_name": "ALGUERO FRANCL",
+  "birthdate": "2012-06-01",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUIS",
+  "last_name": "ARMENGOL MENCION",
+  "birthdate": "2013-02-08",
+  "role": "player"
+ },
+ {
+  "first_name": "ROC",
+  "last_name": "BUSQUETS BOIXADER",
+  "birthdate": "2013-05-09",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "DILME COROMINAS",
+  "birthdate": "2012-05-05",
+  "role": "player"
+ },
+ {
+  "first_name": "NEREU",
+  "last_name": "HIDALGO SEGURA",
+  "birthdate": "2012-10-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "IS BUSQUETS",
+  "birthdate": "2012-05-02",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCO",
+  "last_name": "MAZUERA SABOGAL",
+  "birthdate": "2013-07-06",
+  "role": "player"
+ },
+ {
+  "first_name": "BERNAT",
+  "last_name": "PONT I SANS",
+  "birthdate": "2013-03-13",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "REIXACH AYATS",
+  "birthdate": "2012-07-28",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "RODRIGUEZ I GALERA",
+  "birthdate": "2013-12-04",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "SILVA ULLASTRES",
+  "birthdate": "2014-02-20",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "SILVA ULLASTRES",
+  "birthdate": "2014-02-20",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERT",
+  "last_name": "SOLDEVILA JIMENEZ",
+  "birthdate": "2012-12-03",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "VARELA I SATORRAS",
+  "birthdate": "2013-05-15",
+  "role": "player"
+ },
+ {
+  "first_name": "ISAAC",
+  "last_name": "ALGUERO OLIVER",
+  "birthdate": "1981-03-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARCAL",
+  "last_name": "ALSINA SOLER",
+  "birthdate": "1999-07-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARCAL",
+  "last_name": "ALSINA SOLER",
+  "birthdate": "1999-07-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIRET SUZIE",
+  "last_name": "LESTA FRANCL",
+  "birthdate": "1980-06-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "PRIETO ESPINOSA",
+  "birthdate": "1995-10-03",
+  "role": "staff"
+ }
+]

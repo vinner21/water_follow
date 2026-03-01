@@ -1,0 +1,140 @@
+[
+ {
+  "first_name": "GUILLEM",
+  "last_name": "ALVAREZ JOVER",
+  "birthdate": "2011-07-20",
+  "role": "player"
+ },
+ {
+  "first_name": "MANUEL",
+  "last_name": "CASTELLANO LOPEZ",
+  "birthdate": "2011-03-17",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "CATALAN ALMENA",
+  "birthdate": "2012-02-26",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "CLAROS BAGAN",
+  "birthdate": "2012-04-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "CONSUEGRA BARENYS",
+  "birthdate": "2011-06-16",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "GARCIA ABRIL",
+  "birthdate": "2013-06-09",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "GONZALEZ KRUKOWSKI",
+  "birthdate": "2012-08-06",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "LLISORGAS LOPEZ",
+  "birthdate": "2012-05-23",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "MIRALLES BACH",
+  "birthdate": "2013-06-26",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "MONTAÑO CASADO",
+  "birthdate": "2011-04-12",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO",
+  "last_name": "MORENO FERNANDEZ",
+  "birthdate": "2011-08-26",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERT",
+  "last_name": "NIETO COSTA",
+  "birthdate": "2012-04-10",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "NOGUERA MILA",
+  "birthdate": "2011-12-31",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "RODRIGUEZ CUENCA",
+  "birthdate": "2011-04-30",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "VIU CABIA",
+  "birthdate": "2013-05-06",
+  "role": "player"
+ },
+ {
+  "first_name": "MIRIAM",
+  "last_name": "ABRIL HORTA",
+  "birthdate": "1984-05-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "CARDENAL MARTINEZ",
+  "birthdate": "1981-01-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "CARDENAL MARTINEZ",
+  "birthdate": "1981-01-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "CARLOS",
+  "last_name": "DOMINGO CLAUS",
+  "birthdate": "1975-09-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "ELOI",
+  "last_name": "LLISORGAS PRUNA",
+  "birthdate": "1980-01-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "SANDRA",
+  "last_name": "LOPEZ MONGE",
+  "birthdate": "1979-05-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "RUIZ VICO",
+  "birthdate": "2002-04-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "RUIZ VICO",
+  "birthdate": "2002-04-16",
+  "role": "staff"
+ }
+]

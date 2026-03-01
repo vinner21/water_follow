@@ -1,0 +1,206 @@
+[
+ {
+  "first_name": "IRENE",
+  "last_name": "ASTASIO MARTINEZ",
+  "birthdate": "2012-09-29",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBA",
+  "last_name": "BOTA PALMA",
+  "birthdate": "2012-01-20",
+  "role": "player"
+ },
+ {
+  "first_name": "INES",
+  "last_name": "DAPENA NIEVA",
+  "birthdate": "2013-10-07",
+  "role": "player"
+ },
+ {
+  "first_name": "GAL·LA",
+  "last_name": "FERNANDEZ PALLAROLS",
+  "birthdate": "2013-05-22",
+  "role": "player"
+ },
+ {
+  "first_name": "CLOE",
+  "last_name": "FERNANDEZ VARGAS",
+  "birthdate": "2012-08-30",
+  "role": "player"
+ },
+ {
+  "first_name": "OLIVIA",
+  "last_name": "GOMEZ NAVARRO",
+  "birthdate": "2012-09-09",
+  "role": "player"
+ },
+ {
+  "first_name": "CANDELA",
+  "last_name": "GUERRERO CABRERA",
+  "birthdate": "2012-01-09",
+  "role": "player"
+ },
+ {
+  "first_name": "CLARA",
+  "last_name": "HERNÁNDEZ IBAÑEZ",
+  "birthdate": "2013-04-19",
+  "role": "player"
+ },
+ {
+  "first_name": "NAIA",
+  "last_name": "MEDINA RODRIGUEZ",
+  "birthdate": "2012-05-15",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "NAVARRO PRADO",
+  "birthdate": "2013-10-22",
+  "role": "player"
+ },
+ {
+  "first_name": "EMMA",
+  "last_name": "PALACIOS OTERO",
+  "birthdate": "2013-04-14",
+  "role": "player"
+ },
+ {
+  "first_name": "LIA",
+  "last_name": "PEREZ RUIZ",
+  "birthdate": "2012-08-25",
+  "role": "player"
+ },
+ {
+  "first_name": "MAR",
+  "last_name": "PROENZA ROS",
+  "birthdate": "2013-04-26",
+  "role": "player"
+ },
+ {
+  "first_name": "BERTA",
+  "last_name": "RUIZ MATA",
+  "birthdate": "2012-05-14",
+  "role": "player"
+ },
+ {
+  "first_name": "TESSA",
+  "last_name": "VESELINOVA LAZAROVA",
+  "birthdate": "2012-02-06",
+  "role": "player"
+ },
+ {
+  "first_name": "SERGIO",
+  "last_name": "ASTASIO CANO",
+  "birthdate": "1980-12-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "CABACAS BELMONTE",
+  "birthdate": "1978-09-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "CABACAS BELMONTE",
+  "birthdate": "1978-09-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "FERNANDEZ GARRIDO",
+  "birthdate": "1982-11-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "FERNANDEZ GARRIDO",
+  "birthdate": "1982-11-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIGUEL ANGEL ",
+  "last_name": "GIL MAGRO",
+  "birthdate": "1973-05-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIGUEL ANGEL ",
+  "last_name": "GIL MAGRO",
+  "birthdate": "1973-05-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANTONIO",
+  "last_name": "LIRIO GALIANO",
+  "birthdate": "1974-05-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "JUAN JOSE",
+  "last_name": "LOPEZ TRILLO",
+  "birthdate": "1981-11-14",
+  "role": "staff"
+ },
+ {
+  "first_name": "SERGIO",
+  "last_name": "MARTIN JESUS",
+  "birthdate": "1976-08-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "JONATAN",
+  "last_name": "MEDINA LOPEZ",
+  "birthdate": "1981-11-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "PEDRO ANTONIO ",
+  "last_name": "MONTES NAVARRO",
+  "birthdate": "1978-09-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "JESUS ",
+  "last_name": "NAVIO VALDERRAMA",
+  "birthdate": "1978-08-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "JESUS ",
+  "last_name": "NAVIO VALDERRAMA",
+  "birthdate": "1978-08-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "VICENS",
+  "last_name": "PASCUAL  RAMIS",
+  "birthdate": "1961-08-13",
+  "role": "staff"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "PIQUE CABALLERO",
+  "birthdate": "2001-08-19",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "ROS GARCIA",
+  "birthdate": "2003-09-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "ROS GARCIA",
+  "birthdate": "2003-09-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "SOLER PACHECO",
+  "birthdate": "2003-11-06",
+  "role": "staff"
+ }
+]

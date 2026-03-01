@@ -1,0 +1,140 @@
+[
+ {
+  "first_name": "DIANA",
+  "last_name": "CARRERAS GULIOIU",
+  "birthdate": "2009-09-27",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLOTA",
+  "last_name": "CASTELLANO NAVARRO",
+  "birthdate": "2008-10-25",
+  "role": "player"
+ },
+ {
+  "first_name": "ARIADNA",
+  "last_name": "DRAGO ESCOLA",
+  "birthdate": "2008-04-05",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCIA",
+  "last_name": "FERNANDEZ CABELLO",
+  "birthdate": "2010-02-18",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTINA",
+  "last_name": "FERNANDEZ MARTINEZ",
+  "birthdate": "2008-06-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIANA",
+  "last_name": "GALLEGO VILLAMAR",
+  "birthdate": "2008-12-07",
+  "role": "player"
+ },
+ {
+  "first_name": "AINHOA",
+  "last_name": "GOMEZ DEL AGUILA",
+  "birthdate": "2009-03-14",
+  "role": "player"
+ },
+ {
+  "first_name": "AITANA",
+  "last_name": "GUTIERREZ XAPELLI",
+  "birthdate": "2008-02-11",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIA",
+  "last_name": "MANSO MARTINEZ",
+  "birthdate": "2008-07-24",
+  "role": "player"
+ },
+ {
+  "first_name": "NOA",
+  "last_name": "MORAL CALVILLO",
+  "birthdate": "2010-03-03",
+  "role": "player"
+ },
+ {
+  "first_name": "JANA",
+  "last_name": "ORTEGA CANADELL",
+  "birthdate": "2008-01-29",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIONA",
+  "last_name": "ROYO BERTRAN",
+  "birthdate": "2009-06-08",
+  "role": "player"
+ },
+ {
+  "first_name": "ARLET",
+  "last_name": "SALAS PRAT",
+  "birthdate": "2011-04-19",
+  "role": "player"
+ },
+ {
+  "first_name": "ARLET",
+  "last_name": "SERRACANTA VENTURA",
+  "birthdate": "2010-01-21",
+  "role": "player"
+ },
+ {
+  "first_name": "NURIA",
+  "last_name": "SERRACANTA VENTURA",
+  "birthdate": "2008-02-17",
+  "role": "player"
+ },
+ {
+  "first_name": "SARA",
+  "last_name": "VAZQUEZ LLORENS",
+  "birthdate": "2010-01-21",
+  "role": "player"
+ },
+ {
+  "first_name": "JULIA",
+  "last_name": "VILASECA LOPEZ",
+  "birthdate": "2009-12-23",
+  "role": "player"
+ },
+ {
+  "first_name": "SARA",
+  "last_name": "MARTINEZ GONZALEZ ",
+  "birthdate": "1977-07-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANA MARIA",
+  "last_name": "MARTINEZ RUIZ",
+  "birthdate": "1975-06-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "PEREZ POLONIO",
+  "birthdate": "1984-03-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "FRANCESC",
+  "last_name": "SANCHEZ  CAMPOS",
+  "birthdate": "1987-01-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "DIDAC",
+  "last_name": "VERA CRISPI",
+  "birthdate": "2003-01-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDINA",
+  "last_name": "VILASECA VILASECA",
+  "birthdate": "1978-08-03",
+  "role": "staff"
+ }
+]

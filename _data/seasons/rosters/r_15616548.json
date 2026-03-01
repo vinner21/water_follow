@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "IGNASI",
+  "last_name": "ALJAMA BERZAS",
+  "birthdate": "2016-05-13",
+  "role": "player"
+ },
+ {
+  "first_name": "IAN",
+  "last_name": "BORTOLETTO NAVIO",
+  "birthdate": "2016-01-28",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "CHIQUILLO MARTINEZ ",
+  "birthdate": "2016-07-12",
+  "role": "player"
+ },
+ {
+  "first_name": "MARKEL",
+  "last_name": "FERNANDEZ QUERO",
+  "birthdate": "2017-01-19",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "GALVEZ PADILLA",
+  "birthdate": "2016-01-05",
+  "role": "player"
+ },
+ {
+  "first_name": "DIDAC",
+  "last_name": "GAVILAN LORENTE",
+  "birthdate": "2017-07-21",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "GUZMAN LUNA",
+  "birthdate": "2016-02-25",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "LLONCH MURILLO",
+  "birthdate": "2016-04-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ROURE",
+  "last_name": "PASTOR FONTCUBERTA",
+  "birthdate": "2016-01-27",
+  "role": "player"
+ },
+ {
+  "first_name": "MATEO",
+  "last_name": "PRIETO CAUDEVILLA",
+  "birthdate": "2016-12-12",
+  "role": "player"
+ },
+ {
+  "first_name": "ISAAC ",
+  "last_name": "REYES ORTIZ",
+  "birthdate": "2017-08-31",
+  "role": "player"
+ },
+ {
+  "first_name": "MAXIM ",
+  "last_name": "SUKHOMLYN",
+  "birthdate": "2016-09-26",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "VANCAMP HERNANDEZ",
+  "birthdate": "2016-12-15",
+  "role": "player"
+ },
+ {
+  "first_name": "ENRIC",
+  "last_name": "ARNELLA RUIZ",
+  "birthdate": "1992-06-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "MONTSERRAT",
+  "last_name": "FONTCUBERTA VIÑOLAS",
+  "birthdate": "1983-01-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARIA",
+  "last_name": "GALVEZ I VALDERRAMA",
+  "birthdate": "1975-06-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "GAVILAN CASTILLERO",
+  "birthdate": "1988-09-08",
+  "role": "staff"
+ },
+ {
+  "first_name": "RUPERT",
+  "last_name": "NAVARRO VIVES",
+  "birthdate": "1974-01-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANA",
+  "last_name": "PADILLA LOPEZ",
+  "birthdate": "1980-11-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "FERRAN",
+  "last_name": "PLANA AGUSTI",
+  "birthdate": "1982-10-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "CARLOTA",
+  "last_name": "TRIAS SOLE",
+  "birthdate": "1979-09-17",
+  "role": "staff"
+ }
+]

@@ -1,0 +1,98 @@
+[
+ {
+  "first_name": "Marc",
+  "last_name": "Aguilar Giralt",
+  "birthdate": "1990-01-09",
+  "role": "player"
+ },
+ {
+  "first_name": "Jordi",
+  "last_name": "Alvarez de Luna Sanchez",
+  "birthdate": "1987-08-03",
+  "role": "player"
+ },
+ {
+  "first_name": "Ricardo",
+  "last_name": "Barguñó Guerra",
+  "birthdate": "1989-06-25",
+  "role": "player"
+ },
+ {
+  "first_name": "Ernest",
+  "last_name": "Bou Grau",
+  "birthdate": "1989-05-12",
+  "role": "player"
+ },
+ {
+  "first_name": "David",
+  "last_name": "Casanovas Ferrer",
+  "birthdate": "1987-05-27",
+  "role": "player"
+ },
+ {
+  "first_name": "Jordi",
+  "last_name": "Costa Mayor",
+  "birthdate": "1989-04-11",
+  "role": "player"
+ },
+ {
+  "first_name": "Alvaro",
+  "last_name": "Fernandez de Sevilla Iglesias",
+  "birthdate": "1991-02-27",
+  "role": "player"
+ },
+ {
+  "first_name": "Adrian",
+  "last_name": "Garcia Ruiz",
+  "birthdate": "1994-04-19",
+  "role": "player"
+ },
+ {
+  "first_name": "Roman",
+  "last_name": "Hernando Navarro",
+  "birthdate": "1990-03-25",
+  "role": "player"
+ },
+ {
+  "first_name": "Carlos",
+  "last_name": "Linati Guitart",
+  "birthdate": "1989-05-31",
+  "role": "player"
+ },
+ {
+  "first_name": "Enrique",
+  "last_name": "Marin Moreno",
+  "birthdate": "1983-02-04",
+  "role": "player"
+ },
+ {
+  "first_name": "Yara",
+  "last_name": "Niso Galan",
+  "birthdate": "1988-08-27",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERT",
+  "last_name": "PARREÑO SAMPER",
+  "birthdate": "1987-01-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "PEREZ ZAPATA",
+  "birthdate": "1987-03-06",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLERMO",
+  "last_name": "SAMANIEGO MÜLLER",
+  "birthdate": "1987-08-23",
+  "role": "player"
+ },
+ {
+  "first_name": "Alvaro",
+  "last_name": "Tapia Bañobre",
+  "birthdate": "1991-04-28",
+  "role": "player"
+ }
+]

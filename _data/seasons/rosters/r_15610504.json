@@ -1,0 +1,182 @@
+[
+ {
+  "first_name": "ETNA",
+  "last_name": "CABALLERO RODRIGUEZ",
+  "birthdate": "2014-01-19",
+  "role": "player"
+ },
+ {
+  "first_name": "CLOE",
+  "last_name": "CLAROS BAGAN",
+  "birthdate": "2014-04-09",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "GARCIA ABRIL",
+  "birthdate": "2013-06-09",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "GELADA GIL",
+  "birthdate": "2013-03-07",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO ",
+  "last_name": "GONZALEZ JORGE",
+  "birthdate": "2013-07-29",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "GONZALEZ KRUKOWSKI",
+  "birthdate": "2014-11-26",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "GONZALEZ PUIG",
+  "birthdate": "2014-04-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ESTEL",
+  "last_name": "GONZALEZ REIXACH",
+  "birthdate": "2013-06-04",
+  "role": "player"
+ },
+ {
+  "first_name": "TXELL",
+  "last_name": "MARI LOPEZ",
+  "birthdate": "2013-04-16",
+  "role": "player"
+ },
+ {
+  "first_name": "SARA",
+  "last_name": "MATYAS SOLA",
+  "birthdate": "2013-03-16",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "MIRALLES BACH",
+  "birthdate": "2013-06-26",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "MORENO DOMENECH",
+  "birthdate": "2013-06-17",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "MORENO GARCIA",
+  "birthdate": "2015-02-28",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "NOGUERA TRIPIANA",
+  "birthdate": "2015-05-16",
+  "role": "player"
+ },
+ {
+  "first_name": "NORA",
+  "last_name": "PARES OROZCO",
+  "birthdate": "2013-08-02",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "PERIANES CANTON",
+  "birthdate": "2017-09-27",
+  "role": "player"
+ },
+ {
+  "first_name": "JULIA",
+  "last_name": "PLANAS CABANILLAS ",
+  "birthdate": "2013-06-19",
+  "role": "player"
+ },
+ {
+  "first_name": "JANA",
+  "last_name": "PONSA FOGUET",
+  "birthdate": "2014-03-19",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "RODRIGUEZ SERRANO",
+  "birthdate": "2013-08-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ANDREU ",
+  "last_name": "RUSTULLET FERREIRO",
+  "birthdate": "2013-06-17",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "TORNABELL GONZALVO",
+  "birthdate": "2013-10-20",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "VIU CABIA",
+  "birthdate": "2013-05-06",
+  "role": "player"
+ },
+ {
+  "first_name": "MIRIAM",
+  "last_name": "ABRIL HORTA",
+  "birthdate": "1984-05-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANIOL",
+  "last_name": "BLANCH PASSOLS",
+  "birthdate": "2003-01-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "LOLI",
+  "last_name": "CABANILLAS CORRECHER",
+  "birthdate": "1979-10-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "CARDENAL MARTINEZ",
+  "birthdate": "1981-01-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "CARDENAL MARTINEZ",
+  "birthdate": "1981-01-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "GONZALEZ ASCARIZ",
+  "birthdate": "1982-12-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "RUIZ VICO",
+  "birthdate": "2002-04-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAMIRO ANDRES",
+  "last_name": "VEICH LOALDI",
+  "birthdate": "1988-12-26",
+  "role": "staff"
+ }
+]

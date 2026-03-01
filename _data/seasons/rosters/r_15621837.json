@@ -1,0 +1,140 @@
+[
+ {
+  "first_name": "HUGO",
+  "last_name": "AUBA LORENZO",
+  "birthdate": "2014-03-02",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "BARROSO DEL POZO",
+  "birthdate": "2016-04-01",
+  "role": "player"
+ },
+ {
+  "first_name": "IAN ENRIC",
+  "last_name": "CARMONA PERDOMO",
+  "birthdate": "2016-06-18",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "CONESA RUIZ",
+  "birthdate": "2015-01-25",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "CUACOS LAGUNAS",
+  "birthdate": "2015-03-26",
+  "role": "player"
+ },
+ {
+  "first_name": "SEBASTIAN",
+  "last_name": "FERNANDEZ REDONDO",
+  "birthdate": "2014-08-29",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "GARCIA ALONSO",
+  "birthdate": "2015-05-19",
+  "role": "player"
+ },
+ {
+  "first_name": "IAN ",
+  "last_name": "GARCIA ENRIQUEZ",
+  "birthdate": "2014-06-12",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "GARCIA MORA",
+  "birthdate": "2014-10-20",
+  "role": "player"
+ },
+ {
+  "first_name": "NICO",
+  "last_name": "GARCIA PAISAL ",
+  "birthdate": "2015-12-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "LOPEZ SATORI",
+  "birthdate": "2015-04-27",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "MORALES GARCIA",
+  "birthdate": "2014-07-22",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO",
+  "last_name": "RODRIGUEZ CHUADSRI",
+  "birthdate": "2014-06-23",
+  "role": "player"
+ },
+ {
+  "first_name": "AARON",
+  "last_name": "ROMERO SALAS",
+  "birthdate": "2015-05-16",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "RUIZ YESTE",
+  "birthdate": "2014-08-26",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "SENDROS FERNANDEZ",
+  "birthdate": "2015-08-11",
+  "role": "player"
+ },
+ {
+  "first_name": "JAUME ",
+  "last_name": "CAMERINO ALONSO",
+  "birthdate": "2006-06-24",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "CARRASCO MADRIDANO",
+  "birthdate": "1999-07-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "CARRASCO MADRIDANO",
+  "birthdate": "1999-07-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "LUIS",
+  "last_name": "GARCIA ALONSO",
+  "birthdate": "1978-11-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "GOMEZ ARIAS",
+  "birthdate": "1979-06-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "DAVID ",
+  "last_name": "MORALES AGUILERA ",
+  "birthdate": "1981-06-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "LUCAS",
+  "last_name": "VAN DOORN PARDO",
+  "birthdate": "2005-09-19",
+  "role": "staff"
+ }
+]

@@ -1,0 +1,116 @@
+[
+ {
+  "first_name": "DANIEL",
+  "last_name": "ARTAJONA PUJADAS",
+  "birthdate": "2015-03-16",
+  "role": "player"
+ },
+ {
+  "first_name": "NATALIA",
+  "last_name": "ARTAJONA PUJADAS",
+  "birthdate": "2015-03-16",
+  "role": "player"
+ },
+ {
+  "first_name": "DIEGO",
+  "last_name": "BARRIO MOLINERO ",
+  "birthdate": "2015-03-20",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "CASANOVA MUNNE",
+  "birthdate": "2014-06-12",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "CASANOVA MUNNE",
+  "birthdate": "2015-09-15",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "EBRA MARTINEZ",
+  "birthdate": "2014-09-20",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "FERREIRO ARTILES",
+  "birthdate": "2015-04-13",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "FERRER LABORDETA",
+  "birthdate": "2017-01-28",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTIN",
+  "last_name": "GARCIA GONZALO-BILBAO",
+  "birthdate": "2014-01-22",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "GARCIA ORTUÑO",
+  "birthdate": "2014-08-21",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "NAVARRO GRASES",
+  "birthdate": "2017-07-23",
+  "role": "player"
+ },
+ {
+  "first_name": "ROC",
+  "last_name": "NAVARRO GRASES",
+  "birthdate": "2015-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "UNAI",
+  "last_name": "PASTOR ORTEGA ",
+  "birthdate": "2014-06-09",
+  "role": "player"
+ },
+ {
+  "first_name": "PEDRO-EDUARDO",
+  "last_name": "SERON MONZO",
+  "birthdate": "2015-10-06",
+  "role": "player"
+ },
+ {
+  "first_name": "GAIZKA",
+  "last_name": "URBINA FERNANDEZ",
+  "birthdate": "2017-04-20",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "ALCAZAR PEREZ",
+  "birthdate": "1957-04-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "FRANSESC",
+  "last_name": "CASANOVA DOMENECH",
+  "birthdate": "1978-07-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIREIA",
+  "last_name": "GRASES MARTINEZ",
+  "birthdate": "1981-06-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "EDGAR",
+  "last_name": "TERRAZA RAMIREZ",
+  "birthdate": "2002-04-27",
+  "role": "staff"
+ }
+]

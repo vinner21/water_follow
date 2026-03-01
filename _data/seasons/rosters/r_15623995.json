@@ -1,0 +1,170 @@
+[
+ {
+  "first_name": "JAN",
+  "last_name": "AVIÑO SANCHEZ",
+  "birthdate": "2010-09-01",
+  "role": "player"
+ },
+ {
+  "first_name": "SALVADOR LEONARDO",
+  "last_name": "CASTILLO RAMOS",
+  "birthdate": "2010-10-15",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "GALLARIN ROMERO",
+  "birthdate": "2010-03-05",
+  "role": "player"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "GONZALO HUAMAN",
+  "birthdate": "2012-12-03",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "GORDO NATAL",
+  "birthdate": "2010-07-28",
+  "role": "player"
+ },
+ {
+  "first_name": "LUIS IGNACIO",
+  "last_name": "LLANOS SHIMABUKURO",
+  "birthdate": "2010-12-17",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "LLORCA PEÑA",
+  "birthdate": "2010-02-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "LOPEZ FILELLA",
+  "birthdate": "2011-06-17",
+  "role": "player"
+ },
+ {
+  "first_name": "ARON",
+  "last_name": "LUKACS",
+  "birthdate": "2012-08-18",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "ORTEGA ARABOU",
+  "birthdate": "2010-07-31",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "PERISSE I GOMEZ",
+  "birthdate": "2010-04-27",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "PERISSE I GOMEZ",
+  "birthdate": "2010-04-27",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX ",
+  "last_name": "SANCHEZ LOPEZ",
+  "birthdate": "2011-04-07",
+  "role": "player"
+ },
+ {
+  "first_name": "THEODORO",
+  "last_name": "SCHMIDT QUIRINO",
+  "birthdate": "2011-08-02",
+  "role": "player"
+ },
+ {
+  "first_name": "MAXIMILIANO ",
+  "last_name": "SCHMIDT QUIRINO ",
+  "birthdate": "2011-08-02",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "SUAREZ BENAVENT",
+  "birthdate": "2010-03-10",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "SUPRYHAN LATUKHIN",
+  "birthdate": "2010-03-28",
+  "role": "player"
+ },
+ {
+  "first_name": "GABRIEL",
+  "last_name": "TARASCO ARACIL",
+  "birthdate": "2011-04-29",
+  "role": "player"
+ },
+ {
+  "first_name": "ZETIC",
+  "last_name": "VICENTE WANG",
+  "birthdate": "2011-02-21",
+  "role": "player"
+ },
+ {
+  "first_name": "SIMON",
+  "last_name": "VICIEN LERA",
+  "birthdate": "2011-07-04",
+  "role": "player"
+ },
+ {
+  "first_name": "GILBERTO",
+  "last_name": "CACERES",
+  "birthdate": "1968-11-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "COLOMER ARBOLI",
+  "birthdate": "1967-01-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "TIZZIANO",
+  "last_name": "CONTI",
+  "birthdate": "2002-02-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "GALLARIN MUÑOZ",
+  "birthdate": "1972-10-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "CARLOS",
+  "last_name": "GORDO FUENTES",
+  "birthdate": "1976-01-24",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE GREGORIO",
+  "last_name": "MATHUS GOZALEZ",
+  "birthdate": "1987-02-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "MANUEL",
+  "last_name": "SUAREZ GARCIA",
+  "birthdate": "1961-11-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "LUIS MIGUEL",
+  "last_name": "SUAREZ NOVO",
+  "birthdate": "1974-03-04",
+  "role": "staff"
+ }
+]

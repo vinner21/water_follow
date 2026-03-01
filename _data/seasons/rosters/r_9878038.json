@@ -1,0 +1,110 @@
+[
+ {
+  "first_name": "MAR",
+  "last_name": "CARRASCO SALLENT",
+  "birthdate": "2004-10-20",
+  "role": "player"
+ },
+ {
+  "first_name": "IRENE",
+  "last_name": "CASADO LOPEZ",
+  "birthdate": "2005-03-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ELIA",
+  "last_name": "DOT HIDALGO",
+  "birthdate": "2004-09-13",
+  "role": "player"
+ },
+ {
+  "first_name": "LIDIA",
+  "last_name": "DOT HIDALGO",
+  "birthdate": "2003-06-26",
+  "role": "player"
+ },
+ {
+  "first_name": "BRUNA",
+  "last_name": "DOT I HIDALGO",
+  "birthdate": "2008-11-29",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "FERNANDEZ LOPEZ",
+  "birthdate": "2003-02-15",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "LEITON ARRONES",
+  "birthdate": "2000-04-27",
+  "role": "player"
+ },
+ {
+  "first_name": "INGRID",
+  "last_name": "MEJA MARTIN",
+  "birthdate": "2006-08-29",
+  "role": "player"
+ },
+ {
+  "first_name": "SOFIA",
+  "last_name": "MIRO GARCIA",
+  "birthdate": "2003-01-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ANDREA",
+  "last_name": "MOYA CORTES",
+  "birthdate": "2005-08-05",
+  "role": "player"
+ },
+ {
+  "first_name": "AINHOA",
+  "last_name": "MUÑOZ PADILLA",
+  "birthdate": "2006-10-08",
+  "role": "player"
+ },
+ {
+  "first_name": "INGRID",
+  "last_name": "RODRIGUEZ GARCIA",
+  "birthdate": "2008-07-14",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIA",
+  "last_name": "RUBIO MADURELL",
+  "birthdate": "2003-10-10",
+  "role": "player"
+ },
+ {
+  "first_name": "SILVIANA CAROLINA",
+  "last_name": "SILVA ESPINEL",
+  "birthdate": "2006-01-20",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTA",
+  "last_name": "SILVA MORALES",
+  "birthdate": "2000-10-16",
+  "role": "player"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "MARTÍ LORA",
+  "birthdate": "1974-04-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "BELEN",
+  "last_name": "SANCHEZ PICORELLI",
+  "birthdate": "1978-11-14",
+  "role": "staff"
+ },
+ {
+  "first_name": "CARLOTA",
+  "last_name": "TRIAS SOLE",
+  "birthdate": "1979-09-17",
+  "role": "staff"
+ }
+]

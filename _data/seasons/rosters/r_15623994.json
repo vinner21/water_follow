@@ -1,0 +1,194 @@
+[
+ {
+  "first_name": "NATAL",
+  "last_name": "AGUILAR PEREZ",
+  "birthdate": "2009-07-05",
+  "role": "player"
+ },
+ {
+  "first_name": "SALVADOR LEONARDO",
+  "last_name": "CASTILLO RAMOS",
+  "birthdate": "2010-10-15",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "GALLARIN ROMERO",
+  "birthdate": "2010-03-05",
+  "role": "player"
+ },
+ {
+  "first_name": "PABLO",
+  "last_name": "GALLEGO CUADRADO",
+  "birthdate": "2008-12-03",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCO",
+  "last_name": "GONZALEZ GREGORI",
+  "birthdate": "2009-08-18",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "GORDO NATAL",
+  "birthdate": "2010-07-28",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCEL",
+  "last_name": "GUTIERREZ FABREGAT",
+  "birthdate": "2008-05-30",
+  "role": "player"
+ },
+ {
+  "first_name": "TIKHON",
+  "last_name": "LABUZOV",
+  "birthdate": "2009-02-02",
+  "role": "player"
+ },
+ {
+  "first_name": "LUIS IGNACIO",
+  "last_name": "LLANOS SHIMABUKURO",
+  "birthdate": "2010-12-17",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "LLORCA PEÑA",
+  "birthdate": "2010-02-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "LOPEZ FILELLA",
+  "birthdate": "2011-06-17",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "MANTECA FERNANDEZ",
+  "birthdate": "2009-11-06",
+  "role": "player"
+ },
+ {
+  "first_name": "NESTOR",
+  "last_name": "MANTECA FERNANDEZ",
+  "birthdate": "2009-11-06",
+  "role": "player"
+ },
+ {
+  "first_name": "OT",
+  "last_name": "MARTINEZ GALLARDO",
+  "birthdate": "2009-01-13",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIO",
+  "last_name": "MOREIRA BUENOSVINOS",
+  "birthdate": "2009-09-21",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "PERISSE I GOMEZ",
+  "birthdate": "2010-04-27",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "PERISSE I GOMEZ",
+  "birthdate": "2010-04-27",
+  "role": "player"
+ },
+ {
+  "first_name": "UNAI",
+  "last_name": "SANCHEZ OBIOL",
+  "birthdate": "2008-04-14",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "SAVARIS I CATAFAL",
+  "birthdate": "2009-11-02",
+  "role": "player"
+ },
+ {
+  "first_name": "MAXIMILIANO ",
+  "last_name": "SCHMIDT QUIRINO ",
+  "birthdate": "2011-08-02",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "SUAREZ BENAVENT",
+  "birthdate": "2010-03-10",
+  "role": "player"
+ },
+ {
+  "first_name": "ASIER",
+  "last_name": "SUAREZ HERNANDEZ",
+  "birthdate": "2009-08-18",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "SUPRYHAN LATUKHIN",
+  "birthdate": "2010-03-28",
+  "role": "player"
+ },
+ {
+  "first_name": "GABRIEL",
+  "last_name": "TARASCO ARACIL",
+  "birthdate": "2011-04-29",
+  "role": "player"
+ },
+ {
+  "first_name": "ZETIC",
+  "last_name": "VICENTE WANG",
+  "birthdate": "2011-02-21",
+  "role": "player"
+ },
+ {
+  "first_name": "SIMON",
+  "last_name": "VICIEN LERA",
+  "birthdate": "2011-07-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "VILLALBA VALLS",
+  "birthdate": "2009-02-25",
+  "role": "player"
+ },
+ {
+  "first_name": "VICTORIA",
+  "last_name": "CUADRADO CANO",
+  "birthdate": "1963-08-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "GALLARIN MUÑOZ",
+  "birthdate": "1972-10-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "GALLARIN MUÑOZ",
+  "birthdate": "1972-10-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "SUAREZ CARMONA",
+  "birthdate": "1978-10-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "LUIS MIGUEL",
+  "last_name": "SUAREZ NOVO",
+  "birthdate": "1974-03-04",
+  "role": "staff"
+ }
+]

@@ -1,0 +1,122 @@
+[
+ {
+  "first_name": "TANIA",
+  "last_name": "ARPA DURAN",
+  "birthdate": "2013-03-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ONA",
+  "last_name": "BONET AZNAR",
+  "birthdate": "2014-03-22",
+  "role": "player"
+ },
+ {
+  "first_name": "DUNA",
+  "last_name": "CAPELLERA COMAMALA",
+  "birthdate": "2014-02-03",
+  "role": "player"
+ },
+ {
+  "first_name": "DUNA",
+  "last_name": "CAPELLERA COMAMALA",
+  "birthdate": "2014-02-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ARLET",
+  "last_name": "COLL GUELL",
+  "birthdate": "2013-02-20",
+  "role": "player"
+ },
+ {
+  "first_name": "ISONA",
+  "last_name": "DIAZ VILA",
+  "birthdate": "2014-06-07",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBA",
+  "last_name": "ESTAÑOL SANTAMARIA",
+  "birthdate": "2013-10-07",
+  "role": "player"
+ },
+ {
+  "first_name": "NAILA",
+  "last_name": "GIRONES PUELL",
+  "birthdate": "2015-09-29",
+  "role": "player"
+ },
+ {
+  "first_name": "NOA",
+  "last_name": "RIERA CANELADA",
+  "birthdate": "2014-09-10",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIA",
+  "last_name": "RODRIGUEZ OLIVER",
+  "birthdate": "2014-02-20",
+  "role": "player"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "SERRA RODRIGUEZ",
+  "birthdate": "2014-04-17",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTINA",
+  "last_name": "TARRATS PLANAS",
+  "birthdate": "2013-08-09",
+  "role": "player"
+ },
+ {
+  "first_name": "IRENE",
+  "last_name": "TEIXIDOR REINA",
+  "birthdate": "2013-04-14",
+  "role": "player"
+ },
+ {
+  "first_name": "VALENTINA",
+  "last_name": "VIM RAMIO",
+  "birthdate": "2013-06-04",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCAL",
+  "last_name": "ALSINA SOLER",
+  "birthdate": "1999-07-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "ARPA PLANELLA",
+  "birthdate": "1978-11-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "CLARA",
+  "last_name": "DE LA TORRE CORONA",
+  "birthdate": "1995-04-14",
+  "role": "staff"
+ },
+ {
+  "first_name": "BERTA",
+  "last_name": "DURAN",
+  "birthdate": "1979-08-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "PRIETO ESPINOSA",
+  "birthdate": "1995-10-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "RIERA ROS",
+  "birthdate": "1973-05-10",
+  "role": "staff"
+ }
+]

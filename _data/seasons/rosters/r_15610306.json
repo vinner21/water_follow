@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "EMMA",
+  "last_name": "ARANDA ESCRIG",
+  "birthdate": "2015-05-24",
+  "role": "player"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "CURTO ESCORIHUELA",
+  "birthdate": "2014-08-11",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "FUENTES MORENO",
+  "birthdate": "2014-05-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBA",
+  "last_name": "GALVEZ BELMONTE",
+  "birthdate": "2014-12-02",
+  "role": "player"
+ },
+ {
+  "first_name": "SOFIA",
+  "last_name": "GARCIA RIZA",
+  "birthdate": "2014-08-23",
+  "role": "player"
+ },
+ {
+  "first_name": "CANDELA ",
+  "last_name": "GONZALEZ GONZALEZ",
+  "birthdate": "2015-07-15",
+  "role": "player"
+ },
+ {
+  "first_name": "GALA",
+  "last_name": "HIDROVO TOALA",
+  "birthdate": "2015-09-11",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "MARTIN LOPEZ",
+  "birthdate": "2015-07-27",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTINA",
+  "last_name": "PEREZ FERNANDEZ",
+  "birthdate": "2015-11-02",
+  "role": "player"
+ },
+ {
+  "first_name": "VALLE",
+  "last_name": "PEREZ PRIOR",
+  "birthdate": "2015-07-09",
+  "role": "player"
+ },
+ {
+  "first_name": "MARINA",
+  "last_name": "PONS VAZQUEZ",
+  "birthdate": "2015-01-15",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "ALVARIÑO CASTILLO",
+  "birthdate": "2000-09-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "ISABEL",
+  "last_name": "ESCORIUELA MERCADER",
+  "birthdate": "1980-05-18",
+  "role": "staff"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "MORENO PEREZ",
+  "birthdate": "2003-08-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "MORENO PEREZ",
+  "birthdate": "2003-08-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "PEIDRO CAPARROS",
+  "birthdate": "1988-05-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "PEIDRO CAPARROS",
+  "birthdate": "1988-05-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE ALBERTO ",
+  "last_name": "PERALTA RODRIGUEZ",
+  "birthdate": "1995-04-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE ALBERTO ",
+  "last_name": "PERALTA RODRIGUEZ",
+  "birthdate": "1995-04-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "FATIMA MONSERRATD",
+  "last_name": "SALCEDO VELAZQUEZ",
+  "birthdate": "2003-05-13",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARTA",
+  "last_name": "UNGRIA SECO",
+  "birthdate": "2002-03-08",
+  "role": "staff"
+ }
+]

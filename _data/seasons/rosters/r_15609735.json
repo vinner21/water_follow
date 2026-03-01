@@ -1,0 +1,170 @@
+[
+ {
+  "first_name": "BIEL",
+  "last_name": "AYAN TUGAS",
+  "birthdate": "2013-05-27",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "BERNARD GOBERNA",
+  "birthdate": "2013-11-09",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "CAMPS RAMIREZ",
+  "birthdate": "2012-11-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "COLAS HIJANO",
+  "birthdate": "2013-11-29",
+  "role": "player"
+ },
+ {
+  "first_name": "VICTOR ",
+  "last_name": "COLAS HIJANO",
+  "birthdate": "2016-02-17",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "FREIXES BORZUNOV",
+  "birthdate": "2013-06-26",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEIX",
+  "last_name": "KELLY URIEL",
+  "birthdate": "2012-03-16",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "MARIN LLORT",
+  "birthdate": "2012-02-14",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCEL",
+  "last_name": "MARTI SOLE",
+  "birthdate": "2012-08-31",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "MAS DE LES VALLS DE MEDINA",
+  "birthdate": "2012-01-12",
+  "role": "player"
+ },
+ {
+  "first_name": "ALESSANDRO",
+  "last_name": "MILLAN VANNONI",
+  "birthdate": "2012-06-18",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "MUAKUKU MOSCARDO",
+  "birthdate": "2013-01-06",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "NADAL PONS",
+  "birthdate": "2013-06-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "PEREZ EGEA",
+  "birthdate": "2012-02-03",
+  "role": "player"
+ },
+ {
+  "first_name": "MATEU",
+  "last_name": "PEREZ RODRIGO",
+  "birthdate": "2013-10-06",
+  "role": "player"
+ },
+ {
+  "first_name": "BERNAT",
+  "last_name": "SAPERAS ESTADELLA",
+  "birthdate": "2012-02-07",
+  "role": "player"
+ },
+ {
+  "first_name": "MAXIM",
+  "last_name": "ULRICH",
+  "birthdate": "2013-09-20",
+  "role": "player"
+ },
+ {
+  "first_name": "F. XAVIER",
+  "last_name": "BERNADI MISIEGO",
+  "birthdate": "1967-02-08",
+  "role": "staff"
+ },
+ {
+  "first_name": "MATILDE",
+  "last_name": "DE MIGUEL RUBIO",
+  "birthdate": "1964-05-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIGUEL",
+  "last_name": "HERNANDO GARCIA",
+  "birthdate": "1982-03-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIGUEL",
+  "last_name": "HERNANDO GARCIA",
+  "birthdate": "1982-03-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALBERTO",
+  "last_name": "MARIN GIMENEZ",
+  "birthdate": "1972-05-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAHZEEL",
+  "last_name": "MARTINEZ ESPEJO",
+  "birthdate": "1979-12-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "MASSO GARCIA",
+  "birthdate": "2000-06-13",
+  "role": "staff"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "MASSO GARCIA",
+  "birthdate": "2000-06-13",
+  "role": "staff"
+ },
+ {
+  "first_name": "NATALIA",
+  "last_name": "MOSCARDO GARCIA",
+  "birthdate": "1981-09-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "EVA",
+  "last_name": "URIEL ROS",
+  "birthdate": "1975-01-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "ZAMORA CASANOVA",
+  "birthdate": "1997-03-22",
+  "role": "staff"
+ }
+]

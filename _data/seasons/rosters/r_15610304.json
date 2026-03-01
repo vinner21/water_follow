@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "MARC",
+  "last_name": "BALLARIN GARCIA",
+  "birthdate": "2015-09-12",
+  "role": "player"
+ },
+ {
+  "first_name": "ELIAN",
+  "last_name": "BRITO RUIZ",
+  "birthdate": "2014-05-20",
+  "role": "player"
+ },
+ {
+  "first_name": "ERNEST",
+  "last_name": "CANNAN SANCHEZ",
+  "birthdate": "2014-06-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "FERRERAS PEREZ",
+  "birthdate": "2014-02-28",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIK",
+  "last_name": "HERRERA QUINTAIROS",
+  "birthdate": "2015-01-16",
+  "role": "player"
+ },
+ {
+  "first_name": "IKER ",
+  "last_name": "JIMENEZ BAUTISTA ",
+  "birthdate": "2016-05-22",
+  "role": "player"
+ },
+ {
+  "first_name": "JOEL ",
+  "last_name": "LASECA MORENO ",
+  "birthdate": "2015-02-19",
+  "role": "player"
+ },
+ {
+  "first_name": "ENRIC",
+  "last_name": "LLORENS MIRON",
+  "birthdate": "2015-01-12",
+  "role": "player"
+ },
+ {
+  "first_name": "MARKEL",
+  "last_name": "LOPEZ ROJO",
+  "birthdate": "2015-03-01",
+  "role": "player"
+ },
+ {
+  "first_name": "YAGO",
+  "last_name": "LOPEZ SANCHEZ",
+  "birthdate": "2017-02-08",
+  "role": "player"
+ },
+ {
+  "first_name": "PAUL ALEJANDRO",
+  "last_name": "RODRIGUEZ MONTEZUMA",
+  "birthdate": "2015-10-22",
+  "role": "player"
+ },
+ {
+  "first_name": "BERNAT",
+  "last_name": "ROSELL CORTES",
+  "birthdate": "2015-07-15",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIO",
+  "last_name": "RUIZ RIVERO",
+  "birthdate": "2014-05-19",
+  "role": "player"
+ },
+ {
+  "first_name": "JULES CLAUDIO",
+  "last_name": "SPITERI",
+  "birthdate": "2014-12-18",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCA",
+  "last_name": "VEREDAS BATLLE",
+  "birthdate": "2015-10-07",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "ALVARIÑO CASTILLO",
+  "birthdate": "2000-09-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "RUBEN",
+  "last_name": "LASECA GOMEZ ",
+  "birthdate": "1978-08-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "MORENO PEREZ",
+  "birthdate": "2003-08-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "MORENO PEREZ",
+  "birthdate": "2003-08-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARIA CONCEPCION ",
+  "last_name": "PEREZ LUCAS",
+  "birthdate": "1979-12-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "FATIMA MONSERRATD",
+  "last_name": "SALCEDO VELAZQUEZ",
+  "birthdate": "2003-05-13",
+  "role": "staff"
+ }
+]

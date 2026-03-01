@@ -1,0 +1,182 @@
+[
+ {
+  "first_name": "MAX",
+  "last_name": "ALEMANY LESMA",
+  "birthdate": "2008-08-18",
+  "role": "player"
+ },
+ {
+  "first_name": "REDA",
+  "last_name": "ARAB BEKKAL",
+  "birthdate": "2009-01-02",
+  "role": "player"
+ },
+ {
+  "first_name": "NATHAN PETER",
+  "last_name": "BAUER",
+  "birthdate": "2008-09-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEJANDRO",
+  "last_name": "CALERO RUIZ",
+  "birthdate": "2011-03-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ENZO",
+  "last_name": "CARRASCO GONZALEZ",
+  "birthdate": "2009-07-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ALESSANDRO",
+  "last_name": "COLTURI",
+  "birthdate": "2009-03-12",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "CURTO ESCORIHUELA",
+  "birthdate": "2008-02-03",
+  "role": "player"
+ },
+ {
+  "first_name": "DANTE",
+  "last_name": "CUSCURITA GRIFONI",
+  "birthdate": "2010-04-09",
+  "role": "player"
+ },
+ {
+  "first_name": "JAXON CARL",
+  "last_name": "FAAST",
+  "birthdate": "2010-04-26",
+  "role": "player"
+ },
+ {
+  "first_name": "GABRIEL ZSOMBOR",
+  "last_name": "GARWAH",
+  "birthdate": "2008-05-23",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "GUERRERO DOMINGUEZ",
+  "birthdate": "2009-08-18",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "IZA TRONCONE",
+  "birthdate": "2011-01-08",
+  "role": "player"
+ },
+ {
+  "first_name": "SOUFIAN",
+  "last_name": "MAGHNINE ANANE",
+  "birthdate": "2008-10-02",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "MARTI CIVICO",
+  "birthdate": "2008-05-02",
+  "role": "player"
+ },
+ {
+  "first_name": "TOMAS WILLIAM",
+  "last_name": "MCCARTHY",
+  "birthdate": "2009-02-19",
+  "role": "player"
+ },
+ {
+  "first_name": "LOGAN STEVE",
+  "last_name": "NARVAEZ VIGO",
+  "birthdate": "2010-02-24",
+  "role": "player"
+ },
+ {
+  "first_name": "LOGAN STEVE",
+  "last_name": "NARVAEZ VIGO",
+  "birthdate": "2010-02-24",
+  "role": "player"
+ },
+ {
+  "first_name": "LOGAN STEVE",
+  "last_name": "NARVAEZ VIGO",
+  "birthdate": "2010-02-24",
+  "role": "player"
+ },
+ {
+  "first_name": "IAGO",
+  "last_name": "OLLERO PÉREZ",
+  "birthdate": "2010-09-23",
+  "role": "player"
+ },
+ {
+  "first_name": "JUAN IGNACIO",
+  "last_name": "PAÑELLA LIMA",
+  "birthdate": "2011-07-04",
+  "role": "player"
+ },
+ {
+  "first_name": "JAUME",
+  "last_name": "PRAT BERNAL",
+  "birthdate": "2008-07-04",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCA",
+  "last_name": "ROTTA BARSOTTI",
+  "birthdate": "2011-03-07",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERTO",
+  "last_name": "RUIZ CALVO",
+  "birthdate": "2010-03-30",
+  "role": "player"
+ },
+ {
+  "first_name": "GUIU",
+  "last_name": "RUIZ GARCIA",
+  "birthdate": "2010-07-03",
+  "role": "player"
+ },
+ {
+  "first_name": "GUIU",
+  "last_name": "RUIZ GARCIA",
+  "birthdate": "2010-07-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ANA ISABEL ",
+  "last_name": "CIVICO RUBIO",
+  "birthdate": "1974-01-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "ISABEL",
+  "last_name": "ESCORIUELA MERCADER",
+  "birthdate": "1980-05-18",
+  "role": "staff"
+ },
+ {
+  "first_name": "FERNANDO",
+  "last_name": "GUERRERO LAMBEA",
+  "birthdate": "1955-03-18",
+  "role": "staff"
+ },
+ {
+  "first_name": "GUSTAVO",
+  "last_name": "MARCOS HERRERO",
+  "birthdate": "1972-12-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "PLA OTERO",
+  "birthdate": "1988-09-28",
+  "role": "staff"
+ }
+]
