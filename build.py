@@ -560,16 +560,16 @@ def collect_tournament_data(tournament, club_id, refresh_rosters=False, is_curre
         rosters = dict(cached)
 
         if is_current_season:
-            # Auto-refresh OUR teams if cache is missing or older than 30 days
-            our_to_fetch = set()
-            for t_id in our_team_ids:
+            # Auto-refresh ALL teams if cache is missing or older than 30 days (1 month)
+            teams_to_fetch = set()
+            for t_id in all_team_ids_in_groups:
                 age = roster_cache_age_days(t_id)
                 if age is None or age > 30:
-                    our_to_fetch.add(t_id)
-            if our_to_fetch:
-                print(f"    Auto-refreshing rosters for {len(our_to_fetch)} of our teams "
+                    teams_to_fetch.add(t_id)
+            if teams_to_fetch:
+                print(f"    Auto-refreshing rosters for {len(teams_to_fetch)} teams "
                       f"(missing or >30 days old) ...")
-                for t_id in sorted(our_to_fetch):
+                for t_id in sorted(teams_to_fetch):
                     try:
                         roster = get_team_roster(t_id)
                         rosters[t_id] = roster
@@ -579,7 +579,7 @@ def collect_tournament_data(tournament, club_id, refresh_rosters=False, is_curre
                         print(f"      Warning: could not fetch roster for {t_id}: {e}")
                         rosters[t_id] = cached.get(t_id, [])
             else:
-                print(f"    Our team rosters are fresh (cached <30 days)")
+                print(f"    All team rosters are fresh (cached <30 days)")
 
         for m_id in missing:
             if m_id not in rosters:
@@ -842,7 +842,7 @@ function buildSearchIndex(){
     var d=window.WP[eid];
     Object.keys(d.teams).forEach(function(tid){
       if(!teamTournMap[tid])teamTournMap[tid]=[];
-      teamTournMap[tid].push({eid:eid,tname:d.tname,label:d.label||d.tname,teamName:d.teams[tid]});
+      teamTournMap[tid].push({eid:eid,tname:d.tname,label:d.label||d.tname,teamName:d.teams[tid],tid:tid});
     });
   });
   var persons={};
@@ -856,7 +856,7 @@ function buildSearchIndex(){
       var tours=teamTournMap[tid]||[];
       tours.forEach(function(t){
         var already=persons[k].teams.some(function(x){return x.eid===t.eid&&x.teamName===t.teamName;});
-        if(!already)persons[k].teams.push({eid:t.eid,tname:t.tname,label:t.label,teamName:t.teamName});
+        if(!already)persons[k].teams.push({eid:t.eid,tname:t.tname,label:t.label,teamName:t.teamName,tid:t.tid});
       });
     });
   });
@@ -889,7 +889,7 @@ function doSearch(q){
     p.teams.forEach(function(t){
       var lbl=t.label||t.tname;
       if(seenT[lbl])return;seenT[lbl]=true;
-      tags+='<span class="search-result-tag" onclick="clearSearch();showDetail(\\''+t.eid+'\\')" title="'+esc(t.teamName)+'">'+esc(lbl)+'</span>';
+      tags+='<span class="search-result-tag" onclick="clearSearch();showDetail(\\''+t.eid+'\\',\\''+t.tid+'\\')"><strong>'+esc(lbl)+'</strong> ('+esc(t.teamName)+')</span>';
     });
     html+='<div class="search-result-item"><div><span class="search-result-name">'+name+'</span>'+byH+'<span class="search-result-role">'+role+'</span></div><div class="search-result-teams">'+tags+'</div></div>';
   });
@@ -928,7 +928,7 @@ function showTeams(catId){
   if(el)el.style.display='block';
   history.replaceState(null,'','#cat-'+catId);
 }
-function showDetail(id){
+function showDetail(id, teamId){
   showScreen('detail-screen');
   document.querySelectorAll('.detail-category').forEach(function(c){c.style.display='none';});
   var el=document.getElementById(id);
@@ -944,8 +944,8 @@ function showDetail(id){
     var data=window.WP[id];
     if(data){
       var sel=el.querySelector('.team-selector');
-      if(sel)sel.value=data.dt;
-      renderForTeam(id,data.dt);
+      if(sel)sel.value=teamId||data.dt;
+      renderForTeam(id,teamId||data.dt);
     }
   }
   history.replaceState(null,'','#'+id);
