@@ -779,10 +779,6 @@ main{max-width:780px;margin:0 auto;padding:.75rem}
 .our-team{color:var(--blue)}.next-match-card .our-team{color:#ffd166}
 .match-row{padding:.5rem .6rem;border-radius:6px;margin-bottom:.3rem;border-left:4px solid transparent;background:var(--bg);transition:box-shadow .15s}
 .match-row:hover{box-shadow:0 1px 6px rgba(0,0,0,.06)}
-                past = [m for m in entry["matches"] if m["finished"]]
-                future = [m for m in entry["matches"] if not m["finished"] and m["date"]]
-                past.sort(key=lambda m: m.get("date_ts") or 0, reverse=True)
-                future.sort(key=lambda m: m.get("date_ts") or 9999999999)
 .match-teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.3rem;font-size:.82rem}
 .team-home{text-align:right;font-weight:500}.team-away{text-align:left;font-weight:500}
 .match-score{display:flex;align-items:center;gap:.15rem;font-weight:700;font-size:.9rem;justify-content:center}
@@ -836,6 +832,20 @@ footer a{color:var(--blue)}
 @media(max-width:480px){.cat-grid{grid-template-columns:1fr}.match-row{grid-template-columns:52px 56px 1fr;padding:.4rem}.match-teams{font-size:.74rem}header h1{font-size:1.1rem}}
 """
 
+# ---------------------------------------------------------------------------
+# JS  – FIX: dsToDate() interpreta correctament UTC i date_local amb TZ
+# ---------------------------------------------------------------------------
+# CANVIS respecte la versió anterior:
+#   1. Nova funció dsToDate(ds): si el string NO té indicador de timezone
+#      (Z o +HH:MM), afegeix 'Z' per forçar interpretació UTC al navegador.
+#      Si ja té timezone (camp dl / date_local generat pel Python), el
+#      navegador l'interpreta directament i mostra l'hora local correcta.
+#   2. fmtShort(ds, dl) i fmtLong(ds, dl): accepten el camp 'dl'
+#      (date_local amb timezone) com a font preferent; fan servir 'ds'
+#      (UTC cru) com a fallback via dsToDate().
+#   3. Tots els llocs que criden fmtShort/fmtLong passen ara m.dl com a
+#      segon argument.
+
 JS = """
 /* --- Helpers --- */
 function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
@@ -856,6 +866,37 @@ function getAgeRef(entryId){
   var sid=m[1];
   var s=(window.SEASONS||[]).find(function(x){return x.id===sid;});
   return s&&s.ageRef?s.ageRef:new Date().toISOString().slice(0,10);
+}
+
+/* --- Date helpers ---
+ * dsToDate: converteix un string de data a objecte Date interpretant-lo
+ *   sempre com a UTC quan no té indicador de timezone explícit.
+ *   - "YYYY-MM-DD HH:MM:SS"  → afegeix 'Z'  → UTC → el navegador mostra
+ *     l'hora local de l'usuari (que a Espanya és UTC+1/UTC+2).
+ *   - "YYYY-MM-DDTHH:MM:SS+02:00" (dl / date_local) → ja té TZ, el
+ *     navegador ho interpreta directament sense cap transformació.
+ * fmtShort/fmtLong: prefereixen 'dl' (date_local amb TZ) si existeix;
+ *   usen 'ds' (UTC cru) com a fallback.
+ */
+function dsToDate(ds){
+  if(!ds)return null;
+  /* Si el string ja conté 'Z' o un offset '+'/'-' no té timezone implícit */
+  if(/[Z+]/.test(ds.slice(10)))return new Date(ds);
+  /* String UTC cru sense TZ: afegim 'Z' per forçar UTC */
+  return new Date(ds.replace(' ','T')+'Z');
+}
+function fmtShort(ds,dl){
+  var dt=dsToDate(dl||ds);if(!dt||isNaN(dt))return'TBD';
+  var d=('0'+dt.getDate()).slice(-2),mo=('0'+(dt.getMonth()+1)).slice(-2);
+  var h=('0'+dt.getHours()).slice(-2),mi=('0'+dt.getMinutes()).slice(-2);
+  return d+'/'+mo+' '+h+':'+mi;
+}
+function fmtLong(ds,dl){
+  var dt=dsToDate(dl||ds);if(!dt||isNaN(dt))return'Per determinar';
+  var days=['Dg','Dl','Dt','Dc','Dj','Dv','Ds'];
+  var d=('0'+dt.getDate()).slice(-2),mo=('0'+(dt.getMonth()+1)).slice(-2);
+  var h=('0'+dt.getHours()).slice(-2),mi=('0'+dt.getMinutes()).slice(-2);
+  return days[dt.getDay()]+' '+d+'/'+mo+'/'+dt.getFullYear()+' '+h+':'+mi;
 }
 
 /* --- Season Switching --- */
@@ -949,18 +990,6 @@ function clearSearch(){
   var inp=document.getElementById('search-input');
   if(inp){inp.value='';doSearch('');}
 }
-function fmtShort(ds){
-  if(!ds)return'TBD';
-  var p=ds.split(/[- :]/);return p[2]+'/'+p[1]+' '+p[3]+':'+p[4];
-}
-function fmtLong(ds){
-  if(!ds)return'Per determinar';
-  var dt=new Date(ds.replace(' ','T'));
-  var days=['Dg','Dl','Dt','Dc','Dj','Dv','Ds'];
-  var d=('0'+dt.getDate()).slice(-2),mo=('0'+(dt.getMonth()+1)).slice(-2);
-  var h=('0'+dt.getHours()).slice(-2),mi=('0'+dt.getMinutes()).slice(-2);
-  return days[dt.getDay()]+' '+d+'/'+mo+'/'+dt.getFullYear()+' '+h+':'+mi;
-}
 
 /* --- Navigation --- */
 function showScreen(name){
@@ -1016,8 +1045,8 @@ function renderForTeam(entryId,teamId){
 
   /* Filter and sort matches */
   var teamMatches=data.matches.filter(function(m){return tids.has(m.h)||tids.has(m.a);});
-  var past=teamMatches.filter(function(m){return m.f;}).sort(function(a,b){return(b.d||'').localeCompare(a.d||'');});
-  var future=teamMatches.filter(function(m){return !m.f&&m.d;}).sort(function(a,b){return(a.d||'').localeCompare(b.d||'');});
+  var past=teamMatches.filter(function(m){return m.f;}).sort(function(a,b){return(b.ts||0)-(a.ts||0);});
+  var future=teamMatches.filter(function(m){return !m.f&&m.d;}).sort(function(a,b){return(a.ts||0)-(b.ts||0);});
 
   /* Stats */
   var w=0,dr=0,lo=0,gf=0,gc=0;
@@ -1040,7 +1069,7 @@ function renderForTeam(entryId,teamId){
     var venueNext=nm.v?'<div class="next-round" style="font-style:italic">'+esc(nm.v)+'</div>':'';
     nextH='<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Proper Partit<span class="toggle-arrow">\u25B2</span></h3>'+
       '<div class="section-content"><div class="next-match-card">'+
-      '<div class="next-date">'+fmtLong(nm.d)+'</div>'+
+      '<div class="next-date">'+fmtLong(nm.d,nm.dl)+'</div>'+
       '<div class="next-teams">'+
       '<span class="'+(isH?'our-team':'')+'">'+ hN+'</span>'+
       '<span class="vs">vs</span>'+
@@ -1089,7 +1118,7 @@ function renderForTeam(entryId,teamId){
         var hN=esc(data.teams[m.h]||'?'),aN=esc(data.teams[m.a]||'Descansa');
         var venueR=m.v?'<div class="match-venue">'+esc(m.v)+'</div>':'';
         rH+='<div class="match-row '+cls+'">'+
-          '<div class="match-meta"><span>'+fmtShort(m.d)+'</span><span>'+esc(m.rn)+'</span></div>'+
+          '<div class="match-meta"><span>'+fmtShort(m.d,m.dl)+'</span><span>'+esc(m.rn)+'</span></div>'+
           '<div class="match-teams">'+
           '<span class="team-home'+(isH?' our-team':'')+'">'+ hN+'</span>'+
           '<span class="match-score"><span>'+(m.hs!=null?m.hs:'-')+'</span>'+
@@ -1112,7 +1141,7 @@ function renderForTeam(entryId,teamId){
       var hN=esc(data.teams[m.h]||'?'),aN=esc(data.teams[m.a]||'Descansa');
       var venueU=m.v?'<div class="match-venue">'+esc(m.v)+'</div>':'';
       items+='<div class="match-row upcoming">'+
-        '<div class="match-meta"><span>'+fmtShort(m.d)+'</span><span>'+esc(m.rn)+'</span></div>'+
+        '<div class="match-meta"><span>'+fmtShort(m.d,m.dl)+'</span><span>'+esc(m.rn)+'</span></div>'+
         '<div class="match-teams">'+
         '<span class="team-home'+(isH?' our-team':'')+'">'+hN+'</span>'+
         '<span class="vs-small">vs</span>'+
@@ -1379,13 +1408,15 @@ def generate_html(all_season_data, config):
                 seen_match_ids.add(m["id"])
                 hs_val, as_val = match_score(m)
                 matches_json.append({
-                    "d": m.get("date"), "f": m.get("finished"),
+                    "d": m.get("date"),           # UTC cru "YYYY-MM-DD HH:MM:SS"
+                    "dl": m.get("date_local"),     # ISO amb TZ Europe/Madrid (preferit pel JS)
+                    "ts": m.get("date_ts"),        # epoch (per ordenar)
+                    "f": m.get("finished"),
                     "h": m.get("home_team"), "a": m.get("away_team"),
                     "hs": hs_val, "as": as_val,
                     "rn": m.get("round_name", ""),
                     "gn": m.get("group_name", ""),
                     "v": m.get("venue", ""),
-                    "ts": m.get("date_ts"), "dl": m.get("date_local"),
                 })
 
             groups_json = []
@@ -1542,9 +1573,6 @@ def main(refresh_rosters=False):
         print(f"  Season {sid}: {len(sinfo['tournaments'])} tournaments ({status_str})")
 
     # Merge multiple "current" season IDs into the one with the most tournaments.
-    # The API sometimes returns separate season_ids that belong to the same logical
-    # season (e.g. a test/placeholder season alongside the real one).  Merging them
-    # avoids duplicate entries in the season selector and reduces API calls.
     current_sids = [sid for sid, sinfo in seasons_raw.items() if sinfo["has_in_progress"]]
     if len(current_sids) > 1:
         primary = max(current_sids, key=lambda s: len(seasons_raw[s]["tournaments"]))
@@ -1582,7 +1610,6 @@ def main(refresh_rosters=False):
                     "age_ref_date": f"{start_year + 1}-12-31",
                 }
                 if not all_season_data[sid]["refreshed_at"]:
-                    # Fallback to file mtime for old caches without refreshed_at
                     cache_path = os.path.join(DATA_DIR, f"{sid}.json")
                     if os.path.exists(cache_path):
                         mtime = os.path.getmtime(cache_path)
@@ -1592,9 +1619,8 @@ def main(refresh_rosters=False):
         # Need to discover teams and fetch data from API
         print(f"\n  Fetching season {sid} from API...")
 
-        # Split tournaments: try tournament-level cache for finished ones
-        api_tournaments = []       # tournaments that need full API discovery + collection
-        cached_categories = []     # categories loaded from per-tournament cache
+        api_tournaments = []
+        cached_categories = []
         for t in sinfo["tournaments"]:
             if t["api_status"] == "finished":
                 cached = load_tournament_cache(t["id"])
@@ -1624,7 +1650,6 @@ def main(refresh_rosters=False):
                 if cat_data["groups"]:
                     categories_data.append(cat_data)
                     print(f"    -> {len(cat_data['matches'])} matches, {len(cat_data['groups'])} group(s)")
-                    # Cache finished tournaments for next build
                     if t["api_status"] == "finished":
                         save_tournament_cache(t["id"], cat_data)
                 else:
@@ -1636,7 +1661,6 @@ def main(refresh_rosters=False):
         if not categories_data:
             continue
 
-        # Infer season info
         season_label, start_year = infer_season_info(categories_data)
         cat_age = build_category_age(start_year)
 
@@ -1649,10 +1673,8 @@ def main(refresh_rosters=False):
             "age_ref_date": datetime.now().strftime("%Y-%m-%d") if is_current else f"{start_year + 1}-12-31",
         }
 
-        # Cache finished seasons for future builds
         if not is_current:
             save_season_cache(sid, season_label, categories_data)
-            # Clean up per-tournament caches since the whole season is now cached
             cleanup_tournament_caches()
             print(f"\n  Cached season {season_label} for future builds")
 
@@ -1660,8 +1682,7 @@ def main(refresh_rosters=False):
         print("No season data found for this club.")
         sys.exit(1)
 
-    # Deduplicate seasons that resolved to the same label (safety net).
-    # Keep the entry with more categories; merge their categories_data.
+    # Deduplicate seasons that resolved to the same label
     seen_labels = {}
     duplicates_to_remove = []
     for sid, sdata in all_season_data.items():
@@ -1669,16 +1690,13 @@ def main(refresh_rosters=False):
         if label in seen_labels:
             prev_sid = seen_labels[label]
             prev = all_season_data[prev_sid]
-            # Merge into whichever has more data; prefer "current" status
             if len(sdata["categories_data"]) > len(prev["categories_data"]):
-                # Current entry is bigger → merge prev into current
                 sdata["categories_data"].extend(prev["categories_data"])
                 if prev["status"] == "current":
                     sdata["status"] = "current"
                 duplicates_to_remove.append(prev_sid)
                 seen_labels[label] = sid
             else:
-                # Previous entry is bigger → merge current into previous
                 prev["categories_data"].extend(sdata["categories_data"])
                 if sdata["status"] == "current":
                     prev["status"] = "current"
