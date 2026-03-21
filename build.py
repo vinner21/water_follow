@@ -17,6 +17,10 @@ import sys
 import time
 from collections import OrderedDict
 from datetime import datetime
+try:
+    from zoneinfo import ZoneInfo
+except Exception:
+    ZoneInfo = None
 from html import escape
 
 import requests
@@ -198,7 +202,13 @@ def infer_season_info(categories_data):
             d = m.get("date")
             if d:
                 try:
-                    all_dates.append(datetime.strptime(d, "%Y-%m-%d %H:%M:%S"))
+                    dt = datetime.strptime(d, "%Y-%m-%d %H:%M:%S")
+                    if ZoneInfo:
+                        try:
+                            dt = dt.replace(tzinfo=ZoneInfo("UTC")).astimezone(ZoneInfo("Europe/Madrid"))
+                        except Exception:
+                            pass
+                    all_dates.append(dt)
                 except (ValueError, TypeError):
                     pass
     if all_dates:
@@ -537,7 +547,23 @@ def collect_tournament_data(tournament, club_id, refresh_rosters=False, is_curre
     for t in tournament["our_teams"]:
         team_names[t["id"]] = t["name"]
 
-    all_matches.sort(key=lambda m: m["date"] or "9999")
+    # Normalize match datetimes: add timezone-aware ISO string and epoch ts
+    for m in all_matches:
+        dt = parse_api_date(m.get("date"))
+        if dt:
+            try:
+                m["date_local"] = dt.isoformat()
+            except Exception:
+                m["date_local"] = None
+            try:
+                m["date_ts"] = int(dt.timestamp())
+            except Exception:
+                m["date_ts"] = None
+        else:
+            m["date_local"] = None
+            m["date_ts"] = None
+
+    all_matches.sort(key=lambda m: m.get("date_ts") or 9999999999)
 
     # Roster handling: use cache unless --refresh-rosters was passed
     all_team_ids_in_groups = set()
@@ -605,7 +631,9 @@ def collect_tournament_data(tournament, club_id, refresh_rosters=False, is_curre
 def format_date(date_str):
     if not date_str:
         return "Per determinar"
-    dt = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
+    dt = parse_api_date(date_str)
+    if not dt:
+        return "Per determinar"
     days_ca = ["Dl", "Dt", "Dc", "Dj", "Dv", "Ds", "Dg"]
     return f"{days_ca[dt.weekday()]} {dt.day:02d}/{dt.month:02d}/{dt.year} {dt.hour:02d}:{dt.minute:02d}"
 
@@ -613,8 +641,29 @@ def format_date(date_str):
 def format_date_short(date_str):
     if not date_str:
         return "TBD"
-    dt = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
+    dt = parse_api_date(date_str)
+    if not dt:
+        return "TBD"
     return f"{dt.day:02d}/{dt.month:02d} {dt.hour:02d}:{dt.minute:02d}"
+
+
+def parse_api_date(date_str):
+    """Parse an API date string (YYYY-MM-DD HH:MM:SS) and return a timezone-aware
+    datetime in Europe/Madrid when possible. Returns None on parse error.
+    """
+    if not date_str:
+        return None
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
+    except Exception:
+        return None
+    # Interpret API naive timestamps as UTC and convert to Europe/Madrid
+    if ZoneInfo:
+        try:
+            dt = dt.replace(tzinfo=ZoneInfo("UTC")).astimezone(ZoneInfo("Europe/Madrid"))
+        except Exception:
+            pass
+    return dt
 
 
 def match_score(match):
@@ -730,10 +779,10 @@ main{max-width:780px;margin:0 auto;padding:.75rem}
 .our-team{color:var(--blue)}.next-match-card .our-team{color:#ffd166}
 .match-row{padding:.5rem .6rem;border-radius:6px;margin-bottom:.3rem;border-left:4px solid transparent;background:var(--bg);transition:box-shadow .15s}
 .match-row:hover{box-shadow:0 1px 6px rgba(0,0,0,.06)}
-.match-row.win{border-left-color:var(--green)}.match-row.loss{border-left-color:var(--red)}
-.match-row.draw{border-left-color:var(--orange)}.match-row.upcoming{border-left-color:var(--blue-light);background:var(--blue-pale)}
-.match-meta{display:flex;gap:.5rem;font-size:.7rem;color:var(--text-muted);margin-bottom:.2rem;flex-wrap:wrap}
-.match-venue{font-size:.68rem;color:var(--text-muted);font-style:italic;margin-top:.1rem}
+                past = [m for m in entry["matches"] if m["finished"]]
+                future = [m for m in entry["matches"] if not m["finished"] and m["date"]]
+                past.sort(key=lambda m: m.get("date_ts") or 0, reverse=True)
+                future.sort(key=lambda m: m.get("date_ts") or 9999999999)
 .match-teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.3rem;font-size:.82rem}
 .team-home{text-align:right;font-weight:500}.team-away{text-align:left;font-weight:500}
 .match-score{display:flex;align-items:center;gap:.15rem;font-weight:700;font-size:.9rem;justify-content:center}
@@ -1269,8 +1318,8 @@ def generate_html(all_season_data, config):
 
                 past = [m for m in entry["matches"] if m["finished"]]
                 future = [m for m in entry["matches"] if not m["finished"] and m["date"]]
-                past.sort(key=lambda m: m["date"] or "", reverse=True)
-                future.sort(key=lambda m: m["date"] or "")
+                past.sort(key=lambda m: m.get("date_ts") or 0, reverse=True)
+                future.sort(key=lambda m: m.get("date_ts") or 9999999999)
 
                 wins = sum(1 for m in past if match_result_class(m, team_ids) == "win")
                 losses = sum(1 for m in past if match_result_class(m, team_ids) == "loss")
@@ -1330,12 +1379,13 @@ def generate_html(all_season_data, config):
                 seen_match_ids.add(m["id"])
                 hs_val, as_val = match_score(m)
                 matches_json.append({
-                    "d": m["date"], "f": m["finished"],
-                    "h": m["home_team"], "a": m["away_team"],
+                    "d": m.get("date"), "f": m.get("finished"),
+                    "h": m.get("home_team"), "a": m.get("away_team"),
                     "hs": hs_val, "as": as_val,
                     "rn": m.get("round_name", ""),
                     "gn": m.get("group_name", ""),
                     "v": m.get("venue", ""),
+                    "ts": m.get("date_ts"), "dl": m.get("date_local"),
                 })
 
             groups_json = []
