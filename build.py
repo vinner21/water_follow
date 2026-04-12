@@ -721,67 +721,85 @@ CSS = """
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
-header{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:#fff;padding:1.2rem 1rem .8rem;text-align:center}
+header{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:#fff;padding:.95rem .9rem .65rem;text-align:center}
 .header-inner{display:flex;align-items:center;justify-content:center;gap:.75rem}
 .club-logo{width:52px;height:52px;border-radius:50%;border:2px solid rgba(255,255,255,.6);flex-shrink:0}
-header h1{font-size:1.3rem;font-weight:700}.subtitle{font-size:.8rem;opacity:.8}
-main{max-width:780px;margin:0 auto;padding:.75rem}
+header h1{font-size:1.18rem;font-weight:700}.subtitle{font-size:.76rem;opacity:.8}
+main{max-width:780px;margin:0 auto;padding:.55rem}
 
 /* Selection screen */
 #selection-screen{display:block}
 #detail-screen{display:none}
 #team-screen{display:none}
-.sel-title{text-align:center;font-size:1rem;color:var(--blue-dark);margin:.8rem 0 .2rem;font-weight:600}
-.sel-subtitle{text-align:center;font-size:.82rem;color:var(--text-muted);margin-bottom:.6rem}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.6rem;padding:0 .2rem}
-.cat-card{background:var(--card);border-radius:var(--radius);padding:.8rem;cursor:pointer;border:2px solid transparent;transition:border-color .2s,box-shadow .2s,transform .15s;position:relative;overflow:hidden}
-.cat-card:hover{border-color:var(--blue-light);box-shadow:0 4px 12px rgba(0,119,182,.15);transform:translateY(-2px)}
-.cat-card-name{font-size:.85rem;font-weight:700;color:var(--blue-dark);margin-bottom:.15rem}
-.cat-card-age{font-size:.7rem;color:var(--text-muted);margin-bottom:.25rem;font-style:italic}
-.cat-card-teams{font-size:.75rem;color:var(--text-muted);margin-bottom:.35rem}
-.cat-card-record{display:inline-flex;gap:.3rem;font-size:.7rem}
-.cat-card-record span{padding:.1rem .35rem;border-radius:3px;font-weight:600}
-.cat-card-record .w{background:#d4edda;color:var(--green)}.cat-card-record .d{background:#fff3cd;color:#856404}
-.cat-card-record .l{background:#f8d7da;color:var(--red)}.cat-card-record .gf{background:var(--blue-pale);color:var(--blue-dark)}
-.cat-card-next{font-size:.72rem;color:var(--text-muted);margin-top:.3rem;border-top:1px solid #eee;padding-top:.3rem}
-.cat-card-next strong{color:var(--blue)}
-.cat-card-arrow{position:absolute;right:.6rem;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--blue-light);opacity:.5}
+.selection-hero{background:linear-gradient(145deg,#ffffff,#eef8fd);border:1px solid #d7eaf3;border-radius:16px;padding:.8rem .85rem .75rem;margin:.1rem .15rem .7rem;box-shadow:0 6px 18px rgba(2,62,138,.08)}
+.selection-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:.25rem}
+.sel-title{text-align:left;font-size:1.08rem;color:var(--blue-dark);margin:0 0 .15rem;font-weight:700}
+.sel-subtitle{text-align:left;font-size:.8rem;color:var(--text-muted);margin:0 0 .65rem;max-width:52ch}
+.selection-actions{display:flex;justify-content:flex-start;gap:.5rem;flex-wrap:wrap}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.6rem;padding:0 .15rem}
+.cat-card{background:var(--card);border-radius:14px;padding:.8rem;cursor:pointer;border:1px solid #dbe7ee;transition:border-color .2s,box-shadow .2s,transform .15s;position:relative;overflow:hidden;box-shadow:0 4px 12px rgba(15,23,42,.04)}
+.cat-card:hover{border-color:var(--blue-light);box-shadow:0 10px 24px rgba(0,119,182,.14);transform:translateY(-2px)}
+.cat-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem;margin-bottom:.45rem}
+.cat-card-name{font-size:.85rem;font-weight:800;color:var(--blue-dark);line-height:1.2}
+.cat-card-age{display:inline-block;font-size:.66rem;color:var(--blue-dark);margin-bottom:.55rem;background:var(--blue-pale);padding:.14rem .4rem;border-radius:999px;font-style:normal;font-weight:600}
+.cat-card-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.35rem}
+.cat-card-stat{background:#f8fbfd;border:1px solid #e2edf3;border-radius:9px;padding:.35rem .42rem}
+.cat-card-stat-v{display:block;font-size:.84rem;font-weight:800;color:var(--text)}
+.cat-card-stat-k{display:block;font-size:.69rem;color:var(--text-muted);margin-top:.05rem;text-transform:uppercase;letter-spacing:.03em}
+.cat-card-arrow{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:999px;background:var(--blue-pale);font-size:.92rem;color:var(--blue-dark);flex-shrink:0}
+.season-summary{display:flex;align-items:flex-end;justify-content:space-between;gap:.8rem;margin:0 .15rem .55rem;padding:.05rem .05rem}
+.season-summary-main{min-width:0}
+.season-summary-tag{font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--blue)}
+.season-summary-title{font-size:.92rem;font-weight:800;color:var(--blue-dark)}
+.season-summary-note{font-size:.75rem;color:var(--text-muted)}
 
 /* Detail screen */
-.back-bar{background:var(--card);border-bottom:1px solid #e0e0e0;padding:.5rem .8rem;display:flex;align-items:center;gap:.5rem}
-.btn-back{background:none;border:1px solid var(--blue);color:var(--blue);padding:.3rem .7rem;border-radius:6px;font-size:.8rem;cursor:pointer;display:flex;align-items:center;gap:.3rem;transition:background .2s,color .2s}
+.back-bar{background:var(--card);border-bottom:1px solid #e0e0e0;padding:.4rem .65rem;display:flex;align-items:center;gap:.45rem}
+.btn-back{background:none;border:1px solid var(--blue);color:var(--blue);padding:.24rem .55rem;border-radius:6px;font-size:.76rem;cursor:pointer;display:flex;align-items:center;gap:.3rem;transition:background .2s,color .2s}
 .btn-back:hover{background:var(--blue);color:#fff}
 .back-label{font-size:.82rem;color:var(--text-muted)}
 
-.category-header{background:var(--card);border-radius:var(--radius);padding:1rem;margin-bottom:.6rem;text-align:center}
-.category-header h2{font-size:1rem;color:var(--blue-dark);margin-bottom:.2rem}
+.category-header{background:var(--card);border-radius:var(--radius);padding:.8rem;margin-bottom:.5rem;text-align:center}
+.category-header h2{font-size:.95rem;color:var(--blue-dark);margin-bottom:.15rem}
 .team-selector-wrap{margin:.4rem 0;display:flex;align-items:center;justify-content:center;gap:.4rem;flex-wrap:wrap}
 .team-selector-label{font-size:.75rem;color:var(--text-muted)}
-.team-selector{font-size:.8rem;padding:.3rem .5rem;border:1px solid var(--blue-light);border-radius:6px;color:var(--blue-dark);background:#fff;cursor:pointer;max-width:260px}
+.team-selector{font-size:.78rem;padding:.25rem .45rem;border:1px solid var(--blue-light);border-radius:6px;color:var(--blue-dark);background:#fff;cursor:pointer;max-width:260px}
 .team-selector:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,119,182,.2)}
 .teams-label{font-size:.8rem;color:var(--text-muted);margin-bottom:.4rem}
-.record-bar{display:inline-flex;gap:.4rem;font-size:.78rem}
-.record-bar span{padding:.12rem .45rem;border-radius:4px;font-weight:600}
+.record-bar{display:inline-flex;gap:.35rem;font-size:.75rem}
+.record-bar span{padding:.1rem .38rem;border-radius:4px;font-weight:600}
 .record-bar .w{background:#d4edda;color:var(--green)}.record-bar .d{background:#fff3cd;color:#856404}
 .record-bar .l{background:#f8d7da;color:var(--red)}.record-bar .gf{background:var(--blue-pale);color:var(--blue-dark)}
 .record-bar .ga{background:#e9ecef;color:var(--text-muted)}
-.section-block{background:var(--card);border-radius:var(--radius);padding:.8rem;margin-bottom:.6rem}
-.section-block h3{font-size:.9rem;color:var(--blue-dark);border-bottom:2px solid var(--blue-pale);padding-bottom:.25rem;margin-bottom:.5rem;cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:space-between}
+.section-block{background:var(--card);border-radius:var(--radius);padding:.65rem;margin-bottom:.5rem}
+.section-block h3{font-size:.84rem;color:var(--blue-dark);border-bottom:2px solid var(--blue-pale);padding-bottom:.2rem;margin-bottom:.4rem;cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:space-between}
 .section-block h3 .toggle-arrow{font-size:.55rem;color:var(--blue-light);transition:transform .2s;display:inline-block}
 .section-block.collapsed h3 .toggle-arrow{transform:rotate(180deg)}
 .section-block.collapsed .section-content{display:none}
 .empty{color:var(--text-muted);font-size:.85rem}
-.next-match-card{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;border-radius:8px;padding:1rem;text-align:center}
+.next-match-card{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;border-radius:8px;padding:.8rem;text-align:center}
 .next-date{font-size:.85rem;opacity:.85;margin-bottom:.35rem}
 .next-teams{font-size:1.2rem;font-weight:700}
 .next-teams .vs{margin:0 .4rem;opacity:.6;font-weight:400;font-size:.9rem}
 .next-round{font-size:.75rem;opacity:.65;margin-top:.2rem}
 .our-team{color:var(--blue)}.next-match-card .our-team{color:#ffd166}
-.match-row{padding:.5rem .6rem;border-radius:6px;margin-bottom:.3rem;border-left:4px solid transparent;background:var(--bg);transition:box-shadow .15s}
+.match-row{padding:.42rem .5rem;border-radius:8px;margin-bottom:.28rem;border-left:6px solid transparent;background:var(--bg);transition:box-shadow .15s,border-color .15s,background .15s}
 .match-row:hover{box-shadow:0 1px 6px rgba(0,0,0,.06)}
-.match-teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.3rem;font-size:.82rem}
+.match-row.win{background:#eefaf1;border-left-color:#2e8b57}
+.match-row.draw{background:#fff9e8;border-left-color:#c79a1b}
+.match-row.loss{background:#fff1f1;border-left-color:#c94b4b}
+.match-meta{display:flex;align-items:center;justify-content:space-between;gap:.4rem;font-size:.69rem;color:var(--text-muted);margin-bottom:.22rem}
+.match-venue{margin-top:.18rem;font-size:.69rem;color:var(--text-muted);font-style:italic}
+.match-teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.25rem;font-size:.78rem}
 .team-home{text-align:right;font-weight:500}.team-away{text-align:left;font-weight:500}
-.match-score{display:flex;align-items:center;gap:.15rem;font-weight:700;font-size:.9rem;justify-content:center}
+.match-score{display:flex;align-items:center;gap:.15rem;font-weight:700;font-size:.84rem;justify-content:center;padding:.14rem .34rem;border-radius:999px;border:1px solid #d7e1e8;background:#fff}
+.match-row.win .match-score{background:#dff3e5;border-color:#86c79a;color:#1f6b43}
+.match-row.draw .match-score{background:#fff1c7;border-color:#e2c15d;color:#8a6a09}
+.match-row.loss .match-score{background:#fde0e0;border-color:#e7a2a2;color:#a73535}
+.match-outcome{display:inline-block;padding:.1rem .38rem;border-radius:999px;font-size:.67rem;font-weight:700;letter-spacing:.02em}
+.match-outcome.win{background:#dff3e5;color:#1f6b43}
+.match-outcome.draw{background:#fff1c7;color:#8a6a09}
+.match-outcome.loss{background:#fde0e0;color:#a73535}
 .score-sep{color:var(--text-muted);font-size:.8rem}
 .vs-small{color:var(--text-muted);font-size:.78rem}
 .standings-block{margin-bottom:.6rem}
@@ -789,24 +807,36 @@ main{max-width:780px;margin:0 auto;padding:.75rem}
 .phase-header{font-size:.82rem;color:var(--blue);font-weight:600;margin:.7rem 0 .3rem;padding-bottom:.2rem;border-bottom:1px solid var(--blue)}
 .phase-header:first-child{margin-top:0}
 .table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:.75rem}
-th,td{padding:.35rem .3rem;text-align:center}
+table{width:100%;border-collapse:collapse;font-size:.72rem}
+th,td{padding:.28rem .24rem;text-align:center}
 th{background:var(--blue-dark);color:#fff;font-weight:600;font-size:.7rem;position:sticky;top:0}
-td{border-bottom:1px solid #e9ecef}
+th,td{border:1px solid #d7e1e8}
+td{background:#fff}
 .team-name-cell{text-align:left!important;white-space:nowrap}
 .pos{font-weight:700;color:var(--blue)}.pts{font-weight:700;color:var(--blue-dark)}
 tr.highlight{background:var(--blue-pale)}tr.highlight td{font-weight:600}
 .links-block{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
-.btn-link{padding:.35rem .7rem;background:var(--blue);color:#fff;text-decoration:none;border-radius:6px;font-size:.78rem}
+.btn-link{padding:.28rem .58rem;background:var(--blue);color:#fff;text-decoration:none;border-radius:6px;font-size:.75rem}
 .btn-link:hover{background:var(--blue-dark)}
-.roster-table{width:100%;border-collapse:collapse;font-size:.78rem}
-.roster-table th{background:var(--blue-dark);color:#fff;font-weight:600;font-size:.72rem;padding:.35rem .4rem;text-align:left}
-.roster-table td{padding:.3rem .4rem;border-bottom:1px solid #e9ecef}
+.roster-table{width:100%;border-collapse:collapse;font-size:.74rem}
+.roster-table th{background:var(--blue-dark);color:#fff;font-weight:600;font-size:.69rem;padding:.28rem .32rem;text-align:center}
+.roster-table td{padding:.24rem .3rem;border-bottom:1px solid #e9ecef}
 .roster-name{font-weight:500}
 .roster-age{text-align:center;font-weight:600;color:var(--blue-dark);font-size:.75rem}
 .roster-role{color:var(--text-muted);font-size:.72rem;font-style:italic}
 .roster-staff-title{font-size:.8rem;color:var(--blue);font-weight:600;margin:.6rem 0 .3rem;padding-top:.4rem;border-top:1px solid #e9ecef}
-footer{text-align:center;padding:1.2rem 1rem;font-size:.72rem;color:var(--text-muted)}
+.insight-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.45rem;margin-bottom:.5rem}
+.insight-card{background:var(--bg);border-left:4px solid var(--blue);border-radius:8px;padding:.45rem .55rem}
+.insight-card .k{font-size:.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.03em}
+.insight-card .v{font-size:1rem;font-weight:700;color:var(--blue-dark);line-height:1.15}
+.insight-card .h{font-size:.7rem;color:var(--text-muted)}
+.insight-summary{font-size:.8rem;color:var(--text);margin:.35rem 0 .55rem}
+.player-badge{display:inline-block;padding:.12rem .35rem;border-radius:999px;font-size:.68rem;font-weight:600}
+.player-badge.ok{background:#d4edda;color:var(--green)}
+.player-badge.young{background:#fff3cd;color:#856404}
+.player-badge.old{background:#f8d7da;color:var(--red)}
+.player-badge.unknown{background:#e9ecef;color:var(--text-muted)}
+footer{text-align:center;padding:.95rem .85rem;font-size:.69rem;color:var(--text-muted)}
 footer a{color:var(--blue)}
 .search-wrap{margin:0 auto .8rem;max-width:500px;position:relative}
 .search-input{width:100%;padding:.5rem .8rem .5rem 2rem;border:1px solid var(--blue-light);border-radius:8px;font-size:.85rem;background:var(--card);color:var(--text);outline:none;box-sizing:border-box}
@@ -828,6 +858,45 @@ footer a{color:var(--blue)}
 .season-select{font-size:.78rem;padding:.25rem .5rem;border:1px solid rgba(255,255,255,.4);border-radius:6px;color:#fff;background:rgba(255,255,255,.15);cursor:pointer;-webkit-appearance:none;appearance:none;text-align:center;min-width:120px}
 .season-select:focus{outline:none;border-color:rgba(255,255,255,.8)}
 .season-select option{color:var(--text);background:var(--card)}
+.top-actions{display:flex;justify-content:center;gap:.4rem;margin:0 auto .55rem;flex-wrap:wrap}
+.btn-secondary{border:1px solid var(--blue);background:#fff;color:var(--blue-dark);padding:.28rem .55rem;border-radius:8px;font-size:.74rem;font-weight:600;cursor:pointer}
+.btn-secondary:hover{background:var(--blue-pale)}
+.player-screen-grid{display:block}
+.player-list{background:var(--card);border-radius:var(--radius);padding:.45rem;max-height:68vh;overflow:auto}
+.player-list.hidden{display:none}
+.player-row{padding:.36rem .42rem;border:1px solid #e9ecef;border-radius:8px;margin-bottom:.3rem;cursor:pointer;background:#fff}
+.player-row:hover{border-color:var(--blue-light);background:#f9fcff}
+.player-row-name{font-size:.8rem;font-weight:700;color:var(--blue-dark)}
+.player-row-meta{font-size:.7rem;color:var(--text-muted)}
+.player-detail{background:var(--card);border-radius:var(--radius);padding:.45rem}
+.player-detail-empty{color:var(--text-muted);font-size:.82rem}
+.player-head{display:flex;align-items:flex-start;justify-content:space-between;gap:.45rem;margin-bottom:.38rem}
+.player-head-main{min-width:0;flex:1}
+.player-title{font-size:.94rem;font-weight:800;color:var(--blue-dark);line-height:1.15;margin:0}
+.player-subtitle{font-size:.69rem;color:var(--text-muted);margin-top:.1rem;line-height:1.25}
+.player-back-wrap{display:flex;justify-content:flex-start;flex-shrink:0}
+.player-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:.28rem;margin-bottom:.35rem}
+.player-kpi{background:var(--bg);border-radius:7px;padding:.22rem .3rem;border-left:3px solid var(--blue)}
+.player-kpi .k{font-size:.59rem;color:var(--text-muted);text-transform:uppercase;line-height:1.1}
+.player-kpi .v{font-size:.81rem;font-weight:700;color:var(--blue-dark);line-height:1.15;margin-top:.04rem}
+.player-detail .section-block{padding:.5rem;margin-bottom:0}
+.player-detail .section-block h3{font-size:.79rem;margin-bottom:.32rem}
+.player-teams{display:flex;flex-wrap:wrap;gap:.3rem}
+.player-chip{font-size:.68rem;background:var(--blue-pale);color:var(--blue-dark);padding:.12rem .4rem;border-radius:999px;cursor:pointer}
+.compare-grid{display:grid;grid-template-columns:1fr;gap:.6rem}
+.compare-panel{background:var(--card);border-radius:var(--radius);padding:.65rem}
+.compare-head{display:flex;align-items:center;justify-content:space-between;gap:.5rem;flex-wrap:wrap;margin-bottom:.45rem}
+.compare-head h4{margin:0;font-size:.85rem;color:var(--blue-dark)}
+.compare-actions{display:flex;gap:.35rem;flex-wrap:wrap}
+.compare-filter{width:100%;padding:.4rem .55rem;border:1px solid var(--blue-light);border-radius:8px;font-size:.78rem;margin-bottom:.45rem;box-sizing:border-box}
+.compare-options{max-height:200px;overflow:auto;border:1px solid #e9ecef;border-radius:8px;padding:.4rem;background:#fff}
+.compare-opt{display:flex;align-items:flex-start;gap:.35rem;padding:.2rem 0;border-bottom:1px solid #f1f3f5}
+.compare-opt:last-child{border-bottom:none}
+.compare-opt label{font-size:.76rem;line-height:1.25;cursor:pointer;flex:1}
+.compare-results{margin-top:.5rem}
+.player-chip:hover{background:var(--blue);color:#fff}
+.player-search-wrap{margin:0 0 .45rem;position:relative}
+.player-search-wrap .search-input{padding-left:.8rem}
 .season-cats,.season-teams{display:none}.season-cats.active,.season-teams.active{display:block}
 @media(max-width:480px){.cat-grid{grid-template-columns:1fr}.match-row{grid-template-columns:52px 56px 1fr;padding:.4rem}.match-teams{font-size:.74rem}header h1{font-size:1.1rem}}
 """
@@ -850,6 +919,9 @@ JS = """
 /* --- Helpers --- */
 function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 function titleCase(s){return s.split(' ').map(function(w){return w.charAt(0).toUpperCase()+w.slice(1).toLowerCase();}).join(' ');}
+function normalizeSearchText(s){
+    return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+}
 function toggleSection(h3){h3.parentElement.classList.toggle('collapsed');}
 function calcAge(bd,refDate){
   if(!bd||!refDate)return'';
@@ -866,6 +938,39 @@ function getAgeRef(entryId){
   var sid=m[1];
   var s=(window.SEASONS||[]).find(function(x){return x.id===sid;});
   return s&&s.ageRef?s.ageRef:new Date().toISOString().slice(0,10);
+}
+function getSeasonAgeRef(seasonId){
+    var s=(window.SEASONS||[]).find(function(x){return x.id===seasonId;});
+    return s&&s.ageRef?s.ageRef:new Date().toISOString().slice(0,10);
+}
+function seasonIdFromEntryId(entryId){
+    var m=(entryId||'').match(/^s(\\d+)-/);
+    return m?m[1]:'';
+}
+function seasonLabelById(seasonId){
+    var s=(window.SEASONS||[]).find(function(x){return x.id===seasonId;});
+    return s?s.label:seasonId;
+}
+function getCategoryKey(name){
+    var u=(name||'').toUpperCase();
+    var keys=['BENJAMI','ALEVI','INFANTIL','CADET','JUVENIL','ABSOLUTA','MASTER'];
+    for(var i=0;i<keys.length;i++)if(u.indexOf(keys[i])>=0)return keys[i];
+    return '';
+}
+function getCategoryAgeRange(cat){
+    var ranges={
+        BENJAMI:[9,10],ALEVI:[11,12],INFANTIL:[13,14],CADET:[15,16],JUVENIL:[17,18],
+        ABSOLUTA:[18,null],MASTER:[30,null]
+    };
+    return ranges[cat]||null;
+}
+function ageStatus(age,cat){
+    if(age==null||age==='')return 'unknown';
+    var r=getCategoryAgeRange(cat);
+    if(!r)return 'unknown';
+    if(age<r[0])return 'young';
+    if(r[1]!=null&&age>r[1])return 'old';
+    return 'ok';
 }
 
 /* --- Date helpers ---
@@ -903,6 +1008,7 @@ function fmtLong(ds,dl){
 function switchSeason(seasonId){
   window.CUR_SEASON=seasonId;
   _searchIdx=null;
+    _playerIdx=null;
   document.querySelectorAll('.season-cats,.season-teams').forEach(function(el){
     if(el.dataset.season===seasonId)el.classList.add('active');
     else el.classList.remove('active');
@@ -923,6 +1029,7 @@ function switchSeason(seasonId){
 
 /* --- Player Search --- */
 var _searchIdx=null;
+var _playerIdx=null;
 function buildSearchIndex(){
   if(_searchIdx)return _searchIdx;
   var prefix='s'+(window.CUR_SEASON||'')+'-';
@@ -952,7 +1059,7 @@ function buildSearchIndex(){
   });
   _searchIdx=Object.values(persons);
   _searchIdx.forEach(function(p){
-    p._s=(p.fn+' '+p.ln).toLowerCase();
+        p._s=normalizeSearchText(p.fn+' '+p.ln);
   });
   return _searchIdx;
 }
@@ -962,7 +1069,7 @@ function doSearch(q){
   if(!q||q.length<2){res.innerHTML='';res.style.display='none';clear.style.display='none';return;}
   clear.style.display='block';
   var idx=buildSearchIndex();
-  var ql=q.toLowerCase().trim();
+    var ql=normalizeSearchText(q);
   var words=ql.split(/\s+/);
   var hits=idx.filter(function(p){
     return words.every(function(w){return p._s.indexOf(w)>=0;});
@@ -990,10 +1097,261 @@ function clearSearch(){
   var inp=document.getElementById('search-input');
   if(inp){inp.value='';doSearch('');}
 }
+function buildPlayerIndex(){
+    if(_playerIdx)return _playerIdx;
+    var ageRef=getSeasonAgeRef(window.CUR_SEASON||'');
+    var teamTournMap={};
+    Object.keys(window.WP||{}).forEach(function(eid){
+        var d=window.WP[eid]||{};
+        Object.keys(d.teams||{}).forEach(function(tid){
+            if(!teamTournMap[tid])teamTournMap[tid]=[];
+            teamTournMap[tid].push({
+                eid:eid,
+                tid:tid,
+                tname:d.tname||'',
+                label:d.label||d.tname||'',
+                teamName:d.teams[tid]||''
+            });
+        });
+    });
+
+    var persons={};
+    Object.keys(window.ROST||{}).forEach(function(tid){
+        var tours=teamTournMap[tid]||[];
+        if(tours.length===0)return;
+        (window.ROST[tid]||[]).forEach(function(p){
+            var k=p.fn+'|'+p.ln+'|'+(p.bd||'');
+            if(!persons[k])persons[k]={fn:p.fn,ln:p.ln,bd:p.bd||'',teams:[],roleRows:[]};
+            var role=(p.ro||'').toLowerCase()==='player'?'player':'staff';
+            tours.forEach(function(t){
+                var item=persons[k].teams.find(function(x){return x.eid===t.eid&&x.tid===t.tid;});
+                if(!item){
+                    item={
+                        eid:t.eid,
+                        tid:t.tid,
+                        tname:t.tname,
+                        label:t.label,
+                        teamName:t.teamName,
+                        player:false,
+                        staff:false
+                    };
+                    persons[k].teams.push(item);
+                }
+                if(role==='player')item.player=true;
+                else item.staff=true;
+                var sid=seasonIdFromEntryId(t.eid)||'';
+                persons[k].roleRows.push({sid:sid,role:role});
+            });
+        });
+    });
+
+    _playerIdx=Object.keys(persons).map(function(k){
+        var p=persons[k];
+        var teams=[];var teamSeen={};
+        var labels=[];var labelSeen={};
+        var seasons=[];var seasonSeen={};
+        p.teams.forEach(function(t){
+            var sid=seasonIdFromEntryId(t.eid);
+            var tk=sid+'|'+t.tid+'|'+t.teamName;
+            if(!teamSeen[tk]){teamSeen[tk]=1;teams.push(t);} 
+            var lbl=t.label||t.tname;
+            if(!labelSeen[lbl]){labelSeen[lbl]=1;labels.push(lbl);} 
+            if(sid&&!seasonSeen[sid]){seasonSeen[sid]=1;seasons.push(sid);} 
+        });
+        var hasPlayer=false;var hasStaff=false;
+        var lastPlayerSeason='';var lastStaffSeason='';
+        p.roleRows.forEach(function(rr){
+            if(rr.role==='player'){
+                hasPlayer=true;
+                if(rr.sid && (!lastPlayerSeason || rr.sid>lastPlayerSeason))lastPlayerSeason=rr.sid;
+            } else {
+                hasStaff=true;
+                if(rr.sid && (!lastStaffSeason || rr.sid>lastStaffSeason))lastStaffSeason=rr.sid;
+            }
+        });
+        var rolePath='Jugador';
+        if(hasPlayer&&hasStaff){
+            rolePath=(lastStaffSeason && lastPlayerSeason && lastStaffSeason>=lastPlayerSeason)?'Jugador -> Staff':'Jugador + Staff';
+        } else if(!hasPlayer&&hasStaff){
+            rolePath='Staff';
+        }
+        seasons.sort();
+        return {
+            k:k,
+            fn:p.fn,ln:p.ln,bd:p.bd||'',
+            name:titleCase(p.fn)+' '+titleCase(p.ln),
+            age:calcAge(p.bd,ageRef),
+            teams:teams,
+            labels:labels,
+            seasons:seasons,
+            hasPlayer:hasPlayer,
+            hasStaff:hasStaff,
+            movedToStaff:hasPlayer&&hasStaff&&lastStaffSeason&&lastPlayerSeason&&lastStaffSeason>=lastPlayerSeason,
+            rolePath:rolePath,
+            _s:normalizeSearchText(p.fn+' '+p.ln)
+        };
+    }).sort(function(a,b){return a.name.localeCompare(b.name);});
+
+    return _playerIdx;
+}
+function showPlayers(){
+    showScreen('player-screen');
+    var q=document.getElementById('player-search-input');
+    renderPlayerExplorer(q?q.value:'');
+    history.replaceState(null,'','#players');
+}
+function backToPlayerResults(){
+    var list=document.getElementById('player-list');
+    var detail=document.getElementById('player-detail');
+    if(list)list.classList.remove('hidden');
+    if(detail)detail.innerHTML='<div class="player-detail-empty">Selecciona un jugador per veure la fitxa.</div>';
+}
+function playerClearSearch(){
+    var inp=document.getElementById('player-search-input');
+    if(inp)inp.value='';
+    renderPlayerExplorer('');
+}
+function renderPlayerExplorer(q){
+    var list=document.getElementById('player-list');
+    var detail=document.getElementById('player-detail');
+    if(!list)return;
+    list.classList.remove('hidden');
+    var all=buildPlayerIndex();
+    var query=normalizeSearchText(q);
+    var words=query?query.split(/\s+/):[];
+    var hits=all.filter(function(p){return words.every(function(w){return p._s.indexOf(w)>=0;});});
+    if(hits.length>300)hits=hits.slice(0,300);
+    window._playerRenderList=hits;
+    if(hits.length===0){
+        list.innerHTML='<div class="player-detail-empty">Cap jugador per aquest filtre.</div>';
+        if(detail)detail.innerHTML='<div class="player-detail-empty">Selecciona un jugador per veure la fitxa.</div>';
+        return;
+    }
+    var html='';
+    hits.forEach(function(p,i){
+        var y=p.bd?p.bd.slice(0,4):'-';
+        html+='<div class="player-row" onclick="openPlayerByIdx('+i+')">'+
+            '<div class="player-row-name">'+esc(p.name)+'</div>'+
+            '<div class="player-row-meta">Any '+esc(y)+' · '+p.teams.length+' equips · '+p.seasons.length+' temporades · '+esc(p.rolePath)+'</div>'+
+            '</div>';
+    });
+    list.innerHTML=html;
+    if(detail)detail.innerHTML='<div class="player-detail-empty">Selecciona un jugador per veure la fitxa.</div>';
+}
+function openPlayerByIdx(i){
+    var p=window._playerRenderList&&window._playerRenderList[i];
+    var list=document.getElementById('player-list');
+    var detail=document.getElementById('player-detail');
+    if(!p||!detail)return;
+    if(list)list.classList.add('hidden');
+    var firstS=p.seasons.length?seasonLabelById(p.seasons[0]):'-';
+    var lastS=p.seasons.length?seasonLabelById(p.seasons[p.seasons.length-1]):'-';
+    function roleLabel(player,staff){
+        if(player&&staff)return 'Jugador + Staff';
+        if(player)return 'Jugador';
+        return 'Staff';
+    }
+    function mergedRowsHtml(rows){
+        if(!rows||rows.length===0)return '';
+        var cols=rows[0].length;
+        var spans=[];
+        for(var r=0;r<rows.length;r++){
+            spans[r]=[];
+            for(var c=0;c<cols;c++)spans[r][c]={show:true,span:1};
+        }
+        for(var c=0;c<cols;c++){
+            var i0=0;
+            while(i0<rows.length){
+                var j=i0+1;
+                while(j<rows.length){
+                    var samePrefix=true;
+                    for(var k=0;k<c;k++){
+                        if(rows[j][k]!==rows[i0][k]){samePrefix=false;break;}
+                    }
+                    if(!samePrefix||rows[j][c]!==rows[i0][c])break;
+                    j++;
+                }
+                var sp=j-i0;
+                if(sp>1){
+                    spans[i0][c].span=sp;
+                    for(var r2=i0+1;r2<j;r2++)spans[r2][c].show=false;
+                }
+                i0=j;
+            }
+        }
+        var out='';
+        for(var r=0;r<rows.length;r++){
+            out+='<tr>';
+            for(var c=0;c<cols;c++){
+                if(!spans[r][c].show)continue;
+                var rs=spans[r][c].span>1?' rowspan="'+spans[r][c].span+'"':'';
+                out+='<td'+rs+'>'+rows[r][c]+'</td>';
+            }
+            out+='</tr>';
+        }
+        return out;
+    }
+    function normLabel(s){
+        return (s||'').toUpperCase().replace(/[\.]/g,'').replace(/\s+/g,' ').trim();
+    }
+    var bySeason={};
+    p.teams.forEach(function(t){
+        var sid=seasonIdFromEntryId(t.eid)||'';
+        if(!sid)return;
+        if(!bySeason[sid])bySeason[sid]={label:seasonLabelById(sid),cats:{},teams:{},pairs:{},player:false,staff:false};
+        var cat=t.label||t.tname||'';
+        var team=t.teamName||'';
+        var nCat=normLabel(cat);
+        var nTeam=normLabel(team);
+        if(cat&&nCat&&!bySeason[sid].cats[nCat])bySeason[sid].cats[nCat]=cat;
+        if(team&&nTeam&&!bySeason[sid].teams[nTeam])bySeason[sid].teams[nTeam]=team;
+        if(t.player)bySeason[sid].player=true;
+        if(t.staff)bySeason[sid].staff=true;
+        if(nCat&&nTeam){
+            var pairKey=nCat+'|'+nTeam;
+            if(!bySeason[sid].pairs[pairKey])bySeason[sid].pairs[pairKey]={cat:cat,team:team,player:false,staff:false};
+            if(t.player)bySeason[sid].pairs[pairKey].player=true;
+            if(t.staff)bySeason[sid].pairs[pairKey].staff=true;
+        }
+    });
+    var flatRowsData=[];
+    Object.keys(bySeason).sort().forEach(function(sid){
+        var item=bySeason[sid];
+        var pairVals=Object.keys(item.pairs).map(function(k){return item.pairs[k];});
+        if(pairVals.length===0){
+            flatRowsData.push([esc(item.label),'-','-','-']);
+        } else {
+            pairVals.forEach(function(pv){
+                flatRowsData.push([esc(item.label),esc(pv.cat),esc(pv.team),roleLabel(pv.player,pv.staff)]);
+            });
+        }
+    });
+    var flatRows=mergedRowsHtml(flatRowsData);
+    if(!flatRows){
+        flatRows='<tr><td colspan="4" class="player-detail-empty">Sense dades de temporada.</td></tr>';
+    }
+    detail.innerHTML=
+        '<div class="player-head">'+
+        '<div class="player-head-main">'+
+        '<h3 class="player-title">'+esc(p.name)+'</h3>'+
+        '<div class="player-subtitle">'+esc(firstS+' → '+lastS)+' · '+p.seasons.length+' temporades · '+p.teams.length+' equips</div>'+
+        '</div>'+
+        '<div class="player-back-wrap"><button class="btn-secondary" onclick="backToPlayerResults()">&larr; Tornar</button></div>'+
+        '</div>'+
+        '<div class="player-kpis">'+
+        '<div class="player-kpi"><div class="k">Edat actual</div><div class="v">'+(p.age===''?'-':p.age)+'</div></div>'+
+        '<div class="player-kpi"><div class="k">Rol detectat</div><div class="v">'+esc(p.rolePath)+'</div></div>'+
+        '<div class="player-kpi"><div class="k">Pas a staff</div><div class="v">'+(p.movedToStaff?'Si':'No')+'</div></div>'+
+        '<div class="player-kpi"><div class="k">Temporades</div><div class="v">'+p.seasons.length+'</div></div>'+
+        '<div class="player-kpi"><div class="k">Equips</div><div class="v">'+p.teams.length+'</div></div>'+
+        '<div class="player-kpi"><div class="k">Trajectoria</div><div class="v">'+esc(firstS+' → '+lastS)+'</div></div>'+
+        '</div>'+
+        '<div class="section-block"><h3>Relacio categoria-equip (files)</h3><div class="section-content"><div class="table-wrap"><table class="roster-table"><thead><tr><th>Temporada</th><th>Categoria</th><th>Equip</th><th>Rol</th></tr></thead><tbody>'+flatRows+'</tbody></table></div></div></div>';
+}
 
 /* --- Navigation --- */
 function showScreen(name){
-  ['selection-screen','team-screen','detail-screen'].forEach(function(s){
+    ['selection-screen','player-screen','team-screen','detail-screen'].forEach(function(s){
     document.getElementById(s).style.display=s===name?'block':'none';
   });
   window.scrollTo(0,0);
@@ -1086,15 +1444,14 @@ function renderForTeam(entryId,teamId){
     var rows='';
     g.s.forEach(function(s){
       var hl=s.id===teamId?' class="highlight"':'';
-      rows+='<tr'+hl+'><td class="pos">'+s.pos+'</td><td class="team-name-cell">'+esc(s.n)+'</td>'+
-        '<td>'+s.pj+'</td><td>'+s.pg+'</td><td>'+s.pe+'</td><td>'+s.pp+'</td>'+
-        '<td>'+s.gf+'</td><td>'+s.gc+'</td><td>'+(s.dg>=0?'+':'')+s.dg+'</td>'+
-        '<td class="pts">'+s.pts+'</td></tr>';
+            rows+='<tr'+hl+'><td class="pos">'+s.pos+'</td><td class="team-name-cell">'+esc(s.n)+'</td>'+
+                '<td class="pts">'+s.pts+'</td><td>'+s.pj+'</td><td>'+s.pg+'</td><td>'+s.pe+'</td><td>'+s.pp+'</td>'+
+                '<td>'+s.gf+'</td><td>'+s.gc+'</td><td>'+(s.dg>=0?'+':'')+s.dg+'</td></tr>';
     });
     stH+='<div class="standings-block"><h3>'+esc(g.n)+'</h3>'+
       '<div class="table-wrap"><table><thead><tr>'+
-      '<th>#</th><th>Equip</th><th>PJ</th><th>PG</th><th>PE</th>'+
-      '<th>PP</th><th>GF</th><th>GC</th><th>DG</th><th>Pts</th>'+
+            '<th>#</th><th>Equip</th><th>Pts</th><th>PJ</th><th>PG</th><th>PE</th>'+
+            '<th>PP</th><th>GF</th><th>GC</th><th>DG</th>'+
       '</tr></thead><tbody>'+rows+'</tbody></table></div></div>';
   });
   document.getElementById('standings-'+entryId).innerHTML=stH||'<p class="empty">Classificacio no disponible.</p>';
@@ -1115,10 +1472,11 @@ function renderForTeam(entryId,teamId){
       phaseMap[ph].forEach(function(m){
         var isH=tids.has(m.h),os=isH?m.hs:m.as,ts=isH?m.as:m.hs;
         var cls='';if(os!=null&&ts!=null){cls=os>ts?'win':os<ts?'loss':'draw';}
+                var outcomeLabel=cls==='win'?'Victoria':cls==='loss'?'Derrota':'Empat';
         var hN=esc(data.teams[m.h]||'?'),aN=esc(data.teams[m.a]||'Descansa');
         var venueR=m.v?'<div class="match-venue">'+esc(m.v)+'</div>':'';
         rH+='<div class="match-row '+cls+'">'+
-          '<div class="match-meta"><span>'+fmtShort(m.d,m.dl)+'</span><span>'+esc(m.rn)+'</span></div>'+
+                    '<div class="match-meta"><span>'+fmtShort(m.d,m.dl)+'</span><span>'+esc(m.rn)+'</span><span class="match-outcome '+cls+'">'+outcomeLabel+'</span></div>'+
           '<div class="match-teams">'+
           '<span class="team-home'+(isH?' our-team':'')+'">'+ hN+'</span>'+
           '<span class="match-score"><span>'+(m.hs!=null?m.hs:'-')+'</span>'+
@@ -1153,7 +1511,7 @@ function renderForTeam(entryId,teamId){
   }
   document.getElementById('upcoming-'+entryId).innerHTML=uH;
 
-  /* Roster */
+    /* Roster */
   var rosH='';
   var roster=window.ROST&&window.ROST[teamId];
   if(roster&&roster.length>0){
@@ -1208,6 +1566,7 @@ window.addEventListener('DOMContentLoaded',function(){
   }
   if(defaultSeason)switchSeason(defaultSeason);
   if(!h)return;
+    if(h==='players'){showPlayers();return;}
   if(h.startsWith('cat-')){showTeams(h.slice(4));}
   else{var el=document.getElementById(h);if(el&&el.classList.contains('detail-category'))showDetail(h);}
 });
@@ -1307,28 +1666,50 @@ def generate_html(all_season_data, config):
 
         # --- Screen 1: Category cards for this season ---
         cat_cards_html = ""
+        season_finished_match_ids = set()
         for tid, tinfo in tournaments_map.items():
             cat_id = f"s{sid}-{slug(tinfo['tournament_name'])}"
             label = short_category(tinfo["tournament_name"])
             num_teams = len(tinfo["entries"])
             _, age_label = category_age_info(tinfo["tournament_name"], cat_age)
 
-            total_past = sum(1 for e in tinfo["entries"] for m in e["matches"] if m["finished"])
+            total_past = 0
+            for e in tinfo["entries"]:
+                for m in e["matches"]:
+                    if m["finished"]:
+                        total_past += 1
+                        if m.get("id"):
+                            season_finished_match_ids.add(m["id"])
 
             age_html = f'<div class="cat-card-age">{escape(age_label)}</div>' if age_label else ''
             cat_cards_html += (
                 f'<div class="cat-card" onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
+                f'<div class="cat-card-top">'
                 f'<div class="cat-card-name">{escape(label)}</div>'
-                f'{age_html}'
-                f'<div class="cat-card-teams">{num_teams} equip{"s" if num_teams > 1 else ""}</div>'
-                f'<div class="cat-card-record"><span class="gf">{total_past} partits jugats</span></div>'
                 f'<span class="cat-card-arrow">&#8250;</span>'
                 f'</div>'
+                f'{age_html}'
+                f'<div class="cat-card-stats">'
+                f'<div class="cat-card-stat"><span class="cat-card-stat-v">{num_teams}</span><span class="cat-card-stat-k">equip{"s" if num_teams > 1 else ""}</span></div>'
+                f'<div class="cat-card-stat"><span class="cat-card-stat-v">{total_past}</span><span class="cat-card-stat-k">partits jugats</span></div>'
+                f'</div>'
+                f'</div>'
             )
+
+        season_summary_html = (
+            f'<div class="season-summary">'
+            f'<div class="season-summary-main">'
+            f'<div class="season-summary-tag">Panell de temporada</div>'
+            f'<div class="season-summary-title">{escape(sdata["label"])}</div>'
+            f'<div class="season-summary-note">Tria una categoria per veure equips, classificacions i resultats d\'aquesta temporada.</div>'
+            f'</div>'
+            f'</div>'
+        )
 
         active_cls = " active" if is_default else ""
         cat_blocks.append(
             f'<div class="season-cats{active_cls}" data-season="{sid}">'
+            f'{season_summary_html}'
             f'<div class="cat-grid">{cat_cards_html}</div>'
             f'</div>'
         )
@@ -1512,14 +1893,24 @@ def generate_html(all_season_data, config):
         f'<main>'
         # Screen 1: Categories
         f'<div id="selection-screen">'
+        f'<div class="selection-hero">'
+        f'<div class="selection-eyebrow">Vista general</div>'
         f'<div class="sel-title">Selecciona una categoria</div>'
-        f'<div class="search-wrap">'
-        f'<span class="search-icon">&#128269;</span>'
-        f'<input type="text" id="search-input" class="search-input" placeholder="Buscar jugador o staff..." oninput="doSearch(this.value)" autocomplete="off">'
-        f'<button id="search-clear" class="search-clear" onclick="clearSearch()">&times;</button>'
-        f'<div id="search-results" class="search-results" style="display:none"></div>'
+        f'<div class="sel-subtitle">Una entrada neta a la temporada activa: categories primer, i l\'anàlisi individual concentrada a l\'apartat d\'estadístiques.</div>'
+        f'<div class="selection-actions"><button class="btn-secondary" onclick="showPlayers()">Estadistiques de jugadors</button></div>'
         f'</div>'
         f'{"".join(cat_blocks)}'
+        f'</div>'
+        # Screen 1B: Player explorer
+        f'<div id="player-screen" style="display:none">'
+        f'<div class="back-bar"><button class="btn-back" onclick="showCategories()">&#8249; Tornar</button>'
+        f'<span class="back-label">Estadistiques de jugadors</span></div>'
+        f'<div class="player-search-wrap"><input type="text" id="player-search-input" class="search-input" placeholder="Buscar jugador o staff..." oninput="renderPlayerExplorer(this.value)" autocomplete="off">'
+        f'<button class="search-clear" style="display:block" onclick="playerClearSearch()">&times;</button></div>'
+        f'<div class="player-screen-grid">'
+        f'<div id="player-list" class="player-list"></div>'
+        f'<div id="player-detail" class="player-detail"><div class="player-detail-empty">Selecciona un jugador per veure la fitxa.</div></div>'
+        f'</div>'
         f'</div>'
         # Screen 2: Team selection
         f'<div id="team-screen" style="display:none">'
