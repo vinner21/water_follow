@@ -42,7 +42,10 @@ jobs:
             # 6 slots per day: 0(00h) 1(04h) 2(08h) 3(12h) 4(16h) 5(20h)
             SLOT=$(( $(date -u +%H) / 4 ))
             # Deterministic hash of today's date → pick one of the 6 slots
-            TARGET=$(( $(date -u +%Y%m%d | cksum | cut -d' ' -f1) % 6 ))
+            # Use printf with %u to ensure a valid unsigned integer
+            DATE_NUM=$(date -u +%Y%m%d)
+            HASH=$(printf '%u' "0x$(echo -n "$DATE_NUM" | md5sum | cut -c1-8)")
+            TARGET=$(( HASH % 6 ))
             if [ "$SLOT" -eq "$TARGET" ]; then
               echo "proceed=true" >> "$GITHUB_OUTPUT"
               echo "✓ Build slot selected (slot $SLOT == target $TARGET)"
