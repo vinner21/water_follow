@@ -1640,6 +1640,9 @@ def generate_html(all_season_data, config):
     all_season_data: OrderedDict of season_id -> {label, status, categories_data, category_age}
     """
     clupik = config.get("clupik_base_url", CLUPIK_BASE)
+    main_club_id = "club-main"
+    raw_club_name = str(config.get("club_name", "Club configurat"))
+    main_club_name = raw_club_name if ("<" not in raw_club_name and ">" not in raw_club_name) else "Club configurat"
     build_time = datetime.utcnow().strftime("%d/%m/%Y %H:%M UTC")
 
     # Determine default season (first current, or first overall)
@@ -1720,8 +1723,8 @@ def generate_html(all_season_data, config):
             "ageRef": sdata.get("age_ref_date", datetime.now().strftime("%Y-%m-%d")),
             "ra": sdata.get("refreshed_at", ""),
             "clubs": [{
-                "id": str(config.get("club_id", "club")),
-                "name": str(config.get("club_name", "Club")),
+                "id": main_club_id,
+                "name": main_club_name,
                 "categories": len(tournaments_map),
             }],
         })
@@ -1745,7 +1748,7 @@ def generate_html(all_season_data, config):
 
             age_html = f'<div class="cat-card-age">{escape(age_label)}</div>' if age_label else ''
             cat_cards_html += (
-                f'<div class="cat-card" data-club="{escape(str(config.get("club_id", "club")))}" onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
+                f'<div class="cat-card" data-club="{main_club_id}" onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
                 f'<div class="cat-card-top">'
                 f'<div class="cat-card-name">{escape(label)}</div>'
                 f'<span class="cat-card-arrow">&#8250;</span>'
@@ -1819,7 +1822,7 @@ def generate_html(all_season_data, config):
                 )
 
             team_panels_html += (
-                f'<div class="team-panel" data-club="{escape(str(config.get("club_id", "club")))}" id="teams-{cat_id}" style="display:none">'
+                f'<div class="team-panel" data-club="{main_club_id}" id="teams-{cat_id}" style="display:none">'
                 f'<div class="sel-title">{escape(label)}</div>'
                 f'<div class="sel-subtitle">Selecciona equip</div>'
                 f'<div class="cat-grid">{team_cards}</div>'
@@ -1906,7 +1909,7 @@ def generate_html(all_season_data, config):
 
             detail_section = (
                 f'<div class="detail-category" id="{entry_id}" data-entry-id="{entry_id}" '
-                f'data-club="{escape(str(config.get("club_id", "club")))}" '
+                f'data-club="{main_club_id}" '
                 f'data-cat-id="{cat_id}" data-num-teams="{num_teams}" '
                 f'data-cat-label="{escape(short_category(entry["tournament_name"]))}" style="display:none">'
                 f'<div class="category-header">'
