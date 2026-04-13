@@ -792,7 +792,6 @@ main{max-width:780px;margin:0 auto;padding:.55rem}
 /* Selection screen */
 #selection-screen{display:block}
 #detail-screen{display:none}
-#team-screen{display:none}
 .selection-hero{background:linear-gradient(145deg,#ffffff,#eef8fd);border:1px solid #d7eaf3;border-radius:16px;padding:.8rem .85rem .75rem;margin:.1rem .15rem .7rem;box-shadow:0 6px 18px rgba(2,62,138,.08)}
 .selection-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:.25rem}
 .sel-title{text-align:left;font-size:1.08rem;color:var(--blue-dark);margin:0 0 .15rem;font-weight:700}
@@ -1540,7 +1539,7 @@ function openPlayerByIdx(i){
 
 /* --- Navigation --- */
 function showScreen(name){
-    ['selection-screen','player-screen','team-screen','detail-screen'].forEach(function(s){
+        ['selection-screen','player-screen','detail-screen'].forEach(function(s){
     document.getElementById(s).style.display=s===name?'block':'none';
   });
   window.scrollTo(0,0);
@@ -2170,7 +2169,7 @@ def generate_html(all_season_data, config):
         f'<div class="selection-hero">'
         f'<div class="selection-eyebrow">Vista general</div>'
         f'<div class="sel-title">Flux d\'entrada</div>'
-        f'<div class="sel-subtitle">1) Temporada, 2) Club, 3) Categoria. Fins que no triïs club, les categories queden bloquejades.</div>'
+        f'<div class="sel-subtitle">1) Temporada, 2) Club, 3) Categoria, 4) Equip. Fins que no triïs club, les categories queden bloquejades.</div>'
         f'<div class="selection-flow">'
         f'<div class="flow-step"><span class="flow-step-k">Pas 1 · Temporada</span><div class="flow-step-v">{season_selector_html}</div></div>'
         f'<div class="flow-step"><span class="flow-step-k">Pas 2 · Club</span><div class="flow-step-v">{club_selector_html}</div></div>'
@@ -2181,6 +2180,8 @@ def generate_html(all_season_data, config):
         f'</div>'
         f'<div id="club-required-note" class="club-required-note">Selecciona primer un club per desbloquejar les categories.</div>'
         f'{"".join(cat_blocks)}'
+        # Hidden data store for step-4 team selector.
+        f'<div id="team-data-store" style="display:none">{"".join(team_blocks)}</div>'
         f'</div>'
         # Screen 1B: Player explorer
         f'<div id="player-screen" style="display:none">'
@@ -2192,12 +2193,6 @@ def generate_html(all_season_data, config):
         f'<div id="player-list" class="player-list"></div>'
         f'<div id="player-detail" class="player-detail"><div class="player-detail-empty">Selecciona un jugador per veure la fitxa.</div></div>'
         f'</div>'
-        f'</div>'
-        # Screen 2: Team selection
-        f'<div id="team-screen" style="display:none">'
-        f'<div class="back-bar"><button class="btn-back" onclick="showCategories()">&#8249; Tornar</button>'
-        f'<span class="back-label">Totes les categories</span></div>'
-        f'{"".join(team_blocks)}'
         f'</div>'
         # Screen 3: Detail
         f'<div id="detail-screen" style="display:none">'
