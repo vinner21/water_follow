@@ -736,6 +736,13 @@ main{max-width:780px;margin:0 auto;padding:.55rem}
 .sel-title{text-align:left;font-size:1.08rem;color:var(--blue-dark);margin:0 0 .15rem;font-weight:700}
 .sel-subtitle{text-align:left;font-size:.8rem;color:var(--text-muted);margin:0 0 .65rem;max-width:52ch}
 .selection-actions{display:flex;justify-content:flex-start;gap:.5rem;flex-wrap:wrap}
+.selection-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.45rem;margin:0 0 .7rem}
+.flow-step{background:#f8fbfd;border:1px solid #d9e9f2;border-radius:10px;padding:.45rem .5rem}
+.flow-step-k{display:block;font-size:.66rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:.2rem}
+.flow-step-v{font-size:.78rem;color:var(--blue-dark);font-weight:600}
+.flow-select{width:100%;font-size:.78rem;padding:.25rem .4rem;border:1px solid var(--blue-light);border-radius:6px;background:#fff;color:var(--blue-dark)}
+.flow-select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,119,182,.16)}
+.club-required-note{margin:.15rem .15rem .45rem;padding:.42rem .55rem;border-radius:8px;background:#fff8e8;border:1px solid #f2d48a;color:#73510a;font-size:.76rem}
 .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.6rem;padding:0 .15rem}
 .cat-card{background:var(--card);border-radius:14px;padding:.8rem;cursor:pointer;border:1px solid #dbe7ee;transition:border-color .2s,box-shadow .2s,transform .15s;position:relative;overflow:hidden;box-shadow:0 4px 12px rgba(15,23,42,.04)}
 .cat-card:hover{border-color:var(--blue-light);box-shadow:0 10px 24px rgba(0,119,182,.14);transform:translateY(-2px)}
@@ -898,7 +905,7 @@ footer a{color:var(--blue)}
 .player-search-wrap{margin:0 0 .45rem;position:relative}
 .player-search-wrap .search-input{padding-left:.8rem}
 .season-cats,.season-teams{display:none}.season-cats.active,.season-teams.active{display:block}
-@media(max-width:480px){.cat-grid{grid-template-columns:1fr}.match-row{grid-template-columns:52px 56px 1fr;padding:.4rem}.match-teams{font-size:.74rem}header h1{font-size:1.1rem}}
+@media(max-width:480px){.selection-flow{grid-template-columns:1fr}.cat-grid{grid-template-columns:1fr}.match-row{grid-template-columns:52px 56px 1fr;padding:.4rem}.match-teams{font-size:.74rem}header h1{font-size:1.1rem}}
 """
 
 # ---------------------------------------------------------------------------
@@ -1005,6 +1012,58 @@ function fmtLong(ds,dl){
 }
 
 /* --- Season Switching --- */
+function getSeasonObj(seasonId){
+    return (window.SEASONS||[]).find(function(s){return s.id===seasonId;})||null;
+}
+function populateClubSelect(seasonId){
+    var sel=document.getElementById('club-select');
+    if(!sel)return;
+    var s=getSeasonObj(seasonId);
+    var clubs=(s&&s.clubs)?s.clubs:[];
+    var opts=['<option value="">Selecciona club</option>'];
+    clubs.forEach(function(c){
+        opts.push('<option value="'+esc(c.id)+'">'+esc(c.name)+'</option>');
+    });
+    sel.innerHTML=opts.join('');
+    sel.value='';
+    window.CUR_CLUB='';
+}
+function applyClubFilter(){
+    var seasonId=window.CUR_SEASON||'';
+    var clubId=window.CUR_CLUB||'';
+    var note=document.getElementById('club-required-note');
+    var visibleCats=0;
+    document.querySelectorAll('.season-cats.active .cat-card').forEach(function(card){
+        var ok=clubId && card.dataset.club===clubId;
+        card.style.display=ok?'':'none';
+        if(ok)visibleCats++;
+    });
+    document.querySelectorAll('.season-teams.active .team-panel').forEach(function(panel){
+        var ok=clubId && panel.dataset.club===clubId;
+        panel.style.display=ok?'none':'none';
+    });
+    if(note){
+        if(!clubId)note.style.display='block';
+        else if(visibleCats===0){
+            note.style.display='block';
+            note.textContent='No hi ha categories disponibles per aquest club en aquesta temporada.';
+        }else{
+            note.style.display='none';
+            note.textContent='Selecciona primer un club per desbloquejar les categories.';
+        }
+    }
+    var sub=document.querySelector('.subtitle');
+    if(sub){
+        var si=getSeasonObj(seasonId);
+        var status=(si&&!si.current)?' (temporada tancada)':'';
+        sub.textContent=(clubId?visibleCats+' categories':'Tria temporada i club')+status+(si&&si.ra?' · Actualitzat: '+si.ra:'');
+    }
+}
+function switchClub(clubId){
+    window.CUR_CLUB=clubId||'';
+    applyClubFilter();
+    if(!window.CUR_CLUB)showCategories();
+}
 function switchSeason(seasonId){
   window.CUR_SEASON=seasonId;
   _searchIdx=null;
@@ -1016,13 +1075,8 @@ function switchSeason(seasonId){
   document.querySelectorAll('.detail-category').forEach(function(c){c.style.display='none';});
   var sel=document.getElementById('season-select');
   if(sel)sel.value=seasonId;
-  var sub=document.querySelector('.subtitle');
-  if(sub){
-    var cats=document.querySelector('.season-cats.active');
-    var count=cats?cats.querySelectorAll('.cat-card').length:0;
-    var si=(window.SEASONS||[]).find(function(s){return s.id===seasonId;});
-    sub.textContent=count+' categories'+(si&&!si.current?' (temporada tancada)':'')+(si&&si.ra?' \\u00b7 Actualitzat: '+si.ra:'');
-  }
+    populateClubSelect(seasonId);
+    applyClubFilter();
   showCategories();
   clearSearch();
 }
@@ -1358,17 +1412,19 @@ function showScreen(name){
 }
 function showCategories(){showScreen('selection-screen');history.replaceState(null,'','#');}
 function showTeams(catId){
+    if(!window.CUR_CLUB){showCategories();return;}
   showScreen('team-screen');
   document.querySelectorAll('.team-panel').forEach(function(p){p.style.display='none';});
   var el=document.getElementById('teams-'+catId);
-  if(el)el.style.display='block';
+    if(el&&el.dataset.club===window.CUR_CLUB)el.style.display='block';
   history.replaceState(null,'','#cat-'+catId);
 }
 function showDetail(id, teamId){
+    if(!window.CUR_CLUB){showCategories();return;}
   showScreen('detail-screen');
   document.querySelectorAll('.detail-category').forEach(function(c){c.style.display='none';});
   var el=document.getElementById(id);
-  if(el){
+    if(el&&el.dataset.club===window.CUR_CLUB){
     el.style.display='block';
     var catId=el.dataset.catId,numTeams=parseInt(el.dataset.numTeams)||1;
     var catLabel=el.dataset.catLabel||'';
@@ -1387,6 +1443,7 @@ function showDetail(id, teamId){
   history.replaceState(null,'','#'+id);
 }
 function showDetailOrTeams(catId,teamCount){
+    if(!window.CUR_CLUB){showCategories();return;}
   if(teamCount===1){
     var panel=document.getElementById('teams-'+catId);
     if(panel){var b=panel.querySelector('[data-detail]');if(b)showDetail(b.dataset.detail);}
@@ -1662,6 +1719,11 @@ def generate_html(all_season_data, config):
             "current": sdata["status"] == "current",
             "ageRef": sdata.get("age_ref_date", datetime.now().strftime("%Y-%m-%d")),
             "ra": sdata.get("refreshed_at", ""),
+            "clubs": [{
+                "id": str(config.get("club_id", "club")),
+                "name": str(config.get("club_name", "Club")),
+                "categories": len(tournaments_map),
+            }],
         })
 
         # --- Screen 1: Category cards for this season ---
@@ -1683,7 +1745,7 @@ def generate_html(all_season_data, config):
 
             age_html = f'<div class="cat-card-age">{escape(age_label)}</div>' if age_label else ''
             cat_cards_html += (
-                f'<div class="cat-card" onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
+                f'<div class="cat-card" data-club="{escape(str(config.get("club_id", "club")))}" onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
                 f'<div class="cat-card-top">'
                 f'<div class="cat-card-name">{escape(label)}</div>'
                 f'<span class="cat-card-arrow">&#8250;</span>'
@@ -1757,7 +1819,7 @@ def generate_html(all_season_data, config):
                 )
 
             team_panels_html += (
-                f'<div class="team-panel" id="teams-{cat_id}" style="display:none">'
+                f'<div class="team-panel" data-club="{escape(str(config.get("club_id", "club")))}" id="teams-{cat_id}" style="display:none">'
                 f'<div class="sel-title">{escape(label)}</div>'
                 f'<div class="sel-subtitle">Selecciona equip</div>'
                 f'<div class="cat-grid">{team_cards}</div>'
@@ -1844,6 +1906,7 @@ def generate_html(all_season_data, config):
 
             detail_section = (
                 f'<div class="detail-category" id="{entry_id}" data-entry-id="{entry_id}" '
+                f'data-club="{escape(str(config.get("club_id", "club")))}" '
                 f'data-cat-id="{cat_id}" data-num-teams="{num_teams}" '
                 f'data-cat-label="{escape(short_category(entry["tournament_name"]))}" style="display:none">'
                 f'<div class="category-header">'
@@ -1874,10 +1937,27 @@ def generate_html(all_season_data, config):
     if len(all_season_data) > 1:
         season_selector_html = (
             f'<div class="season-select-wrap">'
-            f'<select id="season-select" class="season-select" onchange="switchSeason(this.value)">'
+            f'<select id="season-select" class="flow-select" onchange="switchSeason(this.value)">'
             f'{season_options_html}'
             f'</select></div>'
         )
+    else:
+        # Keep a stable control even with a single season to preserve step flow.
+        only_sid = next(iter(all_season_data))
+        only_label = escape(all_season_data[only_sid]["label"])
+        season_selector_html = (
+            f'<div class="season-select-wrap">'
+            f'<select id="season-select" class="flow-select" onchange="switchSeason(this.value)">'
+            f'<option value="{only_sid}" selected>{only_label}</option>'
+            f'</select></div>'
+        )
+
+    club_selector_html = (
+        '<div class="season-select-wrap">'
+        '<select id="club-select" class="flow-select" onchange="switchClub(this.value)">'
+        '<option value="">Selecciona club</option>'
+        '</select></div>'
+    )
 
     html = (
         '<!DOCTYPE html><html lang="ca"><head><meta charset="utf-8">'
@@ -1888,17 +1968,22 @@ def generate_html(all_season_data, config):
         f'<header><div class="header-inner">'
         f'<div><h1>&#127937; Waterpolo Tracker</h1>'
         f'<div class="subtitle">{total_cats_default} categories</div>'
-        f'{season_selector_html}'
         f'</div></div></header>'
         f'<main>'
         # Screen 1: Categories
         f'<div id="selection-screen">'
         f'<div class="selection-hero">'
         f'<div class="selection-eyebrow">Vista general</div>'
-        f'<div class="sel-title">Selecciona una categoria</div>'
-        f'<div class="sel-subtitle">Una entrada neta a la temporada activa: categories primer, i l\'anàlisi individual concentrada a l\'apartat d\'estadístiques.</div>'
-        f'<div class="selection-actions"><button class="btn-secondary" onclick="showPlayers()">Estadistiques de jugadors</button></div>'
+        f'<div class="sel-title">Flux d\'entrada</div>'
+        f'<div class="sel-subtitle">1) Temporada, 2) Club, 3) Categoria. Fins que no triïs club, les categories queden bloquejades.</div>'
+        f'<div class="selection-flow">'
+        f'<div class="flow-step"><span class="flow-step-k">Pas 1 · Temporada</span><div class="flow-step-v">{season_selector_html}</div></div>'
+        f'<div class="flow-step"><span class="flow-step-k">Pas 2 · Club</span><div class="flow-step-v">{club_selector_html}</div></div>'
+        f'<div class="flow-step"><span class="flow-step-k">Pas 3 · Categoria</span><div class="flow-step-v">Selecciona una categoria disponible</div></div>'
         f'</div>'
+        f'<div class="selection-actions"><button class="btn-secondary" onclick="showPlayers()">Menu estadistiques jugadors</button></div>'
+        f'</div>'
+        f'<div id="club-required-note" class="club-required-note">Selecciona primer un club per desbloquejar les categories.</div>'
         f'{"".join(cat_blocks)}'
         f'</div>'
         # Screen 1B: Player explorer
@@ -1930,7 +2015,7 @@ def generate_html(all_season_data, config):
         'via <a href="https://clupik.pro">Clupik</a> (API Leverade)<br>'
         'Generat automaticament - <a href="https://github.com/vinner21/water_follow">GitHub</a></footer>'
         f'<script>window.WP={wp_json};window.ROST={rost_json};window.CLUPIK="{clupik}";'
-        f'window.SEASONS={seasons_json_str};window.CUR_SEASON="{default_season}";</script>'
+        f'window.SEASONS={seasons_json_str};window.CUR_SEASON="{default_season}";window.CUR_CLUB="";</script>'
         f'<script>{JS}</script></body></html>'
     )
     return html
