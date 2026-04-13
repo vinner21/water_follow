@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "BLAI",
+  "last_name": "BADIA VILARO",
+  "birthdate": "2009-05-21",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "BLAYA SERRADESANFERM",
+  "birthdate": "2009-10-27",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "ESPINA CORNELLA",
+  "birthdate": "2010-03-07",
+  "role": "player"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "ESPINA CORNELLA",
+  "birthdate": "2006-05-15",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "FURTIA VALLS",
+  "birthdate": "2008-02-10",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "GUIBES RIERA",
+  "birthdate": "2001-03-04",
+  "role": "player"
+ },
+ {
+  "first_name": "POL ",
+  "last_name": "LOPEZ DE COCA ROIG",
+  "birthdate": "2009-10-12",
+  "role": "player"
+ },
+ {
+  "first_name": "IZAN",
+  "last_name": "MARTINEZ SANCHO",
+  "birthdate": "2007-10-25",
+  "role": "player"
+ },
+ {
+  "first_name": "JERALD",
+  "last_name": "MEDINA VALDERRAMA",
+  "birthdate": "2007-06-01",
+  "role": "player"
+ },
+ {
+  "first_name": "FRANCESC",
+  "last_name": "PLANELLA GONZALEZ",
+  "birthdate": "1990-12-27",
+  "role": "player"
+ },
+ {
+  "first_name": "EDUARD",
+  "last_name": "PONT LLEOPART",
+  "birthdate": "1989-02-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ISAAC",
+  "last_name": "RODRIGUEZ MOLINERO",
+  "birthdate": "2002-10-23",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "RODRIGUEZ MORDILLO",
+  "birthdate": "2005-04-02",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "RUDILLA VALENTI",
+  "birthdate": "2010-04-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "TOMAS RODRIGUEZ",
+  "birthdate": "2004-01-11",
+  "role": "player"
+ },
+ {
+  "first_name": "MIREIA",
+  "last_name": "BOADA CARRASCO",
+  "birthdate": "1997-04-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "BOTA CASADEVALL",
+  "birthdate": "2002-04-18",
+  "role": "staff"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "CODINA HUIX",
+  "birthdate": "1974-04-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "SERGIO ",
+  "last_name": "JIMENEZ GORDO",
+  "birthdate": "1978-04-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "PALET HORNILLOS",
+  "birthdate": "1974-11-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "NELSON",
+  "last_name": "RAVIÑA",
+  "birthdate": "1976-10-23",
+  "role": "staff"
+ }
+]

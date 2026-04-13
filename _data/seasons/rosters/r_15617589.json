@@ -1,0 +1,140 @@
+[
+ {
+  "first_name": "RAMON",
+  "last_name": "ALBERO GIMENEZ",
+  "birthdate": "1999-08-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "ALVAREZ ROMANI",
+  "birthdate": "2007-03-28",
+  "role": "player"
+ },
+ {
+  "first_name": "ANIOL",
+  "last_name": "BLANCH PASSOLS",
+  "birthdate": "2003-01-21",
+  "role": "player"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "CUARTIELLES GALLO",
+  "birthdate": "2005-12-05",
+  "role": "player"
+ },
+ {
+  "first_name": "FABIO",
+  "last_name": "ESPINOSA CALATAYUD",
+  "birthdate": "2006-09-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ERNEST",
+  "last_name": "FONT MONTORO",
+  "birthdate": "2007-04-29",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "GUTIERREZ FERRERES",
+  "birthdate": "2002-12-11",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "IRANZO MENA",
+  "birthdate": "2008-05-08",
+  "role": "player"
+ },
+ {
+  "first_name": "NICOLAS",
+  "last_name": "MARTINEZ VELASCO",
+  "birthdate": "2003-07-25",
+  "role": "player"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "MORENO ALEMAN",
+  "birthdate": "2001-12-12",
+  "role": "player"
+ },
+ {
+  "first_name": "ESTEVE",
+  "last_name": "NAVARRO BUENO",
+  "birthdate": "2007-04-10",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "RAMIREZ  REBULL",
+  "birthdate": "2002-07-14",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "RAMIREZ  REBULL",
+  "birthdate": "2004-06-25",
+  "role": "player"
+ },
+ {
+  "first_name": "ANDRES",
+  "last_name": "RUIZ PEREZ",
+  "birthdate": "1998-02-27",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "RUIZ VICO",
+  "birthdate": "2002-04-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERT",
+  "last_name": "TARRES MORA",
+  "birthdate": "1994-09-12",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "TARRES MORA",
+  "birthdate": "1994-09-12",
+  "role": "player"
+ },
+ {
+  "first_name": "ANIOL",
+  "last_name": "VALERA PALOMA",
+  "birthdate": "1993-01-18",
+  "role": "player"
+ },
+ {
+  "first_name": "JULEN",
+  "last_name": "VITORICA CRESPO",
+  "birthdate": "2007-03-12",
+  "role": "player"
+ },
+ {
+  "first_name": "CESAR",
+  "last_name": "GUTIERREZ MERCHAN",
+  "birthdate": "1973-05-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "CESAR",
+  "last_name": "GUTIERREZ MERCHAN",
+  "birthdate": "1973-05-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "FCO.XAVIER",
+  "last_name": "JULIA MATEU",
+  "birthdate": "1970-01-08",
+  "role": "staff"
+ },
+ {
+  "first_name": "CARLES",
+  "last_name": "SOLE I PIQUE",
+  "birthdate": "1968-11-03",
+  "role": "staff"
+ }
+]

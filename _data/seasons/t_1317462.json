@@ -1,0 +1,1469 @@
+{
+ "tournament_id": "1317462",
+ "tournament_name": "COPA CATALUNYA FEMENINA-1aDIVISIÓ-",
+ "teams": [
+  {
+   "id": "15612058",
+   "name": "C.N. BARCELONA",
+   "avatar": "https://cdn.leverade.com/thumbnails/AaT38Tf1E4Fg.500x500.jpg",
+   "club_id": "4979827",
+   "club_name": "C.N. BARCELONA"
+  },
+  {
+   "id": "15615450",
+   "name": "A.E. SANTA EULÀLIA",
+   "avatar": "https://cdn.leverade.com/thumbnails/AaFRZaLfZFUg.500x500.jpg",
+   "club_id": "4979925",
+   "club_name": "A.E. SANTA EULÀLIA"
+  },
+  {
+   "id": "15615743",
+   "name": "C.N. RUBÍ",
+   "avatar": "https://cdn.leverade.com/thumbnails/Aa0ntlmDPJHS.500x500.jpg",
+   "club_id": "4979850",
+   "club_name": "C.N. RUBÍ"
+  },
+  {
+   "id": "15617363",
+   "name": "C.N. MONTJUIC",
+   "avatar": "https://cdn.leverade.com/thumbnails/AaLZ2cLfo4fC.500x500.jpg",
+   "club_id": "4979828",
+   "club_name": "C.N. MONTJUIC"
+  },
+  {
+   "id": "15617389",
+   "name": "C.N. MOLINS DE REI",
+   "avatar": "https://cdn.leverade.com/thumbnails/rfen_f4fc6ccd.500x500.jpg",
+   "club_id": "4980017",
+   "club_name": "C.N. MOLINS DE REI"
+  },
+  {
+   "id": "15620811",
+   "name": "CN VALLIRANA",
+   "avatar": "https://cdn.leverade.com/thumbnails/rfen_768b7452.500x500.jpg",
+   "club_id": "4980021",
+   "club_name": "C.N. VALLIRANA"
+  }
+ ],
+ "team_ids": [
+  "15620811",
+  "15617363",
+  "15617389",
+  "15615743",
+  "15612058",
+  "15615450"
+ ],
+ "matches": [
+  {
+   "id": "142736030",
+   "date": "2025-09-12 18:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15617389",
+   "away_team": "15615450",
+   "results": [
+    {
+     "value": 9,
+     "score": 3,
+     "team_id": "15617389",
+     "match_id": "142736030"
+    },
+    {
+     "value": 6,
+     "score": 0,
+     "team_id": "15615450",
+     "match_id": "142736030"
+    }
+   ],
+   "venue": "170 - Molins De Rei, CN",
+   "round_name": "Jornada 1",
+   "round_order": 1,
+   "group_id": "3638108",
+   "group_name": "Grup B Fase Regular",
+   "date_local": "2025-09-12T20:30:00+02:00",
+   "date_ts": 1757701800
+  },
+  {
+   "id": "142736027",
+   "date": "2025-09-17 18:45:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15615743",
+   "away_team": "15620811",
+   "results": [
+    {
+     "value": 14,
+     "score": 3,
+     "team_id": "15615743",
+     "match_id": "142736027"
+    },
+    {
+     "value": 4,
+     "score": 0,
+     "team_id": "15620811",
+     "match_id": "142736027"
+    }
+   ],
+   "venue": "186 - Rubí, CN - Can Rosés",
+   "round_name": "Jornada 1",
+   "round_order": 1,
+   "group_id": "3638107",
+   "group_name": "Grup A Fase Regular",
+   "date_local": "2025-09-17T20:45:00+02:00",
+   "date_ts": 1758134700
+  },
+  {
+   "id": "142736031",
+   "date": "2025-09-20 14:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15615450",
+   "away_team": "15612058",
+   "results": [
+    {
+     "value": 11,
+     "score": 0,
+     "team_id": "15615450",
+     "match_id": "142736031"
+    },
+    {
+     "value": 19,
+     "score": 3,
+     "team_id": "15612058",
+     "match_id": "142736031"
+    }
+   ],
+   "venue": "228 - Santa Eulàlia, AE",
+   "round_name": "Jornada 2",
+   "round_order": 2,
+   "group_id": "3638108",
+   "group_name": "Grup B Fase Regular",
+   "date_local": "2025-09-20T16:00:00+02:00",
+   "date_ts": 1758376800
+  },
+  {
+   "id": "142736032",
+   "date": "2025-09-23 18:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15612058",
+   "away_team": "15617389",
+   "results": [
+    {
+     "value": 14,
+     "score": 3,
+     "team_id": "15612058",
+     "match_id": "142736032"
+    },
+    {
+     "value": 9,
+     "score": 0,
+     "team_id": "15617389",
+     "match_id": "142736032"
+    }
+   ],
+   "venue": "160 - Barcelona, CN - Nova Escollera - 50m",
+   "round_name": "Jornada 3",
+   "round_order": 3,
+   "group_id": "3638108",
+   "group_name": "Grup B Fase Regular",
+   "date_local": "2025-09-23T20:30:00+02:00",
+   "date_ts": 1758652200
+  },
+  {
+   "id": "142736029",
+   "date": "2025-09-25 18:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15617363",
+   "away_team": "15615743",
+   "results": [
+    {
+     "value": 10,
+     "score": 0,
+     "team_id": "15617363",
+     "match_id": "142736029"
+    },
+    {
+     "value": 19,
+     "score": 3,
+     "team_id": "15615743",
+     "match_id": "142736029"
+    }
+   ],
+   "venue": "161 - Montjuic, CN - Zona Esportiva",
+   "round_name": "Jornada 3",
+   "round_order": 3,
+   "group_id": "3638107",
+   "group_name": "Grup A Fase Regular",
+   "date_local": "2025-09-25T20:30:00+02:00",
+   "date_ts": 1758825000
+  },
+  {
+   "id": "142736028",
+   "date": "2025-09-27 11:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15620811",
+   "away_team": "15617363",
+   "results": [
+    {
+     "value": 13,
+     "score": 3,
+     "team_id": "15620811",
+     "match_id": "142736028"
+    },
+    {
+     "value": 9,
+     "score": 0,
+     "team_id": "15617363",
+     "match_id": "142736028"
+    }
+   ],
+   "venue": "188 - Vallirana, C.N.",
+   "round_name": "Jornada 2",
+   "round_order": 2,
+   "group_id": "3638107",
+   "group_name": "Grup A Fase Regular",
+   "date_local": "2025-09-27T13:00:00+02:00",
+   "date_ts": 1758970800
+  },
+  {
+   "id": "142736037",
+   "date": "2025-10-04 14:00:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15615450",
+   "away_team": "15617363",
+   "results": [
+    {
+     "value": 13,
+     "score": 3,
+     "team_id": "15615450",
+     "match_id": "142736037"
+    },
+    {
+     "value": 10,
+     "score": 0,
+     "team_id": "15617363",
+     "match_id": "142736037"
+    }
+   ],
+   "venue": "228 - Santa Eulàlia, AE",
+   "round_name": "Final 5-6",
+   "round_order": 1,
+   "group_id": "3638155",
+   "group_name": "5è-6è lloc",
+   "date_local": "2025-10-04T16:00:00+02:00",
+   "date_ts": 1759586400
+  },
+  {
+   "id": "142736034",
+   "date": "2025-10-04 15:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15620811",
+   "away_team": "15612058",
+   "results": [
+    {
+     "value": 7,
+     "score": 0,
+     "team_id": "15620811",
+     "match_id": "142736034"
+    },
+    {
+     "value": 14,
+     "score": 3,
+     "team_id": "15612058",
+     "match_id": "142736034"
+    }
+   ],
+   "venue": "188 - Vallirana, C.N.",
+   "round_name": "Semifinal",
+   "round_order": 1,
+   "group_id": "3638113",
+   "group_name": "Fase Final",
+   "date_local": "2025-10-04T17:30:00+02:00",
+   "date_ts": 1759591800
+  },
+  {
+   "id": "142736033",
+   "date": "2025-10-04 17:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15615743",
+   "away_team": "15617389",
+   "results": [
+    {
+     "value": 8,
+     "score": 3,
+     "team_id": "15615743",
+     "match_id": "142736033"
+    },
+    {
+     "value": 6,
+     "score": 0,
+     "team_id": "15617389",
+     "match_id": "142736033"
+    }
+   ],
+   "venue": "186 - Rubí, CN - Can Rosés",
+   "round_name": "Semifinal",
+   "round_order": 1,
+   "group_id": "3638113",
+   "group_name": "Fase Final",
+   "date_local": "2025-10-04T19:30:00+02:00",
+   "date_ts": 1759599000
+  },
+  {
+   "id": "142736036",
+   "date": "2025-10-05 08:45:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15617389",
+   "away_team": "15620811",
+   "results": [
+    {
+     "value": 14,
+     "score": 3,
+     "team_id": "15617389",
+     "match_id": "142736036"
+    },
+    {
+     "value": 8,
+     "score": 0,
+     "team_id": "15620811",
+     "match_id": "142736036"
+    }
+   ],
+   "venue": "186 - Rubí, CN - Can Rosés",
+   "round_name": "Final 3-4",
+   "round_order": 2,
+   "group_id": "3638113",
+   "group_name": "Fase Final",
+   "date_local": "2025-10-05T10:45:00+02:00",
+   "date_ts": 1759653900
+  },
+  {
+   "id": "142736035",
+   "date": "2025-10-05 10:30:00",
+   "finished": true,
+   "canceled": false,
+   "postponed": false,
+   "rest": false,
+   "home_team": "15615743",
+   "away_team": "15612058",
+   "results": [
+    {
+     "value": 8,
+     "score": 3,
+     "team_id": "15615743",
+     "match_id": "142736035"
+    },
+    {
+     "value": 5,
+     "score": 0,
+     "team_id": "15612058",
+     "match_id": "142736035"
+    }
+   ],
+   "venue": "186 - Rubí, CN - Can Rosés",
+   "round_name": "Final 1-2",
+   "round_order": 3,
+   "group_id": "3638113",
+   "group_name": "Fase Final",
+   "date_local": "2025-10-05T12:30:00+02:00",
+   "date_ts": 1759660200
+  }
+ ],
+ "team_names": {
+  "15615743": "C.N. RUBÍ",
+  "15620811": "CN VALLIRANA",
+  "15617363": "C.N. MONTJUIC",
+  "15612058": "C.N. BARCELONA",
+  "15617389": "C.N. MOLINS DE REI",
+  "15615450": "A.E. SANTA EULÀLIA"
+ },
+ "rosters": {
+  "15612058": [
+   {
+    "first_name": "CARLA",
+    "last_name": "ALTIMIRAS GUERRERO",
+    "birthdate": "2003-08-21",
+    "role": "player"
+   },
+   {
+    "first_name": "MIREIA",
+    "last_name": "BARGALLO GARCIA",
+    "birthdate": "1997-03-09",
+    "role": "player"
+   },
+   {
+    "first_name": "JULIA",
+    "last_name": "CAMPOS PAREDES",
+    "birthdate": "2005-11-29",
+    "role": "player"
+   },
+   {
+    "first_name": "MARIONA",
+    "last_name": "CASTELLVI  ROCA",
+    "birthdate": "2005-12-19",
+    "role": "player"
+   },
+   {
+    "first_name": "CARLOTA",
+    "last_name": "DAURA GOMEZ",
+    "birthdate": "2005-11-16",
+    "role": "player"
+   },
+   {
+    "first_name": "UMA",
+    "last_name": "DEL SOL AGUSTI",
+    "birthdate": "2004-10-27",
+    "role": "player"
+   },
+   {
+    "first_name": "MIREIA",
+    "last_name": "GOMEZ ARANDA",
+    "birthdate": "2001-04-27",
+    "role": "player"
+   },
+   {
+    "first_name": "MARTINA",
+    "last_name": "HASHIM GAZULLA",
+    "birthdate": "2007-10-18",
+    "role": "player"
+   },
+   {
+    "first_name": "XENIA",
+    "last_name": "LAHOZ BAEZA",
+    "birthdate": "2007-06-02",
+    "role": "player"
+   },
+   {
+    "first_name": "GINA",
+    "last_name": "RIBO CAVERO",
+    "birthdate": "2007-03-26",
+    "role": "player"
+   },
+   {
+    "first_name": "LAURA",
+    "last_name": "ROCA HERRERA",
+    "birthdate": "1994-10-10",
+    "role": "player"
+   },
+   {
+    "first_name": "CLARA",
+    "last_name": "RODRIGUEZ ALGUACIL",
+    "birthdate": "2002-08-28",
+    "role": "player"
+   },
+   {
+    "first_name": "JULIA",
+    "last_name": "SOLER BENASCO",
+    "birthdate": "2000-09-22",
+    "role": "player"
+   },
+   {
+    "first_name": "NATASHA",
+    "last_name": "TROJAN JIMENEZ",
+    "birthdate": "2001-03-04",
+    "role": "player"
+   },
+   {
+    "first_name": "JANA",
+    "last_name": "UBARTI SALVADOR",
+    "birthdate": "2006-07-24",
+    "role": "player"
+   },
+   {
+    "first_name": "ELENA",
+    "last_name": "VESPERINAS SANCHEZ",
+    "birthdate": "1997-05-07",
+    "role": "player"
+   },
+   {
+    "first_name": "INAKI",
+    "last_name": "AGUILAR VICENTE",
+    "birthdate": "1983-09-09",
+    "role": "staff"
+   },
+   {
+    "first_name": "GABRIEL",
+    "last_name": "CARRASCO ALVAREZ",
+    "birthdate": "2001-05-07",
+    "role": "staff"
+   },
+   {
+    "first_name": "GABRIEL",
+    "last_name": "CARRASCO ALVAREZ",
+    "birthdate": "2001-05-07",
+    "role": "staff"
+   },
+   {
+    "first_name": "ROGER",
+    "last_name": "ECHEVARRIA RODRIGUEZ",
+    "birthdate": "2000-04-26",
+    "role": "staff"
+   },
+   {
+    "first_name": "EDGAR",
+    "last_name": "HERRERA CALERO",
+    "birthdate": "1993-06-23",
+    "role": "staff"
+   },
+   {
+    "first_name": "ALEJANDRO",
+    "last_name": "MIGUEL MANGAS",
+    "birthdate": "1988-09-30",
+    "role": "staff"
+   },
+   {
+    "first_name": "NOELIA",
+    "last_name": "MORA PEREZ",
+    "birthdate": "1995-10-03",
+    "role": "staff"
+   }
+  ],
+  "15615450": [
+   {
+    "first_name": "BEATRIZ",
+    "last_name": "ANTAS DE BARROS CARDOSO DO CARMO",
+    "birthdate": "1999-04-24",
+    "role": "player"
+   },
+   {
+    "first_name": "RAQUEL",
+    "last_name": "ARGENTE CALDERON",
+    "birthdate": "2004-05-20",
+    "role": "player"
+   },
+   {
+    "first_name": "EIRE",
+    "last_name": "AÑO LOPEZ",
+    "birthdate": "2006-10-25",
+    "role": "player"
+   },
+   {
+    "first_name": "PAULA",
+    "last_name": "BATALLA CABEZA",
+    "birthdate": "2008-03-21",
+    "role": "player"
+   },
+   {
+    "first_name": "ALBA",
+    "last_name": "DOÑAGUEDA SANCHEZ",
+    "birthdate": "2010-08-25",
+    "role": "player"
+   },
+   {
+    "first_name": "ABRIL",
+    "last_name": "HERNANDEZ  GARCIA",
+    "birthdate": "2002-11-22",
+    "role": "player"
+   },
+   {
+    "first_name": "ZOE",
+    "last_name": "HLAVAJ SANCHEZ",
+    "birthdate": "2009-01-29",
+    "role": "player"
+   },
+   {
+    "first_name": "SARA",
+    "last_name": "JORDI DE LA CRUZ",
+    "birthdate": "2007-07-22",
+    "role": "player"
+   },
+   {
+    "first_name": "ALICIA",
+    "last_name": "MARIN PANISELLO",
+    "birthdate": "2008-02-06",
+    "role": "player"
+   },
+   {
+    "first_name": "GEMMA",
+    "last_name": "MONTSERRAT CODINACHS",
+    "birthdate": "2007-07-14",
+    "role": "player"
+   },
+   {
+    "first_name": "JOANA",
+    "last_name": "MORA ROVIRA",
+    "birthdate": "2006-03-22",
+    "role": "player"
+   },
+   {
+    "first_name": "MAR",
+    "last_name": "PAVIA SAEZ",
+    "birthdate": "2003-04-23",
+    "role": "player"
+   },
+   {
+    "first_name": "EMMA",
+    "last_name": "PEREZ  CAMP",
+    "birthdate": "2006-09-02",
+    "role": "player"
+   },
+   {
+    "first_name": "PAULA",
+    "last_name": "RODRIGUEZ FERNANDEZ",
+    "birthdate": "2006-01-21",
+    "role": "player"
+   },
+   {
+    "first_name": "AINHOA",
+    "last_name": "VELEZ CAMACHO",
+    "birthdate": "2008-01-08",
+    "role": "player"
+   },
+   {
+    "first_name": "MARC",
+    "last_name": "ARJONA CHIVA",
+    "birthdate": "2004-10-22",
+    "role": "staff"
+   },
+   {
+    "first_name": "DAVID",
+    "last_name": "ARJONA FERNANDEZ",
+    "birthdate": "1972-07-01",
+    "role": "staff"
+   },
+   {
+    "first_name": "DAVID",
+    "last_name": "BLASCO GOMEZ",
+    "birthdate": "1978-01-04",
+    "role": "staff"
+   },
+   {
+    "first_name": "EDUARD",
+    "last_name": "CABRERA DELGADO",
+    "birthdate": "1979-11-24",
+    "role": "staff"
+   },
+   {
+    "first_name": "CRISTINA",
+    "last_name": "CAMACHO HEREDIA",
+    "birthdate": "1967-08-20",
+    "role": "staff"
+   },
+   {
+    "first_name": "MARTA",
+    "last_name": "CHIVA ALTIMIRA",
+    "birthdate": "1973-12-21",
+    "role": "staff"
+   },
+   {
+    "first_name": "MARTA",
+    "last_name": "CHIVA ALTIMIRA",
+    "birthdate": "1973-12-21",
+    "role": "staff"
+   },
+   {
+    "first_name": "CRISTIAN",
+    "last_name": "CLEMENTE GIMENEZ",
+    "birthdate": "1982-01-15",
+    "role": "staff"
+   },
+   {
+    "first_name": "DANIEL",
+    "last_name": "CRUZ MENCIA",
+    "birthdate": "1975-05-05",
+    "role": "staff"
+   },
+   {
+    "first_name": "JAVIER",
+    "last_name": "ESTERAS BERNAOLA",
+    "birthdate": "1981-05-06",
+    "role": "staff"
+   },
+   {
+    "first_name": "JOSE MARIA ",
+    "last_name": "LOPEZ CATALAN",
+    "birthdate": "1976-07-01",
+    "role": "staff"
+   },
+   {
+    "first_name": "JUDIT",
+    "last_name": "PUJOL HINOJOSA",
+    "birthdate": "1996-02-22",
+    "role": "staff"
+   },
+   {
+    "first_name": "MA CARMEN",
+    "last_name": "RODRIGUEZ MARTIN",
+    "birthdate": "1976-11-04",
+    "role": "staff"
+   },
+   {
+    "first_name": "EDGAR",
+    "last_name": "SANZ GIJON",
+    "birthdate": "2004-09-07",
+    "role": "staff"
+   },
+   {
+    "first_name": "CAMILO ANTONIO",
+    "last_name": "VELEZ VELEZ",
+    "birthdate": "1975-11-04",
+    "role": "staff"
+   },
+   {
+    "first_name": "EDUARD",
+    "last_name": "VILLAR MARTINEZ",
+    "birthdate": "1997-12-24",
+    "role": "staff"
+   }
+  ],
+  "15615743": [
+   {
+    "first_name": "PAULA",
+    "last_name": "CARILLA GARCIA",
+    "birthdate": "2003-05-12",
+    "role": "player"
+   },
+   {
+    "first_name": "ERIKA ALEXANDRA",
+    "last_name": "DOUTON LAPUSAN",
+    "birthdate": "2009-02-12",
+    "role": "player"
+   },
+   {
+    "first_name": "ANNA",
+    "last_name": "FINESTRA VILALTA",
+    "birthdate": "2007-01-09",
+    "role": "player"
+   },
+   {
+    "first_name": "CLAUDIA",
+    "last_name": "GOMEZ REYES",
+    "birthdate": "2007-08-26",
+    "role": "player"
+   },
+   {
+    "first_name": "NORA",
+    "last_name": "GRANADOS MARTIN",
+    "birthdate": "2009-03-06",
+    "role": "player"
+   },
+   {
+    "first_name": "LUCIA",
+    "last_name": "HIDALGO GARCIA",
+    "birthdate": "2005-03-01",
+    "role": "player"
+   },
+   {
+    "first_name": "MARIA",
+    "last_name": "MARTINS MACHADO",
+    "birthdate": "2004-10-07",
+    "role": "player"
+   },
+   {
+    "first_name": "JUDITH",
+    "last_name": "PRADOS CALVO",
+    "birthdate": "2002-09-05",
+    "role": "player"
+   },
+   {
+    "first_name": "RAQUEL",
+    "last_name": "PRIETO HERNANDEZ",
+    "birthdate": "2002-10-11",
+    "role": "player"
+   },
+   {
+    "first_name": "LAIA",
+    "last_name": "RION BONILLA",
+    "birthdate": "2003-06-10",
+    "role": "player"
+   },
+   {
+    "first_name": "MARTA",
+    "last_name": "RODRIGUEZ GARCIA",
+    "birthdate": "2003-09-24",
+    "role": "player"
+   },
+   {
+    "first_name": "MARTA",
+    "last_name": "RODRIGUEZ MELLADO",
+    "birthdate": "2007-06-07",
+    "role": "player"
+   },
+   {
+    "first_name": "AROA",
+    "last_name": "SANCHEZ ARECHAVALETA",
+    "birthdate": "2006-04-17",
+    "role": "player"
+   },
+   {
+    "first_name": "LAIA",
+    "last_name": "TOMAS SAMPER",
+    "birthdate": "2011-11-15",
+    "role": "player"
+   },
+   {
+    "first_name": "LIDIA",
+    "last_name": "TRIGO ROCHA",
+    "birthdate": "2005-12-03",
+    "role": "player"
+   },
+   {
+    "first_name": "JAVIER",
+    "last_name": "CARRASCO MADRIDANO",
+    "birthdate": "1999-07-02",
+    "role": "staff"
+   },
+   {
+    "first_name": "DANIEL",
+    "last_name": "GOMEZ ARIAS",
+    "birthdate": "1979-06-11",
+    "role": "staff"
+   },
+   {
+    "first_name": "CLAUDIA",
+    "last_name": "GOMEZ REYES",
+    "birthdate": "2007-08-26",
+    "role": "staff"
+   },
+   {
+    "first_name": "KARLOS",
+    "last_name": "LIGERO ALVAREZ",
+    "birthdate": "1997-09-21",
+    "role": "staff"
+   },
+   {
+    "first_name": "MIQUEL",
+    "last_name": "MOYANO RUIZ",
+    "birthdate": "1994-04-30",
+    "role": "staff"
+   },
+   {
+    "first_name": "MIQUEL",
+    "last_name": "MOYANO RUIZ",
+    "birthdate": "1994-04-30",
+    "role": "staff"
+   },
+   {
+    "first_name": "JOSE MARIA",
+    "last_name": "PINA OLLE",
+    "birthdate": "1972-05-20",
+    "role": "staff"
+   }
+  ],
+  "15617363": [
+   {
+    "first_name": "EVA",
+    "last_name": "ALEGRE VILAS",
+    "birthdate": "1995-01-03",
+    "role": "player"
+   },
+   {
+    "first_name": "PAULA",
+    "last_name": "ANDRADE MATAMOROS",
+    "birthdate": "2006-01-03",
+    "role": "player"
+   },
+   {
+    "first_name": "BLANCA",
+    "last_name": "BATLLE PICAS",
+    "birthdate": "2002-04-02",
+    "role": "player"
+   },
+   {
+    "first_name": "LEMLEM",
+    "last_name": "BLASCO GRIMA",
+    "birthdate": "2005-05-19",
+    "role": "player"
+   },
+   {
+    "first_name": "EMMA",
+    "last_name": "CANO CRUZ",
+    "birthdate": "2004-07-12",
+    "role": "player"
+   },
+   {
+    "first_name": "JANA",
+    "last_name": "IÑESTA SANCHEZ",
+    "birthdate": "2007-02-20",
+    "role": "player"
+   },
+   {
+    "first_name": "MONICA",
+    "last_name": "PERARNAU HURTADO",
+    "birthdate": "1994-08-08",
+    "role": "player"
+   },
+   {
+    "first_name": "ARIANE",
+    "last_name": "PRADOS DIAZ",
+    "birthdate": "1996-08-09",
+    "role": "player"
+   },
+   {
+    "first_name": "ESTEL",
+    "last_name": "RAMON TORRENT",
+    "birthdate": "2006-07-11",
+    "role": "player"
+   },
+   {
+    "first_name": "ANNA",
+    "last_name": "SEGURANA FERRE",
+    "birthdate": "1991-12-23",
+    "role": "player"
+   },
+   {
+    "first_name": "ALEXANDRA",
+    "last_name": "SERRANO GUIL",
+    "birthdate": "2003-06-25",
+    "role": "player"
+   },
+   {
+    "first_name": "ONA",
+    "last_name": "SOUSA IBORRA",
+    "birthdate": "2006-05-11",
+    "role": "player"
+   },
+   {
+    "first_name": "MAMIKA",
+    "last_name": "TERADA",
+    "birthdate": "2002-12-19",
+    "role": "player"
+   },
+   {
+    "first_name": "CRISTINA",
+    "last_name": "UNGO DE VELASCO BOU",
+    "birthdate": "1976-01-13",
+    "role": "player"
+   },
+   {
+    "first_name": "LAURA",
+    "last_name": "VILLA ROMERO",
+    "birthdate": "1991-05-10",
+    "role": "player"
+   },
+   {
+    "first_name": "MARTINA",
+    "last_name": "VILLAR MIRALLES",
+    "birthdate": "2006-12-31",
+    "role": "player"
+   },
+   {
+    "first_name": "JOSE",
+    "last_name": "ALCAZAR PEREZ",
+    "birthdate": "1957-04-10",
+    "role": "staff"
+   },
+   {
+    "first_name": "JOSE",
+    "last_name": "ALCAZAR PEREZ",
+    "birthdate": "1957-04-10",
+    "role": "staff"
+   },
+   {
+    "first_name": "Gloria",
+    "last_name": "De La Torre Mederos",
+    "birthdate": "1965-08-19",
+    "role": "staff"
+   },
+   {
+    "first_name": "MARIA JESUS",
+    "last_name": "ESTEBAN MUÑOZ",
+    "birthdate": "1973-09-26",
+    "role": "staff"
+   },
+   {
+    "first_name": "ELISABET",
+    "last_name": "FUENTES FLORES",
+    "birthdate": "1973-11-21",
+    "role": "staff"
+   },
+   {
+    "first_name": "MARC",
+    "last_name": "GISPERT  GARCIA",
+    "birthdate": "1997-05-06",
+    "role": "staff"
+   },
+   {
+    "first_name": "VICTOR",
+    "last_name": "SERRANO ACEDO",
+    "birthdate": "1969-04-08",
+    "role": "staff"
+   }
+  ],
+  "15617389": [
+   {
+    "first_name": "BERTA",
+    "last_name": "ALAVEDRA BETRAN",
+    "birthdate": "2007-09-25",
+    "role": "player"
+   },
+   {
+    "first_name": "ELIA",
+    "last_name": "BADOSA FELIP",
+    "birthdate": "2003-07-23",
+    "role": "player"
+   },
+   {
+    "first_name": "MARIA",
+    "last_name": "BATLLE MARTINEZ",
+    "birthdate": "2008-06-02",
+    "role": "player"
+   },
+   {
+    "first_name": "ARIADNA",
+    "last_name": "BELLES LOPEZ",
+    "birthdate": "1999-03-18",
+    "role": "player"
+   },
+   {
+    "first_name": "MARTA",
+    "last_name": "CUELLO FERRES",
+    "birthdate": "2007-04-21",
+    "role": "player"
+   },
+   {
+    "first_name": "ELSA",
+    "last_name": "GARCIA MARTIN",
+    "birthdate": "2010-12-20",
+    "role": "player"
+   },
+   {
+    "first_name": "LAIA",
+    "last_name": "GARCIA PACHECO",
+    "birthdate": "2000-05-28",
+    "role": "player"
+   },
+   {
+    "first_name": "LIDIA",
+    "last_name": "LOPEZ AGUILERA",
+    "birthdate": "2009-03-15",
+    "role": "player"
+   },
+   {
+    "first_name": "NEREA",
+    "last_name": "LOZANO OLIVA",
+    "birthdate": "2003-09-17",
+    "role": "player"
+   },
+   {
+    "first_name": "NEREA",
+    "last_name": "MORALES LLAMAS",
+    "birthdate": "2004-05-07",
+    "role": "player"
+   },
+   {
+    "first_name": "VALENTINA",
+    "last_name": "PIRETTI GONZALEZ",
+    "birthdate": "2009-06-22",
+    "role": "player"
+   },
+   {
+    "first_name": "SANDRA",
+    "last_name": "RODRIGUEZ CALAFELL",
+    "birthdate": "2009-06-07",
+    "role": "player"
+   },
+   {
+    "first_name": "PAULA",
+    "last_name": "SERRANO PAMIES",
+    "birthdate": "2009-09-22",
+    "role": "player"
+   },
+   {
+    "first_name": "JULIA",
+    "last_name": "TORRAS GUSI",
+    "birthdate": "2003-02-06",
+    "role": "player"
+   },
+   {
+    "first_name": "JULIA",
+    "last_name": "VIDAL SADURNI",
+    "birthdate": "2009-03-02",
+    "role": "player"
+   },
+   {
+    "first_name": "LUCIA",
+    "last_name": "VILAR ALVAREZ",
+    "birthdate": "2009-09-17",
+    "role": "player"
+   },
+   {
+    "first_name": "AINHOA",
+    "last_name": "VIZCAINO RODRIGUEZ",
+    "birthdate": "2002-03-05",
+    "role": "player"
+   },
+   {
+    "first_name": "JOAN",
+    "last_name": "ALLED CARDONA",
+    "birthdate": "1954-01-26",
+    "role": "staff"
+   },
+   {
+    "first_name": "DAVID",
+    "last_name": "ALLED FUSTER",
+    "birthdate": "1979-05-16",
+    "role": "staff"
+   },
+   {
+    "first_name": "JOSE JUAN",
+    "last_name": "CUELLO COLLADO",
+    "birthdate": "1974-10-09",
+    "role": "staff"
+   },
+   {
+    "first_name": "MERITXELL",
+    "last_name": "DEL ARCO FERNANDEZ",
+    "birthdate": "1980-05-05",
+    "role": "staff"
+   }
+  ],
+  "15620811": [
+   {
+    "first_name": "BIANCA",
+    "last_name": "BARLOCCO MARTINEZ",
+    "birthdate": "2007-12-08",
+    "role": "player"
+   },
+   {
+    "first_name": "BIANCA",
+    "last_name": "BARLOCCO MARTINEZ",
+    "birthdate": "2007-12-08",
+    "role": "player"
+   },
+   {
+    "first_name": "LOIDA",
+    "last_name": "BATLLE MORENO",
+    "birthdate": "2009-07-09",
+    "role": "player"
+   },
+   {
+    "first_name": "SARA",
+    "last_name": "BURGADA GRI",
+    "birthdate": "1998-12-30",
+    "role": "player"
+   },
+   {
+    "first_name": "LUCIA",
+    "last_name": "CABERO LOPEZ",
+    "birthdate": "2009-02-18",
+    "role": "player"
+   },
+   {
+    "first_name": "IVETT",
+    "last_name": "CANDELERA NAVARRO",
+    "birthdate": "2008-07-13",
+    "role": "player"
+   },
+   {
+    "first_name": "CARLOTA",
+    "last_name": "GIL LUQUE",
+    "birthdate": "2006-01-21",
+    "role": "player"
+   },
+   {
+    "first_name": "LAIA",
+    "last_name": "GOMILA GIBERT",
+    "birthdate": "2001-02-22",
+    "role": "player"
+   },
+   {
+    "first_name": "LAURA",
+    "last_name": "GRANDES GINER",
+    "birthdate": "2005-11-09",
+    "role": "player"
+   },
+   {
+    "first_name": "ANNA",
+    "last_name": "LOPEZ DEZA",
+    "birthdate": "2002-07-21",
+    "role": "player"
+   },
+   {
+    "first_name": "ELISA",
+    "last_name": "LOPEZ DEZA",
+    "birthdate": "2000-07-27",
+    "role": "player"
+   },
+   {
+    "first_name": "MILAGROS",
+    "last_name": "LOPEZ DEZA",
+    "birthdate": "1996-05-21",
+    "role": "player"
+   },
+   {
+    "first_name": "AINHOA",
+    "last_name": "MUÑOZ PADILLA",
+    "birthdate": "2006-10-08",
+    "role": "player"
+   },
+   {
+    "first_name": "NATALIA",
+    "last_name": "PEREZ ROPERO",
+    "birthdate": "2008-08-26",
+    "role": "player"
+   },
+   {
+    "first_name": "MARTA",
+    "last_name": "PIQUE CABALLERO",
+    "birthdate": "2006-11-04",
+    "role": "player"
+   },
+   {
+    "first_name": "LUCIA",
+    "last_name": "TRASSIERRA MARTINEZ",
+    "birthdate": "2006-05-18",
+    "role": "player"
+   },
+   {
+    "first_name": "GINA",
+    "last_name": "TUTUSAUS LARROSA",
+    "birthdate": "2004-05-19",
+    "role": "player"
+   },
+   {
+    "first_name": "ALBERTO",
+    "last_name": "AVILES ARANTEGUI",
+    "birthdate": "1999-02-21",
+    "role": "staff"
+   },
+   {
+    "first_name": "MONTSERRAT",
+    "last_name": "GIBERT GONZALE",
+    "birthdate": "1968-01-12",
+    "role": "staff"
+   },
+   {
+    "first_name": "MILAGROS",
+    "last_name": "LOPEZ DEZA",
+    "birthdate": "1996-05-21",
+    "role": "staff"
+   },
+   {
+    "first_name": "BEATRIZ",
+    "last_name": "MARTINEZ GIL",
+    "birthdate": "1982-07-12",
+    "role": "staff"
+   }
+  ]
+ },
+ "groups": [
+  {
+   "id": "3638107",
+   "name": "Grup A Fase Regular",
+   "standings": [
+    {
+     "id": 15615743,
+     "name": "C.N. RUBÍ",
+     "position": 1,
+     "points": 6,
+     "played": 2,
+     "won": 2,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 33,
+     "goals_against": 14,
+     "goal_diff": 19
+    },
+    {
+     "id": 15620811,
+     "name": "CN VALLIRANA",
+     "position": 2,
+     "points": 3,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 17,
+     "goals_against": 23,
+     "goal_diff": -6
+    },
+    {
+     "id": 15617363,
+     "name": "C.N. MONTJUIC",
+     "position": 3,
+     "points": 0,
+     "played": 2,
+     "won": 0,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 19,
+     "goals_against": 32,
+     "goal_diff": -13
+    }
+   ],
+   "team_ids": [
+    "15620811",
+    "15617363",
+    "15615743"
+   ]
+  },
+  {
+   "id": "3638108",
+   "name": "Grup B Fase Regular",
+   "standings": [
+    {
+     "id": 15612058,
+     "name": "C.N. BARCELONA",
+     "position": 1,
+     "points": 6,
+     "played": 2,
+     "won": 2,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 33,
+     "goals_against": 20,
+     "goal_diff": 13
+    },
+    {
+     "id": 15617389,
+     "name": "C.N. MOLINS DE REI",
+     "position": 2,
+     "points": 3,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 18,
+     "goals_against": 20,
+     "goal_diff": -2
+    },
+    {
+     "id": 15615450,
+     "name": "A.E. SANTA EULÀLIA",
+     "position": 3,
+     "points": 0,
+     "played": 2,
+     "won": 0,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 17,
+     "goals_against": 28,
+     "goal_diff": -11
+    }
+   ],
+   "team_ids": [
+    "15615450",
+    "15612058",
+    "15617389"
+   ]
+  },
+  {
+   "id": "3638113",
+   "name": "Fase Final",
+   "standings": [
+    {
+     "id": 15615743,
+     "name": "C.N. RUBÍ",
+     "position": 1,
+     "points": 6,
+     "played": 2,
+     "won": 2,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 16,
+     "goals_against": 11,
+     "goal_diff": 5
+    },
+    {
+     "id": 15617389,
+     "name": "C.N. MOLINS DE REI",
+     "position": 2,
+     "points": 3,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 20,
+     "goals_against": 16,
+     "goal_diff": 4
+    },
+    {
+     "id": 15612058,
+     "name": "C.N. BARCELONA",
+     "position": 3,
+     "points": 3,
+     "played": 2,
+     "won": 1,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 19,
+     "goals_against": 15,
+     "goal_diff": 4
+    },
+    {
+     "id": 15620811,
+     "name": "CN VALLIRANA",
+     "position": 4,
+     "points": 0,
+     "played": 2,
+     "won": 0,
+     "drawn": 0,
+     "lost": 2,
+     "goals_for": 15,
+     "goals_against": 28,
+     "goal_diff": -13
+    }
+   ],
+   "team_ids": [
+    "15620811",
+    "15612058",
+    "15617389",
+    "15615743"
+   ]
+  },
+  {
+   "id": "3638155",
+   "name": "5è-6è lloc",
+   "standings": [
+    {
+     "id": 15615450,
+     "name": "A.E. SANTA EULÀLIA",
+     "position": 1,
+     "points": 3,
+     "played": 1,
+     "won": 1,
+     "drawn": 0,
+     "lost": 0,
+     "goals_for": 13,
+     "goals_against": 10,
+     "goal_diff": 3
+    },
+    {
+     "id": 15617363,
+     "name": "C.N. MONTJUIC",
+     "position": 2,
+     "points": 0,
+     "played": 1,
+     "won": 0,
+     "drawn": 0,
+     "lost": 1,
+     "goals_for": 10,
+     "goals_against": 13,
+     "goal_diff": -3
+    }
+   ],
+   "team_ids": [
+    "15615450",
+    "15617363"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,140 @@
+[
+ {
+  "first_name": "CARLA",
+  "last_name": "ALTIMIRAS GUERRERO",
+  "birthdate": "2003-08-21",
+  "role": "player"
+ },
+ {
+  "first_name": "MIREIA",
+  "last_name": "BARGALLO GARCIA",
+  "birthdate": "1997-03-09",
+  "role": "player"
+ },
+ {
+  "first_name": "JULIA",
+  "last_name": "CAMPOS PAREDES",
+  "birthdate": "2005-11-29",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIONA",
+  "last_name": "CASTELLVI  ROCA",
+  "birthdate": "2005-12-19",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLOTA",
+  "last_name": "DAURA GOMEZ",
+  "birthdate": "2005-11-16",
+  "role": "player"
+ },
+ {
+  "first_name": "UMA",
+  "last_name": "DEL SOL AGUSTI",
+  "birthdate": "2004-10-27",
+  "role": "player"
+ },
+ {
+  "first_name": "MIREIA",
+  "last_name": "GOMEZ ARANDA",
+  "birthdate": "2001-04-27",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTINA",
+  "last_name": "HASHIM GAZULLA",
+  "birthdate": "2007-10-18",
+  "role": "player"
+ },
+ {
+  "first_name": "XENIA",
+  "last_name": "LAHOZ BAEZA",
+  "birthdate": "2007-06-02",
+  "role": "player"
+ },
+ {
+  "first_name": "GINA",
+  "last_name": "RIBO CAVERO",
+  "birthdate": "2007-03-26",
+  "role": "player"
+ },
+ {
+  "first_name": "LAURA",
+  "last_name": "ROCA HERRERA",
+  "birthdate": "1994-10-10",
+  "role": "player"
+ },
+ {
+  "first_name": "CLARA",
+  "last_name": "RODRIGUEZ ALGUACIL",
+  "birthdate": "2002-08-28",
+  "role": "player"
+ },
+ {
+  "first_name": "JULIA",
+  "last_name": "SOLER BENASCO",
+  "birthdate": "2000-09-22",
+  "role": "player"
+ },
+ {
+  "first_name": "NATASHA",
+  "last_name": "TROJAN JIMENEZ",
+  "birthdate": "2001-03-04",
+  "role": "player"
+ },
+ {
+  "first_name": "JANA",
+  "last_name": "UBARTI SALVADOR",
+  "birthdate": "2006-07-24",
+  "role": "player"
+ },
+ {
+  "first_name": "ELENA",
+  "last_name": "VESPERINAS SANCHEZ",
+  "birthdate": "1997-05-07",
+  "role": "player"
+ },
+ {
+  "first_name": "INAKI",
+  "last_name": "AGUILAR VICENTE",
+  "birthdate": "1983-09-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "GABRIEL",
+  "last_name": "CARRASCO ALVAREZ",
+  "birthdate": "2001-05-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "GABRIEL",
+  "last_name": "CARRASCO ALVAREZ",
+  "birthdate": "2001-05-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "ECHEVARRIA RODRIGUEZ",
+  "birthdate": "2000-04-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "EDGAR",
+  "last_name": "HERRERA CALERO",
+  "birthdate": "1993-06-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEJANDRO",
+  "last_name": "MIGUEL MANGAS",
+  "birthdate": "1988-09-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "NOELIA",
+  "last_name": "MORA PEREZ",
+  "birthdate": "1995-10-03",
+  "role": "staff"
+ }
+]

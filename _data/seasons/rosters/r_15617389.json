@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "BERTA",
+  "last_name": "ALAVEDRA BETRAN",
+  "birthdate": "2007-09-25",
+  "role": "player"
+ },
+ {
+  "first_name": "ELIA",
+  "last_name": "BADOSA FELIP",
+  "birthdate": "2003-07-23",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIA",
+  "last_name": "BATLLE MARTINEZ",
+  "birthdate": "2008-06-02",
+  "role": "player"
+ },
+ {
+  "first_name": "ARIADNA",
+  "last_name": "BELLES LOPEZ",
+  "birthdate": "1999-03-18",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTA",
+  "last_name": "CUELLO FERRES",
+  "birthdate": "2007-04-21",
+  "role": "player"
+ },
+ {
+  "first_name": "ELSA",
+  "last_name": "GARCIA MARTIN",
+  "birthdate": "2010-12-20",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "GARCIA PACHECO",
+  "birthdate": "2000-05-28",
+  "role": "player"
+ },
+ {
+  "first_name": "LIDIA",
+  "last_name": "LOPEZ AGUILERA",
+  "birthdate": "2009-03-15",
+  "role": "player"
+ },
+ {
+  "first_name": "NEREA",
+  "last_name": "LOZANO OLIVA",
+  "birthdate": "2003-09-17",
+  "role": "player"
+ },
+ {
+  "first_name": "NEREA",
+  "last_name": "MORALES LLAMAS",
+  "birthdate": "2004-05-07",
+  "role": "player"
+ },
+ {
+  "first_name": "VALENTINA",
+  "last_name": "PIRETTI GONZALEZ",
+  "birthdate": "2009-06-22",
+  "role": "player"
+ },
+ {
+  "first_name": "SANDRA",
+  "last_name": "RODRIGUEZ CALAFELL",
+  "birthdate": "2009-06-07",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "SERRANO PAMIES",
+  "birthdate": "2009-09-22",
+  "role": "player"
+ },
+ {
+  "first_name": "JULIA",
+  "last_name": "TORRAS GUSI",
+  "birthdate": "2003-02-06",
+  "role": "player"
+ },
+ {
+  "first_name": "JULIA",
+  "last_name": "VIDAL SADURNI",
+  "birthdate": "2009-03-02",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCIA",
+  "last_name": "VILAR ALVAREZ",
+  "birthdate": "2009-09-17",
+  "role": "player"
+ },
+ {
+  "first_name": "AINHOA",
+  "last_name": "VIZCAINO RODRIGUEZ",
+  "birthdate": "2002-03-05",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "ALLED CARDONA",
+  "birthdate": "1954-01-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "ALLED FUSTER",
+  "birthdate": "1979-05-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE JUAN",
+  "last_name": "CUELLO COLLADO",
+  "birthdate": "1974-10-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "MERITXELL",
+  "last_name": "DEL ARCO FERNANDEZ",
+  "birthdate": "1980-05-05",
+  "role": "staff"
+ }
+]

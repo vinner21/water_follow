@@ -1,0 +1,143 @@
+Rosters: using cache (pass --refresh-rosters to update)
+============================================================
+STEP 1: Discovering seasons
+============================================================
+Fetching manager tournaments (all seasons) ...
+  Found 245 tournaments across 12 seasons
+  Season 2621: 1 tournaments (finished)
+  Season 3331: 23 tournaments (finished)
+  Season 2620: 1 tournaments (CURRENT)
+  Season 4130: 27 tournaments (finished)
+  Season 4919: 32 tournaments (finished)
+  Season 5828: 34 tournaments (finished)
+  Season 2610: 5 tournaments (finished)
+  Season 2611: 14 tournaments (finished)
+  Season 2612: 19 tournaments (finished)
+  Season 6653: 36 tournaments (finished)
+  Season 7618: 32 tournaments (finished)
+  Season 8400: 21 tournaments (CURRENT)
+  Merging current season 2620 (1 tournaments) into 8400 (21 tournaments)
+
+============================================================
+STEP 2: Loading/fetching season data
+============================================================
+  Loaded season 2018-19 from cache (/Users/ESVidalFe/Library/CloudStorage/OneDrive-NESTLE/001_origen/888_varis/repos/water/_data/seasons/2621.json)
+  Loaded season 2019-20 from cache (/Users/ESVidalFe/Library/CloudStorage/OneDrive-NESTLE/001_origen/888_varis/repos/water/_data/seasons/3331.json)
+  Loaded season 2020-21 from cache (/Users/ESVidalFe/Library/CloudStorage/OneDrive-NESTLE/001_origen/888_varis/repos/water/_data/seasons/4130.json)
+  Loaded season 2021-22 from cache (/Users/ESVidalFe/Library/CloudStorage/OneDrive-NESTLE/001_origen/888_varis/repos/water/_data/seasons/4919.json)
+  Loaded season 2022-23 from cache (/Users/ESVidalFe/Library/CloudStorage/OneDrive-NESTLE/001_origen/888_varis/repos/water/_data/seasons/5828.json)
+  Loaded season 2007-08 from cache (/Users/ESVidalFe/Library/CloudStorage/OneDrive-NESTLE/001_origen/888_varis/repos/water/_data/seasons/2610.json)
+  Loaded season 2000-01 from cache (/Users/ESVidalFe/Library/CloudStorage/OneDrive-NESTLE/001_origen/888_varis/repos/water/_data/seasons/2611.json)
+  Loaded season 2009-10 from cache (/Users/ESVidalFe/Library/CloudStorage/OneDrive-NESTLE/001_origen/888_varis/repos/water/_data/seasons/2612.json)
+  Loaded season 2023-24 from cache (/Users/ESVidalFe/Library/CloudStorage/OneDrive-NESTLE/001_origen/888_varis/repos/water/_data/seasons/6653.json)
+  Loaded season 2024-25 from cache (/Users/ESVidalFe/Library/CloudStorage/OneDrive-NESTLE/001_origen/888_varis/repos/water/_data/seasons/7618.json)
+
+  Fetching season 8400 from API...
+    Loaded finished tournament COPA CATALUNYA FEMENINA-DIV.HONOR- from cache
+    Loaded finished tournament COPA CATALUNYA MASCULINA-DIV.HONOR- from cache
+    Loaded finished tournament OPEN TURBO CHRISTMAS CUP ALEVI FEMENI 2025/2026 from cache
+    Loaded finished tournament OPEN TURBO CHRISTMAS CUP ALEVI MIXT 2025/2026 from cache
+    Loaded finished tournament OPEN TURBO CHRISTMAS CUP BENJAMI MIXT 2025/2026 from cache
+  5 finished tournaments loaded from cache
+  17 tournaments need API calls
+    Checking LLIGA CATALANA MASTER MIXTE ... OK (22 equips)
+    Checking COPA CATALUNYA FEMENINA-1aDIVISIÓ- ... OK (6 equips)
+    Checking COPA CATALUNYA MASCULINA-1 i 2a DIVISIÓ-- ... OK (8 equips)
+    Checking LLIGA CATALANA 1A DIV.ABSOLUTA MASCULINA ... OK (17 equips)
+    Checking LLIGA CATALANA 2A DIV.ABSOLUTA MASCULINA ... OK (8 equips)
+    Checking COMPETICIÓ CATALANA  ABSOLUTA MASCULINA DE PROMOCIÓ ... OK (8 equips)
+    Checking LLIGA CATALANA JUVENIL MASCULI ... OK (24 equips)
+    Checking LLIGA CATALANA CADET MASCULI ... OK (30 equips)
+    Checking LLIGA CATALANA INFANTIL MIXTE ... OK (39 equips)
+    Checking LLIGA CATALANA ALEVI MIXTE ... OK (38 equips)
+    Checking LLIGA CATALANA BENJAMINA MIXTA ... OK (37 equips)
+    Checking LLIGA CATALANA 1A DIV.ABSOLUTA FEMENINA ... OK (9 equips)
+    Checking LLIGA CATALANA JUVENIL FEMENI ... OK (10 equips)
+    Checking LLIGA CATALANA CADET FEMENI ... OK (14 equips)
+    Checking LLIGA CATALANA INFANTIL FEMENI ... OK (14 equips)
+    Checking LLIGA CATALANA ALEVI FEMENI ... OK (11 equips)
+    Checking CAMPIONAT CATALUNYA JUVENIL FEMENI Proves ... OK (2 equips)
+
+  Collecting data for: LLIGA CATALANA 1A DIV.ABSOLUTA MASCULINA
+  Fetching groups for LLIGA CATALANA 1A DIV.ABSOLUTA MASCULINA ...
+    6 groups found
+    Fetching group Fase eliminatoria 2a Fase (1-4) ... 16 matches
+    Fetching group Fase eliminatoria 2a Fase (5-8) ... 8 matches
+    Fetching group Fase eliminatoria 2a Fase (9-12) ... 4 matches
+    Fetching group Fase eliminatoria 2a Fase (13-26) ... 4 matches
+    Fetching group Partit Pormoció 1a Catalana ... 2 matches
+    Fetching group Fase regular 1a. Fase ... 90 matches
+    All team rosters are fresh (cached <30 days)
+    Rosters: loaded 17 from cache (401 participants)
+    -> 124 matches, 6 group(s)
+
+  Collecting data for: LLIGA CATALANA 2A DIV.ABSOLUTA MASCULINA
+  Fetching groups for LLIGA CATALANA 2A DIV.ABSOLUTA MASCULINA ...
+    1 groups found
+    Fetching group Lliga regular 1a Fase ... 56 matches
+    All team rosters are fresh (cached <30 days)
+    Rosters: loaded 8 from cache (206 participants)
+    -> 56 matches, 1 group(s)
+
+  Collecting data for: COMPETICIÓ CATALANA  ABSOLUTA MASCULINA DE PROMOCIÓ
+  Fetching groups for COMPETICIÓ CATALANA  ABSOLUTA MASCULINA DE PROMOCIÓ ...
+    3 groups found
+    Fetching group Fase eliminatoria 2a Fase ... 8 matches
+    Fetching group Semifinal 3 i 4 ... 4 matches
+    Fetching group Fase regular 1a. Fase ... 56 matches
+    All team rosters are fresh (cached <30 days)
+    Rosters: loaded 8 from cache (299 participants)
+    -> 68 matches, 3 group(s)
+
+  Collecting data for: LLIGA CATALANA JUVENIL MASCULI
+  Fetching groups for LLIGA CATALANA JUVENIL MASCULI ...
+    17 groups found
+    Fetching group Grup 1-8 3a Fase ... 56 matches
+    Fetching group Grup 9-16 3a Fase ... 56 matches
+    Fetching group Grup 17-24 3a Fase (1-4) ... 8 matches
+    Fetching group Grup 17-24 3a Fase (5-8) ... 4 matches
+    Fetching group Grup I 2a Fase ... 12 matches
+    Fetching group Grup II 2a Fase ... 12 matches
+    Fetching group Grup III 2a Fase ... 12 matches
+    Fetching group Grup IV 2a Fase ... 12 matches
+    Fetching group Grup 17-24 2a Fase ... 56 matches
+    Fetching group Grup A 1a Fase ... 3 matches
+    Fetching group Grup B 1a Fase ... 3 matches
+    Fetching group Grup C 1a Fase ... 3 matches
+    Fetching group Grup D 1a Fase ... 3 matches
+    Fetching group Grup E 1a Fase ... 3 matches
+    Fetching group Grup F 1a Fase ... 3 matches
+    Fetching group Grup G 1a Fase ... 3 matches
+    Fetching group Grup H 1a Fase ... 3 matches
+    All team rosters are fresh (cached <30 days)
+    Rosters: loaded 24 from cache (701 participants)
+    -> 252 matches, 17 group(s)
+
+  Collecting data for: LLIGA CATALANA CADET MASCULI
+  Fetching groups for LLIGA CATALANA CADET MASCULI ...
+    22 groups found
+    Fetching group Grup 1-8 3a Fase ... 56 matches
+    Fetching group Grup 9-16 3a Fase ... 56 matches
+    Fetching group Grup 17-24 3a Fase ... 56 matches
+    Fetching group Grup 25-30 3a Fase ... 30 matches
+    Fetching group Grup I 2a Fase (1-16) ... 12 matches
+    Fetching group Grup II 2a Fase (1-16) ... 12 matches
+    Fetching group Grup III 2a Fase (1-16) ... 12 matches
+    Fetching group Grup IV 2a Fase (1-16) ... 12 matches
+    Fetching group Grup V 2a Fase (17-30) ... 12 matches
+    Fetching group Grup VI 2a Fase(17-30) ... 12 matches
+    Fetching group Grup VII 2a Fase(17-30) ... 12 matches
+    Fetching group Grup VIII 2a Fase (17-30) ... 12 matches
+    Fetching group Grup A 1a Fase ... 3 matches
+    Fetching group Grup B 1a Fase ... 3 matches
+    Fetching group Grup C 1a Fase ... 3 matches
+    Fetching group Grup D 1a Fase ... 3 matches
+    Fetching group Grup E 1a Fase ... 3 matches
+    Fetching group Grup F 1a Fase ... 3 matches
+    Fetching group Grup G 1a Fase ... 3 matches
+    Fetching group Grup H 1a Fase ... 3 matches
+    Fetching group Grup I 1a.Fase Equips B ... 3 matches
+    Fetching group Grup J 1a.Fase Equips B ... 3 matches
+    All team rosters are fresh (cached <30 days)
+    Rosters: loaded 30 from cache (806 participants)
+    -> 324 matches, 22 group(s)

@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "ALEIX",
+  "last_name": "BAHI SOLE",
+  "birthdate": "2002-12-05",
+  "role": "player"
+ },
+ {
+  "first_name": "ENRIC",
+  "last_name": "BARDALET MARTI",
+  "birthdate": "2011-08-05",
+  "role": "player"
+ },
+ {
+  "first_name": "MATEO",
+  "last_name": "CORDINI",
+  "birthdate": "2004-07-07",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "ESCOLA DARNES",
+  "birthdate": "2008-10-24",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "FERNANDEZ GOMEZ",
+  "birthdate": "2002-06-05",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "FERNANDEZ GOMEZ",
+  "birthdate": "2002-06-05",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "FRANCH PALLISERA",
+  "birthdate": "2002-07-28",
+  "role": "player"
+ },
+ {
+  "first_name": "ENRIC",
+  "last_name": "GIRONELLA FERNANDEZ",
+  "birthdate": "2001-01-22",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "GORGORI DE MIGUEL",
+  "birthdate": "2011-08-20",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "MATEO MARTIN",
+  "birthdate": "2002-08-05",
+  "role": "player"
+ },
+ {
+  "first_name": "TONI",
+  "last_name": "MONTORO RENO",
+  "birthdate": "2009-06-12",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERT",
+  "last_name": "PALLARES I ROMANS",
+  "birthdate": "2009-05-09",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "RIERA OSUNA",
+  "birthdate": "2000-09-05",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "SAIS ORTEGA",
+  "birthdate": "2009-09-17",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "SOLER COMAS",
+  "birthdate": "2006-12-29",
+  "role": "player"
+ },
+ {
+  "first_name": "JUAN DAVID",
+  "last_name": "TILAGUY RODRIGUEZ",
+  "birthdate": "2002-12-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEJANDRO",
+  "last_name": "VILLAREJO MORILLAS",
+  "birthdate": "2000-04-02",
+  "role": "player"
+ },
+ {
+  "first_name": "GEMMA",
+  "last_name": "COMAS CASADEMONT",
+  "birthdate": "1977-03-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALBERT",
+  "last_name": "PALLARES LOPEZ",
+  "birthdate": "1974-04-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "SANCHIS DOMENECH",
+  "birthdate": "1975-11-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "SANCHIS DOMENECH",
+  "birthdate": "1975-11-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "XENIA",
+  "last_name": "SEGURA TEIXIDOR",
+  "birthdate": "1998-12-13",
+  "role": "staff"
+ }
+]

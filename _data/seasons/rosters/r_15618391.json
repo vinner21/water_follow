@@ -1,0 +1,188 @@
+[
+ {
+  "first_name": "GENIS",
+  "last_name": "ANGLADA DILME",
+  "birthdate": "1995-12-23",
+  "role": "player"
+ },
+ {
+  "first_name": "JAUME",
+  "last_name": "ARBOIX GUIXERAS",
+  "birthdate": "1984-08-03",
+  "role": "player"
+ },
+ {
+  "first_name": "BLAI",
+  "last_name": "ARPA DURAN",
+  "birthdate": "2010-06-29",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "BOSCH POUS",
+  "birthdate": "2008-05-17",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "CABELLO BRUGUES",
+  "birthdate": "1999-12-19",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "CARRERO COROMINAS",
+  "birthdate": "2004-01-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "CARRERO COROMINAS",
+  "birthdate": "2000-02-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEIX",
+  "last_name": "CARRETERO GRABULOSA",
+  "birthdate": "2002-02-02",
+  "role": "player"
+ },
+ {
+  "first_name": "CEBRIA",
+  "last_name": "COSTA COMPANY",
+  "birthdate": "1980-12-01",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAQUIN IGNACIO",
+  "last_name": "DIAZ ROJAS",
+  "birthdate": "1996-07-08",
+  "role": "player"
+ },
+ {
+  "first_name": "FERRAN",
+  "last_name": "FRANCO MORAL",
+  "birthdate": "2001-02-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ANIOL",
+  "last_name": "GATIUS JIMENEZ",
+  "birthdate": "2005-07-05",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "GOMEZ ROCA",
+  "birthdate": "2011-04-03",
+  "role": "player"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "MASDEVALL ESPARCH",
+  "birthdate": "2002-01-09",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "MASO COLLELL",
+  "birthdate": "2010-01-25",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "MONTORO SANCHEZ",
+  "birthdate": "1994-01-21",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "PRIETO ESPINOSA",
+  "birthdate": "1995-10-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ISCLE",
+  "last_name": "RIQUELME LOPEZ DE VINUESA",
+  "birthdate": "1994-07-08",
+  "role": "player"
+ },
+ {
+  "first_name": "GIL",
+  "last_name": "ROCA LLACH",
+  "birthdate": "2010-06-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "RODRIGUEZ QUINTANA",
+  "birthdate": "2004-04-15",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "RODRIGUEZ VILA",
+  "birthdate": "2011-03-13",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "SERRA RODRIGUEZ",
+  "birthdate": "2010-08-27",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "VIM QUINTANA",
+  "birthdate": "1982-12-24",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "ZAMORA GONZALEZ",
+  "birthdate": "2002-10-19",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCAL",
+  "last_name": "ALSINA SOLER",
+  "birthdate": "1999-07-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAUME",
+  "last_name": "ARBOIX GUIXERAS",
+  "birthdate": "1984-08-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "ARPA PLANELLA",
+  "birthdate": "1978-11-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "CLARA",
+  "last_name": "DE LA TORRE CORONA",
+  "birthdate": "1995-04-14",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSEP ",
+  "last_name": "GIRONES FARRERAS",
+  "birthdate": "1974-10-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "RIERA ROS",
+  "birthdate": "1973-05-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "RODRIGUEZ QUINTANA",
+  "birthdate": "2004-04-15",
+  "role": "staff"
+ }
+]

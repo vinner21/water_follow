@@ -1,0 +1,116 @@
+[
+ {
+  "first_name": "HUGO",
+  "last_name": "FERRANDO FRANCO",
+  "birthdate": "2006-12-27",
+  "role": "player"
+ },
+ {
+  "first_name": "LLORENC",
+  "last_name": "GIL CEDO",
+  "birthdate": "2007-04-13",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "GIMENO DIAZ",
+  "birthdate": "2007-02-27",
+  "role": "player"
+ },
+ {
+  "first_name": "AGUSTI",
+  "last_name": "GONZALEZ PARELLADA",
+  "birthdate": "2007-03-30",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "GUEMEZ ALZA",
+  "birthdate": "2007-11-14",
+  "role": "player"
+ },
+ {
+  "first_name": "NELSON ",
+  "last_name": "HOCKINGS",
+  "birthdate": "2004-08-03",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "LOPEZ GARCIA",
+  "birthdate": "2007-08-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ETHAN JAMES",
+  "last_name": "MARTIN",
+  "birthdate": "2002-11-18",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "ORTIZ MINGUET",
+  "birthdate": "2008-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIO",
+  "last_name": "PAZ NUÑEZ",
+  "birthdate": "2008-05-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "PEDREROL SARDAÑA",
+  "birthdate": "2010-12-16",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "PEDREROL SARDAÑA",
+  "birthdate": "2009-04-13",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCAS",
+  "last_name": "PIRETTI GONZALEZ",
+  "birthdate": "2007-10-29",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "ROCA GOMA",
+  "birthdate": "2007-02-16",
+  "role": "player"
+ },
+ {
+  "first_name": "IKER",
+  "last_name": "SIERRA CERVANTES",
+  "birthdate": "2009-12-18",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTIN",
+  "last_name": "VILAR ALVAREZ",
+  "birthdate": "2007-04-12",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSE JUAN",
+  "last_name": "CUELLO COLLADO",
+  "birthdate": "1974-10-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "SERGI",
+  "last_name": "PEDREROL CAVALLE",
+  "birthdate": "1969-12-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANDRES",
+  "last_name": "PIRETTI POMBO",
+  "birthdate": "1978-05-23",
+  "role": "staff"
+ }
+]

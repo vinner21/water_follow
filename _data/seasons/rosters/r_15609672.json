@@ -1,0 +1,314 @@
+[
+ {
+  "first_name": "AINHOA",
+  "last_name": "ALBACETE RODRIGUEZ",
+  "birthdate": "2005-05-17",
+  "role": "player"
+ },
+ {
+  "first_name": "MARINA",
+  "last_name": "AMARGOS PARRA",
+  "birthdate": "2007-01-07",
+  "role": "player"
+ },
+ {
+  "first_name": "MONTSERRAT",
+  "last_name": "BARREIRO PEREZ",
+  "birthdate": "1999-01-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ARLETH",
+  "last_name": "CABACAS TARRAGA",
+  "birthdate": "2010-07-08",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "CALBET MAGRIÑA",
+  "birthdate": "2004-02-10",
+  "role": "player"
+ },
+ {
+  "first_name": "NAIA",
+  "last_name": "CALVO MESA",
+  "birthdate": "2010-01-06",
+  "role": "player"
+ },
+ {
+  "first_name": "NAIA",
+  "last_name": "CALVO MESA",
+  "birthdate": "2010-01-06",
+  "role": "player"
+ },
+ {
+  "first_name": "AIDE",
+  "last_name": "CORREA HORNOS",
+  "birthdate": "2011-11-02",
+  "role": "player"
+ },
+ {
+  "first_name": "ASTRID",
+  "last_name": "CORREA HORNOS",
+  "birthdate": "2010-02-28",
+  "role": "player"
+ },
+ {
+  "first_name": "BLANCA-LLUNA",
+  "last_name": "EXPOSITO CIMARRA",
+  "birthdate": "2003-08-01",
+  "role": "player"
+ },
+ {
+  "first_name": "JOANA",
+  "last_name": "FERNANDEZ CLIMENT",
+  "birthdate": "2010-10-20",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIANA",
+  "last_name": "FERNANDEZ VARGAS",
+  "birthdate": "2010-09-04",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "FERRER DIAZ",
+  "birthdate": "2007-08-29",
+  "role": "player"
+ },
+ {
+  "first_name": "AINA",
+  "last_name": "GIL AGUD",
+  "birthdate": "2008-03-12",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLOTA",
+  "last_name": "GIL PEREZ",
+  "birthdate": "2009-11-10",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLOTA",
+  "last_name": "GIL PEREZ",
+  "birthdate": "2009-11-10",
+  "role": "player"
+ },
+ {
+  "first_name": "CANDELA",
+  "last_name": "GUERRERO CABRERA",
+  "birthdate": "2012-01-09",
+  "role": "player"
+ },
+ {
+  "first_name": "AFRICA",
+  "last_name": "GUIRADO PANIAGUA",
+  "birthdate": "2008-08-02",
+  "role": "player"
+ },
+ {
+  "first_name": "AIRELL",
+  "last_name": "HUINO BRAUER",
+  "birthdate": "2004-02-15",
+  "role": "player"
+ },
+ {
+  "first_name": "JUNE",
+  "last_name": "INFANTE SALINAS",
+  "birthdate": "2010-11-07",
+  "role": "player"
+ },
+ {
+  "first_name": "ELENA",
+  "last_name": "JIMENEZ MOYA",
+  "birthdate": "1999-12-30",
+  "role": "player"
+ },
+ {
+  "first_name": "BERTA",
+  "last_name": "LOPEZ OLLERO",
+  "birthdate": "2010-04-24",
+  "role": "player"
+ },
+ {
+  "first_name": "CLAUDIA GEORGINA",
+  "last_name": "LOZANO PUERTAS",
+  "birthdate": "2010-04-23",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCIA",
+  "last_name": "MAROTO LOPEZ",
+  "birthdate": "2005-02-21",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIONA",
+  "last_name": "MARTI LLUNELL",
+  "birthdate": "2008-11-07",
+  "role": "player"
+ },
+ {
+  "first_name": "NAIA",
+  "last_name": "MEDINA RODRIGUEZ",
+  "birthdate": "2012-05-15",
+  "role": "player"
+ },
+ {
+  "first_name": "CELIA",
+  "last_name": "PALLAS DURAN",
+  "birthdate": "2007-11-07",
+  "role": "player"
+ },
+ {
+  "first_name": "GEMMA",
+  "last_name": "PASCUAL ROMERO",
+  "birthdate": "2004-08-24",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIA",
+  "last_name": "RUIZ HERRERO",
+  "birthdate": "2001-04-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ROCIO",
+  "last_name": "SAAVEDRA CARRILLO",
+  "birthdate": "2006-11-22",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "VALLS SANS",
+  "birthdate": "2004-08-17",
+  "role": "player"
+ },
+ {
+  "first_name": "SERGIO",
+  "last_name": "ASTASIO CANO",
+  "birthdate": "1980-12-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "CABACAS BELMONTE",
+  "birthdate": "1978-09-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "CABACAS BELMONTE",
+  "birthdate": "1978-09-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "FERNANDEZ GARRIDO",
+  "birthdate": "1982-11-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "FERNANDEZ GARRIDO",
+  "birthdate": "1982-11-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIGUEL ANGEL ",
+  "last_name": "GIL MAGRO",
+  "birthdate": "1973-05-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIGUEL ANGEL ",
+  "last_name": "GIL MAGRO",
+  "birthdate": "1973-05-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIGUEL ANGEL",
+  "last_name": "GUERRERO GARCIA",
+  "birthdate": "1980-06-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANTONIO",
+  "last_name": "LIRIO GALIANO",
+  "birthdate": "1974-05-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "JUAN JOSE",
+  "last_name": "LOPEZ TRILLO",
+  "birthdate": "1981-11-14",
+  "role": "staff"
+ },
+ {
+  "first_name": "SERGIO",
+  "last_name": "MARTIN JESUS",
+  "birthdate": "1976-08-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "JONATAN",
+  "last_name": "MEDINA LOPEZ",
+  "birthdate": "1981-11-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "PEDRO ANTONIO ",
+  "last_name": "MONTES NAVARRO",
+  "birthdate": "1978-09-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "JESUS ",
+  "last_name": "NAVIO VALDERRAMA",
+  "birthdate": "1978-08-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "JESUS ",
+  "last_name": "NAVIO VALDERRAMA",
+  "birthdate": "1978-08-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "VICENS",
+  "last_name": "PASCUAL  RAMIS",
+  "birthdate": "1961-08-13",
+  "role": "staff"
+ },
+ {
+  "first_name": "VICENS",
+  "last_name": "PASCUAL  RAMIS",
+  "birthdate": "1961-08-13",
+  "role": "staff"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "PIQUE CABALLERO",
+  "birthdate": "2001-08-19",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "ROS GARCIA",
+  "birthdate": "2003-09-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "ROS GARCIA",
+  "birthdate": "2003-09-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "SOLER PACHECO",
+  "birthdate": "2003-11-06",
+  "role": "staff"
+ }
+]

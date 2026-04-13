@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "JACOBO",
+  "last_name": "ABADIA GOMEZ",
+  "birthdate": "1986-08-16",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCOS",
+  "last_name": "BERNABEU MOLINA",
+  "birthdate": "2006-08-02",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "BOSCH QUEROL",
+  "birthdate": "2006-07-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ALVARO",
+  "last_name": "DURO MOLINA",
+  "birthdate": "2010-03-05",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "FRANQUES TORNÉS",
+  "birthdate": "2007-11-06",
+  "role": "player"
+ },
+ {
+  "first_name": "DIDAC",
+  "last_name": "GARCIA ARAGONESES",
+  "birthdate": "2006-04-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ROGER",
+  "last_name": "GARCIA ARAGONESES",
+  "birthdate": "2000-01-14",
+  "role": "player"
+ },
+ {
+  "first_name": "DAMIA",
+  "last_name": "JOAN I PELLEJA",
+  "birthdate": "2010-11-04",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUIS",
+  "last_name": "MUNTE FARRERONS",
+  "birthdate": "2004-10-28",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSEP IGNASI",
+  "last_name": "PIÑOL FONT",
+  "birthdate": "2005-10-29",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEIX",
+  "last_name": "ROMAN CARRE",
+  "birthdate": "2003-11-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "ROMAN CARRE",
+  "birthdate": "2001-02-22",
+  "role": "player"
+ },
+ {
+  "first_name": "IGNACIO",
+  "last_name": "SAIZ COLMENAR",
+  "birthdate": "1982-08-25",
+  "role": "player"
+ },
+ {
+  "first_name": "IAGO MANUEL",
+  "last_name": "SPARANO CAPDEVILA",
+  "birthdate": "2003-06-08",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "SUMOY BERGADA",
+  "birthdate": "2003-09-28",
+  "role": "player"
+ },
+ {
+  "first_name": "SAULO",
+  "last_name": "SUMOY ROVIRA",
+  "birthdate": "2004-05-15",
+  "role": "player"
+ },
+ {
+  "first_name": "UNAI",
+  "last_name": "TORRES GASCA",
+  "birthdate": "2010-06-13",
+  "role": "player"
+ },
+ {
+  "first_name": "JAUME",
+  "last_name": "DEL ROSARIO MASDEU",
+  "birthdate": "1978-05-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "LUIS HERMINIO",
+  "last_name": "GARCIA MARTINEZ",
+  "birthdate": "1970-11-15",
+  "role": "staff"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "SANCHEZ SANZ",
+  "birthdate": "1986-09-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "IAGO MANUEL",
+  "last_name": "SPARANO CAPDEVILA",
+  "birthdate": "2003-06-08",
+  "role": "staff"
+ }
+]

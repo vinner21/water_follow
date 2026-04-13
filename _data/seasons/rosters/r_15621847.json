@@ -1,0 +1,242 @@
+[
+ {
+  "first_name": "RAUL",
+  "last_name": "FERNANDEZ GOMEZ",
+  "birthdate": "2006-04-21",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "FONTOVA CENTELLES",
+  "birthdate": "2009-05-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIA",
+  "last_name": "FORT MORET",
+  "birthdate": "2009-06-09",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTI",
+  "last_name": "GARCIA MORA",
+  "birthdate": "2009-09-15",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "JURADO PEREZ",
+  "birthdate": "2008-07-29",
+  "role": "player"
+ },
+ {
+  "first_name": "NIL",
+  "last_name": "MONLEON GIMENEZ",
+  "birthdate": "2008-01-07",
+  "role": "player"
+ },
+ {
+  "first_name": "RAUL",
+  "last_name": "MONTERO NAVAS",
+  "birthdate": "2009-04-13",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "MONTES CORRAL",
+  "birthdate": "2010-10-22",
+  "role": "player"
+ },
+ {
+  "first_name": "UNAI",
+  "last_name": "MORA CORTES",
+  "birthdate": "2007-10-10",
+  "role": "player"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "MOYANO RUIZ",
+  "birthdate": "1994-04-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ANDRE LUIZ",
+  "last_name": "PAULINO BIO DE FREITAS",
+  "birthdate": "2005-05-20",
+  "role": "player"
+ },
+ {
+  "first_name": "TOMAS",
+  "last_name": "PELEGERO ULLES",
+  "birthdate": "2008-02-23",
+  "role": "player"
+ },
+ {
+  "first_name": "PERE",
+  "last_name": "PINA MANZANARES",
+  "birthdate": "2010-12-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ARAN",
+  "last_name": "PINA VEGA",
+  "birthdate": "2007-05-23",
+  "role": "player"
+ },
+ {
+  "first_name": "NACHO",
+  "last_name": "PINO VALDIVIA",
+  "birthdate": "2008-02-22",
+  "role": "player"
+ },
+ {
+  "first_name": "RODRIGO",
+  "last_name": "RAJAO PERRONE POERNER",
+  "birthdate": "2008-07-03",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "REDON JIMENEZ",
+  "birthdate": "2007-08-14",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIAN",
+  "last_name": "RODRIGUEZ GARCIA",
+  "birthdate": "2008-10-09",
+  "role": "player"
+ },
+ {
+  "first_name": "NACHO",
+  "last_name": "RODRIGUEZ MELLADO",
+  "birthdate": "2007-06-07",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "ROLDAN CALVO",
+  "birthdate": "2011-02-19",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEJO MARTIN",
+  "last_name": "TEIGEIRO PEDERNESCHI",
+  "birthdate": "2006-03-07",
+  "role": "player"
+ },
+ {
+  "first_name": "JOAQUIM",
+  "last_name": "TEIXIDO PASSARRIUS",
+  "birthdate": "2008-12-14",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "VAL BUENO",
+  "birthdate": "2009-05-12",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCAS",
+  "last_name": "VAN DOORN PARDO",
+  "birthdate": "2005-09-19",
+  "role": "player"
+ },
+ {
+  "first_name": "OSCAR",
+  "last_name": "VAN DOORN PARDO",
+  "birthdate": "2008-01-19",
+  "role": "player"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "VAZQUEZ LLORENS",
+  "birthdate": "2007-03-13",
+  "role": "player"
+ },
+ {
+  "first_name": "JAUME ",
+  "last_name": "CAMERINO ALONSO",
+  "birthdate": "2006-06-24",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "CARRASCO MADRIDANO",
+  "birthdate": "1999-07-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "CARRASCO MADRIDANO",
+  "birthdate": "1999-07-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "SERGIO",
+  "last_name": "FERNANDEZ NIETO",
+  "birthdate": "1997-12-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "LUIS",
+  "last_name": "GARCIA ALONSO",
+  "birthdate": "1978-11-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "GOMEZ ARIAS",
+  "birthdate": "1979-06-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "GOMEZ ARIAS",
+  "birthdate": "1979-06-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "JACINTO",
+  "last_name": "MONTERO ANDRADE",
+  "birthdate": "1974-02-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "RUI TIAGO",
+  "last_name": "MOREIRA FERREIRA",
+  "birthdate": "1982-10-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "MOYANO RUIZ",
+  "birthdate": "1994-04-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "MOYANO RUIZ",
+  "birthdate": "1994-04-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "TOMAS",
+  "last_name": "NOGALEDO TOUS",
+  "birthdate": "1978-12-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "FERRAN",
+  "last_name": "PASCUAL TRABAL",
+  "birthdate": "1990-09-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE MARIA",
+  "last_name": "PINA OLLE",
+  "birthdate": "1972-05-20",
+  "role": "staff"
+ }
+]

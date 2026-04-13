@@ -1,0 +1,146 @@
+[
+ {
+  "first_name": "DANIEL",
+  "last_name": "ALVARIÑO CASTILLO",
+  "birthdate": "2000-09-21",
+  "role": "player"
+ },
+ {
+  "first_name": "TONI",
+  "last_name": "CARRASCO GONZALEZ",
+  "birthdate": "2005-07-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEX",
+  "last_name": "CRESPO GINJAUME",
+  "birthdate": "2005-04-01",
+  "role": "player"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "CRUZ VERA",
+  "birthdate": "1999-09-21",
+  "role": "player"
+ },
+ {
+  "first_name": "SANTIAGO",
+  "last_name": "CUERVO BUSTAMANTE",
+  "birthdate": "1998-04-02",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "CURTO ESCORIHUELA",
+  "birthdate": "2008-02-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ALVARO",
+  "last_name": "DIAZ BALLANO",
+  "birthdate": "2005-01-01",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEXANDRE ",
+  "last_name": "EGEA CABEZAS ",
+  "birthdate": "2007-06-24",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "GUARNIDO ARQUERO",
+  "birthdate": "1995-04-18",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLOS",
+  "last_name": "LOPEZ CAMPILLOS",
+  "birthdate": "1997-10-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ARES",
+  "last_name": "LUCENA GONZALEZ",
+  "birthdate": "1999-10-30",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "LUCENA GONZALEZ",
+  "birthdate": "2001-07-02",
+  "role": "player"
+ },
+ {
+  "first_name": "IGNACIO",
+  "last_name": "LUCERO GONZALEZ",
+  "birthdate": "2004-09-25",
+  "role": "player"
+ },
+ {
+  "first_name": "SOUFIAN",
+  "last_name": "MAGHNINE ANANE",
+  "birthdate": "2008-10-02",
+  "role": "player"
+ },
+ {
+  "first_name": "KORIAN",
+  "last_name": "MEDRANO VEGA",
+  "birthdate": "2007-05-29",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSE ALBERTO ",
+  "last_name": "PERALTA RODRIGUEZ",
+  "birthdate": "1995-04-20",
+  "role": "player"
+ },
+ {
+  "first_name": "MAX",
+  "last_name": "PUGIBET FONT",
+  "birthdate": "1995-10-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ALAN",
+  "last_name": "ROJO BALANYA",
+  "birthdate": "2005-11-11",
+  "role": "player"
+ },
+ {
+  "first_name": "FERRAN",
+  "last_name": "ROMERO PUJOL",
+  "birthdate": "2007-12-06",
+  "role": "player"
+ },
+ {
+  "first_name": "SALVADOR",
+  "last_name": "SANCHEZ CAMPOS",
+  "birthdate": "2000-11-17",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIA DEL MAR ",
+  "last_name": "BALLANO LENTISCO ",
+  "birthdate": "1985-08-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "GUSTAVO",
+  "last_name": "MARCOS HERRERO",
+  "birthdate": "1972-12-23",
+  "role": "staff"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "PLA OTERO",
+  "birthdate": "1988-09-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARIA CARMEN",
+  "last_name": "VEGA MURGUIA",
+  "birthdate": "1976-05-30",
+  "role": "staff"
+ }
+]

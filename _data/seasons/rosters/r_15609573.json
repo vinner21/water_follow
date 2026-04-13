@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "MARIA",
+  "last_name": "ACOSTA GALLEGO",
+  "birthdate": "2008-02-12",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "ARIBAU  GISBERT",
+  "birthdate": "2004-06-28",
+  "role": "player"
+ },
+ {
+  "first_name": "AINARA",
+  "last_name": "ARIBAU GISBERT",
+  "birthdate": "2003-03-31",
+  "role": "player"
+ },
+ {
+  "first_name": "MALENA",
+  "last_name": "BERTRAN SANTANA",
+  "birthdate": "2004-03-29",
+  "role": "player"
+ },
+ {
+  "first_name": "BERTA",
+  "last_name": "BLANCH CANALS",
+  "birthdate": "2004-01-26",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIANELA NEIRLET",
+  "last_name": "BUITRAGO CONTRERAS",
+  "birthdate": "1990-08-31",
+  "role": "player"
+ },
+ {
+  "first_name": "IRUNE",
+  "last_name": "CASTRO  LARA",
+  "birthdate": "2008-08-12",
+  "role": "player"
+ },
+ {
+  "first_name": "AISHA",
+  "last_name": "CISSE ALCARAZ",
+  "birthdate": "2001-07-17",
+  "role": "player"
+ },
+ {
+  "first_name": "ABRIL",
+  "last_name": "DUEÑAS RAMIREZ",
+  "birthdate": "2005-01-24",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCIA",
+  "last_name": "FERNANDEZ CABALLERO",
+  "birthdate": "2005-09-20",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "NICOLAS LOPEZ",
+  "birthdate": "2005-01-14",
+  "role": "player"
+ },
+ {
+  "first_name": "ABRIL",
+  "last_name": "ORDÓÑEZ ABELLAN",
+  "birthdate": "2005-09-20",
+  "role": "player"
+ },
+ {
+  "first_name": "LEIRE",
+  "last_name": "ORDÓÑEZ ABELLÁN",
+  "birthdate": "2005-09-20",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "RIERA RUBIO",
+  "birthdate": "2003-03-22",
+  "role": "player"
+ },
+ {
+  "first_name": "DIANA",
+  "last_name": "ROCA CULLELL",
+  "birthdate": "1997-03-20",
+  "role": "player"
+ },
+ {
+  "first_name": "IDA",
+  "last_name": "TUREGANO BOU",
+  "birthdate": "2005-04-19",
+  "role": "player"
+ },
+ {
+  "first_name": "PAOLA",
+  "last_name": "ABELLAN GRACIA",
+  "birthdate": "1978-06-24",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE MANUEL",
+  "last_name": "ARIBAU JOVE",
+  "birthdate": "1971-01-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAFAEL",
+  "last_name": "CALOPA  MORELL",
+  "birthdate": "1970-10-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAFAEL",
+  "last_name": "CALOPA  MORELL",
+  "birthdate": "1970-10-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOAN",
+  "last_name": "NICOLAS MACHADO",
+  "birthdate": "1971-03-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "GEMMA",
+  "last_name": "RAMIREZ  ALVAREZ",
+  "birthdate": "1977-04-20",
+  "role": "staff"
+ }
+]

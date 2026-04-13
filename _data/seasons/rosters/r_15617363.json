@@ -1,0 +1,140 @@
+[
+ {
+  "first_name": "EVA",
+  "last_name": "ALEGRE VILAS",
+  "birthdate": "1995-01-03",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "ANDRADE MATAMOROS",
+  "birthdate": "2006-01-03",
+  "role": "player"
+ },
+ {
+  "first_name": "BLANCA",
+  "last_name": "BATLLE PICAS",
+  "birthdate": "2002-04-02",
+  "role": "player"
+ },
+ {
+  "first_name": "LEMLEM",
+  "last_name": "BLASCO GRIMA",
+  "birthdate": "2005-05-19",
+  "role": "player"
+ },
+ {
+  "first_name": "EMMA",
+  "last_name": "CANO CRUZ",
+  "birthdate": "2004-07-12",
+  "role": "player"
+ },
+ {
+  "first_name": "JANA",
+  "last_name": "IÑESTA SANCHEZ",
+  "birthdate": "2007-02-20",
+  "role": "player"
+ },
+ {
+  "first_name": "MONICA",
+  "last_name": "PERARNAU HURTADO",
+  "birthdate": "1994-08-08",
+  "role": "player"
+ },
+ {
+  "first_name": "ARIANE",
+  "last_name": "PRADOS DIAZ",
+  "birthdate": "1996-08-09",
+  "role": "player"
+ },
+ {
+  "first_name": "ESTEL",
+  "last_name": "RAMON TORRENT",
+  "birthdate": "2006-07-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ANNA",
+  "last_name": "SEGURANA FERRE",
+  "birthdate": "1991-12-23",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEXANDRA",
+  "last_name": "SERRANO GUIL",
+  "birthdate": "2003-06-25",
+  "role": "player"
+ },
+ {
+  "first_name": "ONA",
+  "last_name": "SOUSA IBORRA",
+  "birthdate": "2006-05-11",
+  "role": "player"
+ },
+ {
+  "first_name": "MAMIKA",
+  "last_name": "TERADA",
+  "birthdate": "2002-12-19",
+  "role": "player"
+ },
+ {
+  "first_name": "CRISTINA",
+  "last_name": "UNGO DE VELASCO BOU",
+  "birthdate": "1976-01-13",
+  "role": "player"
+ },
+ {
+  "first_name": "LAURA",
+  "last_name": "VILLA ROMERO",
+  "birthdate": "1991-05-10",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTINA",
+  "last_name": "VILLAR MIRALLES",
+  "birthdate": "2006-12-31",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "ALCAZAR PEREZ",
+  "birthdate": "1957-04-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "ALCAZAR PEREZ",
+  "birthdate": "1957-04-10",
+  "role": "staff"
+ },
+ {
+  "first_name": "Gloria",
+  "last_name": "De La Torre Mederos",
+  "birthdate": "1965-08-19",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARIA JESUS",
+  "last_name": "ESTEBAN MUÑOZ",
+  "birthdate": "1973-09-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "ELISABET",
+  "last_name": "FUENTES FLORES",
+  "birthdate": "1973-11-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "GISPERT  GARCIA",
+  "birthdate": "1997-05-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "SERRANO ACEDO",
+  "birthdate": "1969-04-08",
+  "role": "staff"
+ }
+]

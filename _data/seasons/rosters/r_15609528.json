@@ -1,0 +1,122 @@
+[
+ {
+  "first_name": "AITOR",
+  "last_name": "CASTRO LARA",
+  "birthdate": "2006-11-10",
+  "role": "player"
+ },
+ {
+  "first_name": "HECTOR",
+  "last_name": "COSTA GARCIA",
+  "birthdate": "2006-02-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "FERNANDEZ CAMPANERO",
+  "birthdate": "1999-06-04",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "FERNANDEZ CAMPANERO",
+  "birthdate": "2004-04-04",
+  "role": "player"
+ },
+ {
+  "first_name": "FERRAN",
+  "last_name": "GARCIA CASES",
+  "birthdate": "2006-08-15",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "GARCIA TERRON",
+  "birthdate": "2006-08-23",
+  "role": "player"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "GARCIA TERRON",
+  "birthdate": "2003-08-29",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "JURADO TRIAS",
+  "birthdate": "2006-05-12",
+  "role": "player"
+ },
+ {
+  "first_name": "SEBASTIAN",
+  "last_name": "MUÑOZ NIETO",
+  "birthdate": "1998-10-23",
+  "role": "player"
+ },
+ {
+  "first_name": "SANTIAGO",
+  "last_name": "RIVERA",
+  "birthdate": "2006-05-31",
+  "role": "player"
+ },
+ {
+  "first_name": "ROC",
+  "last_name": "SALAS PRAT",
+  "birthdate": "2007-02-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ALEJANDRO",
+  "last_name": "SALDARRIAGA ARBELAEZ",
+  "birthdate": "2003-09-29",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "SAMON RODRIGUEZ",
+  "birthdate": "2007-03-09",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "TROYANO HERRERA",
+  "birthdate": "1996-06-07",
+  "role": "player"
+ },
+ {
+  "first_name": "GERARD",
+  "last_name": "VALERO  CASANOVAS",
+  "birthdate": "2003-10-06",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIAN",
+  "last_name": "VARGAS RODRIGUEZ",
+  "birthdate": "2006-03-07",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSE MANUEL",
+  "last_name": "ARIBAU JOVE",
+  "birthdate": "1971-01-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAFAEL",
+  "last_name": "CALOPA  MORELL",
+  "birthdate": "1970-10-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAFAEL",
+  "last_name": "CALOPA  MORELL",
+  "birthdate": "1970-10-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE GREGORIO",
+  "last_name": "MATHUS GOZALEZ",
+  "birthdate": "1987-02-20",
+  "role": "staff"
+ }
+]

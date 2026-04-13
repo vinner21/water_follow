@@ -1,0 +1,152 @@
+[
+ {
+  "first_name": "GERARD",
+  "last_name": "ALVAREZ SOLER",
+  "birthdate": "1992-04-16",
+  "role": "player"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "BERNABEU GARCIA",
+  "birthdate": "1997-05-21",
+  "role": "player"
+ },
+ {
+  "first_name": "GIANMARCO",
+  "last_name": "BUSUOLI",
+  "birthdate": "1999-05-05",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "CAMPOS CLEMARES",
+  "birthdate": "1989-10-06",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVIDE",
+  "last_name": "CARLUCCIO",
+  "birthdate": "1985-07-10",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "CASTELLO BUENO",
+  "birthdate": "1994-12-23",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "CRESPO CAMBON",
+  "birthdate": "2004-11-11",
+  "role": "player"
+ },
+ {
+  "first_name": "ANGEL",
+  "last_name": "FERRERAS SANZ",
+  "birthdate": "1991-01-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ALFREDO",
+  "last_name": "GENONI GAME",
+  "birthdate": "2002-04-11",
+  "role": "player"
+ },
+ {
+  "first_name": "AITOR",
+  "last_name": "IRIARTE ZUGASTI",
+  "birthdate": "1998-02-02",
+  "role": "player"
+ },
+ {
+  "first_name": "JULIO",
+  "last_name": "JIMENEZ ORDOÑEZ",
+  "birthdate": "1991-12-20",
+  "role": "player"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "LUQUE CALLEJO",
+  "birthdate": "2002-10-28",
+  "role": "player"
+ },
+ {
+  "first_name": "OSCAR",
+  "last_name": "MARTINEZ SAMPIETRO",
+  "birthdate": "1999-04-11",
+  "role": "player"
+ },
+ {
+  "first_name": "FLAVIO",
+  "last_name": "MATAS MARQUEZ",
+  "birthdate": "1996-07-14",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "MUÑOZ HERNANDEZ",
+  "birthdate": "1992-08-23",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "PEREZ DIAZ",
+  "birthdate": "2002-06-25",
+  "role": "player"
+ },
+ {
+  "first_name": "IVAN",
+  "last_name": "PUERTOLAS MARTINEZ",
+  "birthdate": "1975-12-29",
+  "role": "player"
+ },
+ {
+  "first_name": "IMAR",
+  "last_name": "RODRIGUEZ BORRAS",
+  "birthdate": "1985-08-23",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCO",
+  "last_name": "SCANNAVINO",
+  "birthdate": "1997-02-08",
+  "role": "player"
+ },
+ {
+  "first_name": "FREDERIC DUART",
+  "last_name": "VAQUER LOPEZ",
+  "birthdate": "2002-01-22",
+  "role": "player"
+ },
+ {
+  "first_name": "GUILLEM",
+  "last_name": "XIMELIS MALONDRA",
+  "birthdate": "1997-05-30",
+  "role": "player"
+ },
+ {
+  "first_name": "SERGI",
+  "last_name": "DOMINGUEZ ACEBRON",
+  "birthdate": "1989-08-24",
+  "role": "staff"
+ },
+ {
+  "first_name": "INES",
+  "last_name": "RECIO LUCAS",
+  "birthdate": "1997-03-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "AIDA",
+  "last_name": "RUEDA MARTINEZ",
+  "birthdate": "1988-02-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "FRANCESC",
+  "last_name": "TURRO NUÑEZ",
+  "birthdate": "1983-07-02",
+  "role": "staff"
+ }
+]

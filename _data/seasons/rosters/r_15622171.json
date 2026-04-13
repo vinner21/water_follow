@@ -1,0 +1,176 @@
+[
+ {
+  "first_name": "ORIOL",
+  "last_name": "APARICIO GARCIA",
+  "birthdate": "2003-04-28",
+  "role": "player"
+ },
+ {
+  "first_name": "BERNAT",
+  "last_name": "ARGENTE CALDERON",
+  "birthdate": "2000-09-27",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERTO",
+  "last_name": "AVILES ARANTEGUI",
+  "birthdate": "1999-02-21",
+  "role": "player"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "CASTAÑO BECERRA",
+  "birthdate": "2003-04-21",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "FERRER BLANCO",
+  "birthdate": "2007-09-29",
+  "role": "player"
+ },
+ {
+  "first_name": "ADRIAN",
+  "last_name": "GARCIA BENITO",
+  "birthdate": "2009-09-14",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "GOMILA GIBERT",
+  "birthdate": "2003-05-23",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "MALDONADO CABALLE",
+  "birthdate": "2008-06-20",
+  "role": "player"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "MAZZIERI ESTRADES",
+  "birthdate": "2007-01-10",
+  "role": "player"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "PARRA JAREÑO",
+  "birthdate": "2003-01-06",
+  "role": "player"
+ },
+ {
+  "first_name": "VÍCTOR",
+  "last_name": "PARRA JAREÑO",
+  "birthdate": "2006-11-03",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCO",
+  "last_name": "PUIGGERMANAL OLIVA",
+  "birthdate": "2010-08-28",
+  "role": "player"
+ },
+ {
+  "first_name": "IZAN",
+  "last_name": "RISCO NAVARRO",
+  "birthdate": "2007-04-21",
+  "role": "player"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "RIVEIRO POUSADA",
+  "birthdate": "2002-04-08",
+  "role": "player"
+ },
+ {
+  "first_name": "BERENGUER",
+  "last_name": "VILLOUTA ALVIRA",
+  "birthdate": "2010-09-24",
+  "role": "player"
+ },
+ {
+  "first_name": "BERENGUER",
+  "last_name": "VILLOUTA ALVIRA",
+  "birthdate": "2010-09-24",
+  "role": "player"
+ },
+ {
+  "first_name": "NAHUEL",
+  "last_name": "ZAZZETTA CUARTERO",
+  "birthdate": "2010-10-13",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBERTO",
+  "last_name": "AVILES ARANTEGUI",
+  "birthdate": "1999-02-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "JESUS",
+  "last_name": "CANO PELEGRIMA",
+  "birthdate": "1963-03-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "JESUS",
+  "last_name": "CANO PELEGRIMA",
+  "birthdate": "1963-03-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "CASTAÑO BECERRA",
+  "birthdate": "2003-04-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "CASTAÑO BECERRA",
+  "birthdate": "2003-04-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "CASTAÑO ROLDAN",
+  "birthdate": "1976-01-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE",
+  "last_name": "CASTAÑO ROLDAN",
+  "birthdate": "1976-01-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIREIA",
+  "last_name": "CUARTERO HERRERA",
+  "birthdate": "1982-04-09",
+  "role": "staff"
+ },
+ {
+  "first_name": "IRENE",
+  "last_name": "FERNANDEZ  ALCAZAR",
+  "birthdate": "1983-06-24",
+  "role": "staff"
+ },
+ {
+  "first_name": "MONTSERRAT",
+  "last_name": "GIBERT GONZALE",
+  "birthdate": "1968-01-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "MILAGROS",
+  "last_name": "LOPEZ DEZA",
+  "birthdate": "1996-05-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "BEATRIZ",
+  "last_name": "MARTINEZ GIL",
+  "birthdate": "1982-07-12",
+  "role": "staff"
+ }
+]

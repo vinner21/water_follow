@@ -1,0 +1,290 @@
+[
+ {
+  "first_name": "KAYLEE",
+  "last_name": "ABELLAN PAZ",
+  "birthdate": "2010-12-11",
+  "role": "player"
+ },
+ {
+  "first_name": "JUDITH",
+  "last_name": "AGUDO LECHA",
+  "birthdate": "2006-12-12",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "ARJONA CHIVA",
+  "birthdate": "2009-03-24",
+  "role": "player"
+ },
+ {
+  "first_name": "EIRE",
+  "last_name": "AÑO LOPEZ",
+  "birthdate": "2006-10-25",
+  "role": "player"
+ },
+ {
+  "first_name": "SALMA",
+  "last_name": "BOUCHRAIT DRAOUI",
+  "birthdate": "2009-08-08",
+  "role": "player"
+ },
+ {
+  "first_name": "NAIA",
+  "last_name": "CORIA RISUEÑO",
+  "birthdate": "2010-01-26",
+  "role": "player"
+ },
+ {
+  "first_name": "NAIA",
+  "last_name": "CORIA RISUEÑO",
+  "birthdate": "2010-01-26",
+  "role": "player"
+ },
+ {
+  "first_name": "NATALIA",
+  "last_name": "DIAZ GIL",
+  "birthdate": "2007-11-29",
+  "role": "player"
+ },
+ {
+  "first_name": "EMMA",
+  "last_name": "ESCALERA JARABO",
+  "birthdate": "2008-01-18",
+  "role": "player"
+ },
+ {
+  "first_name": "ONA",
+  "last_name": "ESTERAS GONZALEZ",
+  "birthdate": "2007-09-16",
+  "role": "player"
+ },
+ {
+  "first_name": "GISELA",
+  "last_name": "ESTEVE VILVHES",
+  "birthdate": "2006-03-21",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLOTA",
+  "last_name": "GARCIA LOPEZ",
+  "birthdate": "2004-07-21",
+  "role": "player"
+ },
+ {
+  "first_name": "IDOIA",
+  "last_name": "GRANADOS RICO",
+  "birthdate": "2008-09-21",
+  "role": "player"
+ },
+ {
+  "first_name": "NEILA",
+  "last_name": "HAOUES",
+  "birthdate": "2011-10-01",
+  "role": "player"
+ },
+ {
+  "first_name": "SARA",
+  "last_name": "JORDI DE LA CRUZ",
+  "birthdate": "2007-07-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ALBA",
+  "last_name": "LIRIO GARCIA",
+  "birthdate": "2009-09-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ALICIA",
+  "last_name": "MARIN PANISELLO",
+  "birthdate": "2008-02-06",
+  "role": "player"
+ },
+ {
+  "first_name": "GEMMA",
+  "last_name": "MONTSERRAT CODINACHS",
+  "birthdate": "2007-07-14",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "MORAL LOPEZ",
+  "birthdate": "2007-07-04",
+  "role": "player"
+ },
+ {
+  "first_name": "LEONOR",
+  "last_name": "MUÑOZ PAZ",
+  "birthdate": "2003-12-12",
+  "role": "player"
+ },
+ {
+  "first_name": "AINA",
+  "last_name": "OROZCO GONZALEZ",
+  "birthdate": "2004-11-08",
+  "role": "player"
+ },
+ {
+  "first_name": "AINA",
+  "last_name": "OROZCO GONZALEZ",
+  "birthdate": "2004-11-08",
+  "role": "player"
+ },
+ {
+  "first_name": "EMMA",
+  "last_name": "PEREZ  CAMP",
+  "birthdate": "2006-09-02",
+  "role": "player"
+ },
+ {
+  "first_name": "PAULA",
+  "last_name": "RODRIGUEZ FERNANDEZ",
+  "birthdate": "2006-01-21",
+  "role": "player"
+ },
+ {
+  "first_name": "ANNA",
+  "last_name": "RODRIGUEZ GARCIA",
+  "birthdate": "2006-12-21",
+  "role": "player"
+ },
+ {
+  "first_name": "NOA",
+  "last_name": "RODRIGUEZ GARCIA",
+  "birthdate": "2010-09-18",
+  "role": "player"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "RODRIGUEZ SIRERA",
+  "birthdate": "2010-02-17",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLA",
+  "last_name": "ROMERO RODRIGUEZ",
+  "birthdate": "2007-09-16",
+  "role": "player"
+ },
+ {
+  "first_name": "JULIA",
+  "last_name": "SISTACHS ANDREU",
+  "birthdate": "2007-04-17",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "ARJONA CHIVA",
+  "birthdate": "2004-10-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "ARJONA FERNANDEZ",
+  "birthdate": "1972-07-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "BLASCO GOMEZ",
+  "birthdate": "1978-01-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "EDUARD",
+  "last_name": "CABRERA DELGADO",
+  "birthdate": "1979-11-24",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARTA",
+  "last_name": "CHIVA ALTIMIRA",
+  "birthdate": "1973-12-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "CRISTIAN",
+  "last_name": "CLEMENTE GIMENEZ",
+  "birthdate": "1982-01-15",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "CRUZ MENCIA",
+  "birthdate": "1975-05-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "ESTERAS BERNAOLA",
+  "birthdate": "1981-05-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "ESTERAS BERNAOLA",
+  "birthdate": "1972-12-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "ALBERTO ",
+  "last_name": "GARRIDO RUIZ",
+  "birthdate": "1978-09-14",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE MARIA ",
+  "last_name": "LOPEZ CATALAN",
+  "birthdate": "1976-07-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "JUDIT",
+  "last_name": "PUJOL HINOJOSA",
+  "birthdate": "1996-02-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "INMACULADA",
+  "last_name": "RISUEÑO RABANEDA",
+  "birthdate": "1979-06-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "MA CARMEN",
+  "last_name": "RODRIGUEZ MARTIN",
+  "birthdate": "1976-11-04",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "RODRIGUEZ PROSPER",
+  "birthdate": "1982-01-13",
+  "role": "staff"
+ },
+ {
+  "first_name": "EDGAR",
+  "last_name": "SANZ GIJON",
+  "birthdate": "2004-09-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "JUDIT",
+  "last_name": "VALENZUELA CARRASCO",
+  "birthdate": "1981-06-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "EDUARD",
+  "last_name": "VILLAR MARTINEZ",
+  "birthdate": "1997-12-24",
+  "role": "staff"
+ },
+ {
+  "first_name": "POL",
+  "last_name": "VIZUETE SANDOVAL",
+  "birthdate": "1994-01-26",
+  "role": "staff"
+ }
+]

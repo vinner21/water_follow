@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "PAULA",
+  "last_name": "CARILLA GARCIA",
+  "birthdate": "2003-05-12",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIKA ALEXANDRA",
+  "last_name": "DOUTON LAPUSAN",
+  "birthdate": "2009-02-12",
+  "role": "player"
+ },
+ {
+  "first_name": "ANNA",
+  "last_name": "FINESTRA VILALTA",
+  "birthdate": "2007-01-09",
+  "role": "player"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "GOMEZ REYES",
+  "birthdate": "2007-08-26",
+  "role": "player"
+ },
+ {
+  "first_name": "NORA",
+  "last_name": "GRANADOS MARTIN",
+  "birthdate": "2009-03-06",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCIA",
+  "last_name": "HIDALGO GARCIA",
+  "birthdate": "2005-03-01",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIA",
+  "last_name": "MARTINS MACHADO",
+  "birthdate": "2004-10-07",
+  "role": "player"
+ },
+ {
+  "first_name": "JUDITH",
+  "last_name": "PRADOS CALVO",
+  "birthdate": "2002-09-05",
+  "role": "player"
+ },
+ {
+  "first_name": "RAQUEL",
+  "last_name": "PRIETO HERNANDEZ",
+  "birthdate": "2002-10-11",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "RION BONILLA",
+  "birthdate": "2003-06-10",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTA",
+  "last_name": "RODRIGUEZ GARCIA",
+  "birthdate": "2003-09-24",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTA",
+  "last_name": "RODRIGUEZ MELLADO",
+  "birthdate": "2007-06-07",
+  "role": "player"
+ },
+ {
+  "first_name": "AROA",
+  "last_name": "SANCHEZ ARECHAVALETA",
+  "birthdate": "2006-04-17",
+  "role": "player"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "TOMAS SAMPER",
+  "birthdate": "2011-11-15",
+  "role": "player"
+ },
+ {
+  "first_name": "LIDIA",
+  "last_name": "TRIGO ROCHA",
+  "birthdate": "2005-12-03",
+  "role": "player"
+ },
+ {
+  "first_name": "JAVIER",
+  "last_name": "CARRASCO MADRIDANO",
+  "birthdate": "1999-07-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "GOMEZ ARIAS",
+  "birthdate": "1979-06-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "GOMEZ REYES",
+  "birthdate": "2007-08-26",
+  "role": "staff"
+ },
+ {
+  "first_name": "KARLOS",
+  "last_name": "LIGERO ALVAREZ",
+  "birthdate": "1997-09-21",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "MOYANO RUIZ",
+  "birthdate": "1994-04-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "MIQUEL",
+  "last_name": "MOYANO RUIZ",
+  "birthdate": "1994-04-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOSE MARIA",
+  "last_name": "PINA OLLE",
+  "birthdate": "1972-05-20",
+  "role": "staff"
+ }
+]

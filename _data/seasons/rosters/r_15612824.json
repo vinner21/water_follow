@@ -1,0 +1,128 @@
+[
+ {
+  "first_name": "JUDIT",
+  "last_name": "CESAR PRADOS",
+  "birthdate": "2003-08-07",
+  "role": "player"
+ },
+ {
+  "first_name": "NORA",
+  "last_name": "DOMINGUEZ PEREZ",
+  "birthdate": "2008-03-15",
+  "role": "player"
+ },
+ {
+  "first_name": "LAURA",
+  "last_name": "HELD RODRIGUEZ",
+  "birthdate": "2001-04-16",
+  "role": "player"
+ },
+ {
+  "first_name": "CLARA",
+  "last_name": "HOLGADO GREGORI",
+  "birthdate": "2002-01-29",
+  "role": "player"
+ },
+ {
+  "first_name": "MARTA",
+  "last_name": "MONTANER LUJAN",
+  "birthdate": "2011-12-20",
+  "role": "player"
+ },
+ {
+  "first_name": "ABRIL",
+  "last_name": "PAJEROLS LATRE",
+  "birthdate": "2009-05-27",
+  "role": "player"
+ },
+ {
+  "first_name": "INGRID",
+  "last_name": "PEIRON I MATEO",
+  "birthdate": "1999-05-27",
+  "role": "player"
+ },
+ {
+  "first_name": "NEKAL",
+  "last_name": "PEREZ CILLERO",
+  "birthdate": "2009-01-03",
+  "role": "player"
+ },
+ {
+  "first_name": "ALICIA",
+  "last_name": "PUIGDELLIVOL MARTINEZ",
+  "birthdate": "2011-12-31",
+  "role": "player"
+ },
+ {
+  "first_name": "ARLET",
+  "last_name": "SERRACANTA VENTURA",
+  "birthdate": "2010-01-21",
+  "role": "player"
+ },
+ {
+  "first_name": "NURIA",
+  "last_name": "SERRACANTA VENTURA",
+  "birthdate": "2008-02-17",
+  "role": "player"
+ },
+ {
+  "first_name": "NURIA",
+  "last_name": "SERRACANTA VENTURA",
+  "birthdate": "2008-02-17",
+  "role": "player"
+ },
+ {
+  "first_name": "QUERALT",
+  "last_name": "SOLER LOPEZ",
+  "birthdate": "2009-01-22",
+  "role": "player"
+ },
+ {
+  "first_name": "ANNA",
+  "last_name": "TORIBIO BERMUDEZ",
+  "birthdate": "2000-10-21",
+  "role": "player"
+ },
+ {
+  "first_name": "GORETTI",
+  "last_name": "VADILLO NAVARRO",
+  "birthdate": "2002-04-13",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVIER",
+  "last_name": "PUIGDELLIVOL RAGUES",
+  "birthdate": "1974-02-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "TONI",
+  "last_name": "REY OLIVERA",
+  "birthdate": "1975-05-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "RAMON",
+  "last_name": "ROSELL SAEZ",
+  "birthdate": "1976-05-05",
+  "role": "staff"
+ },
+ {
+  "first_name": "SONIA",
+  "last_name": "TARRES HURTADO",
+  "birthdate": "1976-10-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "ELISABETH",
+  "last_name": "VENTURA CLARET",
+  "birthdate": "1980-12-18",
+  "role": "staff"
+ },
+ {
+  "first_name": "OSCAR",
+  "last_name": "YERRO GUERRERO",
+  "birthdate": "1974-01-19",
+  "role": "staff"
+ }
+]

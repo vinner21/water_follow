@@ -1,0 +1,134 @@
+[
+ {
+  "first_name": "ARIADNA",
+  "last_name": "ALVAREZ CERMEÑO",
+  "birthdate": "2002-06-18",
+  "role": "player"
+ },
+ {
+  "first_name": "AINA",
+  "last_name": "ALVARO VIDAL",
+  "birthdate": "2006-11-13",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIA HELENA",
+  "last_name": "AMADO ANTAS DE BARROS CARDOSO DO CARMO",
+  "birthdate": "1966-08-28",
+  "role": "player"
+ },
+ {
+  "first_name": "LAURA",
+  "last_name": "ARRANZ COMPTE",
+  "birthdate": "1997-03-20",
+  "role": "player"
+ },
+ {
+  "first_name": "RAQUEL",
+  "last_name": "BRUGAROLAS PARETAS",
+  "birthdate": "2006-01-16",
+  "role": "player"
+ },
+ {
+  "first_name": "SILVIA",
+  "last_name": "CANER CANELA",
+  "birthdate": "2008-07-25",
+  "role": "player"
+ },
+ {
+  "first_name": "CLAUDIA",
+  "last_name": "COMELLA DIAZ",
+  "birthdate": "1989-04-12",
+  "role": "player"
+ },
+ {
+  "first_name": "SALMA",
+  "last_name": "DOUKRANE MULERO",
+  "birthdate": "2011-02-20",
+  "role": "player"
+ },
+ {
+  "first_name": "MOLLY ",
+  "last_name": "ELLIOTT",
+  "birthdate": "2003-12-13",
+  "role": "player"
+ },
+ {
+  "first_name": "MAITANE",
+  "last_name": "FAUS CID",
+  "birthdate": "2000-01-06",
+  "role": "player"
+ },
+ {
+  "first_name": "JUDIT",
+  "last_name": "GIL SAN FACUNDO",
+  "birthdate": "1982-07-04",
+  "role": "player"
+ },
+ {
+  "first_name": "EMMA",
+  "last_name": "GONZALEZ MEGIAS",
+  "birthdate": "1999-05-06",
+  "role": "player"
+ },
+ {
+  "first_name": "ROMINA",
+  "last_name": "LOPEZ  MONTERO",
+  "birthdate": "1983-04-11",
+  "role": "player"
+ },
+ {
+  "first_name": "SARA",
+  "last_name": "MARIN ZINOUNE",
+  "birthdate": "2000-05-04",
+  "role": "player"
+ },
+ {
+  "first_name": "ELSA",
+  "last_name": "PARETAS ORTIZ",
+  "birthdate": "2001-03-18",
+  "role": "player"
+ },
+ {
+  "first_name": "JULIA",
+  "last_name": "PARETAS ORTIZ",
+  "birthdate": "2001-03-18",
+  "role": "player"
+ },
+ {
+  "first_name": "MARIONA",
+  "last_name": "RIBERA LLONC",
+  "birthdate": "1977-01-17",
+  "role": "player"
+ },
+ {
+  "first_name": "LAURA",
+  "last_name": "RIPOLL I BOTER",
+  "birthdate": "2002-10-07",
+  "role": "player"
+ },
+ {
+  "first_name": "IBAN",
+  "last_name": "ALVARO SANCHEZ",
+  "birthdate": "1976-01-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "ORIOL",
+  "last_name": "BAUTISTA BELMONTE",
+  "birthdate": "1984-12-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "OSCAR",
+  "last_name": "MOLINA ROJAS",
+  "birthdate": "1982-10-31",
+  "role": "staff"
+ },
+ {
+  "first_name": "DIEGO-ALEXIS",
+  "last_name": "VIGO SOLES",
+  "birthdate": "1996-06-16",
+  "role": "staff"
+ }
+]

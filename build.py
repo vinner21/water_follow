@@ -15,6 +15,7 @@ import os
 import re
 import sys
 import time
+import unicodedata
 from collections import OrderedDict
 from datetime import datetime
 try:
@@ -64,11 +65,13 @@ def load_season_cache(season_id):
 
 def _serialize_category(cat):
     """Convert a single category/tournament data dict to a JSON-serializable form."""
+    teams = cat.get("teams") or cat.get("our_teams") or []
+    team_ids = cat.get("team_ids") or cat.get("our_team_ids") or set()
     c = {
         "tournament_id": cat["tournament_id"],
         "tournament_name": cat["tournament_name"],
-        "our_teams": cat["our_teams"],
-        "our_team_ids": list(cat["our_team_ids"]),
+        "teams": teams,
+        "team_ids": list(team_ids),
         "matches": cat["matches"],
         "team_names": cat["team_names"],
         "rosters": cat.get("rosters", {}),
@@ -79,16 +82,24 @@ def _serialize_category(cat):
             "id": g["id"],
             "name": g["name"],
             "standings": g["standings"],
-            "our_team_ids": list(g["our_team_ids"]),
+            "team_ids": list(g.get("team_ids") or g.get("our_team_ids") or set()),
         })
     return c
 
 
 def _deserialize_category(cat):
     """Restore sets from lists after loading from JSON."""
-    cat["our_team_ids"] = set(cat["our_team_ids"])
+    if "team_ids" in cat:
+        cat["team_ids"] = set(cat["team_ids"])
+    else:
+        cat["team_ids"] = set(cat.get("our_team_ids", []))
+    if "teams" not in cat:
+        cat["teams"] = cat.get("our_teams", [])
     for g in cat.get("groups", []):
-        g["our_team_ids"] = set(g["our_team_ids"])
+        if "team_ids" in g:
+            g["team_ids"] = set(g["team_ids"])
+        else:
+            g["team_ids"] = set(g.get("our_team_ids", []))
     return cat
 
 
@@ -343,28 +354,45 @@ def discover_seasons(manager_id):
     return seasons
 
 
-def discover_club_tournaments(tournaments, club_id):
-    """For a list of tournaments, find which ones have our club's teams."""
+def discover_club_tournaments(tournaments, club_id=None):
+    """For a list of tournaments, load all teams and their clubs.
+
+    club_id is kept for backward compatibility but ignored in multi-club mode.
+    """
     result = []
     for t in tournaments:
         print(f"    Checking {t['name']} ...", end=" ")
         try:
-            tdata = api_get(f"tournaments/{t['id']}", params={"include": "teams"})
+            tdata = api_get(f"tournaments/{t['id']}", params={"include": "teams,teams.club"})
         except Exception as e:
             print(f"SKIP ({e})")
             continue
-        our_teams = []
+
+        clubs_by_id = {}
+        for inc in tdata.get("included", []):
+            if inc.get("type") == "club":
+                clubs_by_id[inc["id"]] = inc.get("attributes", {}).get("name", f"Club {inc['id']}")
+
+        all_teams = []
         for inc in tdata.get("included", []):
             if inc["type"] != "team":
                 continue
             club_data = inc.get("relationships", {}).get("club", {}).get("data", {})
-            if club_data and club_data.get("id") == club_id:
-                avatar = inc.get("meta", {}).get("avatar", {}).get("large", "")
-                our_teams.append({"id": inc["id"], "name": inc["attributes"]["name"], "avatar": avatar})
-        if our_teams:
-            t["our_teams"] = our_teams
+            club_ref_id = club_data.get("id") if club_data else None
+            inferred = infer_club_from_team_name(inc["attributes"]["name"])
+            avatar = inc.get("meta", {}).get("avatar", {}).get("large", "")
+            all_teams.append({
+                "id": inc["id"],
+                "name": inc["attributes"]["name"],
+                "avatar": avatar,
+                "club_id": club_ref_id or inferred["club_id"],
+                "club_name": clubs_by_id.get(club_ref_id) or inferred["club_name"],
+            })
+
+        if all_teams:
+            t["teams"] = all_teams
             result.append(t)
-            print(f"OK ({', '.join(tm['name'] for tm in our_teams)})")
+            print(f"OK ({len(all_teams)} equips)")
         else:
             print("-")
     result.sort(key=lambda t: t.get("order") or 999)
@@ -493,9 +521,9 @@ def get_team_roster(team_id):
     return roster
 
 
-def collect_tournament_data(tournament, club_id, refresh_rosters=False, is_current_season=False):
+def collect_tournament_data(tournament, club_id=None, refresh_rosters=False, is_current_season=False):
     tid = tournament["id"]
-    our_team_ids = {t["id"] for t in tournament["our_teams"]}
+    tournament_team_ids = {t["id"] for t in (tournament.get("teams") or [])}
     print(f"  Fetching groups for {tournament['name']} ...")
     groups = get_tournament_groups(tid)
     print(f"    {len(groups)} groups found")
@@ -512,7 +540,7 @@ def collect_tournament_data(tournament, club_id, refresh_rosters=False, is_curre
         for row in standings:
             team_names[str(row["id"])] = row["name"]
             standing_team_ids.add(str(row["id"]))
-        our_in_group = our_team_ids & standing_team_ids
+        team_in_group = tournament_team_ids & standing_team_ids
 
         group_detail = get_group_with_rounds(gid)
         group_matches = []
@@ -527,10 +555,10 @@ def collect_tournament_data(tournament, club_id, refresh_rosters=False, is_curre
 
         collected_groups.append({
             "id": gid, "name": g["name"],
-            "standings": standings, "our_team_ids": our_in_group,
+            "standings": standings, "team_ids": team_in_group,
         })
         all_matches.extend(group_matches)
-        print(f"{len(group_matches)} matches" + (f" (our team)" if our_in_group else ""))
+        print(f"{len(group_matches)} matches")
 
     missing_ids = set()
     for m in all_matches:
@@ -544,7 +572,7 @@ def collect_tournament_data(tournament, club_id, refresh_rosters=False, is_curre
             team_names[mid] = tdata["data"]["attributes"]["name"]
         except Exception:
             team_names[mid] = f"Equip {mid}"
-    for t in tournament["our_teams"]:
+    for t in (tournament.get("teams") or []):
         team_names[t["id"]] = t["name"]
 
     # Normalize match datetimes: add timezone-aware ISO string and epoch ts
@@ -618,7 +646,7 @@ def collect_tournament_data(tournament, club_id, refresh_rosters=False, is_curre
 
     return {
         "tournament_id": tid, "tournament_name": tournament["name"],
-        "our_teams": tournament["our_teams"], "our_team_ids": our_team_ids,
+        "teams": tournament.get("teams", []), "team_ids": tournament_team_ids,
         "groups": collected_groups, "matches": all_matches, "team_names": team_names,
         "rosters": rosters,
     }
@@ -706,6 +734,25 @@ def short_category(name):
 
 def slug(text):
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+
+
+def _club_slug(name):
+    txt = (name or "").strip().lower()
+    txt = unicodedata.normalize("NFD", txt)
+    txt = "".join(ch for ch in txt if unicodedata.category(ch) != "Mn")
+    txt = re.sub(r"[^a-z0-9]+", "-", txt).strip("-")
+    return txt or "club-unknown"
+
+
+def infer_club_from_team_name(team_name):
+    base = (team_name or "").strip()
+    base = re.sub(r"\s+\"?[A-D]\"?$", "", base)
+    base = re.sub(r"\s+(MASC|FEM|MIXT|MIXTA|MASC\.?|FEM\.?)[\w\.\-\"]*$", "", base, flags=re.IGNORECASE)
+    base = base.strip(" -") or (team_name or "Club")
+    return {
+        "club_id": f"inf-{_club_slug(base)}",
+        "club_name": base,
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -1640,9 +1687,6 @@ def generate_html(all_season_data, config):
     all_season_data: OrderedDict of season_id -> {label, status, categories_data, category_age}
     """
     clupik = config.get("clupik_base_url", CLUPIK_BASE)
-    main_club_id = "club-main"
-    raw_club_name = str(config.get("club_name", "Club configurat"))
-    main_club_name = raw_club_name if ("<" not in raw_club_name and ">" not in raw_club_name) else "Club configurat"
     build_time = datetime.utcnow().strftime("%d/%m/%Y %H:%M UTC")
 
     # Determine default season (first current, or first overall)
@@ -1675,24 +1719,45 @@ def generate_html(all_season_data, config):
         cat_age = sdata.get("category_age", CATEGORY_AGE)
         is_default = (sid == default_season)
 
-        # --- Explode categories into per-team entries ---
+        # --- Explode categories into per-team entries (multi-club) ---
         entries = []
         for cat in categories_data:
-            for team in cat["our_teams"]:
-                team_id = team["id"]
+            teams = cat.get("teams") or []
+            if not teams:
+                # Backward compatibility for old cache shape.
+                ids_from_groups = set()
+                for g in cat.get("groups", []):
+                    for row in g.get("standings", []):
+                        ids_from_groups.add(str(row.get("id")))
+                for tid in sorted(ids_from_groups):
+                    tname = cat.get("team_names", {}).get(tid, f"Equip {tid}")
+                    inferred = infer_club_from_team_name(tname)
+                    teams.append({
+                        "id": tid,
+                        "name": tname,
+                        "avatar": "",
+                        "club_id": inferred["club_id"],
+                        "club_name": inferred["club_name"],
+                    })
+
+            for team in teams:
+                team_id = str(team["id"])
                 team_ids = {team_id}
                 team_matches = [m for m in cat["matches"]
                                if m["home_team"] in team_ids or m["away_team"] in team_ids]
-                team_groups = [g for g in cat["groups"] if team_id in g["our_team_ids"]]
+                team_groups = [g for g in cat["groups"] if team_id in g.get("team_ids", set())]
+                inferred = infer_club_from_team_name(team.get("name", ""))
                 entries.append({
                     "tournament_id": cat["tournament_id"],
                     "tournament_name": cat["tournament_name"],
-                    "team": team,
+                    "team": {**team, "id": team_id},
+                    "club_id": str(team.get("club_id") or inferred["club_id"]),
+                    "club_name": str(team.get("club_name") or inferred["club_name"]),
                     "team_ids": team_ids,
                     "matches": team_matches,
                     "all_groups": cat["groups"],
                     "all_matches": cat["matches"],
-                    "our_groups": team_groups,
+                    "team_groups": team_groups,
                     "team_names": cat["team_names"],
                     "rosters": cat.get("rosters", {}),
                 })
@@ -1716,50 +1781,69 @@ def generate_html(all_season_data, config):
         if is_default:
             total_cats_default = len(tournaments_map)
 
+        clubs_map = OrderedDict()
+        for entry in entries:
+            cid = entry["club_id"]
+            if cid not in clubs_map:
+                clubs_map[cid] = {"id": cid, "name": entry["club_name"], "categories": set()}
+            clubs_map[cid]["categories"].add(entry["tournament_id"])
+
         seasons_json.append({
             "id": sid,
             "label": sdata["label"],
             "current": sdata["status"] == "current",
             "ageRef": sdata.get("age_ref_date", datetime.now().strftime("%Y-%m-%d")),
             "ra": sdata.get("refreshed_at", ""),
-            "clubs": [{
-                "id": main_club_id,
-                "name": main_club_name,
-                "categories": len(tournaments_map),
-            }],
+            "clubs": sorted([
+                {
+                    "id": c["id"],
+                    "name": c["name"],
+                    "categories": len(c["categories"]),
+                }
+                for c in clubs_map.values()
+            ], key=lambda x: x["name"]),
         })
 
         # --- Screen 1: Category cards for this season ---
         cat_cards_html = ""
         season_finished_match_ids = set()
         for tid, tinfo in tournaments_map.items():
-            cat_id = f"s{sid}-{slug(tinfo['tournament_name'])}"
             label = short_category(tinfo["tournament_name"])
-            num_teams = len(tinfo["entries"])
             _, age_label = category_age_info(tinfo["tournament_name"], cat_age)
 
-            total_past = 0
+            by_club = OrderedDict()
             for e in tinfo["entries"]:
-                for m in e["matches"]:
-                    if m["finished"]:
-                        total_past += 1
-                        if m.get("id"):
-                            season_finished_match_ids.add(m["id"])
+                by_club.setdefault(e["club_id"], []).append(e)
 
-            age_html = f'<div class="cat-card-age">{escape(age_label)}</div>' if age_label else ''
-            cat_cards_html += (
-                f'<div class="cat-card" data-club="{main_club_id}" onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
-                f'<div class="cat-card-top">'
-                f'<div class="cat-card-name">{escape(label)}</div>'
-                f'<span class="cat-card-arrow">&#8250;</span>'
-                f'</div>'
-                f'{age_html}'
-                f'<div class="cat-card-stats">'
-                f'<div class="cat-card-stat"><span class="cat-card-stat-v">{num_teams}</span><span class="cat-card-stat-k">equip{"s" if num_teams > 1 else ""}</span></div>'
-                f'<div class="cat-card-stat"><span class="cat-card-stat-v">{total_past}</span><span class="cat-card-stat-k">partits jugats</span></div>'
-                f'</div>'
-                f'</div>'
-            )
+            for club_id, club_entries in by_club.items():
+                cat_id = f"s{sid}-{slug(tinfo['tournament_name'])}-{slug(club_id)}"
+                num_teams = len(club_entries)
+
+                total_past = 0
+                seen_mid = set()
+                for e in club_entries:
+                    for m in e["matches"]:
+                        if m["finished"]:
+                            mid = m.get("id")
+                            if mid and mid not in seen_mid:
+                                seen_mid.add(mid)
+                                total_past += 1
+                                season_finished_match_ids.add(mid)
+
+                age_html = f'<div class="cat-card-age">{escape(age_label)}</div>' if age_label else ''
+                cat_cards_html += (
+                    f'<div class="cat-card" data-club="{escape(club_id)}" onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
+                    f'<div class="cat-card-top">'
+                    f'<div class="cat-card-name">{escape(label)}</div>'
+                    f'<span class="cat-card-arrow">&#8250;</span>'
+                    f'</div>'
+                    f'{age_html}'
+                    f'<div class="cat-card-stats">'
+                    f'<div class="cat-card-stat"><span class="cat-card-stat-v">{num_teams}</span><span class="cat-card-stat-k">equip{"s" if num_teams > 1 else ""}</span></div>'
+                    f'<div class="cat-card-stat"><span class="cat-card-stat-v">{total_past}</span><span class="cat-card-stat-k">partits jugats</span></div>'
+                    f'</div>'
+                    f'</div>'
+                )
 
         season_summary_html = (
             f'<div class="season-summary">'
@@ -1782,52 +1866,58 @@ def generate_html(all_season_data, config):
         # --- Screen 2: Team panels for this season ---
         team_panels_html = ""
         for tid, tinfo in tournaments_map.items():
-            cat_id = f"s{sid}-{slug(tinfo['tournament_name'])}"
             label = short_category(tinfo["tournament_name"])
-            team_cards = ""
-            for entry in tinfo["entries"]:
-                team = entry["team"]
-                team_ids = entry["team_ids"]
-                entry_id = f"s{sid}-{slug(entry['tournament_name'] + '-' + team['name'])}"
-                team_name = escape(team["name"])
 
-                past = [m for m in entry["matches"] if m["finished"]]
-                future = [m for m in entry["matches"] if not m["finished"] and m["date"]]
-                past.sort(key=lambda m: m.get("date_ts") or 0, reverse=True)
-                future.sort(key=lambda m: m.get("date_ts") or 9999999999)
+            by_club = OrderedDict()
+            for e in tinfo["entries"]:
+                by_club.setdefault(e["club_id"], []).append(e)
 
-                wins = sum(1 for m in past if match_result_class(m, team_ids) == "win")
-                losses = sum(1 for m in past if match_result_class(m, team_ids) == "loss")
-                draws = len(past) - wins - losses
+            for club_id, club_entries in by_club.items():
+                cat_id = f"s{sid}-{slug(tinfo['tournament_name'])}-{slug(club_id)}"
+                team_cards = ""
+                for entry in club_entries:
+                    team = entry["team"]
+                    team_ids = entry["team_ids"]
+                    entry_id = f"s{sid}-{slug(entry['tournament_name'] + '-' + team['name'])}"
+                    team_name = escape(team["name"])
 
-                card_next = ""
-                if future:
-                    nm = future[0]
-                    hn = escape(entry["team_names"].get(nm["home_team"], "?"))
-                    an = escape(entry["team_names"].get(nm["away_team"] or "", "Descansa"))
-                    card_next = (
-                        f'<div class="cat-card-next">Proper: <strong>{format_date_short(nm["date"])}</strong> '
-                        f'{hn} vs {an}</div>'
+                    past = [m for m in entry["matches"] if m["finished"]]
+                    future = [m for m in entry["matches"] if not m["finished"] and m["date"]]
+                    past.sort(key=lambda m: m.get("date_ts") or 0, reverse=True)
+                    future.sort(key=lambda m: m.get("date_ts") or 9999999999)
+
+                    wins = sum(1 for m in past if match_result_class(m, team_ids) == "win")
+                    losses = sum(1 for m in past if match_result_class(m, team_ids) == "loss")
+                    draws = len(past) - wins - losses
+
+                    card_next = ""
+                    if future:
+                        nm = future[0]
+                        hn = escape(entry["team_names"].get(nm["home_team"], "?"))
+                        an = escape(entry["team_names"].get(nm["away_team"] or "", "Descansa"))
+                        card_next = (
+                            f'<div class="cat-card-next">Proper: <strong>{format_date_short(nm["date"])}</strong> '
+                            f'{hn} vs {an}</div>'
+                        )
+
+                    team_cards += (
+                        f'<div class="cat-card" data-detail="{entry_id}" onclick="showDetail(\'{entry_id}\')">'
+                        f'<div class="cat-card-name">{team_name}</div>'
+                        f'<div class="cat-card-record">'
+                        f'<span class="w">{wins}V</span><span class="d">{draws}E</span>'
+                        f'<span class="l">{losses}D</span></div>'
+                        f'{card_next}'
+                        f'<span class="cat-card-arrow">&#8250;</span>'
+                        f'</div>'
                     )
 
-                team_cards += (
-                    f'<div class="cat-card" data-detail="{entry_id}" onclick="showDetail(\'{entry_id}\')">'
-                    f'<div class="cat-card-name">{team_name}</div>'
-                    f'<div class="cat-card-record">'
-                    f'<span class="w">{wins}V</span><span class="d">{draws}E</span>'
-                    f'<span class="l">{losses}D</span></div>'
-                    f'{card_next}'
-                    f'<span class="cat-card-arrow">&#8250;</span>'
+                team_panels_html += (
+                    f'<div class="team-panel" data-club="{escape(club_id)}" id="teams-{cat_id}" style="display:none">'
+                    f'<div class="sel-title">{escape(label)}</div>'
+                    f'<div class="sel-subtitle">Selecciona equip</div>'
+                    f'<div class="cat-grid">{team_cards}</div>'
                     f'</div>'
                 )
-
-            team_panels_html += (
-                f'<div class="team-panel" data-club="{main_club_id}" id="teams-{cat_id}" style="display:none">'
-                f'<div class="sel-title">{escape(label)}</div>'
-                f'<div class="sel-subtitle">Selecciona equip</div>'
-                f'<div class="cat-grid">{team_cards}</div>'
-                f'</div>'
-            )
 
         active_cls = " active" if is_default else ""
         team_blocks.append(
@@ -1841,9 +1931,9 @@ def generate_html(all_season_data, config):
             tid = entry["tournament_id"]
             team = entry["team"]
             team_ids = entry["team_ids"]
-            cat_id = f"s{sid}-{slug(entry['tournament_name'])}"
+            cat_id = f"s{sid}-{slug(entry['tournament_name'])}-{slug(entry['club_id'])}"
             entry_id = f"s{sid}-{slug(entry['tournament_name'] + '-' + team['name'])}"
-            num_teams = len(tournaments_map[tid]["entries"])
+            num_teams = len([e for e in tournaments_map[tid]["entries"] if e["club_id"] == entry["club_id"]])
 
             # Build JSON for this entry
             matches_json = []
@@ -1909,7 +1999,7 @@ def generate_html(all_season_data, config):
 
             detail_section = (
                 f'<div class="detail-category" id="{entry_id}" data-entry-id="{entry_id}" '
-                f'data-club="{main_club_id}" '
+                f'data-club="{escape(entry["club_id"])}" '
                 f'data-cat-id="{cat_id}" data-num-teams="{num_teams}" '
                 f'data-cat-label="{escape(short_category(entry["tournament_name"]))}" style="display:none">'
                 f'<div class="category-header">'
@@ -2038,7 +2128,8 @@ def main(refresh_rosters=False):
     else:
         print("Rosters: using cache (pass --refresh-rosters to update)")
 
-    club_id = config["club_id"]
+    # club_id is optional in multiclub mode; kept for backwards compatibility.
+    club_id = config.get("club_id")
     manager_id = config["manager_id"]
 
     # Step 1: Discover all seasons from manager endpoint
@@ -2116,7 +2207,7 @@ def main(refresh_rosters=False):
         tournaments_with_us = discover_club_tournaments(api_tournaments, club_id)
 
         if not tournaments_with_us and not cached_categories:
-            print(f"  No tournaments with our club in season {sid}")
+            print(f"  No tournaments with teams found in season {sid}")
             continue
 
         # Collect data for each tournament (API-fetched only)
@@ -2124,7 +2215,7 @@ def main(refresh_rosters=False):
         for t in tournaments_with_us:
             print(f"\n  Collecting data for: {t['name']}")
             try:
-                cat_data = collect_tournament_data(t, club_id, refresh_rosters=refresh_rosters,
+                cat_data = collect_tournament_data(t, refresh_rosters=refresh_rosters,
                                                    is_current_season=is_current)
                 if cat_data["groups"]:
                     categories_data.append(cat_data)
@@ -2158,7 +2249,7 @@ def main(refresh_rosters=False):
             print(f"\n  Cached season {season_label} for future builds")
 
     if not all_season_data:
-        print("No season data found for this club.")
+        print("No season data found.")
         sys.exit(1)
 
     # Deduplicate seasons that resolved to the same label

@@ -1,0 +1,146 @@
+[
+ {
+  "first_name": "DAVID",
+  "last_name": "ALUMA BARCELO",
+  "birthdate": "2005-09-27",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "BERNABE VILLALBA",
+  "birthdate": "1995-06-13",
+  "role": "player"
+ },
+ {
+  "first_name": "AMINE",
+  "last_name": "EL HARRAK  SAMADI",
+  "birthdate": "2005-08-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "FERNANDEZ GARCIA",
+  "birthdate": "2006-06-20",
+  "role": "player"
+ },
+ {
+  "first_name": "QUIM",
+  "last_name": "FERNANDEZ GARCIA",
+  "birthdate": "2005-01-20",
+  "role": "player"
+ },
+ {
+  "first_name": "SIMON",
+  "last_name": "FUSTE COETZEE",
+  "birthdate": "1981-05-01",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "GARCIA FRANCO",
+  "birthdate": "1994-08-11",
+  "role": "player"
+ },
+ {
+  "first_name": "PAU",
+  "last_name": "GIL DORMUA",
+  "birthdate": "2003-07-23",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "GURRI  CAPEL",
+  "birthdate": "2003-07-19",
+  "role": "player"
+ },
+ {
+  "first_name": "RAMON",
+  "last_name": "HOMAR GARCIA-NARCUE",
+  "birthdate": "2000-12-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "MARTIN FILBA",
+  "birthdate": "2003-02-14",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "MONTULL RODRIGUEZ",
+  "birthdate": "2005-04-19",
+  "role": "player"
+ },
+ {
+  "first_name": "JOEL",
+  "last_name": "PEREZ AHEDO",
+  "birthdate": "2004-01-29",
+  "role": "player"
+ },
+ {
+  "first_name": "LLUIS",
+  "last_name": "PIZARRO GARCIA",
+  "birthdate": "2001-12-15",
+  "role": "player"
+ },
+ {
+  "first_name": "SERGI",
+  "last_name": "PIZARRO GARCIA",
+  "birthdate": "1997-11-17",
+  "role": "player"
+ },
+ {
+  "first_name": "JULI",
+  "last_name": "RIU MONNE",
+  "birthdate": "2003-06-14",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLES",
+  "last_name": "ROBLES FABREGAT",
+  "birthdate": "2003-07-07",
+  "role": "player"
+ },
+ {
+  "first_name": "FRANCESC",
+  "last_name": "ROQUE GRAUPERA",
+  "birthdate": "1989-03-07",
+  "role": "player"
+ },
+ {
+  "first_name": "VICTOR",
+  "last_name": "ROQUE GRAUPERA",
+  "birthdate": "1996-06-01",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "VERA ORTEGA",
+  "birthdate": "2003-01-29",
+  "role": "player"
+ },
+ {
+  "first_name": "PEDRO",
+  "last_name": "APARICIO  ORTEGA",
+  "birthdate": "2003-01-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "GUAITA GRECH",
+  "birthdate": "1971-06-15",
+  "role": "staff"
+ },
+ {
+  "first_name": "ELOI",
+  "last_name": "LLISORGAS PRUNA",
+  "birthdate": "1980-01-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "VICENC",
+  "last_name": "TARRES PONS",
+  "birthdate": "1963-07-28",
+  "role": "staff"
+ }
+]
