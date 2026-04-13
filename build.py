@@ -815,11 +815,6 @@ main{max-width:780px;margin:0 auto;padding:.55rem}
 .cat-card-stat-v{display:block;font-size:.84rem;font-weight:800;color:var(--text)}
 .cat-card-stat-k{display:block;font-size:.69rem;color:var(--text-muted);margin-top:.05rem;text-transform:uppercase;letter-spacing:.03em}
 .cat-card-arrow{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:999px;background:var(--blue-pale);font-size:.92rem;color:var(--blue-dark);flex-shrink:0}
-.season-summary{display:flex;align-items:flex-end;justify-content:space-between;gap:.8rem;margin:0 .15rem .55rem;padding:.05rem .05rem}
-.season-summary-main{min-width:0}
-.season-summary-tag{font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--blue)}
-.season-summary-title{font-size:.92rem;font-weight:800;color:var(--blue-dark)}
-.season-summary-note{font-size:.75rem;color:var(--text-muted)}
 
 /* Detail screen */
 .back-bar{background:var(--card);border-bottom:1px solid #e0e0e0;padding:.4rem .65rem;display:flex;align-items:center;gap:.45rem}
@@ -833,7 +828,6 @@ main{max-width:780px;margin:0 auto;padding:.55rem}
 .team-selector-label{font-size:.75rem;color:var(--text-muted)}
 .team-selector{font-size:.78rem;padding:.25rem .45rem;border:1px solid var(--blue-light);border-radius:6px;color:var(--blue-dark);background:#fff;cursor:pointer;max-width:260px}
 .team-selector:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,119,182,.2)}
-.teams-label{font-size:.8rem;color:var(--text-muted);margin-bottom:.4rem}
 .record-bar{display:inline-flex;gap:.35rem;font-size:.75rem}
 .record-bar span{padding:.1rem .38rem;border-radius:4px;font-weight:600}
 .record-bar .w{background:#d4edda;color:var(--green)}.record-bar .d{background:#fff3cd;color:#856404}
@@ -965,7 +959,7 @@ footer a{color:var(--blue)}
 .player-chip:hover{background:var(--blue);color:#fff}
 .player-search-wrap{margin:0 0 .45rem;position:relative}
 .player-search-wrap .search-input{padding-left:.8rem}
-.season-cats,.season-teams{display:none}.season-cats.active,.season-teams.active{display:block}
+.season-cats{display:none}.season-cats.active{display:block}
 @media(max-width:480px){.selection-flow{grid-template-columns:1fr}.cat-grid{grid-template-columns:1fr}.match-row{grid-template-columns:52px 56px 1fr;padding:.4rem}.match-teams{font-size:.74rem}header h1{font-size:1.1rem}}
 """
 
@@ -1153,10 +1147,6 @@ function applyClubFilter(){
         card.style.display=ok?'':'none';
         if(ok)visibleCats++;
     });
-    document.querySelectorAll('.season-teams.active .team-panel').forEach(function(panel){
-        var ok=clubId && panel.dataset.club===clubId;
-        panel.style.display=ok?'none':'none';
-    });
     if(note){
         if(!clubId)note.style.display='block';
         else if(visibleCats===0){
@@ -1202,7 +1192,7 @@ function switchSeason(seasonId){
   window.CUR_SEASON=seasonId;
   _searchIdx=null;
     _playerIdx=null;
-  document.querySelectorAll('.season-cats,.season-teams').forEach(function(el){
+    document.querySelectorAll('.season-cats').forEach(function(el){
     if(el.dataset.season===seasonId)el.classList.add('active');
     else el.classList.remove('active');
   });
