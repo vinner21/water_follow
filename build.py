@@ -2159,7 +2159,7 @@ def generate_html(all_season_data, config):
         f'<div class="selection-hero">'
         f'<div class="selection-eyebrow">Vista general</div>'
         f'<div class="sel-title">Flux d\'entrada</div>'
-        f'<div class="sel-subtitle">1) Temporada, 2) Club, 3) Categoria, 4) Equip. Fins que no triïs club, les categories queden bloquejades.</div>'
+        f'<div class="sel-subtitle">1) Temporada, 2) Club, 3) Categoria, 4) Equip.</div>'
         f'<div class="selection-flow">'
         f'<div class="flow-step"><span class="flow-step-k">Pas 1 · Temporada</span><div class="flow-step-v">{season_selector_html}</div></div>'
         f'<div class="flow-step"><span class="flow-step-k">Pas 2 · Club</span><div class="flow-step-v">{club_selector_html}</div></div>'
@@ -2168,9 +2168,8 @@ def generate_html(all_season_data, config):
         f'</div>'
         f'<div class="selection-actions"><button class="btn-secondary" onclick="showPlayers()">Menu estadistiques jugadors</button></div>'
         f'</div>'
-        f'<div id="club-required-note" class="club-required-note">Selecciona primer un club per desbloquejar les categories.</div>'
-        f'{"".join(cat_blocks)}'
-        # Hidden data store for step-4 team selector.
+        # Hidden data stores used by dropdown-only flow.
+        f'<div id="cat-data-store" style="display:none">{"".join(cat_blocks)}</div>'
         f'<div id="team-data-store" style="display:none">{"".join(team_blocks)}</div>'
         f'</div>'
         # Screen 1B: Player explorer
