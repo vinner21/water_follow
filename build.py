@@ -744,6 +744,21 @@ def _club_slug(name):
     return txt or "club-unknown"
 
 
+def _club_display_name(name):
+    txt = " ".join((name or "").split()).strip()
+    txt = re.sub(r"(?i)^\s*c\.?\s*n\.?\s+", "CN ", txt)
+    txt = re.sub(r"(?i)^\s*club\s+natacio\s+", "CN ", txt)
+    return txt or "Club"
+
+
+def _club_key(name):
+    txt = _club_display_name(name).lower()
+    txt = unicodedata.normalize("NFD", txt)
+    txt = "".join(ch for ch in txt if unicodedata.category(ch) != "Mn")
+    txt = re.sub(r"[^a-z0-9]+", "", txt)
+    return txt or "clubunknown"
+
+
 def infer_club_from_team_name(team_name):
     base = (team_name or "").strip()
     base = re.sub(r"\s+\"?[A-D]\"?$", "", base)
@@ -1062,6 +1077,29 @@ function fmtLong(ds,dl){
 function getSeasonObj(seasonId){
     return (window.SEASONS||[]).find(function(s){return s.id===seasonId;})||null;
 }
+function populateCategorySelect(){
+    var sel=document.getElementById('category-select');
+    if(!sel)return;
+    var clubId=window.CUR_CLUB||'';
+    var opts=['<option value="">Selecciona categoria</option>'];
+    if(!clubId){
+        sel.innerHTML='<option value="">Selecciona primer un club</option>';
+        sel.value='';
+        sel.disabled=true;
+        return;
+    }
+    var cards=document.querySelectorAll('.season-cats.active .cat-card[data-club="'+clubId+'"]');
+    cards.forEach(function(card){
+        var catId=card.dataset.catId||'';
+        var teamCount=parseInt(card.dataset.teamCount||'0',10);
+        var lbl=card.dataset.catLabel||'Categoria';
+        if(!catId)return;
+        opts.push('<option value="'+esc(catId)+'">'+esc(lbl)+' ('+teamCount+' equips)</option>');
+    });
+    sel.innerHTML=opts.join('');
+    sel.value='';
+    sel.disabled=cards.length===0;
+}
 function populateClubSelect(seasonId){
     var sel=document.getElementById('club-select');
     if(!sel)return;
@@ -1074,6 +1112,7 @@ function populateClubSelect(seasonId){
     sel.innerHTML=opts.join('');
     sel.value='';
     window.CUR_CLUB='';
+    populateCategorySelect();
 }
 function applyClubFilter(){
     var seasonId=window.CUR_SEASON||'';
@@ -1105,11 +1144,18 @@ function applyClubFilter(){
         var status=(si&&!si.current)?' (temporada tancada)':'';
         sub.textContent=(clubId?visibleCats+' categories':'Tria temporada i club')+status+(si&&si.ra?' · Actualitzat: '+si.ra:'');
     }
+    populateCategorySelect();
 }
 function switchClub(clubId){
     window.CUR_CLUB=clubId||'';
     applyClubFilter();
     if(!window.CUR_CLUB)showCategories();
+}
+function switchCategory(catId){
+    if(!catId||!window.CUR_CLUB)return;
+    var card=document.querySelector('.season-cats.active .cat-card[data-cat-id="'+catId+'"]');
+    var teamCount=card?parseInt(card.dataset.teamCount||'1',10):1;
+    showDetailOrTeams(catId,teamCount);
 }
 function switchSeason(seasonId){
   window.CUR_SEASON=seasonId;
@@ -1460,6 +1506,8 @@ function showScreen(name){
 function showCategories(){showScreen('selection-screen');history.replaceState(null,'','#');}
 function showTeams(catId){
     if(!window.CUR_CLUB){showCategories();return;}
+    var catSel=document.getElementById('category-select');
+    if(catSel)catSel.value=catId;
   showScreen('team-screen');
   document.querySelectorAll('.team-panel').forEach(function(p){p.style.display='none';});
   var el=document.getElementById('teams-'+catId);
@@ -1474,6 +1522,8 @@ function showDetail(id, teamId){
     if(el&&el.dataset.club===window.CUR_CLUB){
     el.style.display='block';
     var catId=el.dataset.catId,numTeams=parseInt(el.dataset.numTeams)||1;
+    var catSel=document.getElementById('category-select');
+    if(catSel)catSel.value=catId;
     var catLabel=el.dataset.catLabel||'';
     var btn=document.getElementById('detail-back-btn');
     var lbl=document.getElementById('detail-back-label');
@@ -1747,12 +1797,15 @@ def generate_html(all_season_data, config):
                                if m["home_team"] in team_ids or m["away_team"] in team_ids]
                 team_groups = [g for g in cat["groups"] if team_id in g.get("team_ids", set())]
                 inferred = infer_club_from_team_name(team.get("name", ""))
+                raw_club_name = str(team.get("club_name") or inferred["club_name"])
+                club_name = _club_display_name(raw_club_name)
+                club_id = f"club-{_club_key(club_name)}"
                 entries.append({
                     "tournament_id": cat["tournament_id"],
                     "tournament_name": cat["tournament_name"],
                     "team": {**team, "id": team_id},
-                    "club_id": str(team.get("club_id") or inferred["club_id"]),
-                    "club_name": str(team.get("club_name") or inferred["club_name"]),
+                    "club_id": club_id,
+                    "club_name": club_name,
                     "team_ids": team_ids,
                     "matches": team_matches,
                     "all_groups": cat["groups"],
@@ -1832,7 +1885,7 @@ def generate_html(all_season_data, config):
 
                 age_html = f'<div class="cat-card-age">{escape(age_label)}</div>' if age_label else ''
                 cat_cards_html += (
-                    f'<div class="cat-card" data-club="{escape(club_id)}" onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
+                    f'<div class="cat-card" data-club="{escape(club_id)}" data-cat-id="{cat_id}" data-cat-label="{escape(label)}" data-team-count="{num_teams}" onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
                     f'<div class="cat-card-top">'
                     f'<div class="cat-card-name">{escape(label)}</div>'
                     f'<span class="cat-card-arrow">&#8250;</span>'
@@ -2052,6 +2105,13 @@ def generate_html(all_season_data, config):
         '</select></div>'
     )
 
+    category_selector_html = (
+        '<div class="season-select-wrap">'
+        '<select id="category-select" class="flow-select" onchange="switchCategory(this.value)" disabled>'
+        '<option value="">Selecciona primer un club</option>'
+        '</select></div>'
+    )
+
     html = (
         '<!DOCTYPE html><html lang="ca"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -2072,7 +2132,7 @@ def generate_html(all_season_data, config):
         f'<div class="selection-flow">'
         f'<div class="flow-step"><span class="flow-step-k">Pas 1 · Temporada</span><div class="flow-step-v">{season_selector_html}</div></div>'
         f'<div class="flow-step"><span class="flow-step-k">Pas 2 · Club</span><div class="flow-step-v">{club_selector_html}</div></div>'
-        f'<div class="flow-step"><span class="flow-step-k">Pas 3 · Categoria</span><div class="flow-step-v">Selecciona una categoria disponible</div></div>'
+        f'<div class="flow-step"><span class="flow-step-k">Pas 3 · Categoria</span><div class="flow-step-v">{category_selector_html}</div></div>'
         f'</div>'
         f'<div class="selection-actions"><button class="btn-secondary" onclick="showPlayers()">Menu estadistiques jugadors</button></div>'
         f'</div>'
