@@ -1088,12 +1088,17 @@ function populateCategorySelect(){
         return;
     }
     var cards=document.querySelectorAll('.season-cats.active .cat-card[data-club="'+clubId+'"]');
+    var catData=[];
     cards.forEach(function(card){
         var catId=card.dataset.catId||'';
         var teamCount=parseInt(card.dataset.teamCount||'0',10);
         var lbl=card.dataset.catLabel||'Categoria';
         if(!catId)return;
-        opts.push('<option value="'+esc(catId)+'">'+esc(lbl)+' ('+teamCount+' equips)</option>');
+        catData.push({catId:catId,teamCount:teamCount,lbl:lbl});
+    });
+    catData.sort(function(a,b){return a.lbl.localeCompare(b.lbl,'ca');});
+    catData.forEach(function(item){
+        opts.push('<option value="'+esc(item.catId)+'">'+esc(item.lbl)+' ('+item.teamCount+' equips)</option>');
     });
     sel.innerHTML=opts.join('');
     sel.value='';
@@ -1112,12 +1117,17 @@ function populateTeamSelect(catId){
     var panel=document.getElementById('teams-'+catId);
     var opts=['<option value="">Selecciona equip</option>'];
     var cards=panel?panel.querySelectorAll('.cat-card[data-detail]'):[];
+    var teamData=[];
     cards.forEach(function(card){
         var detailId=card.dataset.detail||'';
         var teamId=card.dataset.teamId||'';
         var teamLabel=card.dataset.teamLabel||'Equip';
         if(!detailId)return;
-        opts.push('<option value="'+esc(detailId)+'" data-team-id="'+esc(teamId)+'">'+esc(teamLabel)+'</option>');
+        teamData.push({detailId:detailId,teamId:teamId,teamLabel:teamLabel});
+    });
+    teamData.sort(function(a,b){return a.teamLabel.localeCompare(b.teamLabel,'ca');});
+    teamData.forEach(function(item){
+        opts.push('<option value="'+esc(item.detailId)+'" data-team-id="'+esc(item.teamId)+'">'+esc(item.teamLabel)+'</option>');
     });
     sel.innerHTML=opts.join('');
     sel.value='';
@@ -1129,6 +1139,7 @@ function populateClubSelect(seasonId){
     var s=getSeasonObj(seasonId);
     var clubs=(s&&s.clubs)?s.clubs:[];
     var opts=['<option value="">Selecciona club</option>'];
+    clubs.sort(function(a,b){return a.name.localeCompare(b.name,'ca');});
     clubs.forEach(function(c){
         opts.push('<option value="'+esc(c.id)+'">'+esc(c.name)+'</option>');
     });
@@ -1783,9 +1794,10 @@ def generate_html(all_season_data, config):
     if not default_season:
         default_season = next(iter(all_season_data))
 
-    # Build season selector options
+    # Build season selector options (sorted alphabetically by label)
     season_options_html = ""
-    for sid, sdata in all_season_data.items():
+    sorted_seasons = sorted(all_season_data.items(), key=lambda x: x[1]["label"])
+    for sid, sdata in sorted_seasons:
         tag = " (En curs)" if sdata["status"] == "current" else ""
         sel = " selected" if sid == default_season else ""
         season_options_html += f'<option value="{sid}"{sel}>{escape(sdata["label"])}{tag}</option>'
