@@ -1,8 +1,8 @@
-# Water Polo Tracker – C.N. Sant Andreu
+# Water Polo Tracker – Club Agnostic
 
-Web estàtica multi-categoria per fer seguiment de **totes** les categories de waterpolo del C.N. Sant Andreu. Extreu les dades automàticament de la [Federació Catalana de Natació](https://actawp.natacio.cat/) via l'**API pública de Leverade** (`api.leverade.com`).
+Web estàtica multi-categoria per fer seguiment de **totes** les categories de waterpolo d'un club configurat. Extreu les dades automàticament de la [Federació Catalana de Natació](https://actawp.natacio.cat/) via l'**API pública de Leverade** (`api.leverade.com`).
 
-🌐 **Web en viu:** [vinner21.github.io/water_follow](https://vinner21.github.io/water_follow)
+🌐 **Web en viu (exemple):** [vinner21.github.io/water_follow](https://vinner21.github.io/water_follow)
 
 > **Nota legal:** L'API de Leverade és pública (no requereix autenticació) i les dades
 > que s'hi consulten (resultats, classificacions, calendaris) són informació pública
@@ -25,8 +25,8 @@ Edita `config.json` per personalitzar:
 
 ```json
 {
-  "club_id": "4979831",
-  "club_name": "C.N. SANT ANDREU",
+  "club_id": "<club_id_leverade>",
+  "club_name": "<nom_del_club>",
   "manager_id": "314965",
   "clupik_base_url": "https://clupik.pro",
   "lang": "ca"
@@ -34,6 +34,7 @@ Edita `config.json` per personalitzar:
 ```
 
 - `club_id` – ID del club a Leverade (el script busca automàticament tots els seus equips)
+- `club_name` – Nom del club per mostrar a la capçalera i metadades
 - `manager_id` – ID de la federació/manager que organitza els torneigs
 
 El script descobreix automàticament tots els torneigs actius on el club participa, sense necessitat d'indicar IDs de torneigs, equips o grups.
@@ -61,7 +62,7 @@ open _site/index.html
 
 ```
 water/
-├── config.json                 # Configuració del club
+├── config.json                 # Configuració del club objectiu
 ├── build.py                    # Script que genera el HTML multi-categoria
 ├── requirements.txt            # Dependències Python
 ├── API.md                      # Documentació de l'API Leverade

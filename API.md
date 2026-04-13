@@ -53,7 +53,7 @@ GET https://api.leverade.com/managers/314965?include=tournaments
 GET /tournaments/{tournament_id}?include=teams
 ```
 
-**Per a què:** Per cada torneig actiu, obtenim la llista d'equips inscrits. Filtrem pels equips que pertanyen al nostre club (club_id: 4979831) per determinar en quines competicions participa el C.N. Sant Andreu.
+**Per a què:** Per cada torneig actiu, obtenim la llista d'equips inscrits. Filtrem pels equips que pertanyen al club configurat (`club_id`) per determinar en quines competicions participa.
 
 **Dades obtingudes:** Noms, IDs i avatars dels equips, i la relació amb el club.
 
