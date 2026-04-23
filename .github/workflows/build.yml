@@ -2,8 +2,6 @@ name: Build & Deploy Water Polo Tracker
 
 on:
   schedule:
-    # Every 4 hours → 6 slots/day.  The gate job picks exactly 1 per day
-    # using a date-based hash, so the build hour varies each day.
     - cron: '17 */4 * * *'
   push:
     branches: [main]
@@ -25,56 +23,57 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Lightweight gate: for scheduled runs, only proceed on the daily-selected
-  # 4-hour slot.  Manual / push triggers always proceed.
   gate:
     runs-on: ubuntu-latest
     outputs:
-      proceed: ${{ steps.decide.outputs.proceed }}
+      proceed: ${{ steps.gate.outputs.proceed }}
+
     steps:
-      - name: Daily random build gate
-        id: decide
+      - name: Compute build gate (Python)
+        id: gate
         run: |
-          if [ "${{ github.event_name }}" != "schedule" ]; then
-            echo "proceed=true" >> "$GITHUB_OUTPUT"
-            echo "Non-schedule trigger → always build"
-          else
-            # 6 slots per day: 0(00h) 1(04h) 2(08h) 3(12h) 4(16h) 5(20h)
-            SLOT=$(( $(date -u +%H) / 4 ))
-            # Deterministic hash of today's date → pick one of the 6 slots
-            # Use printf with %u to ensure a valid unsigned integer
-            DATE_NUM=$(date -u +%Y%m%d)
-            HASH=$(printf '%u' "0x$(echo -n "$DATE_NUM" | md5sum | cut -c1-8)")
-            TARGET=$(( HASH % 6 ))
-            if [ "$SLOT" -eq "$TARGET" ]; then
-              echo "proceed=true" >> "$GITHUB_OUTPUT"
-              echo "✓ Build slot selected (slot $SLOT == target $TARGET)"
-            else
-              echo "proceed=false" >> "$GITHUB_OUTPUT"
-              echo "✗ Skipping (slot $SLOT ≠ target $TARGET)"
-            fi
-          fi
+          python - << 'EOF'
+          import hashlib, datetime, os
+
+          if os.environ.get("GITHUB_EVENT_NAME") != "schedule":
+              print("proceed=true")
+              exit(0)
+
+          date_str = datetime.datetime.utcnow().strftime("%Y%m%d")
+
+          h = hashlib.md5(date_str.encode()).hexdigest()
+          target = int(h[:8], 16) % 6
+
+          slot = 0  # single execution slot per day
+
+          print("proceed=" + ("true" if slot == target else "false"))
+          EOF
 
   build:
     needs: gate
     if: needs.gate.outputs.proceed == 'true'
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 📦 Python setup + cache
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: 'pip'
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      # ⚡ Node setup + cache
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Install StatiCrypt
         run: npm install -g staticrypt
@@ -83,24 +82,27 @@ jobs:
         env:
           STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
         run: |
-          if [ "${{ github.event.inputs.refresh_rosters }}" = "true" ]; then
+          if [ "${{ github.event.inputs.refresh_rosters || 'false' }}" = "true" ]; then
             python build.py --refresh-rosters
           else
             python build.py
           fi
 
-      - name: Commit season cache
+      # 💾 Commit només si hi ha canvis reals
+      - name: Commit cache (if changed)
         run: |
-          if git diff --quiet _data/seasons/ && [ -z "$(git ls-files --others --exclude-standard _data/seasons/)" ]; then
-            echo "No new cache files"
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add _data/seasons/*.json _data/seasons/t_*.json
-            git add _data/seasons/rosters/ 2>/dev/null || true
-            git commit -m "chore: update season cache [skip ci]" || true
-            git push
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add -A _data/seasons/
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
           fi
+
+          git commit -m "chore: update season cache [skip ci]"
+          git push
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -111,9 +113,11 @@ jobs:
     needs: build
     if: needs.build.result == 'success'
     runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
