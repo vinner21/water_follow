@@ -39,14 +39,17 @@ jobs:
               print("proceed=true")
               exit(0)
 
+          # Calculate which 4-hour slot this execution is (0-5)
+          current_hour = datetime.datetime.utcnow().hour
+          slot = current_hour // 4
+
+          # Calculate which slot should run today (random but consistent per day)
           date_str = datetime.datetime.utcnow().strftime("%Y%m%d")
-
           h = hashlib.md5(date_str.encode()).hexdigest()
-          target = int(h[:8], 16) % 6
+          target_slot = int(h[:8], 16) % 6
 
-          slot = 0  # single execution slot per day
-
-          print("proceed=" + ("true" if slot == target else "false"))
+          # Proceed only if this is the right slot
+          print("proceed=" + ("true" if slot == target_slot else "false"))
           EOF
 
   build:
