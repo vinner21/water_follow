@@ -36,11 +36,20 @@ jobs:
     steps:
       - name: Compute build gate (Python)
         id: gate
+        env:
+          FORCE_RUN: ${{ github.event.inputs.force_run || 'false' }}
         run: |
           python - << 'EOF'
           import hashlib, datetime, os
 
-          if os.environ.get("GITHUB_EVENT_NAME") != "schedule":
+          event_name = os.environ.get("GITHUB_EVENT_NAME")
+          force_run = os.environ.get("FORCE_RUN", "false").lower() == "true"
+
+          if event_name == "workflow_dispatch":
+              print("proceed=" + ("true" if force_run else "false"))
+              exit(0)
+
+          if event_name != "schedule":
               print("proceed=true")
               exit(0)
 
