@@ -12,6 +12,11 @@ on:
         required: false
         type: boolean
         default: false
+      force_run:
+        description: 'Force the workflow to run immediately when manually dispatched'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
