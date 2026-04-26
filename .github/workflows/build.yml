@@ -40,30 +40,38 @@ jobs:
           FORCE_RUN: ${{ github.event.inputs.force_run || 'false' }}
         run: |
           python - << 'EOF'
-          import hashlib, datetime, os
+          import hashlib, datetime, os, sys
 
           event_name = os.environ.get("GITHUB_EVENT_NAME")
           force_run = os.environ.get("FORCE_RUN", "false").lower() == "true"
+          github_output = os.environ.get("GITHUB_OUTPUT")
+
+          def set_output(name, value):
+              if github_output:
+                  with open(github_output, "a") as f:
+                      f.write(f"{name}={value}\n")
+              else:
+                  print(f"::error::GITHUB_OUTPUT is not set")
+                  sys.exit(1)
 
           if event_name == "workflow_dispatch":
-              print("proceed=" + ("true" if force_run else "false"))
-              exit(0)
+              set_output("proceed", "true" if force_run else "false")
+              print(f"event=workflow_dispatch force_run={force_run}")
+              sys.exit(0)
 
           if event_name != "schedule":
-              print("proceed=true")
-              exit(0)
+              set_output("proceed", "true")
+              sys.exit(0)
 
-          # Calculate which 4-hour slot this execution is (0-5)
           current_hour = datetime.datetime.utcnow().hour
           slot = current_hour // 4
 
-          # Calculate which slot should run today (random but consistent per day)
           date_str = datetime.datetime.utcnow().strftime("%Y%m%d")
           h = hashlib.md5(date_str.encode()).hexdigest()
           target_slot = int(h[:8], 16) % 6
 
-          # Proceed only if this is the right slot
-          print("proceed=" + ("true" if slot == target_slot else "false"))
+          set_output("proceed", "true" if slot == target_slot else "false")
+          print(f"schedule slot={slot} target={target_slot}")
           EOF
 
   build:
