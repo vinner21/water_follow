@@ -2408,7 +2408,7 @@ def main(refresh_rosters=False):
         print("Encrypting with StatiCrypt ...")
         result = subprocess.run([
             staticrypt_bin, out_path,
-            "-p", os.environ.get("STATICRYPT_PASSWORD", "vidalperez"),
+            "-p", os.environ.get("STATICRYPT_PASSWORD", "posahi_un_password"),
             "--short",
             "--remember", "30",
             "--template-title", "Water Polo Tracker - Login",
