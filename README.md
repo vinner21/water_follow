@@ -2,7 +2,7 @@
 
 Web estàtica multi-categoria per fer seguiment de **totes** les categories de waterpolo d'un club configurat. Extreu les dades automàticament de la [Federació Catalana de Natació](https://actawp.natacio.cat/) via l'**API pública de Leverade** (`api.leverade.com`).
 
-🌐 **Web en viu (exemple):** [vinner21.github.io/water_follow](https://vinner21.github.io/water_follow)
+🌐 **Web en viu (exemple):** [fvidalmarginet.github.io/water_follow](https://fvidalmarginet.github.io/water_follow)
 
 > **Nota legal:** L'API de Leverade és pública (no requereix autenticació) i les dades
 > que s'hi consulten (resultats, classificacions, calendaris) són informació pública
