@@ -10,68 +10,52 @@ Supports historical seasons: finished seasons are cached as JSON files in
 _data/seasons/ so API calls are only made once per closed season.
 """
 
-from __future__ import annotations
-
-import argparse
 import json
 import os
 import re
-import shutil
-import subprocess
 import sys
 import time
 import unicodedata
-from datetime import datetime, timezone
-from html import escape
-from pathlib import Path
-from typing import Any
-
-import requests
-
+from collections import OrderedDict
+from datetime import datetime
 try:
     from zoneinfo import ZoneInfo
-except ImportError:
-    ZoneInfo = None  # type: ignore[misc,assignment]
+except Exception:
+    ZoneInfo = None
+from html import escape
+
+import requests
 
 API_BASE = "https://api.leverade.com"
 CLUPIK_BASE = "https://clupik.pro"
 REQUEST_DELAY = 0.3
-SCRIPT_DIR = Path(__file__).resolve().parent
-DATA_DIR = SCRIPT_DIR / "_data" / "seasons"
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_data", "seasons")
+
 
 # ---------------------------------------------------------------------------
 # API helpers
 # ---------------------------------------------------------------------------
 
-def api_get(endpoint: str, params: dict[str, Any] | None = None) -> dict[str, Any]:
-    """Make a GET request to the Leverade API with delay and error handling."""
+def api_get(endpoint, params=None):
     url = f"{API_BASE}/{endpoint}"
     time.sleep(REQUEST_DELAY)
-    try:
-        resp = requests.get(url, params=params, timeout=30)
-        resp.raise_for_status()
-        return resp.json()
-    except requests.exceptions.RequestException as e:
-        print(f"API request failed for {url}: {e}")
-        raise
+    resp = requests.get(url, params=params, timeout=30)
+    resp.raise_for_status()
+    return resp.json()
 
 
 # ---------------------------------------------------------------------------
 # Season cache
 # ---------------------------------------------------------------------------
 
-def load_season_cache(season_id: str) -> dict[str, Any] | None:
+def load_season_cache(season_id):
     """Load cached season data from _data/seasons/{season_id}.json.
     Returns None if cache file does not exist."""
-    path = DATA_DIR / f"{season_id}.json"
-    if not path.exists():
+    path = os.path.join(DATA_DIR, f"{season_id}.json")
+    if not os.path.exists(path):
         return None
-    try:
-        with path.open(encoding="utf-8") as f:
-            data = json.load(f)
-    except (json.JSONDecodeError, OSError) as e:
-        print(f"Warning: could not load season cache {path}: {e}")
-        return None
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
     # Convert lists back to sets where needed
     for t in data.get("tournaments", []):
         _deserialize_category(t)
@@ -79,11 +63,11 @@ def load_season_cache(season_id: str) -> dict[str, Any] | None:
     return data
 
 
-def _serialize_category(cat: dict[str, Any]) -> dict[str, Any]:
+def _serialize_category(cat):
     """Convert a single category/tournament data dict to a JSON-serializable form."""
     teams = cat.get("teams") or cat.get("our_teams") or []
     team_ids = cat.get("team_ids") or cat.get("our_team_ids") or set()
-    c: dict[str, Any] = {
+    c = {
         "tournament_id": cat["tournament_id"],
         "tournament_name": cat["tournament_name"],
         "teams": teams,
@@ -94,17 +78,16 @@ def _serialize_category(cat: dict[str, Any]) -> dict[str, Any]:
         "groups": [],
     }
     for g in cat["groups"]:
-        g_data: dict[str, Any] = {
+        c["groups"].append({
             "id": g["id"],
             "name": g["name"],
             "standings": g["standings"],
             "team_ids": list(g.get("team_ids") or g.get("our_team_ids") or set()),
-        }
-        c["groups"].append(g_data)
+        })
     return c
 
 
-def _deserialize_category(cat: dict[str, Any]) -> dict[str, Any]:
+def _deserialize_category(cat):
     """Restore sets from lists after loading from JSON."""
     if "team_ids" in cat:
         cat["team_ids"] = set(cat["team_ids"])
@@ -120,9 +103,9 @@ def _deserialize_category(cat: dict[str, Any]) -> dict[str, Any]:
     return cat
 
 
-def save_season_cache(season_id: str, season_label: str, categories_data: list[dict[str, Any]]) -> None:
+def save_season_cache(season_id, season_label, categories_data):
     """Persist finished-season data as JSON so it never needs to be fetched again."""
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    os.makedirs(DATA_DIR, exist_ok=True)
     serializable = [_serialize_category(cat) for cat in categories_data]
     payload = {
         "season_id": season_id,
@@ -130,8 +113,8 @@ def save_season_cache(season_id: str, season_label: str, categories_data: list[d
         "tournaments": serializable,
         "refreshed_at": datetime.now().strftime("%d/%m/%Y %H:%M"),
     }
-    path = DATA_DIR / f"{season_id}.json"
-    with path.open("w", encoding="utf-8") as f:
+    path = os.path.join(DATA_DIR, f"{season_id}.json")
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=1)
     print(f"  Cached season {season_label} -> {path}")
 
@@ -140,73 +123,65 @@ def save_season_cache(season_id: str, season_label: str, categories_data: list[d
 # Tournament-level cache (for finished tournaments within current season)
 # ---------------------------------------------------------------------------
 
-def load_tournament_cache(tournament_id: str) -> dict[str, Any] | None:
+def load_tournament_cache(tournament_id):
     """Load cached tournament data from _data/seasons/t_{tournament_id}.json.
     Returns the deserialized category dict, or None."""
-    path = DATA_DIR / f"t_{tournament_id}.json"
-    if not path.exists():
+    path = os.path.join(DATA_DIR, f"t_{tournament_id}.json")
+    if not os.path.exists(path):
         return None
-    try:
-        with path.open(encoding="utf-8") as f:
-            data = json.load(f)
-    except (json.JSONDecodeError, OSError) as e:
-        print(f"Warning: could not load tournament cache {path}: {e}")
-        return None
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
     return _deserialize_category(data)
 
 
-def save_tournament_cache(tournament_id: str, cat_data: dict[str, Any]) -> None:
+def save_tournament_cache(tournament_id, cat_data):
     """Cache a single finished tournament's collected data."""
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-    path = DATA_DIR / f"t_{tournament_id}.json"
-    with path.open("w", encoding="utf-8") as f:
+    os.makedirs(DATA_DIR, exist_ok=True)
+    path = os.path.join(DATA_DIR, f"t_{tournament_id}.json")
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(_serialize_category(cat_data), f, ensure_ascii=False, indent=1)
     print(f"    Cached tournament {tournament_id} -> {path}")
 
 
-def cleanup_tournament_caches() -> None:
+def cleanup_tournament_caches():
     """Remove per-tournament cache files (used after a season is fully cached)."""
-    if not DATA_DIR.is_dir():
+    if not os.path.isdir(DATA_DIR):
         return
-    for path in DATA_DIR.iterdir():
-        if path.is_file() and path.name.startswith("t_") and path.name.endswith(".json"):
-            path.unlink()
-            print(f"  Cleaned up tournament cache: {path.name}")
+    for fname in os.listdir(DATA_DIR):
+        if fname.startswith("t_") and fname.endswith(".json"):
+            os.remove(os.path.join(DATA_DIR, fname))
+            print(f"  Cleaned up tournament cache: {fname}")
 
 
 # ---------------------------------------------------------------------------
 # Roster cache  (r_{team_id}.json)  – refreshed only with --refresh-rosters
 # ---------------------------------------------------------------------------
 
-ROSTER_DIR = DATA_DIR / "rosters"
+ROSTER_DIR = os.path.join(DATA_DIR, "rosters")
 
 
-def load_roster_cache(team_id: str) -> list[dict[str, Any]] | None:
+def load_roster_cache(team_id):
     """Load a cached roster for a single team.  Returns list or None."""
-    path = ROSTER_DIR / f"r_{team_id}.json"
-    if not path.exists():
+    path = os.path.join(ROSTER_DIR, f"r_{team_id}.json")
+    if not os.path.exists(path):
         return None
-    try:
-        with path.open(encoding="utf-8") as f:
-            return json.load(f)
-    except (json.JSONDecodeError, OSError) as e:
-        print(f"Warning: could not load roster cache {path}: {e}")
-        return None
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
 
 
-def save_roster_cache(team_id: str, roster: list[dict[str, Any]]) -> None:
+def save_roster_cache(team_id, roster):
     """Persist a single team's roster to disk."""
-    ROSTER_DIR.mkdir(parents=True, exist_ok=True)
-    path = ROSTER_DIR / f"r_{team_id}.json"
-    with path.open("w", encoding="utf-8") as f:
+    os.makedirs(ROSTER_DIR, exist_ok=True)
+    path = os.path.join(ROSTER_DIR, f"r_{team_id}.json")
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(roster, f, ensure_ascii=False, indent=1)
 
 
-def load_all_roster_caches(team_ids: set[str]) -> tuple[dict[str, list[dict[str, Any]]], set[str]]:
+def load_all_roster_caches(team_ids):
     """Load cached rosters for a set of team_ids.
     Returns (dict of rosters found, set of missing ids)."""
-    rosters: dict[str, list[dict[str, Any]]] = {}
-    missing: set[str] = set()
+    rosters = {}
+    missing = set()
     for t_id in team_ids:
         cached = load_roster_cache(t_id)
         if cached is not None:
@@ -216,33 +191,30 @@ def load_all_roster_caches(team_ids: set[str]) -> tuple[dict[str, list[dict[str,
     return rosters, missing
 
 
-def roster_cache_age_days(team_id: str) -> float | None:
+def roster_cache_age_days(team_id):
     """Return the age in days of the roster cache file, or None if it doesn't exist."""
-    path = ROSTER_DIR / f"r_{team_id}.json"
-    if not path.exists():
+    path = os.path.join(ROSTER_DIR, f"r_{team_id}.json")
+    if not os.path.exists(path):
         return None
-    try:
-        mtime = path.stat().st_mtime
-        return (time.time() - mtime) / 86400
-    except OSError:
-        return None
+    mtime = os.path.getmtime(path)
+    return (time.time() - mtime) / 86400
 
 
 # ---------------------------------------------------------------------------
 # Season helpers
 # ---------------------------------------------------------------------------
 
-def infer_season_info(categories_data: list[dict[str, Any]]) -> tuple[str, int]:
+def infer_season_info(categories_data):
     """Infer (season_label, season_start_year) from tournament match dates.
     Returns e.g. ('2024-25', 2024)."""
-    all_dates: list[datetime] = []
+    all_dates = []
     for cat in categories_data:
         for m in cat.get("matches", []):
             d = m.get("date")
             if d:
                 try:
                     dt = datetime.strptime(d, "%Y-%m-%d %H:%M:%S")
-                    if ZoneInfo is not None:
+                    if ZoneInfo:
                         try:
                             dt = dt.replace(tzinfo=ZoneInfo("UTC")).astimezone(ZoneInfo("Europe/Madrid"))
                         except Exception:
@@ -266,7 +238,7 @@ def infer_season_info(categories_data: list[dict[str, Any]]) -> tuple[str, int]:
     return f"{year}-{(year + 1) % 100:02d}", year
 
 
-def build_category_age(season_start_year: int) -> dict[str, tuple[int, str]]:
+def build_category_age(season_start_year):
     """Build age-category labels for a specific season.
 
     Catalan water polo age categories are based on birth year.
@@ -288,7 +260,7 @@ def build_category_age(season_start_year: int) -> dict[str, tuple[int, str]]:
 CATEGORY_AGE = build_category_age(2025)
 
 
-def category_age_info(tournament_name: str, category_age: dict[str, tuple[int, str]] | None = None) -> tuple[int, str]:
+def category_age_info(tournament_name, category_age=None):
     """Return (sort_order, age_label) for a tournament name."""
     if category_age is None:
         category_age = CATEGORY_AGE
@@ -303,28 +275,26 @@ def category_age_info(tournament_name: str, category_age: dict[str, tuple[int, s
 # Discovery
 # ---------------------------------------------------------------------------
 
-def discover_tournaments(manager_id: str, club_id: str) -> list[dict[str, Any]]:
+def discover_tournaments(manager_id, club_id):
     """Original single-season discovery – kept for backwards compatibility."""
     print("Fetching manager tournaments ...")
     data = api_get(f"managers/{manager_id}", params={"include": "tournaments"})
     in_progress = []
     for inc in data.get("included", []):
-        if inc.get("type") != "tournament":
+        if inc["type"] != "tournament":
             continue
-        attrs = inc.get("attributes", {})
-        if attrs.get("status") != "in_progress":
+        attrs = inc["attributes"]
+        if attrs["status"] != "in_progress":
             continue
-        season_data = inc.get("relationships", {}).get("season", {}).get("data")
+        season_data = inc["relationships"].get("season", {}).get("data")
         in_progress.append({
-            "id": inc["id"],
-            "name": attrs.get("name", ""),
-            "gender": attrs.get("gender"),
-            "order": attrs.get("order"),
+            "id": inc["id"], "name": attrs["name"],
+            "gender": attrs.get("gender"), "order": attrs.get("order"),
             "season_id": season_data["id"] if season_data else None,
         })
     print(f"  Found {len(in_progress)} in-progress tournaments")
 
-    tournaments_with_us: list[dict[str, Any]] = []
+    tournaments_with_us = []
     for t in in_progress:
         print(f"  Checking {t['name']} ...", end=" ")
         try:
@@ -334,7 +304,7 @@ def discover_tournaments(manager_id: str, club_id: str) -> list[dict[str, Any]]:
             continue
         our_teams = []
         for inc in tdata.get("included", []):
-            if inc.get("type") != "team":
+            if inc["type"] != "team":
                 continue
             club_data = inc.get("relationships", {}).get("club", {}).get("data", {})
             if club_data and club_data.get("id") == club_id:
@@ -352,7 +322,7 @@ def discover_tournaments(manager_id: str, club_id: str) -> list[dict[str, Any]]:
     return tournaments_with_us
 
 
-def discover_seasons(manager_id: str) -> dict[str, dict[str, Any]]:
+def discover_seasons(manager_id):
     """Discover ALL seasons from the manager endpoint.
 
     Returns dict of season_id -> {tournaments: [...], has_in_progress: bool}
@@ -360,25 +330,22 @@ def discover_seasons(manager_id: str) -> dict[str, dict[str, Any]]:
     """
     print("Fetching manager tournaments (all seasons) ...")
     data = api_get(f"managers/{manager_id}", params={"include": "tournaments"})
-    seasons: dict[str, dict[str, Any]] = {}
+    seasons = {}
     for inc in data.get("included", []):
-        if inc.get("type") != "tournament":
+        if inc["type"] != "tournament":
             continue
-        attrs = inc.get("attributes", {})
-        status = attrs.get("status", "")
+        attrs = inc["attributes"]
+        status = attrs["status"]
         if status not in ("in_progress", "finished"):
             continue
-        season_data = inc.get("relationships", {}).get("season", {}).get("data")
+        season_data = inc["relationships"].get("season", {}).get("data")
         sid = season_data["id"] if season_data else "unknown"
         if sid not in seasons:
             seasons[sid] = {"tournaments": [], "has_in_progress": False}
         seasons[sid]["tournaments"].append({
-            "id": inc["id"],
-            "name": attrs.get("name", ""),
-            "gender": attrs.get("gender"),
-            "order": attrs.get("order"),
-            "season_id": sid,
-            "api_status": status,
+            "id": inc["id"], "name": attrs["name"],
+            "gender": attrs.get("gender"), "order": attrs.get("order"),
+            "season_id": sid, "api_status": status,
         })
         if status == "in_progress":
             seasons[sid]["has_in_progress"] = True
@@ -387,12 +354,12 @@ def discover_seasons(manager_id: str) -> dict[str, dict[str, Any]]:
     return seasons
 
 
-def discover_club_tournaments(tournaments: list[dict[str, Any]], club_id: str | None = None) -> list[dict[str, Any]]:
+def discover_club_tournaments(tournaments, club_id=None):
     """For a list of tournaments, load all teams and their clubs.
 
     club_id is kept for backward compatibility but ignored in multi-club mode.
     """
-    result: list[dict[str, Any]] = []
+    result = []
     for t in tournaments:
         print(f"    Checking {t['name']} ...", end=" ")
         try:
@@ -401,14 +368,14 @@ def discover_club_tournaments(tournaments: list[dict[str, Any]], club_id: str | 
             print(f"SKIP ({e})")
             continue
 
-        clubs_by_id: dict[str, str] = {}
+        clubs_by_id = {}
         for inc in tdata.get("included", []):
             if inc.get("type") == "club":
                 clubs_by_id[inc["id"]] = inc.get("attributes", {}).get("name", f"Club {inc['id']}")
 
-        all_teams: list[dict[str, Any]] = []
+        all_teams = []
         for inc in tdata.get("included", []):
-            if inc.get("type") != "team":
+            if inc["type"] != "team":
                 continue
             club_data = inc.get("relationships", {}).get("club", {}).get("data", {})
             club_ref_id = club_data.get("id") if club_data else None
@@ -436,73 +403,58 @@ def discover_club_tournaments(tournaments: list[dict[str, Any]], club_id: str | 
 # Data collection
 # ---------------------------------------------------------------------------
 
-def get_tournament_groups(tournament_id: str) -> list[dict[str, Any]]:
+def get_tournament_groups(tournament_id):
     data = api_get(f"tournaments/{tournament_id}", params={"include": "groups"})
-    groups: list[dict[str, Any]] = []
+    groups = []
     for inc in data.get("included", []):
-        if inc.get("type") == "group":
-            attrs = inc.get("attributes", {})
+        if inc["type"] == "group":
             groups.append({
-                "id": inc["id"],
-                "name": attrs.get("name", ""),
-                "order": attrs.get("order"),
-                "type": attrs.get("type"),
+                "id": inc["id"], "name": inc["attributes"]["name"],
+                "order": inc["attributes"]["order"], "type": inc["attributes"]["type"],
             })
-    groups.sort(key=lambda g: g.get("order") or 0)
+    groups.sort(key=lambda g: g["order"] or 0)
     return groups
 
 
-def get_group_with_rounds(gid: str) -> dict[str, Any]:
+def get_group_with_rounds(gid):
     data = api_get(f"groups/{gid}", params={"include": "rounds"})
-    group: dict[str, Any] = {
-        "id": gid,
-        "name": data.get("data", {}).get("attributes", {}).get("name", ""),
-        "rounds": [],
-    }
+    group = {"id": gid, "name": data["data"]["attributes"]["name"], "rounds": []}
     for inc in data.get("included", []):
-        if inc.get("type") == "round":
-            attrs = inc.get("attributes", {})
+        if inc["type"] == "round":
             group["rounds"].append({
-                "id": inc["id"],
-                "name": attrs.get("name", ""),
-                "order": attrs.get("order"),
-                "start_date": attrs.get("start_date"),
-                "end_date": attrs.get("end_date"),
+                "id": inc["id"], "name": inc["attributes"]["name"],
+                "order": inc["attributes"]["order"],
+                "start_date": inc["attributes"]["start_date"],
+                "end_date": inc["attributes"]["end_date"],
             })
-    group["rounds"].sort(key=lambda r: r.get("order", 0))
+    group["rounds"].sort(key=lambda r: r["order"])
     return group
 
 
-def get_round_matches(rid: str) -> list[dict[str, Any]]:
+def get_round_matches(rid):
     data = api_get(f"rounds/{rid}", params={"include": "matches.results,matches.facility"})
-    results_map: dict[str, dict[str, Any]] = {}
-    facilities_map: dict[str, str] = {}
-    matches: list[dict[str, Any]] = []
+    results_map = {}
+    facilities_map = {}
+    matches = []
     for inc in data.get("included", []):
-        inc_type = inc.get("type")
-        if inc_type == "result":
-            rel = inc.get("relationships", {})
-            team_data = rel.get("team", {}).get("data")
-            match_data = rel.get("match", {}).get("data")
-            if team_data and match_data:
-                results_map[inc["id"]] = {
-                    "value": inc.get("attributes", {}).get("value"),
-                    "score": inc.get("attributes", {}).get("score"),
-                    "team_id": team_data["id"],
-                    "match_id": match_data["id"],
-                }
-        elif inc_type == "facility":
-            facilities_map[inc["id"]] = inc.get("attributes", {}).get("name", "")
-        elif inc_type == "match":
+        if inc["type"] == "result":
+            results_map[inc["id"]] = {
+                "value": inc["attributes"]["value"],
+                "score": inc["attributes"]["score"],
+                "team_id": inc["relationships"]["team"]["data"]["id"],
+                "match_id": inc["relationships"]["match"]["data"]["id"],
+            }
+        elif inc["type"] == "facility":
+            facilities_map[inc["id"]] = inc["attributes"].get("name", "")
+        elif inc["type"] == "match":
             meta = inc.get("meta", {})
             fac_ref = inc.get("relationships", {}).get("facility", {}).get("data")
-            match: dict[str, Any] = {
-                "id": inc["id"],
-                "date": inc.get("attributes", {}).get("date"),
-                "finished": inc.get("attributes", {}).get("finished"),
-                "canceled": inc.get("attributes", {}).get("canceled"),
-                "postponed": inc.get("attributes", {}).get("postponed"),
-                "rest": inc.get("attributes", {}).get("rest", False),
+            match = {
+                "id": inc["id"], "date": inc["attributes"]["date"],
+                "finished": inc["attributes"]["finished"],
+                "canceled": inc["attributes"]["canceled"],
+                "postponed": inc["attributes"]["postponed"],
+                "rest": inc["attributes"].get("rest", False),
                 "home_team": meta.get("home_team"),
                 "away_team": meta.get("away_team"),
                 "facility_id": fac_ref["id"] if fac_ref else None,
@@ -520,15 +472,13 @@ def get_round_matches(rid: str) -> list[dict[str, Any]]:
     return matches
 
 
-def get_standings(gid: str) -> list[dict[str, Any]]:
+def get_standings(gid):
     data = api_get(f"groups/{gid}/standings")
-    standings: list[dict[str, Any]] = []
+    standings = []
     for row in data.get("meta", {}).get("standingsrows", []):
         stats = {s["type"]: s["value"] for s in row.get("standingsstats", [])}
         standings.append({
-            "id": row["id"],
-            "name": row["name"],
-            "position": row["position"],
+            "id": row["id"], "name": row["name"], "position": row["position"],
             "points": stats.get("score", 0),
             "played": stats.get("played_matches", 0),
             "won": stats.get("won_matches", 0),
@@ -542,14 +492,14 @@ def get_standings(gid: str) -> list[dict[str, Any]]:
     return standings
 
 
-def get_team_roster(team_id: str) -> list[dict[str, Any]]:
+def get_team_roster(team_id):
     """Fetch player/staff roster for a team via participants.license.profile."""
     data = api_get(f"teams/{team_id}", params={"include": "participants.license.profile"})
     included = data.get("included", [])
-    profiles = {i["id"]: i.get("attributes", {}) for i in included if i.get("type") == "profile"}
-    licenses = {i["id"]: i for i in included if i.get("type") == "license"}
-    participants = [i for i in included if i.get("type") == "participant"]
-    roster: list[dict[str, Any]] = []
+    profiles = {i["id"]: i["attributes"] for i in included if i["type"] == "profile"}
+    licenses = {i["id"]: i for i in included if i["type"] == "license"}
+    participants = [i for i in included if i["type"] == "participant"]
+    roster = []
     for p in participants:
         lic_ref = p.get("relationships", {}).get("license", {}).get("data")
         if not lic_ref:
@@ -567,68 +517,59 @@ def get_team_roster(team_id: str) -> list[dict[str, Any]]:
             "role": lic_type,
         })
     # Sort: players first (sorted by last_name), then staff
-    roster.sort(key=lambda r: (0 if r.get("role") == "player" else 1, r.get("last_name", ""), r.get("first_name", "")))
+    roster.sort(key=lambda r: (0 if r["role"] == "player" else 1, r["last_name"], r["first_name"]))
     return roster
 
 
-def collect_tournament_data(
-    tournament: dict[str, Any],
-    club_id: str | None = None,
-    refresh_rosters: bool = False,
-    is_current_season: bool = False,
-) -> dict[str, Any]:
+def collect_tournament_data(tournament, club_id=None, refresh_rosters=False, is_current_season=False):
     tid = tournament["id"]
     tournament_team_ids = {t["id"] for t in (tournament.get("teams") or [])}
     print(f"  Fetching groups for {tournament['name']} ...")
     groups = get_tournament_groups(tid)
     print(f"    {len(groups)} groups found")
 
-    collected_groups: list[dict[str, Any]] = []
-    all_matches: list[dict[str, Any]] = []
-    team_names: dict[str, str] = {}
+    collected_groups = []
+    all_matches = []
+    team_names = {}
 
     for g in groups:
         gid = g["id"]
         print(f"    Fetching group {g['name']} ...", end=" ")
         standings = get_standings(gid)
-        standing_team_ids: set[str] = set()
+        standing_team_ids = set()
         for row in standings:
             team_names[str(row["id"])] = row["name"]
             standing_team_ids.add(str(row["id"]))
         team_in_group = tournament_team_ids & standing_team_ids
 
         group_detail = get_group_with_rounds(gid)
-        group_matches: list[dict[str, Any]] = []
-        for rnd in group_detail.get("rounds", []):
+        group_matches = []
+        for rnd in group_detail["rounds"]:
             matches = get_round_matches(rnd["id"])
             for m in matches:
-                m["round_name"] = rnd.get("name", "")
-                m["round_order"] = rnd.get("order")
+                m["round_name"] = rnd["name"]
+                m["round_order"] = rnd["order"]
                 m["group_id"] = gid
-                m["group_name"] = g.get("name", "")
+                m["group_name"] = g["name"]
             group_matches.extend(matches)
 
         collected_groups.append({
-            "id": gid,
-            "name": g.get("name", ""),
-            "standings": standings,
-            "team_ids": team_in_group,
+            "id": gid, "name": g["name"],
+            "standings": standings, "team_ids": team_in_group,
         })
         all_matches.extend(group_matches)
         print(f"{len(group_matches)} matches")
 
-    missing_ids: set[str] = set()
+    missing_ids = set()
     for m in all_matches:
-        ht = m.get("home_team")
-        at = m.get("away_team")
-        if ht and ht not in team_names:
-            missing_ids.add(ht)
-        if at and at not in team_names:
-            missing_ids.add(at)
+        if m["home_team"] and m["home_team"] not in team_names:
+            missing_ids.add(m["home_team"])
+        if m["away_team"] and m["away_team"] not in team_names:
+            missing_ids.add(m["away_team"])
     for mid in missing_ids:
         try:
             tdata = api_get(f"teams/{mid}")
-            team_names[mid] = tdata.get("data", {}).get("attributes", {}).get("name", f"Equip {mid}")
+            team_names[mid] = tdata["data"]["attributes"]["name"]
         except Exception:
             team_names[mid] = f"Equip {mid}"
     for t in (tournament.get("teams") or []):
@@ -653,11 +594,11 @@ def collect_tournament_data(
     all_matches.sort(key=lambda m: m.get("date_ts") or 9999999999)
 
     # Roster handling: use cache unless --refresh-rosters was passed
-    all_team_ids_in_groups: set[str] = set()
+    all_team_ids_in_groups = set()
     for g in collected_groups:
         for row in g["standings"]:
             all_team_ids_in_groups.add(str(row["id"]))
-    rosters: dict[str, list[dict[str, Any]]] = {}
+    rosters = {}
     if refresh_rosters:
         print(f"    Fetching rosters for {len(all_team_ids_in_groups)} teams (refresh mode) ...")
         for t_id in sorted(all_team_ids_in_groups):
@@ -674,16 +615,14 @@ def collect_tournament_data(
 
         if is_current_season:
             # Auto-refresh ALL teams if cache is missing or older than 30 days (1 month)
-            teams_to_fetch: set[str] = set()
+            teams_to_fetch = set()
             for t_id in all_team_ids_in_groups:
                 age = roster_cache_age_days(t_id)
                 if age is None or age > 30:
                     teams_to_fetch.add(t_id)
             if teams_to_fetch:
-                print(
-                    f"    Auto-refreshing rosters for {len(teams_to_fetch)} teams "
-                    f"(missing or >30 days old) ..."
-                )
+                print(f"    Auto-refreshing rosters for {len(teams_to_fetch)} teams "
+                      f"(missing or >30 days old) ...")
                 for t_id in sorted(teams_to_fetch):
                     try:
                         roster = get_team_roster(t_id)
@@ -700,21 +639,15 @@ def collect_tournament_data(
             if m_id not in rosters:
                 rosters[m_id] = []  # empty until next --refresh-rosters run
         if cached:
-            print(
-                f"    Rosters: loaded {len(cached)} from cache ({sum(len(r) for r in cached.values())} participants)"
-            )
+            print(f"    Rosters: loaded {len(cached)} from cache ({sum(len(r) for r in cached.values())} participants)")
         remaining_missing = [m_id for m_id in missing if not rosters.get(m_id)]
         if remaining_missing:
             print(f"    Rosters: {len(remaining_missing)} teams without cache (run with --refresh-rosters)")
 
     return {
-        "tournament_id": tid,
-        "tournament_name": tournament["name"],
-        "teams": tournament.get("teams", []),
-        "team_ids": tournament_team_ids,
-        "groups": collected_groups,
-        "matches": all_matches,
-        "team_names": team_names,
+        "tournament_id": tid, "tournament_name": tournament["name"],
+        "teams": tournament.get("teams", []), "team_ids": tournament_team_ids,
+        "groups": collected_groups, "matches": all_matches, "team_names": team_names,
         "rosters": rosters,
     }
 
@@ -723,7 +656,7 @@ def collect_tournament_data(
 # HTML helpers
 # ---------------------------------------------------------------------------
 
-def format_date(date_str: str | None) -> str:
+def format_date(date_str):
     if not date_str:
         return "Per determinar"
     dt = parse_api_date(date_str)
@@ -733,7 +666,7 @@ def format_date(date_str: str | None) -> str:
     return f"{days_ca[dt.weekday()]} {dt.day:02d}/{dt.month:02d}/{dt.year} {dt.hour:02d}:{dt.minute:02d}"
 
 
-def format_date_short(date_str: str | None) -> str:
+def format_date_short(date_str):
     if not date_str:
         return "TBD"
     dt = parse_api_date(date_str)
@@ -742,7 +675,7 @@ def format_date_short(date_str: str | None) -> str:
     return f"{dt.day:02d}/{dt.month:02d} {dt.hour:02d}:{dt.minute:02d}"
 
 
-def parse_api_date(date_str: str | None) -> datetime | None:
+def parse_api_date(date_str):
     """Parse an API date string (YYYY-MM-DD HH:MM:SS) and return a timezone-aware
     datetime in Europe/Madrid when possible. Returns None on parse error.
     """
@@ -750,10 +683,10 @@ def parse_api_date(date_str: str | None) -> datetime | None:
         return None
     try:
         dt = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
-    except (ValueError, TypeError):
+    except Exception:
         return None
     # Interpret API naive timestamps as UTC and convert to Europe/Madrid
-    if ZoneInfo is not None:
+    if ZoneInfo:
         try:
             dt = dt.replace(tzinfo=ZoneInfo("UTC")).astimezone(ZoneInfo("Europe/Madrid"))
         except Exception:
@@ -761,23 +694,23 @@ def parse_api_date(date_str: str | None) -> datetime | None:
     return dt
 
 
-def match_score(match: dict[str, Any]) -> tuple[int | None, int | None]:
+def match_score(match):
     home_score = away_score = None
-    for r in match.get("results", []):
-        if r.get("team_id") == match.get("home_team"):
-            home_score = r.get("value")
-        elif r.get("team_id") == match.get("away_team"):
-            away_score = r.get("value")
+    for r in match["results"]:
+        if r["team_id"] == match["home_team"]:
+            home_score = r["value"]
+        elif r["team_id"] == match["away_team"]:
+            away_score = r["value"]
     return home_score, away_score
 
 
-def match_result_class(match: dict[str, Any], our_team_ids: set[str]) -> str:
-    if not match.get("finished"):
+def match_result_class(match, our_team_ids):
+    if not match["finished"]:
         return "upcoming"
     hs, aws = match_score(match)
     if hs is None or aws is None:
         return "unknown"
-    is_home = match.get("home_team") in our_team_ids
+    is_home = match["home_team"] in our_team_ids
     ours = hs if is_home else aws
     theirs = aws if is_home else hs
     if ours > theirs:
@@ -787,33 +720,23 @@ def match_result_class(match: dict[str, Any], our_team_ids: set[str]) -> str:
     return "draw"
 
 
-def short_category(name: str) -> str:
+def short_category(name):
     name = name.replace("LLIGA CATALANA ", "").replace("COMPETICIO CATALANA ", "").replace("COMPETICIÓ CATALANA ", "")
     # Order matters: longer patterns first to avoid partial replacements
-    replacements = [
-        ("MASCULINA DE PROMOCIO", "Promo Masc."),
-        ("MASCULINA DE PROMOCIÓ", "Promo Masc."),
-        ("MASCULINA", "Masc."),
-        ("MASCULI", "Masc."),
-        ("MASCULÍ", "Masc."),
-        ("FEMENINA", "Fem."),
-        ("FEMENI", "Fem."),
-        ("FEMENÍ", "Fem."),
-        ("MIXTE", "Mixt"),
-        ("MIXTA", "Mixt"),
-        ("BENJAMINA", "Benjamí"),
-        ("MASTER", "Màster"),
-    ]
-    for old, new in replacements:
+    for old, new in [("MASCULINA DE PROMOCIO", "Promo Masc."), ("MASCULINA DE PROMOCIÓ", "Promo Masc."),
+                     ("MASCULINA", "Masc."), ("MASCULI", "Masc."), ("MASCULÍ", "Masc."),
+                     ("FEMENINA", "Fem."), ("FEMENI", "Fem."), ("FEMENÍ", "Fem."),
+                     ("MIXTE", "Mixt"), ("MIXTA", "Mixt"), ("BENJAMINA", "Benjamí"),
+                     ("MASTER", "Màster")]:
         name = name.replace(old, new)
     return name.strip()
 
 
-def slug(text: str) -> str:
+def slug(text):
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
 
-def _club_slug(name: str | None) -> str:
+def _club_slug(name):
     txt = (name or "").strip().lower()
     txt = unicodedata.normalize("NFD", txt)
     txt = "".join(ch for ch in txt if unicodedata.category(ch) != "Mn")
@@ -821,14 +744,14 @@ def _club_slug(name: str | None) -> str:
     return txt or "club-unknown"
 
 
-def _club_display_name(name: str | None) -> str:
+def _club_display_name(name):
     txt = " ".join((name or "").split()).strip()
     txt = re.sub(r"(?i)^\s*c\.?\s*n\.?\s+", "CN ", txt)
     txt = re.sub(r"(?i)^\s*club\s+natacio\s+", "CN ", txt)
     return txt or "Club"
 
 
-def _club_key(name: str | None) -> str:
+def _club_key(name):
     txt = _club_display_name(name).lower()
     txt = unicodedata.normalize("NFD", txt)
     txt = "".join(ch for ch in txt if unicodedata.category(ch) != "Mn")
@@ -836,9 +759,9 @@ def _club_key(name: str | None) -> str:
     return txt or "clubunknown"
 
 
-def infer_club_from_team_name(team_name: str | None) -> dict[str, str]:
+def infer_club_from_team_name(team_name):
     base = (team_name or "").strip()
-    base = re.sub(r'\s+"?[A-D]"?$', "", base)
+    base = re.sub(r"\s+\"?[A-D]\"?$", "", base)
     base = re.sub(r"\s+(MASC|FEM|MIXT|MIXTA|MASC\.?|FEM\.?)[\w\.\-\"]*$", "", base, flags=re.IGNORECASE)
     base = base.strip(" -") or (team_name or "Club")
     return {
@@ -1041,8 +964,18 @@ footer a{color:var(--blue)}
 """
 
 # ---------------------------------------------------------------------------
-# JS
+# JS  – FIX: dsToDate() interpreta correctament UTC i date_local amb TZ
 # ---------------------------------------------------------------------------
+# CANVIS respecte la versió anterior:
+#   1. Nova funció dsToDate(ds): si el string NO té indicador de timezone
+#      (Z o +HH:MM), afegeix 'Z' per forçar interpretació UTC al navegador.
+#      Si ja té timezone (camp dl / date_local generat pel Python), el
+#      navegador l'interpreta directament i mostra l'hora local correcta.
+#   2. fmtShort(ds, dl) i fmtLong(ds, dl): accepten el camp 'dl'
+#      (date_local amb timezone) com a font preferent; fan servir 'ds'
+#      (UTC cru) com a fallback via dsToDate().
+#   3. Tots els llocs que criden fmtShort/fmtLong passen ara m.dl com a
+#      segon argument.
 
 JS = """
 /* --- Helpers --- */
@@ -1226,14 +1159,13 @@ function applyClubFilter(){
         if(ok)visibleCats++;
     });
     if(note){
-        if(!clubId){
-            note.style.display='block';
-            note.textContent='Selecciona primer un club per desbloquejar les categories.';
-        }else if(visibleCats===0){
+        if(!clubId)note.style.display='block';
+        else if(visibleCats===0){
             note.style.display='block';
             note.textContent='No hi ha categories disponibles per aquest club en aquesta temporada.';
         }else{
             note.style.display='none';
+            note.textContent='Selecciona primer un club per desbloquejar les categories.';
         }
     }
     var sub=document.querySelector('.subtitle');
@@ -1291,10 +1223,9 @@ function buildSearchIndex(){
   if(_searchIdx)return _searchIdx;
   var prefix='s'+(window.CUR_SEASON||'')+'-';
   var teamTournMap={};
-  Object.keys(window.WP||{}).forEach(function(eid){
+  Object.keys(window.WP).forEach(function(eid){
     if(eid.indexOf(prefix)!==0)return;
     var d=window.WP[eid];
-    if(!d||!d.teams)return;
     Object.keys(d.teams).forEach(function(tid){
       if(!teamTournMap[tid])teamTournMap[tid]=[];
       teamTournMap[tid].push({eid:eid,tname:d.tname,label:d.label||d.tname,teamName:d.teams[tid],tid:tid});
@@ -1324,15 +1255,14 @@ function buildSearchIndex(){
 function doSearch(q){
   var res=document.getElementById('search-results');
   var clear=document.getElementById('search-clear');
-  if(!q||q.length<2){if(res){res.innerHTML='';res.style.display='none';}if(clear)clear.style.display='none';return;}
-  if(clear)clear.style.display='block';
+  if(!q||q.length<2){res.innerHTML='';res.style.display='none';clear.style.display='none';return;}
+  clear.style.display='block';
   var idx=buildSearchIndex();
     var ql=normalizeSearchText(q);
   var words=ql.split(/\s+/);
   var hits=idx.filter(function(p){
     return words.every(function(w){return p._s.indexOf(w)>=0;});
   });
-  if(!res)return;
   if(hits.length===0){res.innerHTML='<div class="search-empty">Cap resultat per \"'+esc(q)+'\"</div>';res.style.display='block';return;}
   if(hits.length>50)hits=hits.slice(0,50);
   var html='';
@@ -1345,7 +1275,7 @@ function doSearch(q){
     p.teams.forEach(function(t){
       var lbl=t.label||t.tname;
       if(seenT[lbl])return;seenT[lbl]=true;
-      tags+='<span class="search-result-tag" onclick="clearSearch();showDetail(\''+t.eid+'\',\''+t.tid+'\')"><strong>'+esc(lbl)+'</strong> ('+esc(t.teamName)+')</span>';
+      tags+='<span class="search-result-tag" onclick="clearSearch();showDetail(\\''+t.eid+'\\',\\''+t.tid+'\\')"><strong>'+esc(lbl)+'</strong> ('+esc(t.teamName)+')</span>';
     });
     html+='<div class="search-result-item"><div><span class="search-result-name">'+name+'</span>'+byH+'<span class="search-result-role">'+role+'</span></div><div class="search-result-teams">'+tags+'</div></div>';
   });
@@ -1611,8 +1541,7 @@ function openPlayerByIdx(i){
 /* --- Navigation --- */
 function showScreen(name){
         ['selection-screen','player-screen','detail-screen'].forEach(function(s){
-    var el=document.getElementById(s);
-    if(el)el.style.display=s===name?'block':'none';
+    document.getElementById(s).style.display=s===name?'block':'none';
   });
   window.scrollTo(0,0);
 }
@@ -1647,8 +1576,8 @@ function showDetail(id, teamId){
     var catLabel=el.dataset.catLabel||'';
     var btn=document.getElementById('detail-back-btn');
     var lbl=document.getElementById('detail-back-label');
-    if(numTeams>1){if(btn)btn.onclick=function(){showTeams(catId);};if(lbl)lbl.textContent=catLabel;}
-    else{if(btn)btn.onclick=function(){showCategories();};if(lbl)lbl.textContent='Totes les categories';}
+    if(numTeams>1){btn.onclick=function(){showTeams(catId);};lbl.textContent=catLabel;}
+    else{btn.onclick=function(){showCategories();};lbl.textContent='Totes les categories';}
     /* Render default team */
     var data=window.WP[id];
     if(data){
@@ -1685,13 +1614,10 @@ function renderForTeam(entryId,teamId){
   });
 
   /* Record bar */
-  var recordEl=document.getElementById('record-'+entryId);
-  if(recordEl){
-    recordEl.innerHTML=
-      '<span class="w">'+w+'V</span><span class="d">'+dr+'E</span>'+
-      '<span class="l">'+lo+'D</span><span class="gf">'+gf+'GF</span>'+
-      '<span class="ga">'+gc+'GC</span>';
-  }
+  document.getElementById('record-'+entryId).innerHTML=
+    '<span class="w">'+w+'V</span><span class="d">'+dr+'E</span>'+
+    '<span class="l">'+lo+'D</span><span class="gf">'+gf+'GF</span>'+
+    '<span class="ga">'+gc+'GC</span>';
 
   /* Next match */
   var nextH='';
@@ -1708,8 +1634,7 @@ function renderForTeam(entryId,teamId){
       '<span class="'+(!isH?'our-team':'')+'">'+ aN+'</span>'+
       '</div><div class="next-round">'+esc(nm.rn)+'</div>'+venueNext+'</div></div></div>';
   }
-  var nextEl=document.getElementById('next-'+entryId);
-  if(nextEl)nextEl.innerHTML=nextH;
+  document.getElementById('next-'+entryId).innerHTML=nextH;
 
   /* Standings – only show groups where selected team appears */
   var stH='';
@@ -1729,8 +1654,7 @@ function renderForTeam(entryId,teamId){
             '<th>PP</th><th>GF</th><th>GC</th><th>DG</th>'+
       '</tr></thead><tbody>'+rows+'</tbody></table></div></div>';
   });
-  var standingsEl=document.getElementById('standings-'+entryId);
-  if(standingsEl)standingsEl.innerHTML=stH||'<p class="empty">Classificacio no disponible.</p>';
+  document.getElementById('standings-'+entryId).innerHTML=stH||'<p class="empty">Classificacio no disponible.</p>';
 
   /* Results – grouped by phase/group */
   var rH='';
@@ -1763,8 +1687,7 @@ function renderForTeam(entryId,teamId){
       });
     });
   }
-  var resultsEl=document.getElementById('results-'+entryId);
-  if(resultsEl)resultsEl.innerHTML=rH;
+  document.getElementById('results-'+entryId).innerHTML=rH;
 
   /* Upcoming */
   var uH='';
@@ -1786,8 +1709,7 @@ function renderForTeam(entryId,teamId){
     uH='<div class="section-block collapsed"><h3 onclick="toggleSection(this)">Propers Partits<span class="toggle-arrow">\u25B2</span></h3>'+
       '<div class="section-content">'+items+'</div></div>';
   }
-  var upcomingEl=document.getElementById('upcoming-'+entryId);
-  if(upcomingEl)upcomingEl.innerHTML=uH;
+  document.getElementById('upcoming-'+entryId).innerHTML=uH;
 
     /* Roster */
   var rosH='';
@@ -1823,16 +1745,12 @@ function renderForTeam(entryId,teamId){
       '<tbody>'+srows+'</tbody></table></div>';
     rosH+='</div></div>';
   }
-  var rosterEl=document.getElementById('roster-'+entryId);
-  if(rosterEl)rosterEl.innerHTML=rosH;
+  document.getElementById('roster-'+entryId).innerHTML=rosH;
 
   /* Links */
-  var linksEl=document.getElementById('links-'+entryId);
-  if(linksEl){
-    linksEl.innerHTML=
-      '<a href="'+clupik+'/es/tournament/'+data.tid+'/summary" target="_blank" rel="noopener" class="btn-link">Veure competicio completa</a>'+
-      '<a href="'+clupik+'/es/team/'+teamId+'" target="_blank" rel="noopener" class="btn-link">'+esc(teamName)+'</a>';
-  }
+  document.getElementById('links-'+entryId).innerHTML=
+    '<a href="'+clupik+'/es/tournament/'+data.tid+'/summary" target="_blank" rel="noopener" class="btn-link">Veure competicio completa</a>'+
+    '<a href="'+clupik+'/es/team/'+teamId+'" target="_blank" rel="noopener" class="btn-link">'+esc(teamName)+'</a>';
 }
 
 /* --- Init --- */
@@ -1840,7 +1758,7 @@ window.addEventListener('DOMContentLoaded',function(){
   var defaultSeason=window.CUR_SEASON||'';
   var h=location.hash.slice(1);
   if(h){
-    var m=h.match(/^(?:cat-)?s(\d+)-/);
+    var m=h.match(/^(?:cat-)?s(\\d+)-/);
     if(m){
       var hs=m[1];
       if((window.SEASONS||[]).some(function(s){return s.id===hs;})){defaultSeason=hs;}
@@ -1859,13 +1777,13 @@ window.addEventListener('DOMContentLoaded',function(){
 # HTML generation
 # ---------------------------------------------------------------------------
 
-def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, Any]) -> str:
+def generate_html(all_season_data, config):
     """Generate the complete HTML with multi-season support.
 
-    all_season_data: dict of season_id -> {label, status, categories_data, category_age}
+    all_season_data: OrderedDict of season_id -> {label, status, categories_data, category_age}
     """
     clupik = config.get("clupik_base_url", CLUPIK_BASE)
-    build_time = datetime.now(timezone.utc).strftime("%d/%m/%Y %H:%M UTC")
+    build_time = datetime.utcnow().strftime("%d/%m/%Y %H:%M UTC")
 
     # Determine default season (first current, or first overall)
     default_season = None
@@ -1877,35 +1795,34 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
         default_season = next(iter(all_season_data))
 
     # Build season selector options (sorted alphabetically by label)
-    season_options_parts: list[str] = []
+    season_options_html = ""
     sorted_seasons = sorted(all_season_data.items(), key=lambda x: x[1]["label"])
     for sid, sdata in sorted_seasons:
         tag = " (En curs)" if sdata["status"] == "current" else ""
         sel = " selected" if sid == default_season else ""
-        season_options_parts.append(f'<option value="{sid}"{sel}>{escape(sdata["label"])}{tag}</option>')
-    season_options_html = "".join(season_options_parts)
+        season_options_html += f'<option value="{sid}"{sel}>{escape(sdata["label"])}{tag}</option>'
 
     # Process each season
-    all_wp: dict[str, dict[str, Any]] = {}
-    all_rost: dict[str, list[dict[str, Any]]] = {}
-    cat_blocks: list[str] = []
-    team_blocks: list[str] = []
-    all_detail_sects: list[str] = []
-    seasons_json: list[dict[str, Any]] = []
+    all_wp = {}           # flat WP data across all seasons (season-prefixed keys)
+    all_rost = {}         # flat rosters (keyed by team_id, no prefix needed)
+    cat_blocks = []       # per-season category card HTML blocks
+    team_blocks = []      # per-season team panel HTML blocks
+    all_detail_sects = [] # all detail sections (across seasons)
+    seasons_json = []     # for window.SEASONS
     total_cats_default = 0
 
     for sid, sdata in all_season_data.items():
         categories_data = sdata["categories_data"]
         cat_age = sdata.get("category_age", CATEGORY_AGE)
-        is_default = sid == default_season
+        is_default = (sid == default_season)
 
         # --- Explode categories into per-team entries (multi-club) ---
-        entries: list[dict[str, Any]] = []
+        entries = []
         for cat in categories_data:
             teams = cat.get("teams") or []
             if not teams:
                 # Backward compatibility for old cache shape.
-                ids_from_groups: set[str] = set()
+                ids_from_groups = set()
                 for g in cat.get("groups", []):
                     for row in g.get("standings", []):
                         ids_from_groups.add(str(row.get("id")))
@@ -1923,7 +1840,8 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
             for team in teams:
                 team_id = str(team["id"])
                 team_ids = {team_id}
-                team_matches = [m for m in cat["matches"] if m.get("home_team") in team_ids or m.get("away_team") in team_ids]
+                team_matches = [m for m in cat["matches"]
+                               if m["home_team"] in team_ids or m["away_team"] in team_ids]
                 team_groups = [g for g in cat["groups"] if team_id in g.get("team_ids", set())]
                 inferred = infer_club_from_team_name(team.get("name", ""))
                 raw_club_name = str(team.get("club_name") or inferred["club_name"])
@@ -1945,7 +1863,7 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
                 })
 
         # --- Group entries by tournament for 2-level nav ---
-        tournaments_map: dict[str, dict[str, Any]] = {}
+        tournaments_map = OrderedDict()
         for entry in entries:
             tid = entry["tournament_id"]
             if tid not in tournaments_map:
@@ -1956,13 +1874,14 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
             tournaments_map[tid]["entries"].append(entry)
 
         # Sort tournaments by age (youngest first)
-        sorted_tids = sorted(tournaments_map.keys(), key=lambda tid: category_age_info(tournaments_map[tid]["tournament_name"], cat_age)[0])
-        tournaments_map = {tid: tournaments_map[tid] for tid in sorted_tids}
+        sorted_tids = sorted(tournaments_map.keys(),
+                             key=lambda tid: category_age_info(tournaments_map[tid]["tournament_name"], cat_age)[0])
+        tournaments_map = OrderedDict((tid, tournaments_map[tid]) for tid in sorted_tids)
 
         if is_default:
             total_cats_default = len(tournaments_map)
 
-        clubs_map: dict[str, dict[str, Any]] = {}
+        clubs_map = OrderedDict()
         for entry in entries:
             cid = entry["club_id"]
             if cid not in clubs_map:
@@ -1986,13 +1905,13 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
         })
 
         # --- Screen 1: Category cards for this season ---
-        cat_cards_parts: list[str] = []
-        season_finished_match_ids: set[str] = set()
+        cat_cards_html = ""
+        season_finished_match_ids = set()
         for tid, tinfo in tournaments_map.items():
             label = short_category(tinfo["tournament_name"])
             _, age_label = category_age_info(tinfo["tournament_name"], cat_age)
 
-            by_club: dict[str, list[dict[str, Any]]] = {}
+            by_club = OrderedDict()
             for e in tinfo["entries"]:
                 by_club.setdefault(e["club_id"], []).append(e)
 
@@ -2001,31 +1920,27 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
                 num_teams = len(club_entries)
 
                 total_past = 0
-                seen_mid: set[str] = set()
+                seen_mid = set()
                 for e in club_entries:
                     for m in e["matches"]:
-                        if m.get("finished"):
+                        if m["finished"]:
                             mid = m.get("id")
                             if mid and mid not in seen_mid:
                                 seen_mid.add(mid)
                                 total_past += 1
                                 season_finished_match_ids.add(mid)
 
-                age_html = f'<div class="cat-card-age">{escape(age_label)}</div>' if age_label else ""
-                cat_cards_parts.append(
-                    f'<div class="cat-card" data-club="{escape(club_id)}" data-cat-id="{cat_id}" '
-                    f'data-cat-label="{escape(label)}" data-team-count="{num_teams}" '
-                    f'onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
+                age_html = f'<div class="cat-card-age">{escape(age_label)}</div>' if age_label else ''
+                cat_cards_html += (
+                    f'<div class="cat-card" data-club="{escape(club_id)}" data-cat-id="{cat_id}" data-cat-label="{escape(label)}" data-team-count="{num_teams}" onclick="showDetailOrTeams(\'{cat_id}\',{num_teams})">'
                     f'<div class="cat-card-top">'
                     f'<div class="cat-card-name">{escape(label)}</div>'
                     f'<span class="cat-card-arrow">&#8250;</span>'
                     f'</div>'
                     f'{age_html}'
                     f'<div class="cat-card-stats">'
-                    f'<div class="cat-card-stat"><span class="cat-card-stat-v">{num_teams}</span>'
-                    f'<span class="cat-card-stat-k">equip{"s" if num_teams > 1 else ""}</span></div>'
-                    f'<div class="cat-card-stat"><span class="cat-card-stat-v">{total_past}</span>'
-                    f'<span class="cat-card-stat-k">partits jugats</span></div>'
+                    f'<div class="cat-card-stat"><span class="cat-card-stat-v">{num_teams}</span><span class="cat-card-stat-k">equip{"s" if num_teams > 1 else ""}</span></div>'
+                    f'<div class="cat-card-stat"><span class="cat-card-stat-v">{total_past}</span><span class="cat-card-stat-k">partits jugats</span></div>'
                     f'</div>'
                     f'</div>'
                 )
@@ -2033,30 +1948,30 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
         active_cls = " active" if is_default else ""
         cat_blocks.append(
             f'<div class="season-cats{active_cls}" data-season="{sid}">'
-            f'<div class="cat-grid">{ "".join(cat_cards_parts) }</div>'
+            f'<div class="cat-grid">{cat_cards_html}</div>'
             f'</div>'
         )
 
         # --- Screen 2: Team panels for this season ---
-        team_panels_parts: list[str] = []
+        team_panels_html = ""
         for tid, tinfo in tournaments_map.items():
             label = short_category(tinfo["tournament_name"])
 
-            by_club: dict[str, list[dict[str, Any]]] = {}
+            by_club = OrderedDict()
             for e in tinfo["entries"]:
                 by_club.setdefault(e["club_id"], []).append(e)
 
             for club_id, club_entries in by_club.items():
                 cat_id = f"s{sid}-{slug(tinfo['tournament_name'])}-{slug(club_id)}"
-                team_cards_parts: list[str] = []
+                team_cards = ""
                 for entry in club_entries:
                     team = entry["team"]
                     team_ids = entry["team_ids"]
                     entry_id = f"s{sid}-{slug(entry['tournament_name'] + '-' + team['name'])}"
                     team_name = escape(team["name"])
 
-                    past = [m for m in entry["matches"] if m.get("finished")]
-                    future = [m for m in entry["matches"] if not m.get("finished") and m.get("date")]
+                    past = [m for m in entry["matches"] if m["finished"]]
+                    future = [m for m in entry["matches"] if not m["finished"] and m["date"]]
                     past.sort(key=lambda m: m.get("date_ts") or 0, reverse=True)
                     future.sort(key=lambda m: m.get("date_ts") or 9999999999)
 
@@ -2067,16 +1982,15 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
                     card_next = ""
                     if future:
                         nm = future[0]
-                        hn = escape(entry["team_names"].get(nm.get("home_team"), "?"))
-                        an = escape(entry["team_names"].get(nm.get("away_team") or "", "Descansa"))
+                        hn = escape(entry["team_names"].get(nm["home_team"], "?"))
+                        an = escape(entry["team_names"].get(nm["away_team"] or "", "Descansa"))
                         card_next = (
-                            f'<div class="cat-card-next">Proper: <strong>{format_date_short(nm.get("date"))}</strong> '
+                            f'<div class="cat-card-next">Proper: <strong>{format_date_short(nm["date"])}</strong> '
                             f'{hn} vs {an}</div>'
                         )
 
-                    team_cards_parts.append(
-                        f'<div class="cat-card" data-detail="{entry_id}" data-team-id="{escape(team["id"])}" '
-                        f'data-team-label="{team_name}" onclick="showDetail(\'{entry_id}\',\'{team["id"]}\')">'
+                    team_cards += (
+                        f'<div class="cat-card" data-detail="{entry_id}" data-team-id="{escape(team["id"])}" data-team-label="{team_name}" onclick="showDetail(\'{entry_id}\',\'{team["id"]}\')">'
                         f'<div class="cat-card-name">{team_name}</div>'
                         f'<div class="cat-card-record">'
                         f'<span class="w">{wins}V</span><span class="d">{draws}E</span>'
@@ -2086,18 +2000,18 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
                         f'</div>'
                     )
 
-                team_panels_parts.append(
+                team_panels_html += (
                     f'<div class="team-panel" data-club="{escape(club_id)}" id="teams-{cat_id}" style="display:none">'
                     f'<div class="sel-title">{escape(label)}</div>'
                     f'<div class="sel-subtitle">Selecciona equip</div>'
-                    f'<div class="cat-grid">{ "".join(team_cards_parts) }</div>'
+                    f'<div class="cat-grid">{team_cards}</div>'
                     f'</div>'
                 )
 
         active_cls = " active" if is_default else ""
         team_blocks.append(
             f'<div class="season-teams{active_cls}" data-season="{sid}">'
-            f'{ "".join(team_panels_parts) }'
+            f'{team_panels_html}'
             f'</div>'
         )
 
@@ -2111,73 +2025,60 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
             num_teams = len([e for e in tournaments_map[tid]["entries"] if e["club_id"] == entry["club_id"]])
 
             # Build JSON for this entry
-            matches_json: list[dict[str, Any]] = []
-            seen_match_ids: set[str] = set()
+            matches_json = []
+            seen_match_ids = set()
             for m in entry["all_matches"]:
-                mid = m.get("id")
-                if not mid or mid in seen_match_ids:
+                if m["id"] in seen_match_ids:
                     continue
-                seen_match_ids.add(mid)
+                seen_match_ids.add(m["id"])
                 hs_val, as_val = match_score(m)
                 matches_json.append({
-                    "d": m.get("date"),
-                    "dl": m.get("date_local"),
-                    "ts": m.get("date_ts"),
+                    "d": m.get("date"),           # UTC cru "YYYY-MM-DD HH:MM:SS"
+                    "dl": m.get("date_local"),     # ISO amb TZ Europe/Madrid (preferit pel JS)
+                    "ts": m.get("date_ts"),        # epoch (per ordenar)
                     "f": m.get("finished"),
-                    "h": m.get("home_team"),
-                    "a": m.get("away_team"),
-                    "hs": hs_val,
-                    "as": as_val,
+                    "h": m.get("home_team"), "a": m.get("away_team"),
+                    "hs": hs_val, "as": as_val,
                     "rn": m.get("round_name", ""),
                     "gn": m.get("group_name", ""),
                     "v": m.get("venue", ""),
                 })
 
-            groups_json: list[dict[str, Any]] = []
-            all_team_ids_set: set[str] = set()
+            groups_json = []
+            all_team_ids_set = set()
             for g in entry["all_groups"]:
-                standings_json: list[dict[str, Any]] = []
-                for s in g.get("standings", []):
+                standings_json = []
+                for s in g["standings"]:
                     all_team_ids_set.add(str(s["id"]))
                     standings_json.append({
-                        "id": str(s["id"]),
-                        "n": s["name"],
-                        "pos": s["position"],
-                        "pts": s["points"],
-                        "pj": s["played"],
-                        "pg": s["won"],
-                        "pe": s["drawn"],
-                        "pp": s["lost"],
-                        "gf": s["goals_for"],
-                        "gc": s["goals_against"],
-                        "dg": s["goal_diff"],
+                        "id": str(s["id"]), "n": s["name"], "pos": s["position"],
+                        "pts": s["points"], "pj": s["played"], "pg": s["won"],
+                        "pe": s["drawn"], "pp": s["lost"], "gf": s["goals_for"],
+                        "gc": s["goals_against"], "dg": s["goal_diff"],
                     })
-                groups_json.append({"id": g["id"], "n": g.get("name", ""), "s": standings_json})
+                groups_json.append({"id": g["id"], "n": g["name"], "s": standings_json})
 
             # Collect rosters into global flat dict
             for t_id in all_team_ids_set | team_ids:
                 if t_id not in all_rost:
                     roster = entry["rosters"].get(t_id, [])
                     if roster:
-                        all_rost[t_id] = [
-                            {"fn": p["first_name"], "ln": p["last_name"], "bd": p.get("birthdate", ""), "ro": p["role"]}
-                            for p in roster
-                        ]
+                        all_rost[t_id] = [{"fn": p["first_name"], "ln": p["last_name"],
+                                           "bd": p.get("birthdate", ""), "ro": p["role"]}
+                                          for p in roster]
 
             all_wp[entry_id] = {
-                "tid": tid,
-                "tname": entry["tournament_name"],
+                "tid": tid, "tname": entry["tournament_name"],
                 "label": short_category(entry["tournament_name"]),
                 "dt": team["id"],
                 "teams": {k: v for k, v in entry["team_names"].items() if k in all_team_ids_set or k in team_ids},
-                "groups": groups_json,
-                "matches": matches_json,
+                "groups": groups_json, "matches": matches_json,
             }
 
             # Build team selector options
-            team_options: list[tuple[str, str]] = []
+            team_options = []
             for g in entry["all_groups"]:
-                for s in g.get("standings", []):
+                for s in g["standings"]:
                     s_id = str(s["id"])
                     if s_id not in [t[0] for t in team_options]:
                         selected = " selected" if s_id == team["id"] else ""
@@ -2186,7 +2087,8 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
             selector_html = "".join(t[1] for t in team_options)
 
             detail_section = (
-                f'<div class="detail-category" id="{entry_id}" dataentry-id="{entry_id}" data-club="{escape(entry['club_id'])}" '
+                f'<div class="detail-category" id="{entry_id}" data-entry-id="{entry_id}" '
+                f'data-club="{escape(entry["club_id"])}" '
                 f'data-cat-id="{cat_id}" data-num-teams="{num_teams}" '
                 f'data-cat-label="{escape(short_category(entry["tournament_name"]))}" style="display:none">'
                 f'<div class="category-header">'
@@ -2213,6 +2115,7 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
     seasons_json_str = json.dumps(seasons_json, ensure_ascii=False, separators=(',', ':'))
 
     # Season selector (only if multiple seasons)
+    season_selector_html = ""
     if len(all_season_data) > 1:
         season_selector_html = (
             f'<div class="season-select-wrap">'
@@ -2278,8 +2181,8 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
         f'<div class="selection-actions"><button class="btn-secondary" onclick="showPlayers()">Menu estadistiques jugadors</button></div>'
         f'</div>'
         # Hidden data stores used by dropdown-only flow.
-        f'<div id="cat-data-store" style="display:none">{ "".join(cat_blocks) }</div>'
-        f'<div id="team-data-store" style="display:none">{ "".join(team_blocks) }</div>'
+        f'<div id="cat-data-store" style="display:none">{"".join(cat_blocks)}</div>'
+        f'<div id="team-data-store" style="display:none">{"".join(team_blocks)}</div>'
         f'</div>'
         # Screen 1B: Player explorer
         f'<div id="player-screen" style="display:none">'
@@ -2296,7 +2199,7 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
         f'<div id="detail-screen" style="display:none">'
         f'<div class="back-bar" id="detail-back-bar"><button class="btn-back" id="detail-back-btn">&#8249; Tornar</button>'
         f'<span class="back-label" id="detail-back-label"></span></div>'
-        f'{ "".join(all_detail_sects) }'
+        f'{"".join(all_detail_sects)}'
         f'</div>'
         f'</main>'
         f'<footer>Actualitzat: {build_time}<br>'
@@ -2314,17 +2217,10 @@ def generate_html(all_season_data: dict[str, dict[str, Any]], config: dict[str, 
 # Main
 # ---------------------------------------------------------------------------
 
-def main(refresh_rosters: bool = False) -> None:
-    config_path = SCRIPT_DIR / "config.json"
-    try:
-        with config_path.open() as f:
-            config: dict[str, Any] = json.load(f)
-    except FileNotFoundError:
-        print(f"ERROR: config.json not found at {config_path}")
-        sys.exit(1)
-    except json.JSONDecodeError as e:
-        print(f"ERROR: invalid JSON in config.json: {e}")
-        sys.exit(1)
+def main(refresh_rosters=False):
+    config_path = os.path.join(os.path.dirname(__file__), "config.json")
+    with open(config_path) as f:
+        config = json.load(f)
 
     if refresh_rosters:
         print("*** ROSTER REFRESH enabled – will re-fetch all team rosters from API ***")
@@ -2333,10 +2229,7 @@ def main(refresh_rosters: bool = False) -> None:
 
     # club_id is optional in multiclub mode; kept for backwards compatibility.
     club_id = config.get("club_id")
-    manager_id = config.get("manager_id")
-    if not manager_id:
-        print("ERROR: manager_id is required in config.json")
-        sys.exit(1)
+    manager_id = config["manager_id"]
 
     # Step 1: Discover all seasons from manager endpoint
     print("=" * 60)
@@ -2354,10 +2247,8 @@ def main(refresh_rosters: bool = False) -> None:
         primary = max(current_sids, key=lambda s: len(seasons_raw[s]["tournaments"]))
         for sid in current_sids:
             if sid != primary:
-                print(
-                    f"  Merging current season {sid} ({len(seasons_raw[sid]['tournaments'])} tournaments) "
-                    f"into {primary} ({len(seasons_raw[primary]['tournaments'])} tournaments)"
-                )
+                print(f"  Merging current season {sid} ({len(seasons_raw[sid]['tournaments'])} tournaments) "
+                      f"into {primary} ({len(seasons_raw[primary]['tournaments'])} tournaments)")
                 seasons_raw[primary]["tournaments"].extend(seasons_raw[sid]["tournaments"])
                 del seasons_raw[sid]
 
@@ -2366,7 +2257,7 @@ def main(refresh_rosters: bool = False) -> None:
     print("STEP 2: Loading/fetching season data")
     print("=" * 60)
 
-    all_season_data: dict[str, dict[str, Any]] = {}
+    all_season_data = OrderedDict()
 
     for sid, sinfo in seasons_raw.items():
         is_current = sinfo["has_in_progress"]
@@ -2375,8 +2266,8 @@ def main(refresh_rosters: bool = False) -> None:
         if not is_current:
             cached = load_season_cache(sid)
             if cached:
-                season_label = cached.get("season_label", sid)
-                categories_data = cached.get("tournaments", [])
+                season_label = cached["season_label"]
+                categories_data = cached["tournaments"]
                 start_year = int(season_label[:4]) if season_label[:4].isdigit() else datetime.now().year
                 cat_age = build_category_age(start_year)
                 all_season_data[sid] = {
@@ -2388,22 +2279,19 @@ def main(refresh_rosters: bool = False) -> None:
                     "age_ref_date": f"{start_year + 1}-12-31",
                 }
                 if not all_season_data[sid]["refreshed_at"]:
-                    cache_path = DATA_DIR / f"{sid}.json"
-                    if cache_path.exists():
-                        try:
-                            mtime = cache_path.stat().st_mtime
-                            all_season_data[sid]["refreshed_at"] = datetime.fromtimestamp(mtime).strftime("%d/%m/%Y %H:%M")
-                        except OSError:
-                            pass
+                    cache_path = os.path.join(DATA_DIR, f"{sid}.json")
+                    if os.path.exists(cache_path):
+                        mtime = os.path.getmtime(cache_path)
+                        all_season_data[sid]["refreshed_at"] = datetime.fromtimestamp(mtime).strftime("%d/%m/%Y %H:%M")
                 continue
 
         # Need to discover teams and fetch data from API
         print(f"\n  Fetching season {sid} from API...")
 
-        api_tournaments: list[dict[str, Any]] = []
-        cached_categories: list[dict[str, Any]] = []
+        api_tournaments = []
+        cached_categories = []
         for t in sinfo["tournaments"]:
-            if t.get("api_status") == "finished":
+            if t["api_status"] == "finished":
                 cached = load_tournament_cache(t["id"])
                 if cached:
                     print(f"    Loaded finished tournament {t['name']} from cache")
@@ -2422,17 +2310,16 @@ def main(refresh_rosters: bool = False) -> None:
             continue
 
         # Collect data for each tournament (API-fetched only)
-        categories_data: list[dict[str, Any]] = list(cached_categories)
+        categories_data = list(cached_categories)
         for t in tournaments_with_us:
             print(f"\n  Collecting data for: {t['name']}")
             try:
-                cat_data = collect_tournament_data(
-                    t, refresh_rosters=refresh_rosters, is_current_season=is_current
-                )
-                if cat_data.get("groups"):
+                cat_data = collect_tournament_data(t, refresh_rosters=refresh_rosters,
+                                                   is_current_season=is_current)
+                if cat_data["groups"]:
                     categories_data.append(cat_data)
                     print(f"    -> {len(cat_data['matches'])} matches, {len(cat_data['groups'])} group(s)")
-                    if t.get("api_status") == "finished":
+                    if t["api_status"] == "finished":
                         save_tournament_cache(t["id"], cat_data)
                 else:
                     print(f"    -> No groups found, skipping")
@@ -2465,8 +2352,8 @@ def main(refresh_rosters: bool = False) -> None:
         sys.exit(1)
 
     # Deduplicate seasons that resolved to the same label
-    seen_labels: dict[str, str] = {}
-    duplicates_to_remove: set[str] = set()
+    seen_labels = {}
+    duplicates_to_remove = []
     for sid, sdata in all_season_data.items():
         label = sdata["label"]
         if label in seen_labels:
@@ -2476,13 +2363,13 @@ def main(refresh_rosters: bool = False) -> None:
                 sdata["categories_data"].extend(prev["categories_data"])
                 if prev["status"] == "current":
                     sdata["status"] = "current"
-                duplicates_to_remove.add(prev_sid)
+                duplicates_to_remove.append(prev_sid)
                 seen_labels[label] = sid
             else:
                 prev["categories_data"].extend(sdata["categories_data"])
                 if sdata["status"] == "current":
                     prev["status"] = "current"
-                duplicates_to_remove.add(sid)
+                duplicates_to_remove.append(sid)
         else:
             seen_labels[label] = sid
     for dup_sid in duplicates_to_remove:
@@ -2493,7 +2380,7 @@ def main(refresh_rosters: bool = False) -> None:
     current = [(sid, sd) for sid, sd in all_season_data.items() if sd["status"] == "current"]
     finished = [(sid, sd) for sid, sd in all_season_data.items() if sd["status"] != "current"]
     finished.sort(key=lambda x: x[1]["label"], reverse=True)
-    all_season_data = dict(current + finished)
+    all_season_data = OrderedDict(current + finished)
 
     # Step 3: Generate HTML
     print(f"\n{'=' * 60}")
@@ -2501,49 +2388,43 @@ def main(refresh_rosters: bool = False) -> None:
     print("=" * 60)
 
     html = generate_html(all_season_data, config)
-    out_dir = SCRIPT_DIR / "_site"
-    out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / "index.html"
-    with out_path.open("w", encoding="utf-8") as f:
+    out_dir = os.path.join(os.path.dirname(__file__), "_site")
+    os.makedirs(out_dir, exist_ok=True)
+    out_path = os.path.join(out_dir, "index.html")
+    with open(out_path, "w", encoding="utf-8") as f:
         f.write(html)
 
     # Write robots.txt to block crawlers
-    robots_path = out_dir / "robots.txt"
-    with robots_path.open("w") as f:
+    robots_path = os.path.join(out_dir, "robots.txt")
+    with open(robots_path, "w") as f:
         f.write("User-agent: *\nDisallow: /\n")
-    print("robots.txt generated")
+    print(f"robots.txt generated")
 
     # Encrypt with StatiCrypt
+    import subprocess
+    import shutil
     staticrypt_bin = shutil.which("staticrypt")
     if staticrypt_bin:
         print("Encrypting with StatiCrypt ...")
-        password = os.environ.get("STATICRYPT_PASSWORD")
-        if not password:
-            print("WARNING: STATICRYPT_PASSWORD environment variable not set, skipping encryption")
+        result = subprocess.run([
+            staticrypt_bin, out_path,
+            "-p", os.environ.get("STATICRYPT_PASSWORD", "posahi_un_password"),
+            "--short",
+            "--remember", "30",
+            "--template-title", "Water Polo Tracker - Login",
+            "--template-instructions", "Introdueix la contrasenya per accedir.",
+            "--template-button", "Entrar",
+            "--template-placeholder", "Contrasenya",
+            "--template-remember", "Recorda'm 30 dies",
+            "--template-error", "Contrasenya incorrecta!",
+            "--template-color-primary", "#0077B6",
+            "--template-color-secondary", "#023E8A",
+            "-d", out_dir,
+        ], capture_output=True, text=True)
+        if result.returncode == 0:
+            print("  Encrypted successfully")
         else:
-            result = subprocess.run(
-                [
-                    staticrypt_bin, str(out_path),
-                    "-p", password,
-                    "--short",
-                    "--remember", "30",
-                    "--template-title", "Water Polo Tracker - Login",
-                    "--template-instructions", "Introdueix la contrasenya per accedir.",
-                    "--template-button", "Entrar",
-                    "--template-placeholder", "Contrasenya",
-                    "--template-remember", "Recorda'm 30 dies",
-                    "--template-error", "Contrasenya incorrecta!",
-                    "--template-color-primary", "#0077B6",
-                    "--template-color-secondary", "#023E8A",
-                    "-d", str(out_dir),
-                ],
-                capture_output=True,
-                text=True,
-            )
-            if result.returncode == 0:
-                print("  Encrypted successfully")
-            else:
-                print(f"  StatiCrypt error: {result.stderr}")
+            print(f"  StatiCrypt error: {result.stderr}")
     else:
         print("WARNING: staticrypt not found, HTML NOT encrypted")
 
@@ -2552,20 +2433,18 @@ def main(refresh_rosters: bool = False) -> None:
     print(f"Site generated: {out_path}")
     print(f"Seasons: {len(all_season_data)}")
     for sid, sdata in all_season_data.items():
-        total_matches = sum(len(c.get("matches", [])) for c in sdata["categories_data"])
-        cats = len(set(c.get("tournament_name", "") for c in sdata["categories_data"]))
-        status = "EN CURS" if sdata["status"] == "current" else "tancada"
+        total_matches = sum(len(c['matches']) for c in sdata['categories_data'])
+        cats = len(set(c['tournament_name'] for c in sdata['categories_data']))
+        status = "EN CURS" if sdata['status'] == 'current' else "tancada"
         print(f"  {sdata['label']} ({status}): {cats} categories, {total_matches} partits")
     print(f"{'=' * 60}")
 
 
 if __name__ == "__main__":
+    import argparse
     parser = argparse.ArgumentParser(description="Build Water Polo Tracker")
-    parser.add_argument(
-        "--refresh-rosters",
-        action="store_true",
-        help="Re-fetch all team rosters from API (expensive, ~400 calls). "
-             "Without this flag, cached rosters are used.",
-    )
+    parser.add_argument("--refresh-rosters", action="store_true",
+                        help="Re-fetch all team rosters from API (expensive, ~400 calls). "
+                             "Without this flag, cached rosters are used.")
     args = parser.parse_args()
     main(refresh_rosters=args.refresh_rosters)
