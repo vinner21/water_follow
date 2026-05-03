@@ -828,6 +828,8 @@ main{max-width:780px;margin:0 auto;padding:.55rem}
 .team-selector-label{font-size:.75rem;color:var(--text-muted)}
 .team-selector{font-size:.78rem;padding:.25rem .45rem;border:1px solid var(--blue-light);border-radius:6px;color:var(--blue-dark);background:#fff;cursor:pointer;max-width:260px}
 .team-selector:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,119,182,.2)}
+.flow-filter{width:100%;padding:.25rem .45rem;border:1px solid var(--blue-light);border-radius:6px;background:#fff;color:var(--blue-dark);font-size:.78rem;box-sizing:border-box;margin-top:.3rem}
+.flow-filter:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,119,182,.16)}
 .record-bar{display:inline-flex;gap:.35rem;font-size:.75rem}
 .record-bar span{padding:.1rem .38rem;border-radius:4px;font-weight:600}
 .record-bar .w{background:#d4edda;color:var(--green)}.record-bar .d{background:#fff3cd;color:#856404}
@@ -1084,7 +1086,9 @@ function populateCategorySelect(){
             teamSel.innerHTML='<option value="">Selecciona primer una categoria</option>';
             teamSel.value='';
             teamSel.disabled=true;
+            resetSelectFilter('team-filter','team-select');
         }
+        resetSelectFilter('category-filter','category-select');
         return;
     }
     var cards=document.querySelectorAll('.season-cats.active .cat-card[data-club="'+clubId+'"]');
@@ -1103,6 +1107,7 @@ function populateCategorySelect(){
     sel.innerHTML=opts.join('');
     sel.value='';
     sel.disabled=cards.length===0;
+    resetSelectFilter('category-filter','category-select');
     populateTeamSelect('');
 }
 function populateTeamSelect(catId){
@@ -1112,6 +1117,7 @@ function populateTeamSelect(catId){
         sel.innerHTML='<option value="">Selecciona primer una categoria</option>';
         sel.value='';
         sel.disabled=true;
+        resetSelectFilter('team-filter','team-select');
         return;
     }
     var panel=document.getElementById('teams-'+catId);
@@ -1132,6 +1138,7 @@ function populateTeamSelect(catId){
     sel.innerHTML=opts.join('');
     sel.value='';
     sel.disabled=cards.length===0;
+    resetSelectFilter('team-filter','team-select');
 }
 function populateClubSelect(seasonId){
     var sel=document.getElementById('club-select');
@@ -1146,6 +1153,7 @@ function populateClubSelect(seasonId){
     sel.innerHTML=opts.join('');
     sel.value='';
     window.CUR_CLUB='';
+    resetSelectFilter('club-filter','club-select');
     populateCategorySelect();
 }
 function applyClubFilter(){
@@ -1214,6 +1222,35 @@ function switchSeason(seasonId){
     applyClubFilter();
   showCategories();
   clearSearch();
+}
+
+function setSelectFilterState(selectId, filterId){
+  var sel=document.getElementById(selectId);
+  var filt=document.getElementById(filterId);
+  if(!filt) return;
+  filt.disabled = !sel || sel.disabled;
+  if(filt.disabled) filt.value = '';
+}
+function filterSelectOptions(selectId, query){
+  var sel=document.getElementById(selectId);
+  if(!sel) return;
+  query = normalizeSearchText(query||'');
+  for(var i=0;i<sel.options.length;i++){
+    var opt = sel.options[i];
+    if(!opt.value){ opt.hidden = false; continue; }
+    opt.hidden = query && normalizeSearchText(opt.textContent||opt.innerText).indexOf(query) === -1;
+  }
+  if(sel.selectedIndex < 0 || (sel.options[sel.selectedIndex] && sel.options[sel.selectedIndex].hidden)){
+    sel.selectedIndex = 0;
+    if(selectId === 'category-select') switchCategory('');
+    if(selectId === 'team-select') switchTeam('');
+  }
+}
+function resetSelectFilter(filterId, selectId){
+  var filt=document.getElementById(filterId);
+  if(filt) filt.value='';
+  filterSelectOptions(selectId,'');
+  setSelectFilterState(selectId, filterId);
 }
 
 /* --- Player Search --- */
@@ -2138,21 +2175,27 @@ def generate_html(all_season_data, config):
         '<div class="season-select-wrap">'
         '<select id="club-select" class="flow-select" onchange="switchClub(this.value)">'
         '<option value="">Selecciona club</option>'
-        '</select></div>'
+        '</select>'
+        '<input type="text" id="club-filter" class="flow-filter" placeholder="Buscar club..." oninput="filterSelectOptions(\'club-select\',this.value)" autocomplete="off" disabled>'
+        '</div>'
     )
 
     category_selector_html = (
         '<div class="season-select-wrap">'
         '<select id="category-select" class="flow-select" onchange="switchCategory(this.value)" disabled>'
         '<option value="">Selecciona primer un club</option>'
-        '</select></div>'
+        '</select>'
+        '<input type="text" id="category-filter" class="flow-filter" placeholder="Buscar categoria..." oninput="filterSelectOptions(\'category-select\',this.value)" autocomplete="off" disabled>'
+        '</div>'
     )
 
     team_selector_html = (
         '<div class="season-select-wrap">'
         '<select id="team-select" class="flow-select" onchange="switchTeam(this.value)" disabled>'
         '<option value="">Selecciona primer una categoria</option>'
-        '</select></div>'
+        '</select>'
+        '<input type="text" id="team-filter" class="flow-filter" placeholder="Buscar equip..." oninput="filterSelectOptions(\'team-select\',this.value)" autocomplete="off" disabled>'
+        '</div>'
     )
 
     html = (
