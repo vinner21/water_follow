@@ -186,9 +186,21 @@
   "role": "staff"
  },
  {
+  "first_name": "VICTOR",
+  "last_name": "GIL HERNANDEZ",
+  "birthdate": "2000-12-28",
+  "role": "staff"
+ },
+ {
   "first_name": "SERGIO",
   "last_name": "MASSOT BUJ",
   "birthdate": "1965-07-29",
+  "role": "staff"
+ },
+ {
+  "first_name": "ELISABET",
+  "last_name": "ROBLES JIMENEZ",
+  "birthdate": "1979-09-21",
   "role": "staff"
  },
  {

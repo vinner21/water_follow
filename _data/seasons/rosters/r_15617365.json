@@ -36,6 +36,12 @@
   "role": "player"
  },
  {
+  "first_name": "DAVID",
+  "last_name": "EBRA MARTINEZ",
+  "birthdate": "2011-04-19",
+  "role": "player"
+ },
+ {
   "first_name": "ERIC",
   "last_name": "FORTUNATO BENITO",
   "birthdate": "2009-10-13",
@@ -99,6 +105,12 @@
   "first_name": "MARIUS",
   "last_name": "POCH TERRE",
   "birthdate": "2009-11-17",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "RUEDA CAMINS",
+  "birthdate": "2010-11-26",
   "role": "player"
  },
  {

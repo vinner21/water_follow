@@ -24,6 +24,12 @@
   "role": "player"
  },
  {
+  "first_name": "DOUGLAS RAMON",
+  "last_name": "ESPINOZA CASTRO",
+  "birthdate": "1983-12-09",
+  "role": "player"
+ },
+ {
   "first_name": "JORDI",
   "last_name": "FERRERAS JEREZ",
   "birthdate": "1987-08-03",
@@ -66,6 +72,12 @@
   "role": "player"
  },
  {
+  "first_name": "GERARD",
+  "last_name": "MARCOS VEGA",
+  "birthdate": "1973-07-23",
+  "role": "player"
+ },
+ {
   "first_name": "JOSE GREGORIO",
   "last_name": "MATHUS GOZALEZ",
   "birthdate": "1987-02-20",
@@ -93,6 +105,12 @@
   "first_name": "ALBERT ANDREU",
   "last_name": "RIERA LOPEZ",
   "birthdate": "1985-01-11",
+  "role": "player"
+ },
+ {
+  "first_name": "MATIAS ANDRE",
+  "last_name": "RUIZ VILLARROEL",
+  "birthdate": "1997-05-01",
   "role": "player"
  },
  {

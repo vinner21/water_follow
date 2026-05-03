@@ -12,6 +12,12 @@
   "role": "player"
  },
  {
+  "first_name": "DARIO",
+  "last_name": "BURGADA RICCARDI",
+  "birthdate": "2013-11-06",
+  "role": "player"
+ },
+ {
   "first_name": "TON",
   "last_name": "COLL POCH",
   "birthdate": "2011-05-16",
@@ -33,6 +39,12 @@
   "first_name": "BIEL",
   "last_name": "FONT SUAREZ",
   "birthdate": "2011-12-13",
+  "role": "player"
+ },
+ {
+  "first_name": "AGUSTI",
+  "last_name": "GASQUE GIMENO",
+  "birthdate": "2013-05-24",
   "role": "player"
  },
  {
@@ -84,7 +96,7 @@
   "role": "player"
  },
  {
-  "first_name": "INAKI",
+  "first_name": "IÑAKI",
   "last_name": "OLIVE HAM-MAN",
   "birthdate": "2012-02-01",
   "role": "player"
@@ -129,6 +141,12 @@
   "first_name": "ROBERTO",
   "last_name": "ALONSO FERNANDEZ",
   "birthdate": "1985-06-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "QUIM",
+  "last_name": "ALONSO GARCIA",
+  "birthdate": "1998-10-18",
   "role": "staff"
  },
  {

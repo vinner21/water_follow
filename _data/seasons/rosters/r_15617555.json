@@ -1,5 +1,11 @@
 [
  {
+  "first_name": "XAVIER",
+  "last_name": "ALBIAC WOJCIACZYK",
+  "birthdate": "2015-10-16",
+  "role": "player"
+ },
+ {
   "first_name": "ALEX",
   "last_name": "ALBIOL MARTIN LORENTE",
   "birthdate": "2014-05-27",
@@ -82,6 +88,12 @@
   "last_name": "SANCHEZ BARTOLOME ",
   "birthdate": "2019-06-28",
   "role": "player"
+ },
+ {
+  "first_name": "LLUC",
+  "last_name": "BOSCH QUEROL",
+  "birthdate": "2006-07-30",
+  "role": "staff"
  },
  {
   "first_name": "LUIS HERMINIO",

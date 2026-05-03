@@ -36,9 +36,21 @@
   "role": "player"
  },
  {
+  "first_name": "LIA",
+  "last_name": "MARSAL CARRILLO",
+  "birthdate": "2018-01-09",
+  "role": "player"
+ },
+ {
   "first_name": "ALEIX",
   "last_name": "PLANAS",
   "birthdate": "2018-07-25",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "ROMERO GARCIA",
+  "birthdate": "2016-12-30",
   "role": "player"
  },
  {

@@ -126,6 +126,12 @@
   "role": "staff"
  },
  {
+  "first_name": "JORDI",
+  "last_name": "DIAZ NIETO",
+  "birthdate": "2001-12-14",
+  "role": "staff"
+ },
+ {
   "first_name": "PAU",
   "last_name": "GARCIA FRANCO",
   "birthdate": "1994-08-11",
@@ -141,6 +147,12 @@
   "first_name": "FCO JAVIER",
   "last_name": "GASCH SENDRA",
   "birthdate": "1955-12-02",
+  "role": "staff"
+ },
+ {
+  "first_name": "FCO.XAVIER",
+  "last_name": "JULIA MATEU",
+  "birthdate": "1970-01-08",
   "role": "staff"
  },
  {

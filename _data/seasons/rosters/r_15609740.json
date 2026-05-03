@@ -1,5 +1,11 @@
 [
  {
+  "first_name": "MATEO",
+  "last_name": "AGUILERA PERTUSIOR",
+  "birthdate": "2017-09-29",
+  "role": "player"
+ },
+ {
   "first_name": "EDGAR",
   "last_name": "ALCALA RODRIGUEZ",
   "birthdate": "2017-01-12",
@@ -60,6 +66,18 @@
   "role": "player"
  },
  {
+  "first_name": "ERIK ",
+  "last_name": "LOPEZ CAMPO ",
+  "birthdate": "2017-05-06",
+  "role": "player"
+ },
+ {
+  "first_name": "CARLOTA",
+  "last_name": "MARMOL BENEDICTO",
+  "birthdate": "2017-11-20",
+  "role": "player"
+ },
+ {
   "first_name": "AMALIA",
   "last_name": "MARTI SOLE",
   "birthdate": "2016-03-06",
@@ -111,6 +129,12 @@
   "first_name": "LEO",
   "last_name": "SALCEDA BERNAT",
   "birthdate": "2015-08-23",
+  "role": "player"
+ },
+ {
+  "first_name": "LUCAS ",
+  "last_name": "SERRAT CLAVIJO ",
+  "birthdate": "2016-07-29",
   "role": "player"
  },
  {

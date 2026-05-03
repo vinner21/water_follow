@@ -1,5 +1,11 @@
 [
  {
+  "first_name": "GERARD",
+  "last_name": "APARICIO MORENO-TAPIA",
+  "birthdate": "2014-07-26",
+  "role": "player"
+ },
+ {
   "first_name": "MARC",
   "last_name": "BALLESTER BURREL",
   "birthdate": "2013-01-01",
@@ -99,6 +105,12 @@
   "first_name": "JUAN ",
   "last_name": "RIESTRA PEREZ",
   "birthdate": "2013-06-14",
+  "role": "player"
+ },
+ {
+  "first_name": "MARC",
+  "last_name": "URIOS OLIVA",
+  "birthdate": "2013-11-16",
   "role": "player"
  },
  {

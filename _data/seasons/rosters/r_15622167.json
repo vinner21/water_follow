@@ -60,6 +60,12 @@
   "role": "player"
  },
  {
+  "first_name": "ARLET",
+  "last_name": "NÚÑEZ PURCIOLAS",
+  "birthdate": "2017-06-29",
+  "role": "player"
+ },
+ {
   "first_name": "BRUNO",
   "last_name": "ORTEGA MOMPEO",
   "birthdate": "2015-07-19",
@@ -129,6 +135,12 @@
   "first_name": "BIANCA",
   "last_name": "BARLOCCO MARTINEZ",
   "birthdate": "2007-12-08",
+  "role": "staff"
+ },
+ {
+  "first_name": "JESUS",
+  "last_name": "CANO PELEGRIMA",
+  "birthdate": "1963-03-11",
   "role": "staff"
  },
  {

@@ -138,6 +138,12 @@
   "role": "staff"
  },
  {
+  "first_name": "JAVIER",
+  "last_name": "MARTINEZ LOPEZ",
+  "birthdate": "1983-03-30",
+  "role": "staff"
+ },
+ {
   "first_name": "MARC",
   "last_name": "MORENO FOLCH",
   "birthdate": "2008-05-27",
@@ -147,6 +153,12 @@
   "first_name": "DIDAC",
   "last_name": "VERA CRISPI",
   "birthdate": "2003-01-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "ARNAU",
+  "last_name": "ZAMORA PUJOLA",
+  "birthdate": "2007-03-27",
   "role": "staff"
  },
  {

@@ -6,6 +6,12 @@
   "role": "player"
  },
  {
+  "first_name": "POL",
+  "last_name": "ARILLA ESCUER",
+  "birthdate": "2016-07-12",
+  "role": "player"
+ },
+ {
   "first_name": "HUGO",
   "last_name": "BARRERA DIAZ",
   "birthdate": "2012-06-04",
@@ -39,6 +45,12 @@
   "first_name": "JOEL",
   "last_name": "FERNANDEZ GIBERT",
   "birthdate": "2015-09-04",
+  "role": "player"
+ },
+ {
+  "first_name": "LEO",
+  "last_name": "LEYVA MORENO",
+  "birthdate": "2016-06-24",
   "role": "player"
  },
  {
@@ -81,6 +93,12 @@
   "first_name": "MARC",
   "last_name": "TABERO PASTOR",
   "birthdate": "2014-12-12",
+  "role": "player"
+ },
+ {
+  "first_name": "XAVI",
+  "last_name": "TRIGAL RIUS",
+  "birthdate": "2017-04-02",
   "role": "player"
  },
  {

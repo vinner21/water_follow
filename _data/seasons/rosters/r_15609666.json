@@ -1,8 +1,20 @@
 [
  {
+  "first_name": "RUBEN",
+  "last_name": "CANO FERNANDEZ",
+  "birthdate": "2012-03-10",
+  "role": "player"
+ },
+ {
   "first_name": "GUILLERMO",
   "last_name": "CARMONA FUENTES",
   "birthdate": "2009-10-20",
+  "role": "player"
+ },
+ {
+  "first_name": "UNAX",
+  "last_name": "COMBARRO GONZALEZ",
+  "birthdate": "2012-07-07",
   "role": "player"
  },
  {

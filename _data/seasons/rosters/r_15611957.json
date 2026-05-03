@@ -36,6 +36,12 @@
   "role": "player"
  },
  {
+  "first_name": "DAVID",
+  "last_name": "MARTI TORRALBA",
+  "birthdate": "2010-09-02",
+  "role": "player"
+ },
+ {
   "first_name": "POL",
   "last_name": "MARTINEZ TRAVES",
   "birthdate": "2010-03-12",
@@ -84,6 +90,12 @@
   "role": "staff"
  },
  {
+  "first_name": "JORDI",
+  "last_name": "DORADO HUGUET",
+  "birthdate": "1976-08-10",
+  "role": "staff"
+ },
+ {
   "first_name": "OSCAR",
   "last_name": "FERNANDEZ CATALAN",
   "birthdate": "1977-04-09",
@@ -93,6 +105,12 @@
   "first_name": "MARC",
   "last_name": "GALAN ERRO",
   "birthdate": "2004-10-06",
+  "role": "staff"
+ },
+ {
+  "first_name": "JOAN ANTONI",
+  "last_name": "MARTI ALUMBREROS",
+  "birthdate": "1972-06-11",
   "role": "staff"
  },
  {

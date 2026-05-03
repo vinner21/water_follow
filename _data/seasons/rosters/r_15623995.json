@@ -132,6 +132,12 @@
   "role": "staff"
  },
  {
+  "first_name": "JOAN",
+  "last_name": "COLOMER ARBOLI",
+  "birthdate": "1967-01-04",
+  "role": "staff"
+ },
+ {
   "first_name": "TIZZIANO",
   "last_name": "CONTI",
   "birthdate": "2002-02-05",
@@ -144,9 +150,21 @@
   "role": "staff"
  },
  {
+  "first_name": "RAUL",
+  "last_name": "GALLARIN MUÑOZ",
+  "birthdate": "1972-10-21",
+  "role": "staff"
+ },
+ {
   "first_name": "CARLOS",
   "last_name": "GORDO FUENTES",
   "birthdate": "1976-01-24",
+  "role": "staff"
+ },
+ {
+  "first_name": "GUILLAUME",
+  "last_name": "LAWLESS",
+  "birthdate": "1977-09-12",
   "role": "staff"
  },
  {

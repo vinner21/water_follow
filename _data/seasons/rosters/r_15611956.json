@@ -18,6 +18,12 @@
   "role": "player"
  },
  {
+  "first_name": "MAX",
+  "last_name": "GRACIA SERGEEV",
+  "birthdate": "2014-07-14",
+  "role": "player"
+ },
+ {
   "first_name": "XAVIER",
   "last_name": "INVERARDI GANELLA",
   "birthdate": "2011-09-20",
@@ -111,6 +117,12 @@
   "first_name": "JOAN ANTONI",
   "last_name": "MARTI ALUMBREROS",
   "birthdate": "1972-06-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "JUAN MIGUEL ",
+  "last_name": "RUBIO MURILLO",
+  "birthdate": "1972-01-21",
   "role": "staff"
  },
  {

@@ -42,6 +42,12 @@
   "role": "player"
  },
  {
+  "first_name": "BRUNO",
+  "last_name": "ESPITIA KOWALIK",
+  "birthdate": "2017-06-18",
+  "role": "player"
+ },
+ {
   "first_name": "GINA",
   "last_name": "GARCIA ABRIL",
   "birthdate": "2016-08-12",
@@ -177,6 +183,12 @@
   "first_name": "JORDI",
   "last_name": "NOGUERA SAU",
   "birthdate": "1982-10-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "ELENA MARIA",
+  "last_name": "PADILLA MORALES",
+  "birthdate": "1980-03-12",
   "role": "staff"
  },
  {

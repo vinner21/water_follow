@@ -120,6 +120,12 @@
   "role": "player"
  },
  {
+  "first_name": "MARC ",
+  "last_name": "RETAMERO CHECA",
+  "birthdate": "2013-08-22",
+  "role": "player"
+ },
+ {
   "first_name": "JUAN ",
   "last_name": "RIESTRA PEREZ",
   "birthdate": "2013-06-14",
@@ -195,6 +201,12 @@
   "first_name": "MARC",
   "last_name": "MORENO FOLCH",
   "birthdate": "2008-05-27",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANDRES",
+  "last_name": "MORENO HERENCIA",
+  "birthdate": "1975-09-02",
   "role": "staff"
  },
  {

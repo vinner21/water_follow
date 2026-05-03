@@ -1,5 +1,11 @@
 [
  {
+  "first_name": "GERARD",
+  "last_name": "ARILLA ESCUER",
+  "birthdate": "2013-01-21",
+  "role": "player"
+ },
+ {
   "first_name": "CARLOS",
   "last_name": "BARQUERO LOPEZ",
   "birthdate": "2008-07-10",
@@ -36,6 +42,12 @@
   "role": "player"
  },
  {
+  "first_name": "DIEGO",
+  "last_name": "CEACERO PACHECO",
+  "birthdate": "2012-11-23",
+  "role": "player"
+ },
+ {
   "first_name": "ALEX",
   "last_name": "CERVIGON GALLENT",
   "birthdate": "2011-12-18",
@@ -45,6 +57,12 @@
   "first_name": "JAN",
   "last_name": "FRANCO FERNANDEZ",
   "birthdate": "2010-03-22",
+  "role": "player"
+ },
+ {
+  "first_name": "MARCO",
+  "last_name": "LEYVA MORENO",
+  "birthdate": "2013-11-16",
   "role": "player"
  },
  {
@@ -90,6 +108,12 @@
   "role": "player"
  },
  {
+  "first_name": "LAIA",
+  "last_name": "ARIBAU  GISBERT",
+  "birthdate": "2004-06-28",
+  "role": "staff"
+ },
+ {
   "first_name": "JOSE MANUEL",
   "last_name": "ARIBAU JOVE",
   "birthdate": "1971-01-06",
@@ -117,6 +141,12 @@
   "first_name": "JOSE GREGORIO",
   "last_name": "MATHUS GOZALEZ",
   "birthdate": "1987-02-20",
+  "role": "staff"
+ },
+ {
+  "first_name": "LAIA",
+  "last_name": "NICOLAS LOPEZ",
+  "birthdate": "2005-01-14",
   "role": "staff"
  },
  {

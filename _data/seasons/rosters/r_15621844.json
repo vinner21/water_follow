@@ -1,8 +1,20 @@
 [
  {
+  "first_name": "JORDI",
+  "last_name": "AGUILERA BORT",
+  "birthdate": "2012-05-04",
+  "role": "player"
+ },
+ {
   "first_name": "BRUNO",
   "last_name": "DEDES CALVO",
   "birthdate": "2011-03-03",
+  "role": "player"
+ },
+ {
+  "first_name": "CAIO",
+  "last_name": "DYNNKOSKI MARENGA",
+  "birthdate": "2012-10-25",
   "role": "player"
  },
  {
@@ -96,6 +108,12 @@
   "role": "staff"
  },
  {
+  "first_name": "JAVIER",
+  "last_name": "CARRASCO MADRIDANO",
+  "birthdate": "1999-07-02",
+  "role": "staff"
+ },
+ {
   "first_name": "EMMANOUIL",
   "last_name": "DEDES NONELL",
   "birthdate": "1975-11-22",
@@ -123,6 +141,18 @@
   "first_name": "MIQUEL",
   "last_name": "MOYANO RUIZ",
   "birthdate": "1994-04-30",
+  "role": "staff"
+ },
+ {
+  "first_name": "ISMAEL",
+  "last_name": "ROLDAN CAMPOS",
+  "birthdate": "1981-01-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "LUCAS",
+  "last_name": "VAN DOORN PARDO",
+  "birthdate": "2005-09-19",
   "role": "staff"
  },
  {

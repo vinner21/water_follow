@@ -54,6 +54,12 @@
   "role": "player"
  },
  {
+  "first_name": "ARNAU",
+  "last_name": "MERCADO MARTI",
+  "birthdate": "2010-06-02",
+  "role": "player"
+ },
+ {
   "first_name": "NIL",
   "last_name": "MONLEON GIMENEZ",
   "birthdate": "2008-01-07",
@@ -156,6 +162,12 @@
   "role": "staff"
  },
  {
+  "first_name": "EMMANOUIL",
+  "last_name": "DEDES NONELL",
+  "birthdate": "1975-11-22",
+  "role": "staff"
+ },
+ {
   "first_name": "LUIS",
   "last_name": "GARCIA ALONSO",
   "birthdate": "1978-11-16",
@@ -201,6 +213,18 @@
   "first_name": "FERRAN",
   "last_name": "PASCUAL TRABAL",
   "birthdate": "1990-09-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "ISMAEL",
+  "last_name": "ROLDAN CAMPOS",
+  "birthdate": "1981-01-12",
+  "role": "staff"
+ },
+ {
+  "first_name": "LUCAS",
+  "last_name": "VAN DOORN PARDO",
+  "birthdate": "2005-09-19",
   "role": "staff"
  },
  {

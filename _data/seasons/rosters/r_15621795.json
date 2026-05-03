@@ -60,6 +60,12 @@
   "role": "player"
  },
  {
+  "first_name": "JACK",
+  "last_name": "GREENMAN CHICON",
+  "birthdate": "2014-07-20",
+  "role": "player"
+ },
+ {
   "first_name": "ALEX",
   "last_name": "LAGUNA PASTORINO",
   "birthdate": "2017-07-10",
@@ -147,6 +153,12 @@
   "first_name": "MARC",
   "last_name": "GUTIERREZ FERRERES",
   "birthdate": "2002-12-11",
+  "role": "staff"
+ },
+ {
+  "first_name": "ARTURO",
+  "last_name": "LAGUNA BERROCAL",
+  "birthdate": "1977-01-07",
   "role": "staff"
  },
  {

@@ -6,6 +6,12 @@
   "role": "player"
  },
  {
+  "first_name": "MARC",
+  "last_name": "BALLARIN GARCIA",
+  "birthdate": "2015-09-12",
+  "role": "player"
+ },
+ {
   "first_name": "MIA ",
   "last_name": "BASANTA MORALES",
   "birthdate": "2013-04-11",
@@ -111,6 +117,12 @@
   "first_name": "AINET",
   "last_name": "GONZALEZ I MARTIN",
   "birthdate": "2013-08-30",
+  "role": "player"
+ },
+ {
+  "first_name": "ENRIC",
+  "last_name": "LLORENS MIRON",
+  "birthdate": "2015-01-12",
   "role": "player"
  },
  {

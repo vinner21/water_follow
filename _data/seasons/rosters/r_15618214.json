@@ -60,9 +60,21 @@
   "role": "player"
  },
  {
+  "first_name": "MARTI",
+  "last_name": "MORILLO GUIRADO",
+  "birthdate": "2015-10-01",
+  "role": "player"
+ },
+ {
   "first_name": "ANDREA",
   "last_name": "PEDREGOSA LOPEZ",
   "birthdate": "2014-09-12",
+  "role": "player"
+ },
+ {
+  "first_name": "ERIC",
+  "last_name": "PLANAS PAMIES",
+  "birthdate": "2015-03-03",
   "role": "player"
  },
  {
@@ -117,6 +129,12 @@
   "first_name": "NEREA",
   "last_name": "MORALES LLAMAS",
   "birthdate": "2004-05-07",
+  "role": "staff"
+ },
+ {
+  "first_name": "DAVID",
+  "last_name": "MORILLO COBO",
+  "birthdate": "1976-11-12",
   "role": "staff"
  },
  {

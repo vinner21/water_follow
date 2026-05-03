@@ -60,6 +60,12 @@
   "role": "player"
  },
  {
+  "first_name": "NEREU",
+  "last_name": "HIDALGO SEGURA",
+  "birthdate": "2012-10-01",
+  "role": "player"
+ },
+ {
   "first_name": "BIEL",
   "last_name": "MASO COLLELL",
   "birthdate": "2010-01-25",
@@ -141,6 +147,12 @@
   "first_name": "BERTA",
   "last_name": "DURAN",
   "birthdate": "1979-08-03",
+  "role": "staff"
+ },
+ {
+  "first_name": "ANIOL",
+  "last_name": "GATIUS JIMENEZ",
+  "birthdate": "2005-07-05",
   "role": "staff"
  },
  {

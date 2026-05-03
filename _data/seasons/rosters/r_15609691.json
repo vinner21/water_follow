@@ -48,6 +48,12 @@
   "role": "player"
  },
  {
+  "first_name": "CARLOS",
+  "last_name": "GOMEZ NAVARRO",
+  "birthdate": "2014-03-04",
+  "role": "player"
+ },
+ {
   "first_name": "OLIVIA",
   "last_name": "GOMEZ NAVARRO",
   "birthdate": "2012-09-09",
@@ -69,6 +75,18 @@
   "first_name": "ADAM",
   "last_name": "HILALI ARBAOUI",
   "birthdate": "2012-01-28",
+  "role": "player"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "IVANOV LOPEZ",
+  "birthdate": "2014-03-18",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL ",
+  "last_name": "LOPEZ PRATS",
+  "birthdate": "2014-10-14",
   "role": "player"
  },
  {
@@ -123,6 +141,12 @@
   "first_name": "MAR",
   "last_name": "PROENZA ROS",
   "birthdate": "2013-04-26",
+  "role": "player"
+ },
+ {
+  "first_name": "ALVARO",
+  "last_name": "REDONDO CANO",
+  "birthdate": "2014-04-20",
   "role": "player"
  },
  {

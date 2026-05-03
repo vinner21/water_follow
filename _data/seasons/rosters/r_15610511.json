@@ -102,6 +102,12 @@
   "role": "player"
  },
  {
+  "first_name": "LIV",
+  "last_name": "VIVAN PADIN",
+  "birthdate": "2014-02-24",
+  "role": "player"
+ },
+ {
   "first_name": "LOLI",
   "last_name": "CABANILLAS CORRECHER",
   "birthdate": "1979-10-10",
@@ -120,9 +126,21 @@
   "role": "staff"
  },
  {
+  "first_name": "CARLOS",
+  "last_name": "DOMINGO CLAUS",
+  "birthdate": "1975-09-09",
+  "role": "staff"
+ },
+ {
   "first_name": "SATURNINO",
   "last_name": "PLANAS PAJAROLS",
   "birthdate": "1976-08-01",
+  "role": "staff"
+ },
+ {
+  "first_name": "JAN",
+  "last_name": "RUIZ VICO",
+  "birthdate": "2002-04-16",
   "role": "staff"
  },
  {

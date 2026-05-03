@@ -72,6 +72,12 @@
   "role": "player"
  },
  {
+  "first_name": "PAU",
+  "last_name": "SERRA MARTINEZ",
+  "birthdate": "2015-02-26",
+  "role": "player"
+ },
+ {
   "first_name": "PERE",
   "last_name": "VILANA FERRERES",
   "birthdate": "2014-03-04",
@@ -108,6 +114,12 @@
   "role": "staff"
  },
  {
+  "first_name": "PABLO",
+  "last_name": "CARDENAL MARTINEZ",
+  "birthdate": "1981-01-23",
+  "role": "staff"
+ },
+ {
   "first_name": "LAURA",
   "last_name": "EROLES FERNANDEZ",
   "birthdate": "1982-12-03",
@@ -117,6 +129,12 @@
   "first_name": "YOLANDA",
   "last_name": "JIMENEZ CAPEL",
   "birthdate": "1979-02-22",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "NOGUERA SAU",
+  "birthdate": "1982-10-28",
   "role": "staff"
  },
  {

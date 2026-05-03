@@ -72,6 +72,12 @@
   "role": "player"
  },
  {
+  "first_name": "ADRIA",
+  "last_name": "NOGUERA MILA",
+  "birthdate": "2011-12-31",
+  "role": "player"
+ },
+ {
   "first_name": "BIEL",
   "last_name": "OLIVAN LOPEZ",
   "birthdate": "2008-05-04",
@@ -123,6 +129,12 @@
   "first_name": "PAU",
   "last_name": "SOLE RASTRERO",
   "birthdate": "2010-04-26",
+  "role": "player"
+ },
+ {
+  "first_name": "ASIER",
+  "last_name": "URBANO JANNECH",
+  "birthdate": "2010-06-09",
   "role": "player"
  },
  {

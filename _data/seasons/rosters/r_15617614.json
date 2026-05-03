@@ -96,6 +96,12 @@
   "role": "player"
  },
  {
+  "first_name": "GENIS",
+  "last_name": "SILVESTRE CHANG",
+  "birthdate": "2017-12-13",
+  "role": "player"
+ },
+ {
   "first_name": "OWEN",
   "last_name": "SILVESTRE CHANG",
   "birthdate": "2014-10-01",
@@ -159,6 +165,18 @@
   "first_name": "VICTOR",
   "last_name": "GIL HERNANDEZ",
   "birthdate": "2000-12-28",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "PIÑAR SOLSONA",
+  "birthdate": "2006-07-14",
+  "role": "staff"
+ },
+ {
+  "first_name": "DANIEL",
+  "last_name": "PIÑAR SOLSONA",
+  "birthdate": "2006-07-14",
   "role": "staff"
  },
  {

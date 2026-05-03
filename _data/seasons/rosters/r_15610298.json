@@ -48,6 +48,12 @@
   "role": "player"
  },
  {
+  "first_name": "ALEJANDRO",
+  "last_name": "DIAZ CRUCES",
+  "birthdate": "2011-02-25",
+  "role": "player"
+ },
+ {
   "first_name": "JAXON CARL",
   "last_name": "FAAST",
   "birthdate": "2010-04-26",
@@ -150,9 +156,21 @@
   "role": "player"
  },
  {
+  "first_name": "DIEGO ANDRES",
+  "last_name": "SEIJAS URBANEJA",
+  "birthdate": "2008-04-29",
+  "role": "player"
+ },
+ {
   "first_name": "ANA ISABEL ",
   "last_name": "CIVICO RUBIO",
   "birthdate": "1974-01-17",
+  "role": "staff"
+ },
+ {
+  "first_name": "HICHAM",
+  "last_name": "EL LAUCHI EL AISSAOUI",
+  "birthdate": "1979-09-10",
   "role": "staff"
  },
  {

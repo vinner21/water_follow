@@ -6,6 +6,12 @@
   "role": "player"
  },
  {
+  "first_name": "JAN",
+  "last_name": "AVIÑO SANCHEZ",
+  "birthdate": "2010-09-01",
+  "role": "player"
+ },
+ {
   "first_name": "SALVADOR LEONARDO",
   "last_name": "CASTILLO RAMOS",
   "birthdate": "2010-10-15",
@@ -66,6 +72,12 @@
   "role": "player"
  },
  {
+  "first_name": "ARON",
+  "last_name": "LUKACS",
+  "birthdate": "2012-08-18",
+  "role": "player"
+ },
+ {
   "first_name": "HUGO",
   "last_name": "MANTECA FERNANDEZ",
   "birthdate": "2009-11-06",
@@ -90,6 +102,12 @@
   "role": "player"
  },
  {
+  "first_name": "PAU",
+  "last_name": "ORTEGA ARABOU",
+  "birthdate": "2010-07-31",
+  "role": "player"
+ },
+ {
   "first_name": "ARNAU",
   "last_name": "PERISSE I GOMEZ",
   "birthdate": "2010-04-27",
@@ -111,6 +129,12 @@
   "first_name": "LLUC",
   "last_name": "SAVARIS I CATAFAL",
   "birthdate": "2009-11-02",
+  "role": "player"
+ },
+ {
+  "first_name": "THEODORO",
+  "last_name": "SCHMIDT QUIRINO",
+  "birthdate": "2011-08-02",
   "role": "player"
  },
  {

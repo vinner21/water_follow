@@ -66,6 +66,12 @@
   "role": "player"
  },
  {
+  "first_name": "DYLAN ",
+  "last_name": "LOPEZ VENTSISLAVOV",
+  "birthdate": "2012-04-26",
+  "role": "player"
+ },
+ {
   "first_name": "BERTA",
   "last_name": "MARQUEZ NAUDO",
   "birthdate": "2013-01-13",
@@ -90,6 +96,12 @@
   "role": "player"
  },
  {
+  "first_name": "MARTI",
+  "last_name": "PUIG RODRIGUEZ",
+  "birthdate": "2013-08-14",
+  "role": "player"
+ },
+ {
   "first_name": "DAVID",
   "last_name": "ALLED FUSTER",
   "birthdate": "1979-05-16",
@@ -99,6 +111,12 @@
   "first_name": "DAVID",
   "last_name": "ALLED FUSTER",
   "birthdate": "1979-05-16",
+  "role": "staff"
+ },
+ {
+  "first_name": "JORDI",
+  "last_name": "ALONSO HIGUERAS",
+  "birthdate": "1980-07-17",
   "role": "staff"
  },
  {

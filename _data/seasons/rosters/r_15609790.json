@@ -60,6 +60,12 @@
   "role": "player"
  },
  {
+  "first_name": "ADRIA",
+  "last_name": "LEON ILLERA",
+  "birthdate": "2016-04-26",
+  "role": "player"
+ },
+ {
   "first_name": "GIA",
   "last_name": "LLUVA GARCIA",
   "birthdate": "2015-08-04",
@@ -165,6 +171,12 @@
   "first_name": "JESUS",
   "last_name": "CABRERA QUIFER",
   "birthdate": "1968-11-25",
+  "role": "staff"
+ },
+ {
+  "first_name": "LUIS",
+  "last_name": "CIFUENTES FELIU",
+  "birthdate": "1972-03-15",
   "role": "staff"
  },
  {

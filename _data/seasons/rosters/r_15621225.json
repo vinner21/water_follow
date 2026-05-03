@@ -72,6 +72,12 @@
   "role": "player"
  },
  {
+  "first_name": "DANIEL",
+  "last_name": "LINARES MATARIN",
+  "birthdate": "2012-07-14",
+  "role": "player"
+ },
+ {
   "first_name": "DAVID",
   "last_name": "LLADO KLEVAK",
   "birthdate": "2010-09-03",
@@ -81,6 +87,12 @@
   "first_name": "JOSE MANUEL",
   "last_name": "LLENIN SANTIAGO",
   "birthdate": "2011-07-08",
+  "role": "player"
+ },
+ {
+  "first_name": "HUGO",
+  "last_name": "LOPEZ MILAN",
+  "birthdate": "2012-02-24",
   "role": "player"
  },
  {

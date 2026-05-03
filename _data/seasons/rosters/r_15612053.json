@@ -1,5 +1,17 @@
 [
  {
+  "first_name": "BIEL",
+  "last_name": "ANTEQUERA CARRILLO",
+  "birthdate": "2013-06-10",
+  "role": "player"
+ },
+ {
+  "first_name": "BIEL",
+  "last_name": "ANTEQUERA CARRILLO",
+  "birthdate": "2013-06-10",
+  "role": "player"
+ },
+ {
   "first_name": "SANTIAGO ",
   "last_name": "ARBOLEDA SUAREZ",
   "birthdate": "2012-05-15",
@@ -123,6 +135,12 @@
   "first_name": "LUCA",
   "last_name": "SOMMA",
   "birthdate": "2011-04-04",
+  "role": "player"
+ },
+ {
+  "first_name": "KERIAN",
+  "last_name": "TEIXIDO DE LLANOS",
+  "birthdate": "2013-10-15",
   "role": "player"
  },
  {

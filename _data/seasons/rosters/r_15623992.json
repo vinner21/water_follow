@@ -1,5 +1,11 @@
 [
  {
+  "first_name": "ARTHUR",
+  "last_name": "ANGOT",
+  "birthdate": "1996-08-27",
+  "role": "player"
+ },
+ {
   "first_name": "OSCAR",
   "last_name": "ANGUERA MARIN",
   "birthdate": "1999-08-16",
@@ -87,6 +93,12 @@
   "first_name": "ALEJANDRO",
   "last_name": "NIEVES RODRIGUEZ",
   "birthdate": "1988-05-31",
+  "role": "player"
+ },
+ {
+  "first_name": "KEVIN",
+  "last_name": "PERIS MORAL",
+  "birthdate": "1993-07-29",
   "role": "player"
  },
  {
