@@ -1795,7 +1795,9 @@ function filterClubOptions(query){
 }
 function showClubOptions(){
     var optionsDiv = document.getElementById('club-options');
-    if(optionsDiv) optionsDiv.style.display = 'block';
+    if(!optionsDiv) return;
+    optionsDiv.querySelectorAll('.select-option').forEach(function(o){o.style.display='block';});
+    optionsDiv.style.display = 'block';
 }
 function hideClubOptions(){
     setTimeout(function(){
@@ -1824,8 +1826,11 @@ function filterCategoryOptions(query){
     showCategoryOptions();
 }
 function showCategoryOptions(){
+    var input = document.getElementById('category-input');
     var optionsDiv = document.getElementById('category-options');
-    if(optionsDiv) optionsDiv.style.display = 'block';
+    if(!optionsDiv || (input && input.disabled)) return;
+    optionsDiv.querySelectorAll('.select-option').forEach(function(o){o.style.display='block';});
+    optionsDiv.style.display = 'block';
 }
 function hideCategoryOptions(){
     setTimeout(function(){
@@ -1857,8 +1862,11 @@ function filterTeamOptions(query){
     showTeamOptions();
 }
 function showTeamOptions(){
+    var input = document.getElementById('team-input');
     var optionsDiv = document.getElementById('team-options');
-    if(optionsDiv) optionsDiv.style.display = 'block';
+    if(!optionsDiv || (input && input.disabled)) return;
+    optionsDiv.querySelectorAll('.select-option').forEach(function(o){o.style.display='block';});
+    optionsDiv.style.display = 'block';
 }
 function hideTeamOptions(){
     setTimeout(function(){
@@ -1933,14 +1941,16 @@ def generate_html(all_season_data, config):
         # --- Explode categories into per-team entries (multi-club) ---
         entries = []
         for cat in categories_data:
-            teams = cat.get("teams") or []
-            if not teams:
-                # Backward compatibility for old cache shape.
-                ids_from_groups = set()
-                for g in cat.get("groups", []):
-                    for row in g.get("standings", []):
-                        ids_from_groups.add(str(row.get("id")))
-                for tid in sorted(ids_from_groups):
+            teams = list(cat.get("teams") or [])
+            # Always supplement with any teams from standings not already in the list.
+            # This handles old-format caches where only the tracked club's teams were
+            # stored (old 'our_teams' field), so all clubs appear in every season.
+            existing_ids = {str(t["id"]) for t in teams}
+            for g in cat.get("groups", []):
+                for row in g.get("standings", []):
+                    tid = str(row.get("id", ""))
+                    if not tid or tid in existing_ids:
+                        continue
                     tname = cat.get("team_names", {}).get(tid, f"Equip {tid}")
                     inferred = infer_club_from_team_name(tname)
                     teams.append({
@@ -1950,6 +1960,7 @@ def generate_html(all_season_data, config):
                         "club_id": inferred["club_id"],
                         "club_name": inferred["club_name"],
                     })
+                    existing_ids.add(tid)
 
             for team in teams:
                 team_id = str(team["id"])
@@ -2251,7 +2262,7 @@ def generate_html(all_season_data, config):
     club_selector_html = (
         '<div class="season-select-wrap">'
         '<div class="searchable-select" id="club-select-wrapper">'
-        '<input type="text" id="club-input" class="flow-select" placeholder="Selecciona club" autocomplete="off" oninput="filterClubOptions(this.value)" onfocus="showClubOptions()" onblur="hideClubOptions()">'
+        '<input type="text" id="club-input" class="flow-select" placeholder="Selecciona club" autocomplete="off" oninput="filterClubOptions(this.value)" onfocus="this.select();showClubOptions()" onblur="hideClubOptions()">'
         '<div class="select-options" id="club-options"></div>'
         '</div>'
         '</div>'
@@ -2260,7 +2271,7 @@ def generate_html(all_season_data, config):
     category_selector_html = (
         '<div class="season-select-wrap">'
         '<div class="searchable-select" id="category-select-wrapper">'
-        '<input type="text" id="category-input" class="flow-select" placeholder="Selecciona categoria" autocomplete="off" disabled oninput="filterCategoryOptions(this.value)" onfocus="showCategoryOptions()" onblur="hideCategoryOptions()">'
+        '<input type="text" id="category-input" class="flow-select" placeholder="Selecciona categoria" autocomplete="off" disabled oninput="filterCategoryOptions(this.value)" onfocus="this.select();showCategoryOptions()" onblur="hideCategoryOptions()">'
         '<div class="select-options" id="category-options"></div>'
         '</div>'
         '</div>'
@@ -2269,7 +2280,7 @@ def generate_html(all_season_data, config):
     team_selector_html = (
         '<div class="season-select-wrap">'
         '<div class="searchable-select" id="team-select-wrapper">'
-        '<input type="text" id="team-input" class="flow-select" placeholder="Selecciona equip" autocomplete="off" disabled oninput="filterTeamOptions(this.value)" onfocus="showTeamOptions()" onblur="hideTeamOptions()">'
+        '<input type="text" id="team-input" class="flow-select" placeholder="Selecciona equip" autocomplete="off" disabled oninput="filterTeamOptions(this.value)" onfocus="this.select();showTeamOptions()" onblur="hideTeamOptions()">'
         '<div class="select-options" id="team-options"></div>'
         '</div>'
         '</div>'
