@@ -1109,7 +1109,7 @@ function populateCategorySelect(){
     var html = '';
     catData.forEach(function(item){
         var text = item.lbl + ' (' + item.teamCount + ' equips)';
-        html += '<div class="select-option" data-value="' + esc(item.catId) + '" onclick="selectCategoryOption(\'' + esc(item.catId) + '\', \'' + esc(text) + '\')">' + esc(text) + '</div>';
+        html += '<div class="select-option" data-value="' + esc(item.catId) + '" onmousedown="event.preventDefault();selectCategoryOption(\'' + esc(item.catId) + '\', \'' + esc(text) + '\')">' + esc(text) + '</div>';
     });
     optionsDiv.innerHTML = html;
     input.value = '';
@@ -1139,7 +1139,7 @@ function populateTeamSelect(catId){
     teamData.sort(function(a,b){return a.teamLabel.localeCompare(b.teamLabel,'ca');});
     var html = '';
     teamData.forEach(function(item){
-        html += '<div class="select-option" data-value="' + esc(item.detailId) + '" data-team-id="' + esc(item.teamId) + '" onclick="selectTeamOption(\'' + esc(item.detailId) + '\', \'' + esc(item.teamLabel) + '\')">' + esc(item.teamLabel) + '</div>';
+        html += '<div class="select-option" data-value="' + esc(item.detailId) + '" data-team-id="' + esc(item.teamId) + '" onmousedown="event.preventDefault();selectTeamOption(\'' + esc(item.detailId) + '\', \'' + esc(item.teamLabel) + '\')">' + esc(item.teamLabel) + '</div>';
     });
     optionsDiv.innerHTML = html;
     input.value = '';
@@ -1154,7 +1154,7 @@ function populateClubSelect(seasonId){
     var clubs = (s && s.clubs) ? s.clubs : [];
     var html = '';
     clubs.forEach(function(c){
-        html += '<div class="select-option" data-value="' + esc(c.id) + '" onclick="selectClubOption(\'' + esc(c.id) + '\', \'' + esc(c.name) + '\')">' + esc(c.name) + '</div>';
+        html += '<div class="select-option" data-value="' + esc(c.id) + '" onmousedown="event.preventDefault();selectClubOption(\'' + esc(c.id) + '\', \'' + esc(c.name) + '\')">' + esc(c.name) + '</div>';
     });
     optionsDiv.innerHTML = html;
     input.value = '';
