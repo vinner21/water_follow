@@ -804,6 +804,8 @@ main{max-width:780px;margin:0 auto;padding:.55rem}
 .flow-select{width:100%;font-size:.78rem;padding:.25rem .4rem;border:1px solid var(--blue-light);border-radius:6px;background:#fff;color:var(--blue-dark)}
 .flow-select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,119,182,.16)}
 .searchable-select{position:relative}
+.searchable-select::after{content:'▾';position:absolute;right:.45rem;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--blue-dark);font-size:.8rem;line-height:1}
+.searchable-select .flow-select{padding-right:1.5rem}
 .select-options{position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid var(--blue-light);border-top:none;max-height:200px;overflow-y:auto;z-index:10;display:none}
 .select-option{padding:.25rem .4rem;cursor:pointer;border-bottom:1px solid #e9ecef}
 .select-option:hover{background:var(--blue-pale)}
