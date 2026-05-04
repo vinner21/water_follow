@@ -1079,21 +1079,14 @@ function getSeasonObj(seasonId){
     return (window.SEASONS||[]).find(function(s){return s.id===seasonId;})||null;
 }
 function populateCategorySelect(){
-    var input = document.getElementById('category-input');
-    var optionsDiv = document.getElementById('category-options');
-    var teamInput = document.getElementById('team-input');
-    var teamOptionsDiv = document.getElementById('team-options');
-    if(!input || !optionsDiv) return;
+    var sel = document.getElementById('category-select');
+    var teamSel = document.getElementById('team-select');
+    if(!sel) return;
     var clubId = window.CUR_CLUB || '';
     if(!clubId){
-        input.value = '';
-        input.disabled = true;
-        optionsDiv.innerHTML = '';
-        if(teamInput){
-            teamInput.value = '';
-            teamInput.disabled = true;
-            if(teamOptionsDiv) teamOptionsDiv.innerHTML = '';
-        }
+        sel.innerHTML = '<option value="">Selecciona categoria</option>';
+        sel.disabled = true;
+        if(teamSel){ teamSel.innerHTML = '<option value="">Selecciona equip</option>'; teamSel.disabled = true; }
         return;
     }
     var cards = document.querySelectorAll('.season-cats.active .cat-card[data-club="' + clubId + '"]');
@@ -1106,24 +1099,21 @@ function populateCategorySelect(){
         catData.push({catId: catId, teamCount: teamCount, lbl: lbl});
     });
     catData.sort(function(a,b){return a.lbl.localeCompare(b.lbl,'ca');});
-    var html = '';
+    var html = '<option value="">Selecciona categoria</option>';
     catData.forEach(function(item){
-        var text = item.lbl + ' (' + item.teamCount + ' equips)';
-        html += '<div class="select-option" data-value="' + esc(item.catId) + '" onmousedown="event.preventDefault();selectCategoryOption(\'' + esc(item.catId) + '\', \'' + esc(text) + '\')">' + esc(text) + '</div>';
+        html += '<option value="' + esc(item.catId) + '">' + esc(item.lbl) + ' (' + item.teamCount + ' equips)</option>';
     });
-    optionsDiv.innerHTML = html;
-    input.value = '';
-    input.disabled = cards.length === 0;
+    sel.innerHTML = html;
+    sel.value = '';
+    sel.disabled = cards.length === 0;
     populateTeamSelect('');
 }
 function populateTeamSelect(catId){
-    var input = document.getElementById('team-input');
-    var optionsDiv = document.getElementById('team-options');
-    if(!input || !optionsDiv) return;
+    var sel = document.getElementById('team-select');
+    if(!sel) return;
     if(!catId){
-        input.value = '';
-        input.disabled = true;
-        optionsDiv.innerHTML = '';
+        sel.innerHTML = '<option value="">Selecciona equip</option>';
+        sel.disabled = true;
         return;
     }
     var panel = document.getElementById('teams-' + catId);
@@ -1137,28 +1127,26 @@ function populateTeamSelect(catId){
         teamData.push({detailId: detailId, teamId: teamId, teamLabel: teamLabel});
     });
     teamData.sort(function(a,b){return a.teamLabel.localeCompare(b.teamLabel,'ca');});
-    var html = '';
+    var html = '<option value="">Selecciona equip</option>';
     teamData.forEach(function(item){
-        html += '<div class="select-option" data-value="' + esc(item.detailId) + '" data-team-id="' + esc(item.teamId) + '" onmousedown="event.preventDefault();selectTeamOption(\'' + esc(item.detailId) + '\', \'' + esc(item.teamLabel) + '\')">' + esc(item.teamLabel) + '</div>';
+        html += '<option value="' + esc(item.detailId) + '" data-team-id="' + esc(item.teamId) + '">' + esc(item.teamLabel) + '</option>';
     });
-    optionsDiv.innerHTML = html;
-    input.value = '';
-    input.disabled = cards.length === 0;
+    sel.innerHTML = html;
+    sel.value = '';
+    sel.disabled = cards.length === 0;
 }
 function populateClubSelect(seasonId){
-    var wrapper = document.getElementById('club-select-wrapper');
-    var input = document.getElementById('club-input');
-    var optionsDiv = document.getElementById('club-options');
-    if(!wrapper || !input || !optionsDiv) return;
+    var sel = document.getElementById('club-select');
+    if(!sel) return;
     var s = getSeasonObj(seasonId);
     var clubs = (s && s.clubs) ? s.clubs : [];
-    var html = '';
+    var html = '<option value="">Selecciona club</option>';
     clubs.forEach(function(c){
-        html += '<div class="select-option" data-value="' + esc(c.id) + '" onmousedown="event.preventDefault();selectClubOption(\'' + esc(c.id) + '\', \'' + esc(c.name) + '\')">' + esc(c.name) + '</div>';
+        html += '<option value="' + esc(c.id) + '">' + esc(c.name) + '</option>';
     });
-    optionsDiv.innerHTML = html;
-    input.value = '';
-    input.disabled = false;
+    sel.innerHTML = html;
+    sel.value = '';
+    sel.disabled = false;
     window.CUR_CLUB = '';
     populateCategorySelect();
 }
@@ -1198,16 +1186,19 @@ function switchClub(clubId){
 function switchCategory(catId){
     populateTeamSelect(catId || '');
     if(!catId) return;
-    var optionsDiv = document.getElementById('team-options');
-    if(optionsDiv){
-        var options = optionsDiv.querySelectorAll('.select-option');
-        if(options.length === 1){
-            var opt = options[0];
-            var value = opt.getAttribute('data-value');
-            var text = opt.textContent;
-            selectTeamOption(value, text);
-        }
+    var sel = document.getElementById('team-select');
+    /* If only one real option, auto-select it */
+    if(sel && sel.options.length === 2){
+        sel.selectedIndex = 1;
+        switchTeamFromSelect(sel);
     }
+}
+function switchTeamFromSelect(sel){
+    var detailId = sel.value;
+    if(!detailId) return;
+    var opt = sel.options[sel.selectedIndex];
+    var teamId = opt ? (opt.getAttribute('data-team-id') || '') : '';
+    switchTeam(detailId, teamId);
 }
 function switchTeam(detailId, teamId){
     if(!detailId || !window.CUR_CLUB) return;
@@ -1570,14 +1561,11 @@ function showScreen(name){
 function showCategories(){showScreen('selection-screen');history.replaceState(null,'','#');}
 function showTeams(catId){
     if(!window.CUR_CLUB){showCategories();return;}
-    var catInput = document.getElementById('category-input');
-    if(catInput){
-        var option = document.querySelector('#category-options .select-option[data-value="' + catId + '"]');
-        if(option) catInput.value = option.textContent;
-    }
+    var catSel = document.getElementById('category-select');
+    if(catSel) catSel.value = catId;
     populateTeamSelect(catId);
-    var teamInput = document.getElementById('team-input');
-    if(teamInput) teamInput.focus();
+    var teamSel = document.getElementById('team-select');
+    if(teamSel) teamSel.focus();
     showCategories();
     history.replaceState(null,'','#cat-'+catId);
 }
@@ -1589,11 +1577,11 @@ function showDetail(id, teamId){
     if(el&&el.dataset.club===window.CUR_CLUB){
     el.style.display='block';
     var catId=el.dataset.catId,numTeams=parseInt(el.dataset.numTeams)||1;
-    var catInput=document.getElementById('category-input');
-    if(catInput) catInput.value = el.dataset.catLabel || '';
+    var catSel=document.getElementById('category-select');
+    if(catSel) catSel.value = catId;
     populateTeamSelect(catId);
-    var teamInput=document.getElementById('team-input');
-    if(teamInput) teamInput.value = ''; // or find the team name
+    var teamSel=document.getElementById('team-select');
+    if(teamSel) teamSel.value = id;
     var catLabel=el.dataset.catLabel||'';
     var btn=document.getElementById('detail-back-btn');
     var lbl=document.getElementById('detail-back-label');
@@ -1774,108 +1762,7 @@ function renderForTeam(entryId,teamId){
     '<a href="'+clupik+'/es/team/'+teamId+'" target="_blank" rel="noopener" class="btn-link">'+esc(teamName)+'</a>';
 }
 
-/* --- Searchable Select Functions --- */
-function selectClubOption(value, text){
-    var input = document.getElementById('club-input');
-    if(input){
-        input.value = text;
-        window.CUR_CLUB = value;
-        hideClubOptions();
-        applyClubFilter();
-    }
-}
-function filterClubOptions(query){
-    var optionsDiv = document.getElementById('club-options');
-    if(!optionsDiv) return;
-    var options = optionsDiv.querySelectorAll('.select-option');
-    var q = normalizeSearchText(query);
-    options.forEach(function(opt){
-        var text = normalizeSearchText(opt.textContent);
-        opt.style.display = q && text.indexOf(q) === -1 ? 'none' : 'block';
-    });
-    showClubOptions();
-}
-function showClubOptions(){
-    var optionsDiv = document.getElementById('club-options');
-    if(!optionsDiv) return;
-    optionsDiv.querySelectorAll('.select-option').forEach(function(o){o.style.display='block';});
-    optionsDiv.style.display = 'block';
-}
-function hideClubOptions(){
-    setTimeout(function(){
-        var optionsDiv = document.getElementById('club-options');
-        if(optionsDiv) optionsDiv.style.display = 'none';
-    }, 150);
-}
-
-function selectCategoryOption(value, text){
-    var input = document.getElementById('category-input');
-    if(input){
-        input.value = text;
-        hideCategoryOptions();
-        switchCategory(value);
-    }
-}
-function filterCategoryOptions(query){
-    var optionsDiv = document.getElementById('category-options');
-    if(!optionsDiv) return;
-    var options = optionsDiv.querySelectorAll('.select-option');
-    var q = normalizeSearchText(query);
-    options.forEach(function(opt){
-        var text = normalizeSearchText(opt.textContent);
-        opt.style.display = q && text.indexOf(q) === -1 ? 'none' : 'block';
-    });
-    showCategoryOptions();
-}
-function showCategoryOptions(){
-    var input = document.getElementById('category-input');
-    var optionsDiv = document.getElementById('category-options');
-    if(!optionsDiv || (input && input.disabled)) return;
-    optionsDiv.querySelectorAll('.select-option').forEach(function(o){o.style.display='block';});
-    optionsDiv.style.display = 'block';
-}
-function hideCategoryOptions(){
-    setTimeout(function(){
-        var optionsDiv = document.getElementById('category-options');
-        if(optionsDiv) optionsDiv.style.display = 'none';
-    }, 150);
-}
-
-function selectTeamOption(value, text){
-    var input = document.getElementById('team-input');
-    if(input){
-        input.value = text;
-        hideTeamOptions();
-        var teamId = '';
-        var option = document.querySelector('#team-options .select-option[data-value="' + value + '"]');
-        if(option) teamId = option.getAttribute('data-team-id') || '';
-        switchTeam(value, teamId);
-    }
-}
-function filterTeamOptions(query){
-    var optionsDiv = document.getElementById('team-options');
-    if(!optionsDiv) return;
-    var options = optionsDiv.querySelectorAll('.select-option');
-    var q = normalizeSearchText(query);
-    options.forEach(function(opt){
-        var text = normalizeSearchText(opt.textContent);
-        opt.style.display = q && text.indexOf(q) === -1 ? 'none' : 'block';
-    });
-    showTeamOptions();
-}
-function showTeamOptions(){
-    var input = document.getElementById('team-input');
-    var optionsDiv = document.getElementById('team-options');
-    if(!optionsDiv || (input && input.disabled)) return;
-    optionsDiv.querySelectorAll('.select-option').forEach(function(o){o.style.display='block';});
-    optionsDiv.style.display = 'block';
-}
-function hideTeamOptions(){
-    setTimeout(function(){
-        var optionsDiv = document.getElementById('team-options');
-        if(optionsDiv) optionsDiv.style.display = 'none';
-    }, 150);
-}
+/* Searchable select functions removed – replaced by native <select> elements */
 
 /* --- Init --- */
 window.addEventListener('DOMContentLoaded',function(){
@@ -2263,28 +2150,25 @@ def generate_html(all_season_data, config):
 
     club_selector_html = (
         '<div class="season-select-wrap">'
-        '<div class="searchable-select" id="club-select-wrapper">'
-        '<input type="text" id="club-input" class="flow-select" placeholder="Selecciona club" autocomplete="off" oninput="filterClubOptions(this.value)" onfocus="this.select();showClubOptions()" onblur="hideClubOptions()">'
-        '<div class="select-options" id="club-options"></div>'
-        '</div>'
+        '<select id="club-select" class="flow-select" onchange="switchClub(this.value)">'
+        '<option value="">Selecciona club</option>'
+        '</select>'
         '</div>'
     )
 
     category_selector_html = (
         '<div class="season-select-wrap">'
-        '<div class="searchable-select" id="category-select-wrapper">'
-        '<input type="text" id="category-input" class="flow-select" placeholder="Selecciona categoria" autocomplete="off" disabled oninput="filterCategoryOptions(this.value)" onfocus="this.select();showCategoryOptions()" onblur="hideCategoryOptions()">'
-        '<div class="select-options" id="category-options"></div>'
-        '</div>'
+        '<select id="category-select" class="flow-select" disabled onchange="switchCategory(this.value)">'
+        '<option value="">Selecciona categoria</option>'
+        '</select>'
         '</div>'
     )
 
     team_selector_html = (
         '<div class="season-select-wrap">'
-        '<div class="searchable-select" id="team-select-wrapper">'
-        '<input type="text" id="team-input" class="flow-select" placeholder="Selecciona equip" autocomplete="off" disabled oninput="filterTeamOptions(this.value)" onfocus="this.select();showTeamOptions()" onblur="hideTeamOptions()">'
-        '<div class="select-options" id="team-options"></div>'
-        '</div>'
+        '<select id="team-select" class="flow-select" disabled onchange="switchTeamFromSelect(this)">'
+        '<option value="">Selecciona equip</option>'
+        '</select>'
         '</div>'
     )
 
